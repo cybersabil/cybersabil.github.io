@@ -5,133 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CyberSabil IT Tools</title>
   <style>
-    :root {
-      --bg:#07111f; --card:#10223a; --text:#eaf2ff; --muted:#aebed4;
-      --accent:#2ee6a6; --accent2:#35a7ff; --border:rgba(255,255,255,.14);
-    }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Segoe UI,Arial,sans-serif;color:var(--text);
-      background:radial-gradient(circle at top left,rgba(53,167,255,.25),transparent 32%),
-      radial-gradient(circle at top right,rgba(46,230,166,.2),transparent 34%),
-      linear-gradient(135deg,#07111f,#0d1b2f);min-height:100vh}
-    a{color:inherit;text-decoration:none}
-    .container{width:min(1100px,calc(100% - 36px));margin:auto}
-    header{position:sticky;top:0;background:rgba(7,17,31,.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);z-index:5}
-    .nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-    .brand{display:flex;align-items:center;gap:12px;font-weight:800;font-size:20px}
-    .logo{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#06111f;font-weight:900}
-    .links{display:flex;gap:18px;color:var(--muted);font-size:14px;flex-wrap:wrap}
-    .links a:hover{color:var(--text)}
-    .hero{padding:80px 0 48px;display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:center}
-    .badge{display:inline-flex;padding:8px 12px;border-radius:999px;background:rgba(46,230,166,.12);border:1px solid rgba(46,230,166,.3);margin-bottom:18px;color:#d9fff2}
-    h1{font-size:clamp(40px,6vw,70px);line-height:1;letter-spacing:-2px;margin:0}
-    .grad{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
-    .lead,.muted{color:var(--muted);line-height:1.7}
-    .lead{font-size:18px;margin:24px 0 28px;max-width:700px}
-    .actions{display:flex;gap:14px;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:14px;padding:14px 18px;font-weight:700;border:1px solid transparent}
-    .primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#06111f}
-    .secondary{background:rgba(255,255,255,.07);border-color:var(--border)}
-    .terminal{background:rgba(3,9,17,.9);border:1px solid var(--border);border-radius:22px;overflow:hidden;box-shadow:0 25px 70px rgba(0,0,0,.35)}
-    .top{display:flex;gap:8px;padding:14px;background:rgba(255,255,255,.06)}
-    .dot{width:11px;height:11px;border-radius:50%;background:#ff5c7a}.dot:nth-child(2){background:#ffc947}.dot:nth-child(3){background:var(--accent)}
-    .term-body{padding:22px;font-family:Consolas,'Courier New',monospace;font-size:14px;line-height:1.9;min-height:260px}
-    .prompt{color:var(--accent)} .cmd{color:white;word-break:break-all}
-    section{padding:52px 0}
-    h2{font-size:clamp(28px,4vw,42px);margin:0 0 12px;letter-spacing:-1px}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .card,.tool{background:rgba(255,255,255,.075);border:1px solid var(--border);border-radius:22px;padding:22px}
-    .card h3,.tool h3{margin:0 0 10px}
-    .card p,.tool p{margin:0;color:var(--muted);line-height:1.65}
-    .icon{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;margin-bottom:16px;background:rgba(53,167,255,.14);font-size:22px}
-    .tools{display:grid;gap:16px}
-    .tool{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center}
-    .code{margin-top:12px;padding:13px 14px;border-radius:14px;background:rgba(0,0,0,.34);border:1px solid rgba(255,255,255,.1);font-family:Consolas,'Courier New',monospace;overflow:auto;white-space:nowrap}
-    .warning{border-left:4px solid #ffc947;background:rgba(255,201,71,.08);padding:18px;border-radius:16px;color:#ffe9a4;line-height:1.7}
-    footer{padding:36px 0 54px;color:var(--muted);border-top:1px solid var(--border);margin-top:28px}
-    @media(max-width:860px){.hero,.grid,.tool{grid-template-columns:1fr}.nav{align-items:flex-start;flex-direction:column;padding:16px 0}}
+    :root{--bg:#07111f;--text:#eaf2ff;--muted:#aebed4;--accent:#2ee6a6;--accent2:#35a7ff;--border:rgba(255,255,255,.14)}
+    *{box-sizing:border-box} body{margin:0;font-family:Segoe UI,Arial,sans-serif;color:var(--text);background:radial-gradient(circle at top left,rgba(53,167,255,.25),transparent 32%),radial-gradient(circle at top right,rgba(46,230,166,.2),transparent 34%),linear-gradient(135deg,#07111f,#0d1b2f);min-height:100vh} a{color:inherit;text-decoration:none}.container{width:min(1100px,calc(100% - 36px));margin:auto} header{position:sticky;top:0;background:rgba(7,17,31,.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);z-index:5}.nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:12px;font-weight:800;font-size:20px}.logo{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#06111f;font-weight:900}.links{display:flex;gap:18px;color:var(--muted);font-size:14px;flex-wrap:wrap}.links a:hover{color:var(--text)}.hero{padding:80px 0 48px;display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:center}.badge{display:inline-flex;padding:8px 12px;border-radius:999px;background:rgba(46,230,166,.12);border:1px solid rgba(46,230,166,.3);margin-bottom:18px;color:#d9fff2}h1{font-size:clamp(40px,6vw,70px);line-height:1;letter-spacing:-2px;margin:0}.grad{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}.lead,.muted{color:var(--muted);line-height:1.7}.lead{font-size:18px;margin:24px 0 28px;max-width:700px}.actions{display:flex;gap:14px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:14px;padding:14px 18px;font-weight:700;border:1px solid transparent}.primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#06111f}.secondary{background:rgba(255,255,255,.07);border-color:var(--border)}.terminal{background:rgba(3,9,17,.9);border:1px solid var(--border);border-radius:22px;overflow:hidden;box-shadow:0 25px 70px rgba(0,0,0,.35)}.top{display:flex;gap:8px;padding:14px;background:rgba(255,255,255,.06)}.dot{width:11px;height:11px;border-radius:50%;background:#ff5c7a}.dot:nth-child(2){background:#ffc947}.dot:nth-child(3){background:var(--accent)}.term-body{padding:22px;font-family:Consolas,'Courier New',monospace;font-size:14px;line-height:1.9;min-height:260px}.prompt{color:var(--accent)}.cmd{color:white;word-break:break-all}section{padding:52px 0}h2{font-size:clamp(28px,4vw,42px);margin:0 0 12px;letter-spacing:-1px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card,.tool{background:rgba(255,255,255,.075);border:1px solid var(--border);border-radius:22px;padding:22px}.card h3,.tool h3{margin:0 0 10px}.card p,.tool p{margin:0;color:var(--muted);line-height:1.65}.icon{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;margin-bottom:16px;background:rgba(53,167,255,.14);font-size:22px}.tools{display:grid;gap:16px}.tool{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center}.code{margin-top:12px;padding:13px 14px;border-radius:14px;background:rgba(0,0,0,.34);border:1px solid rgba(255,255,255,.1);font-family:Consolas,'Courier New',monospace;overflow:auto;white-space:nowrap}.warning{border-left:4px solid #ffc947;background:rgba(255,201,71,.08);padding:18px;border-radius:16px;color:#ffe9a4;line-height:1.7}footer{padding:36px 0 54px;color:var(--muted);border-top:1px solid var(--border);margin-top:28px}@media(max-width:860px){.hero,.grid,.tool{grid-template-columns:1fr}.nav{align-items:flex-start;flex-direction:column;padding:16px 0}}
   </style>
 </head>
 <body>
-  <header>
-    <div class="container nav">
-      <a class="brand" href="#"><span class="logo">CS</span><span>CyberSabil</span></a>
-      <nav class="links">
-        <a href="#tools">Tools</a><a href="#powershell">PowerShell</a><a href="#download">Download</a>
-        <a href="https://github.com/cybersabil" target="_blank" rel="noopener">GitHub</a>
-      </nav>
-    </div>
-  </header>
-
+  <header><div class="container nav"><a class="brand" href="#"><span class="logo">CS</span><span id="brandName">CyberSabil</span></a><nav class="links"><a href="#tools">Tools</a><a href="#powershell">PowerShell</a><a href="#download">Download</a><a href="https://github.com/cybersabil" target="_blank" rel="noopener">GitHub</a></nav></div></header>
   <main>
-    <section class="container hero">
-      <div>
-        <div class="badge">Windows IT Support Toolkit</div>
-        <h1>Practical tools for <span class="grad">real PC problems and IT support.</span></h1>
-        <p class="lead">CyberSabil IT Tools is a central home for Windows troubleshooting, monitoring, cleanup, automation scripts, and standalone support utilities.</p>
-        <div class="actions">
-          <a class="btn primary" href="#download">Download Tools</a>
-          <a class="btn secondary" href="#powershell">PowerShell Commands</a>
-        </div>
-      </div>
-      <div class="terminal">
-        <div class="top"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-        <div class="term-body">
-          <div><span class="prompt">PS&gt;</span> <span class="cmd">irm https://cybersabil.github.io/tm/run.ps1 | iex</span></div>
-          <div>Install TrafficMonitor</div><br>
-          <div><span class="prompt">PS&gt;</span> <span class="cmd">irm https://cybersabil.github.io/tmr/run.ps1 | iex</span></div>
-          <div>Remove TrafficMonitor</div><br>
-          <div style="color:#2ee6a6">CyberSabil tools ready.</div>
-        </div>
-      </div>
-    </section>
-
-    <section id="tools" class="container">
-      <h2>Tools and utilities</h2>
-      <p class="muted">A clean homepage for CyberSabil scripts, EXE downloads, project links, and support commands.</p>
-      <div class="grid">
-        <div class="card"><div class="icon">🖥️</div><h3>TrafficMonitor Installer</h3><p>Install and configure live CPU, RAM, GPU, disk, and network monitoring in the taskbar.</p></div>
-        <div class="card"><div class="icon">🧹</div><h3>Deep Cleaner</h3><p>Remove TrafficMonitor startup entries, scheduled tasks, configuration files, folders, and leftovers.</p></div>
-        <div class="card"><div class="icon">🛠️</div><h3>Standalone IT Tools</h3><p>Download CyberSabil standalone EXE for Windows support, shortcuts, diagnostics, and admin utilities.</p></div>
-      </div>
-    </section>
-
-    <section id="powershell" class="container">
-      <h2>PowerShell quick commands</h2>
-      <p class="muted">Run PowerShell as Administrator, paste the required command, and press Enter.</p>
-      <div class="tools">
-        <div class="tool">
-          <div><h3>Install TrafficMonitor</h3><p>Downloads and runs the CyberSabil TrafficMonitor setup script.</p><div class="code">irm https://cybersabil.github.io/tm/run.ps1 | iex</div></div>
-          <a class="btn secondary" href="https://cybersabil.github.io/tm/run.ps1" target="_blank" rel="noopener">View Script</a>
-        </div>
-        <div class="tool">
-          <div><h3>Remove TrafficMonitor</h3><p>Runs the cleanup script. Cleanup continues only after confirmation.</p><div class="code">irm https://cybersabil.github.io/tmr/run.ps1 | iex</div></div>
-          <a class="btn secondary" href="https://cybersabil.github.io/tmr/run.ps1" target="_blank" rel="noopener">View Script</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="download" class="container">
-      <h2>Download CyberSabil IT Tools</h2>
-      <p class="muted">Download the latest standalone Windows EXE from GitHub Releases.</p>
-      <div class="actions">
-        <a class="btn primary" href="https://github.com/cybersabil/cybersabil-it-tools/releases/latest/download/CyberSabil.exe">Download CyberSabil.exe</a>
-        <a class="btn secondary" href="https://github.com/cybersabil/cybersabil-it-tools/releases/latest" target="_blank" rel="noopener">Open Latest Release</a>
-      </div>
-      <br>
-      <div class="warning">Safety note: Download tools only from official CyberSabil GitHub links. Do not run unknown scripts or EXE files from untrusted sources.</div>
-    </section>
-
-    <section class="container">
-      <h2>Project links</h2>
-      <div class="grid">
-        <a class="card" href="https://github.com/cybersabil/tm" target="_blank" rel="noopener"><div class="icon">📦</div><h3>TrafficMonitor Setup Repo</h3><p>Source and launcher for TrafficMonitor installation.</p></a>
-        <a class="card" href="https://github.com/cybersabil/tmr" target="_blank" rel="noopener"><div class="icon">🧽</div><h3>TrafficMonitor Cleaner Repo</h3><p>Source and launcher for TrafficMonitor removal.</p></a>
-        <a class="card" href="https://github.com/cybersabil" target="_blank" rel="noopener"><div class="icon">🐙</div><h3>CyberSabil on GitHub</h3><p>View all CyberSabil repositories, scripts, and releases.</p></a>
-      </div>
-    </section>
+    <section class="container hero"><div><div class="badge" id="badge"></div><h1><span id="heroTitleBefore"></span><br><span class="grad" id="heroTitleHighlight"></span></h1><p class="lead" id="heroDescription"></p><div class="actions"><a class="btn primary" id="primaryButton" href="#download"></a><a class="btn secondary" id="secondaryButton" href="#powershell"></a></div></div><div class="terminal"><div class="top"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div><div class="term-body" id="terminalCommands"></div></div></section>
+    <section id="tools" class="container"><h2>Tools and utilities</h2><p class="muted">A clean homepage for CyberSabil scripts, EXE downloads, project links, and support commands.</p><div class="grid" id="toolCards"></div></section>
+    <section id="powershell" class="container"><h2>PowerShell quick commands</h2><p class="muted">Run PowerShell as Administrator, paste the required command, and press Enter.</p><div class="tools" id="powerShellTools"></div></section>
+    <section id="download" class="container"><h2 id="downloadTitle"></h2><p class="muted" id="downloadDescription"></p><div class="actions"><a class="btn primary" id="downloadButton" href="#"></a><a class="btn secondary" id="releaseButton" href="#" target="_blank" rel="noopener"></a></div><br><div class="warning" id="safetyNote"></div></section>
+    <section class="container"><h2>Project links</h2><div class="grid" id="projectCards"></div></section>
   </main>
-
-  <footer><div class="container"><strong>CyberSabil IT Tools</strong><p>Windows automation, IT support utilities, monitoring tools, and troubleshooting workflows.</p></div></footer>
+  <footer><div class="container"><strong id="footerBrand"></strong><p id="footerText"></p></div></footer>
+  <script>
+    const escapeHtml = (value) => String(value ?? '').replace(/[&<>"']/g, (char) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[char]));
+    async function loadJson(path, fallback){try{const response=await fetch(path+'?v='+Date.now());if(!response.ok)throw new Error('Failed to load '+path);return await response.json()}catch(error){console.warn(error);return fallback}}
+    function renderSite(site){document.title=(site.brandName||'CyberSabil')+' IT Tools';document.getElementById('brandName').textContent=site.brandName||'';document.getElementById('footerBrand').textContent=(site.brandName||'CyberSabil')+' IT Tools';['badge','heroTitleBefore','heroTitleHighlight','heroDescription','downloadTitle','downloadDescription','safetyNote','footerText'].forEach(id=>document.getElementById(id).textContent=site[id]||'');document.getElementById('primaryButton').textContent=site.primaryButtonText||'';document.getElementById('primaryButton').href=site.primaryButtonLink||'#';document.getElementById('secondaryButton').textContent=site.secondaryButtonText||'';document.getElementById('secondaryButton').href=site.secondaryButtonLink||'#';document.getElementById('downloadButton').textContent=site.downloadButtonText||'';document.getElementById('downloadButton').href=site.downloadButtonLink||'#';document.getElementById('releaseButton').textContent=site.releaseButtonText||'';document.getElementById('releaseButton').href=site.releaseButtonLink||'#'}
+    function renderTools(tools){document.getElementById('toolCards').innerHTML=tools.map(t=>`<div class="card"><div class="icon">${escapeHtml(t.icon)}</div><h3>${escapeHtml(t.title)}</h3><p>${escapeHtml(t.description)}</p></div>`).join('');document.getElementById('powerShellTools').innerHTML=tools.map(t=>`<div class="tool"><div><h3>${escapeHtml(t.title)}</h3><p>${escapeHtml(t.description)}</p>${t.command?`<div class="code">${escapeHtml(t.command)}</div>`:''}</div>${t.buttonLink?`<a class="btn secondary" href="${escapeHtml(t.buttonLink)}" target="_blank" rel="noopener">${escapeHtml(t.buttonText||'Open')}</a>`:''}</div>`).join('');const cmdTools=tools.filter(t=>t.command);document.getElementById('terminalCommands').innerHTML=cmdTools.map(t=>`<div><span class="prompt">PS&gt;</span> <span class="cmd">${escapeHtml(t.command)}</span></div><div>${escapeHtml(t.title)}</div><br>`).join('')+`<div style="color:#2ee6a6">CyberSabil tools ready.</div>`}
+    function renderProjects(projects){document.getElementById('projectCards').innerHTML=projects.map(p=>`<a class="card" href="${escapeHtml(p.link)}" target="_blank" rel="noopener"><div class="icon">${escapeHtml(p.icon)}</div><h3>${escapeHtml(p.title)}</h3><p>${escapeHtml(p.description)}</p></a>`).join('')}
+    async function init(){const [site,tools,projects]=await Promise.all([loadJson('data/site.json',{}),loadJson('data/tools.json',[]),loadJson('data/projects.json',[])]);renderSite(site);renderTools(tools);renderProjects(projects)}
+    init();
+  </script>
 </body>
 </html>
