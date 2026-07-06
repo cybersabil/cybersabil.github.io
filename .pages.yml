@@ -1,10 +1,106 @@
 media: media
 
 content:
-  - name: homepage
-    label: Homepage
+  - name: site
+    label: Site Settings
     type: file
-    path: index.html
-    format: code
-    options:
-      language: html
+    path: data/site.json
+    format: json
+    fields:
+      - name: brandName
+        label: Brand Name
+        type: string
+      - name: badge
+        label: Badge Text
+        type: string
+      - name: heroTitleBefore
+        label: Hero Title First Line
+        type: string
+      - name: heroTitleHighlight
+        label: Hero Highlight Text
+        type: string
+      - name: heroDescription
+        label: Hero Description
+        type: text
+      - name: primaryButtonText
+        label: Primary Button Text
+        type: string
+      - name: primaryButtonLink
+        label: Primary Button Link
+        type: string
+      - name: secondaryButtonText
+        label: Secondary Button Text
+        type: string
+      - name: secondaryButtonLink
+        label: Secondary Button Link
+        type: string
+      - name: downloadTitle
+        label: Download Section Title
+        type: string
+      - name: downloadDescription
+        label: Download Section Description
+        type: text
+      - name: downloadButtonText
+        label: Download Button Text
+        type: string
+      - name: downloadButtonLink
+        label: Download Button Link
+        type: string
+      - name: releaseButtonText
+        label: Release Button Text
+        type: string
+      - name: releaseButtonLink
+        label: Release Button Link
+        type: string
+      - name: safetyNote
+        label: Safety Note
+        type: text
+      - name: footerText
+        label: Footer Text
+        type: text
+
+  - name: tools
+    label: Tools
+    type: file
+    path: data/tools.json
+    format: json
+    list: true
+    fields:
+      - name: icon
+        label: Icon
+        type: string
+      - name: title
+        label: Tool Title
+        type: string
+      - name: description
+        label: Description
+        type: text
+      - name: command
+        label: PowerShell Command
+        type: string
+      - name: buttonText
+        label: Button Text
+        type: string
+      - name: buttonLink
+        label: Button Link
+        type: string
+
+  - name: projects
+    label: Project Links
+    type: file
+    path: data/projects.json
+    format: json
+    list: true
+    fields:
+      - name: icon
+        label: Icon
+        type: string
+      - name: title
+        label: Project Title
+        type: string
+      - name: description
+        label: Description
+        type: text
+      - name: link
+        label: Project Link
+        type: string
