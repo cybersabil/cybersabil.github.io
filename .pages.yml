@@ -1,0 +1,10 @@
+media: media
+
+content:
+  - name: homepage
+    label: Homepage
+    type: file
+    path: index.html
+    format: code
+    options:
+      language: html
