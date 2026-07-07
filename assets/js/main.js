@@ -150,6 +150,7 @@ async function init() {
     renderProjects(projects);
     renderSkills(skills);
     renderDocs(docs);
-    renderFAQ(faq)
+    renderFAQ(faq);
+    addCopyButtons()
 }
 init();
