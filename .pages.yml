@@ -10,6 +10,9 @@ content:
       - name: brandName
         label: Brand Name
         type: string
+      - name: logoText
+        label: Logo Text
+        type: string
       - name: badge
         label: Badge Text
         type: string
@@ -34,30 +37,55 @@ content:
       - name: secondaryButtonLink
         label: Secondary Button Link
         type: string
-      - name: downloadTitle
-        label: Download Section Title
+      - name: githubProfileLink
+        label: GitHub Profile Link
         type: string
-      - name: downloadDescription
-        label: Download Section Description
-        type: text
-      - name: downloadButtonText
-        label: Download Button Text
+      - name: aboutTitle
+        label: About Section Title
         type: string
-      - name: downloadButtonLink
-        label: Download Button Link
-        type: string
-      - name: releaseButtonText
-        label: Release Button Text
-        type: string
-      - name: releaseButtonLink
-        label: Release Button Link
-        type: string
-      - name: safetyNote
-        label: Safety Note
+      - name: aboutDescription
+        label: About Description
         type: text
       - name: footerText
         label: Footer Text
         type: text
+
+  - name: design
+    label: Design Settings
+    type: file
+    path: data/design.json
+    format: json
+    fields:
+      - name: themeMode
+        label: Theme Mode (dark, light, blue, green, purple)
+        type: string
+      - name: accentColor
+        label: Accent Color (cyan, green, blue, orange, purple)
+        type: string
+      - name: backgroundStyle
+        label: Background Style (gradient, plain, grid)
+        type: string
+      - name: cardStyle
+        label: Card Style (glass, solid, border)
+        type: string
+      - name: heroLayout
+        label: Hero Layout (split, center)
+        type: string
+      - name: showTerminalPreview
+        label: Show Terminal Preview? (yes/no)
+        type: string
+      - name: showSkillsSection
+        label: Show Skills Section? (yes/no)
+        type: string
+      - name: showDocumentationSection
+        label: Show Documentation Section? (yes/no)
+        type: string
+      - name: showFAQSection
+        label: Show FAQ Section? (yes/no)
+        type: string
+      - name: showProjectSection
+        label: Show Project Section? (yes/no)
+        type: string
 
   - name: tools
     label: Tools
@@ -72,9 +100,21 @@ content:
       - name: title
         label: Tool Title
         type: string
-      - name: description
-        label: Description
+      - name: status
+        label: Status
+        type: string
+      - name: problem
+        label: Problem Solved
         type: text
+      - name: solution
+        label: Solution
+        type: text
+      - name: description
+        label: Short Description
+        type: text
+      - name: technology
+        label: Technology Used
+        type: string
       - name: command
         label: PowerShell Command
         type: string
@@ -85,8 +125,37 @@ content:
         label: Button Link
         type: string
 
+  - name: downloads
+    label: Downloads
+    type: file
+    path: data/downloads.json
+    format: json
+    list: true
+    fields:
+      - name: title
+        label: Download Title
+        type: string
+      - name: version
+        label: Version
+        type: string
+      - name: type
+        label: Type
+        type: string
+      - name: description
+        label: Description
+        type: text
+      - name: downloadLink
+        label: Download Link
+        type: string
+      - name: releaseLink
+        label: Release Link
+        type: string
+      - name: checksum
+        label: SHA256 / Checksum
+        type: string
+
   - name: projects
-    label: Project Links
+    label: Projects
     type: file
     path: data/projects.json
     format: json
@@ -98,9 +167,72 @@ content:
       - name: title
         label: Project Title
         type: string
+      - name: status
+        label: Status
+        type: string
       - name: description
         label: Description
         type: text
-      - name: link
-        label: Project Link
+      - name: problemSolved
+        label: Problem Solved
+        type: text
+      - name: techUsed
+        label: Technology Used
         type: string
+      - name: repoLink
+        label: GitHub Repo Link
+        type: string
+      - name: liveLink
+        label: Live / Download Link
+        type: string
+
+  - name: skills
+    label: Skills
+    type: file
+    path: data/skills.json
+    format: json
+    list: true
+    fields:
+      - name: title
+        label: Skill Title
+        type: string
+      - name: description
+        label: Description
+        type: text
+
+  - name: docs
+    label: Documentation
+    type: file
+    path: data/docs.json
+    format: json
+    list: true
+    fields:
+      - name: title
+        label: Guide Title
+        type: string
+      - name: category
+        label: Category
+        type: string
+      - name: description
+        label: Description
+        type: text
+      - name: command
+        label: Command
+        type: string
+      - name: link
+        label: Link
+        type: string
+
+  - name: faq
+    label: FAQ
+    type: file
+    path: data/faq.json
+    format: json
+    list: true
+    fields:
+      - name: question
+        label: Question
+        type: string
+      - name: answer
+        label: Answer
+        type: text
