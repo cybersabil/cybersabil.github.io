@@ -1,0 +1,29 @@
+[
+  {
+    "title": "CyberSabil IT Tools",
+    "version": "v1.0.0",
+    "type": "Windows EXE",
+    "description": "Standalone Windows IT support and troubleshooting dashboard.",
+    "downloadLink": "https://github.com/cybersabil/cybersabil-it-tools/releases/latest/download/CyberSabil.exe",
+    "releaseLink": "https://github.com/cybersabil/cybersabil-it-tools/releases/latest",
+    "checksum": "Add SHA256 checksum here after release"
+  },
+  {
+    "title": "TrafficMonitor Installer",
+    "version": "Live Script",
+    "type": "PowerShell",
+    "description": "One-command TrafficMonitor setup launcher.",
+    "downloadLink": "https://cybersabil.github.io/tm/run.ps1",
+    "releaseLink": "https://github.com/cybersabil/tm",
+    "checksum": "Not required for live script"
+  },
+  {
+    "title": "TrafficMonitor Remover",
+    "version": "Live Script",
+    "type": "PowerShell",
+    "description": "One-command TrafficMonitor deep cleanup launcher.",
+    "downloadLink": "https://cybersabil.github.io/tmr/run.ps1",
+    "releaseLink": "https://github.com/cybersabil/tmr",
+    "checksum": "Not required for live script"
+  }
+]

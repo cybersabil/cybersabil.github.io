@@ -1,0 +1,30 @@
+[
+  {
+    "title": "How to install TrafficMonitor",
+    "category": "Setup",
+    "description": "Run PowerShell as Administrator and paste the install command.",
+    "command": "irm https://cybersabil.github.io/tm/run.ps1 | iex",
+    "link": "https://github.com/cybersabil/tm"
+  },
+  {
+    "title": "How to remove TrafficMonitor",
+    "category": "Cleanup",
+    "description": "Run PowerShell as Administrator and paste the remover command. Type Y when confirmation appears.",
+    "command": "irm https://cybersabil.github.io/tmr/run.ps1 | iex",
+    "link": "https://github.com/cybersabil/tmr"
+  },
+  {
+    "title": "How to run PowerShell as Administrator",
+    "category": "Windows",
+    "description": "Search PowerShell in Start Menu, right-click it, and choose Run as administrator.",
+    "command": "",
+    "link": "#"
+  },
+  {
+    "title": "SmartScreen warning explanation",
+    "category": "Security",
+    "description": "Unsigned or new EXE files may show a Windows SmartScreen warning. Download only from official CyberSabil GitHub releases.",
+    "command": "",
+    "link": "#downloads"
+  }
+]
