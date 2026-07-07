@@ -1,4 +1,4 @@
-        :root {
+:root {
             --bg: #07111f;
             --bg2: #0d1b2f;
             --text: #eaf2ff;
@@ -309,13 +309,13 @@
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
             gap: 18px;
         }
 
         .grid-2 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
             gap: 18px;
         }
 
@@ -328,8 +328,8 @@
 
         .grid-2 {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 18px
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+            gap: 18px;
         }
 
         .card,
@@ -419,7 +419,9 @@
             border: 1px solid rgba(255, 255, 255, .1);
             font-family: Consolas, 'Courier New', monospace;
             overflow: auto;
-            white-space: nowrap;
+            white-space: pre-wrap;
+            overflow-wrap: anywhere;
+            word-break: break-word;
             color: #eafff7
         }
 
@@ -469,5 +471,183 @@
 
             .section-head {
                 display: block
+            }
+        }
+
+        /* ===== CyberSabil final split-file responsive patch ===== */
+        html,
+        body {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        * {
+            min-width: 0;
+        }
+
+        img,
+        video,
+        iframe,
+        canvas,
+        svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            width: min(1160px, calc(100% - 32px));
+            max-width: 100%;
+        }
+
+        .grid {
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+        }
+
+        .card,
+        .tool,
+        .download,
+        .faq-item,
+        .terminal {
+            max-width: 100%;
+            min-width: 0;
+        }
+
+        .code,
+        .cmd {
+            white-space: pre-wrap;
+            overflow-wrap: anywhere;
+            word-break: break-word;
+            max-width: 100%;
+        }
+
+        .term-body {
+            max-width: 100%;
+            overflow-wrap: anywhere;
+        }
+
+        @media (max-width: 900px) {
+            .container {
+                width: calc(100% - 24px);
+            }
+
+            .nav {
+                min-height: auto;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 14px 0;
+            }
+
+            .brand {
+                width: 100%;
+            }
+
+            .links {
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 8px;
+            }
+
+            .links a {
+                text-align: center;
+                padding: 9px 10px;
+                border-radius: 12px;
+                background: rgba(255,255,255,.07);
+                border: 1px solid var(--border);
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 42px 0 30px;
+                gap: 24px;
+            }
+
+            h1 {
+                font-size: clamp(34px, 12vw, 52px);
+                letter-spacing: -1px;
+            }
+
+            .lead {
+                font-size: 16px;
+            }
+
+            .actions {
+                width: 100%;
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            section {
+                padding: 38px 0;
+            }
+
+            .tool {
+                grid-template-columns: 1fr;
+            }
+
+            .terminal {
+                border-radius: 18px;
+            }
+
+            .term-body {
+                padding: 16px;
+                font-size: 12px;
+                min-height: auto;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .container {
+                width: calc(100% - 18px);
+            }
+
+            .links {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .card,
+            .tool,
+            .download,
+            .faq-item {
+                padding: 16px;
+                border-radius: 16px;
+            }
+
+            .icon {
+                width: 42px;
+                height: 42px;
+                border-radius: 13px;
+            }
+
+            h1 {
+                font-size: clamp(32px, 13vw, 44px);
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+
+            .code {
+                font-size: 12px;
+                padding: 11px 12px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .links {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 32px;
             }
         }
