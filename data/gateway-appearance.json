@@ -1,6 +1,6 @@
 {
   "advancedControlsEnabled": "yes",
-  "visualPreset": "v2.8.3-exact",
+  "visualPreset": "custom-advanced",
   "cardOrder": "portfolio-first",
   "desktopCardLayout": "row",
   "tabletCardLayout": "row",
