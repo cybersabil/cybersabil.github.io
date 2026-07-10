@@ -1,0 +1,3563 @@
+/* CyberSabil Single CSS File v2.9.1
+   Purpose: Keeps all design, responsive, gateway, portfolio, CMS, SEO and animation styles in one file.
+   Note: Split CSS modules were merged back into this file to avoid @import/load-order issues on GitHub Pages. */
+
+
+/* ==============================
+   Merged from: assets/css/modules/01-base-website.css
+   ============================== */
+
+/* CyberSabil 01-base-website.css
+   Purpose: Split CSS module loaded by assets/css/style.css in fixed order. Do not load this file directly from index.html. */
+
+:root {
+            --bg: #07111f;
+            --bg2: #0d1b2f;
+            --text: #eaf2ff;
+            --muted: #aebed4;
+            --accent: #35d7ff;
+            --accent2: #2ee6a6;
+            --border: rgba(255, 255, 255, .14);
+            --card: rgba(255, 255, 255, .075);
+            --card-solid: #10223a;
+            --shadow: rgba(0, 0, 0, .35)
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            margin: 0;
+            font-family: Segoe UI, Arial, sans-serif;
+            color: var(--text);
+            background: linear-gradient(135deg, var(--bg), var(--bg2));
+            min-height: 100vh
+        }
+
+        body.bg-gradient {
+            background: radial-gradient(circle at top left, rgba(53, 167, 255, .25), transparent 32%), radial-gradient(circle at top right, rgba(46, 230, 166, .2), transparent 34%), linear-gradient(135deg, var(--bg), var(--bg2))
+        }
+
+        body.bg-grid {
+            background-color: var(--bg);
+            background-image: linear-gradient(rgba(255, 255, 255, .05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .05) 1px, transparent 1px);
+            background-size: 34px 34px
+        }
+
+        body.theme-light {
+            --bg: #f5f8ff;
+            --bg2: #fff;
+            --text: #08111f;
+            --muted: #526174;
+            --border: rgba(4, 16, 35, .14);
+            --card: rgba(255, 255, 255, .9);
+            --card-solid: #fff;
+            --shadow: rgba(20, 42, 75, .12)
+        }
+
+        body.theme-blue {
+            --bg: #061426;
+            --bg2: #0b2b56;
+            --accent: #35a7ff;
+            --accent2: #7cc7ff
+        }
+
+        body.theme-green {
+            --bg: #061b15;
+            --bg2: #0b3024;
+            --accent: #2ee6a6;
+            --accent2: #6dffcf
+        }
+
+        body.theme-purple {
+            --bg: #140a24;
+            --bg2: #271148;
+            --accent: #b879ff;
+            --accent2: #35d7ff
+        }
+
+        body.accent-green {
+            --accent: #2ee6a6;
+            --accent2: #6dffcf
+        }
+
+        body.accent-blue {
+            --accent: #35a7ff;
+            --accent2: #35d7ff
+        }
+
+        body.accent-orange {
+            --accent: #ffb347;
+            --accent2: #ff7a59
+        }
+
+        body.accent-purple {
+            --accent: #b879ff;
+            --accent2: #35d7ff
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        .container {
+            width: min(1160px, calc(100% - 36px));
+            margin: auto
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(7, 17, 31, .84);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border);
+            z-index: 10
+        }
+
+        body.theme-light header {
+            background: rgba(255, 255, 255, .86)
+        }
+
+        .nav {
+            min-height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 800;
+            font-size: 20px
+        }
+
+        .logo {
+            width: 44px;
+            height: 44px;
+            border-radius: 14px;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            color: #06111f;
+            font-weight: 900
+        }
+
+        .links {
+            display: flex;
+            gap: 18px;
+            color: var(--muted);
+            font-size: 14px;
+            flex-wrap: wrap
+        }
+
+        .links a:hover {
+            color: var(--text)
+        }
+
+        .hero {
+            padding: 88px 0 52px;
+            display: grid;
+            grid-template-columns: 1.08fr .92fr;
+            gap: 34px;
+            align-items: center
+        }
+
+        body.hero-center .hero {
+            grid-template-columns: 1fr;
+            text-align: center
+        }
+
+        .hero-center .hero .lead,
+        .hero-center .actions {
+            margin-left: auto;
+            margin-right: auto;
+            justify-content: center
+        }
+
+        .badge {
+            display: inline-flex;
+            padding: 8px 12px;
+            border-radius: 999px;
+            background: rgba(46, 230, 166, .12);
+            border: 1px solid rgba(46, 230, 166, .3);
+            margin-bottom: 18px;
+            color: #d9fff2
+        }
+
+        h1 {
+            font-size: clamp(40px, 6vw, 76px);
+            line-height: 1;
+            letter-spacing: -2px;
+            margin: 0
+        }
+
+        h2 {
+            font-size: clamp(28px, 4vw, 42px);
+            margin: 0 0 12px;
+            letter-spacing: -1px
+        }
+
+        .grad {
+            background: linear-gradient(90deg, var(--accent), var(--accent2));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent
+        }
+
+        .lead,
+        .muted {
+            color: var(--muted);
+            line-height: 1.7
+        }
+
+        .lead {
+            font-size: 18px;
+            margin: 24px 0 28px;
+            max-width: 720px
+        }
+
+        .actions {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 14px;
+            padding: 14px 18px;
+            font-weight: 700;
+            border: 1px solid transparent
+        }
+
+        .primary {
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            color: #06111f
+        }
+
+        .secondary {
+            background: rgba(255, 255, 255, .07);
+            border-color: var(--border)
+        }
+
+        body.theme-light .secondary {
+            background: #fff
+        }
+
+        .terminal {
+            background: rgba(3, 9, 17, .9);
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            overflow: hidden;
+            box-shadow: 0 25px 70px var(--shadow)
+        }
+
+        body.theme-light .terminal {
+            background: #0b1220;
+            color: #eaf2ff
+        }
+
+        .top {
+            display: flex;
+            gap: 8px;
+            padding: 14px;
+            background: rgba(255, 255, 255, .06)
+        }
+
+        .dot {
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            background: #ff5c7a
+        }
+
+        .dot:nth-child(2) {
+            background: #ffc947
+        }
+
+        .dot:nth-child(3) {
+            background: var(--accent)
+        }
+
+        .term-body {
+            padding: 22px;
+            font-family: Consolas, 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.9;
+            min-height: 260px
+        }
+
+        .prompt {
+            color: var(--accent)
+        }
+
+        .cmd {
+            color: white;
+            word-break: break-all
+        }
+
+        section {
+            padding: 54px 0
+        }
+
+        .section-head {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 20px
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+            gap: 18px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+            gap: 18px;
+        }
+
+        .card,
+        .tool,
+        .download,
+        .faq-item {
+            min-width: 0;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+            gap: 18px;
+        }
+
+        .card,
+        .tool,
+        .download,
+        .faq-item {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            padding: 22px;
+            box-shadow: 0 14px 36px rgba(0, 0, 0, .12)
+        }
+
+        body.card-solid .card,
+        body.card-solid .tool,
+        body.card-solid .download,
+        body.card-solid .faq-item {
+            background: var(--card-solid)
+        }
+
+        body.card-border .card,
+        body.card-border .tool,
+        body.card-border .download,
+        body.card-border .faq-item {
+            background: transparent;
+            border: 2px solid var(--border)
+        }
+
+        .card h3,
+        .tool h3,
+        .download h3 {
+            margin: 0 0 10px
+        }
+
+        .card p,
+        .tool p,
+        .download p,
+        .faq-item p {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.65
+        }
+
+        .icon {
+            width: 46px;
+            height: 46px;
+            border-radius: 14px;
+            display: grid;
+            place-items: center;
+            margin-bottom: 16px;
+            background: rgba(53, 167, 255, .14);
+            font-size: 22px
+        }
+
+        .status {
+            display: inline-flex;
+            margin-bottom: 12px;
+            padding: 5px 9px;
+            border-radius: 999px;
+            background: rgba(46, 230, 166, .13);
+            color: #d9fff2;
+            font-size: 12px;
+            border: 1px solid rgba(46, 230, 166, .25)
+        }
+
+        body.theme-light .status {
+            color: #07553e
+        }
+
+        .tools {
+            display: grid;
+            gap: 16px
+        }
+
+        .tool {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 18px;
+            align-items: center
+        }
+
+        .code {
+            margin-top: 12px;
+            padding: 13px 14px;
+            border-radius: 14px;
+            background: rgba(0, 0, 0, .34);
+            border: 1px solid rgba(255, 255, 255, .1);
+            font-family: Consolas, 'Courier New', monospace;
+            overflow: auto;
+            white-space: pre-wrap;
+            overflow-wrap: anywhere;
+            word-break: break-word;
+            color: #eafff7
+        }
+
+        .small {
+            font-size: 13px;
+            color: var(--muted)
+        }
+
+        .warning {
+            border-left: 4px solid #ffc947;
+            background: rgba(255, 201, 71, .08);
+            padding: 18px;
+            border-radius: 16px;
+            color: #ffe9a4;
+            line-height: 1.7
+        }
+
+        body.theme-light .warning {
+            color: #6f4e00
+        }
+
+        .hide {
+            display: none !important
+        }
+
+        footer {
+            padding: 36px 0 54px;
+            color: var(--muted);
+            border-top: 1px solid var(--border);
+            margin-top: 28px
+        }
+
+        @media(max-width:900px) {
+
+            .hero,
+            .grid,
+            .grid-2,
+            .tool {
+                grid-template-columns: 1fr
+            }
+
+            .nav {
+                align-items: flex-start;
+                flex-direction: column;
+                padding: 16px 0
+            }
+
+            .section-head {
+                display: block
+            }
+        }
+
+        /* ===== CyberSabil final split-file responsive patch ===== */
+        html,
+        body {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        * {
+            min-width: 0;
+        }
+
+        img,
+        video,
+        iframe,
+        canvas,
+        svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            width: min(1160px, calc(100% - 32px));
+            max-width: 100%;
+        }
+
+        .grid {
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+        }
+
+        .card,
+        .tool,
+        .download,
+        .faq-item,
+        .terminal {
+            max-width: 100%;
+            min-width: 0;
+        }
+
+        .code,
+        .cmd {
+            white-space: pre-wrap;
+            overflow-wrap: anywhere;
+            word-break: break-word;
+            max-width: 100%;
+        }
+
+        .term-body {
+            max-width: 100%;
+            overflow-wrap: anywhere;
+        }
+
+        @media (max-width: 900px) {
+            .container {
+                width: calc(100% - 24px);
+            }
+
+            .nav {
+                min-height: auto;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 14px 0;
+            }
+
+            .brand {
+                width: 100%;
+            }
+
+            .links {
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 8px;
+            }
+
+            .links a {
+                text-align: center;
+                padding: 9px 10px;
+                border-radius: 12px;
+                background: rgba(255,255,255,.07);
+                border: 1px solid var(--border);
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 42px 0 30px;
+                gap: 24px;
+            }
+
+            h1 {
+                font-size: clamp(34px, 12vw, 52px);
+                letter-spacing: -1px;
+            }
+
+            .lead {
+                font-size: 16px;
+            }
+
+            .actions {
+                width: 100%;
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            section {
+                padding: 38px 0;
+            }
+
+            .tool {
+                grid-template-columns: 1fr;
+            }
+
+            .terminal {
+                border-radius: 18px;
+            }
+
+            .term-body {
+                padding: 16px;
+                font-size: 12px;
+                min-height: auto;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .container {
+                width: calc(100% - 18px);
+            }
+
+            .links {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .card,
+            .tool,
+            .download,
+            .faq-item {
+                padding: 16px;
+                border-radius: 16px;
+            }
+
+            .icon {
+                width: 42px;
+                height: 42px;
+                border-radius: 13px;
+            }
+
+            h1 {
+                font-size: clamp(32px, 13vw, 44px);
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+
+            .code {
+                font-size: 12px;
+                padding: 11px 12px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .links {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+        }
+
+
+/* ==============================
+   Merged from: assets/css/modules/02-copy-buttons.css
+   ============================== */
+
+/* CyberSabil 02-copy-buttons.css
+   Purpose: Split CSS module loaded by assets/css/style.css in fixed order. Do not load this file directly from index.html. */
+
+/* ===== Compact copy button for command/code blocks ===== */
+
+.copy-wrap {
+    position: relative;
+    margin-top: 10px;
+}
+
+.copy-wrap .code {
+    margin-top: 0;
+    padding-right: 42px;
+}
+
+.copy-btn {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    width: 26px;
+    height: 26px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 8px;
+    background: rgba(255,255,255,.06);
+    color: var(--text);
+    cursor: pointer;
+    backdrop-filter: blur(6px);
+    transition: transform .16s ease, background .16s ease, border-color .16s ease;
+}
+
+.copy-btn:hover {
+    transform: translateY(-1px);
+    background: rgba(255,255,255,.11);
+    border-color: rgba(255,255,255,.22);
+}
+
+.copy-btn svg {
+    width: 13px;
+    height: 13px;
+    pointer-events: none;
+}
+
+.copy-btn svg path {
+    stroke-width: 1.45;
+}
+
+.copy-btn.copied {
+    background: rgba(46,230,166,.18);
+    border-color: rgba(46,230,166,.35);
+    color: var(--accent2);
+}
+
+.copy-btn::after {
+    content: "Copy";
+    position: absolute;
+    top: -28px;
+    right: 0;
+    padding: 4px 7px;
+    border-radius: 7px;
+    background: rgba(0,0,0,.72);
+    color: #fff;
+    font-size: 11px;
+    font-family: Segoe UI, Arial, sans-serif;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(4px);
+    transition: opacity .16s ease, transform .16s ease;
+    white-space: nowrap;
+}
+
+.copy-btn:hover::after {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.copy-btn.copied::after {
+    content: "Copied";
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 520px) {
+    .copy-wrap .code {
+        padding-right: 38px;
+    }
+
+    .copy-btn {
+        top: 7px;
+        right: 7px;
+        width: 24px;
+        height: 24px;
+        border-radius: 7px;
+    }
+
+    .copy-btn svg {
+        width: 12px;
+        height: 12px;
+    }
+
+    .copy-btn::after {
+        top: -26px;
+        font-size: 10px;
+        padding: 4px 6px;
+    }
+}
+
+
+/* ==============================
+   Merged from: assets/css/modules/03-gateway-portfolio.css
+   ============================== */
+
+/* CyberSabil 03-gateway-portfolio.css
+   Purpose: Split CSS module loaded by assets/css/style.css in fixed order. Do not load this file directly from index.html. */
+
+/* ===== CyberSabil v2.1 Professional Gateway and Portfolio Layer =====
+   Purpose: Adds the CMS-controlled gateway, mode switch and portfolio visual system without changing the original tools website classes.
+   Prefix rule: All new selectors use cs-gateway-*, cs-mode-* or cs-portfolio-* to avoid conflicts with the existing website. */
+:root {
+    --cs-gateway-blur: 9px;
+    --cs-gateway-darkness: .62;
+    --cs-gateway-panel-width: 1080px;
+    --cs-gateway-gold: #f7d88a;
+    --cs-gateway-gold-deep: #b7791f;
+    --cs-gateway-purple: #8b5cf6;
+    --cs-gateway-ink: #11081d;
+}
+
+/* Gateway background layer
+   Purpose: Keeps the existing tools website visible, blurred and slightly dark while the visitor chooses a mode. */
+.cs-mode-background-blur {
+    filter: blur(var(--cs-gateway-blur)) brightness(calc(1 - var(--cs-gateway-darkness) * .38));
+    transform: scale(1.012);
+    pointer-events: none;
+    user-select: none;
+}
+
+.cs-gateway-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    display: grid;
+    place-items: center;
+    padding: clamp(16px, 3vw, 42px);
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.cs-gateway-overlay[hidden] {
+    display: none;
+}
+
+.cs-gateway-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(5, 7, 18, var(--cs-gateway-darkness));
+    backdrop-filter: blur(calc(var(--cs-gateway-blur) * .7));
+    z-index: -3;
+}
+
+.cs-gateway-ambient {
+    position: absolute;
+    width: min(44vw, 520px);
+    aspect-ratio: 1;
+    border-radius: 999px;
+    filter: blur(28px);
+    opacity: .55;
+    z-index: -2;
+    pointer-events: none;
+}
+
+.cs-gateway-ambient-one {
+    left: -8%;
+    top: -12%;
+    background: radial-gradient(circle, rgba(139, 92, 246, .78), transparent 66%);
+}
+
+.cs-gateway-ambient-two {
+    right: -10%;
+    bottom: -16%;
+    background: radial-gradient(circle, rgba(247, 216, 138, .58), transparent 68%);
+}
+
+/* Gateway panel
+   Purpose: Provides a less crowded desktop layout with a brand column and a dedicated choice column. */
+.cs-gateway-panel {
+    width: min(var(--cs-gateway-panel-width), 100%);
+    display: grid;
+    grid-template-columns: minmax(0, .92fr) minmax(360px, 1.08fr);
+    gap: clamp(18px, 3vw, 34px);
+    align-items: stretch;
+    padding: clamp(20px, 3.2vw, 38px);
+    border: 1px solid rgba(255, 255, 255, .18);
+    border-radius: clamp(26px, 3vw, 38px);
+    background: linear-gradient(145deg, rgba(255, 255, 255, .16), rgba(255, 255, 255, .055));
+    box-shadow: 0 34px 100px rgba(0, 0, 0, .42), inset 0 1px 0 rgba(255, 255, 255, .2);
+    backdrop-filter: blur(28px) saturate(145%);
+    animation: csGatewaySoftScale .42s ease both;
+}
+
+.cs-gateway-hide {
+    animation: csGatewayFadeOut .28s ease forwards;
+}
+
+@keyframes csGatewaySoftScale {
+    from { opacity: 0; transform: translateY(12px) scale(.985); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes csGatewayFadeOut {
+    to { opacity: 0; transform: scale(.985); }
+}
+
+.cs-gateway-brand-column,
+.cs-gateway-choice-column {
+    min-width: 0;
+}
+
+.cs-gateway-brand-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(8px, 2vw, 18px);
+}
+
+.cs-gateway-logo-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.cs-gateway-logo {
+    width: 46px;
+    height: 46px;
+    display: grid;
+    place-items: center;
+    border-radius: 16px;
+    color: #1a1005;
+    background: linear-gradient(135deg, #fff2b5, var(--cs-gateway-gold-deep));
+    box-shadow: 0 14px 38px rgba(247, 216, 138, .24);
+    font-weight: 950;
+}
+
+.cs-gateway-eyebrow,
+.cs-gateway-choice-label,
+.cs-gateway-choice-kicker {
+    color: rgba(247, 216, 138, .86);
+    text-transform: uppercase;
+    letter-spacing: .14em;
+    font-size: 11px;
+    font-weight: 900;
+}
+
+.cs-gateway-title {
+    margin: 0;
+    max-width: 620px;
+    color: #fff8e8;
+    font-size: clamp(38px, 6vw, 70px);
+    line-height: .94;
+    letter-spacing: -2.8px;
+}
+
+.cs-gateway-subtitle {
+    max-width: 560px;
+    margin: 20px 0 0;
+    color: rgba(255, 255, 255, .76);
+    font-size: clamp(15px, 1.8vw, 18px);
+    line-height: 1.75;
+}
+
+.cs-gateway-chip-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-top: 24px;
+}
+
+.cs-gateway-chip {
+    max-width: 100%;
+    padding: 8px 11px;
+    border: 1px solid rgba(247, 216, 138, .22);
+    border-radius: 999px;
+    color: #f8df98;
+    background: rgba(247, 216, 138, .08);
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.cs-gateway-note {
+    margin: 24px 0 0;
+    color: rgba(255, 255, 255, .52);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.cs-gateway-choice-column {
+    display: grid;
+    align-content: center;
+    gap: 14px;
+    padding: clamp(12px, 2vw, 18px);
+    border: 1px solid rgba(255, 255, 255, .1);
+    border-radius: 28px;
+    background: rgba(7, 8, 18, .34);
+}
+
+.cs-gateway-choice-label {
+    margin: 0 0 2px;
+}
+
+.cs-gateway-choice {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 16px;
+    align-items: center;
+    min-height: 138px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, .12);
+    border-radius: 24px;
+    color: #fff;
+    background: linear-gradient(135deg, rgba(255, 255, 255, .13), rgba(255, 255, 255, .045));
+    box-shadow: 0 16px 45px rgba(0, 0, 0, .22), inset 0 1px 0 rgba(255, 255, 255, .12);
+    cursor: pointer;
+    text-align: left;
+    transition: transform .2s ease, border-color .2s ease, background .2s ease, box-shadow .2s ease;
+}
+
+.cs-gateway-choice:hover,
+.cs-gateway-choice:focus-visible {
+    transform: translateY(-3px);
+    border-color: rgba(247, 216, 138, .5);
+    background: linear-gradient(135deg, rgba(247, 216, 138, .16), rgba(139, 92, 246, .12));
+    box-shadow: 0 24px 65px rgba(0, 0, 0, .32), 0 0 0 3px rgba(247, 216, 138, .08);
+    outline: none;
+}
+
+.cs-gateway-choice-icon {
+    width: 52px;
+    height: 52px;
+    display: grid;
+    place-items: center;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, .1);
+    font-size: 24px;
+}
+
+.cs-gateway-choice-copy {
+    display: grid;
+    gap: 6px;
+    min-width: 0;
+}
+
+.cs-gateway-choice-title {
+    color: #fff8e8;
+    font-size: clamp(22px, 2vw, 28px);
+    line-height: 1.1;
+    font-weight: 950;
+    letter-spacing: -.8px;
+}
+
+.cs-gateway-choice-text {
+    color: rgba(255, 255, 255, .66);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.cs-gateway-choice-action {
+    white-space: nowrap;
+    padding: 10px 12px;
+    border-radius: 999px;
+    color: #1a1005;
+    background: linear-gradient(135deg, #fff2b5, #c98b2d);
+    font-size: 12px;
+    font-weight: 950;
+}
+
+.cs-gateway-choice-website .cs-gateway-choice-action {
+    color: #07111f;
+    background: linear-gradient(135deg, #95f1ff, #35d7ff);
+}
+
+.cs-gateway-style-solid .cs-gateway-panel {
+    background: #141123;
+    backdrop-filter: none;
+}
+
+.cs-gateway-style-minimal .cs-gateway-panel {
+    box-shadow: 0 24px 70px rgba(0, 0, 0, .3);
+    background: rgba(12, 12, 22, .92);
+}
+
+.cs-gateway-animation-none .cs-gateway-panel,
+.cs-gateway-animation-none.cs-gateway-hide {
+    animation: none;
+}
+
+/* Mode switch
+   Purpose: Gives a persistent switch between Website and Portfolio after the gateway is closed. */
+.cs-mode-switch {
+    position: fixed;
+    z-index: 9997;
+    display: inline-flex;
+    gap: 6px;
+    max-width: calc(100vw - 20px);
+    padding: 7px;
+    border: 1px solid rgba(255, 255, 255, .14);
+    border-radius: 999px;
+    background: rgba(10, 14, 29, .72);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, .28);
+    backdrop-filter: blur(16px);
+}
+
+.cs-mode-switch[hidden] {
+    display: none;
+}
+
+.cs-mode-switch-top-right {
+    top: 18px;
+    right: 18px;
+}
+
+.cs-mode-switch-bottom-right {
+    right: 18px;
+    bottom: 18px;
+}
+
+.cs-mode-switch-button {
+    border: 0;
+    border-radius: 999px;
+    padding: 9px 14px;
+    color: rgba(255, 255, 255, .74);
+    background: transparent;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.cs-mode-switch-button.cs-mode-active {
+    color: #211606;
+    background: linear-gradient(135deg, #f8df98, #c58b2c);
+}
+
+/* Portfolio shell
+   Purpose: Provides a separate purple/gold professional layout while staying on the same index.html file. */
+.cs-portfolio-app {
+    min-height: 100vh;
+    color: #fff7e8;
+    background: radial-gradient(circle at 20% 0%, rgba(139, 92, 246, .26), transparent 34%), radial-gradient(circle at 85% 12%, rgba(245, 197, 92, .2), transparent 28%), linear-gradient(135deg, #120821, #24113d 48%, #0b0712);
+    overflow-x: clip;
+}
+
+.cs-portfolio-app[hidden] {
+    display: none;
+}
+
+.cs-portfolio-container {
+    width: min(1160px, calc(100% - 36px));
+    margin: 0 auto;
+}
+
+.cs-portfolio-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    border-bottom: 1px solid rgba(245, 197, 92, .16);
+    background: rgba(18, 8, 33, .76);
+    backdrop-filter: blur(18px);
+}
+
+.cs-portfolio-nav {
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.cs-portfolio-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: #fff7e8;
+    font-weight: 900;
+    font-size: 18px;
+}
+
+.cs-portfolio-logo,
+.cs-portfolio-avatar {
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, #f8df98, #b9832b 48%, #8b5cf6);
+    color: #1b1027;
+    font-weight: 950;
+    box-shadow: 0 10px 30px rgba(245, 197, 92, .18);
+}
+
+.cs-portfolio-logo {
+    width: 44px;
+    height: 44px;
+    border-radius: 16px;
+}
+
+.cs-portfolio-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.cs-portfolio-links a {
+    padding: 9px 12px;
+    border-radius: 999px;
+    color: rgba(255, 247, 232, .72);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.cs-portfolio-links a:hover {
+    color: #f8df98;
+    background: rgba(255, 255, 255, .06);
+}
+
+.cs-portfolio-main {
+    overflow-x: clip;
+}
+
+.cs-portfolio-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.12fr) minmax(280px, .88fr);
+    gap: 36px;
+    align-items: center;
+    padding: clamp(58px, 8vw, 118px) 0 64px;
+}
+
+.cs-portfolio-hero-copy {
+    min-width: 0;
+}
+
+.cs-portfolio-title {
+    margin: 18px 0;
+    max-width: 820px;
+    font-size: clamp(44px, 7vw, 82px);
+    line-height: .95;
+    letter-spacing: -3px;
+    color: #fff8e8;
+}
+
+.cs-portfolio-title span:last-child {
+    background: linear-gradient(90deg, #f8df98, #b98fff, #ffffff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.cs-portfolio-lead {
+    max-width: 720px;
+    color: rgba(255, 247, 232, .75);
+    font-size: clamp(17px, 2vw, 22px);
+    line-height: 1.65;
+}
+
+.cs-portfolio-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 26px;
+}
+
+.cs-portfolio-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    padding: 12px 18px;
+    border-radius: 999px;
+    font-weight: 900;
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+.cs-portfolio-button:hover {
+    transform: translateY(-2px);
+}
+
+.cs-portfolio-button-primary {
+    color: #1c1206;
+    background: linear-gradient(135deg, #f8df98, #c58b2c);
+    box-shadow: 0 16px 36px rgba(197, 139, 44, .22);
+}
+
+.cs-portfolio-button-secondary {
+    color: #fff7e8;
+    border: 1px solid rgba(245, 197, 92, .3);
+    background: rgba(255, 255, 255, .07);
+}
+
+.cs-portfolio-profile-card,
+.cs-portfolio-card,
+.cs-portfolio-project-card,
+.cs-portfolio-contact {
+    border: 1px solid rgba(245, 197, 92, .18);
+    background: linear-gradient(145deg, rgba(255, 255, 255, .12), rgba(255, 255, 255, .045));
+    box-shadow: 0 24px 70px rgba(0, 0, 0, .24), inset 0 1px 0 rgba(255, 255, 255, .13);
+    backdrop-filter: blur(18px);
+}
+
+.cs-portfolio-profile-card {
+    position: relative;
+    padding: 34px;
+    border-radius: 34px;
+    overflow: hidden;
+}
+
+.cs-portfolio-profile-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 90% 0%, rgba(245, 197, 92, .22), transparent 36%);
+    pointer-events: none;
+}
+
+.cs-portfolio-profile-card > * {
+    position: relative;
+}
+
+.cs-portfolio-avatar {
+    width: 104px;
+    height: 104px;
+    margin-bottom: 22px;
+    border-radius: 30px;
+    font-size: 34px;
+}
+
+.cs-portfolio-profile-card h2,
+.cs-portfolio-section-head h2,
+.cs-portfolio-contact h2 {
+    margin: 0 0 12px;
+    color: #fff8e8;
+    font-size: clamp(28px, 4vw, 44px);
+    letter-spacing: -1.2px;
+}
+
+.cs-portfolio-profile-card p,
+.cs-portfolio-section-head p,
+.cs-portfolio-contact p,
+.cs-portfolio-card p,
+.cs-portfolio-project-card p {
+    color: rgba(255, 247, 232, .72);
+    line-height: 1.65;
+}
+
+.cs-portfolio-meta,
+.cs-portfolio-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 18px;
+}
+
+.cs-portfolio-meta span {
+    padding: 8px 10px;
+    border: 1px solid rgba(245, 197, 92, .18);
+    border-radius: 999px;
+    color: #f8df98;
+    background: rgba(245, 197, 92, .08);
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.cs-portfolio-stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.cs-portfolio-stats div {
+    padding: 14px;
+    border: 1px solid rgba(245, 197, 92, .14);
+    border-radius: 18px;
+    background: rgba(0, 0, 0, .16);
+}
+
+.cs-portfolio-stats strong,
+.cs-portfolio-stats span {
+    display: block;
+}
+
+.cs-portfolio-stats strong {
+    color: #f8df98;
+    font-size: 22px;
+}
+
+.cs-portfolio-stats span {
+    color: rgba(255, 247, 232, .64);
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.cs-portfolio-section {
+    padding: 52px 0;
+}
+
+.cs-portfolio-section-head {
+    max-width: 760px;
+    margin-bottom: 24px;
+}
+
+.cs-portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.cs-portfolio-card,
+.cs-portfolio-project-card {
+    padding: 24px;
+    border-radius: 24px;
+}
+
+.cs-portfolio-card h3,
+.cs-portfolio-project-card h3 {
+    margin: 10px 0 8px;
+    color: #fff8e8;
+    font-size: 21px;
+}
+
+.cs-portfolio-card-label,
+.cs-portfolio-project-status {
+    display: inline-flex;
+    width: fit-content;
+    padding: 6px 9px;
+    border: 1px solid rgba(245, 197, 92, .2);
+    border-radius: 999px;
+    color: #f8df98;
+    background: rgba(245, 197, 92, .09);
+    font-size: 12px;
+    font-weight: 900;
+}
+
+.cs-portfolio-projects {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.cs-portfolio-project-tech {
+    margin-top: 14px;
+    color: rgba(255, 247, 232, .58);
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+.cs-portfolio-project-link {
+    display: inline-flex;
+    margin-top: 14px;
+    color: #f8df98;
+    font-weight: 900;
+}
+
+.cs-portfolio-contact {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, .85fr);
+    gap: 28px;
+    align-items: center;
+    margin-top: 42px;
+    margin-bottom: 60px;
+    padding: clamp(24px, 4vw, 42px);
+    border-radius: 32px;
+}
+
+.cs-portfolio-contact-card {
+    display: grid;
+    gap: 10px;
+    min-width: 0;
+}
+
+.cs-portfolio-contact-card a:not(.cs-portfolio-button) {
+    color: #f8df98;
+    overflow-wrap: anywhere;
+}
+
+.cs-portfolio-footer {
+    padding: 28px 0 80px;
+    border-top: 1px solid rgba(245, 197, 92, .14);
+    color: rgba(255, 247, 232, .58);
+}
+
+/* CMS-driven utility states
+   Purpose: These classes are applied from JavaScript when a CMS setting turns a feature off. */
+.cs-mode-hidden {
+    display: none !important;
+}
+
+.cs-portfolio-theme-midnight {
+    background: radial-gradient(circle at 20% 0%, rgba(53, 215, 255, .2), transparent 35%), linear-gradient(135deg, #06111f, #0d1b2f 54%, #050812);
+}
+
+.cs-portfolio-layout-compact .cs-portfolio-hero {
+    padding-top: 72px;
+    padding-bottom: 42px;
+}
+
+@media (max-width: 960px) {
+    .cs-gateway-panel {
+        grid-template-columns: 1fr;
+        max-height: calc(100vh - 32px);
+        overflow-y: auto;
+    }
+
+    .cs-gateway-brand-column {
+        padding-bottom: 0;
+    }
+
+    .cs-gateway-choice-column {
+        padding: 14px;
+    }
+
+    .cs-portfolio-hero,
+    .cs-portfolio-grid,
+    .cs-portfolio-projects,
+    .cs-portfolio-contact {
+        grid-template-columns: 1fr;
+    }
+
+    .cs-portfolio-nav {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 14px 0;
+    }
+
+    .cs-portfolio-links {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .cs-portfolio-links a {
+        text-align: center;
+        background: rgba(255, 255, 255, .06);
+    }
+}
+
+@media (max-width: 620px) {
+    .cs-gateway-overlay {
+        padding: 12px;
+    }
+
+    .cs-gateway-panel,
+    .cs-portfolio-profile-card,
+    .cs-portfolio-contact {
+        border-radius: 22px;
+    }
+
+    .cs-gateway-panel {
+        padding: 16px;
+    }
+
+    .cs-gateway-choice {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding: 18px;
+        border-radius: 18px;
+    }
+
+    .cs-gateway-choice-action {
+        width: fit-content;
+    }
+
+    .cs-gateway-title,
+    .cs-portfolio-title {
+        letter-spacing: -1.4px;
+    }
+
+    .cs-portfolio-container {
+        width: calc(100% - 22px);
+    }
+
+    .cs-portfolio-links {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .cs-portfolio-actions,
+    .cs-portfolio-button {
+        width: 100%;
+    }
+
+    .cs-mode-switch-top-right,
+    .cs-mode-switch-bottom-right {
+        right: 10px;
+    }
+
+    .cs-mode-switch-top-right {
+        top: 10px;
+    }
+
+    .cs-mode-switch-bottom-right {
+        bottom: 10px;
+    }
+}
+
+
+/* ==============================
+   Merged from: assets/css/modules/04-gateway-minimal-polish.css
+   ============================== */
+
+/* CyberSabil 04-gateway-minimal-polish.css
+   Purpose: Split CSS module loaded by assets/css/style.css in fixed order. Do not load this file directly from index.html. */
+
+/* ===== CyberSabil v2.2 Minimal Professional Gateway Overrides =====
+   Purpose: Makes the gateway a compact selection modal instead of a full landing section.
+   Update note: This block intentionally overrides the v2.1 gateway styles without touching the original tools website CSS. */
+:root {
+    --cs-gateway-panel-width: 680px;
+}
+
+/* Gateway overlay size and background
+   Purpose: Keeps the existing website visible in the background while the selector stays compact. */
+.cs-gateway-overlay {
+    padding: clamp(18px, 4vw, 32px);
+    overflow-y: auto;
+}
+
+.cs-gateway-backdrop {
+    background: rgba(3, 8, 18, var(--cs-gateway-darkness));
+    backdrop-filter: blur(calc(var(--cs-gateway-blur) * .55));
+}
+
+.cs-gateway-ambient {
+    width: min(34vw, 340px);
+    filter: blur(34px);
+    opacity: .32;
+}
+
+/* Minimal gateway panel
+   Purpose: Uses a single-column compact card so desktop and mobile both feel clean. */
+.cs-gateway-panel {
+    width: min(var(--cs-gateway-panel-width), calc(100vw - 32px));
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    align-items: start;
+    padding: clamp(20px, 3vw, 28px);
+    border-radius: 28px;
+    border-color: rgba(255, 255, 255, .16);
+    background: linear-gradient(145deg, rgba(18, 31, 47, .86), rgba(10, 16, 31, .78));
+    box-shadow: 0 28px 90px rgba(0, 0, 0, .44), inset 0 1px 0 rgba(255, 255, 255, .14);
+    backdrop-filter: blur(22px) saturate(135%);
+}
+
+.cs-gateway-brand-column {
+    align-items: center;
+    padding: 0;
+    text-align: center;
+}
+
+.cs-gateway-logo-row,
+.cs-gateway-chip-row,
+.cs-gateway-note,
+.cs-gateway-choice-label,
+.cs-gateway-choice-icon,
+.cs-gateway-choice-kicker {
+    display: none;
+}
+
+.cs-gateway-title {
+    max-width: 100%;
+    font-size: clamp(30px, 4vw, 42px);
+    line-height: 1.05;
+    letter-spacing: -1.4px;
+}
+
+.cs-gateway-subtitle {
+    max-width: 430px;
+    margin: 10px auto 0;
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, .7);
+}
+
+.cs-gateway-choice-column {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+}
+
+.cs-gateway-choice {
+    min-height: 0;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 18px;
+    border-radius: 22px;
+    background: linear-gradient(145deg, rgba(255, 255, 255, .105), rgba(255, 255, 255, .04));
+}
+
+.cs-gateway-choice:hover,
+.cs-gateway-choice:focus-visible {
+    transform: translateY(-2px);
+}
+
+.cs-gateway-choice-copy {
+    gap: 7px;
+}
+
+.cs-gateway-choice-title {
+    font-size: clamp(22px, 3vw, 28px);
+    letter-spacing: -.8px;
+}
+
+.cs-gateway-choice-text {
+    min-height: 44px;
+    font-size: 14px;
+    line-height: 1.55;
+}
+
+.cs-gateway-choice-action {
+    width: fit-content;
+    padding: 10px 14px;
+    font-size: 12px;
+}
+
+.cs-gateway-choice-website {
+    border-color: rgba(53, 215, 255, .24);
+}
+
+.cs-gateway-choice-portfolio {
+    border-color: rgba(247, 216, 138, .24);
+}
+
+/* Gateway CMS visibility helpers
+   Purpose: Allows JavaScript/CMS settings to show optional logo, label, icons, kickers, descriptions or buttons again when required. */
+.cs-gateway-show-logo-row .cs-gateway-logo-row,
+.cs-gateway-show-choice-label .cs-gateway-choice-label,
+.cs-gateway-show-card-icons .cs-gateway-choice-icon,
+.cs-gateway-show-card-kickers .cs-gateway-choice-kicker {
+    display: flex;
+}
+
+.cs-gateway-show-card-icons .cs-gateway-choice-icon {
+    display: grid;
+}
+
+.cs-gateway-show-choice-label .cs-gateway-choice-label {
+    grid-column: 1 / -1;
+}
+
+/* Compact portfolio polish
+   Purpose: Makes portfolio mode feel more like a professional profile and less like a generic landing page. */
+.cs-portfolio-app {
+    background: radial-gradient(circle at 18% 0%, rgba(139, 92, 246, .2), transparent 30%), radial-gradient(circle at 82% 8%, rgba(245, 197, 92, .16), transparent 26%), linear-gradient(135deg, #10081e, #1a0f2d 52%, #080610);
+}
+
+.cs-portfolio-header {
+    background: rgba(13, 8, 24, .82);
+}
+
+.cs-portfolio-hero {
+    grid-template-columns: minmax(0, 1.1fr) minmax(280px, .72fr);
+    gap: clamp(24px, 4vw, 48px);
+    padding: clamp(54px, 7vw, 92px) 0 58px;
+}
+
+.cs-portfolio-title {
+    max-width: 880px;
+    font-size: clamp(34px, 5.2vw, 66px);
+    line-height: 1.02;
+    letter-spacing: -2px;
+}
+
+.cs-portfolio-title span:first-child {
+    display: block;
+}
+
+.cs-portfolio-title span:last-child {
+    display: block;
+    margin-top: 10px;
+    max-width: 780px;
+    font-size: clamp(26px, 4vw, 46px);
+    line-height: 1.08;
+}
+
+.cs-portfolio-lead {
+    max-width: 720px;
+    font-size: clamp(16px, 1.7vw, 20px);
+}
+
+.cs-portfolio-profile-card,
+.cs-portfolio-card,
+.cs-portfolio-project-card,
+.cs-portfolio-contact {
+    border-color: rgba(245, 197, 92, .2);
+    background: linear-gradient(145deg, rgba(255, 255, 255, .105), rgba(255, 255, 255, .035));
+}
+
+.cs-portfolio-profile-card {
+    padding: clamp(24px, 3vw, 32px);
+    border-radius: 28px;
+}
+
+.cs-portfolio-avatar {
+    width: 88px;
+    height: 88px;
+    border-radius: 24px;
+}
+
+.cs-portfolio-section {
+    padding: 44px 0;
+}
+
+.cs-portfolio-project-card {
+    min-height: 230px;
+}
+
+@media (max-width: 960px) {
+    .cs-gateway-panel {
+        max-height: none;
+        overflow: visible;
+    }
+
+    .cs-portfolio-hero,
+    .cs-portfolio-grid,
+    .cs-portfolio-projects,
+    .cs-portfolio-contact {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 620px) {
+    .cs-gateway-overlay {
+        align-items: center;
+        padding: 14px;
+    }
+
+    .cs-gateway-panel {
+        width: min(360px, calc(100vw - 28px));
+        padding: 18px;
+        border-radius: 24px;
+    }
+
+    .cs-gateway-choice-column {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .cs-gateway-choice {
+        padding: 16px;
+        border-radius: 18px;
+    }
+
+    .cs-gateway-choice-text {
+        min-height: 0;
+    }
+
+    .cs-gateway-choice-action {
+        padding: 9px 12px;
+    }
+
+    .cs-portfolio-container {
+        width: calc(100% - 28px);
+    }
+
+    .cs-portfolio-hero {
+        padding-top: 76px;
+    }
+}
+
+/* Portfolio professional layout hook
+   Purpose: Gives the CMS `professional` layout preset a stable CSS selector for future spacing or typography updates. */
+.cs-portfolio-layout-professional .cs-portfolio-section-head {
+    max-width: 820px;
+}
+
+
+/* ==============================
+   Merged from: assets/css/modules/05-responsive-hardening.css
+   ============================== */
+
+/* CyberSabil 05-responsive-hardening.css
+   Purpose: Split CSS module loaded by assets/css/style.css in fixed order. Do not load this file directly from index.html. */
+
+/* ===== CyberSabil v2.3 Responsive UX Hardening Patch =====
+   Purpose: Keeps the same HTML/CSS/Vanilla JS/JSON stack while preventing mobile/desktop overlap, improving navigation, and making long CMS content safe. */
+
+.cs-mode-skip-link {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 10000;
+    transform: translateY(-150%);
+    padding: 10px 14px;
+    border-radius: 12px;
+    color: #06111f;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    font-weight: 900;
+    box-shadow: 0 12px 34px rgba(0,0,0,.24);
+}
+
+.cs-mode-skip-link:focus {
+    transform: translateY(0);
+}
+
+button,
+a,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid rgba(247, 216, 138, .7);
+    outline-offset: 3px;
+}
+
+html {
+    scroll-padding-top: 96px;
+}
+
+body {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+}
+
+.nav,
+.cs-portfolio-nav {
+    position: relative;
+}
+
+.cs-mode-website-nav-toggle,
+.cs-portfolio-nav-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    min-height: 42px;
+    padding: 9px 12px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    color: var(--text);
+    background: rgba(255,255,255,.07);
+    cursor: pointer;
+}
+
+.cs-mode-website-nav-toggle-lines,
+.cs-portfolio-nav-toggle-lines {
+    width: 18px;
+    display: grid;
+    gap: 4px;
+}
+
+.cs-mode-website-nav-toggle-lines span,
+.cs-portfolio-nav-toggle-lines span {
+    display: block;
+    height: 2px;
+    border-radius: 999px;
+    background: currentColor;
+}
+
+.cs-mode-website-nav-toggle-label,
+.cs-portfolio-nav-toggle-label {
+    font-size: 13px;
+    font-weight: 900;
+}
+
+.links a,
+.cs-portfolio-links a,
+.btn,
+.cs-portfolio-button,
+.cs-gateway-choice-action {
+    overflow-wrap: anywhere;
+}
+
+.card,
+.tool,
+.download,
+.faq-item,
+.cs-portfolio-card,
+.cs-portfolio-project-card,
+.cs-portfolio-profile-card,
+.cs-portfolio-contact-card {
+    overflow-wrap: anywhere;
+}
+
+.actions {
+    align-items: center;
+}
+
+.warning {
+    overflow-wrap: anywhere;
+}
+
+.code,
+.term-body,
+.cs-portfolio-project-tech {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.cs-gateway-overlay {
+    overflow-x: hidden;
+    overflow-y: auto;
+    align-items: safe center;
+    justify-items: center;
+}
+
+.cs-gateway-panel {
+    max-height: calc(100dvh - 28px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+.cs-gateway-choice {
+    min-width: 0;
+}
+
+.cs-mode-switch {
+    white-space: nowrap;
+}
+
+.cs-portfolio-brand span:last-child,
+.brand span:last-child {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.cs-portfolio-button,
+.btn {
+    text-align: center;
+}
+
+.cs-portfolio-contact-card a,
+.cs-portfolio-project-link {
+    overflow-wrap: anywhere;
+}
+
+@media (min-width: 901px) {
+    .links,
+    .cs-portfolio-links {
+        display: flex !important;
+    }
+}
+
+@media (max-width: 1100px) {
+    .cs-gateway-panel {
+        grid-template-columns: 1fr;
+        width: min(760px, 100%);
+    }
+
+    .cs-gateway-brand-column {
+        text-align: center;
+        align-items: center;
+    }
+
+    .cs-gateway-logo-row,
+    .cs-gateway-chip-row {
+        justify-content: center;
+    }
+
+    .cs-gateway-choice-column {
+        width: 100%;
+    }
+
+    .cs-portfolio-hero {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding-top: 54px;
+    }
+
+    .cs-portfolio-profile-card {
+        max-width: 720px;
+    }
+}
+
+@media (max-width: 900px) {
+    html {
+        scroll-padding-top: 82px;
+    }
+
+    .container,
+    .cs-portfolio-container {
+        width: min(100% - 24px, 760px);
+    }
+
+    header,
+    .cs-portfolio-header {
+        z-index: 50;
+    }
+
+    .nav,
+    .cs-portfolio-nav {
+        min-height: 64px;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 12px;
+        padding: 11px 0;
+    }
+
+    .brand,
+    .cs-portfolio-brand {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .cs-mode-website-nav-toggle,
+    .cs-portfolio-nav-toggle {
+        display: inline-flex;
+        justify-self: end;
+    }
+
+    .links,
+    .cs-portfolio-links {
+        grid-column: 1 / -1;
+        width: 100%;
+        display: none;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        padding-top: 6px;
+    }
+
+    .nav.cs-mode-website-nav-open .links,
+    .cs-portfolio-nav.cs-portfolio-nav-open .cs-portfolio-links {
+        display: grid;
+    }
+
+    .links a,
+    .cs-portfolio-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 42px;
+        padding: 10px;
+        border-radius: 13px;
+        text-align: center;
+        line-height: 1.25;
+    }
+
+    .links a {
+        background: rgba(255,255,255,.07);
+        border: 1px solid var(--border);
+    }
+
+    .hero {
+        padding-top: 44px;
+    }
+
+    .section-head {
+        display: grid;
+        gap: 10px;
+    }
+
+    .grid,
+    .grid-2,
+    .cs-portfolio-grid,
+    .cs-portfolio-projects {
+        grid-template-columns: 1fr;
+    }
+
+    .cs-gateway-overlay {
+        padding: 12px;
+        place-items: start center;
+    }
+
+    .cs-gateway-panel {
+        max-height: none;
+        width: 100%;
+        border-radius: 24px;
+        padding: 18px;
+        gap: 16px;
+    }
+
+    .cs-gateway-brand-column,
+    .cs-gateway-choice-column {
+        padding: 8px;
+    }
+
+    .cs-gateway-title {
+        font-size: clamp(32px, 10vw, 46px);
+        letter-spacing: -1.5px;
+    }
+
+    .cs-gateway-choice {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        gap: 10px;
+        padding: 16px;
+        text-align: center;
+    }
+
+    .cs-gateway-choice-icon,
+    .cs-gateway-choice-action {
+        justify-self: center;
+    }
+
+    .cs-gateway-choice-action {
+        width: 100%;
+    }
+
+    .cs-mode-switch {
+        top: auto !important;
+        right: auto !important;
+        left: 50%;
+        bottom: max(12px, env(safe-area-inset-bottom));
+        transform: translateX(-50%);
+        max-width: calc(100vw - 24px);
+    }
+
+    .cs-mode-switch-button {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+
+    .cs-portfolio-title {
+        font-size: clamp(36px, 12vw, 58px);
+        letter-spacing: -1.7px;
+    }
+
+    .cs-portfolio-contact {
+        grid-template-columns: 1fr;
+        padding: 22px;
+        border-radius: 24px;
+    }
+}
+
+@media (max-width: 560px) {
+    html {
+        scroll-padding-top: 76px;
+    }
+
+    .container,
+    .cs-portfolio-container {
+        width: calc(100% - 18px);
+    }
+
+    .logo,
+    .cs-portfolio-logo {
+        width: 40px;
+        height: 40px;
+        border-radius: 13px;
+        flex: 0 0 auto;
+    }
+
+    .brand,
+    .cs-portfolio-brand {
+        gap: 10px;
+        font-size: 16px;
+    }
+
+    .cs-mode-website-nav-toggle-label,
+    .cs-portfolio-nav-toggle-label {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+    }
+
+    .cs-mode-website-nav-toggle,
+    .cs-portfolio-nav-toggle {
+        width: 42px;
+        padding: 9px;
+    }
+
+    .links,
+    .cs-portfolio-links {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 34px 0 24px;
+    }
+
+    .badge {
+        max-width: 100%;
+        line-height: 1.35;
+    }
+
+    .actions,
+    .cs-portfolio-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    .actions .btn,
+    .cs-portfolio-actions .cs-portfolio-button,
+    .cs-portfolio-contact-card .cs-portfolio-button {
+        width: 100%;
+    }
+
+    .terminal,
+    .card,
+    .tool,
+    .download,
+    .faq-item,
+    .cs-portfolio-profile-card,
+    .cs-portfolio-card,
+    .cs-portfolio-project-card,
+    .cs-portfolio-contact {
+        border-radius: 18px;
+    }
+
+    .cs-portfolio-profile-card {
+        padding: 22px;
+    }
+
+    .cs-portfolio-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .cs-portfolio-avatar {
+        width: 82px;
+        height: 82px;
+        border-radius: 24px;
+        font-size: 28px;
+    }
+
+    .copy-btn::after {
+        display: none;
+    }
+}
+
+@media (max-width: 380px) {
+    .cs-gateway-panel {
+        padding: 14px;
+    }
+
+    .cs-gateway-choice {
+        padding: 14px;
+    }
+
+    .cs-gateway-subtitle,
+    .cs-gateway-choice-text,
+    .lead,
+    .cs-portfolio-lead {
+        font-size: 15px;
+    }
+
+    .card,
+    .tool,
+    .download,
+    .faq-item {
+        padding: 15px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+    }
+}
+
+
+/* ==============================
+   Merged from: assets/css/modules/06-cms-seo-timeline.css
+   ============================== */
+
+/* CyberSabil 06-cms-seo-timeline.css
+   Purpose: Split CSS module loaded by assets/css/style.css in fixed order. Do not load this file directly from index.html. */
+
+/* ===== CyberSabil v2.4 CMS, SEO and Portfolio Timeline Polish =====
+   Purpose: Adds a non-breaking CMS fallback banner, reusable empty states, optional portfolio project images and a responsive portfolio timeline. */
+
+.cs-mode-data-status {
+    position: sticky;
+    top: 0;
+    z-index: 10001;
+    display: grid;
+    gap: 3px;
+    width: min(100% - 24px, 920px);
+    margin: 10px auto 0;
+    padding: 12px 14px;
+    border: 1px solid rgba(247, 216, 138, .28);
+    border-radius: 14px;
+    color: #fff8e8;
+    background: rgba(42, 25, 7, .88);
+    box-shadow: 0 16px 45px rgba(0, 0, 0, .28);
+    backdrop-filter: blur(16px);
+}
+
+.cs-mode-data-status[hidden] {
+    display: none;
+}
+
+.cs-mode-data-status strong {
+    color: #f8df98;
+    font-size: 14px;
+}
+
+.cs-mode-data-status span {
+    color: rgba(255, 248, 232, .78);
+    font-size: 13px;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+}
+
+.cs-mode-empty-state {
+    grid-column: 1 / -1;
+    display: grid;
+    gap: 8px;
+    min-height: 130px;
+    align-content: center;
+    padding: 22px;
+    border: 1px dashed rgba(255, 255, 255, .22);
+    border-radius: 20px;
+    color: rgba(255, 255, 255, .72);
+    background: rgba(255, 255, 255, .045);
+}
+
+.cs-mode-empty-state strong {
+    color: var(--text);
+    font-size: 18px;
+}
+
+.cs-mode-empty-state span {
+    line-height: 1.6;
+}
+
+.cs-portfolio-project-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 16px;
+    border: 1px solid rgba(245, 197, 92, .18);
+    border-radius: 18px;
+    background: rgba(0, 0, 0, .18);
+}
+
+.cs-portfolio-timeline {
+    position: relative;
+    display: grid;
+    gap: 18px;
+    max-width: 920px;
+}
+
+.cs-portfolio-timeline::before {
+    content: "";
+    position: absolute;
+    left: 15px;
+    top: 10px;
+    bottom: 10px;
+    width: 2px;
+    border-radius: 999px;
+    background: linear-gradient(180deg, rgba(248, 223, 152, .8), rgba(139, 92, 246, .38));
+}
+
+.cs-portfolio-timeline-item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 32px minmax(0, 1fr);
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.cs-portfolio-timeline-marker {
+    position: relative;
+    z-index: 1;
+    width: 32px;
+    height: 32px;
+    border: 2px solid rgba(248, 223, 152, .78);
+    border-radius: 999px;
+    background: radial-gradient(circle, #f8df98 0 35%, #2a1742 36% 100%);
+    box-shadow: 0 0 0 7px rgba(248, 223, 152, .09), 0 12px 28px rgba(0, 0, 0, .28);
+}
+
+.cs-portfolio-timeline-card {
+    min-width: 0;
+    padding: 22px;
+    border: 1px solid rgba(245, 197, 92, .2);
+    border-radius: 24px;
+    background: linear-gradient(145deg, rgba(255, 255, 255, .105), rgba(255, 255, 255, .035));
+    box-shadow: 0 20px 58px rgba(0, 0, 0, .22), inset 0 1px 0 rgba(255, 255, 255, .11);
+    backdrop-filter: blur(16px);
+    overflow-wrap: anywhere;
+}
+
+.cs-portfolio-timeline-card h3 {
+    margin: 10px 0 8px;
+    color: #fff8e8;
+    font-size: clamp(20px, 2.4vw, 26px);
+    line-height: 1.2;
+}
+
+.cs-portfolio-timeline-card p {
+    margin: 0;
+    color: rgba(255, 247, 232, .72);
+    line-height: 1.65;
+}
+
+@media (max-width: 900px) {
+    .cs-portfolio-links {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .cs-mode-data-status {
+        width: calc(100% - 18px);
+        margin-top: 8px;
+    }
+}
+
+@media (max-width: 560px) {
+    .cs-portfolio-links {
+        grid-template-columns: 1fr;
+    }
+
+    .cs-portfolio-timeline {
+        gap: 14px;
+    }
+
+    .cs-portfolio-timeline::before {
+        left: 11px;
+    }
+
+    .cs-portfolio-timeline-item {
+        grid-template-columns: 24px minmax(0, 1fr);
+        gap: 12px;
+    }
+
+    .cs-portfolio-timeline-marker {
+        width: 24px;
+        height: 24px;
+        box-shadow: 0 0 0 5px rgba(248, 223, 152, .08);
+    }
+
+    .cs-portfolio-timeline-card {
+        padding: 18px;
+        border-radius: 20px;
+    }
+}
+
+
+/* ==============================
+   Merged from: assets/css/modules/07-animation-mode-polish.css
+   ============================== */
+
+/* CyberSabil 07-animation-mode-polish.css
+   Purpose: Adds equal gateway choice animation and a premium animated mode switch without changing the static technology stack.
+   Load order: This file is imported last from assets/css/style.css so it can safely polish earlier module styles. */
+
+/* Gateway overlay entry animation
+   Purpose: Gives the selector a more premium first impression while keeping Website and Portfolio visually equal. */
+.cs-gateway-overlay:not([hidden]) .cs-gateway-backdrop {
+    animation: csGatewayBackdropReveal .48s ease both;
+}
+
+.cs-gateway-overlay:not([hidden]) .cs-gateway-panel {
+    animation: csGatewayPanelReveal .54s cubic-bezier(.16, 1, .3, 1) both;
+}
+
+.cs-gateway-overlay:not([hidden]) .cs-gateway-title,
+.cs-gateway-overlay:not([hidden]) .cs-gateway-subtitle,
+.cs-gateway-overlay:not([hidden]) .cs-gateway-choice-label {
+    animation: csGatewayTextRise .52s cubic-bezier(.16, 1, .3, 1) both;
+}
+
+.cs-gateway-overlay:not([hidden]) .cs-gateway-subtitle { animation-delay: .05s; }
+.cs-gateway-overlay:not([hidden]) .cs-gateway-choice-label { animation-delay: .07s; }
+
+.cs-gateway-overlay:not([hidden]) .cs-gateway-choice {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    transform: translateY(10px) scale(.982);
+    animation: csGatewayChoiceReveal .56s cubic-bezier(.16, 1, .3, 1) both;
+    transition: transform .26s cubic-bezier(.2, .8, .2, 1), border-color .26s ease, background .26s ease, box-shadow .26s ease, filter .26s ease;
+}
+
+.cs-gateway-overlay:not([hidden]) .cs-gateway-choice-website { animation-delay: .12s; }
+.cs-gateway-overlay:not([hidden]) .cs-gateway-choice-portfolio { animation-delay: .18s; }
+
+.cs-gateway-choice::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    opacity: 0;
+    background: linear-gradient(120deg, transparent 8%, rgba(255, 255, 255, .28) 22%, transparent 38%);
+    transform: translateX(-115%);
+    transition: opacity .26s ease;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.cs-gateway-choice::after {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    border-radius: inherit;
+    opacity: 0;
+    pointer-events: none;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .22), 0 0 34px rgba(247, 216, 138, .14);
+    transition: opacity .26s ease;
+}
+
+.cs-gateway-choice:hover,
+.cs-gateway-choice:focus-visible {
+    transform: translateY(-5px) scale(1.012);
+    filter: saturate(1.08);
+}
+
+.cs-gateway-choice:hover::before,
+.cs-gateway-choice:focus-visible::before {
+    opacity: 1;
+    animation: csGatewayChoiceSheen .9s ease both;
+}
+
+.cs-gateway-choice:hover::after,
+.cs-gateway-choice:focus-visible::after {
+    opacity: 1;
+}
+
+.cs-gateway-choice:active,
+.cs-gateway-choice.cs-gateway-choice-activating {
+    transform: translateY(-1px) scale(.985);
+}
+
+.cs-gateway-choice.cs-gateway-choice-activating {
+    border-color: rgba(247, 216, 138, .72);
+    background: linear-gradient(135deg, rgba(247, 216, 138, .22), rgba(139, 92, 246, .2));
+    box-shadow: 0 28px 80px rgba(0, 0, 0, .38), 0 0 0 5px rgba(247, 216, 138, .12);
+    animation: csGatewayChoiceActivate .34s cubic-bezier(.16, 1, .3, 1) both;
+}
+
+.cs-gateway-choice-website:hover,
+.cs-gateway-choice-website:focus-visible,
+.cs-gateway-choice-website.cs-gateway-choice-activating {
+    border-color: rgba(53, 215, 255, .66);
+    box-shadow: 0 26px 72px rgba(0, 0, 0, .34), 0 0 0 4px rgba(53, 215, 255, .11), 0 0 42px rgba(53, 215, 255, .14);
+}
+
+.cs-gateway-choice-portfolio:hover,
+.cs-gateway-choice-portfolio:focus-visible,
+.cs-gateway-choice-portfolio.cs-gateway-choice-activating {
+    border-color: rgba(247, 216, 138, .66);
+    box-shadow: 0 26px 72px rgba(0, 0, 0, .34), 0 0 0 4px rgba(247, 216, 138, .11), 0 0 42px rgba(247, 216, 138, .14);
+}
+
+.cs-gateway-choice-action {
+    position: relative;
+    overflow: hidden;
+    transition: transform .26s ease, box-shadow .26s ease;
+}
+
+.cs-gateway-choice:hover .cs-gateway-choice-action,
+.cs-gateway-choice:focus-visible .cs-gateway-choice-action,
+.cs-gateway-choice.cs-gateway-choice-activating .cs-gateway-choice-action {
+    transform: translateX(2px) scale(1.035);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, .18);
+}
+
+/* Persistent mode switch animation
+   Purpose: Makes the top mode changer feel active and clear without making either mode look pre-selected in the gateway. */
+.cs-mode-switch {
+    --cs-switch-pill-left: 7px;
+    --cs-switch-pill-width: 92px;
+    position: fixed;
+    isolation: isolate;
+    overflow: hidden;
+    animation: csModeSwitchEnter .52s cubic-bezier(.16, 1, .3, 1) both;
+    transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+
+.cs-mode-switch::before {
+    content: "";
+    position: absolute;
+    top: 7px;
+    bottom: 7px;
+    left: var(--cs-switch-pill-left);
+    width: var(--cs-switch-pill-width);
+    border-radius: 999px;
+    background: linear-gradient(135deg, #f8df98, #c58b2c);
+    box-shadow: 0 10px 24px rgba(197, 139, 44, .28), inset 0 1px 0 rgba(255, 255, 255, .38);
+    transition: left .28s cubic-bezier(.22, 1, .36, 1), width .28s cubic-bezier(.22, 1, .36, 1), background .28s cubic-bezier(.22, 1, .36, 1), box-shadow .28s cubic-bezier(.22, 1, .36, 1);
+    z-index: -1;
+}
+
+.cs-mode-switch.cs-mode-switch-active-website::before {
+    background: linear-gradient(135deg, #95f1ff, #35d7ff);
+    box-shadow: 0 10px 24px rgba(53, 215, 255, .22), inset 0 1px 0 rgba(255, 255, 255, .4);
+}
+
+.cs-mode-switch.cs-mode-switch-active-portfolio::before {
+    background: linear-gradient(135deg, #f8df98, #c58b2c);
+}
+
+/* Keyboard focus keeps the switch stable; movement is reserved for real hover devices.
+   Purpose: Prevents touch focus from shifting the complete switch during a mode change. */
+.cs-mode-switch:focus-within {
+    border-color: rgba(247, 216, 138, .26);
+    box-shadow: 0 22px 62px rgba(0, 0, 0, .34), 0 0 0 4px rgba(247, 216, 138, .06);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .cs-mode-switch:hover {
+        transform: translateY(-2px);
+        border-color: rgba(247, 216, 138, .26);
+        box-shadow: 0 22px 62px rgba(0, 0, 0, .34), 0 0 0 4px rgba(247, 216, 138, .06);
+    }
+}
+
+.cs-mode-switch-button {
+    position: relative;
+    z-index: 1;
+    min-width: 92px;
+    background: transparent !important;
+    transition: color .28s cubic-bezier(.22, 1, .36, 1), opacity .28s cubic-bezier(.22, 1, .36, 1);
+}
+
+.cs-mode-switch-button:focus-visible {
+    color: #fff7df;
+    outline: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .cs-mode-switch-button:hover {
+        color: #fff7df;
+        transform: translateY(-1px);
+    }
+}
+
+.cs-mode-switch-button.cs-mode-active {
+    color: #211606;
+    background: transparent !important;
+}
+
+.cs-mode-switch.cs-mode-switch-active-website .cs-mode-switch-button.cs-mode-active {
+    color: #06121d;
+}
+
+/* Active-indicator settle effect
+   Purpose: Keeps the optional pulse preset without moving or scaling the complete switch container. */
+.cs-mode-switch.cs-mode-switch-just-changed::before {
+    animation: csModeSwitchIndicatorSettle .28s cubic-bezier(.22, 1, .36, 1) both;
+}
+
+/* Initial indicator synchronization must not animate from placeholder dimensions. */
+.cs-mode-switch.cs-mode-switch-syncing::before,
+.cs-mode-switch.cs-mode-switch-syncing .cs-mode-switch-button {
+    transition: none !important;
+}
+
+.cs-mode-animate-in {
+    animation: csModeContentIn .28s cubic-bezier(.16, 1, .3, 1) both;
+}
+
+@keyframes csGatewayBackdropReveal {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes csGatewayPanelReveal {
+    from { opacity: 0; transform: translateY(18px) scale(.972); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes csGatewayTextRise {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes csGatewayChoiceReveal {
+    from { opacity: 0; transform: translateY(16px) scale(.965); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes csGatewayChoiceSheen {
+    from { transform: translateX(-115%); }
+    to { transform: translateX(115%); }
+}
+
+@keyframes csGatewayChoiceActivate {
+    0% { transform: translateY(-3px) scale(1.012); }
+    55% { transform: translateY(0) scale(.975); }
+    100% { transform: translateY(-1px) scale(.99); }
+}
+
+@keyframes csModeSwitchEnter {
+    from { opacity: 0; transform: translateY(-10px) scale(.96); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes csModeSwitchIndicatorSettle {
+    0% { filter: brightness(.98); }
+    55% { filter: brightness(1.07); }
+    100% { filter: brightness(1); }
+}
+
+@keyframes csModeContentIn {
+    from { opacity: .88; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 560px) {
+    .cs-mode-switch-button {
+        min-width: 82px;
+        padding-inline: 11px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cs-gateway-overlay:not([hidden]) .cs-gateway-backdrop,
+    .cs-gateway-overlay:not([hidden]) .cs-gateway-panel,
+    .cs-gateway-overlay:not([hidden]) .cs-gateway-title,
+    .cs-gateway-overlay:not([hidden]) .cs-gateway-subtitle,
+    .cs-gateway-overlay:not([hidden]) .cs-gateway-choice-label,
+    .cs-gateway-overlay:not([hidden]) .cs-gateway-choice,
+    .cs-gateway-choice:hover::before,
+    .cs-gateway-choice:focus-visible::before,
+    .cs-gateway-choice.cs-gateway-choice-activating,
+    .cs-mode-switch,
+    .cs-mode-switch.cs-mode-switch-just-changed,
+    .cs-mode-switch.cs-mode-switch-just-changed::before,
+    .cs-mode-animate-in {
+        animation: none !important;
+    }
+
+    .cs-gateway-choice,
+    .cs-gateway-choice-action,
+    .cs-mode-switch,
+    .cs-mode-switch::before,
+    .cs-mode-switch-button {
+        transition: none !important;
+    }
+}
+
+/* ===== CyberSabil v2.8.2 Mobile Runtime Stability and True Safe Fallback =====
+   Purpose: Locks the compact Gateway when it fits, reserves mobile space for the fixed mode switch, and turns CMS load warnings into a compact dismissible status toast.
+   Scope: These final overrides intentionally preserve the accepted v2.8 blur, card layout, colors and animations. */
+
+/* Gateway scroll lock
+   Purpose: Prevents the page and a fully fitting Gateway from moving independently on normal portrait screens. */
+body.cs-mode-gateway-open {
+    overflow: hidden;
+    overscroll-behavior: none;
+}
+
+body.cs-mode-gateway-open .cs-gateway-overlay {
+    overflow: hidden;
+    place-items: center;
+    overscroll-behavior: none;
+}
+
+body.cs-mode-gateway-open .cs-gateway-panel {
+    max-height: calc(100dvh - 24px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
+}
+
+/* Reload snapshot
+   Purpose: Shows the already accepted Gateway state immediately during page navigation without replaying entry animations on the outgoing frame. */
+.cs-gateway-navigation-snapshot,
+.cs-gateway-navigation-snapshot * {
+    animation: none !important;
+    transition: none !important;
+}
+
+/* Mobile mode-switch safety space
+   Purpose: Ensures the last content can scroll above the persistent bottom switch instead of becoming trapped behind it. */
+@media (max-width: 900px) {
+    body.cs-mode-switch-visible .cs-mode-website-app,
+    body.cs-mode-switch-visible .cs-portfolio-app {
+        padding-bottom: calc(var(--cs-mode-switch-safe-space, 96px) + env(safe-area-inset-bottom));
+    }
+}
+
+/* Short-height Gateway fallback
+   Purpose: Keeps the selector centered across browsers and zoom levels while allowing the panel itself to scroll only when its content genuinely exceeds the viewport. */
+@media (max-height: 620px) {
+    body.cs-mode-gateway-open .cs-gateway-overlay {
+        overflow: hidden;
+        place-items: center;
+        padding-block: 8px;
+    }
+
+    body.cs-mode-gateway-open .cs-gateway-panel {
+        max-height: calc(100dvh - 16px);
+        overflow-y: auto;
+        scrollbar-gutter: stable;
+    }
+}
+
+/* Compact CMS status toast
+   Purpose: Reports a real fallback without shifting the mobile header or occupying a large block of the page. */
+.cs-mode-data-status {
+    position: fixed;
+    top: max(10px, env(safe-area-inset-top));
+    right: 12px;
+    z-index: 10001;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
+    gap: 10px;
+    width: min(calc(100% - 24px), 430px);
+    margin: 0;
+    padding: 10px 10px 10px 12px;
+}
+
+.cs-mode-data-status-copy {
+    min-width: 0;
+    display: grid;
+    gap: 2px;
+}
+
+.cs-mode-data-status-dismiss {
+    width: 32px;
+    height: 32px;
+    display: inline-grid;
+    place-items: center;
+    flex: 0 0 auto;
+    border: 1px solid rgba(247, 216, 138, .22);
+    border-radius: 10px;
+    color: #fff8e8;
+    background: rgba(255, 255, 255, .07);
+    font: inherit;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.cs-mode-data-status-dismiss:hover,
+.cs-mode-data-status-dismiss:focus-visible {
+    background: rgba(255, 255, 255, .13);
+}
+
+@media (max-width: 560px) {
+    .cs-mode-data-status {
+        top: max(8px, env(safe-area-inset-top));
+        right: 9px;
+        width: calc(100% - 18px);
+        padding: 9px 9px 9px 11px;
+    }
+
+    .cs-mode-data-status strong {
+        font-size: 13px;
+    }
+
+    .cs-mode-data-status span {
+        font-size: 12px;
+        line-height: 1.35;
+    }
+}
+
+
+/* ===== CyberSabil v2.8.3 Cross-Browser Alignment and Transition Polish =====
+   Purpose: Fixes only the defects confirmed in Brave, Firefox, Chromium desktop browsers and the supplied Android phone recording.
+   Scope: Gateway text, blur, colors, cards, original Website styling, Portfolio styling and copy-button behavior remain unchanged. */
+
+:root {
+    --cs-mode-switch-header-reserve: 228px;
+    --cs-mode-switch-safe-space: 96px;
+    --cs-mode-switch-side-safe-space: 140px;
+    --cs-active-header-height: 76px;
+}
+
+/* Programmatic Gateway focus normalization
+   Purpose: Firefox draws a square default outline around the rounded dialog after JavaScript focuses its tabindex=-1 panel. The panel is not keyboard-tabbable, so the browser outline is suppressed while button focus indicators remain intact. */
+.cs-gateway-panel:focus {
+    outline: none;
+}
+
+/* Download action alignment
+   Purpose: Keeps Download and Release controls on the same baseline when neighboring descriptions wrap to different line counts. */
+#downloadsGrid > .download {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.cs-mode-download-actions {
+    margin-top: auto;
+    padding-top: 18px;
+}
+
+/* Desktop header collision guard
+   Purpose: Reserves measured room for the fixed top-right mode switch so Website and Portfolio navigation links remain fully visible. Wide screens do not need the reserve because the switch sits outside the centered content container. */
+@media (min-width: 901px) and (max-width: 1640px) {
+    body.cs-mode-switch-top-right-visible .cs-mode-website-app header .nav,
+    body.cs-mode-switch-top-right-visible .cs-portfolio-header .cs-portfolio-nav {
+        padding-right: var(--cs-mode-switch-header-reserve);
+    }
+}
+
+/* Mobile action alignment
+   Purpose: Preserves the existing full-width button behavior after the download action row receives bottom alignment. */
+@media (max-width: 560px) {
+    .cs-mode-download-actions {
+        width: 100%;
+    }
+}
+
+/* CyberSabil v2.9.2 Smooth Mode Switch Indicator Fix
+   Purpose: Coordinates indicator position, color and text state without moving the complete switch on touch devices. */
+
+/* ===== CyberSabil v2.9.1 Advanced Safe CMS Visual Controls =====
+   Purpose: Exposes deep Gateway, card, animation, header, navigation and mode-switch customization through validated JSON values and CSS variables.
+   Safety: No raw CMS CSS is executed. Existing v2.8.3 visuals remain the defaults, responsive breakpoints stay developer-controlled, and reduced-motion preferences are always respected. */
+
+:root {
+    --cs-gateway-panel-max-height: 92dvh;
+    --cs-gateway-panel-padding: 28px;
+    --cs-gateway-panel-gap: 18px;
+    --cs-gateway-panel-radius: 28px;
+    --cs-gateway-panel-background: linear-gradient(145deg, rgba(18, 31, 47, .86), rgba(10, 16, 31, .78));
+    --cs-gateway-panel-border: 1px solid rgba(255, 255, 255, .16);
+    --cs-gateway-panel-shadow: 0 28px 90px rgba(0, 0, 0, .44);
+    --cs-gateway-panel-backdrop: blur(22px) saturate(135%);
+    --cs-gateway-overlay-background: rgba(3, 8, 18, .5);
+    --cs-gateway-overlay-backdrop: blur(4px);
+    --cs-gateway-background-brightness: 81%;
+    --cs-gateway-background-saturation: 100%;
+    --cs-gateway-ambient-one: #8b5cf6;
+    --cs-gateway-ambient-two: #f7d88a;
+    --cs-gateway-ambient-opacity: .32;
+    --cs-gateway-ambient-blur: 34px;
+    --cs-gateway-desktop-justify: center;
+    --cs-gateway-desktop-align: center;
+    --cs-gateway-tablet-justify: center;
+    --cs-gateway-tablet-align: center;
+    --cs-gateway-mobile-justify: center;
+    --cs-gateway-mobile-align: center;
+    --cs-gateway-title-align: center;
+    --cs-gateway-title-flex-align: center;
+    --cs-gateway-title-grid-align: center;
+    --cs-gateway-title-color: #fff8e8;
+    --cs-gateway-title-size: 42px;
+    --cs-gateway-title-weight: 800;
+    --cs-gateway-subtitle-color: rgba(255, 255, 255, .7);
+    --cs-gateway-subtitle-size: 15px;
+    --cs-gateway-choice-gap: 12px;
+    --cs-gateway-card-min-height: 0px;
+    --cs-gateway-card-padding: 18px;
+    --cs-gateway-card-radius: 22px;
+    --cs-gateway-card-border-width: 1px;
+    --cs-gateway-card-text-align: left;
+    --cs-gateway-card-grid-align: start;
+    --cs-gateway-card-content-align: start;
+    --cs-gateway-card-shadow: 0 16px 45px rgba(0, 0, 0, .22);
+    --cs-gateway-card-title-color: #fff8e8;
+    --cs-gateway-card-description-color: rgba(255, 255, 255, .66);
+    --cs-gateway-website-card-background: linear-gradient(145deg, rgba(255, 255, 255, .105), rgba(255, 255, 255, .04));
+    --cs-gateway-portfolio-card-background: linear-gradient(145deg, rgba(255, 255, 255, .105), rgba(255, 255, 255, .04));
+    --cs-gateway-website-card-border: rgba(53, 215, 255, .24);
+    --cs-gateway-portfolio-card-border: rgba(247, 216, 138, .24);
+    --cs-gateway-website-accent: #35d7ff;
+    --cs-gateway-portfolio-accent: #f7d88a;
+    --cs-gateway-website-button-start: #95f1ff;
+    --cs-gateway-website-button-end: #35d7ff;
+    --cs-gateway-website-button-text: #07111f;
+    --cs-gateway-portfolio-button-start: #fff2b5;
+    --cs-gateway-portfolio-button-end: #c98b2d;
+    --cs-gateway-portfolio-button-text: #1a1005;
+    --cs-gateway-button-radius: 999px;
+    --cs-gateway-animation-duration: 420ms;
+    --cs-gateway-panel-delay: 0ms;
+    --cs-gateway-website-delay: 120ms;
+    --cs-gateway-portfolio-delay: 180ms;
+    --cs-gateway-animation-easing: cubic-bezier(.16, 1, .3, 1);
+    --cs-gateway-hover-strength: 2px;
+    --cs-gateway-hover-duration: 200ms;
+    --cs-website-header-min-height: 72px;
+    --cs-website-container-width: 1160px;
+    --cs-website-header-background: rgba(7, 17, 31, .84);
+    --cs-website-header-blur: 14px;
+    --cs-website-header-border: 1px solid rgba(255, 255, 255, .14);
+    --cs-website-header-shadow: none;
+    --cs-website-menu-gap: 18px;
+    --cs-website-menu-font-size: 14px;
+    --cs-website-menu-text: #aebed4;
+    --cs-website-menu-hover: #eaf2ff;
+    --cs-portfolio-header-min-height: 76px;
+    --cs-portfolio-container-width: 1160px;
+    --cs-portfolio-header-background: rgba(13, 8, 24, .82);
+    --cs-portfolio-header-blur: 18px;
+    --cs-portfolio-header-border: 1px solid rgba(245, 197, 92, .16);
+    --cs-portfolio-header-shadow: none;
+    --cs-portfolio-menu-gap: 8px;
+    --cs-portfolio-menu-font-size: 14px;
+    --cs-portfolio-menu-text: rgba(255, 247, 232, .72);
+    --cs-portfolio-menu-hover: #f8df98;
+    --cs-mode-switch-x-offset: 18px;
+    --cs-mode-switch-y-offset: 18px;
+    --cs-mode-switch-mobile-offset: 12px;
+    --cs-mode-switch-background: rgba(10, 14, 29, .72);
+    --cs-mode-switch-blur: 16px;
+    --cs-mode-switch-border: 1px solid rgba(255, 255, 255, .14);
+    --cs-mode-switch-radius: 999px;
+    --cs-mode-switch-shadow: 0 18px 50px rgba(0, 0, 0, .28);
+    --cs-mode-switch-website-start: #95f1ff;
+    --cs-mode-switch-website-end: #35d7ff;
+    --cs-mode-switch-website-text: #06121d;
+    --cs-mode-switch-portfolio-start: #f8df98;
+    --cs-mode-switch-portfolio-end: #c58b2c;
+    --cs-mode-switch-portfolio-text: #211606;
+    --cs-mode-switch-inactive-text: rgba(255, 255, 255, .74);
+    --cs-switch-pill-top: 7px;
+    --cs-switch-pill-height: 36px;
+}
+
+/* Advanced Gateway placement and background */
+.cs-gateway-overlay.cs-gateway-advanced {
+    justify-items: var(--cs-gateway-desktop-justify);
+    align-items: var(--cs-gateway-desktop-align);
+}
+
+.cs-gateway-advanced .cs-gateway-backdrop {
+    background: var(--cs-gateway-overlay-background);
+    backdrop-filter: var(--cs-gateway-overlay-backdrop);
+}
+
+body.cs-gateway-advanced-active .cs-mode-background-blur {
+    filter: blur(var(--cs-gateway-blur)) brightness(var(--cs-gateway-background-brightness)) saturate(var(--cs-gateway-background-saturation));
+}
+
+.cs-gateway-advanced .cs-gateway-ambient {
+    opacity: var(--cs-gateway-ambient-opacity);
+    filter: blur(var(--cs-gateway-ambient-blur));
+}
+
+.cs-gateway-advanced .cs-gateway-ambient-one {
+    background: radial-gradient(circle, var(--cs-gateway-ambient-one), transparent 68%);
+}
+
+.cs-gateway-advanced .cs-gateway-ambient-two {
+    background: radial-gradient(circle, var(--cs-gateway-ambient-two), transparent 68%);
+}
+
+/* Advanced Gateway panel geometry and safe backgrounds */
+.cs-gateway-advanced .cs-gateway-panel {
+    width: min(var(--cs-gateway-panel-width), calc(100vw - 32px));
+    max-height: min(var(--cs-gateway-panel-max-height), calc(100dvh - 24px));
+    gap: var(--cs-gateway-panel-gap);
+    padding: var(--cs-gateway-panel-padding);
+    border: var(--cs-gateway-panel-border);
+    border-radius: var(--cs-gateway-panel-radius);
+    background: var(--cs-gateway-panel-background);
+    box-shadow: var(--cs-gateway-panel-shadow);
+    backdrop-filter: var(--cs-gateway-panel-backdrop);
+}
+
+.cs-gateway-advanced[data-cs-panel-content-layout="stacked"] .cs-gateway-panel {
+    grid-template-columns: minmax(0, 1fr);
+}
+
+.cs-gateway-advanced[data-cs-panel-content-layout="brand-left"] .cs-gateway-panel,
+.cs-gateway-advanced[data-cs-panel-content-layout="brand-right"] .cs-gateway-panel {
+    grid-template-columns: minmax(220px, .82fr) minmax(320px, 1.18fr);
+}
+
+.cs-gateway-advanced[data-cs-panel-content-layout="brand-left"] .cs-gateway-brand-column { order: 1; }
+.cs-gateway-advanced[data-cs-panel-content-layout="brand-left"] .cs-gateway-choice-column { order: 2; }
+.cs-gateway-advanced[data-cs-panel-content-layout="brand-right"] .cs-gateway-brand-column { order: 2; }
+.cs-gateway-advanced[data-cs-panel-content-layout="brand-right"] .cs-gateway-choice-column { order: 1; }
+
+.cs-gateway-advanced .cs-gateway-brand-column {
+    text-align: var(--cs-gateway-title-align);
+    align-items: var(--cs-gateway-title-flex-align);
+}
+
+.cs-gateway-advanced .cs-gateway-title {
+    color: var(--cs-gateway-title-color);
+    font-size: clamp(24px, 4vw, var(--cs-gateway-title-size));
+    font-weight: var(--cs-gateway-title-weight);
+    text-align: var(--cs-gateway-title-align);
+    align-self: var(--cs-gateway-title-flex-align);
+}
+
+.cs-gateway-advanced .cs-gateway-subtitle {
+    color: var(--cs-gateway-subtitle-color);
+    font-size: var(--cs-gateway-subtitle-size);
+    text-align: var(--cs-gateway-title-align);
+    align-self: var(--cs-gateway-title-flex-align);
+}
+
+.cs-gateway-advanced .cs-gateway-logo-row,
+.cs-gateway-advanced .cs-gateway-chip-row {
+    justify-content: var(--cs-gateway-title-grid-align);
+}
+
+/* Gateway card layout at developer-controlled breakpoints */
+.cs-gateway-advanced .cs-gateway-choice-column {
+    gap: var(--cs-gateway-choice-gap);
+}
+
+.cs-gateway-advanced[data-cs-desktop-card-layout="row"] .cs-gateway-choice-column {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.cs-gateway-advanced[data-cs-desktop-card-layout="column"] .cs-gateway-choice-column {
+    grid-template-columns: minmax(0, 1fr);
+}
+
+.cs-gateway-advanced .cs-gateway-choice-label {
+    order: 0;
+    grid-column: 1 / -1;
+}
+
+.cs-gateway-advanced .cs-gateway-choice {
+    min-height: var(--cs-gateway-card-min-height);
+    padding: var(--cs-gateway-card-padding);
+    border-width: var(--cs-gateway-card-border-width);
+    border-radius: var(--cs-gateway-card-radius);
+    box-shadow: var(--cs-gateway-card-shadow);
+    text-align: var(--cs-gateway-card-text-align);
+    align-content: var(--cs-gateway-card-content-align);
+    transition-duration: var(--cs-gateway-hover-duration);
+}
+
+.cs-gateway-advanced .cs-gateway-choice-copy {
+    text-align: var(--cs-gateway-card-text-align);
+    justify-items: var(--cs-gateway-card-grid-align);
+}
+
+.cs-gateway-advanced .cs-gateway-choice-title { color: var(--cs-gateway-card-title-color); }
+.cs-gateway-advanced .cs-gateway-choice-text { color: var(--cs-gateway-card-description-color); }
+
+.cs-gateway-advanced .cs-gateway-choice-action {
+    border-radius: var(--cs-gateway-button-radius);
+    justify-self: var(--cs-gateway-card-grid-align);
+}
+
+.cs-gateway-advanced .cs-gateway-choice-website {
+    background: var(--cs-gateway-website-card-background);
+    border-color: var(--cs-gateway-website-card-border);
+}
+
+.cs-gateway-advanced .cs-gateway-choice-portfolio {
+    background: var(--cs-gateway-portfolio-card-background);
+    border-color: var(--cs-gateway-portfolio-card-border);
+}
+
+.cs-gateway-advanced .cs-gateway-choice-website .cs-gateway-choice-action {
+    color: var(--cs-gateway-website-button-text);
+    background: linear-gradient(135deg, var(--cs-gateway-website-button-start), var(--cs-gateway-website-button-end));
+}
+
+.cs-gateway-advanced .cs-gateway-choice-portfolio .cs-gateway-choice-action {
+    color: var(--cs-gateway-portfolio-button-text);
+    background: linear-gradient(135deg, var(--cs-gateway-portfolio-button-start), var(--cs-gateway-portfolio-button-end));
+}
+
+.cs-gateway-choice[data-cs-button-style="outline"] .cs-gateway-choice-action {
+    color: currentColor;
+    background: transparent;
+    border: 1px solid currentColor;
+}
+
+.cs-gateway-choice[data-cs-button-style="soft"] .cs-gateway-choice-action {
+    color: currentColor;
+    background: rgba(255, 255, 255, .1);
+    border: 1px solid rgba(255, 255, 255, .12);
+}
+
+.cs-gateway-choice[data-cs-button-style="text"] .cs-gateway-choice-action {
+    color: currentColor;
+    background: transparent;
+    padding-inline: 0;
+}
+
+.cs-gateway-choice-website[data-cs-button-style="solid"] .cs-gateway-choice-action {
+    background: var(--cs-gateway-website-accent);
+    color: var(--cs-gateway-website-button-text);
+}
+.cs-gateway-choice-portfolio[data-cs-button-style="solid"] .cs-gateway-choice-action {
+    background: var(--cs-gateway-portfolio-accent);
+    color: var(--cs-gateway-portfolio-button-text);
+}
+
+/* Safe card hover presets */
+.cs-gateway-advanced[data-cs-card-hover="none"] .cs-gateway-choice:hover,
+.cs-gateway-advanced[data-cs-card-hover="none"] .cs-gateway-choice:focus-visible {
+    transform: none;
+    box-shadow: var(--cs-gateway-card-shadow);
+}
+.cs-gateway-advanced[data-cs-card-hover="none"] .cs-gateway-choice-website:hover,
+.cs-gateway-advanced[data-cs-card-hover="none"] .cs-gateway-choice-website:focus-visible {
+    background: var(--cs-gateway-website-card-background);
+    border-color: var(--cs-gateway-website-card-border);
+}
+.cs-gateway-advanced[data-cs-card-hover="none"] .cs-gateway-choice-portfolio:hover,
+.cs-gateway-advanced[data-cs-card-hover="none"] .cs-gateway-choice-portfolio:focus-visible {
+    background: var(--cs-gateway-portfolio-card-background);
+    border-color: var(--cs-gateway-portfolio-card-border);
+}
+
+.cs-gateway-advanced[data-cs-card-hover="lift"] .cs-gateway-choice:hover,
+.cs-gateway-advanced[data-cs-card-hover="lift"] .cs-gateway-choice:focus-visible,
+.cs-gateway-advanced[data-cs-card-hover="lift-glow"] .cs-gateway-choice:hover,
+.cs-gateway-advanced[data-cs-card-hover="lift-glow"] .cs-gateway-choice:focus-visible {
+    transform: translateY(calc(var(--cs-gateway-hover-strength) * -1));
+}
+
+.cs-gateway-advanced[data-cs-card-hover="scale"] .cs-gateway-choice:hover,
+.cs-gateway-advanced[data-cs-card-hover="scale"] .cs-gateway-choice:focus-visible {
+    transform: scale(1.02);
+}
+
+.cs-gateway-advanced[data-cs-card-hover="tilt-soft"] .cs-gateway-choice:hover,
+.cs-gateway-advanced[data-cs-card-hover="tilt-soft"] .cs-gateway-choice:focus-visible {
+    transform: translateY(calc(var(--cs-gateway-hover-strength) * -1)) rotate(.35deg);
+}
+
+.cs-gateway-advanced[data-cs-card-hover="glow"] .cs-gateway-choice-website:hover,
+.cs-gateway-advanced[data-cs-card-hover="glow"] .cs-gateway-choice-website:focus-visible,
+.cs-gateway-advanced[data-cs-card-hover="lift-glow"] .cs-gateway-choice-website:hover,
+.cs-gateway-advanced[data-cs-card-hover="lift-glow"] .cs-gateway-choice-website:focus-visible {
+    box-shadow: var(--cs-gateway-card-shadow), 0 0 32px color-mix(in srgb, var(--cs-gateway-website-accent) 24%, transparent);
+}
+.cs-gateway-advanced[data-cs-card-hover="glow"] .cs-gateway-choice-portfolio:hover,
+.cs-gateway-advanced[data-cs-card-hover="glow"] .cs-gateway-choice-portfolio:focus-visible,
+.cs-gateway-advanced[data-cs-card-hover="lift-glow"] .cs-gateway-choice-portfolio:hover,
+.cs-gateway-advanced[data-cs-card-hover="lift-glow"] .cs-gateway-choice-portfolio:focus-visible {
+    box-shadow: var(--cs-gateway-card-shadow), 0 0 32px color-mix(in srgb, var(--cs-gateway-portfolio-accent) 24%, transparent);
+}
+
+.cs-gateway-advanced[data-cs-card-hover="border-glow"] .cs-gateway-choice:hover,
+.cs-gateway-advanced[data-cs-card-hover="border-glow"] .cs-gateway-choice:focus-visible {
+    box-shadow: 0 0 0 3px color-mix(in srgb, currentColor 18%, transparent), var(--cs-gateway-card-shadow);
+}
+
+.cs-gateway-advanced[data-cs-card-click="none"] .cs-gateway-choice.cs-gateway-choice-activating { animation: none; transform: none; }
+.cs-gateway-advanced[data-cs-card-click="pulse"] .cs-gateway-choice.cs-gateway-choice-activating { animation: csGatewayAdvancedPulse 260ms ease both; }
+
+/* Gateway animation presets */
+.cs-gateway-advanced:not([hidden]) .cs-gateway-backdrop {
+    animation-duration: var(--cs-gateway-animation-duration);
+    animation-timing-function: var(--cs-gateway-animation-easing);
+}
+
+.cs-gateway-advanced[data-cs-overlay-animation="none"]:not([hidden]) .cs-gateway-backdrop { animation: none; }
+.cs-gateway-advanced[data-cs-overlay-animation="fade"]:not([hidden]) .cs-gateway-backdrop { animation-name: csGatewayAdvancedFade; }
+.cs-gateway-advanced[data-cs-overlay-animation="fade-blur"]:not([hidden]) .cs-gateway-backdrop { animation-name: csGatewayAdvancedFadeBlur; }
+
+.cs-gateway-advanced:not([hidden]) .cs-gateway-panel {
+    animation-duration: var(--cs-gateway-animation-duration);
+    animation-delay: var(--cs-gateway-panel-delay);
+    animation-timing-function: var(--cs-gateway-animation-easing);
+    animation-fill-mode: both;
+}
+
+.cs-gateway-advanced[data-cs-panel-animation="none"]:not([hidden]) .cs-gateway-panel { animation: none; }
+.cs-gateway-advanced[data-cs-panel-animation="fade"]:not([hidden]) .cs-gateway-panel { animation-name: csGatewayAdvancedFade; }
+.cs-gateway-advanced[data-cs-panel-animation="soft-scale"]:not([hidden]) .cs-gateway-panel { animation-name: csGatewayAdvancedSoftScale; }
+.cs-gateway-advanced[data-cs-panel-animation="slide-up"]:not([hidden]) .cs-gateway-panel { animation-name: csGatewayAdvancedSlideUp; }
+.cs-gateway-advanced[data-cs-panel-animation="slide-down"]:not([hidden]) .cs-gateway-panel { animation-name: csGatewayAdvancedSlideDown; }
+.cs-gateway-advanced[data-cs-panel-animation="slide-left"]:not([hidden]) .cs-gateway-panel { animation-name: csGatewayAdvancedSlideLeft; }
+.cs-gateway-advanced[data-cs-panel-animation="slide-right"]:not([hidden]) .cs-gateway-panel { animation-name: csGatewayAdvancedSlideRight; }
+.cs-gateway-advanced[data-cs-panel-animation="zoom"]:not([hidden]) .cs-gateway-panel { animation-name: csGatewayAdvancedZoom; }
+.cs-gateway-advanced[data-cs-panel-animation="blur-in"]:not([hidden]) .cs-gateway-panel { animation-name: csGatewayAdvancedBlurIn; }
+
+.cs-gateway-advanced:not([hidden]) .cs-gateway-choice {
+    animation-duration: var(--cs-gateway-animation-duration);
+    animation-timing-function: var(--cs-gateway-animation-easing);
+    animation-fill-mode: both;
+}
+
+.cs-gateway-advanced:not([hidden]) .cs-gateway-choice-website { animation-delay: var(--cs-gateway-website-delay); }
+.cs-gateway-advanced:not([hidden]) .cs-gateway-choice-portfolio { animation-delay: var(--cs-gateway-portfolio-delay); }
+.cs-gateway-advanced[data-cs-website-card-animation="none"]:not([hidden]) .cs-gateway-choice-website,
+.cs-gateway-advanced[data-cs-portfolio-card-animation="none"]:not([hidden]) .cs-gateway-choice-portfolio { animation: none; }
+.cs-gateway-advanced[data-cs-website-card-animation="fade"]:not([hidden]) .cs-gateway-choice-website,
+.cs-gateway-advanced[data-cs-portfolio-card-animation="fade"]:not([hidden]) .cs-gateway-choice-portfolio { animation-name: csGatewayAdvancedFade; }
+.cs-gateway-advanced[data-cs-website-card-animation="soft-scale"]:not([hidden]) .cs-gateway-choice-website,
+.cs-gateway-advanced[data-cs-portfolio-card-animation="soft-scale"]:not([hidden]) .cs-gateway-choice-portfolio { animation-name: csGatewayAdvancedSoftScale; }
+.cs-gateway-advanced[data-cs-website-card-animation="slide-up"]:not([hidden]) .cs-gateway-choice-website,
+.cs-gateway-advanced[data-cs-portfolio-card-animation="slide-up"]:not([hidden]) .cs-gateway-choice-portfolio { animation-name: csGatewayAdvancedSlideUp; }
+.cs-gateway-advanced[data-cs-website-card-animation="slide-down"]:not([hidden]) .cs-gateway-choice-website,
+.cs-gateway-advanced[data-cs-portfolio-card-animation="slide-down"]:not([hidden]) .cs-gateway-choice-portfolio { animation-name: csGatewayAdvancedSlideDown; }
+.cs-gateway-advanced[data-cs-website-card-animation="slide-left"]:not([hidden]) .cs-gateway-choice-website,
+.cs-gateway-advanced[data-cs-portfolio-card-animation="slide-left"]:not([hidden]) .cs-gateway-choice-portfolio { animation-name: csGatewayAdvancedSlideLeft; }
+.cs-gateway-advanced[data-cs-website-card-animation="slide-right"]:not([hidden]) .cs-gateway-choice-website,
+.cs-gateway-advanced[data-cs-portfolio-card-animation="slide-right"]:not([hidden]) .cs-gateway-choice-portfolio { animation-name: csGatewayAdvancedSlideRight; }
+.cs-gateway-advanced[data-cs-website-card-animation="zoom"]:not([hidden]) .cs-gateway-choice-website,
+.cs-gateway-advanced[data-cs-portfolio-card-animation="zoom"]:not([hidden]) .cs-gateway-choice-portfolio { animation-name: csGatewayAdvancedZoom; }
+
+@keyframes csGatewayAdvancedFade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes csGatewayAdvancedFadeBlur { from { opacity: 0; backdrop-filter: blur(0); } to { opacity: 1; backdrop-filter: var(--cs-gateway-overlay-backdrop); } }
+@keyframes csGatewayAdvancedSoftScale { from { opacity: 0; transform: translateY(10px) scale(.98); } to { opacity: 1; transform: none; } }
+@keyframes csGatewayAdvancedSlideUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+@keyframes csGatewayAdvancedSlideDown { from { opacity: 0; transform: translateY(-24px); } to { opacity: 1; transform: none; } }
+@keyframes csGatewayAdvancedSlideLeft { from { opacity: 0; transform: translateX(28px); } to { opacity: 1; transform: none; } }
+@keyframes csGatewayAdvancedSlideRight { from { opacity: 0; transform: translateX(-28px); } to { opacity: 1; transform: none; } }
+@keyframes csGatewayAdvancedZoom { from { opacity: 0; transform: scale(.9); } to { opacity: 1; transform: none; } }
+@keyframes csGatewayAdvancedBlurIn { from { opacity: 0; filter: blur(12px); transform: scale(.98); } to { opacity: 1; filter: blur(0); transform: none; } }
+@keyframes csGatewayAdvancedPulse { 0% { transform: scale(1); } 50% { transform: scale(.97); } 100% { transform: scale(1); } }
+
+/* Website and Portfolio header CMS controls */
+.cs-mode-website-header-advanced header {
+    position: var(--cs-website-header-position, sticky);
+    background: var(--cs-website-header-background);
+    backdrop-filter: blur(var(--cs-website-header-blur));
+    border-bottom: var(--cs-website-header-border);
+    box-shadow: var(--cs-website-header-shadow);
+}
+
+.cs-mode-website-header-advanced[data-cs-header-position="static"] header { position: static; }
+.cs-mode-website-header-advanced[data-cs-header-position="sticky"] header { position: sticky; }
+.cs-mode-website-header-advanced .nav {
+    width: min(var(--cs-website-container-width), calc(100% - 36px));
+    min-height: var(--cs-website-header-min-height);
+}
+.cs-mode-website-header-advanced .links { gap: var(--cs-website-menu-gap); font-size: var(--cs-website-menu-font-size); color: var(--cs-website-menu-text); }
+.cs-mode-website-header-advanced .links a:hover,
+.cs-mode-website-header-advanced .links a:focus-visible { color: var(--cs-website-menu-hover); }
+
+.cs-portfolio-header-advanced .cs-portfolio-header {
+    background: var(--cs-portfolio-header-background);
+    backdrop-filter: blur(var(--cs-portfolio-header-blur));
+    border-bottom: var(--cs-portfolio-header-border);
+    box-shadow: var(--cs-portfolio-header-shadow);
+}
+.cs-portfolio-header-advanced[data-cs-header-position="static"] .cs-portfolio-header { position: static; }
+.cs-portfolio-header-advanced[data-cs-header-position="sticky"] .cs-portfolio-header { position: sticky; }
+.cs-portfolio-header-advanced .cs-portfolio-nav {
+    width: min(var(--cs-portfolio-container-width), calc(100% - 36px));
+    min-height: var(--cs-portfolio-header-min-height);
+}
+.cs-portfolio-header-advanced .cs-portfolio-links { gap: var(--cs-portfolio-menu-gap); }
+.cs-portfolio-header-advanced .cs-portfolio-links a { font-size: var(--cs-portfolio-menu-font-size); color: var(--cs-portfolio-menu-text); }
+.cs-portfolio-header-advanced .cs-portfolio-links a:hover,
+.cs-portfolio-header-advanced .cs-portfolio-links a:focus-visible { color: var(--cs-portfolio-menu-hover); }
+
+@media (min-width: 901px) {
+    .cs-mode-website-header-advanced[data-cs-desktop-layout="menu-left-brand-right"] .brand,
+    .cs-portfolio-header-advanced[data-cs-desktop-layout="menu-left-brand-right"] .cs-portfolio-brand { order: 2; }
+    .cs-mode-website-header-advanced[data-cs-desktop-layout="menu-left-brand-right"] .links,
+    .cs-portfolio-header-advanced[data-cs-desktop-layout="menu-left-brand-right"] .cs-portfolio-links { order: 1; }
+
+    .cs-mode-website-header-advanced[data-cs-desktop-layout="stacked-centered"] .nav,
+    .cs-portfolio-header-advanced[data-cs-desktop-layout="stacked-centered"] .cs-portfolio-nav {
+        flex-direction: column;
+        justify-content: center;
+        padding-block: 12px;
+    }
+
+    .cs-mode-website-header-advanced[data-cs-desktop-layout="stacked-centered"] .brand,
+    .cs-mode-website-header-advanced[data-cs-desktop-layout="stacked-centered"] .links,
+    .cs-portfolio-header-advanced[data-cs-desktop-layout="stacked-centered"] .cs-portfolio-brand,
+    .cs-portfolio-header-advanced[data-cs-desktop-layout="stacked-centered"] .cs-portfolio-links { justify-content: center; }
+
+    .cs-mode-website-header-advanced[data-cs-menu-alignment="left"] .links,
+    .cs-portfolio-header-advanced[data-cs-menu-alignment="left"] .cs-portfolio-links { margin-right: auto; }
+    .cs-mode-website-header-advanced[data-cs-menu-alignment="center"] .links,
+    .cs-portfolio-header-advanced[data-cs-menu-alignment="center"] .cs-portfolio-links { margin-inline: auto; }
+    .cs-mode-website-header-advanced[data-cs-menu-alignment="right"] .links,
+    .cs-portfolio-header-advanced[data-cs-menu-alignment="right"] .cs-portfolio-links { margin-left: auto; }
+}
+
+/* Header link style presets */
+.cs-mode-website-header-advanced[data-cs-menu-link-style="pill"] .links a,
+.cs-portfolio-header-advanced[data-cs-menu-link-style="pill"] .cs-portfolio-links a { padding: 9px 12px; border-radius: 999px; }
+.cs-mode-website-header-advanced[data-cs-menu-link-style="pill"] .links a:hover,
+.cs-portfolio-header-advanced[data-cs-menu-link-style="pill"] .cs-portfolio-links a:hover { background: rgba(255, 255, 255, .06); }
+.cs-mode-website-header-advanced[data-cs-menu-link-style="underline"] .links a,
+.cs-portfolio-header-advanced[data-cs-menu-link-style="underline"] .cs-portfolio-links a { border-bottom: 2px solid transparent; border-radius: 0; }
+.cs-mode-website-header-advanced[data-cs-menu-link-style="underline"] .links a:hover,
+.cs-portfolio-header-advanced[data-cs-menu-link-style="underline"] .cs-portfolio-links a:hover { border-bottom-color: currentColor; }
+
+/* Advanced mode-switch style and positions */
+.cs-mode-switch.cs-mode-switch-advanced {
+    flex-direction: row;
+    background: var(--cs-mode-switch-background);
+    border: var(--cs-mode-switch-border);
+    border-radius: var(--cs-mode-switch-radius);
+    box-shadow: var(--cs-mode-switch-shadow);
+    backdrop-filter: blur(var(--cs-mode-switch-blur));
+}
+
+.cs-mode-switch-advanced[data-cs-orientation="vertical"] { flex-direction: column; }
+.cs-mode-switch-advanced::before {
+    top: var(--cs-switch-pill-top);
+    height: var(--cs-switch-pill-height);
+    bottom: auto;
+    border-radius: var(--cs-mode-switch-radius);
+}
+.cs-mode-switch-advanced[data-cs-orientation="vertical"]::before {
+    left: 7px;
+    right: 7px;
+    width: auto;
+    height: var(--cs-switch-pill-height);
+    transition-property: top, height, background, box-shadow;
+}
+.cs-mode-switch-advanced.cs-mode-switch-active-website::before { background: linear-gradient(135deg, var(--cs-mode-switch-website-start), var(--cs-mode-switch-website-end)); }
+.cs-mode-switch-advanced.cs-mode-switch-active-portfolio::before { background: linear-gradient(135deg, var(--cs-mode-switch-portfolio-start), var(--cs-mode-switch-portfolio-end)); }
+.cs-mode-switch-advanced .cs-mode-switch-button { color: var(--cs-mode-switch-inactive-text); }
+.cs-mode-switch-advanced.cs-mode-switch-active-website .cs-mode-switch-button.cs-mode-active { color: var(--cs-mode-switch-website-text); }
+.cs-mode-switch-advanced.cs-mode-switch-active-portfolio .cs-mode-switch-button.cs-mode-active { color: var(--cs-mode-switch-portfolio-text); }
+.cs-mode-switch-advanced[data-cs-size="compact"] { padding: 5px; gap: 4px; }
+.cs-mode-switch-advanced[data-cs-size="compact"] .cs-mode-switch-button { min-width: 76px; padding: 7px 10px; font-size: 12px; }
+.cs-mode-switch-advanced[data-cs-size="large"] { padding: 9px; gap: 8px; }
+.cs-mode-switch-advanced[data-cs-size="large"] .cs-mode-switch-button { min-width: 108px; padding: 11px 18px; font-size: 15px; }
+.cs-mode-switch-advanced[data-cs-animation="none"] { animation: none; }
+.cs-mode-switch-advanced[data-cs-animation="fade"] { animation: csGatewayAdvancedFade .35s ease both; }
+.cs-mode-switch-advanced[data-cs-animation="soft-scale"] { animation: csGatewayAdvancedSoftScale .4s ease both; }
+.cs-mode-switch-advanced[data-cs-hover="none"]:hover,
+.cs-mode-switch-advanced[data-cs-hover="none"]:focus-within { transform: none; }
+.cs-mode-switch-advanced[data-cs-hover="glow"]:hover,
+.cs-mode-switch-advanced[data-cs-hover="glow"]:focus-within { transform: none; box-shadow: var(--cs-mode-switch-shadow), 0 0 30px rgba(247, 216, 138, .18); }
+
+@media (min-width: 901px) {
+    .cs-mode-switch-advanced[data-cs-desktop-position="top-left"] { top: var(--cs-mode-switch-y-offset); left: var(--cs-mode-switch-x-offset); right: auto; bottom: auto; transform: none; }
+    .cs-mode-switch-advanced[data-cs-desktop-position="top-right"] { top: var(--cs-mode-switch-y-offset); right: var(--cs-mode-switch-x-offset); left: auto; bottom: auto; transform: none; }
+    .cs-mode-switch-advanced[data-cs-desktop-position="top-center"] { top: calc(var(--cs-mode-switch-y-offset) + var(--cs-active-header-height)); left: 50%; right: auto; bottom: auto; transform: translateX(-50%); }
+    .cs-mode-switch-advanced[data-cs-desktop-position="center-left"] { top: 50%; left: var(--cs-mode-switch-x-offset); right: auto; bottom: auto; transform: translateY(-50%); }
+    .cs-mode-switch-advanced[data-cs-desktop-position="center-right"] { top: 50%; right: var(--cs-mode-switch-x-offset); left: auto; bottom: auto; transform: translateY(-50%); }
+    .cs-mode-switch-advanced[data-cs-desktop-position="bottom-left"] { bottom: var(--cs-mode-switch-y-offset); left: var(--cs-mode-switch-x-offset); right: auto; top: auto; transform: none; }
+    .cs-mode-switch-advanced[data-cs-desktop-position="bottom-center"] { bottom: var(--cs-mode-switch-y-offset); left: 50%; right: auto; top: auto; transform: translateX(-50%); }
+    .cs-mode-switch-advanced[data-cs-desktop-position="bottom-right"] { bottom: var(--cs-mode-switch-y-offset); right: var(--cs-mode-switch-x-offset); left: auto; top: auto; transform: none; }
+
+    body.cs-mode-switch-top-left-visible .cs-mode-website-app header .nav,
+    body.cs-mode-switch-top-left-visible .cs-portfolio-header .cs-portfolio-nav { padding-left: var(--cs-mode-switch-header-reserve); }
+
+    body.cs-mode-switch-bottom-visible .cs-mode-website-app,
+    body.cs-mode-switch-bottom-visible .cs-portfolio-app {
+        padding-bottom: var(--cs-mode-switch-safe-space);
+    }
+}
+
+/* Tablet Gateway settings */
+@media (min-width: 621px) and (max-width: 900px) {
+    .cs-gateway-overlay.cs-gateway-advanced {
+        justify-items: var(--cs-gateway-tablet-justify);
+        align-items: var(--cs-gateway-tablet-align);
+    }
+    .cs-gateway-advanced[data-cs-tablet-card-layout="row"] .cs-gateway-choice-column { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .cs-gateway-advanced[data-cs-tablet-card-layout="column"] .cs-gateway-choice-column { grid-template-columns: minmax(0, 1fr); }
+    .cs-gateway-advanced[data-cs-panel-content-layout="brand-left"] .cs-gateway-panel,
+    .cs-gateway-advanced[data-cs-panel-content-layout="brand-right"] .cs-gateway-panel { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* Mobile header and Gateway controls */
+@media (max-width: 900px) {
+    .cs-gateway-overlay.cs-gateway-advanced {
+        justify-items: var(--cs-gateway-mobile-justify);
+        align-items: var(--cs-gateway-mobile-align);
+    }
+    .cs-gateway-advanced[data-cs-mobile-card-layout="row"] .cs-gateway-choice-column { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .cs-gateway-advanced[data-cs-mobile-card-layout="column"] .cs-gateway-choice-column { grid-template-columns: minmax(0, 1fr); }
+    .cs-gateway-advanced[data-cs-panel-content-layout="brand-left"] .cs-gateway-panel,
+    .cs-gateway-advanced[data-cs-panel-content-layout="brand-right"] .cs-gateway-panel { grid-template-columns: minmax(0, 1fr); }
+    .cs-gateway-advanced .cs-gateway-title { font-size: clamp(24px, 8vw, var(--cs-gateway-title-size)); }
+
+    .cs-mode-website-header-advanced[data-cs-mobile-toggle-side="left"] .cs-mode-website-nav-toggle,
+    .cs-portfolio-header-advanced[data-cs-mobile-toggle-side="left"] .cs-portfolio-nav-toggle { order: -1; }
+    .cs-mode-website-header-advanced[data-cs-mobile-toggle-side="right"] .cs-mode-website-nav-toggle,
+    .cs-portfolio-header-advanced[data-cs-mobile-toggle-side="right"] .cs-portfolio-nav-toggle { order: 2; }
+    .cs-mode-website-header-advanced .links,
+    .cs-portfolio-header-advanced .cs-portfolio-links { text-align: var(--cs-mobile-menu-text-align, left); }
+    .cs-mode-website-header-advanced[data-cs-mobile-menu-alignment="center"] .links a,
+    .cs-portfolio-header-advanced[data-cs-mobile-menu-alignment="center"] .cs-portfolio-links a { text-align: center; }
+    .cs-mode-website-header-advanced[data-cs-mobile-menu-alignment="right"] .links a,
+    .cs-portfolio-header-advanced[data-cs-mobile-menu-alignment="right"] .cs-portfolio-links a { text-align: right; }
+
+    .cs-mode-switch-advanced[data-cs-mobile-position="top-left"] { top: calc(var(--cs-mode-switch-mobile-offset) + var(--cs-active-header-height)) !important; left: var(--cs-mode-switch-mobile-offset) !important; right: auto !important; bottom: auto !important; transform: none; }
+    .cs-mode-switch-advanced[data-cs-mobile-position="top-center"] { top: calc(var(--cs-mode-switch-mobile-offset) + var(--cs-active-header-height)) !important; left: 50% !important; right: auto !important; bottom: auto !important; transform: translateX(-50%); }
+    .cs-mode-switch-advanced[data-cs-mobile-position="top-right"] { top: calc(var(--cs-mode-switch-mobile-offset) + var(--cs-active-header-height)) !important; right: var(--cs-mode-switch-mobile-offset) !important; left: auto !important; bottom: auto !important; transform: none; }
+    .cs-mode-switch-advanced[data-cs-mobile-position="bottom-left"] { bottom: max(var(--cs-mode-switch-mobile-offset), env(safe-area-inset-bottom)) !important; left: var(--cs-mode-switch-mobile-offset) !important; right: auto !important; top: auto !important; transform: none; }
+    .cs-mode-switch-advanced[data-cs-mobile-position="bottom-center"] { bottom: max(var(--cs-mode-switch-mobile-offset), env(safe-area-inset-bottom)) !important; left: 50% !important; right: auto !important; top: auto !important; transform: translateX(-50%); }
+    .cs-mode-switch-advanced[data-cs-mobile-position="bottom-right"] { bottom: max(var(--cs-mode-switch-mobile-offset), env(safe-area-inset-bottom)) !important; right: var(--cs-mode-switch-mobile-offset) !important; left: auto !important; top: auto !important; transform: none; }
+}
+
+@media (max-width: 560px) {
+    .cs-gateway-advanced[data-cs-mobile-card-layout="row"] .cs-gateway-choice-column {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .cs-gateway-advanced[data-cs-mobile-card-layout="row"] .cs-gateway-choice {
+        padding: max(12px, calc(var(--cs-gateway-card-padding) * .78));
+    }
+    .cs-gateway-advanced[data-cs-mobile-card-layout="row"] .cs-gateway-choice-action { width: 100%; }
+}
+
+/* Accessibility guarantee: CMS cannot disable reduced-motion protection. */
+@media (prefers-reduced-motion: reduce) {
+    .cs-gateway-advanced .cs-gateway-backdrop,
+    .cs-gateway-advanced .cs-gateway-panel,
+    .cs-gateway-advanced .cs-gateway-choice,
+    .cs-mode-switch-advanced,
+    .cs-mode-switch-advanced::before {
+        animation: none !important;
+        transition: none !important;
+    }
+}
