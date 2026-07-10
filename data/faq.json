@@ -1,0 +1,18 @@
+[
+  {
+    "question": "Is CyberSabil IT Tools free?",
+    "answer": "The website and scripts are hosted publicly on GitHub. Download and use only from official CyberSabil links."
+  },
+  {
+    "question": "Why does PowerShell ask for administrator permission?",
+    "answer": "Some Windows setup and cleanup tasks require administrator rights, such as scheduled tasks, startup settings and system folders."
+  },
+  {
+    "question": "Can I see the script before running it?",
+    "answer": "Yes. Open the script link in the browser or run the command without | iex to view the script content first."
+  },
+  {
+    "question": "Why does Windows show SmartScreen for EXE tools?",
+    "answer": "New or unsigned EXE files can trigger SmartScreen warnings until they build reputation or are digitally signed."
+  }
+]

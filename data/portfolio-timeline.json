@@ -1,0 +1,50 @@
+[
+  {
+    "period": "v2.1",
+    "title": "Dual-mode foundation",
+    "status": "Completed",
+    "description": "Added same-homepage Website and Portfolio modes while preserving the original tools website content and GitHub Pages structure."
+  },
+  {
+    "period": "v2.2",
+    "title": "Minimal glass gateway",
+    "status": "Completed",
+    "description": "Polished the mode selector into a compact premium gateway overlay with CMS-controlled card labels, descriptions and display options."
+  },
+  {
+    "period": "v2.3",
+    "title": "Responsive UX hardening",
+    "status": "Completed",
+    "description": "Added mobile menus, responsive breakpoints, overflow protection and safer layout behavior for desktop, tablet and phone screens."
+  },
+  {
+    "period": "v2.4",
+    "title": "CMS, SEO and validation polish",
+    "status": "Completed",
+    "description": "Added portfolio timeline, social preview metadata, JSON fallback UI, Pages CMS field upgrades, media workflow guidance and a local validation script."
+  },
+  {
+    "period": "v2.8",
+    "title": "Single-file deployment rollback",
+    "status": "Completed",
+    "description": "Restored one CSS file and one JavaScript file while retaining the gateway, responsive navigation, portfolio timeline, SEO and CMS improvements."
+  },
+  {
+    "period": "v2.8.1",
+    "title": "Deployment safety audit",
+    "status": "Completed",
+    "description": "Aligned gateway fallbacks and cache versions, guarded CMS choices, corrected deployment paths, added a PNG social preview and strengthened local validation."
+  },
+  {
+    "period": "v2.8.2",
+    "title": "Mobile runtime stability",
+    "status": "Completed",
+    "description": "Added resilient JSON loading, true critical-content fallbacks, compact CMS failure reporting, Gateway scroll locking, reload-frame preparation and mobile mode-switch safety spacing."
+  },
+  {
+    "period": "v2.8.3",
+    "title": "Cross-browser layout and transition polish",
+    "status": "Current",
+    "description": "Normalized Gateway positioning across short desktop viewports, removed Firefox programmatic focus outlines, aligned download actions, prevented header navigation overlap and refined same-page mode transitions on phones."
+  }
+]
