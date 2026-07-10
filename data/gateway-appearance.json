@@ -1,7 +1,7 @@
 {
   "advancedControlsEnabled": "yes",
-  "visualPreset": "custom-advanced",
-  "cardOrder": "portfolio-first",
+  "visualPreset": "v2.8.3-exact",
+  "cardOrder": "website-first",
   "desktopCardLayout": "row",
   "tabletCardLayout": "row",
   "mobileCardLayout": "column",
