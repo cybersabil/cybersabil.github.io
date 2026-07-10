@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="CyberSabil is a CMS-controlled tools website and professional portfolio for Windows automation, PowerShell scripts, troubleshooting utilities and GitHub Pages deployment.">
+    <!-- SEO and Social Preview Defaults
+         Purpose: Gives browsers, Google, WhatsApp, LinkedIn and Twitter/X useful preview information before CMS JavaScript updates it from data/seo.json. -->
+    <link id="csCanonical" rel="canonical" href="https://cybersabil.github.io/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cybersabil.github.io/">
+    <meta property="og:title" content="CyberSabil IT Tools and Portfolio">
+    <meta property="og:description" content="Practical Windows support tools, commands, downloads, documentation and professional portfolio on one GitHub Pages homepage.">
+    <meta property="og:image" content="https://cybersabil.github.io/media/social-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CyberSabil IT Tools and Portfolio">
+    <meta name="twitter:description" content="Practical Windows support tools, commands, downloads, documentation and professional portfolio on one GitHub Pages homepage.">
+    <meta name="twitter:image" content="https://cybersabil.github.io/media/social-preview.png">
+    <meta name="theme-color" content="#120821">
+    <meta name="color-scheme" content="dark light">
+    <meta name="format-detection" content="telephone=no">
+    <title>CyberSabil IT Tools and Portfolio</title>
+    <!-- CyberSabil Asset Version
+         Purpose: Update the version number when CSS or JS changes so GitHub Pages browsers do not keep old cached files. -->
+    <link rel="stylesheet" href="assets/css/style.css?v=2.9.2">
+</head>
+
+<body class="theme-dark bg-gradient card-glass cs-mode-gateway-open">
+    <a class="cs-mode-skip-link" href="#tools">Skip to content</a>
+    <!-- CMS Data Status Banner
+         Purpose: Shows a clear non-breaking warning if one or more JSON/CMS files fail to load, instead of leaving users with a confusing blank area. -->
+    <div id="csDataStatus" class="cs-mode-data-status" role="status" aria-live="polite" hidden>
+        <div class="cs-mode-data-status-copy">
+            <strong id="csDataStatusTitle">Content fallback active</strong>
+            <span id="csDataStatusMessage">Some editable CMS files could not load, so safe fallback content is being shown.</span>
+        </div>
+        <button id="csDataStatusDismiss" class="cs-mode-data-status-dismiss" type="button" aria-label="Dismiss content status">×</button>
+    </div>
+    <!-- CyberSabil Gateway Overlay
+         Purpose: Shows a premium CMS-controlled Website/Portfolio choice on the same homepage before a visitor enters a mode. -->
+    <div id="csGatewayOverlay" class="cs-gateway-overlay cs-gateway-style-premium" role="dialog" aria-modal="true" aria-labelledby="csGatewayTitle" aria-describedby="csGatewaySubtitle">
+        <div class="cs-gateway-backdrop" aria-hidden="true"></div>
+        <div class="cs-gateway-ambient cs-gateway-ambient-one" aria-hidden="true"></div>
+        <div class="cs-gateway-ambient cs-gateway-ambient-two" aria-hidden="true"></div>
+        <section class="cs-gateway-panel" aria-label="CyberSabil mode selection" tabindex="-1">
+            <!-- Gateway Minimal Header
+                 Purpose: Shows only the essential CMS-controlled heading for a clean Website/Portfolio selection modal. -->
+            <div class="cs-gateway-brand-column">
+                <div id="csGatewayLogoRow" class="cs-gateway-logo-row">
+                    <span class="cs-gateway-logo" id="csGatewayLogoText">CS</span>
+                    <span class="cs-gateway-eyebrow" id="csGatewayEyebrow">CyberSabil</span>
+                </div>
+                <h1 id="csGatewayTitle" class="cs-gateway-title">Choose your mode</h1>
+                <p id="csGatewaySubtitle" class="cs-gateway-subtitle">Open the tools website or view the portfolio.</p>
+                <div id="csGatewayChips" class="cs-gateway-chip-row" aria-label="Gateway highlights">
+                    <span class="cs-gateway-chip" id="csGatewayChipOne">IT Tools</span>
+                    <span class="cs-gateway-chip" id="csGatewayChipTwo">PowerShell</span>
+                    <span class="cs-gateway-chip" id="csGatewayChipThree">Portfolio</span>
+                </div>
+                <p id="csGatewayFooterNote" class="cs-gateway-note">Same homepage. No extra pages.</p>
+            </div>
+
+            <!-- Gateway Choice Area
+                 Purpose: Gives visitors two simple mode choices while keeping the existing website blurred in the background. -->
+            <div class="cs-gateway-choice-column">
+                <p class="cs-gateway-choice-label" id="csGatewayChoiceLabel">Select a mode</p>
+                <button type="button" class="cs-gateway-choice cs-gateway-choice-website" data-cs-mode-choice="website">
+                    <span class="cs-gateway-choice-icon" id="csGatewayWebsiteIcon" aria-hidden="true">🛠️</span>
+                    <span class="cs-gateway-choice-copy">
+                        <span class="cs-gateway-choice-kicker" id="csGatewayWebsiteKicker">Website mode</span>
+                        <span class="cs-gateway-choice-title" id="csGatewayWebsiteTitle">Website</span>
+                        <span class="cs-gateway-choice-text" id="csGatewayWebsiteDescription">Tools, downloads, docs and commands.</span>
+                    </span>
+                    <span class="cs-gateway-choice-action" id="csGatewayWebsiteButtonText">Open Website</span>
+                </button>
+                <button type="button" class="cs-gateway-choice cs-gateway-choice-portfolio" data-cs-mode-choice="portfolio">
+                    <span class="cs-gateway-choice-icon" id="csGatewayPortfolioIcon" aria-hidden="true">✨</span>
+                    <span class="cs-gateway-choice-copy">
+                        <span class="cs-gateway-choice-kicker" id="csGatewayPortfolioKicker">Portfolio mode</span>
+                        <span class="cs-gateway-choice-title" id="csGatewayPortfolioTitle">Portfolio</span>
+                        <span class="cs-gateway-choice-text" id="csGatewayPortfolioDescription">Profile, skills, projects and contact.</span>
+                    </span>
+                    <span class="cs-gateway-choice-action" id="csGatewayPortfolioButtonText">View Portfolio</span>
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <!-- CyberSabil Mode Switch
+         Purpose: Allows visitors to switch between Website and Portfolio after making the first selection. -->
+    <div id="csModeSwitch" class="cs-mode-switch cs-mode-switch-top-right" aria-label="Switch CyberSabil mode" hidden>
+        <button type="button" class="cs-mode-switch-button" data-cs-mode-switch="website">Website</button>
+        <button type="button" class="cs-mode-switch-button" data-cs-mode-switch="portfolio">Portfolio</button>
+    </div>
+
+    <!-- Existing Website App Wrapper
+         Purpose: Keeps the original tools website in one container so it can be blurred, shown or hidden without redesigning it. -->
+    <div id="csWebsiteApp" class="cs-mode-website-app cs-mode-background-blur">
+        <header>
+            <div class="container nav" id="websiteNavBar">
+                <a class="brand" href="#"><span class="logo" id="logoText">CS</span><span id="brandName">CyberSabil</span></a>
+                <!-- Mobile Navigation Toggle
+                     Purpose: Keeps the header clean on small screens and prevents navigation links from overlapping the brand. -->
+                <button class="cs-mode-website-nav-toggle" id="websiteNavToggle" type="button" aria-controls="websiteNavLinks" aria-expanded="false">
+                    <span class="cs-mode-website-nav-toggle-label">Menu</span>
+                    <span class="cs-mode-website-nav-toggle-lines" aria-hidden="true"><span></span><span></span><span></span></span>
+                </button>
+                <nav class="links" id="websiteNavLinks" aria-label="Website navigation"><a id="navToolsLabel" href="#tools">Tools</a><a id="navDownloadsLabel" href="#downloads">Downloads</a><a
+                        id="navProjectsLabel" href="#projects">Projects</a><a id="navDocsLabel" href="#docs">Docs</a><a id="githubNav"
+                        href="https://github.com/cybersabil" target="_blank" rel="noopener noreferrer">GitHub</a></nav>
+            </div>
+        </header>
+        <main>
+            <section class="container hero">
+                <div>
+                    <div class="badge" id="badge">Windows IT Support Toolkit</div>
+                    <h1><span id="heroTitleBefore">Practical IT tools for</span><br><span class="grad"
+                            id="heroTitleHighlight">real Windows problems.</span></h1>
+                    <p class="lead" id="heroDescription">CyberSabil is a practical IT support portfolio and tools hub.</p>
+                    <div class="actions"><a class="btn primary" id="primaryButton" href="#tools">View Tools</a><a
+                            class="btn secondary" id="secondaryButton" href="#downloads">Download</a></div>
+                </div>
+                <div class="terminal" id="terminalBox">
+                    <div class="top"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                    <div class="term-body" id="terminalCommands"></div>
+                </div>
+            </section>
+            <section id="tools" class="container">
+                <div class="section-head">
+                    <div>
+                        <h2 id="toolsSectionTitle">Featured IT tools</h2>
+                        <p id="toolsSectionSubtitle" class="muted">Problem-solving utilities built for real Windows support workflows.</p>
+                    </div>
+                </div>
+                <div class="grid" id="toolCards"></div>
+            </section>
+            <section id="downloads" class="container">
+                <div class="section-head">
+                    <div>
+                        <h2 id="downloadsSectionTitle">Downloads</h2>
+                        <p id="downloadsSectionSubtitle" class="muted">Official CyberSabil downloads, live scripts and release links.</p>
+                    </div>
+                </div>
+                <div class="grid" id="downloadsGrid"></div><br>
+                <div id="downloadsWarning" class="warning">Safety note: Download tools only from official CyberSabil GitHub links. Do not run
+                    unknown scripts or EXE files from untrusted sources.</div>
+            </section>
+            <section id="projects" class="container">
+                <div class="section-head">
+                    <div>
+                        <h2 id="projectsSectionTitle">Projects portfolio</h2>
+                        <p id="projectsSectionSubtitle" class="muted">A portfolio of practical IT tools, scripts and GitHub-based deployments.</p>
+                    </div>
+                </div>
+                <div class="grid" id="projectCards"></div>
+            </section>
+            <section id="skills" class="container">
+                <div class="section-head">
+                    <div>
+                        <h2 id="skillsSectionTitle">Skills and focus areas</h2>
+                        <p id="skillsSectionSubtitle" class="muted">Core areas behind CyberSabil tools and support workflows.</p>
+                    </div>
+                </div>
+                <div class="grid" id="skillsGrid"></div>
+            </section>
+            <section id="about" class="container">
+                <div class="grid-2">
+                    <div class="card">
+                        <h2 id="aboutTitle">About CyberSabil</h2>
+                        <p id="aboutDescription" class="muted">CyberSabil builds practical Windows and IT support utilities.
+                        </p>
+                    </div>
+                    <div id="quickCommandsCard" class="card">
+                        <h2 id="quickCommandsTitle">Quick commands</h2>
+                        <p id="quickCommandsSubtitle" class="muted">Copy commonly used support commands directly from the page.</p>
+                        <div id="commandList"></div>
+                    </div>
+                </div>
+            </section>
+            <section id="docs" class="container">
+                <div class="section-head">
+                    <div>
+                        <h2 id="docsSectionTitle">Documentation and guides</h2>
+                        <p id="docsSectionSubtitle" class="muted">Simple how-to guides for users and support engineers.</p>
+                    </div>
+                </div>
+                <div class="tools" id="docsList"></div>
+            </section>
+            <section id="faq" class="container">
+                <div class="section-head">
+                    <div>
+                        <h2 id="faqSectionTitle">FAQ</h2>
+                        <p id="faqSectionSubtitle" class="muted">Common questions about CyberSabil tools and scripts.</p>
+                    </div>
+                </div>
+                <div class="grid-2" id="faqGrid"></div>
+            </section>
+        </main>
+        <footer>
+            <div class="container"><strong id="footerBrand">CyberSabil IT Tools</strong>
+                <p id="footerText">Windows automation and IT support utilities.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Portfolio App Wrapper
+         Purpose: Holds the new same-page portfolio mode with a separate purple/gold professional visual system. -->
+    <div id="csPortfolioApp" class="cs-portfolio-app cs-portfolio-theme-purple-gold" hidden>
+        <header class="cs-portfolio-header">
+            <div class="cs-portfolio-container cs-portfolio-nav">
+                <a class="cs-portfolio-brand" href="#csPortfolioTop" aria-label="CyberSabil Portfolio Home">
+                    <span class="cs-portfolio-logo" id="csPortfolioInitials">CS</span>
+                    <span id="csPortfolioBrandText">CyberSabil Portfolio</span>
+                </a>
+                <!-- Portfolio Mobile Navigation Toggle
+                     Purpose: Collapses portfolio links on mobile so the purple/gold header does not wrap awkwardly. -->
+                <button class="cs-portfolio-nav-toggle" id="portfolioNavToggle" type="button" aria-controls="csPortfolioNav" aria-expanded="false">
+                    <span class="cs-portfolio-nav-toggle-label">Menu</span>
+                    <span class="cs-portfolio-nav-toggle-lines" aria-hidden="true"><span></span><span></span><span></span></span>
+                </button>
+                <nav id="csPortfolioNav" class="cs-portfolio-links" aria-label="Portfolio navigation">
+                    <a id="csPortfolioNavSkills" href="#csPortfolioSkills">Skills</a>
+                    <a id="csPortfolioNavProjects" href="#csPortfolioProjects">Projects</a>
+                    <a id="csPortfolioNavTimeline" href="#csPortfolioTimeline">Timeline</a>
+                    <a id="csPortfolioNavServices" href="#csPortfolioServices">Services</a>
+                    <a id="csPortfolioNavContact" href="#csPortfolioContact">Contact</a>
+                </nav>
+            </div>
+        </header>
+        <main id="csPortfolioTop" class="cs-portfolio-main">
+            <section id="csPortfolioHero" class="cs-portfolio-container cs-portfolio-hero">
+                <div class="cs-portfolio-hero-copy">
+                    <p class="cs-portfolio-eyebrow" id="csPortfolioAvailability">Available for IT support automation</p>
+                    <h1 class="cs-portfolio-title"><span id="csPortfolioName">CyberSabil</span><br><span id="csPortfolioRole">Windows IT Support Automation Specialist</span></h1>
+                    <p class="cs-portfolio-lead" id="csPortfolioTagline">Practical Windows automation, troubleshooting tools, cleanup workflows and GitHub-hosted support utilities.</p>
+                    <div class="cs-portfolio-actions">
+                        <a class="cs-portfolio-button cs-portfolio-button-primary" id="csPortfolioPrimaryCta" href="#csPortfolioProjects">View projects</a>
+                        <a class="cs-portfolio-button cs-portfolio-button-secondary" id="csPortfolioSecondaryCta" href="#csPortfolioContact">Contact</a>
+                    </div>
+                </div>
+                <aside id="csPortfolioProfileCard" class="cs-portfolio-profile-card" aria-label="Profile summary">
+                    <div class="cs-portfolio-avatar" id="csPortfolioAvatar">CS</div>
+                    <h2 id="csPortfolioCardName">CyberSabil</h2>
+                    <p id="csPortfolioBio">Building practical tools for Windows support engineers and real troubleshooting workflows.</p>
+                    <div class="cs-portfolio-meta">
+                        <span id="csPortfolioLocation">India</span>
+                        <span id="csPortfolioExperience">PowerShell • Windows • GitHub Pages</span>
+                    </div>
+                    <div class="cs-portfolio-stats" aria-label="Portfolio highlights">
+                        <div><strong id="csPortfolioStatOneValue">24/7</strong><span id="csPortfolioStatOneLabel">Support mindset</span></div>
+                        <div><strong id="csPortfolioStatTwoValue">100%</strong><span id="csPortfolioStatTwoLabel">Practical tools</span></div>
+                    </div>
+                </aside>
+            </section>
+            <section class="cs-portfolio-container cs-portfolio-section" id="csPortfolioSkills">
+                <div class="cs-portfolio-section-head">
+                    <p class="cs-portfolio-eyebrow" id="csPortfolioSkillsEyebrow">Core strengths</p>
+                    <h2 id="csPortfolioSkillsTitle">Skills</h2>
+                    <p id="csPortfolioSkillsSubtitle">Focused capabilities for Windows support automation and practical deployment workflows.</p>
+                </div>
+                <div class="cs-portfolio-grid" id="csPortfolioSkillsGrid"></div>
+            </section>
+            <section class="cs-portfolio-container cs-portfolio-section" id="csPortfolioProjects">
+                <div class="cs-portfolio-section-head">
+                    <p class="cs-portfolio-eyebrow" id="csPortfolioProjectsEyebrow">Selected work</p>
+                    <h2 id="csPortfolioProjectsTitle">Projects</h2>
+                    <p id="csPortfolioProjectsSubtitle">Production-ready and planned tools built around real Windows support problems.</p>
+                </div>
+                <div class="cs-portfolio-projects" id="csPortfolioProjectsGrid"></div>
+            </section>
+            <!-- Portfolio Timeline Section
+                 Purpose: Shows a CMS-controlled work/process timeline so portfolio visitors understand progress, experience and project maturity. -->
+            <section class="cs-portfolio-container cs-portfolio-section" id="csPortfolioTimeline">
+                <div class="cs-portfolio-section-head">
+                    <p class="cs-portfolio-eyebrow" id="csPortfolioTimelineEyebrow">Progress path</p>
+                    <h2 id="csPortfolioTimelineTitle">Timeline</h2>
+                    <p id="csPortfolioTimelineSubtitle">A short view of how the CyberSabil tools and portfolio system are growing over time.</p>
+                </div>
+                <div class="cs-portfolio-timeline" id="csPortfolioTimelineList"></div>
+            </section>
+            <section class="cs-portfolio-container cs-portfolio-section" id="csPortfolioServices">
+                <div class="cs-portfolio-section-head">
+                    <p class="cs-portfolio-eyebrow" id="csPortfolioServicesEyebrow">How I can help</p>
+                    <h2 id="csPortfolioServicesTitle">Services</h2>
+                    <p id="csPortfolioServicesSubtitle">Clear support areas for automation, troubleshooting, documentation and web deployment.</p>
+                </div>
+                <div class="cs-portfolio-grid" id="csPortfolioServicesGrid"></div>
+            </section>
+            <section class="cs-portfolio-container cs-portfolio-contact" id="csPortfolioContact">
+                <div>
+                    <p class="cs-portfolio-eyebrow" id="csPortfolioContactEyebrow">Contact</p>
+                    <h2 id="csPortfolioContactHeading">Let’s build reliable IT support tools</h2>
+                    <p id="csPortfolioContactDescription">Connect for Windows automation, support utilities, dashboards and deployment workflows.</p>
+                </div>
+                <div class="cs-portfolio-contact-card">
+                    <p id="csPortfolioEmailRow" hidden><strong id="csPortfolioEmailLabel">Email:</strong> <a id="csPortfolioEmail" href="#"></a></p>
+                    <p><strong id="csPortfolioGithubLabel">GitHub:</strong> <a id="csPortfolioGithub" href="https://github.com/cybersabil" target="_blank" rel="noopener">github.com/cybersabil</a></p>
+                    <p><strong id="csPortfolioWebsiteLabel">Website:</strong> <a id="csPortfolioWebsite" href="https://cybersabil.github.io/" target="_blank" rel="noopener">cybersabil.github.io</a></p>
+                    <a class="cs-portfolio-button cs-portfolio-button-primary" id="csPortfolioContactCta" href="https://github.com/cybersabil" target="_blank" rel="noopener">Open GitHub</a>
+                </div>
+            </section>
+        </main>
+        <footer class="cs-portfolio-footer">
+            <div id="csPortfolioFooterText" class="cs-portfolio-container">CyberSabil Portfolio • Windows automation and IT support utilities</div>
+        </footer>
+    </div>
+
+    <!-- CyberSabil Main Script
+         Purpose: Loads the single JavaScript file that renders CMS content and controls Website, Portfolio, gateway, navigation and copy-button behavior. -->
+    <script src="assets/js/main.js?v=2.9.2"></script>
+</body>
+
+</html>
