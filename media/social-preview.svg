@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">CyberSabil IT Tools and Portfolio</title>
+  <desc id="desc">Social preview image for the CyberSabil GitHub Pages website.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#120821"/>
+      <stop offset="0.52" stop-color="#24113d"/>
+      <stop offset="1" stop-color="#06111f"/>
+    </linearGradient>
+    <radialGradient id="purple" cx="20%" cy="16%" r="58%">
+      <stop offset="0" stop-color="#8b5cf6" stop-opacity="0.62"/>
+      <stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gold" cx="82%" cy="18%" r="48%">
+      <stop offset="0" stop-color="#f8df98" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#f8df98" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#purple)"/>
+  <rect width="1200" height="630" fill="url(#gold)"/>
+  <rect x="72" y="72" width="1056" height="486" rx="44" fill="rgba(255,255,255,0.08)" stroke="rgba(248,223,152,0.35)" stroke-width="2"/>
+  <rect x="114" y="114" width="92" height="92" rx="26" fill="#f8df98"/>
+  <text x="160" y="174" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="900" font-size="38" fill="#160b22">CS</text>
+  <text x="114" y="267" font-family="Segoe UI, Arial, sans-serif" font-weight="900" font-size="78" fill="#fff8e8">CyberSabil</text>
+  <text x="114" y="347" font-family="Segoe UI, Arial, sans-serif" font-weight="800" font-size="46" fill="#f8df98">IT Tools and Portfolio</text>
+  <text x="114" y="420" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="rgba(255,255,255,0.76)">Windows automation • PowerShell • GitHub Pages • CMS</text>
+  <g transform="translate(114 468)">
+    <rect width="174" height="46" rx="23" fill="rgba(53,215,255,0.14)" stroke="rgba(53,215,255,0.35)"/>
+    <text x="87" y="31" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="800" font-size="18" fill="#95f1ff">Website mode</text>
+    <rect x="194" width="174" height="46" rx="23" fill="rgba(248,223,152,0.14)" stroke="rgba(248,223,152,0.35)"/>
+    <text x="281" y="31" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="800" font-size="18" fill="#f8df98">Portfolio mode</text>
+  </g>
+</svg>
