@@ -1,1 +1,14 @@
-
+{
+  "heading": "Let’s build practical IT support systems",
+  "description": "Connect for Windows automation, support utilities, CMS-controlled GitHub Pages sites, cleanup workflows and technical documentation.",
+  "email": "",
+  "githubText": "github.com/cybersabil",
+  "githubLink": "https://github.com/cybersabil",
+  "websiteText": "cybersabil.github.io",
+  "websiteLink": "https://cybersabil.github.io/",
+  "ctaText": "Open GitHub",
+  "ctaLink": "https://github.com/cybersabil",
+  "emailLabel": "Email:",
+  "githubLabel": "GitHub:",
+  "websiteLabel": "Website:"
+}
