@@ -169,7 +169,7 @@ content:
     label: Mode Switch Portfolio Label
     type: string
   - name: modeSwitchPosition
-    label: Mode Switch Position (top-right, bottom-right)
+    label: Basic Mode Switch Position (used when advanced position controls inherit)
     type: select
     options:
       values:
@@ -557,7 +557,7 @@ content:
     label: Background Darkness Number
     type: number
   - name: panelMaxWidth
-    label: Gateway Panel Max Width
+    label: Legacy/Baseline Gateway Panel Max Width
     type: string
 
   # Global visual baseline and non-destructive reset
@@ -1841,7 +1841,7 @@ content:
       - "yes"
       - "no"
   - name: projectLinkLabel
-    label: Project Link Label
+    label: Default Project Link Label (used when a project button text is empty)
     type: string
   - name: footerText
     label: Portfolio Footer Text
