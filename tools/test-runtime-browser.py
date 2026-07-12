@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""CyberSabil v2.10.0 Chromium runtime, no-flash and control-isolation tests.
+"""CyberSabil v2.10.1 Chromium runtime, no-flash and control-isolation tests.
 
 The execution environment blocks direct navigation to local/custom domains, so this
 harness loads the real generated HTML with Playwright set_content and intercepts all
@@ -16,7 +16,7 @@ from playwright.sync_api import sync_playwright
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE_URL = "https://cybersabil.test/"
-SCREENSHOT_DIR = ROOT / "docs" / "test-screenshots-v2.10.0"
+SCREENSHOT_DIR = ROOT / "docs" / "test-screenshots-v2.10.1"
 SCREENSHOT_DIR.mkdir(parents=True, exist_ok=True)
 
 INSTRUMENT = r'''
@@ -239,7 +239,9 @@ def assert_scenario(name: str, result: dict) -> None:
         assert "cs-gateway-appearance-custom" not in result["overlayClass"]
         assert "cs-gateway-animation-custom" not in result["overlayClass"]
         assert "cs-gateway-interaction-custom" not in result["overlayClass"]
-        assert result["websiteOrder"] == "2" and result["portfolioOrder"] == "1"
+        expected_website_order = "1" if name == "package_default" else "2"
+        expected_portfolio_order = "2" if name == "package_default" else "1"
+        assert result["websiteOrder"] == expected_website_order and result["portfolioOrder"] == expected_portfolio_order
         assert not result["panelAnimation"].startswith("csGatewayAdvanced"), result["panelAnimation"]
         if name == "layout_only_mobile":
             assert abs(result["websiteRect"]["x"] - result["portfolioRect"]["x"]) < 3, result
@@ -284,7 +286,7 @@ def main() -> None:
         browser.close()
     for name, result in output.items():
         assert_scenario(name, result)
-    report = ROOT / "docs" / "RUNTIME_BROWSER_TEST_RESULTS_v2.10.0.json"
+    report = ROOT / "docs" / "RUNTIME_BROWSER_TEST_RESULTS_v2.10.1.json"
     report.write_text(json.dumps(output, indent=2), encoding="utf-8")
     print("CyberSabil Chromium runtime tests passed (7 scenarios).")
     print(f"Results: {report}")

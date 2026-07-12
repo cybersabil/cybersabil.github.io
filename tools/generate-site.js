@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/* CyberSabil v2.10.0 build-time synchronization
+/* CyberSabil v2.10.1 build-time synchronization
    Purpose: Generates current raw HTML metadata, critical content, initial Gateway order and a deployment revision from the same Pages CMS JSON sources. */
 const fs = require('fs');
 const path = require('path');
@@ -7,7 +7,8 @@ const crypto = require('crypto');
 
 const ROOT = path.resolve(__dirname, '..');
 const DATA = path.join(ROOT, 'data');
-const VERSION = '2.10.0';
+const VERSION = '2.10.1';
+const SCHEMA_VERSION = '2.10.0';
 const read = (file) => fs.readFileSync(path.join(ROOT, file), 'utf8');
 const write = (file, value) => fs.writeFileSync(path.join(ROOT, file), value, 'utf8');
 const json = (file) => JSON.parse(read(file));
@@ -73,11 +74,11 @@ const portfolioSettings = json('data/portfolio-settings.json');
 const profile = json('data/profile.json');
 const contact = json('data/contact.json');
 
-const manifest = { release: `v${VERSION}`, schemaVersion: VERSION, revision, contentRevision };
+const manifest = { release: `v${VERSION}`, schemaVersion: SCHEMA_VERSION, revision, contentRevision };
 write('data/runtime-manifest.json', JSON.stringify(manifest, null, 2) + '\n');
 
 const critical = {
-  schemaVersion: VERSION,
+  schemaVersion: SCHEMA_VERSION,
   revision,
   config: { site, design, siteSettings, sections, seo, gateway, visualBaseline, gatewayAppearance, navigationStyle, portfolioSettings }
 };

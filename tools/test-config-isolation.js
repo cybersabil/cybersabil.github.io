@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/* CyberSabil v2.10.0 control-isolation regression test
+/* CyberSabil v2.10.1 control-isolation regression test
    Purpose: Fails when a layout-only field can require appearance/animation gates or when duplicate owners return. */
 const fs = require('fs');
 const path = require('path');

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/* CyberSabil v2.10.0 production validator
+/* CyberSabil v2.10.1 production validator
    Purpose: Validates atomic boot, grouped CMS authority, generated revision consistency, JSON/YAML references and static-site safety before GitHub Pages deployment. */
 const fs = require('fs');
 const path = require('path');
@@ -19,7 +19,7 @@ const required = [
   'data/site-settings.json', 'data/design.json', 'data/visual-baseline.json',
   'data/gateway.json', 'data/gateway-appearance.json', 'data/navigation-style.json',
   'data/runtime-manifest.json', 'tools/generate-site.js', 'tools/test-config-isolation.js',
-  'tools/test-runtime-browser.py', '.github/workflows/build-pages.yml'
+  'tools/test-runtime-browser.py', 'tools/test-cms-field-coverage.js', '.github/workflows/build-pages.yml'
 ];
 required.forEach(file => { if (!exists(file)) errors.push(`Missing required file: ${file}`); });
 
@@ -50,9 +50,9 @@ try { new vm.Script(read('tools/generate-site.js'), { filename: 'tools/generate-
 catch (error) { errors.push(`generate-site.js syntax error: ${error.message}`); }
 
 // Version/schema consistency.
-if (settings.version !== 'v2.10.0') errors.push(`site-settings version must be v2.10.0, found ${settings.version}`);
+if (settings.version !== 'v2.10.1') errors.push(`site-settings version must be v2.10.1, found ${settings.version}`);
 if (settings.schemaVersion !== '2.10.0') errors.push(`site-settings schemaVersion must be 2.10.0, found ${settings.schemaVersion}`);
-if (manifest.release !== 'v2.10.0' || manifest.schemaVersion !== '2.10.0') errors.push('runtime-manifest release/schema mismatch');
+if (manifest.release !== 'v2.10.1' || manifest.schemaVersion !== '2.10.0') errors.push('runtime-manifest release/schema mismatch');
 if (!/^[a-f0-9]{20}$/.test(String(manifest.revision || ''))) errors.push('runtime-manifest revision must be a generated 20-character hex value');
 
 // Generated HTML and revision alignment.
@@ -131,9 +131,20 @@ requireText(js, 'generation !== csBootGeneration', 'Stale async response guard')
 requireText(css, '@media (prefers-reduced-motion: reduce)', 'Reduced-motion protection');
 
 
+
+// CSS collision and accidental-edit protection.
+forbidText(css, '********', 'style.css accidental edit marker');
+forbidText(css, 'transform: translateX(-50%);', 'style.css position/animation transform collision');
+requireText(css, 'translate: -50% 0;', 'style.css independent centered positioning');
+['--cs-gateway-panel-width','--cs-gateway-blur','--cs-gateway-darkness'].forEach(variable => {
+  requireText(js, `"${variable}"`, 'Gateway deterministic reset coverage');
+});
+requireText(js, 'applyGatewayDesign();', 'Gateway custom-to-inherit baseline restoration');
+requireText(js, 'renderModeSwitchLabels(document.body.dataset.csActiveMode || "website", { animate: false });', 'Mode-switch live position reconciliation');
+
 // GitHub Pages generated deployment workflow.
 ['actions/checkout@v6','actions/setup-node@v6','actions/configure-pages@v5','actions/upload-pages-artifact@v4','actions/deploy-pages@v4',
- 'node tools/generate-site.js','node tools/test-config-isolation.js','node tools/validate-site.js']
+ 'node tools/generate-site.js','node tools/test-config-isolation.js','node tools/test-cms-field-coverage.js','node tools/validate-site.js']
   .forEach(text => requireText(workflow, text, 'GitHub Pages workflow'));
 
 // Pages CMS paths and local references.
@@ -162,9 +173,9 @@ if (warnings.length) {
   warnings.forEach(message => console.log(`- ${message}`));
 }
 if (errors.length) {
-  console.error('\nCyberSabil v2.10.0 validation failed:');
+  console.error('\nCyberSabil v2.10.1 validation failed:');
   errors.forEach(message => console.error(`- ${message}`));
   process.exit(1);
 }
-console.log('\nCyberSabil v2.10.0 validation passed.');
+console.log('\nCyberSabil v2.10.1 validation passed.');
 console.log(`Revision: ${manifest.revision}`);
