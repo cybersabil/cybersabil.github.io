@@ -1,5 +1,5 @@
 {
-  "version": "v2.10.0",
+  "version": "v2.10.1",
   "gatewayEnabled": "yes",
   "defaultMode": "gateway",
   "websiteEnabled": "yes",
@@ -29,5 +29,5 @@
   "dataLoadWarningTitle": "Content fallback active",
   "dataLoadWarningMessage": "Some editable CMS files could not load. Safe fallback content is being shown so the page remains usable.",
   "schemaVersion": "2.10.0",
-  "bootStatusMessage": "Loading current CyberSabil configuration…"
+  "bootStatusMessage": "Loading current CyberSabil configuration\u2026"
 }
