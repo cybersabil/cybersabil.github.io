@@ -47,6 +47,17 @@ function setStylePropertyOnModeButton(source, mode, property, value) {
   });
 }
 
+function setGatewayBackgroundAppState(source, id, visible, blurred) {
+  const pattern = new RegExp(String.raw`(<div\s+id=["']${id}["']\s+class=["'])([^"']*)(["'])([^>]*)(>)`);
+  return source.replace(pattern, (match, open, classes, quote, attrs, close) => {
+    const tokens = classes.split(/\s+/).filter(Boolean).filter(token => token !== 'cs-mode-background-blur');
+    if (blurred) tokens.push('cs-mode-background-blur');
+    let nextAttrs = attrs.replace(/\s+hidden(?:=["']hidden["'])?/g, '');
+    if (!visible) nextAttrs += ' hidden';
+    return `${open}${tokens.join(' ')}${quote}${nextAttrs}${close}`;
+  });
+}
+
 function meta(source, selector, value) {
   const escaped = String(value ?? '').replace(/&/g, '&amp;').replace(/"/g, '&quot;');
   const pattern = selector.startsWith('property:')
@@ -153,14 +164,25 @@ if (layoutCustom) {
   index = setStylePropertyOnModeButton(index, 'portfolio', 'order', null);
 }
 
+const enabledModes = [
+  siteSettings.websiteEnabled !== 'no' ? 'website' : null,
+  siteSettings.portfolioEnabled !== 'no' ? 'portfolio' : null
+].filter(Boolean);
+let gatewayBackgroundMode = gateway.backgroundMode === 'portfolio' ? 'portfolio' : 'website';
+if (!enabledModes.includes(gatewayBackgroundMode)) gatewayBackgroundMode = enabledModes[0] || 'website';
+index = setGatewayBackgroundAppState(index, 'csWebsiteApp', gatewayBackgroundMode === 'website', gatewayBackgroundMode === 'website');
+index = setGatewayBackgroundAppState(index, 'csPortfolioApp', gatewayBackgroundMode === 'portfolio', gatewayBackgroundMode === 'portfolio');
+
 const bodyClasses = [
   `theme-${design.themeMode || 'dark'}`, `accent-${design.accentColor || 'cyan'}`,
   `bg-${design.backgroundStyle || 'gradient'}`, `card-${design.cardStyle || 'glass'}`, 'cs-mode-gateway-open'
 ];
 if ((design.heroLayout || 'split') === 'center') bodyClasses.push('hero-center');
 index = index.replace(/<body\s+class="[^"]*"([^>]*)>/, (match, attrs) => {
-  const cleanAttrs = attrs.replace(/\sdata-cs-generated-revision="[^"]*"/g, '');
-  return `<body class="${bodyClasses.join(' ')}"${cleanAttrs} data-cs-generated-revision="${revision}">`;
+  const cleanAttrs = attrs
+    .replace(/\sdata-cs-generated-revision="[^"]*"/g, '')
+    .replace(/\sdata-cs-active-mode="[^"]*"/g, '');
+  return `<body class="${bodyClasses.join(' ')}"${cleanAttrs} data-cs-active-mode="${gatewayBackgroundMode}" data-cs-generated-revision="${revision}">`;
 });
 write('index.html', index);
 
