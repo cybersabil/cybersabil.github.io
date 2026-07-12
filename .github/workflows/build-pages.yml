@@ -34,6 +34,9 @@ jobs:
       - name: Test CMS control isolation
         run: node tools/test-config-isolation.js
 
+      - name: Validate every Pages CMS field and collision guard
+        run: node tools/test-cms-field-coverage.js
+
       - name: Validate generated site
         run: node tools/validate-site.js
 
