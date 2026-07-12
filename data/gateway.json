@@ -17,6 +17,7 @@
   "showCardKickers": "no",
   "showCardDescriptions": "yes",
   "showCardButtons": "yes",
+  "backgroundMode": "portfolio",
   "websiteIcon": "🛠️",
   "websiteKicker": "Website mode",
   "websiteTitle": "Website",
