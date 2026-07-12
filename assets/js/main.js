@@ -1,4 +1,4 @@
-/* CyberSabil Single JavaScript File v2.10.0
+/* CyberSabil Single JavaScript File v2.10.1
    Purpose: Keeps all website, CMS, gateway, portfolio, navigation and animation logic in one file.
    Note: Split JS modules were merged back into this file to avoid module import/path/load-order issues on GitHub Pages. */
 
@@ -16,7 +16,7 @@ const $ = (id) => document.getElementById(id);
 
 /* Asset and CMS version constants
    Purpose: Keeps cache-busting and localStorage keys aligned with the current release without adding any build tool. */
-const CS_ASSET_VERSION = "2.10.0";
+const CS_ASSET_VERSION = "2.10.1";
 const CS_SCHEMA_VERSION = "2.10.0";
 const csDataFailures = [];
 
@@ -49,7 +49,7 @@ const CS_FALLBACK = {
         "showTerminalPreview": "yes",
     },
     siteSettings: {
-        "version": "v2.10.0",
+        "version": "v2.10.1",
         "schemaVersion": "2.10.0",
         "bootStatusMessage": "Loading current CyberSabil configuration…",
         "gatewayEnabled": "yes",
@@ -1265,10 +1265,10 @@ const CyberSabilGateway = (() => {
     ];
     const gatewayVariables = [
         "--cs-gateway-desktop-justify", "--cs-gateway-desktop-align", "--cs-gateway-tablet-justify", "--cs-gateway-tablet-align",
-        "--cs-gateway-mobile-justify", "--cs-gateway-mobile-align", "--cs-gateway-panel-max-height",
+        "--cs-gateway-mobile-justify", "--cs-gateway-mobile-align", "--cs-gateway-panel-width", "--cs-gateway-panel-max-height",
         "--cs-gateway-panel-padding", "--cs-gateway-panel-gap", "--cs-gateway-panel-radius", "--cs-gateway-panel-background",
         "--cs-gateway-panel-border", "--cs-gateway-panel-shadow", "--cs-gateway-panel-backdrop", "--cs-gateway-overlay-background",
-        "--cs-gateway-overlay-backdrop", "--cs-gateway-background-brightness", "--cs-gateway-background-saturation", "--cs-gateway-ambient-one",
+        "--cs-gateway-overlay-backdrop", "--cs-gateway-blur", "--cs-gateway-darkness", "--cs-gateway-background-brightness", "--cs-gateway-background-saturation", "--cs-gateway-ambient-one",
         "--cs-gateway-ambient-two", "--cs-gateway-ambient-opacity", "--cs-gateway-ambient-blur", "--cs-gateway-title-align",
         "--cs-gateway-title-flex-align", "--cs-gateway-title-grid-align", "--cs-gateway-title-color", "--cs-gateway-title-size",
         "--cs-gateway-title-weight", "--cs-gateway-subtitle-color", "--cs-gateway-subtitle-size", "--cs-gateway-choice-gap",
@@ -1303,6 +1303,9 @@ function applyGatewayAppearance() {
         const websiteCard = document.querySelector('[data-cs-mode-choice="website"]');
         const portfolioCard = document.querySelector('[data-cs-mode-choice="portfolio"]');
         resetGatewayAdvancedState(overlay, websiteCard, portfolioCard);
+        // Re-apply the legacy Gateway baseline after clearing advanced ownership.
+        // This keeps custom → inherit transitions deterministic during live reapplication, not only after a full reload.
+        applyGatewayDesign();
 
         const customLayout = useCustomGatewayLayout();
         const customAppearance = useCustomGatewayAppearance();
@@ -1532,6 +1535,9 @@ function applyNavigationStyle() {
             switcher.dataset.csAnimation = safeChoice(navigationStyle.modeSwitchAnimation, ["none", "fade", "soft-scale", "pulse"], "pulse");
             switcher.dataset.csHover = safeChoice(navigationStyle.modeSwitchHoverPreset, ["none", "lift", "glow"], "lift");
         }
+        // Reconcile effective position classes and body collision reserves after any live control-group change.
+        // This makes custom → inherit and inherit → custom deterministic without requiring a page reload.
+        if (!switcher.hidden) renderModeSwitchLabels(document.body.dataset.csActiveMode || "website", { animate: false });
     }
 
     /* Gateway content renderer
