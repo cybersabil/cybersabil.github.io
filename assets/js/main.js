@@ -135,6 +135,7 @@ const CS_FALLBACK = {
         "showCardKickers": "no",
         "showCardDescriptions": "yes",
         "showCardButtons": "yes",
+        "backgroundMode": "website",
         "websiteIcon": "🛠️",
         "websiteKicker": "Website mode",
         "websiteTitle": "Website",
@@ -1083,6 +1084,44 @@ const CyberSabilGateway = (() => {
         ].filter(Boolean);
     }
 
+    /* Gateway background resolver
+       Purpose: Selects the CMS-requested Website or Portfolio layer behind the Gateway and safely falls back when that mode is disabled. */
+    function resolveGatewayBackgroundMode() {
+        const enabledModes = getEnabledModes();
+        const requested = safeChoice(gatewaySettings.backgroundMode, ["website", "portfolio"], "website");
+        return enabledModes.includes(requested) ? requested : (enabledModes[0] || "website");
+    }
+
+    /* Active background/header state
+       Purpose: Keeps the visible background app, blur ownership and header reserve synchronized for Gateway and direct modes. */
+    function applyActiveBackgroundState(mode, gatewayOpen = false) {
+        const selectedMode = normalizeMode(mode);
+        const websiteApp = $("csWebsiteApp");
+        const portfolioApp = $("csPortfolioApp");
+        document.body.dataset.csActiveMode = selectedMode;
+
+        if (useCustomWebsiteHeader() || useCustomPortfolioHeader() || useCustomModeSwitchPosition()) {
+            document.documentElement.style.setProperty(
+                "--cs-active-header-height",
+                `${selectedMode === "portfolio"
+                    ? clampNumber(navigationStyle.portfolioHeaderMinHeight, 48, 140, 76)
+                    : clampNumber(navigationStyle.websiteHeaderMinHeight, 48, 140, 72)}px`
+            );
+        } else {
+            document.documentElement.style.removeProperty("--cs-active-header-height");
+        }
+
+        if (websiteApp) {
+            websiteApp.hidden = selectedMode !== "website";
+            websiteApp.classList.toggle("cs-mode-background-blur", gatewayOpen && selectedMode === "website");
+        }
+        if (portfolioApp) {
+            portfolioApp.hidden = selectedMode !== "portfolio";
+            portfolioApp.classList.toggle("cs-mode-background-blur", gatewayOpen && selectedMode === "portfolio");
+        }
+        return selectedMode;
+    }
+
     /* Safe mode fallback
        Purpose: Automatically restores Website mode and shows a visible warning if CMS disables both Website and Portfolio. */
     function ensureModeAvailability() {
@@ -1625,24 +1664,11 @@ function applyNavigationStyle() {
         if (!websiteApp || !portfolioApp) return;
 
         document.body.classList.remove("cs-mode-gateway-open");
-        document.body.dataset.csActiveMode = selectedMode;
-        if (useCustomWebsiteHeader() || useCustomPortfolioHeader() || useCustomModeSwitchPosition()) {
-            document.documentElement.style.setProperty(
-                "--cs-active-header-height",
-                `${selectedMode === "portfolio"
-                    ? clampNumber(navigationStyle.portfolioHeaderMinHeight, 48, 140, 76)
-                    : clampNumber(navigationStyle.websiteHeaderMinHeight, 48, 140, 72)}px`
-            );
-        } else {
-            document.documentElement.style.removeProperty("--cs-active-header-height");
-        }
-        websiteApp.classList.remove("cs-mode-background-blur");
+        applyActiveBackgroundState(selectedMode, false);
 
         /* Stable mode transition order
            Purpose: Resets scroll before the target content animation so deep-page switches do not show an intermediate offset frame. */
         document.documentElement.style.scrollBehavior = "auto";
-        websiteApp.hidden = selectedMode === "portfolio";
-        portfolioApp.hidden = selectedMode !== "portfolio";
         window.scrollTo({ top: 0, left: 0 });
         animateVisibleApp(selectedMode === "portfolio" ? portfolioApp : websiteApp);
 
@@ -1680,11 +1706,7 @@ function applyNavigationStyle() {
 
         document.body.classList.add("cs-mode-gateway-open");
         document.body.classList.remove("cs-mode-switch-visible", "cs-mode-switch-top-right-visible", "cs-mode-switch-top-left-visible", "cs-mode-switch-bottom-visible", "cs-mode-switch-side-left-visible", "cs-mode-switch-side-right-visible");
-        if (websiteApp) {
-            websiteApp.hidden = false;
-            websiteApp.classList.add("cs-mode-background-blur");
-        }
-        if (portfolioApp) portfolioApp.hidden = true;
+        applyActiveBackgroundState(resolveGatewayBackgroundMode(), true);
         if (overlay) {
             overlay.hidden = false;
             overlay.classList.remove("cs-gateway-hide", "cs-gateway-navigation-snapshot");
@@ -1902,11 +1924,7 @@ function applyNavigationStyle() {
 
         document.body.classList.add("cs-mode-gateway-open");
         document.body.classList.remove("cs-mode-switch-visible", "cs-mode-switch-top-right-visible", "cs-mode-switch-top-left-visible", "cs-mode-switch-bottom-visible", "cs-mode-switch-side-left-visible", "cs-mode-switch-side-right-visible");
-        if (websiteApp) {
-            websiteApp.hidden = false;
-            websiteApp.classList.add("cs-mode-background-blur");
-        }
-        if (portfolioApp) portfolioApp.hidden = true;
+        applyActiveBackgroundState(resolveGatewayBackgroundMode(), true);
         if (switcher) switcher.hidden = true;
         if (overlay) {
             overlay.hidden = false;
@@ -1978,7 +1996,7 @@ function boot(settingsData, gatewayData, visualBaselineData, gatewayAppearanceDa
         else setMode(initialMode, { fromUser: false });
     }
 
-    return { boot, activateInitialMode, renderPortfolio };
+    return { boot, activateInitialMode, renderPortfolio, getGatewayBackgroundMode: resolveGatewayBackgroundMode };
 })();
 
 
@@ -2053,13 +2071,16 @@ async function init() {
         applySiteSettings(siteSettings);
         setupResponsiveNavigation();
         const initialMode = CyberSabilGateway.boot(siteSettings, gateway, visualBaseline, gatewayAppearance, navigationStyle, portfolioSettings);
-        if (initialMode === "portfolio") await CyberSabilGateway.renderPortfolio();
+        const preparedContentMode = initialMode === "gateway"
+            ? CyberSabilGateway.getGatewayBackgroundMode()
+            : initialMode;
+        if (preparedContentMode === "portfolio") await CyberSabilGateway.renderPortfolio();
         else await loadWebsiteContent(siteSettings, generation);
         if (generation !== csBootGeneration) return;
         CyberSabilGateway.activateInitialMode(initialMode);
         renderDataFallbackStatus(siteSettings);
         await revealPreparedPage();
-        scheduleInactiveModeLoad(initialMode, siteSettings, generation);
+        scheduleInactiveModeLoad(preparedContentMode, siteSettings, generation);
     })().catch((error) => {
         revealFatalFallback(error);
         throw error;
