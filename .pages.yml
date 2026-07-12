@@ -504,6 +504,13 @@ content:
       values:
       - "yes"
       - "no"
+  - name: backgroundMode
+    label: Gateway Background Mode (website, portfolio)
+    type: select
+    options:
+      values:
+      - "website"
+      - "portfolio"
   - name: websiteIcon
     label: Website Card Icon
     type: string
