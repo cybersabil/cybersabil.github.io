@@ -1,5 +1,5 @@
 {
-  "gatewayEnabled": "yes",
+  "gatewayEnabled": "no",
   "defaultMode": "gateway",
   "websiteEnabled": "yes",
   "portfolioEnabled": "yes",
