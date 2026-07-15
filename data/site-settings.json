@@ -1,5 +1,4 @@
 {
-  "version": "v2.10.1",
   "gatewayEnabled": "yes",
   "defaultMode": "gateway",
   "websiteEnabled": "yes",
@@ -9,9 +8,6 @@
   "modeSwitchPortfolioLabel": "Portfolio",
   "modeSwitchPosition": "top-right",
   "rememberVisitorChoice": "no",
-  "enableUrlModeOverride": "yes",
-  "allowGatewayCloseWithEscape": "yes",
-  "escapeFallbackMode": "website",
   "showToolsSection": "yes",
   "showDownloadsSection": "yes",
   "showProjectsSection": "yes",
@@ -20,6 +16,9 @@
   "showFaqSection": "yes",
   "showAboutSection": "yes",
   "showQuickCommands": "yes",
+  "enableUrlModeOverride": "yes",
+  "allowGatewayCloseWithEscape": "yes",
+  "escapeFallbackMode": "website",
   "terminalReadyMessage": "CyberSabil tools ready.",
   "copyButtonDefaultTitle": "Copy",
   "copyButtonSuccessTitle": "Copied",
@@ -28,6 +27,7 @@
   "showDataLoadWarning": "yes",
   "dataLoadWarningTitle": "Content fallback active",
   "dataLoadWarningMessage": "Some editable CMS files could not load. Safe fallback content is being shown so the page remains usable.",
-  "schemaVersion": "2.10.0",
-  "bootStatusMessage": "Loading current CyberSabil configuration\u2026"
+  "bootStatusMessage": "Loading current CyberSabil configuration…",
+  "version": "v2.10.1",
+  "schemaVersion": "2.10.0"
 }
