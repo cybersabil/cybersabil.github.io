@@ -1,0 +1,1013 @@
+{
+  "batch": "list_responsive",
+  "checks": 18,
+  "passed": 18,
+  "failed": 0,
+  "results": [
+    {
+      "test": "add",
+      "passed": true,
+      "details": {
+        "ready": true,
+        "failed": false,
+        "sectionHidden": false,
+        "empty": "\n                \n                    \n                    Live\n                    CyberSabil Tools Website\n                    A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.\n                    GitHub Pages · HTML, CSS, JavaScript, JSON, Pages CMS\n                    Open website →\n                \n            \n                \n                    \n                    Active\n                    Glass Gateway Dual Mode\n                    A same-homepage mode system that lets visitors open the existing tools website or switch into a professional portfolio layout.\n                    Website architecture · Vanilla JavaScript, CSS, CMS settings, GitHub Pages\n                    Open live site →\n                \n            \n                \n                    \n                    Active\n                    TrafficMonitor Auto Setup\n                    A GitHub-hosted PowerShell launcher for installing and configuring TrafficMonitor with a repeatable setup flow.\n                    Windows automation · PowerShell, GitHub Pages, Windows Scheduled Tasks\n                    Open repository →\n                \n            \n                \n                    \n                    Active\n                    TrafficMonitor Deep Clean\n                    A controlled removal workflow for TrafficMonitor files, startup entries, scheduled tasks and user-profile leftovers.\n                    Cleanup workflow · PowerShell, Windows Registry, File System\n                    Open repository →\n                \n            \n                \n                    \n                    Planned\n                    CyberSabil IT Tools EXE\n                    A future standalone dashboard for common Windows diagnostics, admin shortcuts, support utilities and safe command access.\n                    Desktop utility · C#, Windows Desktop, GitHub Releases\n                    \n                \n            \n                \n                    \n                    S\n                    Added\n                    D\n                    C · T\n                    Open\n                \n            ",
+        "cols": "571px 571px",
+        "sw": 1366,
+        "cw": 1366,
+        "skillCount": 6,
+        "skillTitle": "PowerShell automation",
+        "scripts": 0,
+        "images": 0,
+        "cards": [
+          {
+            "status": "Live",
+            "title": "CyberSabil Tools Website",
+            "description": "A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.",
+            "tech": "GitHub Pages · HTML, CSS, JavaScript, JSON, Pages CMS",
+            "linkText": "Open website →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank",
+            "rel": "noopener noreferrer",
+            "linkRect": {
+              "x": 128,
+              "y": 2077.34375,
+              "w": 124.46875,
+              "h": 32,
+              "b": 2109.34375
+            },
+            "imgSrc": null,
+            "imgAlt": null,
+            "imgHidden": true,
+            "imgCount": 0,
+            "pCount": 2,
+            "rect": {
+              "x": 103,
+              "y": 1849.125,
+              "w": 571,
+              "h": 285.21875,
+              "b": 2134.34375
+            },
+            "html": "\n                    \n                    <span class=\"cs-portfolio-project-status\">Live</span>\n                    <h3>CyberSabil Tools Website</h3>\n                    <p>A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.</p>\n                    <p class=\"cs-portfolio-project-tech\"><strong>GitHub Pages</strong> · HTML, CSS, JavaScript, JSON, Pages CMS</p>\n                    <a class=\"cs-portfolio-project-link\" href=\"https://cybersabil.github.io/\" target=\"_blank\" rel=\"noopener noreferrer\">Open website →</a>\n                "
+          },
+          {
+            "status": "Active",
+            "title": "Glass Gateway Dual Mode",
+            "description": "A same-homepage mode system that lets visitors open the existing tools website or switch into a professional portfolio layout.",
+            "tech": "Website architecture · Vanilla JavaScript, CSS, CMS settings, GitHub Pages",
+            "linkText": "Open live site →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank",
+            "rel": "noopener noreferrer",
+            "linkRect": {
+              "x": 717,
+              "y": 2077.34375,
+              "w": 124.484375,
+              "h": 32,
+              "b": 2109.34375
+            },
+            "imgSrc": null,
+            "imgAlt": null,
+            "imgHidden": true,
+            "imgCount": 0,
+            "pCount": 2,
+            "rect": {
+              "x": 692,
+              "y": 1849.125,
+              "w": 571,
+              "h": 285.21875,
+              "b": 2134.34375
+            },
+            "html": "\n                    \n                    <span class=\"cs-portfolio-project-status\">Active</span>\n                    <h3>Glass Gateway Dual Mode</h3>\n                    <p>A same-homepage mode system that lets visitors open the existing tools website or switch into a professional portfolio layout.</p>\n                    <p class=\"cs-portfolio-project-tech\"><strong>Website architecture</strong> · Vanilla JavaScript, CSS, CMS settings, GitHub Pages</p>\n                    <a class=\"cs-portfolio-project-link\" href=\"https://cybersabil.github.io/\" target=\"_blank\" rel=\"noopener noreferrer\">Open live site →</a>\n                "
+          },
+          {
+            "status": "Active",
+            "title": "TrafficMonitor Auto Setup",
+            "description": "A GitHub-hosted PowerShell launcher for installing and configuring TrafficMonitor with a repeatable setup flow.",
+            "tech": "Windows automation · PowerShell, GitHub Pages, Windows Scheduled Tasks",
+            "linkText": "Open repository →",
+            "href": "https://github.com/cybersabil/tm",
+            "target": "_blank",
+            "rel": "noopener noreferrer",
+            "linkRect": {
+              "x": 128,
+              "y": 2380.5625,
+              "w": 144.03125,
+              "h": 32,
+              "b": 2412.5625
+            },
+            "imgSrc": null,
+            "imgAlt": null,
+            "imgHidden": true,
+            "imgCount": 0,
+            "pCount": 2,
+            "rect": {
+              "x": 103,
+              "y": 2152.34375,
+              "w": 571,
+              "h": 285.21875,
+              "b": 2437.5625
+            },
+            "html": "\n                    \n                    <span class=\"cs-portfolio-project-status\">Active</span>\n                    <h3>TrafficMonitor Auto Setup</h3>\n                    <p>A GitHub-hosted PowerShell launcher for installing and configuring TrafficMonitor with a repeatable setup flow.</p>\n                    <p class=\"cs-portfolio-project-tech\"><strong>Windows automation</strong> · PowerShell, GitHub Pages, Windows Scheduled Tasks</p>\n                    <a class=\"cs-portfolio-project-link\" href=\"https://github.com/cybersabil/tm\" target=\"_blank\" rel=\"noopener noreferrer\">Open repository →</a>\n                "
+          },
+          {
+            "status": "Active",
+            "title": "TrafficMonitor Deep Clean",
+            "description": "A controlled removal workflow for TrafficMonitor files, startup entries, scheduled tasks and user-profile leftovers.",
+            "tech": "Cleanup workflow · PowerShell, Windows Registry, File System",
+            "linkText": "Open repository →",
+            "href": "https://github.com/cybersabil/tmr",
+            "target": "_blank",
+            "rel": "noopener noreferrer",
+            "linkRect": {
+              "x": 717,
+              "y": 2380.5625,
+              "w": 144.03125,
+              "h": 32,
+              "b": 2412.5625
+            },
+            "imgSrc": null,
+            "imgAlt": null,
+            "imgHidden": true,
+            "imgCount": 0,
+            "pCount": 2,
+            "rect": {
+              "x": 692,
+              "y": 2152.34375,
+              "w": 571,
+              "h": 285.21875,
+              "b": 2437.5625
+            },
+            "html": "\n                    \n                    <span class=\"cs-portfolio-project-status\">Active</span>\n                    <h3>TrafficMonitor Deep Clean</h3>\n                    <p>A controlled removal workflow for TrafficMonitor files, startup entries, scheduled tasks and user-profile leftovers.</p>\n                    <p class=\"cs-portfolio-project-tech\"><strong>Cleanup workflow</strong> · PowerShell, Windows Registry, File System</p>\n                    <a class=\"cs-portfolio-project-link\" href=\"https://github.com/cybersabil/tmr\" target=\"_blank\" rel=\"noopener noreferrer\">Open repository →</a>\n                "
+          },
+          {
+            "status": "Planned",
+            "title": "CyberSabil IT Tools EXE",
+            "description": "A future standalone dashboard for common Windows diagnostics, admin shortcuts, support utilities and safe command access.",
+            "tech": "Desktop utility · C#, Windows Desktop, GitHub Releases",
+            "linkText": null,
+            "href": null,
+            "target": null,
+            "rel": null,
+            "linkRect": null,
+            "imgSrc": null,
+            "imgAlt": null,
+            "imgHidden": true,
+            "imgCount": 0,
+            "pCount": 2,
+            "rect": {
+              "x": 103,
+              "y": 2455.5625,
+              "w": 571,
+              "h": 258.828125,
+              "b": 2714.390625
+            },
+            "html": "\n                    \n                    <span class=\"cs-portfolio-project-status\">Planned</span>\n                    <h3>CyberSabil IT Tools EXE</h3>\n                    <p>A future standalone dashboard for common Windows diagnostics, admin shortcuts, support utilities and safe command access.</p>\n                    <p class=\"cs-portfolio-project-tech\"><strong>Desktop utility</strong> · C#, Windows Desktop, GitHub Releases</p>\n                    \n                "
+          },
+          {
+            "status": "S",
+            "title": "Added",
+            "description": "D",
+            "tech": "C · T",
+            "linkText": "Open",
+            "href": "#contact",
+            "target": null,
+            "rel": null,
+            "linkRect": {
+              "x": 717,
+              "y": 2657.390625,
+              "w": 40.890625,
+              "h": 32,
+              "b": 2689.390625
+            },
+            "imgSrc": null,
+            "imgAlt": null,
+            "imgHidden": true,
+            "imgCount": 0,
+            "pCount": 2,
+            "rect": {
+              "x": 692,
+              "y": 2455.5625,
+              "w": 571,
+              "h": 258.828125,
+              "b": 2714.390625
+            },
+            "html": "\n                    \n                    <span class=\"cs-portfolio-project-status\">S</span>\n                    <h3>Added</h3>\n                    <p>D</p>\n                    <p class=\"cs-portfolio-project-tech\"><strong>C</strong> · T</p>\n                    <a class=\"cs-portfolio-project-link\" href=\"#contact\">Open</a>\n                "
+          }
+        ]
+      }
+    },
+    {
+      "test": "delete",
+      "passed": true,
+      "details": {
+        "ready": true,
+        "failed": false,
+        "sectionHidden": false,
+        "empty": "\n                \n                    \n                    Active\n                    Glass Gateway Dual Mode\n                    A same-homepage mode system that lets visitors open the existing tools website or switch into a professional portfolio layout.\n                    Website architecture · Vanilla JavaScript, CSS, CMS settings, GitHub Pages\n                    Open live site →\n                \n            \n                \n                    \n                    Active\n                    TrafficMonitor Auto Setup\n                    A GitHub-hosted PowerShell launcher for installing and configuring TrafficMonitor with a repeatable setup flow.\n                    Windows automation · PowerShell, GitHub Pages, Windows Scheduled Tasks\n                    Open repository →\n                \n            \n                \n                    \n                    Active\n                    TrafficMonitor Deep Clean\n                    A controlled removal workflow for TrafficMonitor files, startup entries, scheduled tasks and user-profile leftovers.\n                    Cleanup workflow · PowerShell, Windows Registry, File System\n                    Open repository →\n                \n            \n                \n                    \n                    Planned\n                    CyberSabil IT Tools EXE\n                    A future standalone dashboard for common Windows diagnostics, admin shortcuts, support utilities and safe command access.\n                    Desktop utility · C#, Windows Desktop, GitHub Releases\n                    \n                \n            ",
+        "cols": "571px 571px",
+        "sw": 1366,
+        "cw": 1366,
+        "skillCount": 6,
+        "skillTitle": "PowerShell automation",
+        "scripts": 0,
+        "images": 0,
+        "cards": [
+          {
+            "status": "Active",
+            "title": "Glass Gateway Dual Mode",
+            "description": "A same-homepage mode system that lets visitors open the existing tools website or switch into a professional portfolio layout.",
+            "tech": "Website architecture · Vanilla JavaScript, CSS, CMS settings, GitHub Pages",
+            "linkText": "Open live site →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank",
+            "rel": "noopener noreferrer",
+            "linkRect": {
+              "x": 128,
+              "y": 2077.34375,
+              "w": 124.484375,
+              "h": 32,
+              "b": 2109.34375
+            },
+            "imgSrc": null,
+            "imgAlt": null,
+            "imgHidden": true,
+            "imgCount": 0,
+            "pCount": 2,
+            "rect": {
+              "x": 103,
+              "y": 1849.125,
+              "w": 571,
+              "h": 285.21875,
+              "b": 2134.34375
+            },
+            "html": "\n                    \n                    <span class=\"cs-portfolio-project-status\">Active</span>\n                    <h3>Glass Gateway Dual Mode</h3>\n                    <p>A same-homepage mode system that lets visitors open the existing tools website or switch into a professional portfolio layout.</p>\n                    <p class=\"cs-portfolio-project-tech\"><strong>Website architecture</strong> · Vanilla JavaScript, CSS, CMS settings, GitHub Pages</p>\n                    <a class=\"cs-portfolio-project-link\" href=\"https://cybersabil.github.io/\" target=\"_blank\" rel=\"noopener noreferrer\">Open live site →</a>\n                "
+          },
+          {
+            "status": "Active",
+            "title": "TrafficMonitor Auto Setup",
+            "description": "A GitHub-hosted PowerShell launcher for installing and configuring TrafficMonitor with a repeatable setup flow.",
+            "tech": "Windows automation · PowerShell, GitHub Pages, Windows Scheduled Tasks",
+            "linkText": "Open repository →",
+            "href": "https://github.com/cybersabil/tm",
+            "target": "_blank",
+            "rel": "noopener noreferrer",
+            "linkRect": {
+              "x": 717,
+              "y": 2077.34375,
+              "w": 144.03125,
+              "h": 32,
+              "b": 2109.34375
+            },
+            "imgSrc": null,
+            "imgAlt": null,
+            "imgHidden": true,
+            "imgCount": 0,
+            "pCount": 2,
+            "rect": {
+              "x": 692,
+              "y": 1849.125,
+              "w": 571,
+              "h": 285.21875,
+              "b": 2134.34375
+            },
+            "html": "\n                    \n                    <span class=\"cs-portfolio-project-status\">Active</span>\n                    <h3>TrafficMonitor Auto Setup</h3>\n                    <p>A GitHub-hosted PowerShell launcher for installing and configuring TrafficMonitor with a repeatable setup flow.</p>\n                    <p class=\"cs-portfolio-project-tech\"><strong>Windows automation</strong> · PowerShell, GitHub Pages, Windows Scheduled Tasks</p>\n                    <a class=\"cs-portfolio-project-link\" href=\"https://github.com/cybersabil/tm\" target=\"_blank\" rel=\"noopener noreferrer\">Open repository →</a>\n                "
+          },
+          {
+            "status": "Active",
+            "title": "TrafficMonitor Deep Clean",
+            "description": "A controlled removal workflow for TrafficMonitor files, startup entries, scheduled tasks and user-profile leftovers.",
+            "tech": "Cleanup workflow · PowerShell, Windows Registry, File System",
+            "linkText": "Open repository →",
+            "href": "https://github.com/cybersabil/tmr",
+            "target": "_blank",
+            "rel": "noopener noreferrer",
+            "linkRect": {
+              "x": 128,
+              "y": 2380.5625,
+              "w": 144.03125,
+              "h": 32,
+              "b": 2412.5625
+            },
+            "imgSrc": null,
+            "imgAlt": null,
+            "imgHidden": true,
+            "imgCount": 0,
+            "pCount": 2,
+            "rect": {
+              "x": 103,
+              "y": 2152.34375,
+              "w": 571,
+              "h": 285.21875,
+              "b": 2437.5625
+            },
+            "html": "\n                    \n                    <span class=\"cs-portfolio-project-status\">Active</span>\n                    <h3>TrafficMonitor Deep Clean</h3>\n                    <p>A controlled removal workflow for TrafficMonitor files, startup entries, scheduled tasks and user-profile leftovers.</p>\n                    <p class=\"cs-portfolio-project-tech\"><strong>Cleanup workflow</strong> · PowerShell, Windows Registry, File System</p>\n                    <a class=\"cs-portfolio-project-link\" href=\"https://github.com/cybersabil/tmr\" target=\"_blank\" rel=\"noopener noreferrer\">Open repository →</a>\n                "
+          },
+          {
+            "status": "Planned",
+            "title": "CyberSabil IT Tools EXE",
+            "description": "A future standalone dashboard for common Windows diagnostics, admin shortcuts, support utilities and safe command access.",
+            "tech": "Desktop utility · C#, Windows Desktop, GitHub Releases",
+            "linkText": null,
+            "href": null,
+            "target": null,
+            "rel": null,
+            "linkRect": null,
+            "imgSrc": null,
+            "imgAlt": null,
+            "imgHidden": true,
+            "imgCount": 0,
+            "pCount": 2,
+            "rect": {
+              "x": 692,
+              "y": 2152.34375,
+              "w": 571,
+              "h": 285.21875,
+              "b": 2437.5625
+            },
+            "html": "\n                    \n                    <span class=\"cs-portfolio-project-status\">Planned</span>\n                    <h3>CyberSabil IT Tools EXE</h3>\n                    <p>A future standalone dashboard for common Windows diagnostics, admin shortcuts, support utilities and safe command access.</p>\n                    <p class=\"cs-portfolio-project-tech\"><strong>Desktop utility</strong> · C#, Windows Desktop, GitHub Releases</p>\n                    \n                "
+          }
+        ]
+      }
+    },
+    {
+      "test": "reorder",
+      "passed": true,
+      "details": {
+        "ready": true,
+        "failed": false,
+        "sectionHidden": false,
+        "empty": "\n                \n                    \n                    Planned\n                    CyberSabil IT Tools EXE\n                    A future standalone dashboard for common Windows diagnostics, admin shortcuts, support utilities and safe command access.\n                    Desktop utility · C#, Windows Desktop, GitHub Releases\n                    \n                \n            \n                \n                    \n                    Active\n                    TrafficMonitor Deep Clean\n                    A controlled removal workflow for TrafficMonitor files, startup entries, scheduled tasks and user-profile leftovers.\n                    Cleanup workflow · PowerShell, Windows Registry, File System\n                    Open repository →\n                \n            \n                \n                    \n                    Active\n                    TrafficMonitor Auto Setup\n                    A GitHub-hosted PowerShell launcher for installing and configuring TrafficMonitor with a repeatable setup flow.\n                    Windows automation · PowerShell, GitHub Pages, Windows Scheduled Tasks\n                    Open repository →\n                \n            \n                \n                    \n                    Active\n                    Glass Gateway Dual Mode\n                    A same-homepage mode system that lets visitors open the existing tools website or switch into a professional portfolio layout.\n                    Website architecture · Vanilla JavaScript, CSS, CMS settings, GitHub Pages\n                    Open live site →\n                \n            \n                \n                    \n                    Live\n                    CyberSabil Tools Website\n                    A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.\n                    GitHub Pages · HTML, CSS, JavaScript, JSON, Pages CMS\n                    Open website →\n                \n            ",
+        "cols": "571px 571px",
+        "sw": 1366,
+        "cw": 1366,
+        "skillCount": 6,
+        "skillTitle": "PowerShell automation",
+        "scripts": 0,
+        "images": 0,
+        "cards": [
+          {
+            "status": "Planned",
+            "title": "CyberSabil IT Tools EXE",
+            "description": "A future standalone dashboard for common Windows diagnostics, admin shortcuts, support utilities and safe command access.",
+            "tech": "Desktop utility · C#, Windows Desktop, GitHub Releases",
+            "linkText": null,
+            "href": null,
+            "target": null,
+            "rel": null,
+            "linkRect": null,
+            "imgSrc": null,
+            "imgAlt": null,
+            "imgHidden": true,
+            "imgCount": 0,
+            "pCount": 2,
+            "rect": {
+              "x": 103,
+              "y": 1849.125,
+              "w": 571,
+              "h": 285.21875,
+              "b": 2134.34375
+            },
+            "html": "\n                    \n                    <span class=\"cs-portfolio-project-status\">Planned</span>\n                    <h3>CyberSabil IT Tools EXE</h3>\n                    <p>A future standalone dashboard for common Windows diagnostics, admin shortcuts, support utilities and safe command access.</p>\n                    <p class=\"cs-portfolio-project-tech\"><strong>Desktop utility</strong> · C#, Windows Desktop, GitHub Releases</p>\n                    \n                "
+          },
+          {
+            "status": "Active",
+            "title": "TrafficMonitor Deep Clean",
+            "description": "A controlled removal workflow for TrafficMonitor files, startup entries, scheduled tasks and user-profile leftovers.",
+            "tech": "Cleanup workflow · PowerShell, Windows Registry, File System",
+            "linkText": "Open repository →",
+            "href": "https://github.com/cybersabil/tmr",
+            "target": "_blank",
+            "rel": "noopener noreferrer",
+            "linkRect": {
+              "x": 717,
+              "y": 2077.34375,
+              "w": 144.03125,
+              "h": 32,
+              "b": 2109.34375
+            },
+            "imgSrc": null,
+            "imgAlt": null,
+            "imgHidden": true,
+            "imgCount": 0,
+            "pCount": 2,
+            "rect": {
+              "x": 692,
+              "y": 1849.125,
+              "w": 571,
+              "h": 285.21875,
+              "b": 2134.34375
+            },
+            "html": "\n                    \n                    <span class=\"cs-portfolio-project-status\">Active</span>\n                    <h3>TrafficMonitor Deep Clean</h3>\n                    <p>A controlled removal workflow for TrafficMonitor files, startup entries, scheduled tasks and user-profile leftovers.</p>\n                    <p class=\"cs-portfolio-project-tech\"><strong>Cleanup workflow</strong> · PowerShell, Windows Registry, File System</p>\n                    <a class=\"cs-portfolio-project-link\" href=\"https://github.com/cybersabil/tmr\" target=\"_blank\" rel=\"noopener noreferrer\">Open repository →</a>\n                "
+          },
+          {
+            "status": "Active",
+            "title": "TrafficMonitor Auto Setup",
+            "description": "A GitHub-hosted PowerShell launcher for installing and configuring TrafficMonitor with a repeatable setup flow.",
+            "tech": "Windows automation · PowerShell, GitHub Pages, Windows Scheduled Tasks",
+            "linkText": "Open repository →",
+            "href": "https://github.com/cybersabil/tm",
+            "target": "_blank",
+            "rel": "noopener noreferrer",
+            "linkRect": {
+              "x": 128,
+              "y": 2380.5625,
+              "w": 144.03125,
+              "h": 32,
+              "b": 2412.5625
+            },
+            "imgSrc": null,
+            "imgAlt": null,
+            "imgHidden": true,
+            "imgCount": 0,
+            "pCount": 2,
+            "rect": {
+              "x": 103,
+              "y": 2152.34375,
+              "w": 571,
+              "h": 285.21875,
+              "b": 2437.5625
+            },
+            "html": "\n                    \n                    <span class=\"cs-portfolio-project-status\">Active</span>\n                    <h3>TrafficMonitor Auto Setup</h3>\n                    <p>A GitHub-hosted PowerShell launcher for installing and configuring TrafficMonitor with a repeatable setup flow.</p>\n                    <p class=\"cs-portfolio-project-tech\"><strong>Windows automation</strong> · PowerShell, GitHub Pages, Windows Scheduled Tasks</p>\n                    <a class=\"cs-portfolio-project-link\" href=\"https://github.com/cybersabil/tm\" target=\"_blank\" rel=\"noopener noreferrer\">Open repository →</a>\n                "
+          },
+          {
+            "status": "Active",
+            "title": "Glass Gateway Dual Mode",
+            "description": "A same-homepage mode system that lets visitors open the existing tools website or switch into a professional portfolio layout.",
+            "tech": "Website architecture · Vanilla JavaScript, CSS, CMS settings, GitHub Pages",
+            "linkText": "Open live site →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank",
+            "rel": "noopener noreferrer",
+            "linkRect": {
+              "x": 717,
+              "y": 2380.5625,
+              "w": 124.484375,
+              "h": 32,
+              "b": 2412.5625
+            },
+            "imgSrc": null,
+            "imgAlt": null,
+            "imgHidden": true,
+            "imgCount": 0,
+            "pCount": 2,
+            "rect": {
+              "x": 692,
+              "y": 2152.34375,
+              "w": 571,
+              "h": 285.21875,
+              "b": 2437.5625
+            },
+            "html": "\n                    \n                    <span class=\"cs-portfolio-project-status\">Active</span>\n                    <h3>Glass Gateway Dual Mode</h3>\n                    <p>A same-homepage mode system that lets visitors open the existing tools website or switch into a professional portfolio layout.</p>\n                    <p class=\"cs-portfolio-project-tech\"><strong>Website architecture</strong> · Vanilla JavaScript, CSS, CMS settings, GitHub Pages</p>\n                    <a class=\"cs-portfolio-project-link\" href=\"https://cybersabil.github.io/\" target=\"_blank\" rel=\"noopener noreferrer\">Open live site →</a>\n                "
+          },
+          {
+            "status": "Live",
+            "title": "CyberSabil Tools Website",
+            "description": "A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.",
+            "tech": "GitHub Pages · HTML, CSS, JavaScript, JSON, Pages CMS",
+            "linkText": "Open website →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank",
+            "rel": "noopener noreferrer",
+            "linkRect": {
+              "x": 128,
+              "y": 2683.78125,
+              "w": 124.46875,
+              "h": 32,
+              "b": 2715.78125
+            },
+            "imgSrc": null,
+            "imgAlt": null,
+            "imgHidden": true,
+            "imgCount": 0,
+            "pCount": 2,
+            "rect": {
+              "x": 103,
+              "y": 2455.5625,
+              "w": 571,
+              "h": 285.21875,
+              "b": 2740.78125
+            },
+            "html": "\n                    \n                    <span class=\"cs-portfolio-project-status\">Live</span>\n                    <h3>CyberSabil Tools Website</h3>\n                    <p>A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.</p>\n                    <p class=\"cs-portfolio-project-tech\"><strong>GitHub Pages</strong> · HTML, CSS, JavaScript, JSON, Pages CMS</p>\n                    <a class=\"cs-portfolio-project-link\" href=\"https://cybersabil.github.io/\" target=\"_blank\" rel=\"noopener noreferrer\">Open website →</a>\n                "
+          }
+        ]
+      }
+    },
+    {
+      "test": "duplicate",
+      "passed": true,
+      "details": {
+        "ready": true,
+        "failed": false,
+        "sectionHidden": false,
+        "empty": "\n                \n                    \n                    Live\n                    CyberSabil Tools Website\n                    A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.\n                    GitHub Pages · HTML, CSS, JavaScript, JSON, Pages CMS\n                    Open website →\n                \n            \n                \n                    \n                    Live\n                    CyberSabil Tools Website\n                    A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.\n                    GitHub Pages · HTML, CSS, JavaScript, JSON, Pages CMS\n                    Open website →\n                \n            ",
+        "cols": "571px 571px",
+        "sw": 1366,
+        "cw": 1366,
+        "skillCount": 6,
+        "skillTitle": "PowerShell automation",
+        "scripts": 0,
+        "images": 0,
+        "cards": [
+          {
+            "status": "Live",
+            "title": "CyberSabil Tools Website",
+            "description": "A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.",
+            "tech": "GitHub Pages · HTML, CSS, JavaScript, JSON, Pages CMS",
+            "linkText": "Open website →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank",
+            "rel": "noopener noreferrer",
+            "linkRect": {
+              "x": 128,
+              "y": 2077.34375,
+              "w": 124.46875,
+              "h": 32,
+              "b": 2109.34375
+            },
+            "imgSrc": null,
+            "imgAlt": null,
+            "imgHidden": true,
+            "imgCount": 0,
+            "pCount": 2,
+            "rect": {
+              "x": 103,
+              "y": 1849.125,
+              "w": 571,
+              "h": 285.21875,
+              "b": 2134.34375
+            },
+            "html": "\n                    \n                    <span class=\"cs-portfolio-project-status\">Live</span>\n                    <h3>CyberSabil Tools Website</h3>\n                    <p>A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.</p>\n                    <p class=\"cs-portfolio-project-tech\"><strong>GitHub Pages</strong> · HTML, CSS, JavaScript, JSON, Pages CMS</p>\n                    <a class=\"cs-portfolio-project-link\" href=\"https://cybersabil.github.io/\" target=\"_blank\" rel=\"noopener noreferrer\">Open website →</a>\n                "
+          },
+          {
+            "status": "Live",
+            "title": "CyberSabil Tools Website",
+            "description": "A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.",
+            "tech": "GitHub Pages · HTML, CSS, JavaScript, JSON, Pages CMS",
+            "linkText": "Open website →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank",
+            "rel": "noopener noreferrer",
+            "linkRect": {
+              "x": 717,
+              "y": 2077.34375,
+              "w": 124.46875,
+              "h": 32,
+              "b": 2109.34375
+            },
+            "imgSrc": null,
+            "imgAlt": null,
+            "imgHidden": true,
+            "imgCount": 0,
+            "pCount": 2,
+            "rect": {
+              "x": 692,
+              "y": 1849.125,
+              "w": 571,
+              "h": 285.21875,
+              "b": 2134.34375
+            },
+            "html": "\n                    \n                    <span class=\"cs-portfolio-project-status\">Live</span>\n                    <h3>CyberSabil Tools Website</h3>\n                    <p>A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.</p>\n                    <p class=\"cs-portfolio-project-tech\"><strong>GitHub Pages</strong> · HTML, CSS, JavaScript, JSON, Pages CMS</p>\n                    <a class=\"cs-portfolio-project-link\" href=\"https://cybersabil.github.io/\" target=\"_blank\" rel=\"noopener noreferrer\">Open website →</a>\n                "
+          }
+        ]
+      }
+    },
+    {
+      "test": "section_hide",
+      "passed": true,
+      "details": {
+        "ready": true,
+        "failed": false,
+        "sectionHidden": true,
+        "empty": "\n                \n                    \n                    Live\n                    CyberSabil Tools Website\n                    A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.\n                    GitHub Pages · HTML, CSS, JavaScript, JSON, Pages CMS\n                    Open website →\n                \n            \n                \n                    \n                    Active\n                    Glass Gateway Dual Mode\n                    A same-homepage mode system that lets visitors open the existing tools website or switch into a professional portfolio layout.\n                    Website architecture · Vanilla JavaScript, CSS, CMS settings, GitHub Pages\n                    Open live site →\n                \n            \n                \n                    \n                    Active\n                    TrafficMonitor Auto Setup\n                    A GitHub-hosted PowerShell launcher for installing and configuring TrafficMonitor with a repeatable setup flow.\n                    Windows automation · PowerShell, GitHub Pages, Windows Scheduled Tasks\n                    Open repository →\n                \n            \n                \n                    \n                    Active\n                    TrafficMonitor Deep Clean\n                    A controlled removal workflow for TrafficMonitor files, startup entries, scheduled tasks and user-profile leftovers.\n                    Cleanup workflow · PowerShell, Windows Registry, File System\n                    Open repository →\n                \n            \n                \n                    \n                    Planned\n                    CyberSabil IT Tools EXE\n                    A future standalone dashboard for common Windows diagnostics, admin shortcuts, support utilities and safe command access.\n                    Desktop utility · C#, Windows Desktop, GitHub Releases\n                    \n                \n            ",
+        "cols": "repeat(2, minmax(0px, 1fr))",
+        "sw": 1366,
+        "cw": 1366,
+        "skillCount": 6,
+        "skillTitle": "PowerShell automation",
+        "scripts": 0,
+        "images": 0,
+        "cards": [
+          {
+            "status": "Live",
+            "title": "CyberSabil Tools Website",
+            "description": "A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.",
+            "tech": "GitHub Pages · HTML, CSS, JavaScript, JSON, Pages CMS",
+            "linkText": "Open website →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank",
+            "rel": "noopener noreferrer",
+            "linkRect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "b": 0
+            },
+            "imgSrc": null,
+            "imgAlt": null,
+            "imgHidden": true,
+            "imgCount": 0,
+            "pCount": 2,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "b": 0
+            },
+            "html": "\n                    \n                    <span class=\"cs-portfolio-project-status\">Live</span>\n                    <h3>CyberSabil Tools Website</h3>\n                    <p>A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.</p>\n                    <p class=\"cs-portfolio-project-tech\"><strong>GitHub Pages</strong> · HTML, CSS, JavaScript, JSON, Pages CMS</p>\n                    <a class=\"cs-portfolio-project-link\" href=\"https://cybersabil.github.io/\" target=\"_blank\" rel=\"noopener noreferrer\">Open website →</a>\n                "
+          },
+          {
+            "status": "Active",
+            "title": "Glass Gateway Dual Mode",
+            "description": "A same-homepage mode system that lets visitors open the existing tools website or switch into a professional portfolio layout.",
+            "tech": "Website architecture · Vanilla JavaScript, CSS, CMS settings, GitHub Pages",
+            "linkText": "Open live site →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank",
+            "rel": "noopener noreferrer",
+            "linkRect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "b": 0
+            },
+            "imgSrc": null,
+            "imgAlt": null,
+            "imgHidden": true,
+            "imgCount": 0,
+            "pCount": 2,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "b": 0
+            },
+            "html": "\n                    \n                    <span class=\"cs-portfolio-project-status\">Active</span>\n                    <h3>Glass Gateway Dual Mode</h3>\n                    <p>A same-homepage mode system that lets visitors open the existing tools website or switch into a professional portfolio layout.</p>\n                    <p class=\"cs-portfolio-project-tech\"><strong>Website architecture</strong> · Vanilla JavaScript, CSS, CMS settings, GitHub Pages</p>\n                    <a class=\"cs-portfolio-project-link\" href=\"https://cybersabil.github.io/\" target=\"_blank\" rel=\"noopener noreferrer\">Open live site →</a>\n                "
+          },
+          {
+            "status": "Active",
+            "title": "TrafficMonitor Auto Setup",
+            "description": "A GitHub-hosted PowerShell launcher for installing and configuring TrafficMonitor with a repeatable setup flow.",
+            "tech": "Windows automation · PowerShell, GitHub Pages, Windows Scheduled Tasks",
+            "linkText": "Open repository →",
+            "href": "https://github.com/cybersabil/tm",
+            "target": "_blank",
+            "rel": "noopener noreferrer",
+            "linkRect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "b": 0
+            },
+            "imgSrc": null,
+            "imgAlt": null,
+            "imgHidden": true,
+            "imgCount": 0,
+            "pCount": 2,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "b": 0
+            },
+            "html": "\n                    \n                    <span class=\"cs-portfolio-project-status\">Active</span>\n                    <h3>TrafficMonitor Auto Setup</h3>\n                    <p>A GitHub-hosted PowerShell launcher for installing and configuring TrafficMonitor with a repeatable setup flow.</p>\n                    <p class=\"cs-portfolio-project-tech\"><strong>Windows automation</strong> · PowerShell, GitHub Pages, Windows Scheduled Tasks</p>\n                    <a class=\"cs-portfolio-project-link\" href=\"https://github.com/cybersabil/tm\" target=\"_blank\" rel=\"noopener noreferrer\">Open repository →</a>\n                "
+          },
+          {
+            "status": "Active",
+            "title": "TrafficMonitor Deep Clean",
+            "description": "A controlled removal workflow for TrafficMonitor files, startup entries, scheduled tasks and user-profile leftovers.",
+            "tech": "Cleanup workflow · PowerShell, Windows Registry, File System",
+            "linkText": "Open repository →",
+            "href": "https://github.com/cybersabil/tmr",
+            "target": "_blank",
+            "rel": "noopener noreferrer",
+            "linkRect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "b": 0
+            },
+            "imgSrc": null,
+            "imgAlt": null,
+            "imgHidden": true,
+            "imgCount": 0,
+            "pCount": 2,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "b": 0
+            },
+            "html": "\n                    \n                    <span class=\"cs-portfolio-project-status\">Active</span>\n                    <h3>TrafficMonitor Deep Clean</h3>\n                    <p>A controlled removal workflow for TrafficMonitor files, startup entries, scheduled tasks and user-profile leftovers.</p>\n                    <p class=\"cs-portfolio-project-tech\"><strong>Cleanup workflow</strong> · PowerShell, Windows Registry, File System</p>\n                    <a class=\"cs-portfolio-project-link\" href=\"https://github.com/cybersabil/tmr\" target=\"_blank\" rel=\"noopener noreferrer\">Open repository →</a>\n                "
+          },
+          {
+            "status": "Planned",
+            "title": "CyberSabil IT Tools EXE",
+            "description": "A future standalone dashboard for common Windows diagnostics, admin shortcuts, support utilities and safe command access.",
+            "tech": "Desktop utility · C#, Windows Desktop, GitHub Releases",
+            "linkText": null,
+            "href": null,
+            "target": null,
+            "rel": null,
+            "linkRect": null,
+            "imgSrc": null,
+            "imgAlt": null,
+            "imgHidden": true,
+            "imgCount": 0,
+            "pCount": 2,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "b": 0
+            },
+            "html": "\n                    \n                    <span class=\"cs-portfolio-project-status\">Planned</span>\n                    <h3>CyberSabil IT Tools EXE</h3>\n                    <p>A future standalone dashboard for common Windows diagnostics, admin shortcuts, support utilities and safe command access.</p>\n                    <p class=\"cs-portfolio-project-tech\"><strong>Desktop utility</strong> · C#, Windows Desktop, GitHub Releases</p>\n                    \n                "
+          }
+        ]
+      }
+    },
+    {
+      "test": "skills_isolation",
+      "passed": true,
+      "details": {
+        "s": {
+          "ready": true,
+          "failed": false,
+          "sectionHidden": false,
+          "empty": "\n                \n                    \n                    Live\n                    Isolation\n                    A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.\n                    GitHub Pages · HTML, CSS, JavaScript, JSON, Pages CMS\n                    Open website →\n                \n            \n                \n                    \n                    Active\n                    Glass Gateway Dual Mode\n                    A same-homepage mode system that lets visitors open the existing tools website or switch into a professional portfolio layout.\n                    Website architecture · Vanilla JavaScript, CSS, CMS settings, GitHub Pages\n                    Open live site →\n                \n            \n                \n                    \n                    Active\n                    TrafficMonitor Auto Setup\n                    A GitHub-hosted PowerShell launcher for installing and configuring TrafficMonitor with a repeatable setup flow.\n                    Windows automation · PowerShell, GitHub Pages, Windows Scheduled Tasks\n                    Open repository →\n                \n            \n                \n                    \n                    Active\n                    TrafficMonitor Deep Clean\n                    A controlled removal workflow for TrafficMonitor files, startup entries, scheduled tasks and user-profile leftovers.\n                    Cleanup workflow · PowerShell, Windows Registry, File System\n                    Open repository →\n                \n            \n                \n                    \n                    Planned\n                    CyberSabil IT Tools EXE\n                    A future standalone dashboard for common Windows diagnostics, admin shortcuts, support utilities and safe command access.\n                    Desktop utility · C#, Windows Desktop, GitHub Releases\n                    \n                \n            ",
+          "cols": "571px 571px",
+          "sw": 1366,
+          "cw": 1366,
+          "skillCount": 6,
+          "skillTitle": "PowerShell automation",
+          "scripts": 0,
+          "images": 0,
+          "cards": [
+            {
+              "status": "Live",
+              "title": "Isolation",
+              "description": "A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.",
+              "tech": "GitHub Pages · HTML, CSS, JavaScript, JSON, Pages CMS",
+              "linkText": "Open website →",
+              "href": "https://cybersabil.github.io/",
+              "target": "_blank",
+              "rel": "noopener noreferrer",
+              "linkRect": {
+                "x": 128,
+                "y": 2077.34375,
+                "w": 124.46875,
+                "h": 32,
+                "b": 2109.34375
+              },
+              "imgSrc": null,
+              "imgAlt": null,
+              "imgHidden": true,
+              "imgCount": 0,
+              "pCount": 2,
+              "rect": {
+                "x": 103,
+                "y": 1849.125,
+                "w": 571,
+                "h": 285.21875,
+                "b": 2134.34375
+              },
+              "html": "\n                    \n                    <span class=\"cs-portfolio-project-status\">Live</span>\n                    <h3>Isolation</h3>\n                    <p>A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.</p>\n                    <p class=\"cs-portfolio-project-tech\"><strong>GitHub Pages</strong> · HTML, CSS, JavaScript, JSON, Pages CMS</p>\n                    <a class=\"cs-portfolio-project-link\" href=\"https://cybersabil.github.io/\" target=\"_blank\" rel=\"noopener noreferrer\">Open website →</a>\n                "
+            },
+            {
+              "status": "Active",
+              "title": "Glass Gateway Dual Mode",
+              "description": "A same-homepage mode system that lets visitors open the existing tools website or switch into a professional portfolio layout.",
+              "tech": "Website architecture · Vanilla JavaScript, CSS, CMS settings, GitHub Pages",
+              "linkText": "Open live site →",
+              "href": "https://cybersabil.github.io/",
+              "target": "_blank",
+              "rel": "noopener noreferrer",
+              "linkRect": {
+                "x": 717,
+                "y": 2077.34375,
+                "w": 124.484375,
+                "h": 32,
+                "b": 2109.34375
+              },
+              "imgSrc": null,
+              "imgAlt": null,
+              "imgHidden": true,
+              "imgCount": 0,
+              "pCount": 2,
+              "rect": {
+                "x": 692,
+                "y": 1849.125,
+                "w": 571,
+                "h": 285.21875,
+                "b": 2134.34375
+              },
+              "html": "\n                    \n                    <span class=\"cs-portfolio-project-status\">Active</span>\n                    <h3>Glass Gateway Dual Mode</h3>\n                    <p>A same-homepage mode system that lets visitors open the existing tools website or switch into a professional portfolio layout.</p>\n                    <p class=\"cs-portfolio-project-tech\"><strong>Website architecture</strong> · Vanilla JavaScript, CSS, CMS settings, GitHub Pages</p>\n                    <a class=\"cs-portfolio-project-link\" href=\"https://cybersabil.github.io/\" target=\"_blank\" rel=\"noopener noreferrer\">Open live site →</a>\n                "
+            },
+            {
+              "status": "Active",
+              "title": "TrafficMonitor Auto Setup",
+              "description": "A GitHub-hosted PowerShell launcher for installing and configuring TrafficMonitor with a repeatable setup flow.",
+              "tech": "Windows automation · PowerShell, GitHub Pages, Windows Scheduled Tasks",
+              "linkText": "Open repository →",
+              "href": "https://github.com/cybersabil/tm",
+              "target": "_blank",
+              "rel": "noopener noreferrer",
+              "linkRect": {
+                "x": 128,
+                "y": 2380.5625,
+                "w": 144.03125,
+                "h": 32,
+                "b": 2412.5625
+              },
+              "imgSrc": null,
+              "imgAlt": null,
+              "imgHidden": true,
+              "imgCount": 0,
+              "pCount": 2,
+              "rect": {
+                "x": 103,
+                "y": 2152.34375,
+                "w": 571,
+                "h": 285.21875,
+                "b": 2437.5625
+              },
+              "html": "\n                    \n                    <span class=\"cs-portfolio-project-status\">Active</span>\n                    <h3>TrafficMonitor Auto Setup</h3>\n                    <p>A GitHub-hosted PowerShell launcher for installing and configuring TrafficMonitor with a repeatable setup flow.</p>\n                    <p class=\"cs-portfolio-project-tech\"><strong>Windows automation</strong> · PowerShell, GitHub Pages, Windows Scheduled Tasks</p>\n                    <a class=\"cs-portfolio-project-link\" href=\"https://github.com/cybersabil/tm\" target=\"_blank\" rel=\"noopener noreferrer\">Open repository →</a>\n                "
+            },
+            {
+              "status": "Active",
+              "title": "TrafficMonitor Deep Clean",
+              "description": "A controlled removal workflow for TrafficMonitor files, startup entries, scheduled tasks and user-profile leftovers.",
+              "tech": "Cleanup workflow · PowerShell, Windows Registry, File System",
+              "linkText": "Open repository →",
+              "href": "https://github.com/cybersabil/tmr",
+              "target": "_blank",
+              "rel": "noopener noreferrer",
+              "linkRect": {
+                "x": 717,
+                "y": 2380.5625,
+                "w": 144.03125,
+                "h": 32,
+                "b": 2412.5625
+              },
+              "imgSrc": null,
+              "imgAlt": null,
+              "imgHidden": true,
+              "imgCount": 0,
+              "pCount": 2,
+              "rect": {
+                "x": 692,
+                "y": 2152.34375,
+                "w": 571,
+                "h": 285.21875,
+                "b": 2437.5625
+              },
+              "html": "\n                    \n                    <span class=\"cs-portfolio-project-status\">Active</span>\n                    <h3>TrafficMonitor Deep Clean</h3>\n                    <p>A controlled removal workflow for TrafficMonitor files, startup entries, scheduled tasks and user-profile leftovers.</p>\n                    <p class=\"cs-portfolio-project-tech\"><strong>Cleanup workflow</strong> · PowerShell, Windows Registry, File System</p>\n                    <a class=\"cs-portfolio-project-link\" href=\"https://github.com/cybersabil/tmr\" target=\"_blank\" rel=\"noopener noreferrer\">Open repository →</a>\n                "
+            },
+            {
+              "status": "Planned",
+              "title": "CyberSabil IT Tools EXE",
+              "description": "A future standalone dashboard for common Windows diagnostics, admin shortcuts, support utilities and safe command access.",
+              "tech": "Desktop utility · C#, Windows Desktop, GitHub Releases",
+              "linkText": null,
+              "href": null,
+              "target": null,
+              "rel": null,
+              "linkRect": null,
+              "imgSrc": null,
+              "imgAlt": null,
+              "imgHidden": true,
+              "imgCount": 0,
+              "pCount": 2,
+              "rect": {
+                "x": 103,
+                "y": 2455.5625,
+                "w": 571,
+                "h": 253.21875,
+                "b": 2708.78125
+              },
+              "html": "\n                    \n                    <span class=\"cs-portfolio-project-status\">Planned</span>\n                    <h3>CyberSabil IT Tools EXE</h3>\n                    <p>A future standalone dashboard for common Windows diagnostics, admin shortcuts, support utilities and safe command access.</p>\n                    <p class=\"cs-portfolio-project-tech\"><strong>Desktop utility</strong> · C#, Windows Desktop, GitHub Releases</p>\n                    \n                "
+            }
+          ]
+        },
+        "baseline": [
+          6,
+          "PowerShell automation"
+        ]
+      }
+    },
+    {
+      "test": "cols_1366",
+      "passed": true,
+      "details": {
+        "actual": 2,
+        "css": "571px 571px",
+        "e": []
+      }
+    },
+    {
+      "test": "cols_1024",
+      "passed": true,
+      "details": {
+        "actual": 2,
+        "css": "485px 485px",
+        "e": []
+      }
+    },
+    {
+      "test": "cols_768",
+      "passed": true,
+      "details": {
+        "actual": 1,
+        "css": "744px",
+        "e": []
+      }
+    },
+    {
+      "test": "cols_430",
+      "passed": true,
+      "details": {
+        "actual": 1,
+        "css": "412px",
+        "e": []
+      }
+    },
+    {
+      "test": "cols_360",
+      "passed": true,
+      "details": {
+        "actual": 1,
+        "css": "342px",
+        "e": []
+      }
+    },
+    {
+      "test": "overflow_360",
+      "passed": true,
+      "details": {
+        "sw": 360,
+        "cw": 360,
+        "e": []
+      }
+    },
+    {
+      "test": "overflow_430",
+      "passed": true,
+      "details": {
+        "sw": 430,
+        "cw": 430,
+        "e": []
+      }
+    },
+    {
+      "test": "overflow_768",
+      "passed": true,
+      "details": {
+        "sw": 768,
+        "cw": 768,
+        "e": []
+      }
+    },
+    {
+      "test": "overflow_1366",
+      "passed": true,
+      "details": {
+        "sw": 1366,
+        "cw": 1366,
+        "e": []
+      }
+    },
+    {
+      "test": "equal_heights",
+      "passed": true,
+      "details": [
+        465,
+        465
+      ]
+    },
+    {
+      "test": "links_bottom_align",
+      "passed": true,
+      "details": [
+        2289.1,
+        2289.1
+      ]
+    },
+    {
+      "test": "large_200",
+      "passed": true,
+      "details": {
+        "count": 200,
+        "e": []
+      }
+    }
+  ]
+}

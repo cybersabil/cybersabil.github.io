@@ -1,0 +1,57 @@
+[
+  {
+    "title": "CyberSabil Tools Website",
+    "category": "GitHub Pages",
+    "status": "Live",
+    "description": "A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.",
+    "tech": "HTML, CSS, JavaScript, JSON, Pages CMS",
+    "link": "https://cybersabil.github.io/",
+    "buttonText": "Open website →",
+    "image": "",
+    "imageAlt": "CyberSabil Tools Website"
+  },
+  {
+    "title": "Glass Gateway Dual Mode",
+    "category": "Website architecture",
+    "status": "Active",
+    "description": "A same-homepage mode system that lets visitors open the existing tools website or switch into a professional portfolio layout.",
+    "tech": "Vanilla JavaScript, CSS, CMS settings, GitHub Pages",
+    "link": "https://cybersabil.github.io/",
+    "buttonText": "Open live site →",
+    "image": "",
+    "imageAlt": "Glass Gateway Dual Mode"
+  },
+  {
+    "title": "TrafficMonitor Auto Setup",
+    "category": "Windows automation",
+    "status": "Active",
+    "description": "A GitHub-hosted PowerShell launcher for installing and configuring TrafficMonitor with a repeatable setup flow.",
+    "tech": "PowerShell, GitHub Pages, Windows Scheduled Tasks",
+    "link": "https://github.com/cybersabil/tm",
+    "buttonText": "Open repository →",
+    "image": "",
+    "imageAlt": "TrafficMonitor Auto Setup"
+  },
+  {
+    "title": "TrafficMonitor Deep Clean",
+    "category": "Cleanup workflow",
+    "status": "Active",
+    "description": "A controlled removal workflow for TrafficMonitor files, startup entries, scheduled tasks and user-profile leftovers.",
+    "tech": "PowerShell, Windows Registry, File System",
+    "link": "https://github.com/cybersabil/tmr",
+    "buttonText": "Open repository →",
+    "image": "",
+    "imageAlt": "TrafficMonitor Deep Clean"
+  },
+  {
+    "title": "CyberSabil IT Tools EXE",
+    "category": "Desktop utility",
+    "status": "Planned",
+    "description": "A future standalone dashboard for common Windows diagnostics, admin shortcuts, support utilities and safe command access.",
+    "tech": "C#, Windows Desktop, GitHub Releases",
+    "link": "",
+    "buttonText": "Release pending",
+    "image": "",
+    "imageAlt": "CyberSabil IT Tools EXE"
+  }
+]

@@ -1,0 +1,123 @@
+{
+  "group": "Portfolio Profile Generator",
+  "checks": 20,
+  "passed": 20,
+  "failed": 0,
+  "results": [
+    {
+      "test": "generator_runs",
+      "passed": true,
+      "details": {
+        "stdout": "Generated CyberSabil v2.10.1\nRevision: 3a153e232c36ee79b5eb\nContent revision: 3c2b257458268b344416\n",
+        "stderr": ""
+      }
+    },
+    {
+      "test": "raw_name_trimmed",
+      "passed": true,
+      "details": "Raw Name"
+    },
+    {
+      "test": "raw_role_escaped",
+      "passed": true,
+      "details": "&lt;img src=x onerror=1&gt;Role"
+    },
+    {
+      "test": "csPortfolioTagline_raw_hidden",
+      "passed": true,
+      "details": "<p class=\"cs-portfolio-lead cs-mode-hidden\" id=\"csPortfolioTagline\">"
+    },
+    {
+      "test": "csPortfolioAvailability_raw_hidden",
+      "passed": true,
+      "details": "<p class=\"cs-portfolio-eyebrow cs-mode-hidden\" id=\"csPortfolioAvailability\">"
+    },
+    {
+      "test": "csPortfolioLocation_raw_hidden",
+      "passed": true,
+      "details": "<span id=\"csPortfolioLocation\" class=\"cs-mode-hidden\">"
+    },
+    {
+      "test": "csPortfolioExperience_raw_hidden",
+      "passed": true,
+      "details": "<span id=\"csPortfolioExperience\" class=\"cs-mode-hidden\">"
+    },
+    {
+      "test": "csPortfolioBio_raw_hidden",
+      "passed": true,
+      "details": "<p id=\"csPortfolioBio\" class=\"cs-mode-hidden\">"
+    },
+    {
+      "test": "csPortfolioMeta_raw_hidden",
+      "passed": true,
+      "details": "<div class=\"cs-portfolio-meta cs-mode-hidden\" id=\"csPortfolioMeta\">"
+    },
+    {
+      "test": "csPortfolioStatOne_raw_hidden",
+      "passed": true,
+      "details": "<div id=\"csPortfolioStatOne\" class=\"cs-mode-hidden\">"
+    },
+    {
+      "test": "csPortfolioStatTwo_raw_hidden",
+      "passed": true,
+      "details": "<div id=\"csPortfolioStatTwo\" class=\"cs-mode-hidden\">"
+    },
+    {
+      "test": "csPortfolioStats_raw_hidden",
+      "passed": true,
+      "details": "<div class=\"cs-portfolio-stats cs-mode-hidden\" id=\"csPortfolioStats\" aria-label=\"Portfolio highlights\">"
+    },
+    {
+      "test": "raw_primary_external",
+      "passed": true,
+      "details": "<a class=\"cs-portfolio-button cs-portfolio-button-primary\" id=\"csPortfolioPrimaryCta\" href=\"https://example.com\" target=\"_blank\" rel=\"noopener noreferrer\">"
+    },
+    {
+      "test": "raw_primary_internal",
+      "passed": true,
+      "details": "<a class=\"cs-portfolio-button cs-portfolio-button-primary\" id=\"csPortfolioPrimaryCta\" href=\"#csPortfolioProjects\">"
+    },
+    {
+      "test": "raw_primary_unsafe",
+      "passed": true,
+      "details": "<a class=\"cs-portfolio-button cs-portfolio-button-primary cs-mode-hidden\" id=\"csPortfolioPrimaryCta\" href=\"#\">"
+    },
+    {
+      "test": "raw_primary_blank",
+      "passed": true,
+      "details": "<a class=\"cs-portfolio-button cs-portfolio-button-primary cs-mode-hidden\" id=\"csPortfolioPrimaryCta\" href=\"#\">"
+    },
+    {
+      "test": "raw_actions_hidden",
+      "passed": true,
+      "details": "<div class=\"cs-portfolio-actions cs-mode-hidden\" id=\"csPortfolioActions\">"
+    },
+    {
+      "test": "generator_malformed_null_safe",
+      "passed": true,
+      "details": {
+        "returncode": 0,
+        "stderr": "",
+        "name": "CyberSabil"
+      }
+    },
+    {
+      "test": "generator_malformed_array_safe",
+      "passed": true,
+      "details": {
+        "returncode": 0,
+        "stderr": "",
+        "name": "CyberSabil"
+      }
+    },
+    {
+      "test": "generator_malformed_string_safe",
+      "passed": true,
+      "details": {
+        "returncode": 0,
+        "stderr": "",
+        "name": "CyberSabil"
+      }
+    }
+  ]
+}

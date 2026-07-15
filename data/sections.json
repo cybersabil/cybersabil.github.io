@@ -1,0 +1,21 @@
+{
+  "navToolsLabel": "Tools",
+  "navDownloadsLabel": "Downloads",
+  "navProjectsLabel": "Projects",
+  "navDocsLabel": "Docs",
+  "toolsTitle": "Featured IT tools",
+  "toolsSubtitle": "Problem-solving utilities built for real Windows support workflows.",
+  "downloadsTitle": "Downloads",
+  "downloadsSubtitle": "Official CyberSabil downloads, live scripts and release links.",
+  "downloadsWarning": "Safety note: Download tools only from official CyberSabil GitHub links. Do not run unknown scripts or EXE files from untrusted sources.",
+  "projectsTitle": "Projects portfolio",
+  "projectsSubtitle": "A portfolio of practical IT tools, scripts and GitHub-based deployments.",
+  "skillsTitle": "Skills and focus areas",
+  "skillsSubtitle": "Core areas behind CyberSabil tools and support workflows.",
+  "quickCommandsTitle": "Quick commands",
+  "quickCommandsSubtitle": "Copy commonly used support commands directly from the page.",
+  "docsTitle": "Documentation and guides",
+  "docsSubtitle": "Simple how-to guides for users and support engineers.",
+  "faqTitle": "FAQ",
+  "faqSubtitle": "Common questions about CyberSabil tools and scripts."
+}

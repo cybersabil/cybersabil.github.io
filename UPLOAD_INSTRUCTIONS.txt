@@ -1,0 +1,28 @@
+CyberSabil — Final Consolidated CMS Audit Package
+
+This is a COMPLETE project package, not a small patch.
+
+Upload the CONTENTS of this folder to the GitHub repository root.
+Do not upload the outer folder as a nested repository folder.
+
+Required root result:
+.github/
+assets/
+data/
+docs/
+media/
+tools/
+.pages.yml
+404.html
+index.html
+robots.txt
+sitemap.xml
+
+After committing to main:
+1. Open GitHub Actions.
+2. Wait for Build and Deploy CyberSabil.
+3. Confirm build and deploy are both green.
+4. Refresh Pages CMS with Ctrl+F5.
+5. Test the live site in an incognito/private window.
+
+Current data/*.json values in this package are preserved from the consolidated latest baseline.

@@ -1,0 +1,997 @@
+{
+  "group": "Portfolio Skills List",
+  "cms_fields": [
+    "title",
+    "category",
+    "level",
+    "description"
+  ],
+  "targeted_checks": 48,
+  "passed": 48,
+  "failed": 0,
+  "results": [
+    {
+      "test": "baseline_renders_all_skills",
+      "passed": true,
+      "details": {
+        "cards": 6,
+        "errors": []
+      }
+    },
+    {
+      "test": "baseline_boot_no_errors",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "test": "title_applies_and_trims",
+      "passed": true,
+      "details": {
+        "card": {
+          "label": "Automation",
+          "title": "AUDIT title",
+          "description": "Create one-command launchers, setup scripts, cleanup scripts and repeatable support workflows for Windows environments.",
+          "level": "Level: Advanced",
+          "paragraphCount": 2,
+          "html": "\n                <span class=\"cs-portfolio-card-label\">Automation</span>\n                <h3>AUDIT title</h3>\n                <p>Create one-command launchers, setup scripts, cleanup scripts and repeatable support workflows for Windows environments.</p>\n                <p class=\"cs-portfolio-project-tech\"><strong>Level:</strong> Advanced</p>\n            ",
+          "rect": {
+            "x": 103,
+            "y": 1028.734375,
+            "w": 376,
+            "h": 284
+          }
+        },
+        "errors": []
+      }
+    },
+    {
+      "test": "title_does_not_change_card_count",
+      "passed": true,
+      "details": {
+        "count": 6
+      }
+    },
+    {
+      "test": "category_applies_and_trims",
+      "passed": true,
+      "details": {
+        "card": {
+          "label": "AUDIT category",
+          "title": "PowerShell automation",
+          "description": "Create one-command launchers, setup scripts, cleanup scripts and repeatable support workflows for Windows environments.",
+          "level": "Level: Advanced",
+          "paragraphCount": 2,
+          "html": "\n                <span class=\"cs-portfolio-card-label\">AUDIT category</span>\n                <h3>PowerShell automation</h3>\n                <p>Create one-command launchers, setup scripts, cleanup scripts and repeatable support workflows for Windows environments.</p>\n                <p class=\"cs-portfolio-project-tech\"><strong>Level:</strong> Advanced</p>\n            ",
+          "rect": {
+            "x": 103,
+            "y": 1028.734375,
+            "w": 376,
+            "h": 284
+          }
+        },
+        "errors": []
+      }
+    },
+    {
+      "test": "category_does_not_change_card_count",
+      "passed": true,
+      "details": {
+        "count": 6
+      }
+    },
+    {
+      "test": "level_applies_and_trims",
+      "passed": true,
+      "details": {
+        "card": {
+          "label": "Automation",
+          "title": "PowerShell automation",
+          "description": "Create one-command launchers, setup scripts, cleanup scripts and repeatable support workflows for Windows environments.",
+          "level": "Level: AUDIT level",
+          "paragraphCount": 2,
+          "html": "\n                <span class=\"cs-portfolio-card-label\">Automation</span>\n                <h3>PowerShell automation</h3>\n                <p>Create one-command launchers, setup scripts, cleanup scripts and repeatable support workflows for Windows environments.</p>\n                <p class=\"cs-portfolio-project-tech\"><strong>Level:</strong> AUDIT level</p>\n            ",
+          "rect": {
+            "x": 103,
+            "y": 1028.734375,
+            "w": 376,
+            "h": 284
+          }
+        },
+        "errors": []
+      }
+    },
+    {
+      "test": "level_does_not_change_card_count",
+      "passed": true,
+      "details": {
+        "count": 6
+      }
+    },
+    {
+      "test": "description_applies_and_trims",
+      "passed": true,
+      "details": {
+        "card": {
+          "label": "Automation",
+          "title": "PowerShell automation",
+          "description": "AUDIT description",
+          "level": "Level: Advanced",
+          "paragraphCount": 2,
+          "html": "\n                <span class=\"cs-portfolio-card-label\">Automation</span>\n                <h3>PowerShell automation</h3>\n                <p>AUDIT description</p>\n                <p class=\"cs-portfolio-project-tech\"><strong>Level:</strong> Advanced</p>\n            ",
+          "rect": {
+            "x": 103,
+            "y": 1028.734375,
+            "w": 376,
+            "h": 284
+          }
+        },
+        "errors": []
+      }
+    },
+    {
+      "test": "description_does_not_change_card_count",
+      "passed": true,
+      "details": {
+        "count": 6
+      }
+    },
+    {
+      "test": "category_and_level_render_independently",
+      "passed": true,
+      "details": {
+        "label": "Category Only",
+        "title": "PowerShell automation",
+        "description": "Create one-command launchers, setup scripts, cleanup scripts and repeatable support workflows for Windows environments.",
+        "level": "Level: Level Only",
+        "paragraphCount": 2,
+        "html": "\n                <span class=\"cs-portfolio-card-label\">Category Only</span>\n                <h3>PowerShell automation</h3>\n                <p>Create one-command launchers, setup scripts, cleanup scripts and repeatable support workflows for Windows environments.</p>\n                <p class=\"cs-portfolio-project-tech\"><strong>Level:</strong> Level Only</p>\n            ",
+        "rect": {
+          "x": 103,
+          "y": 1028.734375,
+          "w": 376,
+          "h": 284
+        }
+      }
+    },
+    {
+      "test": "blank_category_uses_skill_badge_not_duplicate_level",
+      "passed": true,
+      "details": {
+        "label": "Skill",
+        "title": "PowerShell automation",
+        "description": "Create one-command launchers, setup scripts, cleanup scripts and repeatable support workflows for Windows environments.",
+        "level": "Level: Advanced",
+        "paragraphCount": 2,
+        "html": "\n                <span class=\"cs-portfolio-card-label\">Skill</span>\n                <h3>PowerShell automation</h3>\n                <p>Create one-command launchers, setup scripts, cleanup scripts and repeatable support workflows for Windows environments.</p>\n                <p class=\"cs-portfolio-project-tech\"><strong>Level:</strong> Advanced</p>\n            ",
+        "rect": {
+          "x": 103,
+          "y": 1028.734375,
+          "w": 376,
+          "h": 284
+        }
+      }
+    },
+    {
+      "test": "blank_title_uses_safe_fallback",
+      "passed": true,
+      "details": {
+        "actual": "Untitled skill",
+        "card": {
+          "label": "Automation",
+          "title": "Untitled skill",
+          "description": "Create one-command launchers, setup scripts, cleanup scripts and repeatable support workflows for Windows environments.",
+          "level": "Level: Advanced",
+          "paragraphCount": 2,
+          "html": "\n                <span class=\"cs-portfolio-card-label\">Automation</span>\n                <h3>Untitled skill</h3>\n                <p>Create one-command launchers, setup scripts, cleanup scripts and repeatable support workflows for Windows environments.</p>\n                <p class=\"cs-portfolio-project-tech\"><strong>Level:</strong> Advanced</p>\n            ",
+          "rect": {
+            "x": 103,
+            "y": 1028.734375,
+            "w": 376,
+            "h": 284
+          }
+        }
+      }
+    },
+    {
+      "test": "blank_category_uses_safe_fallback",
+      "passed": true,
+      "details": {
+        "actual": "Skill",
+        "card": {
+          "label": "Skill",
+          "title": "PowerShell automation",
+          "description": "Create one-command launchers, setup scripts, cleanup scripts and repeatable support workflows for Windows environments.",
+          "level": "Level: Advanced",
+          "paragraphCount": 2,
+          "html": "\n                <span class=\"cs-portfolio-card-label\">Skill</span>\n                <h3>PowerShell automation</h3>\n                <p>Create one-command launchers, setup scripts, cleanup scripts and repeatable support workflows for Windows environments.</p>\n                <p class=\"cs-portfolio-project-tech\"><strong>Level:</strong> Advanced</p>\n            ",
+          "rect": {
+            "x": 103,
+            "y": 1028.734375,
+            "w": 376,
+            "h": 284
+          }
+        }
+      }
+    },
+    {
+      "test": "blank_description_hides_paragraph",
+      "passed": true,
+      "details": {
+        "label": "Automation",
+        "title": "PowerShell automation",
+        "description": null,
+        "level": "Level: Advanced",
+        "paragraphCount": 1,
+        "html": "\n                <span class=\"cs-portfolio-card-label\">Automation</span>\n                <h3>PowerShell automation</h3>\n                \n                <p class=\"cs-portfolio-project-tech\"><strong>Level:</strong> Advanced</p>\n            ",
+        "rect": {
+          "x": 103,
+          "y": 1028.734375,
+          "w": 376,
+          "h": 284
+        }
+      }
+    },
+    {
+      "test": "blank_level_hides_level_line",
+      "passed": true,
+      "details": {
+        "label": "Automation",
+        "title": "PowerShell automation",
+        "description": "Create one-command launchers, setup scripts, cleanup scripts and repeatable support workflows for Windows environments.",
+        "level": null,
+        "paragraphCount": 1,
+        "html": "\n                <span class=\"cs-portfolio-card-label\">Automation</span>\n                <h3>PowerShell automation</h3>\n                <p>Create one-command launchers, setup scripts, cleanup scripts and repeatable support workflows for Windows environments.</p>\n                \n            ",
+        "rect": {
+          "x": 103,
+          "y": 1028.734375,
+          "w": 376,
+          "h": 284
+        }
+      }
+    },
+    {
+      "test": "both_optional_lines_blank_leave_no_paragraphs",
+      "passed": true,
+      "details": {
+        "label": "Automation",
+        "title": "PowerShell automation",
+        "description": null,
+        "level": null,
+        "paragraphCount": 0,
+        "html": "\n                <span class=\"cs-portfolio-card-label\">Automation</span>\n                <h3>PowerShell automation</h3>\n                \n                \n            ",
+        "rect": {
+          "x": 103,
+          "y": 1028.734375,
+          "w": 376,
+          "h": 284
+        }
+      }
+    },
+    {
+      "test": "missing_fields_render_safe_card",
+      "passed": true,
+      "details": {
+        "snap": {
+          "bootReady": true,
+          "bootFailed": false,
+          "sectionHidden": false,
+          "emptyState": "\n            \n                Skill\n                Untitled skill\n                \n                \n            \n        ",
+          "cards": [
+            {
+              "label": "Skill",
+              "title": "Untitled skill",
+              "description": null,
+              "level": null,
+              "paragraphCount": 0,
+              "html": "\n                <span class=\"cs-portfolio-card-label\">Skill</span>\n                <h3>Untitled skill</h3>\n                \n                \n            ",
+              "rect": {
+                "x": 103,
+                "y": 1028.734375,
+                "w": 376,
+                "h": 120
+              }
+            }
+          ],
+          "gridColumns": "376px 376px 376px",
+          "scrollWidth": 1366,
+          "clientWidth": 1366,
+          "projectCount": 5,
+          "projectTitle": "CyberSabil Tools Website",
+          "scripts": 0,
+          "images": 0
+        },
+        "errors": []
+      }
+    },
+    {
+      "test": "malformed_item_null_does_not_crash",
+      "passed": true,
+      "details": {
+        "snap": {
+          "bootReady": true,
+          "bootFailed": false,
+          "sectionHidden": false,
+          "emptyState": "\n            \n                Skill\n                Untitled skill\n                \n                \n            \n        ",
+          "cards": [
+            {
+              "label": "Skill",
+              "title": "Untitled skill",
+              "description": null,
+              "level": null,
+              "paragraphCount": 0,
+              "html": "\n                <span class=\"cs-portfolio-card-label\">Skill</span>\n                <h3>Untitled skill</h3>\n                \n                \n            ",
+              "rect": {
+                "x": 103,
+                "y": 1028.734375,
+                "w": 376,
+                "h": 120
+              }
+            }
+          ],
+          "gridColumns": "376px 376px 376px",
+          "scrollWidth": 1366,
+          "clientWidth": 1366,
+          "projectCount": 5,
+          "projectTitle": "CyberSabil Tools Website",
+          "scripts": 0,
+          "images": 0
+        },
+        "errors": []
+      }
+    },
+    {
+      "test": "malformed_item_array_does_not_crash",
+      "passed": true,
+      "details": {
+        "snap": {
+          "bootReady": true,
+          "bootFailed": false,
+          "sectionHidden": false,
+          "emptyState": "\n            \n                Skill\n                Untitled skill\n                \n                \n            \n        ",
+          "cards": [
+            {
+              "label": "Skill",
+              "title": "Untitled skill",
+              "description": null,
+              "level": null,
+              "paragraphCount": 0,
+              "html": "\n                <span class=\"cs-portfolio-card-label\">Skill</span>\n                <h3>Untitled skill</h3>\n                \n                \n            ",
+              "rect": {
+                "x": 103,
+                "y": 1028.734375,
+                "w": 376,
+                "h": 120
+              }
+            }
+          ],
+          "gridColumns": "376px 376px 376px",
+          "scrollWidth": 1366,
+          "clientWidth": 1366,
+          "projectCount": 5,
+          "projectTitle": "CyberSabil Tools Website",
+          "scripts": 0,
+          "images": 0
+        },
+        "errors": []
+      }
+    },
+    {
+      "test": "malformed_item_string_does_not_crash",
+      "passed": true,
+      "details": {
+        "snap": {
+          "bootReady": true,
+          "bootFailed": false,
+          "sectionHidden": false,
+          "emptyState": "\n            \n                Skill\n                Untitled skill\n                \n                \n            \n        ",
+          "cards": [
+            {
+              "label": "Skill",
+              "title": "Untitled skill",
+              "description": null,
+              "level": null,
+              "paragraphCount": 0,
+              "html": "\n                <span class=\"cs-portfolio-card-label\">Skill</span>\n                <h3>Untitled skill</h3>\n                \n                \n            ",
+              "rect": {
+                "x": 103,
+                "y": 1028.734375,
+                "w": 376,
+                "h": 120
+              }
+            }
+          ],
+          "gridColumns": "376px 376px 376px",
+          "scrollWidth": 1366,
+          "clientWidth": 1366,
+          "projectCount": 5,
+          "projectTitle": "CyberSabil Tools Website",
+          "scripts": 0,
+          "images": 0
+        },
+        "errors": []
+      }
+    },
+    {
+      "test": "malformed_item_number_does_not_crash",
+      "passed": true,
+      "details": {
+        "snap": {
+          "bootReady": true,
+          "bootFailed": false,
+          "sectionHidden": false,
+          "emptyState": "\n            \n                Skill\n                Untitled skill\n                \n                \n            \n        ",
+          "cards": [
+            {
+              "label": "Skill",
+              "title": "Untitled skill",
+              "description": null,
+              "level": null,
+              "paragraphCount": 0,
+              "html": "\n                <span class=\"cs-portfolio-card-label\">Skill</span>\n                <h3>Untitled skill</h3>\n                \n                \n            ",
+              "rect": {
+                "x": 103,
+                "y": 1028.734375,
+                "w": 376,
+                "h": 120
+              }
+            }
+          ],
+          "gridColumns": "376px 376px 376px",
+          "scrollWidth": 1366,
+          "clientWidth": 1366,
+          "projectCount": 5,
+          "projectTitle": "CyberSabil Tools Website",
+          "scripts": 0,
+          "images": 0
+        },
+        "errors": []
+      }
+    },
+    {
+      "test": "malformed_item_boolean_does_not_crash",
+      "passed": true,
+      "details": {
+        "snap": {
+          "bootReady": true,
+          "bootFailed": false,
+          "sectionHidden": false,
+          "emptyState": "\n            \n                Skill\n                Untitled skill\n                \n                \n            \n        ",
+          "cards": [
+            {
+              "label": "Skill",
+              "title": "Untitled skill",
+              "description": null,
+              "level": null,
+              "paragraphCount": 0,
+              "html": "\n                <span class=\"cs-portfolio-card-label\">Skill</span>\n                <h3>Untitled skill</h3>\n                \n                \n            ",
+              "rect": {
+                "x": 103,
+                "y": 1028.734375,
+                "w": 376,
+                "h": 120
+              }
+            }
+          ],
+          "gridColumns": "376px 376px 376px",
+          "scrollWidth": 1366,
+          "clientWidth": 1366,
+          "projectCount": 5,
+          "projectTitle": "CyberSabil Tools Website",
+          "scripts": 0,
+          "images": 0
+        },
+        "errors": []
+      }
+    },
+    {
+      "test": "number_boolean_values_stringify_safely",
+      "passed": true,
+      "details": {
+        "label": "false",
+        "title": "123",
+        "description": "true",
+        "level": "Level: 7",
+        "paragraphCount": 2,
+        "html": "\n                <span class=\"cs-portfolio-card-label\">false</span>\n                <h3>123</h3>\n                <p>true</p>\n                <p class=\"cs-portfolio-project-tech\"><strong>Level:</strong> 7</p>\n            ",
+        "rect": {
+          "x": 103,
+          "y": 1028.734375,
+          "w": 376,
+          "h": 204.828125
+        }
+      }
+    },
+    {
+      "test": "all_skill_fields_escape_html",
+      "passed": true,
+      "details": {
+        "snap": {
+          "bootReady": true,
+          "bootFailed": false,
+          "sectionHidden": false,
+          "emptyState": "\n            \n                <img src=x onerror=\"window.__pwn=1\"><script>window.__pwn=1</script>\n                <img src=x onerror=\"window.__pwn=1\"><script>window.__pwn=1</script>\n                <img src=x onerror=\"window.__pwn=1\"><script>window.__pwn=1</script>\n                Level: <img src=x onerror=\"window.__pwn=1\"><script>window.__pwn=1</script>\n            \n        ",
+          "cards": [
+            {
+              "label": "<img src=x onerror=\"window.__pwn=1\"><script>window.__pwn=1</script>",
+              "title": "<img src=x onerror=\"window.__pwn=1\"><script>window.__pwn=1</script>",
+              "description": "<img src=x onerror=\"window.__pwn=1\"><script>window.__pwn=1</script>",
+              "level": "Level: <img src=x onerror=\"window.__pwn=1\"><script>window.__pwn=1</script>",
+              "paragraphCount": 2,
+              "html": "\n                <span class=\"cs-portfolio-card-label\">&lt;img src=x onerror=\"window.__pwn=1\"&gt;&lt;script&gt;window.__pwn=1&lt;/script&gt;</span>\n                <h3>&lt;img src=x onerror=\"window.__pwn=1\"&gt;&lt;script&gt;window.__pwn=1&lt;/script&gt;</h3>\n                <p>&lt;img src=x onerror=\"window.__pwn=1\"&gt;&lt;script&gt;window.__pwn=1&lt;/script&gt;</p>\n                <p class=\"cs-portfolio-project-tech\"><strong>Level:</strong> &lt;img src=x onerror=\"window.__pwn=1\"&gt;&lt;script&gt;window.__pwn=1&lt;/script&gt;</p>\n            ",
+              "rect": {
+                "x": 103,
+                "y": 1028.734375,
+                "w": 376,
+                "h": 338.65625
+              }
+            }
+          ],
+          "gridColumns": "376px 376px 376px",
+          "scrollWidth": 1366,
+          "clientWidth": 1366,
+          "projectCount": 5,
+          "projectTitle": "CyberSabil Tools Website",
+          "scripts": 0,
+          "images": 0
+        },
+        "errors": []
+      }
+    },
+    {
+      "test": "add_skill_renders_new_card",
+      "passed": true,
+      "details": {
+        "cards": [
+          {
+            "label": "Content control",
+            "title": "CMS-friendly content systems",
+            "description": "Structure JSON and Pages CMS entries so site content, sections and mode settings can be updated without touching code.",
+            "level": "Level: Strong",
+            "paragraphCount": 2,
+            "html": "\n                <span class=\"cs-portfolio-card-label\">Content control</span>\n                <h3>CMS-friendly content systems</h3>\n                <p>Structure JSON and Pages CMS entries so site content, sections and mode settings can be updated without touching code.</p>\n                <p class=\"cs-portfolio-project-tech\"><strong>Level:</strong> Strong</p>\n            ",
+            "rect": {
+              "x": 887,
+              "y": 1328.734375,
+              "w": 376,
+              "h": 257.609375
+            }
+          },
+          {
+            "label": "Added Category",
+            "title": "Added Skill",
+            "description": "Added Description",
+            "level": "Level: Added Level",
+            "paragraphCount": 2,
+            "html": "\n                <span class=\"cs-portfolio-card-label\">Added Category</span>\n                <h3>Added Skill</h3>\n                <p>Added Description</p>\n                <p class=\"cs-portfolio-project-tech\"><strong>Level:</strong> Added Level</p>\n            ",
+            "rect": {
+              "x": 103,
+              "y": 1602.34375,
+              "w": 376,
+              "h": 204.828125
+            }
+          }
+        ]
+      }
+    },
+    {
+      "test": "delete_skill_removes_card",
+      "passed": true,
+      "details": {
+        "first": {
+          "label": "IT Support",
+          "title": "Windows troubleshooting",
+          "description": "Diagnose startup issues, monitoring problems, network behavior, user-profile leftovers, permissions and system cleanup requirements.",
+          "level": "Level: Strong",
+          "paragraphCount": 2,
+          "html": "\n                <span class=\"cs-portfolio-card-label\">IT Support</span>\n                <h3>Windows troubleshooting</h3>\n                <p>Diagnose startup issues, monitoring problems, network behavior, user-profile leftovers, permissions and system cleanup requirements.</p>\n                <p class=\"cs-portfolio-project-tech\"><strong>Level:</strong> Strong</p>\n            ",
+          "rect": {
+            "x": 103,
+            "y": 1028.734375,
+            "w": 376,
+            "h": 284
+          }
+        }
+      }
+    },
+    {
+      "test": "reorder_skills_preserves_exact_order",
+      "passed": true,
+      "details": {
+        "titles": [
+          "CMS-friendly content systems",
+          "Technical documentation",
+          "Support dashboard planning",
+          "GitHub Pages deployment",
+          "Windows troubleshooting",
+          "PowerShell automation"
+        ]
+      }
+    },
+    {
+      "test": "duplicate_skills_render_independently",
+      "passed": true,
+      "details": {
+        "cards": [
+          {
+            "label": "Automation",
+            "title": "PowerShell automation",
+            "description": "Create one-command launchers, setup scripts, cleanup scripts and repeatable support workflows for Windows environments.",
+            "level": "Level: Advanced",
+            "paragraphCount": 2,
+            "html": "\n                <span class=\"cs-portfolio-card-label\">Automation</span>\n                <h3>PowerShell automation</h3>\n                <p>Create one-command launchers, setup scripts, cleanup scripts and repeatable support workflows for Windows environments.</p>\n                <p class=\"cs-portfolio-project-tech\"><strong>Level:</strong> Advanced</p>\n            ",
+            "rect": {
+              "x": 103,
+              "y": 1028.734375,
+              "w": 376,
+              "h": 257.609375
+            }
+          },
+          {
+            "label": "Automation",
+            "title": "PowerShell automation",
+            "description": "Create one-command launchers, setup scripts, cleanup scripts and repeatable support workflows for Windows environments.",
+            "level": "Level: Advanced",
+            "paragraphCount": 2,
+            "html": "\n                <span class=\"cs-portfolio-card-label\">Automation</span>\n                <h3>PowerShell automation</h3>\n                <p>Create one-command launchers, setup scripts, cleanup scripts and repeatable support workflows for Windows environments.</p>\n                <p class=\"cs-portfolio-project-tech\"><strong>Level:</strong> Advanced</p>\n            ",
+            "rect": {
+              "x": 495,
+              "y": 1028.734375,
+              "w": 376,
+              "h": 257.609375
+            }
+          }
+        ]
+      }
+    },
+    {
+      "test": "empty_array_shows_empty_state",
+      "passed": true,
+      "details": {
+        "snap": {
+          "bootReady": true,
+          "bootFailed": false,
+          "sectionHidden": false,
+          "emptyState": "\n        \n            No portfolio skills found\n            Add portfolio skills in data/portfolio-skills.json from Pages CMS.\n        \n    ",
+          "cards": [],
+          "gridColumns": "376px 376px 376px",
+          "scrollWidth": 1366,
+          "clientWidth": 1366,
+          "projectCount": 5,
+          "projectTitle": "CyberSabil Tools Website",
+          "scripts": 0,
+          "images": 0
+        },
+        "errors": []
+      }
+    },
+    {
+      "test": "non_array_root_null_shows_safe_empty_state",
+      "passed": true,
+      "details": {
+        "snap": {
+          "bootReady": true,
+          "bootFailed": false,
+          "sectionHidden": false,
+          "emptyState": "\n        \n            No portfolio skills found\n            Add portfolio skills in data/portfolio-skills.json from Pages CMS.\n        \n    ",
+          "cards": [],
+          "gridColumns": "376px 376px 376px",
+          "scrollWidth": 1366,
+          "clientWidth": 1366,
+          "projectCount": 5,
+          "projectTitle": "CyberSabil Tools Website",
+          "scripts": 0,
+          "images": 0
+        },
+        "errors": []
+      }
+    },
+    {
+      "test": "non_array_root_object_shows_safe_empty_state",
+      "passed": true,
+      "details": {
+        "snap": {
+          "bootReady": true,
+          "bootFailed": false,
+          "sectionHidden": false,
+          "emptyState": "\n        \n            No portfolio skills found\n            Add portfolio skills in data/portfolio-skills.json from Pages CMS.\n        \n    ",
+          "cards": [],
+          "gridColumns": "376px 376px 376px",
+          "scrollWidth": 1366,
+          "clientWidth": 1366,
+          "projectCount": 5,
+          "projectTitle": "CyberSabil Tools Website",
+          "scripts": 0,
+          "images": 0
+        },
+        "errors": []
+      }
+    },
+    {
+      "test": "non_array_root_string_shows_safe_empty_state",
+      "passed": true,
+      "details": {
+        "snap": {
+          "bootReady": true,
+          "bootFailed": false,
+          "sectionHidden": false,
+          "emptyState": "\n        \n            No portfolio skills found\n            Add portfolio skills in data/portfolio-skills.json from Pages CMS.\n        \n    ",
+          "cards": [],
+          "gridColumns": "376px 376px 376px",
+          "scrollWidth": 1366,
+          "clientWidth": 1366,
+          "projectCount": 5,
+          "projectTitle": "CyberSabil Tools Website",
+          "scripts": 0,
+          "images": 0
+        },
+        "errors": []
+      }
+    },
+    {
+      "test": "non_array_root_number_shows_safe_empty_state",
+      "passed": true,
+      "details": {
+        "snap": {
+          "bootReady": true,
+          "bootFailed": false,
+          "sectionHidden": false,
+          "emptyState": "\n        \n            No portfolio skills found\n            Add portfolio skills in data/portfolio-skills.json from Pages CMS.\n        \n    ",
+          "cards": [],
+          "gridColumns": "376px 376px 376px",
+          "scrollWidth": 1366,
+          "clientWidth": 1366,
+          "projectCount": 5,
+          "projectTitle": "CyberSabil Tools Website",
+          "scripts": 0,
+          "images": 0
+        },
+        "errors": []
+      }
+    },
+    {
+      "test": "non_array_root_boolean_shows_safe_empty_state",
+      "passed": true,
+      "details": {
+        "snap": {
+          "bootReady": true,
+          "bootFailed": false,
+          "sectionHidden": false,
+          "emptyState": "\n        \n            No portfolio skills found\n            Add portfolio skills in data/portfolio-skills.json from Pages CMS.\n        \n    ",
+          "cards": [],
+          "gridColumns": "376px 376px 376px",
+          "scrollWidth": 1366,
+          "clientWidth": 1366,
+          "projectCount": 5,
+          "projectTitle": "CyberSabil Tools Website",
+          "scripts": 0,
+          "images": 0
+        },
+        "errors": []
+      }
+    },
+    {
+      "test": "portfolio_settings_can_hide_skills_section",
+      "passed": true,
+      "details": {
+        "bootReady": true,
+        "bootFailed": false,
+        "sectionHidden": true,
+        "emptyState": "\n            \n                Automation\n                PowerShell automation\n                Create one-command launchers, setup scripts, cleanup scripts and repeatable support workflows for Windows environments.\n                Level: Advanced\n            \n        \n            \n                IT Support\n                Windows troubleshooting\n                Diagnose startup issues, monitoring problems, network behavior, user-profile leftovers, permissions and system cleanup requirements.\n                Level: Strong\n            \n        \n            \n                Web delivery\n                GitHub Pages deployment\n                Publish support tools, release links, documentation and CMS-controlled static websites from GitHub repositories.\n                Level: Strong\n            \n        \n            \n                Tools\n                Support dashboard planning\n                Convert repeated technical tasks into clean dashboards, command hubs and user-safe utility screens.\n                Level: Strong\n            \n        \n            \n                Documentation\n                Technical documentation\n                Write clear install guides, safety notes, change logs and troubleshooting steps so tools can be maintained by others.\n                Level: Strong\n            \n        \n            \n                Content control\n                CMS-friendly content systems\n                Structure JSON and Pages CMS entries so site content, sections and mode settings can be updated without touching code.\n                Level: Strong\n            \n        ",
+        "cards": [
+          {
+            "label": "Automation",
+            "title": "PowerShell automation",
+            "description": "Create one-command launchers, setup scripts, cleanup scripts and repeatable support workflows for Windows environments.",
+            "level": "Level: Advanced",
+            "paragraphCount": 2,
+            "html": "\n                <span class=\"cs-portfolio-card-label\">Automation</span>\n                <h3>PowerShell automation</h3>\n                <p>Create one-command launchers, setup scripts, cleanup scripts and repeatable support workflows for Windows environments.</p>\n                <p class=\"cs-portfolio-project-tech\"><strong>Level:</strong> Advanced</p>\n            ",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0
+            }
+          },
+          {
+            "label": "IT Support",
+            "title": "Windows troubleshooting",
+            "description": "Diagnose startup issues, monitoring problems, network behavior, user-profile leftovers, permissions and system cleanup requirements.",
+            "level": "Level: Strong",
+            "paragraphCount": 2,
+            "html": "\n                <span class=\"cs-portfolio-card-label\">IT Support</span>\n                <h3>Windows troubleshooting</h3>\n                <p>Diagnose startup issues, monitoring problems, network behavior, user-profile leftovers, permissions and system cleanup requirements.</p>\n                <p class=\"cs-portfolio-project-tech\"><strong>Level:</strong> Strong</p>\n            ",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0
+            }
+          },
+          {
+            "label": "Web delivery",
+            "title": "GitHub Pages deployment",
+            "description": "Publish support tools, release links, documentation and CMS-controlled static websites from GitHub repositories.",
+            "level": "Level: Strong",
+            "paragraphCount": 2,
+            "html": "\n                <span class=\"cs-portfolio-card-label\">Web delivery</span>\n                <h3>GitHub Pages deployment</h3>\n                <p>Publish support tools, release links, documentation and CMS-controlled static websites from GitHub repositories.</p>\n                <p class=\"cs-portfolio-project-tech\"><strong>Level:</strong> Strong</p>\n            ",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0
+            }
+          },
+          {
+            "label": "Tools",
+            "title": "Support dashboard planning",
+            "description": "Convert repeated technical tasks into clean dashboards, command hubs and user-safe utility screens.",
+            "level": "Level: Strong",
+            "paragraphCount": 2,
+            "html": "\n                <span class=\"cs-portfolio-card-label\">Tools</span>\n                <h3>Support dashboard planning</h3>\n                <p>Convert repeated technical tasks into clean dashboards, command hubs and user-safe utility screens.</p>\n                <p class=\"cs-portfolio-project-tech\"><strong>Level:</strong> Strong</p>\n            ",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0
+            }
+          },
+          {
+            "label": "Documentation",
+            "title": "Technical documentation",
+            "description": "Write clear install guides, safety notes, change logs and troubleshooting steps so tools can be maintained by others.",
+            "level": "Level: Strong",
+            "paragraphCount": 2,
+            "html": "\n                <span class=\"cs-portfolio-card-label\">Documentation</span>\n                <h3>Technical documentation</h3>\n                <p>Write clear install guides, safety notes, change logs and troubleshooting steps so tools can be maintained by others.</p>\n                <p class=\"cs-portfolio-project-tech\"><strong>Level:</strong> Strong</p>\n            ",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0
+            }
+          },
+          {
+            "label": "Content control",
+            "title": "CMS-friendly content systems",
+            "description": "Structure JSON and Pages CMS entries so site content, sections and mode settings can be updated without touching code.",
+            "level": "Level: Strong",
+            "paragraphCount": 2,
+            "html": "\n                <span class=\"cs-portfolio-card-label\">Content control</span>\n                <h3>CMS-friendly content systems</h3>\n                <p>Structure JSON and Pages CMS entries so site content, sections and mode settings can be updated without touching code.</p>\n                <p class=\"cs-portfolio-project-tech\"><strong>Level:</strong> Strong</p>\n            ",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0
+            }
+          }
+        ],
+        "gridColumns": "repeat(3, minmax(0px, 1fr))",
+        "scrollWidth": 1366,
+        "clientWidth": 1366,
+        "projectCount": 5,
+        "projectTitle": "CyberSabil Tools Website",
+        "scripts": 0,
+        "images": 0
+      }
+    },
+    {
+      "test": "skill_changes_do_not_change_projects",
+      "passed": true,
+      "details": {
+        "projects": [
+          5,
+          "CyberSabil Tools Website"
+        ],
+        "baseline": [
+          5,
+          "CyberSabil Tools Website"
+        ]
+      }
+    },
+    {
+      "test": "responsive_columns_1366",
+      "passed": true,
+      "details": {
+        "gridTemplateColumns": "376px 376px 376px",
+        "cols": 3,
+        "expected": 3,
+        "errors": []
+      }
+    },
+    {
+      "test": "responsive_columns_1024",
+      "passed": true,
+      "details": {
+        "gridTemplateColumns": "318.656px 318.672px 318.656px",
+        "cols": 3,
+        "expected": 3,
+        "errors": []
+      }
+    },
+    {
+      "test": "responsive_columns_768",
+      "passed": true,
+      "details": {
+        "gridTemplateColumns": "744px",
+        "cols": 1,
+        "expected": 1,
+        "errors": []
+      }
+    },
+    {
+      "test": "responsive_columns_430",
+      "passed": true,
+      "details": {
+        "gridTemplateColumns": "412px",
+        "cols": 1,
+        "expected": 1,
+        "errors": []
+      }
+    },
+    {
+      "test": "responsive_columns_360",
+      "passed": true,
+      "details": {
+        "gridTemplateColumns": "342px",
+        "cols": 1,
+        "expected": 1,
+        "errors": []
+      }
+    },
+    {
+      "test": "long_content_no_horizontal_overflow_360",
+      "passed": true,
+      "details": {
+        "scrollWidth": 360,
+        "clientWidth": 360,
+        "errors": []
+      }
+    },
+    {
+      "test": "long_content_no_horizontal_overflow_430",
+      "passed": true,
+      "details": {
+        "scrollWidth": 430,
+        "clientWidth": 430,
+        "errors": []
+      }
+    },
+    {
+      "test": "long_content_no_horizontal_overflow_768",
+      "passed": true,
+      "details": {
+        "scrollWidth": 768,
+        "clientWidth": 768,
+        "errors": []
+      }
+    },
+    {
+      "test": "long_content_no_horizontal_overflow_1366",
+      "passed": true,
+      "details": {
+        "scrollWidth": 1366,
+        "clientWidth": 1366,
+        "errors": []
+      }
+    },
+    {
+      "test": "desktop_same_row_cards_have_equal_heights",
+      "passed": true,
+      "details": {
+        "heights": [
+          574.3,
+          574.3,
+          574.3
+        ]
+      }
+    },
+    {
+      "test": "large_200_item_list_renders_without_error",
+      "passed": true,
+      "details": {
+        "count": 200,
+        "errors": []
+      }
+    }
+  ]
+}

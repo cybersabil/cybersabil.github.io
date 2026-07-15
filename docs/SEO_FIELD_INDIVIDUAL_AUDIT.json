@@ -1,0 +1,491 @@
+{
+  "group": "SEO and Social Sharing",
+  "cms_fields": 13,
+  "targeted_checks": 20,
+  "passed": 20,
+  "failed": 0,
+  "console_errors": [],
+  "page_errors": [],
+  "failures": [],
+  "results": [
+    {
+      "group": "schema",
+      "test": "twitter_card_description_not_portfolio_copy",
+      "pass": true
+    },
+    {
+      "group": "schema",
+      "test": "canonical_absolute_guidance",
+      "pass": true
+    },
+    {
+      "group": "schema",
+      "test": "image_1200x630_guidance",
+      "pass": true
+    },
+    {
+      "group": "schema",
+      "test": "theme_color_fallback_guidance",
+      "pass": true
+    },
+    {
+      "group": "schema",
+      "test": "no_hardcoded_social_image_dimensions",
+      "pass": true
+    },
+    {
+      "group": "build",
+      "test": "custom_values",
+      "pass": true,
+      "actual": {
+        "title": "Custom & <Title>",
+        "description": "Custom description & details",
+        "canonical": "https://example.com/page",
+        "og:type": "profile",
+        "og:url": "https://example.com/share",
+        "og:title": "Social title",
+        "og:description": "Social description",
+        "og:image": "https://example.com/social.png",
+        "twitter:card": "summary",
+        "twitter:title": "X title",
+        "twitter:description": "X description",
+        "twitter:image": "https://example.com/x.png",
+        "theme-color": "#abcdef"
+      },
+      "expected": {
+        "title": "Custom & <Title>",
+        "description": "Custom description & details",
+        "canonical": "https://example.com/page",
+        "og:type": "profile",
+        "og:url": "https://example.com/share",
+        "og:title": "Social title",
+        "og:description": "Social description",
+        "og:image": "https://example.com/social.png",
+        "twitter:card": "summary",
+        "twitter:title": "X title",
+        "twitter:description": "X description",
+        "twitter:image": "https://example.com/x.png",
+        "theme-color": "#abcdef"
+      }
+    },
+    {
+      "group": "build",
+      "test": "blank_fallbacks",
+      "pass": true,
+      "actual": {
+        "title": "CyberSabil IT Tools",
+        "description": "CyberSabil is a practical IT support portfolio and tools hub for Windows automation, troubleshooting, monitoring, cleanup, and system administration utilities.",
+        "canonical": "https://cybersabil.github.io/",
+        "og:type": "website",
+        "og:url": "https://cybersabil.github.io/",
+        "og:title": "CyberSabil IT Tools",
+        "og:description": "CyberSabil is a practical IT support portfolio and tools hub for Windows automation, troubleshooting, monitoring, cleanup, and system administration utilities.",
+        "og:image": "https://cybersabil.github.io/media/social-preview.png",
+        "twitter:card": "summary_large_image",
+        "twitter:title": "CyberSabil IT Tools",
+        "twitter:description": "CyberSabil is a practical IT support portfolio and tools hub for Windows automation, troubleshooting, monitoring, cleanup, and system administration utilities.",
+        "twitter:image": "https://cybersabil.github.io/media/social-preview.png",
+        "theme-color": "#120821"
+      },
+      "expected": {
+        "title": "CyberSabil IT Tools",
+        "description": "CyberSabil is a practical IT support portfolio and tools hub for Windows automation, troubleshooting, monitoring, cleanup, and system administration utilities.",
+        "canonical": "https://cybersabil.github.io/",
+        "og:type": "website",
+        "og:url": "https://cybersabil.github.io/",
+        "og:title": "CyberSabil IT Tools",
+        "og:description": "CyberSabil is a practical IT support portfolio and tools hub for Windows automation, troubleshooting, monitoring, cleanup, and system administration utilities.",
+        "og:image": "https://cybersabil.github.io/media/social-preview.png",
+        "twitter:card": "summary_large_image",
+        "twitter:title": "CyberSabil IT Tools",
+        "twitter:description": "CyberSabil is a practical IT support portfolio and tools hub for Windows automation, troubleshooting, monitoring, cleanup, and system administration utilities.",
+        "twitter:image": "https://cybersabil.github.io/media/social-preview.png",
+        "theme-color": "#120821"
+      }
+    },
+    {
+      "group": "build",
+      "test": "unsafe_urls",
+      "pass": true,
+      "actual": {
+        "title": "CyberSabil IT Tools and Portfolio",
+        "description": "CyberSabil is a CMS-controlled tools website and professional portfolio for Windows automation, PowerShell scripts, troubleshooting utilities and GitHub Pages deployment.",
+        "canonical": "https://cybersabil.github.io/",
+        "og:type": "website",
+        "og:url": "https://cybersabil.github.io/",
+        "og:title": "CyberSabil IT Tools and Portfolio",
+        "og:description": "Practical Windows support tools, commands, downloads, documentation and professional portfolio on one GitHub Pages homepage.",
+        "og:image": "https://cybersabil.github.io/media/social-preview.png",
+        "twitter:card": "summary_large_image",
+        "twitter:title": "CyberSabil IT Tools and Portfolio",
+        "twitter:description": "Practical Windows support tools, commands, downloads, documentation and professional portfolio on one GitHub Pages homepage.",
+        "twitter:image": "https://cybersabil.github.io/media/social-preview.png",
+        "theme-color": "#120821"
+      },
+      "expected": {
+        "canonical": "https://cybersabil.github.io/",
+        "og:url": "https://cybersabil.github.io/",
+        "og:image": "https://cybersabil.github.io/media/social-preview.png",
+        "twitter:image": "https://cybersabil.github.io/media/social-preview.png",
+        "twitter:card": "summary_large_image",
+        "og:type": "website",
+        "theme-color": "#120821"
+      }
+    },
+    {
+      "group": "build",
+      "test": "twitter_inherits_og_image",
+      "pass": true,
+      "actual": {
+        "title": "CyberSabil IT Tools and Portfolio",
+        "description": "CyberSabil is a CMS-controlled tools website and professional portfolio for Windows automation, PowerShell scripts, troubleshooting utilities and GitHub Pages deployment.",
+        "canonical": "https://cybersabil.github.io/",
+        "og:type": "website",
+        "og:url": "https://cybersabil.github.io/",
+        "og:title": "CyberSabil IT Tools and Portfolio",
+        "og:description": "Practical Windows support tools, commands, downloads, documentation and professional portfolio on one GitHub Pages homepage.",
+        "og:image": "https://example.com/og.png",
+        "twitter:card": "summary_large_image",
+        "twitter:title": "CyberSabil IT Tools and Portfolio",
+        "twitter:description": "Practical Windows support tools, commands, downloads, documentation and professional portfolio on one GitHub Pages homepage.",
+        "twitter:image": "https://example.com/og.png",
+        "theme-color": "#120821"
+      },
+      "expected": {
+        "og:image": "https://example.com/og.png",
+        "twitter:image": "https://example.com/og.png"
+      }
+    },
+    {
+      "group": "build",
+      "test": "og_does_not_inherit_twitter",
+      "pass": true,
+      "actual": {
+        "title": "CyberSabil IT Tools and Portfolio",
+        "description": "CyberSabil is a CMS-controlled tools website and professional portfolio for Windows automation, PowerShell scripts, troubleshooting utilities and GitHub Pages deployment.",
+        "canonical": "https://cybersabil.github.io/",
+        "og:type": "website",
+        "og:url": "https://cybersabil.github.io/",
+        "og:title": "CyberSabil IT Tools and Portfolio",
+        "og:description": "Practical Windows support tools, commands, downloads, documentation and professional portfolio on one GitHub Pages homepage.",
+        "og:image": "https://cybersabil.github.io/media/social-preview.png",
+        "twitter:card": "summary_large_image",
+        "twitter:title": "CyberSabil IT Tools and Portfolio",
+        "twitter:description": "Practical Windows support tools, commands, downloads, documentation and professional portfolio on one GitHub Pages homepage.",
+        "twitter:image": "https://example.com/x-only.png",
+        "theme-color": "#120821"
+      },
+      "expected": {
+        "og:image": "https://cybersabil.github.io/media/social-preview.png",
+        "twitter:image": "https://example.com/x-only.png"
+      }
+    },
+    {
+      "group": "build",
+      "test": "malformed_null_root",
+      "pass": true,
+      "actual": {
+        "title": "CyberSabil IT Tools",
+        "description": "CyberSabil is a practical IT support portfolio and tools hub for Windows automation, troubleshooting, monitoring, cleanup, and system administration utilities.",
+        "canonical": "https://cybersabil.github.io/",
+        "og:type": "website",
+        "og:url": "https://cybersabil.github.io/",
+        "og:title": "CyberSabil IT Tools",
+        "og:description": "CyberSabil is a practical IT support portfolio and tools hub for Windows automation, troubleshooting, monitoring, cleanup, and system administration utilities.",
+        "og:image": "https://cybersabil.github.io/media/social-preview.png",
+        "twitter:card": "summary_large_image",
+        "twitter:title": "CyberSabil IT Tools",
+        "twitter:description": "CyberSabil is a practical IT support portfolio and tools hub for Windows automation, troubleshooting, monitoring, cleanup, and system administration utilities.",
+        "twitter:image": "https://cybersabil.github.io/media/social-preview.png",
+        "theme-color": "#120821"
+      },
+      "expected": {
+        "title": "CyberSabil IT Tools",
+        "description": "CyberSabil is a practical IT support portfolio and tools hub for Windows automation, troubleshooting, monitoring, cleanup, and system administration utilities.",
+        "canonical": "https://cybersabil.github.io/",
+        "og:type": "website",
+        "og:url": "https://cybersabil.github.io/",
+        "og:title": "CyberSabil IT Tools",
+        "og:description": "CyberSabil is a practical IT support portfolio and tools hub for Windows automation, troubleshooting, monitoring, cleanup, and system administration utilities.",
+        "og:image": "https://cybersabil.github.io/media/social-preview.png",
+        "twitter:card": "summary_large_image",
+        "twitter:title": "CyberSabil IT Tools",
+        "twitter:description": "CyberSabil is a practical IT support portfolio and tools hub for Windows automation, troubleshooting, monitoring, cleanup, and system administration utilities.",
+        "twitter:image": "https://cybersabil.github.io/media/social-preview.png",
+        "theme-color": "#120821"
+      }
+    },
+    {
+      "group": "build",
+      "test": "malformed_array_root",
+      "pass": true,
+      "actual": {
+        "title": "CyberSabil IT Tools",
+        "description": "CyberSabil is a practical IT support portfolio and tools hub for Windows automation, troubleshooting, monitoring, cleanup, and system administration utilities.",
+        "canonical": "https://cybersabil.github.io/",
+        "og:type": "website",
+        "og:url": "https://cybersabil.github.io/",
+        "og:title": "CyberSabil IT Tools",
+        "og:description": "CyberSabil is a practical IT support portfolio and tools hub for Windows automation, troubleshooting, monitoring, cleanup, and system administration utilities.",
+        "og:image": "https://cybersabil.github.io/media/social-preview.png",
+        "twitter:card": "summary_large_image",
+        "twitter:title": "CyberSabil IT Tools",
+        "twitter:description": "CyberSabil is a practical IT support portfolio and tools hub for Windows automation, troubleshooting, monitoring, cleanup, and system administration utilities.",
+        "twitter:image": "https://cybersabil.github.io/media/social-preview.png",
+        "theme-color": "#120821"
+      },
+      "expected": {
+        "title": "CyberSabil IT Tools",
+        "description": "CyberSabil is a practical IT support portfolio and tools hub for Windows automation, troubleshooting, monitoring, cleanup, and system administration utilities.",
+        "canonical": "https://cybersabil.github.io/",
+        "og:type": "website",
+        "og:url": "https://cybersabil.github.io/",
+        "og:title": "CyberSabil IT Tools",
+        "og:description": "CyberSabil is a practical IT support portfolio and tools hub for Windows automation, troubleshooting, monitoring, cleanup, and system administration utilities.",
+        "og:image": "https://cybersabil.github.io/media/social-preview.png",
+        "twitter:card": "summary_large_image",
+        "twitter:title": "CyberSabil IT Tools",
+        "twitter:description": "CyberSabil is a practical IT support portfolio and tools hub for Windows automation, troubleshooting, monitoring, cleanup, and system administration utilities.",
+        "twitter:image": "https://cybersabil.github.io/media/social-preview.png",
+        "theme-color": "#120821"
+      }
+    },
+    {
+      "group": "runtime",
+      "test": "trim_and_custom",
+      "pass": true,
+      "actual": {
+        "title": "Custom & <Title>",
+        "description": "Custom description & details",
+        "canonical": "https://example.com/page",
+        "og:type": "profile",
+        "og:url": "https://example.com/share",
+        "og:title": "Social title",
+        "og:description": "Social description",
+        "og:image": "https://example.com/social.png",
+        "twitter:card": "summary",
+        "twitter:title": "X title",
+        "twitter:description": "X description",
+        "twitter:image": "https://example.com/x.png",
+        "theme-color": "#abcdef"
+      },
+      "expected": {
+        "title": "Custom & <Title>",
+        "description": "Custom description & details",
+        "canonical": "https://example.com/page",
+        "og:type": "profile",
+        "og:url": "https://example.com/share",
+        "og:title": "Social title",
+        "og:description": "Social description",
+        "og:image": "https://example.com/social.png",
+        "twitter:card": "summary",
+        "twitter:title": "X title",
+        "twitter:description": "X description",
+        "twitter:image": "https://example.com/x.png",
+        "theme-color": "#abcdef"
+      }
+    },
+    {
+      "group": "runtime",
+      "test": "blank_fallbacks",
+      "pass": true,
+      "actual": {
+        "title": "CyberSabil IT Tools",
+        "description": "CyberSabil is a practical IT support portfolio and tools hub for Windows automation, troubleshooting, monitoring, cleanup, and system administration utilities.",
+        "canonical": "https://cybersabil.github.io/",
+        "og:type": "website",
+        "og:url": "https://cybersabil.github.io/",
+        "og:title": "CyberSabil IT Tools",
+        "og:description": "CyberSabil is a practical IT support portfolio and tools hub for Windows automation, troubleshooting, monitoring, cleanup, and system administration utilities.",
+        "og:image": "https://cybersabil.github.io/media/social-preview.png",
+        "twitter:card": "summary_large_image",
+        "twitter:title": "CyberSabil IT Tools",
+        "twitter:description": "CyberSabil is a practical IT support portfolio and tools hub for Windows automation, troubleshooting, monitoring, cleanup, and system administration utilities.",
+        "twitter:image": "https://cybersabil.github.io/media/social-preview.png",
+        "theme-color": "#120821"
+      },
+      "expected": {
+        "title": "CyberSabil IT Tools",
+        "description": "CyberSabil is a practical IT support portfolio and tools hub for Windows automation, troubleshooting, monitoring, cleanup, and system administration utilities.",
+        "canonical": "https://cybersabil.github.io/",
+        "og:type": "website",
+        "og:url": "https://cybersabil.github.io/",
+        "og:title": "CyberSabil IT Tools",
+        "og:description": "CyberSabil is a practical IT support portfolio and tools hub for Windows automation, troubleshooting, monitoring, cleanup, and system administration utilities.",
+        "og:image": "https://cybersabil.github.io/media/social-preview.png",
+        "twitter:card": "summary_large_image",
+        "twitter:title": "CyberSabil IT Tools",
+        "twitter:description": "CyberSabil is a practical IT support portfolio and tools hub for Windows automation, troubleshooting, monitoring, cleanup, and system administration utilities.",
+        "twitter:image": "https://cybersabil.github.io/media/social-preview.png",
+        "theme-color": "#120821"
+      }
+    },
+    {
+      "group": "runtime",
+      "test": "unsafe_urls",
+      "pass": true,
+      "actual": {
+        "title": "CyberSabil IT Tools and Portfolio",
+        "description": "CyberSabil is a CMS-controlled tools website and professional portfolio for Windows automation, PowerShell scripts, troubleshooting utilities and GitHub Pages deployment.",
+        "canonical": "https://cybersabil.github.io/",
+        "og:type": "website",
+        "og:url": "https://cybersabil.github.io/",
+        "og:title": "CyberSabil IT Tools and Portfolio",
+        "og:description": "Practical Windows support tools, commands, downloads, documentation and professional portfolio on one GitHub Pages homepage.",
+        "og:image": "https://cybersabil.github.io/media/social-preview.png",
+        "twitter:card": "summary_large_image",
+        "twitter:title": "CyberSabil IT Tools and Portfolio",
+        "twitter:description": "Practical Windows support tools, commands, downloads, documentation and professional portfolio on one GitHub Pages homepage.",
+        "twitter:image": "https://cybersabil.github.io/media/social-preview.png",
+        "theme-color": "#120821"
+      },
+      "expected": {
+        "canonical": "https://cybersabil.github.io/",
+        "og:url": "https://cybersabil.github.io/",
+        "og:image": "https://cybersabil.github.io/media/social-preview.png",
+        "twitter:image": "https://cybersabil.github.io/media/social-preview.png",
+        "theme-color": "#120821",
+        "twitter:card": "summary_large_image",
+        "og:type": "website"
+      }
+    },
+    {
+      "group": "runtime",
+      "test": "twitter_inherits_og_image",
+      "pass": true,
+      "actual": {
+        "title": "CyberSabil IT Tools and Portfolio",
+        "description": "CyberSabil is a CMS-controlled tools website and professional portfolio for Windows automation, PowerShell scripts, troubleshooting utilities and GitHub Pages deployment.",
+        "canonical": "https://cybersabil.github.io/",
+        "og:type": "website",
+        "og:url": "https://cybersabil.github.io/",
+        "og:title": "CyberSabil IT Tools and Portfolio",
+        "og:description": "Practical Windows support tools, commands, downloads, documentation and professional portfolio on one GitHub Pages homepage.",
+        "og:image": "https://example.com/og.png",
+        "twitter:card": "summary_large_image",
+        "twitter:title": "CyberSabil IT Tools and Portfolio",
+        "twitter:description": "Practical Windows support tools, commands, downloads, documentation and professional portfolio on one GitHub Pages homepage.",
+        "twitter:image": "https://example.com/og.png",
+        "theme-color": "#120821"
+      },
+      "expected": {
+        "og:image": "https://example.com/og.png",
+        "twitter:image": "https://example.com/og.png"
+      }
+    },
+    {
+      "group": "runtime",
+      "test": "og_does_not_inherit_twitter",
+      "pass": true,
+      "actual": {
+        "title": "CyberSabil IT Tools and Portfolio",
+        "description": "CyberSabil is a CMS-controlled tools website and professional portfolio for Windows automation, PowerShell scripts, troubleshooting utilities and GitHub Pages deployment.",
+        "canonical": "https://cybersabil.github.io/",
+        "og:type": "website",
+        "og:url": "https://cybersabil.github.io/",
+        "og:title": "CyberSabil IT Tools and Portfolio",
+        "og:description": "Practical Windows support tools, commands, downloads, documentation and professional portfolio on one GitHub Pages homepage.",
+        "og:image": "https://cybersabil.github.io/media/social-preview.png",
+        "twitter:card": "summary_large_image",
+        "twitter:title": "CyberSabil IT Tools and Portfolio",
+        "twitter:description": "Practical Windows support tools, commands, downloads, documentation and professional portfolio on one GitHub Pages homepage.",
+        "twitter:image": "https://example.com/x-only.png",
+        "theme-color": "#120821"
+      },
+      "expected": {
+        "og:image": "https://cybersabil.github.io/media/social-preview.png",
+        "twitter:image": "https://example.com/x-only.png"
+      }
+    },
+    {
+      "group": "runtime",
+      "test": "malformed_null",
+      "pass": true,
+      "actual": {
+        "title": "CyberSabil IT Tools",
+        "description": "CyberSabil is a practical IT support portfolio and tools hub for Windows automation, troubleshooting, monitoring, cleanup, and system administration utilities.",
+        "canonical": "https://cybersabil.github.io/",
+        "og:type": "website",
+        "og:url": "https://cybersabil.github.io/",
+        "og:title": "CyberSabil IT Tools",
+        "og:description": "CyberSabil is a practical IT support portfolio and tools hub for Windows automation, troubleshooting, monitoring, cleanup, and system administration utilities.",
+        "og:image": "https://cybersabil.github.io/media/social-preview.png",
+        "twitter:card": "summary_large_image",
+        "twitter:title": "CyberSabil IT Tools",
+        "twitter:description": "CyberSabil is a practical IT support portfolio and tools hub for Windows automation, troubleshooting, monitoring, cleanup, and system administration utilities.",
+        "twitter:image": "https://cybersabil.github.io/media/social-preview.png",
+        "theme-color": "#120821"
+      },
+      "expected": {
+        "title": "CyberSabil IT Tools",
+        "description": "CyberSabil is a practical IT support portfolio and tools hub for Windows automation, troubleshooting, monitoring, cleanup, and system administration utilities.",
+        "canonical": "https://cybersabil.github.io/",
+        "og:type": "website",
+        "og:url": "https://cybersabil.github.io/",
+        "og:title": "CyberSabil IT Tools",
+        "og:description": "CyberSabil is a practical IT support portfolio and tools hub for Windows automation, troubleshooting, monitoring, cleanup, and system administration utilities.",
+        "og:image": "https://cybersabil.github.io/media/social-preview.png",
+        "twitter:card": "summary_large_image",
+        "twitter:title": "CyberSabil IT Tools",
+        "twitter:description": "CyberSabil is a practical IT support portfolio and tools hub for Windows automation, troubleshooting, monitoring, cleanup, and system administration utilities.",
+        "twitter:image": "https://cybersabil.github.io/media/social-preview.png",
+        "theme-color": "#120821"
+      }
+    },
+    {
+      "group": "runtime",
+      "test": "malformed_array",
+      "pass": true,
+      "actual": {
+        "title": "CyberSabil IT Tools",
+        "description": "CyberSabil is a practical IT support portfolio and tools hub for Windows automation, troubleshooting, monitoring, cleanup, and system administration utilities.",
+        "canonical": "https://cybersabil.github.io/",
+        "og:type": "website",
+        "og:url": "https://cybersabil.github.io/",
+        "og:title": "CyberSabil IT Tools",
+        "og:description": "CyberSabil is a practical IT support portfolio and tools hub for Windows automation, troubleshooting, monitoring, cleanup, and system administration utilities.",
+        "og:image": "https://cybersabil.github.io/media/social-preview.png",
+        "twitter:card": "summary_large_image",
+        "twitter:title": "CyberSabil IT Tools",
+        "twitter:description": "CyberSabil is a practical IT support portfolio and tools hub for Windows automation, troubleshooting, monitoring, cleanup, and system administration utilities.",
+        "twitter:image": "https://cybersabil.github.io/media/social-preview.png",
+        "theme-color": "#120821"
+      },
+      "expected": {
+        "title": "CyberSabil IT Tools",
+        "description": "CyberSabil is a practical IT support portfolio and tools hub for Windows automation, troubleshooting, monitoring, cleanup, and system administration utilities.",
+        "canonical": "https://cybersabil.github.io/",
+        "og:type": "website",
+        "og:url": "https://cybersabil.github.io/",
+        "og:title": "CyberSabil IT Tools",
+        "og:description": "CyberSabil is a practical IT support portfolio and tools hub for Windows automation, troubleshooting, monitoring, cleanup, and system administration utilities.",
+        "og:image": "https://cybersabil.github.io/media/social-preview.png",
+        "twitter:card": "summary_large_image",
+        "twitter:title": "CyberSabil IT Tools",
+        "twitter:description": "CyberSabil is a practical IT support portfolio and tools hub for Windows automation, troubleshooting, monitoring, cleanup, and system administration utilities.",
+        "twitter:image": "https://cybersabil.github.io/media/social-preview.png",
+        "theme-color": "#120821"
+      }
+    },
+    {
+      "group": "runtime",
+      "test": "stale_reset",
+      "pass": true,
+      "actual": {
+        "title": "CyberSabil IT Tools",
+        "description": "CyberSabil is a practical IT support portfolio and tools hub for Windows automation, troubleshooting, monitoring, cleanup, and system administration utilities.",
+        "canonical": "https://cybersabil.github.io/",
+        "og:type": "website",
+        "og:url": "https://cybersabil.github.io/",
+        "og:title": "CyberSabil IT Tools",
+        "og:description": "CyberSabil is a practical IT support portfolio and tools hub for Windows automation, troubleshooting, monitoring, cleanup, and system administration utilities.",
+        "og:image": "https://cybersabil.github.io/media/social-preview.png",
+        "twitter:card": "summary_large_image",
+        "twitter:title": "CyberSabil IT Tools",
+        "twitter:description": "CyberSabil is a practical IT support portfolio and tools hub for Windows automation, troubleshooting, monitoring, cleanup, and system administration utilities.",
+        "twitter:image": "https://cybersabil.github.io/media/social-preview.png",
+        "theme-color": "#120821"
+      }
+    }
+  ]
+}

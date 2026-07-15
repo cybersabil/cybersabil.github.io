@@ -1,0 +1,86 @@
+{
+  "tablet_portrait": {
+    "switchHidden": true,
+    "switch": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "cx": 0
+    },
+    "website": {
+      "x": 39.01576232910156,
+      "y": 492.01953125
+    },
+    "portfolio": {
+      "x": 382.5520324707031,
+      "y": 492.136474609375
+    },
+    "columns": "331.5px 331.5px",
+    "mobilePos": "bottom-center",
+    "desktopPos": "top-right"
+  },
+  "tablet_landscape": {
+    "switchHidden": true,
+    "switch": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "cx": 0
+    },
+    "website": {
+      "x": 161.01605224609375,
+      "y": 347.64520263671875
+    },
+    "portfolio": {
+      "x": 510.5530090332031,
+      "y": 347.763671875
+    },
+    "columns": "337.5px 337.5px",
+    "mobilePos": "bottom-center",
+    "desktopPos": "top-right"
+  },
+  "desktop": {
+    "switchHidden": true,
+    "switch": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "cx": 0
+    },
+    "website": {
+      "x": 372.00360107421875,
+      "y": 348.1536560058594
+    },
+    "portfolio": {
+      "x": 681.5177001953125,
+      "y": 348.205078125
+    },
+    "columns": "297.5px 297.5px",
+    "mobilePos": "bottom-center",
+    "desktopPos": "top-right"
+  },
+  "mobile": {
+    "switchHidden": true,
+    "switch": {
+      "x": 0,
+      "y": 0,
+      "w": 0,
+      "h": 0,
+      "cx": 0
+    },
+    "website": {
+      "x": 39.009429931640625,
+      "y": 362.09564208984375
+    },
+    "portfolio": {
+      "x": 39.03456115722656,
+      "y": 501.05889892578125
+    },
+    "columns": "297px",
+    "mobilePos": "bottom-center",
+    "desktopPos": "top-right"
+  }
+}

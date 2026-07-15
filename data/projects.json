@@ -1,0 +1,32 @@
+[
+  {
+    "icon": "📦",
+    "title": "TrafficMonitor Auto Setup",
+    "status": "Active",
+    "description": "Automated TrafficMonitor setup with GitHub-hosted launcher and local PowerShell execution.",
+    "problemSolved": "Makes TrafficMonitor deployment simple across multiple Windows systems.",
+    "techUsed": "PowerShell, GitHub Pages, Windows Scheduled Task",
+    "repoLink": "https://github.com/cybersabil/tm",
+    "liveLink": "https://cybersabil.github.io/tm/run.ps1"
+  },
+  {
+    "icon": "🧽",
+    "title": "TrafficMonitor Deep Clean",
+    "status": "Active",
+    "description": "Cleanup utility to remove TrafficMonitor from system folders, startup, scheduled tasks and user profiles.",
+    "problemSolved": "Provides controlled cleanup with confirmation.",
+    "techUsed": "PowerShell, Windows Registry, File System",
+    "repoLink": "https://github.com/cybersabil/tmr",
+    "liveLink": "https://cybersabil.github.io/tmr/run.ps1"
+  },
+  {
+    "icon": "🌍",
+    "title": "CyberSabil Website",
+    "status": "Active",
+    "description": "GitHub Pages portfolio and tools website controlled with Pages CMS.",
+    "problemSolved": "Creates a central page for IT tools, commands, downloads and portfolio projects.",
+    "techUsed": "HTML, CSS, JavaScript, GitHub Pages, Pages CMS",
+    "repoLink": "https://github.com/cybersabil/cybersabil.github.io",
+    "liveLink": "https://cybersabil.github.io/"
+  }
+]

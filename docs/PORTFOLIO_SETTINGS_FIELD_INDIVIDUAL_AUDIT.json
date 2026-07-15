@@ -1,0 +1,3882 @@
+{
+  "group": "Portfolio Settings and Navigation",
+  "fields": [
+    "themePreset",
+    "layoutPreset",
+    "brandText",
+    "showNavigation",
+    "navSkillsLabel",
+    "navProjectsLabel",
+    "navTimelineLabel",
+    "navServicesLabel",
+    "navContactLabel",
+    "showHero",
+    "showProfileCard",
+    "showSkillsSection",
+    "showProjectsSection",
+    "showTimelineSection",
+    "showServicesSection",
+    "showContactSection",
+    "skillsEyebrow",
+    "skillsTitle",
+    "skillsSubtitle",
+    "projectsEyebrow",
+    "projectsTitle",
+    "projectsSubtitle",
+    "timelineEyebrow",
+    "timelineTitle",
+    "timelineSubtitle",
+    "servicesEyebrow",
+    "servicesTitle",
+    "servicesSubtitle",
+    "contactEyebrow",
+    "showProjectLinks",
+    "projectLinkLabel",
+    "footerText"
+  ],
+  "targeted_checks": 58,
+  "passed": 58,
+  "failed": 0,
+  "results": [
+    {
+      "test": "theme_purple-gold_no_errors",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "test": "theme_midnight_no_errors",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "test": "theme_options_distinct",
+      "passed": true,
+      "details": {
+        "purple-gold": {
+          "appClasses": [
+            "cs-portfolio-app",
+            "cs-portfolio-theme-purple-gold",
+            "cs-portfolio-layout-professional"
+          ],
+          "background": "radial-gradient(circle at 18% 0%, rgba(139, 92, 246, 0.2), rgba(0, 0, 0, 0) 30%), radial-gradient(circle at 82% 8%, rgba(245, 197, 92, 0.16), rgba(0, 0, 0, 0) 26%), linear-gradient(135deg, rgb(16, 8, 30), rgb(26, 15, 45) 52%, rgb(8, 6, 16))",
+          "brand": "CyberSabil Portfolio",
+          "navHidden": false,
+          "navDisplay": "flex",
+          "toggleHidden": false,
+          "toggleDisplay": "none",
+          "labels": [
+            "Skills",
+            "Projects",
+            "Timeline",
+            "Services",
+            "Contact"
+          ],
+          "navLinkDisplay": [
+            "block",
+            "block",
+            "block",
+            "block",
+            "block"
+          ],
+          "heroHidden": false,
+          "profileHidden": false,
+          "heroRect": {
+            "x": 103,
+            "y": 77,
+            "w": 1160,
+            "h": 733
+          },
+          "profileRect": {
+            "x": 823,
+            "y": 169,
+            "w": 440,
+            "h": 583
+          },
+          "heroCopyRect": {
+            "x": 103,
+            "y": 217,
+            "w": 672,
+            "h": 487
+          },
+          "heroColumns": "672.078px 439.922px",
+          "sectionHidden": [
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "sectionDisplay": [
+            "block",
+            "block",
+            "block",
+            "block",
+            "grid"
+          ],
+          "texts": {
+            "skills": [
+              "Technical focus",
+              "Practical IT skills",
+              "Support-focused skills for Windows troubleshooting, automation, documentation and lightweight web deployment."
+            ],
+            "projects": [
+              "Selected systems",
+              "Project portfolio",
+              "Tools and workflows designed around repeatable IT support problems, deployment clarity and user-safe execution."
+            ],
+            "timeline": [
+              "Progress path",
+              "Build timeline",
+              "A short view of how the CyberSabil website, tools and portfolio system are improving version by version."
+            ],
+            "services": [
+              "Support areas",
+              "Services",
+              "Clear, practical help for Windows support operations, small dashboards, automation scripts and technical documentation."
+            ],
+            "contact": "Contact",
+            "footer": "CyberSabil Portfolio • Practical Windows automation, support utilities and GitHub Pages deployments"
+          },
+          "projectLinks": [
+            {
+              "text": "Open website →",
+              "href": "https://cybersabil.github.io/",
+              "target": "_blank"
+            },
+            {
+              "text": "Open live site →",
+              "href": "https://cybersabil.github.io/",
+              "target": "_blank"
+            },
+            {
+              "text": "Open repository →",
+              "href": "https://github.com/cybersabil/tm",
+              "target": "_blank"
+            },
+            {
+              "text": "Open repository →",
+              "href": "https://github.com/cybersabil/tmr",
+              "target": "_blank"
+            }
+          ],
+          "containerWidth": 1160,
+          "sectionPadding": "44px",
+          "scrollWidth": 1366,
+          "clientWidth": 1366
+        },
+        "midnight": {
+          "appClasses": [
+            "cs-portfolio-app",
+            "cs-portfolio-layout-professional",
+            "cs-portfolio-theme-midnight"
+          ],
+          "background": "radial-gradient(circle at 20% 0%, rgba(53, 215, 255, 0.2), rgba(0, 0, 0, 0) 35%), linear-gradient(135deg, rgb(6, 17, 31), rgb(13, 27, 47) 54%, rgb(5, 8, 18))",
+          "brand": "CyberSabil Portfolio",
+          "navHidden": false,
+          "navDisplay": "flex",
+          "toggleHidden": false,
+          "toggleDisplay": "none",
+          "labels": [
+            "Skills",
+            "Projects",
+            "Timeline",
+            "Services",
+            "Contact"
+          ],
+          "navLinkDisplay": [
+            "block",
+            "block",
+            "block",
+            "block",
+            "block"
+          ],
+          "heroHidden": false,
+          "profileHidden": false,
+          "heroRect": {
+            "x": 103,
+            "y": 77,
+            "w": 1160,
+            "h": 733
+          },
+          "profileRect": {
+            "x": 823,
+            "y": 169,
+            "w": 440,
+            "h": 583
+          },
+          "heroCopyRect": {
+            "x": 103,
+            "y": 217,
+            "w": 672,
+            "h": 487
+          },
+          "heroColumns": "672.078px 439.922px",
+          "sectionHidden": [
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "sectionDisplay": [
+            "block",
+            "block",
+            "block",
+            "block",
+            "grid"
+          ],
+          "texts": {
+            "skills": [
+              "Technical focus",
+              "Practical IT skills",
+              "Support-focused skills for Windows troubleshooting, automation, documentation and lightweight web deployment."
+            ],
+            "projects": [
+              "Selected systems",
+              "Project portfolio",
+              "Tools and workflows designed around repeatable IT support problems, deployment clarity and user-safe execution."
+            ],
+            "timeline": [
+              "Progress path",
+              "Build timeline",
+              "A short view of how the CyberSabil website, tools and portfolio system are improving version by version."
+            ],
+            "services": [
+              "Support areas",
+              "Services",
+              "Clear, practical help for Windows support operations, small dashboards, automation scripts and technical documentation."
+            ],
+            "contact": "Contact",
+            "footer": "CyberSabil Portfolio • Practical Windows automation, support utilities and GitHub Pages deployments"
+          },
+          "projectLinks": [
+            {
+              "text": "Open website →",
+              "href": "https://cybersabil.github.io/",
+              "target": "_blank"
+            },
+            {
+              "text": "Open live site →",
+              "href": "https://cybersabil.github.io/",
+              "target": "_blank"
+            },
+            {
+              "text": "Open repository →",
+              "href": "https://github.com/cybersabil/tm",
+              "target": "_blank"
+            },
+            {
+              "text": "Open repository →",
+              "href": "https://github.com/cybersabil/tmr",
+              "target": "_blank"
+            }
+          ],
+          "containerWidth": 1160,
+          "sectionPadding": "44px",
+          "scrollWidth": 1366,
+          "clientWidth": 1366
+        }
+      }
+    },
+    {
+      "test": "theme_classes_exclusive",
+      "passed": true,
+      "details": {
+        "purple-gold": {
+          "appClasses": [
+            "cs-portfolio-app",
+            "cs-portfolio-theme-purple-gold",
+            "cs-portfolio-layout-professional"
+          ],
+          "background": "radial-gradient(circle at 18% 0%, rgba(139, 92, 246, 0.2), rgba(0, 0, 0, 0) 30%), radial-gradient(circle at 82% 8%, rgba(245, 197, 92, 0.16), rgba(0, 0, 0, 0) 26%), linear-gradient(135deg, rgb(16, 8, 30), rgb(26, 15, 45) 52%, rgb(8, 6, 16))",
+          "brand": "CyberSabil Portfolio",
+          "navHidden": false,
+          "navDisplay": "flex",
+          "toggleHidden": false,
+          "toggleDisplay": "none",
+          "labels": [
+            "Skills",
+            "Projects",
+            "Timeline",
+            "Services",
+            "Contact"
+          ],
+          "navLinkDisplay": [
+            "block",
+            "block",
+            "block",
+            "block",
+            "block"
+          ],
+          "heroHidden": false,
+          "profileHidden": false,
+          "heroRect": {
+            "x": 103,
+            "y": 77,
+            "w": 1160,
+            "h": 733
+          },
+          "profileRect": {
+            "x": 823,
+            "y": 169,
+            "w": 440,
+            "h": 583
+          },
+          "heroCopyRect": {
+            "x": 103,
+            "y": 217,
+            "w": 672,
+            "h": 487
+          },
+          "heroColumns": "672.078px 439.922px",
+          "sectionHidden": [
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "sectionDisplay": [
+            "block",
+            "block",
+            "block",
+            "block",
+            "grid"
+          ],
+          "texts": {
+            "skills": [
+              "Technical focus",
+              "Practical IT skills",
+              "Support-focused skills for Windows troubleshooting, automation, documentation and lightweight web deployment."
+            ],
+            "projects": [
+              "Selected systems",
+              "Project portfolio",
+              "Tools and workflows designed around repeatable IT support problems, deployment clarity and user-safe execution."
+            ],
+            "timeline": [
+              "Progress path",
+              "Build timeline",
+              "A short view of how the CyberSabil website, tools and portfolio system are improving version by version."
+            ],
+            "services": [
+              "Support areas",
+              "Services",
+              "Clear, practical help for Windows support operations, small dashboards, automation scripts and technical documentation."
+            ],
+            "contact": "Contact",
+            "footer": "CyberSabil Portfolio • Practical Windows automation, support utilities and GitHub Pages deployments"
+          },
+          "projectLinks": [
+            {
+              "text": "Open website →",
+              "href": "https://cybersabil.github.io/",
+              "target": "_blank"
+            },
+            {
+              "text": "Open live site →",
+              "href": "https://cybersabil.github.io/",
+              "target": "_blank"
+            },
+            {
+              "text": "Open repository →",
+              "href": "https://github.com/cybersabil/tm",
+              "target": "_blank"
+            },
+            {
+              "text": "Open repository →",
+              "href": "https://github.com/cybersabil/tmr",
+              "target": "_blank"
+            }
+          ],
+          "containerWidth": 1160,
+          "sectionPadding": "44px",
+          "scrollWidth": 1366,
+          "clientWidth": 1366
+        },
+        "midnight": {
+          "appClasses": [
+            "cs-portfolio-app",
+            "cs-portfolio-layout-professional",
+            "cs-portfolio-theme-midnight"
+          ],
+          "background": "radial-gradient(circle at 20% 0%, rgba(53, 215, 255, 0.2), rgba(0, 0, 0, 0) 35%), linear-gradient(135deg, rgb(6, 17, 31), rgb(13, 27, 47) 54%, rgb(5, 8, 18))",
+          "brand": "CyberSabil Portfolio",
+          "navHidden": false,
+          "navDisplay": "flex",
+          "toggleHidden": false,
+          "toggleDisplay": "none",
+          "labels": [
+            "Skills",
+            "Projects",
+            "Timeline",
+            "Services",
+            "Contact"
+          ],
+          "navLinkDisplay": [
+            "block",
+            "block",
+            "block",
+            "block",
+            "block"
+          ],
+          "heroHidden": false,
+          "profileHidden": false,
+          "heroRect": {
+            "x": 103,
+            "y": 77,
+            "w": 1160,
+            "h": 733
+          },
+          "profileRect": {
+            "x": 823,
+            "y": 169,
+            "w": 440,
+            "h": 583
+          },
+          "heroCopyRect": {
+            "x": 103,
+            "y": 217,
+            "w": 672,
+            "h": 487
+          },
+          "heroColumns": "672.078px 439.922px",
+          "sectionHidden": [
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "sectionDisplay": [
+            "block",
+            "block",
+            "block",
+            "block",
+            "grid"
+          ],
+          "texts": {
+            "skills": [
+              "Technical focus",
+              "Practical IT skills",
+              "Support-focused skills for Windows troubleshooting, automation, documentation and lightweight web deployment."
+            ],
+            "projects": [
+              "Selected systems",
+              "Project portfolio",
+              "Tools and workflows designed around repeatable IT support problems, deployment clarity and user-safe execution."
+            ],
+            "timeline": [
+              "Progress path",
+              "Build timeline",
+              "A short view of how the CyberSabil website, tools and portfolio system are improving version by version."
+            ],
+            "services": [
+              "Support areas",
+              "Services",
+              "Clear, practical help for Windows support operations, small dashboards, automation scripts and technical documentation."
+            ],
+            "contact": "Contact",
+            "footer": "CyberSabil Portfolio • Practical Windows automation, support utilities and GitHub Pages deployments"
+          },
+          "projectLinks": [
+            {
+              "text": "Open website →",
+              "href": "https://cybersabil.github.io/",
+              "target": "_blank"
+            },
+            {
+              "text": "Open live site →",
+              "href": "https://cybersabil.github.io/",
+              "target": "_blank"
+            },
+            {
+              "text": "Open repository →",
+              "href": "https://github.com/cybersabil/tm",
+              "target": "_blank"
+            },
+            {
+              "text": "Open repository →",
+              "href": "https://github.com/cybersabil/tmr",
+              "target": "_blank"
+            }
+          ],
+          "containerWidth": 1160,
+          "sectionPadding": "44px",
+          "scrollWidth": 1366,
+          "clientWidth": 1366
+        }
+      }
+    },
+    {
+      "test": "layout_professional_no_errors",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "test": "layout_compact_no_errors",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "test": "layout_spacious_no_errors",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "test": "layout_options_distinct",
+      "passed": true,
+      "details": {
+        "professional": [
+          1160,
+          77,
+          733,
+          "44px"
+        ],
+        "compact": [
+          1160,
+          77,
+          697,
+          "44px"
+        ],
+        "spacious": [
+          1318,
+          77,
+          763,
+          "84px"
+        ]
+      }
+    },
+    {
+      "test": "layout_class_exclusive",
+      "passed": true,
+      "details": {
+        "professional": {
+          "appClasses": [
+            "cs-portfolio-app",
+            "cs-portfolio-theme-purple-gold",
+            "cs-portfolio-layout-professional"
+          ],
+          "background": "radial-gradient(circle at 18% 0%, rgba(139, 92, 246, 0.2), rgba(0, 0, 0, 0) 30%), radial-gradient(circle at 82% 8%, rgba(245, 197, 92, 0.16), rgba(0, 0, 0, 0) 26%), linear-gradient(135deg, rgb(16, 8, 30), rgb(26, 15, 45) 52%, rgb(8, 6, 16))",
+          "brand": "CyberSabil Portfolio",
+          "navHidden": false,
+          "navDisplay": "flex",
+          "toggleHidden": false,
+          "toggleDisplay": "none",
+          "labels": [
+            "Skills",
+            "Projects",
+            "Timeline",
+            "Services",
+            "Contact"
+          ],
+          "navLinkDisplay": [
+            "block",
+            "block",
+            "block",
+            "block",
+            "block"
+          ],
+          "heroHidden": false,
+          "profileHidden": false,
+          "heroRect": {
+            "x": 103,
+            "y": 77,
+            "w": 1160,
+            "h": 733
+          },
+          "profileRect": {
+            "x": 823,
+            "y": 169,
+            "w": 440,
+            "h": 583
+          },
+          "heroCopyRect": {
+            "x": 103,
+            "y": 217,
+            "w": 672,
+            "h": 487
+          },
+          "heroColumns": "672.078px 439.922px",
+          "sectionHidden": [
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "sectionDisplay": [
+            "block",
+            "block",
+            "block",
+            "block",
+            "grid"
+          ],
+          "texts": {
+            "skills": [
+              "Technical focus",
+              "Practical IT skills",
+              "Support-focused skills for Windows troubleshooting, automation, documentation and lightweight web deployment."
+            ],
+            "projects": [
+              "Selected systems",
+              "Project portfolio",
+              "Tools and workflows designed around repeatable IT support problems, deployment clarity and user-safe execution."
+            ],
+            "timeline": [
+              "Progress path",
+              "Build timeline",
+              "A short view of how the CyberSabil website, tools and portfolio system are improving version by version."
+            ],
+            "services": [
+              "Support areas",
+              "Services",
+              "Clear, practical help for Windows support operations, small dashboards, automation scripts and technical documentation."
+            ],
+            "contact": "Contact",
+            "footer": "CyberSabil Portfolio • Practical Windows automation, support utilities and GitHub Pages deployments"
+          },
+          "projectLinks": [
+            {
+              "text": "Open website →",
+              "href": "https://cybersabil.github.io/",
+              "target": "_blank"
+            },
+            {
+              "text": "Open live site →",
+              "href": "https://cybersabil.github.io/",
+              "target": "_blank"
+            },
+            {
+              "text": "Open repository →",
+              "href": "https://github.com/cybersabil/tm",
+              "target": "_blank"
+            },
+            {
+              "text": "Open repository →",
+              "href": "https://github.com/cybersabil/tmr",
+              "target": "_blank"
+            }
+          ],
+          "containerWidth": 1160,
+          "sectionPadding": "44px",
+          "scrollWidth": 1366,
+          "clientWidth": 1366
+        },
+        "compact": {
+          "appClasses": [
+            "cs-portfolio-app",
+            "cs-portfolio-theme-purple-gold",
+            "cs-portfolio-layout-compact"
+          ],
+          "background": "radial-gradient(circle at 18% 0%, rgba(139, 92, 246, 0.2), rgba(0, 0, 0, 0) 30%), radial-gradient(circle at 82% 8%, rgba(245, 197, 92, 0.16), rgba(0, 0, 0, 0) 26%), linear-gradient(135deg, rgb(16, 8, 30), rgb(26, 15, 45) 52%, rgb(8, 6, 16))",
+          "brand": "CyberSabil Portfolio",
+          "navHidden": false,
+          "navDisplay": "flex",
+          "toggleHidden": false,
+          "toggleDisplay": "none",
+          "labels": [
+            "Skills",
+            "Projects",
+            "Timeline",
+            "Services",
+            "Contact"
+          ],
+          "navLinkDisplay": [
+            "block",
+            "block",
+            "block",
+            "block",
+            "block"
+          ],
+          "heroHidden": false,
+          "profileHidden": false,
+          "heroRect": {
+            "x": 103,
+            "y": 77,
+            "w": 1160,
+            "h": 697
+          },
+          "profileRect": {
+            "x": 823,
+            "y": 149,
+            "w": 440,
+            "h": 583
+          },
+          "heroCopyRect": {
+            "x": 103,
+            "y": 197,
+            "w": 672,
+            "h": 487
+          },
+          "heroColumns": "672.078px 439.922px",
+          "sectionHidden": [
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "sectionDisplay": [
+            "block",
+            "block",
+            "block",
+            "block",
+            "grid"
+          ],
+          "texts": {
+            "skills": [
+              "Technical focus",
+              "Practical IT skills",
+              "Support-focused skills for Windows troubleshooting, automation, documentation and lightweight web deployment."
+            ],
+            "projects": [
+              "Selected systems",
+              "Project portfolio",
+              "Tools and workflows designed around repeatable IT support problems, deployment clarity and user-safe execution."
+            ],
+            "timeline": [
+              "Progress path",
+              "Build timeline",
+              "A short view of how the CyberSabil website, tools and portfolio system are improving version by version."
+            ],
+            "services": [
+              "Support areas",
+              "Services",
+              "Clear, practical help for Windows support operations, small dashboards, automation scripts and technical documentation."
+            ],
+            "contact": "Contact",
+            "footer": "CyberSabil Portfolio • Practical Windows automation, support utilities and GitHub Pages deployments"
+          },
+          "projectLinks": [
+            {
+              "text": "Open website →",
+              "href": "https://cybersabil.github.io/",
+              "target": "_blank"
+            },
+            {
+              "text": "Open live site →",
+              "href": "https://cybersabil.github.io/",
+              "target": "_blank"
+            },
+            {
+              "text": "Open repository →",
+              "href": "https://github.com/cybersabil/tm",
+              "target": "_blank"
+            },
+            {
+              "text": "Open repository →",
+              "href": "https://github.com/cybersabil/tmr",
+              "target": "_blank"
+            }
+          ],
+          "containerWidth": 1160,
+          "sectionPadding": "44px",
+          "scrollWidth": 1366,
+          "clientWidth": 1366
+        },
+        "spacious": {
+          "appClasses": [
+            "cs-portfolio-app",
+            "cs-portfolio-theme-purple-gold",
+            "cs-portfolio-layout-spacious"
+          ],
+          "background": "radial-gradient(circle at 18% 0%, rgba(139, 92, 246, 0.2), rgba(0, 0, 0, 0) 30%), radial-gradient(circle at 82% 8%, rgba(245, 197, 92, 0.16), rgba(0, 0, 0, 0) 26%), linear-gradient(135deg, rgb(16, 8, 30), rgb(26, 15, 45) 52%, rgb(8, 6, 16))",
+          "brand": "CyberSabil Portfolio",
+          "navHidden": false,
+          "navDisplay": "flex",
+          "toggleHidden": false,
+          "toggleDisplay": "none",
+          "labels": [
+            "Skills",
+            "Projects",
+            "Timeline",
+            "Services",
+            "Contact"
+          ],
+          "navLinkDisplay": [
+            "block",
+            "block",
+            "block",
+            "block",
+            "block"
+          ],
+          "heroHidden": false,
+          "profileHidden": false,
+          "heroRect": {
+            "x": 24,
+            "y": 77,
+            "w": 1318,
+            "h": 763
+          },
+          "profileRect": {
+            "x": 846,
+            "y": 205,
+            "w": 496,
+            "h": 543
+          },
+          "heroCopyRect": {
+            "x": 24,
+            "y": 233,
+            "w": 758,
+            "h": 487
+          },
+          "heroColumns": "757.906px 496.094px",
+          "sectionHidden": [
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "sectionDisplay": [
+            "block",
+            "block",
+            "block",
+            "block",
+            "grid"
+          ],
+          "texts": {
+            "skills": [
+              "Technical focus",
+              "Practical IT skills",
+              "Support-focused skills for Windows troubleshooting, automation, documentation and lightweight web deployment."
+            ],
+            "projects": [
+              "Selected systems",
+              "Project portfolio",
+              "Tools and workflows designed around repeatable IT support problems, deployment clarity and user-safe execution."
+            ],
+            "timeline": [
+              "Progress path",
+              "Build timeline",
+              "A short view of how the CyberSabil website, tools and portfolio system are improving version by version."
+            ],
+            "services": [
+              "Support areas",
+              "Services",
+              "Clear, practical help for Windows support operations, small dashboards, automation scripts and technical documentation."
+            ],
+            "contact": "Contact",
+            "footer": "CyberSabil Portfolio • Practical Windows automation, support utilities and GitHub Pages deployments"
+          },
+          "projectLinks": [
+            {
+              "text": "Open website →",
+              "href": "https://cybersabil.github.io/",
+              "target": "_blank"
+            },
+            {
+              "text": "Open live site →",
+              "href": "https://cybersabil.github.io/",
+              "target": "_blank"
+            },
+            {
+              "text": "Open repository →",
+              "href": "https://github.com/cybersabil/tm",
+              "target": "_blank"
+            },
+            {
+              "text": "Open repository →",
+              "href": "https://github.com/cybersabil/tmr",
+              "target": "_blank"
+            }
+          ],
+          "containerWidth": 1318,
+          "sectionPadding": "84px",
+          "scrollWidth": 1366,
+          "clientWidth": 1366
+        }
+      }
+    },
+    {
+      "test": "brandText_applies_and_trims",
+      "passed": true,
+      "details": {
+        "actual": "BRAND AUDIT",
+        "errors": []
+      }
+    },
+    {
+      "test": "navSkillsLabel_applies_and_trims",
+      "passed": true,
+      "details": {
+        "actual": "SKILLS AUDIT",
+        "errors": []
+      }
+    },
+    {
+      "test": "navProjectsLabel_applies_and_trims",
+      "passed": true,
+      "details": {
+        "actual": "PROJECTS AUDIT",
+        "errors": []
+      }
+    },
+    {
+      "test": "navTimelineLabel_applies_and_trims",
+      "passed": true,
+      "details": {
+        "actual": "TIMELINE AUDIT",
+        "errors": []
+      }
+    },
+    {
+      "test": "navServicesLabel_applies_and_trims",
+      "passed": true,
+      "details": {
+        "actual": "SERVICES AUDIT",
+        "errors": []
+      }
+    },
+    {
+      "test": "navContactLabel_applies_and_trims",
+      "passed": true,
+      "details": {
+        "actual": "CONTACT AUDIT",
+        "errors": []
+      }
+    },
+    {
+      "test": "skillsEyebrow_applies_and_trims",
+      "passed": true,
+      "details": {
+        "actual": "SK EYEBROW",
+        "errors": []
+      }
+    },
+    {
+      "test": "skillsTitle_applies_and_trims",
+      "passed": true,
+      "details": {
+        "actual": "SK TITLE",
+        "errors": []
+      }
+    },
+    {
+      "test": "skillsSubtitle_applies_and_trims",
+      "passed": true,
+      "details": {
+        "actual": "SK SUBTITLE",
+        "errors": []
+      }
+    },
+    {
+      "test": "projectsEyebrow_applies_and_trims",
+      "passed": true,
+      "details": {
+        "actual": "PR EYEBROW",
+        "errors": []
+      }
+    },
+    {
+      "test": "projectsTitle_applies_and_trims",
+      "passed": true,
+      "details": {
+        "actual": "PR TITLE",
+        "errors": []
+      }
+    },
+    {
+      "test": "projectsSubtitle_applies_and_trims",
+      "passed": true,
+      "details": {
+        "actual": "PR SUBTITLE",
+        "errors": []
+      }
+    },
+    {
+      "test": "timelineEyebrow_applies_and_trims",
+      "passed": true,
+      "details": {
+        "actual": "TL EYEBROW",
+        "errors": []
+      }
+    },
+    {
+      "test": "timelineTitle_applies_and_trims",
+      "passed": true,
+      "details": {
+        "actual": "TL TITLE",
+        "errors": []
+      }
+    },
+    {
+      "test": "timelineSubtitle_applies_and_trims",
+      "passed": true,
+      "details": {
+        "actual": "TL SUBTITLE",
+        "errors": []
+      }
+    },
+    {
+      "test": "servicesEyebrow_applies_and_trims",
+      "passed": true,
+      "details": {
+        "actual": "SV EYEBROW",
+        "errors": []
+      }
+    },
+    {
+      "test": "servicesTitle_applies_and_trims",
+      "passed": true,
+      "details": {
+        "actual": "SV TITLE",
+        "errors": []
+      }
+    },
+    {
+      "test": "servicesSubtitle_applies_and_trims",
+      "passed": true,
+      "details": {
+        "actual": "SV SUBTITLE",
+        "errors": []
+      }
+    },
+    {
+      "test": "contactEyebrow_applies_and_trims",
+      "passed": true,
+      "details": {
+        "actual": "CONTACT EYEBROW",
+        "errors": []
+      }
+    },
+    {
+      "test": "footerText_applies_and_trims",
+      "passed": true,
+      "details": {
+        "actual": "FOOTER AUDIT",
+        "errors": []
+      }
+    },
+    {
+      "test": "portfolio_setting_text_escaped",
+      "passed": true,
+      "details": {
+        "appClasses": [
+          "cs-portfolio-app",
+          "cs-portfolio-theme-purple-gold",
+          "cs-portfolio-layout-professional"
+        ],
+        "background": "radial-gradient(circle at 18% 0%, rgba(139, 92, 246, 0.2), rgba(0, 0, 0, 0) 30%), radial-gradient(circle at 82% 8%, rgba(245, 197, 92, 0.16), rgba(0, 0, 0, 0) 26%), linear-gradient(135deg, rgb(16, 8, 30), rgb(26, 15, 45) 52%, rgb(8, 6, 16))",
+        "brand": "CyberSabil Portfolio",
+        "navHidden": false,
+        "navDisplay": "flex",
+        "toggleHidden": false,
+        "toggleDisplay": "none",
+        "labels": [
+          "Skills",
+          "Projects",
+          "Timeline",
+          "Services",
+          "Contact"
+        ],
+        "navLinkDisplay": [
+          "block",
+          "block",
+          "block",
+          "block",
+          "block"
+        ],
+        "heroHidden": false,
+        "profileHidden": false,
+        "heroRect": {
+          "x": 103,
+          "y": 77,
+          "w": 1160,
+          "h": 733
+        },
+        "profileRect": {
+          "x": 823,
+          "y": 169,
+          "w": 440,
+          "h": 583
+        },
+        "heroCopyRect": {
+          "x": 103,
+          "y": 217,
+          "w": 672,
+          "h": 487
+        },
+        "heroColumns": "672.078px 439.922px",
+        "sectionHidden": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "sectionDisplay": [
+          "block",
+          "block",
+          "block",
+          "block",
+          "grid"
+        ],
+        "texts": {
+          "skills": [
+            "Technical focus",
+            "<img src=x onerror=\"window.__pwn=1\">Title",
+            "Support-focused skills for Windows troubleshooting, automation, documentation and lightweight web deployment."
+          ],
+          "projects": [
+            "Selected systems",
+            "Project portfolio",
+            "Tools and workflows designed around repeatable IT support problems, deployment clarity and user-safe execution."
+          ],
+          "timeline": [
+            "Progress path",
+            "Build timeline",
+            "A short view of how the CyberSabil website, tools and portfolio system are improving version by version."
+          ],
+          "services": [
+            "Support areas",
+            "Services",
+            "Clear, practical help for Windows support operations, small dashboards, automation scripts and technical documentation."
+          ],
+          "contact": "Contact",
+          "footer": "CyberSabil Portfolio • Practical Windows automation, support utilities and GitHub Pages deployments"
+        },
+        "projectLinks": [
+          {
+            "text": "Open website →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank"
+          },
+          {
+            "text": "Open live site →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank"
+          },
+          {
+            "text": "Open repository →",
+            "href": "https://github.com/cybersabil/tm",
+            "target": "_blank"
+          },
+          {
+            "text": "Open repository →",
+            "href": "https://github.com/cybersabil/tmr",
+            "target": "_blank"
+          }
+        ],
+        "containerWidth": 1160,
+        "sectionPadding": "44px",
+        "scrollWidth": 1366,
+        "clientWidth": 1366
+      }
+    },
+    {
+      "test": "showNavigation_yes_links",
+      "passed": true,
+      "details": {
+        "appClasses": [
+          "cs-portfolio-app",
+          "cs-portfolio-theme-purple-gold",
+          "cs-portfolio-layout-professional"
+        ],
+        "background": "radial-gradient(circle at 18% 0%, rgba(139, 92, 246, 0.2), rgba(0, 0, 0, 0) 30%), radial-gradient(circle at 82% 8%, rgba(245, 197, 92, 0.16), rgba(0, 0, 0, 0) 26%), linear-gradient(135deg, rgb(16, 8, 30), rgb(26, 15, 45) 52%, rgb(8, 6, 16))",
+        "brand": "CyberSabil Portfolio",
+        "navHidden": false,
+        "navDisplay": "none",
+        "toggleHidden": false,
+        "toggleDisplay": "flex",
+        "labels": [
+          "Skills",
+          "Projects",
+          "Timeline",
+          "Services",
+          "Contact"
+        ],
+        "navLinkDisplay": [
+          "flex",
+          "flex",
+          "flex",
+          "flex",
+          "flex"
+        ],
+        "heroHidden": false,
+        "profileHidden": false,
+        "heroRect": {
+          "x": 9,
+          "y": 65,
+          "w": 372,
+          "h": 1208
+        },
+        "profileRect": {
+          "x": 9,
+          "y": 610,
+          "w": 372,
+          "h": 605
+        },
+        "heroCopyRect": {
+          "x": 9,
+          "y": 119,
+          "w": 372,
+          "h": 467
+        },
+        "heroColumns": "372px",
+        "sectionHidden": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "sectionDisplay": [
+          "block",
+          "block",
+          "block",
+          "block",
+          "grid"
+        ],
+        "texts": {
+          "skills": [
+            "Technical focus",
+            "Practical IT skills",
+            "Support-focused skills for Windows troubleshooting, automation, documentation and lightweight web deployment."
+          ],
+          "projects": [
+            "Selected systems",
+            "Project portfolio",
+            "Tools and workflows designed around repeatable IT support problems, deployment clarity and user-safe execution."
+          ],
+          "timeline": [
+            "Progress path",
+            "Build timeline",
+            "A short view of how the CyberSabil website, tools and portfolio system are improving version by version."
+          ],
+          "services": [
+            "Support areas",
+            "Services",
+            "Clear, practical help for Windows support operations, small dashboards, automation scripts and technical documentation."
+          ],
+          "contact": "Contact",
+          "footer": "CyberSabil Portfolio • Practical Windows automation, support utilities and GitHub Pages deployments"
+        },
+        "projectLinks": [
+          {
+            "text": "Open website →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank"
+          },
+          {
+            "text": "Open live site →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank"
+          },
+          {
+            "text": "Open repository →",
+            "href": "https://github.com/cybersabil/tm",
+            "target": "_blank"
+          },
+          {
+            "text": "Open repository →",
+            "href": "https://github.com/cybersabil/tmr",
+            "target": "_blank"
+          }
+        ],
+        "containerWidth": 372,
+        "sectionPadding": "44px",
+        "scrollWidth": 390,
+        "clientWidth": 390
+      }
+    },
+    {
+      "test": "showNavigation_yes_toggle",
+      "passed": true,
+      "details": {
+        "appClasses": [
+          "cs-portfolio-app",
+          "cs-portfolio-theme-purple-gold",
+          "cs-portfolio-layout-professional"
+        ],
+        "background": "radial-gradient(circle at 18% 0%, rgba(139, 92, 246, 0.2), rgba(0, 0, 0, 0) 30%), radial-gradient(circle at 82% 8%, rgba(245, 197, 92, 0.16), rgba(0, 0, 0, 0) 26%), linear-gradient(135deg, rgb(16, 8, 30), rgb(26, 15, 45) 52%, rgb(8, 6, 16))",
+        "brand": "CyberSabil Portfolio",
+        "navHidden": false,
+        "navDisplay": "none",
+        "toggleHidden": false,
+        "toggleDisplay": "flex",
+        "labels": [
+          "Skills",
+          "Projects",
+          "Timeline",
+          "Services",
+          "Contact"
+        ],
+        "navLinkDisplay": [
+          "flex",
+          "flex",
+          "flex",
+          "flex",
+          "flex"
+        ],
+        "heroHidden": false,
+        "profileHidden": false,
+        "heroRect": {
+          "x": 9,
+          "y": 65,
+          "w": 372,
+          "h": 1208
+        },
+        "profileRect": {
+          "x": 9,
+          "y": 610,
+          "w": 372,
+          "h": 605
+        },
+        "heroCopyRect": {
+          "x": 9,
+          "y": 119,
+          "w": 372,
+          "h": 467
+        },
+        "heroColumns": "372px",
+        "sectionHidden": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "sectionDisplay": [
+          "block",
+          "block",
+          "block",
+          "block",
+          "grid"
+        ],
+        "texts": {
+          "skills": [
+            "Technical focus",
+            "Practical IT skills",
+            "Support-focused skills for Windows troubleshooting, automation, documentation and lightweight web deployment."
+          ],
+          "projects": [
+            "Selected systems",
+            "Project portfolio",
+            "Tools and workflows designed around repeatable IT support problems, deployment clarity and user-safe execution."
+          ],
+          "timeline": [
+            "Progress path",
+            "Build timeline",
+            "A short view of how the CyberSabil website, tools and portfolio system are improving version by version."
+          ],
+          "services": [
+            "Support areas",
+            "Services",
+            "Clear, practical help for Windows support operations, small dashboards, automation scripts and technical documentation."
+          ],
+          "contact": "Contact",
+          "footer": "CyberSabil Portfolio • Practical Windows automation, support utilities and GitHub Pages deployments"
+        },
+        "projectLinks": [
+          {
+            "text": "Open website →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank"
+          },
+          {
+            "text": "Open live site →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank"
+          },
+          {
+            "text": "Open repository →",
+            "href": "https://github.com/cybersabil/tm",
+            "target": "_blank"
+          },
+          {
+            "text": "Open repository →",
+            "href": "https://github.com/cybersabil/tmr",
+            "target": "_blank"
+          }
+        ],
+        "containerWidth": 372,
+        "sectionPadding": "44px",
+        "scrollWidth": 390,
+        "clientWidth": 390
+      }
+    },
+    {
+      "test": "showNavigation_no_links",
+      "passed": true,
+      "details": {
+        "appClasses": [
+          "cs-portfolio-app",
+          "cs-portfolio-theme-purple-gold",
+          "cs-portfolio-layout-professional"
+        ],
+        "background": "radial-gradient(circle at 18% 0%, rgba(139, 92, 246, 0.2), rgba(0, 0, 0, 0) 30%), radial-gradient(circle at 82% 8%, rgba(245, 197, 92, 0.16), rgba(0, 0, 0, 0) 26%), linear-gradient(135deg, rgb(16, 8, 30), rgb(26, 15, 45) 52%, rgb(8, 6, 16))",
+        "brand": "CyberSabil Portfolio",
+        "navHidden": true,
+        "navDisplay": "none",
+        "toggleHidden": true,
+        "toggleDisplay": "none",
+        "labels": [
+          "Skills",
+          "Projects",
+          "Timeline",
+          "Services",
+          "Contact"
+        ],
+        "navLinkDisplay": [
+          "none",
+          "none",
+          "none",
+          "none",
+          "none"
+        ],
+        "heroHidden": false,
+        "profileHidden": false,
+        "heroRect": {
+          "x": 9,
+          "y": 65,
+          "w": 372,
+          "h": 1208
+        },
+        "profileRect": {
+          "x": 9,
+          "y": 610,
+          "w": 372,
+          "h": 605
+        },
+        "heroCopyRect": {
+          "x": 9,
+          "y": 119,
+          "w": 372,
+          "h": 467
+        },
+        "heroColumns": "372px",
+        "sectionHidden": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "sectionDisplay": [
+          "block",
+          "block",
+          "block",
+          "block",
+          "grid"
+        ],
+        "texts": {
+          "skills": [
+            "Technical focus",
+            "Practical IT skills",
+            "Support-focused skills for Windows troubleshooting, automation, documentation and lightweight web deployment."
+          ],
+          "projects": [
+            "Selected systems",
+            "Project portfolio",
+            "Tools and workflows designed around repeatable IT support problems, deployment clarity and user-safe execution."
+          ],
+          "timeline": [
+            "Progress path",
+            "Build timeline",
+            "A short view of how the CyberSabil website, tools and portfolio system are improving version by version."
+          ],
+          "services": [
+            "Support areas",
+            "Services",
+            "Clear, practical help for Windows support operations, small dashboards, automation scripts and technical documentation."
+          ],
+          "contact": "Contact",
+          "footer": "CyberSabil Portfolio • Practical Windows automation, support utilities and GitHub Pages deployments"
+        },
+        "projectLinks": [
+          {
+            "text": "Open website →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank"
+          },
+          {
+            "text": "Open live site →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank"
+          },
+          {
+            "text": "Open repository →",
+            "href": "https://github.com/cybersabil/tm",
+            "target": "_blank"
+          },
+          {
+            "text": "Open repository →",
+            "href": "https://github.com/cybersabil/tmr",
+            "target": "_blank"
+          }
+        ],
+        "containerWidth": 372,
+        "sectionPadding": "44px",
+        "scrollWidth": 390,
+        "clientWidth": 390
+      }
+    },
+    {
+      "test": "showNavigation_no_toggle",
+      "passed": true,
+      "details": {
+        "appClasses": [
+          "cs-portfolio-app",
+          "cs-portfolio-theme-purple-gold",
+          "cs-portfolio-layout-professional"
+        ],
+        "background": "radial-gradient(circle at 18% 0%, rgba(139, 92, 246, 0.2), rgba(0, 0, 0, 0) 30%), radial-gradient(circle at 82% 8%, rgba(245, 197, 92, 0.16), rgba(0, 0, 0, 0) 26%), linear-gradient(135deg, rgb(16, 8, 30), rgb(26, 15, 45) 52%, rgb(8, 6, 16))",
+        "brand": "CyberSabil Portfolio",
+        "navHidden": true,
+        "navDisplay": "none",
+        "toggleHidden": true,
+        "toggleDisplay": "none",
+        "labels": [
+          "Skills",
+          "Projects",
+          "Timeline",
+          "Services",
+          "Contact"
+        ],
+        "navLinkDisplay": [
+          "none",
+          "none",
+          "none",
+          "none",
+          "none"
+        ],
+        "heroHidden": false,
+        "profileHidden": false,
+        "heroRect": {
+          "x": 9,
+          "y": 65,
+          "w": 372,
+          "h": 1208
+        },
+        "profileRect": {
+          "x": 9,
+          "y": 610,
+          "w": 372,
+          "h": 605
+        },
+        "heroCopyRect": {
+          "x": 9,
+          "y": 119,
+          "w": 372,
+          "h": 467
+        },
+        "heroColumns": "372px",
+        "sectionHidden": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "sectionDisplay": [
+          "block",
+          "block",
+          "block",
+          "block",
+          "grid"
+        ],
+        "texts": {
+          "skills": [
+            "Technical focus",
+            "Practical IT skills",
+            "Support-focused skills for Windows troubleshooting, automation, documentation and lightweight web deployment."
+          ],
+          "projects": [
+            "Selected systems",
+            "Project portfolio",
+            "Tools and workflows designed around repeatable IT support problems, deployment clarity and user-safe execution."
+          ],
+          "timeline": [
+            "Progress path",
+            "Build timeline",
+            "A short view of how the CyberSabil website, tools and portfolio system are improving version by version."
+          ],
+          "services": [
+            "Support areas",
+            "Services",
+            "Clear, practical help for Windows support operations, small dashboards, automation scripts and technical documentation."
+          ],
+          "contact": "Contact",
+          "footer": "CyberSabil Portfolio • Practical Windows automation, support utilities and GitHub Pages deployments"
+        },
+        "projectLinks": [
+          {
+            "text": "Open website →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank"
+          },
+          {
+            "text": "Open live site →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank"
+          },
+          {
+            "text": "Open repository →",
+            "href": "https://github.com/cybersabil/tm",
+            "target": "_blank"
+          },
+          {
+            "text": "Open repository →",
+            "href": "https://github.com/cybersabil/tmr",
+            "target": "_blank"
+          }
+        ],
+        "containerWidth": 372,
+        "sectionPadding": "44px",
+        "scrollWidth": 390,
+        "clientWidth": 390
+      }
+    },
+    {
+      "test": "showSkillsSection_hides_section",
+      "passed": true,
+      "details": {
+        "appClasses": [
+          "cs-portfolio-app",
+          "cs-portfolio-theme-purple-gold",
+          "cs-portfolio-layout-professional"
+        ],
+        "background": "radial-gradient(circle at 18% 0%, rgba(139, 92, 246, 0.2), rgba(0, 0, 0, 0) 30%), radial-gradient(circle at 82% 8%, rgba(245, 197, 92, 0.16), rgba(0, 0, 0, 0) 26%), linear-gradient(135deg, rgb(16, 8, 30), rgb(26, 15, 45) 52%, rgb(8, 6, 16))",
+        "brand": "CyberSabil Portfolio",
+        "navHidden": false,
+        "navDisplay": "flex",
+        "toggleHidden": false,
+        "toggleDisplay": "none",
+        "labels": [
+          "Skills",
+          "Projects",
+          "Timeline",
+          "Services",
+          "Contact"
+        ],
+        "navLinkDisplay": [
+          "none",
+          "block",
+          "block",
+          "block",
+          "block"
+        ],
+        "heroHidden": false,
+        "profileHidden": false,
+        "heroRect": {
+          "x": 103,
+          "y": 77,
+          "w": 1160,
+          "h": 733
+        },
+        "profileRect": {
+          "x": 823,
+          "y": 169,
+          "w": 440,
+          "h": 583
+        },
+        "heroCopyRect": {
+          "x": 103,
+          "y": 217,
+          "w": 672,
+          "h": 487
+        },
+        "heroColumns": "672.078px 439.922px",
+        "sectionHidden": [
+          true,
+          false,
+          false,
+          false,
+          false
+        ],
+        "sectionDisplay": [
+          "none",
+          "block",
+          "block",
+          "block",
+          "grid"
+        ],
+        "texts": {
+          "skills": [
+            "Technical focus",
+            "Practical IT skills",
+            "Support-focused skills for Windows troubleshooting, automation, documentation and lightweight web deployment."
+          ],
+          "projects": [
+            "Selected systems",
+            "Project portfolio",
+            "Tools and workflows designed around repeatable IT support problems, deployment clarity and user-safe execution."
+          ],
+          "timeline": [
+            "Progress path",
+            "Build timeline",
+            "A short view of how the CyberSabil website, tools and portfolio system are improving version by version."
+          ],
+          "services": [
+            "Support areas",
+            "Services",
+            "Clear, practical help for Windows support operations, small dashboards, automation scripts and technical documentation."
+          ],
+          "contact": "Contact",
+          "footer": "CyberSabil Portfolio • Practical Windows automation, support utilities and GitHub Pages deployments"
+        },
+        "projectLinks": [
+          {
+            "text": "Open website →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank"
+          },
+          {
+            "text": "Open live site →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank"
+          },
+          {
+            "text": "Open repository →",
+            "href": "https://github.com/cybersabil/tm",
+            "target": "_blank"
+          },
+          {
+            "text": "Open repository →",
+            "href": "https://github.com/cybersabil/tmr",
+            "target": "_blank"
+          }
+        ],
+        "containerWidth": 1160,
+        "sectionPadding": "44px",
+        "scrollWidth": 1366,
+        "clientWidth": 1366
+      }
+    },
+    {
+      "test": "showSkillsSection_hides_nav_link",
+      "passed": true,
+      "details": {
+        "appClasses": [
+          "cs-portfolio-app",
+          "cs-portfolio-theme-purple-gold",
+          "cs-portfolio-layout-professional"
+        ],
+        "background": "radial-gradient(circle at 18% 0%, rgba(139, 92, 246, 0.2), rgba(0, 0, 0, 0) 30%), radial-gradient(circle at 82% 8%, rgba(245, 197, 92, 0.16), rgba(0, 0, 0, 0) 26%), linear-gradient(135deg, rgb(16, 8, 30), rgb(26, 15, 45) 52%, rgb(8, 6, 16))",
+        "brand": "CyberSabil Portfolio",
+        "navHidden": false,
+        "navDisplay": "flex",
+        "toggleHidden": false,
+        "toggleDisplay": "none",
+        "labels": [
+          "Skills",
+          "Projects",
+          "Timeline",
+          "Services",
+          "Contact"
+        ],
+        "navLinkDisplay": [
+          "none",
+          "block",
+          "block",
+          "block",
+          "block"
+        ],
+        "heroHidden": false,
+        "profileHidden": false,
+        "heroRect": {
+          "x": 103,
+          "y": 77,
+          "w": 1160,
+          "h": 733
+        },
+        "profileRect": {
+          "x": 823,
+          "y": 169,
+          "w": 440,
+          "h": 583
+        },
+        "heroCopyRect": {
+          "x": 103,
+          "y": 217,
+          "w": 672,
+          "h": 487
+        },
+        "heroColumns": "672.078px 439.922px",
+        "sectionHidden": [
+          true,
+          false,
+          false,
+          false,
+          false
+        ],
+        "sectionDisplay": [
+          "none",
+          "block",
+          "block",
+          "block",
+          "grid"
+        ],
+        "texts": {
+          "skills": [
+            "Technical focus",
+            "Practical IT skills",
+            "Support-focused skills for Windows troubleshooting, automation, documentation and lightweight web deployment."
+          ],
+          "projects": [
+            "Selected systems",
+            "Project portfolio",
+            "Tools and workflows designed around repeatable IT support problems, deployment clarity and user-safe execution."
+          ],
+          "timeline": [
+            "Progress path",
+            "Build timeline",
+            "A short view of how the CyberSabil website, tools and portfolio system are improving version by version."
+          ],
+          "services": [
+            "Support areas",
+            "Services",
+            "Clear, practical help for Windows support operations, small dashboards, automation scripts and technical documentation."
+          ],
+          "contact": "Contact",
+          "footer": "CyberSabil Portfolio • Practical Windows automation, support utilities and GitHub Pages deployments"
+        },
+        "projectLinks": [
+          {
+            "text": "Open website →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank"
+          },
+          {
+            "text": "Open live site →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank"
+          },
+          {
+            "text": "Open repository →",
+            "href": "https://github.com/cybersabil/tm",
+            "target": "_blank"
+          },
+          {
+            "text": "Open repository →",
+            "href": "https://github.com/cybersabil/tmr",
+            "target": "_blank"
+          }
+        ],
+        "containerWidth": 1160,
+        "sectionPadding": "44px",
+        "scrollWidth": 1366,
+        "clientWidth": 1366
+      }
+    },
+    {
+      "test": "showSkillsSection_isolated",
+      "passed": true,
+      "details": {
+        "appClasses": [
+          "cs-portfolio-app",
+          "cs-portfolio-theme-purple-gold",
+          "cs-portfolio-layout-professional"
+        ],
+        "background": "radial-gradient(circle at 18% 0%, rgba(139, 92, 246, 0.2), rgba(0, 0, 0, 0) 30%), radial-gradient(circle at 82% 8%, rgba(245, 197, 92, 0.16), rgba(0, 0, 0, 0) 26%), linear-gradient(135deg, rgb(16, 8, 30), rgb(26, 15, 45) 52%, rgb(8, 6, 16))",
+        "brand": "CyberSabil Portfolio",
+        "navHidden": false,
+        "navDisplay": "flex",
+        "toggleHidden": false,
+        "toggleDisplay": "none",
+        "labels": [
+          "Skills",
+          "Projects",
+          "Timeline",
+          "Services",
+          "Contact"
+        ],
+        "navLinkDisplay": [
+          "none",
+          "block",
+          "block",
+          "block",
+          "block"
+        ],
+        "heroHidden": false,
+        "profileHidden": false,
+        "heroRect": {
+          "x": 103,
+          "y": 77,
+          "w": 1160,
+          "h": 733
+        },
+        "profileRect": {
+          "x": 823,
+          "y": 169,
+          "w": 440,
+          "h": 583
+        },
+        "heroCopyRect": {
+          "x": 103,
+          "y": 217,
+          "w": 672,
+          "h": 487
+        },
+        "heroColumns": "672.078px 439.922px",
+        "sectionHidden": [
+          true,
+          false,
+          false,
+          false,
+          false
+        ],
+        "sectionDisplay": [
+          "none",
+          "block",
+          "block",
+          "block",
+          "grid"
+        ],
+        "texts": {
+          "skills": [
+            "Technical focus",
+            "Practical IT skills",
+            "Support-focused skills for Windows troubleshooting, automation, documentation and lightweight web deployment."
+          ],
+          "projects": [
+            "Selected systems",
+            "Project portfolio",
+            "Tools and workflows designed around repeatable IT support problems, deployment clarity and user-safe execution."
+          ],
+          "timeline": [
+            "Progress path",
+            "Build timeline",
+            "A short view of how the CyberSabil website, tools and portfolio system are improving version by version."
+          ],
+          "services": [
+            "Support areas",
+            "Services",
+            "Clear, practical help for Windows support operations, small dashboards, automation scripts and technical documentation."
+          ],
+          "contact": "Contact",
+          "footer": "CyberSabil Portfolio • Practical Windows automation, support utilities and GitHub Pages deployments"
+        },
+        "projectLinks": [
+          {
+            "text": "Open website →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank"
+          },
+          {
+            "text": "Open live site →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank"
+          },
+          {
+            "text": "Open repository →",
+            "href": "https://github.com/cybersabil/tm",
+            "target": "_blank"
+          },
+          {
+            "text": "Open repository →",
+            "href": "https://github.com/cybersabil/tmr",
+            "target": "_blank"
+          }
+        ],
+        "containerWidth": 1160,
+        "sectionPadding": "44px",
+        "scrollWidth": 1366,
+        "clientWidth": 1366
+      }
+    },
+    {
+      "test": "showProjectsSection_hides_section",
+      "passed": true,
+      "details": {
+        "appClasses": [
+          "cs-portfolio-app",
+          "cs-portfolio-theme-purple-gold",
+          "cs-portfolio-layout-professional"
+        ],
+        "background": "radial-gradient(circle at 18% 0%, rgba(139, 92, 246, 0.2), rgba(0, 0, 0, 0) 30%), radial-gradient(circle at 82% 8%, rgba(245, 197, 92, 0.16), rgba(0, 0, 0, 0) 26%), linear-gradient(135deg, rgb(16, 8, 30), rgb(26, 15, 45) 52%, rgb(8, 6, 16))",
+        "brand": "CyberSabil Portfolio",
+        "navHidden": false,
+        "navDisplay": "flex",
+        "toggleHidden": false,
+        "toggleDisplay": "none",
+        "labels": [
+          "Skills",
+          "Projects",
+          "Timeline",
+          "Services",
+          "Contact"
+        ],
+        "navLinkDisplay": [
+          "block",
+          "none",
+          "block",
+          "block",
+          "block"
+        ],
+        "heroHidden": false,
+        "profileHidden": false,
+        "heroRect": {
+          "x": 103,
+          "y": 77,
+          "w": 1160,
+          "h": 733
+        },
+        "profileRect": {
+          "x": 823,
+          "y": 169,
+          "w": 440,
+          "h": 583
+        },
+        "heroCopyRect": {
+          "x": 103,
+          "y": 217,
+          "w": 672,
+          "h": 487
+        },
+        "heroColumns": "672.078px 439.922px",
+        "sectionHidden": [
+          false,
+          true,
+          false,
+          false,
+          false
+        ],
+        "sectionDisplay": [
+          "block",
+          "none",
+          "block",
+          "block",
+          "grid"
+        ],
+        "texts": {
+          "skills": [
+            "Technical focus",
+            "Practical IT skills",
+            "Support-focused skills for Windows troubleshooting, automation, documentation and lightweight web deployment."
+          ],
+          "projects": [
+            "Selected systems",
+            "Project portfolio",
+            "Tools and workflows designed around repeatable IT support problems, deployment clarity and user-safe execution."
+          ],
+          "timeline": [
+            "Progress path",
+            "Build timeline",
+            "A short view of how the CyberSabil website, tools and portfolio system are improving version by version."
+          ],
+          "services": [
+            "Support areas",
+            "Services",
+            "Clear, practical help for Windows support operations, small dashboards, automation scripts and technical documentation."
+          ],
+          "contact": "Contact",
+          "footer": "CyberSabil Portfolio • Practical Windows automation, support utilities and GitHub Pages deployments"
+        },
+        "projectLinks": [
+          {
+            "text": "Open website →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank"
+          },
+          {
+            "text": "Open live site →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank"
+          },
+          {
+            "text": "Open repository →",
+            "href": "https://github.com/cybersabil/tm",
+            "target": "_blank"
+          },
+          {
+            "text": "Open repository →",
+            "href": "https://github.com/cybersabil/tmr",
+            "target": "_blank"
+          }
+        ],
+        "containerWidth": 1160,
+        "sectionPadding": "44px",
+        "scrollWidth": 1366,
+        "clientWidth": 1366
+      }
+    },
+    {
+      "test": "showProjectsSection_hides_nav_link",
+      "passed": true,
+      "details": {
+        "appClasses": [
+          "cs-portfolio-app",
+          "cs-portfolio-theme-purple-gold",
+          "cs-portfolio-layout-professional"
+        ],
+        "background": "radial-gradient(circle at 18% 0%, rgba(139, 92, 246, 0.2), rgba(0, 0, 0, 0) 30%), radial-gradient(circle at 82% 8%, rgba(245, 197, 92, 0.16), rgba(0, 0, 0, 0) 26%), linear-gradient(135deg, rgb(16, 8, 30), rgb(26, 15, 45) 52%, rgb(8, 6, 16))",
+        "brand": "CyberSabil Portfolio",
+        "navHidden": false,
+        "navDisplay": "flex",
+        "toggleHidden": false,
+        "toggleDisplay": "none",
+        "labels": [
+          "Skills",
+          "Projects",
+          "Timeline",
+          "Services",
+          "Contact"
+        ],
+        "navLinkDisplay": [
+          "block",
+          "none",
+          "block",
+          "block",
+          "block"
+        ],
+        "heroHidden": false,
+        "profileHidden": false,
+        "heroRect": {
+          "x": 103,
+          "y": 77,
+          "w": 1160,
+          "h": 733
+        },
+        "profileRect": {
+          "x": 823,
+          "y": 169,
+          "w": 440,
+          "h": 583
+        },
+        "heroCopyRect": {
+          "x": 103,
+          "y": 217,
+          "w": 672,
+          "h": 487
+        },
+        "heroColumns": "672.078px 439.922px",
+        "sectionHidden": [
+          false,
+          true,
+          false,
+          false,
+          false
+        ],
+        "sectionDisplay": [
+          "block",
+          "none",
+          "block",
+          "block",
+          "grid"
+        ],
+        "texts": {
+          "skills": [
+            "Technical focus",
+            "Practical IT skills",
+            "Support-focused skills for Windows troubleshooting, automation, documentation and lightweight web deployment."
+          ],
+          "projects": [
+            "Selected systems",
+            "Project portfolio",
+            "Tools and workflows designed around repeatable IT support problems, deployment clarity and user-safe execution."
+          ],
+          "timeline": [
+            "Progress path",
+            "Build timeline",
+            "A short view of how the CyberSabil website, tools and portfolio system are improving version by version."
+          ],
+          "services": [
+            "Support areas",
+            "Services",
+            "Clear, practical help for Windows support operations, small dashboards, automation scripts and technical documentation."
+          ],
+          "contact": "Contact",
+          "footer": "CyberSabil Portfolio • Practical Windows automation, support utilities and GitHub Pages deployments"
+        },
+        "projectLinks": [
+          {
+            "text": "Open website →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank"
+          },
+          {
+            "text": "Open live site →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank"
+          },
+          {
+            "text": "Open repository →",
+            "href": "https://github.com/cybersabil/tm",
+            "target": "_blank"
+          },
+          {
+            "text": "Open repository →",
+            "href": "https://github.com/cybersabil/tmr",
+            "target": "_blank"
+          }
+        ],
+        "containerWidth": 1160,
+        "sectionPadding": "44px",
+        "scrollWidth": 1366,
+        "clientWidth": 1366
+      }
+    },
+    {
+      "test": "showProjectsSection_isolated",
+      "passed": true,
+      "details": {
+        "appClasses": [
+          "cs-portfolio-app",
+          "cs-portfolio-theme-purple-gold",
+          "cs-portfolio-layout-professional"
+        ],
+        "background": "radial-gradient(circle at 18% 0%, rgba(139, 92, 246, 0.2), rgba(0, 0, 0, 0) 30%), radial-gradient(circle at 82% 8%, rgba(245, 197, 92, 0.16), rgba(0, 0, 0, 0) 26%), linear-gradient(135deg, rgb(16, 8, 30), rgb(26, 15, 45) 52%, rgb(8, 6, 16))",
+        "brand": "CyberSabil Portfolio",
+        "navHidden": false,
+        "navDisplay": "flex",
+        "toggleHidden": false,
+        "toggleDisplay": "none",
+        "labels": [
+          "Skills",
+          "Projects",
+          "Timeline",
+          "Services",
+          "Contact"
+        ],
+        "navLinkDisplay": [
+          "block",
+          "none",
+          "block",
+          "block",
+          "block"
+        ],
+        "heroHidden": false,
+        "profileHidden": false,
+        "heroRect": {
+          "x": 103,
+          "y": 77,
+          "w": 1160,
+          "h": 733
+        },
+        "profileRect": {
+          "x": 823,
+          "y": 169,
+          "w": 440,
+          "h": 583
+        },
+        "heroCopyRect": {
+          "x": 103,
+          "y": 217,
+          "w": 672,
+          "h": 487
+        },
+        "heroColumns": "672.078px 439.922px",
+        "sectionHidden": [
+          false,
+          true,
+          false,
+          false,
+          false
+        ],
+        "sectionDisplay": [
+          "block",
+          "none",
+          "block",
+          "block",
+          "grid"
+        ],
+        "texts": {
+          "skills": [
+            "Technical focus",
+            "Practical IT skills",
+            "Support-focused skills for Windows troubleshooting, automation, documentation and lightweight web deployment."
+          ],
+          "projects": [
+            "Selected systems",
+            "Project portfolio",
+            "Tools and workflows designed around repeatable IT support problems, deployment clarity and user-safe execution."
+          ],
+          "timeline": [
+            "Progress path",
+            "Build timeline",
+            "A short view of how the CyberSabil website, tools and portfolio system are improving version by version."
+          ],
+          "services": [
+            "Support areas",
+            "Services",
+            "Clear, practical help for Windows support operations, small dashboards, automation scripts and technical documentation."
+          ],
+          "contact": "Contact",
+          "footer": "CyberSabil Portfolio • Practical Windows automation, support utilities and GitHub Pages deployments"
+        },
+        "projectLinks": [
+          {
+            "text": "Open website →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank"
+          },
+          {
+            "text": "Open live site →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank"
+          },
+          {
+            "text": "Open repository →",
+            "href": "https://github.com/cybersabil/tm",
+            "target": "_blank"
+          },
+          {
+            "text": "Open repository →",
+            "href": "https://github.com/cybersabil/tmr",
+            "target": "_blank"
+          }
+        ],
+        "containerWidth": 1160,
+        "sectionPadding": "44px",
+        "scrollWidth": 1366,
+        "clientWidth": 1366
+      }
+    },
+    {
+      "test": "showTimelineSection_hides_section",
+      "passed": true,
+      "details": {
+        "appClasses": [
+          "cs-portfolio-app",
+          "cs-portfolio-theme-purple-gold",
+          "cs-portfolio-layout-professional"
+        ],
+        "background": "radial-gradient(circle at 18% 0%, rgba(139, 92, 246, 0.2), rgba(0, 0, 0, 0) 30%), radial-gradient(circle at 82% 8%, rgba(245, 197, 92, 0.16), rgba(0, 0, 0, 0) 26%), linear-gradient(135deg, rgb(16, 8, 30), rgb(26, 15, 45) 52%, rgb(8, 6, 16))",
+        "brand": "CyberSabil Portfolio",
+        "navHidden": false,
+        "navDisplay": "flex",
+        "toggleHidden": false,
+        "toggleDisplay": "none",
+        "labels": [
+          "Skills",
+          "Projects",
+          "Timeline",
+          "Services",
+          "Contact"
+        ],
+        "navLinkDisplay": [
+          "block",
+          "block",
+          "none",
+          "block",
+          "block"
+        ],
+        "heroHidden": false,
+        "profileHidden": false,
+        "heroRect": {
+          "x": 103,
+          "y": 77,
+          "w": 1160,
+          "h": 733
+        },
+        "profileRect": {
+          "x": 823,
+          "y": 169,
+          "w": 440,
+          "h": 583
+        },
+        "heroCopyRect": {
+          "x": 103,
+          "y": 217,
+          "w": 672,
+          "h": 487
+        },
+        "heroColumns": "672.078px 439.922px",
+        "sectionHidden": [
+          false,
+          false,
+          true,
+          false,
+          false
+        ],
+        "sectionDisplay": [
+          "block",
+          "block",
+          "none",
+          "block",
+          "grid"
+        ],
+        "texts": {
+          "skills": [
+            "Technical focus",
+            "Practical IT skills",
+            "Support-focused skills for Windows troubleshooting, automation, documentation and lightweight web deployment."
+          ],
+          "projects": [
+            "Selected systems",
+            "Project portfolio",
+            "Tools and workflows designed around repeatable IT support problems, deployment clarity and user-safe execution."
+          ],
+          "timeline": [
+            "Progress path",
+            "Build timeline",
+            "A short view of how the CyberSabil website, tools and portfolio system are improving version by version."
+          ],
+          "services": [
+            "Support areas",
+            "Services",
+            "Clear, practical help for Windows support operations, small dashboards, automation scripts and technical documentation."
+          ],
+          "contact": "Contact",
+          "footer": "CyberSabil Portfolio • Practical Windows automation, support utilities and GitHub Pages deployments"
+        },
+        "projectLinks": [
+          {
+            "text": "Open website →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank"
+          },
+          {
+            "text": "Open live site →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank"
+          },
+          {
+            "text": "Open repository →",
+            "href": "https://github.com/cybersabil/tm",
+            "target": "_blank"
+          },
+          {
+            "text": "Open repository →",
+            "href": "https://github.com/cybersabil/tmr",
+            "target": "_blank"
+          }
+        ],
+        "containerWidth": 1160,
+        "sectionPadding": "44px",
+        "scrollWidth": 1366,
+        "clientWidth": 1366
+      }
+    },
+    {
+      "test": "showTimelineSection_hides_nav_link",
+      "passed": true,
+      "details": {
+        "appClasses": [
+          "cs-portfolio-app",
+          "cs-portfolio-theme-purple-gold",
+          "cs-portfolio-layout-professional"
+        ],
+        "background": "radial-gradient(circle at 18% 0%, rgba(139, 92, 246, 0.2), rgba(0, 0, 0, 0) 30%), radial-gradient(circle at 82% 8%, rgba(245, 197, 92, 0.16), rgba(0, 0, 0, 0) 26%), linear-gradient(135deg, rgb(16, 8, 30), rgb(26, 15, 45) 52%, rgb(8, 6, 16))",
+        "brand": "CyberSabil Portfolio",
+        "navHidden": false,
+        "navDisplay": "flex",
+        "toggleHidden": false,
+        "toggleDisplay": "none",
+        "labels": [
+          "Skills",
+          "Projects",
+          "Timeline",
+          "Services",
+          "Contact"
+        ],
+        "navLinkDisplay": [
+          "block",
+          "block",
+          "none",
+          "block",
+          "block"
+        ],
+        "heroHidden": false,
+        "profileHidden": false,
+        "heroRect": {
+          "x": 103,
+          "y": 77,
+          "w": 1160,
+          "h": 733
+        },
+        "profileRect": {
+          "x": 823,
+          "y": 169,
+          "w": 440,
+          "h": 583
+        },
+        "heroCopyRect": {
+          "x": 103,
+          "y": 217,
+          "w": 672,
+          "h": 487
+        },
+        "heroColumns": "672.078px 439.922px",
+        "sectionHidden": [
+          false,
+          false,
+          true,
+          false,
+          false
+        ],
+        "sectionDisplay": [
+          "block",
+          "block",
+          "none",
+          "block",
+          "grid"
+        ],
+        "texts": {
+          "skills": [
+            "Technical focus",
+            "Practical IT skills",
+            "Support-focused skills for Windows troubleshooting, automation, documentation and lightweight web deployment."
+          ],
+          "projects": [
+            "Selected systems",
+            "Project portfolio",
+            "Tools and workflows designed around repeatable IT support problems, deployment clarity and user-safe execution."
+          ],
+          "timeline": [
+            "Progress path",
+            "Build timeline",
+            "A short view of how the CyberSabil website, tools and portfolio system are improving version by version."
+          ],
+          "services": [
+            "Support areas",
+            "Services",
+            "Clear, practical help for Windows support operations, small dashboards, automation scripts and technical documentation."
+          ],
+          "contact": "Contact",
+          "footer": "CyberSabil Portfolio • Practical Windows automation, support utilities and GitHub Pages deployments"
+        },
+        "projectLinks": [
+          {
+            "text": "Open website →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank"
+          },
+          {
+            "text": "Open live site →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank"
+          },
+          {
+            "text": "Open repository →",
+            "href": "https://github.com/cybersabil/tm",
+            "target": "_blank"
+          },
+          {
+            "text": "Open repository →",
+            "href": "https://github.com/cybersabil/tmr",
+            "target": "_blank"
+          }
+        ],
+        "containerWidth": 1160,
+        "sectionPadding": "44px",
+        "scrollWidth": 1366,
+        "clientWidth": 1366
+      }
+    },
+    {
+      "test": "showTimelineSection_isolated",
+      "passed": true,
+      "details": {
+        "appClasses": [
+          "cs-portfolio-app",
+          "cs-portfolio-theme-purple-gold",
+          "cs-portfolio-layout-professional"
+        ],
+        "background": "radial-gradient(circle at 18% 0%, rgba(139, 92, 246, 0.2), rgba(0, 0, 0, 0) 30%), radial-gradient(circle at 82% 8%, rgba(245, 197, 92, 0.16), rgba(0, 0, 0, 0) 26%), linear-gradient(135deg, rgb(16, 8, 30), rgb(26, 15, 45) 52%, rgb(8, 6, 16))",
+        "brand": "CyberSabil Portfolio",
+        "navHidden": false,
+        "navDisplay": "flex",
+        "toggleHidden": false,
+        "toggleDisplay": "none",
+        "labels": [
+          "Skills",
+          "Projects",
+          "Timeline",
+          "Services",
+          "Contact"
+        ],
+        "navLinkDisplay": [
+          "block",
+          "block",
+          "none",
+          "block",
+          "block"
+        ],
+        "heroHidden": false,
+        "profileHidden": false,
+        "heroRect": {
+          "x": 103,
+          "y": 77,
+          "w": 1160,
+          "h": 733
+        },
+        "profileRect": {
+          "x": 823,
+          "y": 169,
+          "w": 440,
+          "h": 583
+        },
+        "heroCopyRect": {
+          "x": 103,
+          "y": 217,
+          "w": 672,
+          "h": 487
+        },
+        "heroColumns": "672.078px 439.922px",
+        "sectionHidden": [
+          false,
+          false,
+          true,
+          false,
+          false
+        ],
+        "sectionDisplay": [
+          "block",
+          "block",
+          "none",
+          "block",
+          "grid"
+        ],
+        "texts": {
+          "skills": [
+            "Technical focus",
+            "Practical IT skills",
+            "Support-focused skills for Windows troubleshooting, automation, documentation and lightweight web deployment."
+          ],
+          "projects": [
+            "Selected systems",
+            "Project portfolio",
+            "Tools and workflows designed around repeatable IT support problems, deployment clarity and user-safe execution."
+          ],
+          "timeline": [
+            "Progress path",
+            "Build timeline",
+            "A short view of how the CyberSabil website, tools and portfolio system are improving version by version."
+          ],
+          "services": [
+            "Support areas",
+            "Services",
+            "Clear, practical help for Windows support operations, small dashboards, automation scripts and technical documentation."
+          ],
+          "contact": "Contact",
+          "footer": "CyberSabil Portfolio • Practical Windows automation, support utilities and GitHub Pages deployments"
+        },
+        "projectLinks": [
+          {
+            "text": "Open website →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank"
+          },
+          {
+            "text": "Open live site →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank"
+          },
+          {
+            "text": "Open repository →",
+            "href": "https://github.com/cybersabil/tm",
+            "target": "_blank"
+          },
+          {
+            "text": "Open repository →",
+            "href": "https://github.com/cybersabil/tmr",
+            "target": "_blank"
+          }
+        ],
+        "containerWidth": 1160,
+        "sectionPadding": "44px",
+        "scrollWidth": 1366,
+        "clientWidth": 1366
+      }
+    },
+    {
+      "test": "showServicesSection_hides_section",
+      "passed": true,
+      "details": {
+        "appClasses": [
+          "cs-portfolio-app",
+          "cs-portfolio-theme-purple-gold",
+          "cs-portfolio-layout-professional"
+        ],
+        "background": "radial-gradient(circle at 18% 0%, rgba(139, 92, 246, 0.2), rgba(0, 0, 0, 0) 30%), radial-gradient(circle at 82% 8%, rgba(245, 197, 92, 0.16), rgba(0, 0, 0, 0) 26%), linear-gradient(135deg, rgb(16, 8, 30), rgb(26, 15, 45) 52%, rgb(8, 6, 16))",
+        "brand": "CyberSabil Portfolio",
+        "navHidden": false,
+        "navDisplay": "flex",
+        "toggleHidden": false,
+        "toggleDisplay": "none",
+        "labels": [
+          "Skills",
+          "Projects",
+          "Timeline",
+          "Services",
+          "Contact"
+        ],
+        "navLinkDisplay": [
+          "block",
+          "block",
+          "block",
+          "none",
+          "block"
+        ],
+        "heroHidden": false,
+        "profileHidden": false,
+        "heroRect": {
+          "x": 103,
+          "y": 77,
+          "w": 1160,
+          "h": 733
+        },
+        "profileRect": {
+          "x": 823,
+          "y": 169,
+          "w": 440,
+          "h": 583
+        },
+        "heroCopyRect": {
+          "x": 103,
+          "y": 217,
+          "w": 672,
+          "h": 487
+        },
+        "heroColumns": "672.078px 439.922px",
+        "sectionHidden": [
+          false,
+          false,
+          false,
+          true,
+          false
+        ],
+        "sectionDisplay": [
+          "block",
+          "block",
+          "block",
+          "none",
+          "grid"
+        ],
+        "texts": {
+          "skills": [
+            "Technical focus",
+            "Practical IT skills",
+            "Support-focused skills for Windows troubleshooting, automation, documentation and lightweight web deployment."
+          ],
+          "projects": [
+            "Selected systems",
+            "Project portfolio",
+            "Tools and workflows designed around repeatable IT support problems, deployment clarity and user-safe execution."
+          ],
+          "timeline": [
+            "Progress path",
+            "Build timeline",
+            "A short view of how the CyberSabil website, tools and portfolio system are improving version by version."
+          ],
+          "services": [
+            "Support areas",
+            "Services",
+            "Clear, practical help for Windows support operations, small dashboards, automation scripts and technical documentation."
+          ],
+          "contact": "Contact",
+          "footer": "CyberSabil Portfolio • Practical Windows automation, support utilities and GitHub Pages deployments"
+        },
+        "projectLinks": [
+          {
+            "text": "Open website →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank"
+          },
+          {
+            "text": "Open live site →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank"
+          },
+          {
+            "text": "Open repository →",
+            "href": "https://github.com/cybersabil/tm",
+            "target": "_blank"
+          },
+          {
+            "text": "Open repository →",
+            "href": "https://github.com/cybersabil/tmr",
+            "target": "_blank"
+          }
+        ],
+        "containerWidth": 1160,
+        "sectionPadding": "44px",
+        "scrollWidth": 1366,
+        "clientWidth": 1366
+      }
+    },
+    {
+      "test": "showServicesSection_hides_nav_link",
+      "passed": true,
+      "details": {
+        "appClasses": [
+          "cs-portfolio-app",
+          "cs-portfolio-theme-purple-gold",
+          "cs-portfolio-layout-professional"
+        ],
+        "background": "radial-gradient(circle at 18% 0%, rgba(139, 92, 246, 0.2), rgba(0, 0, 0, 0) 30%), radial-gradient(circle at 82% 8%, rgba(245, 197, 92, 0.16), rgba(0, 0, 0, 0) 26%), linear-gradient(135deg, rgb(16, 8, 30), rgb(26, 15, 45) 52%, rgb(8, 6, 16))",
+        "brand": "CyberSabil Portfolio",
+        "navHidden": false,
+        "navDisplay": "flex",
+        "toggleHidden": false,
+        "toggleDisplay": "none",
+        "labels": [
+          "Skills",
+          "Projects",
+          "Timeline",
+          "Services",
+          "Contact"
+        ],
+        "navLinkDisplay": [
+          "block",
+          "block",
+          "block",
+          "none",
+          "block"
+        ],
+        "heroHidden": false,
+        "profileHidden": false,
+        "heroRect": {
+          "x": 103,
+          "y": 77,
+          "w": 1160,
+          "h": 733
+        },
+        "profileRect": {
+          "x": 823,
+          "y": 169,
+          "w": 440,
+          "h": 583
+        },
+        "heroCopyRect": {
+          "x": 103,
+          "y": 217,
+          "w": 672,
+          "h": 487
+        },
+        "heroColumns": "672.078px 439.922px",
+        "sectionHidden": [
+          false,
+          false,
+          false,
+          true,
+          false
+        ],
+        "sectionDisplay": [
+          "block",
+          "block",
+          "block",
+          "none",
+          "grid"
+        ],
+        "texts": {
+          "skills": [
+            "Technical focus",
+            "Practical IT skills",
+            "Support-focused skills for Windows troubleshooting, automation, documentation and lightweight web deployment."
+          ],
+          "projects": [
+            "Selected systems",
+            "Project portfolio",
+            "Tools and workflows designed around repeatable IT support problems, deployment clarity and user-safe execution."
+          ],
+          "timeline": [
+            "Progress path",
+            "Build timeline",
+            "A short view of how the CyberSabil website, tools and portfolio system are improving version by version."
+          ],
+          "services": [
+            "Support areas",
+            "Services",
+            "Clear, practical help for Windows support operations, small dashboards, automation scripts and technical documentation."
+          ],
+          "contact": "Contact",
+          "footer": "CyberSabil Portfolio • Practical Windows automation, support utilities and GitHub Pages deployments"
+        },
+        "projectLinks": [
+          {
+            "text": "Open website →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank"
+          },
+          {
+            "text": "Open live site →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank"
+          },
+          {
+            "text": "Open repository →",
+            "href": "https://github.com/cybersabil/tm",
+            "target": "_blank"
+          },
+          {
+            "text": "Open repository →",
+            "href": "https://github.com/cybersabil/tmr",
+            "target": "_blank"
+          }
+        ],
+        "containerWidth": 1160,
+        "sectionPadding": "44px",
+        "scrollWidth": 1366,
+        "clientWidth": 1366
+      }
+    },
+    {
+      "test": "showServicesSection_isolated",
+      "passed": true,
+      "details": {
+        "appClasses": [
+          "cs-portfolio-app",
+          "cs-portfolio-theme-purple-gold",
+          "cs-portfolio-layout-professional"
+        ],
+        "background": "radial-gradient(circle at 18% 0%, rgba(139, 92, 246, 0.2), rgba(0, 0, 0, 0) 30%), radial-gradient(circle at 82% 8%, rgba(245, 197, 92, 0.16), rgba(0, 0, 0, 0) 26%), linear-gradient(135deg, rgb(16, 8, 30), rgb(26, 15, 45) 52%, rgb(8, 6, 16))",
+        "brand": "CyberSabil Portfolio",
+        "navHidden": false,
+        "navDisplay": "flex",
+        "toggleHidden": false,
+        "toggleDisplay": "none",
+        "labels": [
+          "Skills",
+          "Projects",
+          "Timeline",
+          "Services",
+          "Contact"
+        ],
+        "navLinkDisplay": [
+          "block",
+          "block",
+          "block",
+          "none",
+          "block"
+        ],
+        "heroHidden": false,
+        "profileHidden": false,
+        "heroRect": {
+          "x": 103,
+          "y": 77,
+          "w": 1160,
+          "h": 733
+        },
+        "profileRect": {
+          "x": 823,
+          "y": 169,
+          "w": 440,
+          "h": 583
+        },
+        "heroCopyRect": {
+          "x": 103,
+          "y": 217,
+          "w": 672,
+          "h": 487
+        },
+        "heroColumns": "672.078px 439.922px",
+        "sectionHidden": [
+          false,
+          false,
+          false,
+          true,
+          false
+        ],
+        "sectionDisplay": [
+          "block",
+          "block",
+          "block",
+          "none",
+          "grid"
+        ],
+        "texts": {
+          "skills": [
+            "Technical focus",
+            "Practical IT skills",
+            "Support-focused skills for Windows troubleshooting, automation, documentation and lightweight web deployment."
+          ],
+          "projects": [
+            "Selected systems",
+            "Project portfolio",
+            "Tools and workflows designed around repeatable IT support problems, deployment clarity and user-safe execution."
+          ],
+          "timeline": [
+            "Progress path",
+            "Build timeline",
+            "A short view of how the CyberSabil website, tools and portfolio system are improving version by version."
+          ],
+          "services": [
+            "Support areas",
+            "Services",
+            "Clear, practical help for Windows support operations, small dashboards, automation scripts and technical documentation."
+          ],
+          "contact": "Contact",
+          "footer": "CyberSabil Portfolio • Practical Windows automation, support utilities and GitHub Pages deployments"
+        },
+        "projectLinks": [
+          {
+            "text": "Open website →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank"
+          },
+          {
+            "text": "Open live site →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank"
+          },
+          {
+            "text": "Open repository →",
+            "href": "https://github.com/cybersabil/tm",
+            "target": "_blank"
+          },
+          {
+            "text": "Open repository →",
+            "href": "https://github.com/cybersabil/tmr",
+            "target": "_blank"
+          }
+        ],
+        "containerWidth": 1160,
+        "sectionPadding": "44px",
+        "scrollWidth": 1366,
+        "clientWidth": 1366
+      }
+    },
+    {
+      "test": "showContactSection_hides_section",
+      "passed": true,
+      "details": {
+        "appClasses": [
+          "cs-portfolio-app",
+          "cs-portfolio-theme-purple-gold",
+          "cs-portfolio-layout-professional"
+        ],
+        "background": "radial-gradient(circle at 18% 0%, rgba(139, 92, 246, 0.2), rgba(0, 0, 0, 0) 30%), radial-gradient(circle at 82% 8%, rgba(245, 197, 92, 0.16), rgba(0, 0, 0, 0) 26%), linear-gradient(135deg, rgb(16, 8, 30), rgb(26, 15, 45) 52%, rgb(8, 6, 16))",
+        "brand": "CyberSabil Portfolio",
+        "navHidden": false,
+        "navDisplay": "flex",
+        "toggleHidden": false,
+        "toggleDisplay": "none",
+        "labels": [
+          "Skills",
+          "Projects",
+          "Timeline",
+          "Services",
+          "Contact"
+        ],
+        "navLinkDisplay": [
+          "block",
+          "block",
+          "block",
+          "block",
+          "none"
+        ],
+        "heroHidden": false,
+        "profileHidden": false,
+        "heroRect": {
+          "x": 103,
+          "y": 77,
+          "w": 1160,
+          "h": 733
+        },
+        "profileRect": {
+          "x": 823,
+          "y": 169,
+          "w": 440,
+          "h": 583
+        },
+        "heroCopyRect": {
+          "x": 103,
+          "y": 217,
+          "w": 672,
+          "h": 487
+        },
+        "heroColumns": "672.078px 439.922px",
+        "sectionHidden": [
+          false,
+          false,
+          false,
+          false,
+          true
+        ],
+        "sectionDisplay": [
+          "block",
+          "block",
+          "block",
+          "block",
+          "none"
+        ],
+        "texts": {
+          "skills": [
+            "Technical focus",
+            "Practical IT skills",
+            "Support-focused skills for Windows troubleshooting, automation, documentation and lightweight web deployment."
+          ],
+          "projects": [
+            "Selected systems",
+            "Project portfolio",
+            "Tools and workflows designed around repeatable IT support problems, deployment clarity and user-safe execution."
+          ],
+          "timeline": [
+            "Progress path",
+            "Build timeline",
+            "A short view of how the CyberSabil website, tools and portfolio system are improving version by version."
+          ],
+          "services": [
+            "Support areas",
+            "Services",
+            "Clear, practical help for Windows support operations, small dashboards, automation scripts and technical documentation."
+          ],
+          "contact": "Contact",
+          "footer": "CyberSabil Portfolio • Practical Windows automation, support utilities and GitHub Pages deployments"
+        },
+        "projectLinks": [
+          {
+            "text": "Open website →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank"
+          },
+          {
+            "text": "Open live site →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank"
+          },
+          {
+            "text": "Open repository →",
+            "href": "https://github.com/cybersabil/tm",
+            "target": "_blank"
+          },
+          {
+            "text": "Open repository →",
+            "href": "https://github.com/cybersabil/tmr",
+            "target": "_blank"
+          }
+        ],
+        "containerWidth": 1160,
+        "sectionPadding": "44px",
+        "scrollWidth": 1366,
+        "clientWidth": 1366
+      }
+    },
+    {
+      "test": "showContactSection_hides_nav_link",
+      "passed": true,
+      "details": {
+        "appClasses": [
+          "cs-portfolio-app",
+          "cs-portfolio-theme-purple-gold",
+          "cs-portfolio-layout-professional"
+        ],
+        "background": "radial-gradient(circle at 18% 0%, rgba(139, 92, 246, 0.2), rgba(0, 0, 0, 0) 30%), radial-gradient(circle at 82% 8%, rgba(245, 197, 92, 0.16), rgba(0, 0, 0, 0) 26%), linear-gradient(135deg, rgb(16, 8, 30), rgb(26, 15, 45) 52%, rgb(8, 6, 16))",
+        "brand": "CyberSabil Portfolio",
+        "navHidden": false,
+        "navDisplay": "flex",
+        "toggleHidden": false,
+        "toggleDisplay": "none",
+        "labels": [
+          "Skills",
+          "Projects",
+          "Timeline",
+          "Services",
+          "Contact"
+        ],
+        "navLinkDisplay": [
+          "block",
+          "block",
+          "block",
+          "block",
+          "none"
+        ],
+        "heroHidden": false,
+        "profileHidden": false,
+        "heroRect": {
+          "x": 103,
+          "y": 77,
+          "w": 1160,
+          "h": 733
+        },
+        "profileRect": {
+          "x": 823,
+          "y": 169,
+          "w": 440,
+          "h": 583
+        },
+        "heroCopyRect": {
+          "x": 103,
+          "y": 217,
+          "w": 672,
+          "h": 487
+        },
+        "heroColumns": "672.078px 439.922px",
+        "sectionHidden": [
+          false,
+          false,
+          false,
+          false,
+          true
+        ],
+        "sectionDisplay": [
+          "block",
+          "block",
+          "block",
+          "block",
+          "none"
+        ],
+        "texts": {
+          "skills": [
+            "Technical focus",
+            "Practical IT skills",
+            "Support-focused skills for Windows troubleshooting, automation, documentation and lightweight web deployment."
+          ],
+          "projects": [
+            "Selected systems",
+            "Project portfolio",
+            "Tools and workflows designed around repeatable IT support problems, deployment clarity and user-safe execution."
+          ],
+          "timeline": [
+            "Progress path",
+            "Build timeline",
+            "A short view of how the CyberSabil website, tools and portfolio system are improving version by version."
+          ],
+          "services": [
+            "Support areas",
+            "Services",
+            "Clear, practical help for Windows support operations, small dashboards, automation scripts and technical documentation."
+          ],
+          "contact": "Contact",
+          "footer": "CyberSabil Portfolio • Practical Windows automation, support utilities and GitHub Pages deployments"
+        },
+        "projectLinks": [
+          {
+            "text": "Open website →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank"
+          },
+          {
+            "text": "Open live site →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank"
+          },
+          {
+            "text": "Open repository →",
+            "href": "https://github.com/cybersabil/tm",
+            "target": "_blank"
+          },
+          {
+            "text": "Open repository →",
+            "href": "https://github.com/cybersabil/tmr",
+            "target": "_blank"
+          }
+        ],
+        "containerWidth": 1160,
+        "sectionPadding": "44px",
+        "scrollWidth": 1366,
+        "clientWidth": 1366
+      }
+    },
+    {
+      "test": "showContactSection_isolated",
+      "passed": true,
+      "details": {
+        "appClasses": [
+          "cs-portfolio-app",
+          "cs-portfolio-theme-purple-gold",
+          "cs-portfolio-layout-professional"
+        ],
+        "background": "radial-gradient(circle at 18% 0%, rgba(139, 92, 246, 0.2), rgba(0, 0, 0, 0) 30%), radial-gradient(circle at 82% 8%, rgba(245, 197, 92, 0.16), rgba(0, 0, 0, 0) 26%), linear-gradient(135deg, rgb(16, 8, 30), rgb(26, 15, 45) 52%, rgb(8, 6, 16))",
+        "brand": "CyberSabil Portfolio",
+        "navHidden": false,
+        "navDisplay": "flex",
+        "toggleHidden": false,
+        "toggleDisplay": "none",
+        "labels": [
+          "Skills",
+          "Projects",
+          "Timeline",
+          "Services",
+          "Contact"
+        ],
+        "navLinkDisplay": [
+          "block",
+          "block",
+          "block",
+          "block",
+          "none"
+        ],
+        "heroHidden": false,
+        "profileHidden": false,
+        "heroRect": {
+          "x": 103,
+          "y": 77,
+          "w": 1160,
+          "h": 733
+        },
+        "profileRect": {
+          "x": 823,
+          "y": 169,
+          "w": 440,
+          "h": 583
+        },
+        "heroCopyRect": {
+          "x": 103,
+          "y": 217,
+          "w": 672,
+          "h": 487
+        },
+        "heroColumns": "672.078px 439.922px",
+        "sectionHidden": [
+          false,
+          false,
+          false,
+          false,
+          true
+        ],
+        "sectionDisplay": [
+          "block",
+          "block",
+          "block",
+          "block",
+          "none"
+        ],
+        "texts": {
+          "skills": [
+            "Technical focus",
+            "Practical IT skills",
+            "Support-focused skills for Windows troubleshooting, automation, documentation and lightweight web deployment."
+          ],
+          "projects": [
+            "Selected systems",
+            "Project portfolio",
+            "Tools and workflows designed around repeatable IT support problems, deployment clarity and user-safe execution."
+          ],
+          "timeline": [
+            "Progress path",
+            "Build timeline",
+            "A short view of how the CyberSabil website, tools and portfolio system are improving version by version."
+          ],
+          "services": [
+            "Support areas",
+            "Services",
+            "Clear, practical help for Windows support operations, small dashboards, automation scripts and technical documentation."
+          ],
+          "contact": "Contact",
+          "footer": "CyberSabil Portfolio • Practical Windows automation, support utilities and GitHub Pages deployments"
+        },
+        "projectLinks": [
+          {
+            "text": "Open website →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank"
+          },
+          {
+            "text": "Open live site →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank"
+          },
+          {
+            "text": "Open repository →",
+            "href": "https://github.com/cybersabil/tm",
+            "target": "_blank"
+          },
+          {
+            "text": "Open repository →",
+            "href": "https://github.com/cybersabil/tmr",
+            "target": "_blank"
+          }
+        ],
+        "containerWidth": 1160,
+        "sectionPadding": "44px",
+        "scrollWidth": 1366,
+        "clientWidth": 1366
+      }
+    },
+    {
+      "test": "showHero_no_hides_hero",
+      "passed": true,
+      "details": {
+        "appClasses": [
+          "cs-portfolio-app",
+          "cs-portfolio-theme-purple-gold",
+          "cs-portfolio-layout-professional"
+        ],
+        "background": "radial-gradient(circle at 18% 0%, rgba(139, 92, 246, 0.2), rgba(0, 0, 0, 0) 30%), radial-gradient(circle at 82% 8%, rgba(245, 197, 92, 0.16), rgba(0, 0, 0, 0) 26%), linear-gradient(135deg, rgb(16, 8, 30), rgb(26, 15, 45) 52%, rgb(8, 6, 16))",
+        "brand": "CyberSabil Portfolio",
+        "navHidden": false,
+        "navDisplay": "flex",
+        "toggleHidden": false,
+        "toggleDisplay": "none",
+        "labels": [
+          "Skills",
+          "Projects",
+          "Timeline",
+          "Services",
+          "Contact"
+        ],
+        "navLinkDisplay": [
+          "block",
+          "block",
+          "block",
+          "block",
+          "block"
+        ],
+        "heroHidden": true,
+        "profileHidden": false,
+        "heroRect": {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0
+        },
+        "profileRect": {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0
+        },
+        "heroCopyRect": {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0
+        },
+        "heroColumns": "minmax(0px, 1.1fr) minmax(280px, 0.72fr)",
+        "sectionHidden": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "sectionDisplay": [
+          "block",
+          "block",
+          "block",
+          "block",
+          "grid"
+        ],
+        "texts": {
+          "skills": [
+            "Technical focus",
+            "Practical IT skills",
+            "Support-focused skills for Windows troubleshooting, automation, documentation and lightweight web deployment."
+          ],
+          "projects": [
+            "Selected systems",
+            "Project portfolio",
+            "Tools and workflows designed around repeatable IT support problems, deployment clarity and user-safe execution."
+          ],
+          "timeline": [
+            "Progress path",
+            "Build timeline",
+            "A short view of how the CyberSabil website, tools and portfolio system are improving version by version."
+          ],
+          "services": [
+            "Support areas",
+            "Services",
+            "Clear, practical help for Windows support operations, small dashboards, automation scripts and technical documentation."
+          ],
+          "contact": "Contact",
+          "footer": "CyberSabil Portfolio • Practical Windows automation, support utilities and GitHub Pages deployments"
+        },
+        "projectLinks": [
+          {
+            "text": "Open website →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank"
+          },
+          {
+            "text": "Open live site →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank"
+          },
+          {
+            "text": "Open repository →",
+            "href": "https://github.com/cybersabil/tm",
+            "target": "_blank"
+          },
+          {
+            "text": "Open repository →",
+            "href": "https://github.com/cybersabil/tmr",
+            "target": "_blank"
+          }
+        ],
+        "containerWidth": 1160,
+        "sectionPadding": "44px",
+        "scrollWidth": 1366,
+        "clientWidth": 1366
+      }
+    },
+    {
+      "test": "showProfileCard_no_hides_card",
+      "passed": true,
+      "details": {
+        "appClasses": [
+          "cs-portfolio-app",
+          "cs-portfolio-theme-purple-gold",
+          "cs-portfolio-layout-professional",
+          "cs-portfolio-profile-hidden"
+        ],
+        "background": "radial-gradient(circle at 18% 0%, rgba(139, 92, 246, 0.2), rgba(0, 0, 0, 0) 30%), radial-gradient(circle at 82% 8%, rgba(245, 197, 92, 0.16), rgba(0, 0, 0, 0) 26%), linear-gradient(135deg, rgb(16, 8, 30), rgb(26, 15, 45) 52%, rgb(8, 6, 16))",
+        "brand": "CyberSabil Portfolio",
+        "navHidden": false,
+        "navDisplay": "flex",
+        "toggleHidden": false,
+        "toggleDisplay": "none",
+        "labels": [
+          "Skills",
+          "Projects",
+          "Timeline",
+          "Services",
+          "Contact"
+        ],
+        "navLinkDisplay": [
+          "block",
+          "block",
+          "block",
+          "block",
+          "block"
+        ],
+        "heroHidden": false,
+        "profileHidden": true,
+        "heroRect": {
+          "x": 103,
+          "y": 77,
+          "w": 1160,
+          "h": 637
+        },
+        "profileRect": {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0
+        },
+        "heroCopyRect": {
+          "x": 103,
+          "y": 169,
+          "w": 920,
+          "h": 487
+        },
+        "heroColumns": "1160px",
+        "sectionHidden": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "sectionDisplay": [
+          "block",
+          "block",
+          "block",
+          "block",
+          "grid"
+        ],
+        "texts": {
+          "skills": [
+            "Technical focus",
+            "Practical IT skills",
+            "Support-focused skills for Windows troubleshooting, automation, documentation and lightweight web deployment."
+          ],
+          "projects": [
+            "Selected systems",
+            "Project portfolio",
+            "Tools and workflows designed around repeatable IT support problems, deployment clarity and user-safe execution."
+          ],
+          "timeline": [
+            "Progress path",
+            "Build timeline",
+            "A short view of how the CyberSabil website, tools and portfolio system are improving version by version."
+          ],
+          "services": [
+            "Support areas",
+            "Services",
+            "Clear, practical help for Windows support operations, small dashboards, automation scripts and technical documentation."
+          ],
+          "contact": "Contact",
+          "footer": "CyberSabil Portfolio • Practical Windows automation, support utilities and GitHub Pages deployments"
+        },
+        "projectLinks": [
+          {
+            "text": "Open website →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank"
+          },
+          {
+            "text": "Open live site →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank"
+          },
+          {
+            "text": "Open repository →",
+            "href": "https://github.com/cybersabil/tm",
+            "target": "_blank"
+          },
+          {
+            "text": "Open repository →",
+            "href": "https://github.com/cybersabil/tmr",
+            "target": "_blank"
+          }
+        ],
+        "containerWidth": 1160,
+        "sectionPadding": "44px",
+        "scrollWidth": 1366,
+        "clientWidth": 1366
+      }
+    },
+    {
+      "test": "profile_hidden_hero_reflows_single_column",
+      "passed": true,
+      "details": {
+        "appClasses": [
+          "cs-portfolio-app",
+          "cs-portfolio-theme-purple-gold",
+          "cs-portfolio-layout-professional",
+          "cs-portfolio-profile-hidden"
+        ],
+        "background": "radial-gradient(circle at 18% 0%, rgba(139, 92, 246, 0.2), rgba(0, 0, 0, 0) 30%), radial-gradient(circle at 82% 8%, rgba(245, 197, 92, 0.16), rgba(0, 0, 0, 0) 26%), linear-gradient(135deg, rgb(16, 8, 30), rgb(26, 15, 45) 52%, rgb(8, 6, 16))",
+        "brand": "CyberSabil Portfolio",
+        "navHidden": false,
+        "navDisplay": "flex",
+        "toggleHidden": false,
+        "toggleDisplay": "none",
+        "labels": [
+          "Skills",
+          "Projects",
+          "Timeline",
+          "Services",
+          "Contact"
+        ],
+        "navLinkDisplay": [
+          "block",
+          "block",
+          "block",
+          "block",
+          "block"
+        ],
+        "heroHidden": false,
+        "profileHidden": true,
+        "heroRect": {
+          "x": 103,
+          "y": 77,
+          "w": 1160,
+          "h": 637
+        },
+        "profileRect": {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0
+        },
+        "heroCopyRect": {
+          "x": 103,
+          "y": 169,
+          "w": 920,
+          "h": 487
+        },
+        "heroColumns": "1160px",
+        "sectionHidden": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "sectionDisplay": [
+          "block",
+          "block",
+          "block",
+          "block",
+          "grid"
+        ],
+        "texts": {
+          "skills": [
+            "Technical focus",
+            "Practical IT skills",
+            "Support-focused skills for Windows troubleshooting, automation, documentation and lightweight web deployment."
+          ],
+          "projects": [
+            "Selected systems",
+            "Project portfolio",
+            "Tools and workflows designed around repeatable IT support problems, deployment clarity and user-safe execution."
+          ],
+          "timeline": [
+            "Progress path",
+            "Build timeline",
+            "A short view of how the CyberSabil website, tools and portfolio system are improving version by version."
+          ],
+          "services": [
+            "Support areas",
+            "Services",
+            "Clear, practical help for Windows support operations, small dashboards, automation scripts and technical documentation."
+          ],
+          "contact": "Contact",
+          "footer": "CyberSabil Portfolio • Practical Windows automation, support utilities and GitHub Pages deployments"
+        },
+        "projectLinks": [
+          {
+            "text": "Open website →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank"
+          },
+          {
+            "text": "Open live site →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank"
+          },
+          {
+            "text": "Open repository →",
+            "href": "https://github.com/cybersabil/tm",
+            "target": "_blank"
+          },
+          {
+            "text": "Open repository →",
+            "href": "https://github.com/cybersabil/tmr",
+            "target": "_blank"
+          }
+        ],
+        "containerWidth": 1160,
+        "sectionPadding": "44px",
+        "scrollWidth": 1366,
+        "clientWidth": 1366
+      }
+    },
+    {
+      "test": "showProjectLinks_yes",
+      "passed": true,
+      "details": [
+        {
+          "text": "DEFAULT LINK",
+          "href": "https://example.com",
+          "target": "_blank"
+        }
+      ]
+    },
+    {
+      "test": "projectLinkLabel_fallback_trims",
+      "passed": true,
+      "details": [
+        {
+          "text": "DEFAULT LINK",
+          "href": "https://example.com",
+          "target": "_blank"
+        }
+      ]
+    },
+    {
+      "test": "showProjectLinks_no",
+      "passed": true,
+      "details": {}
+    },
+    {
+      "test": "individual_project_button_overrides_default",
+      "passed": true,
+      "details": [
+        {
+          "text": "CUSTOM",
+          "href": "https://example.com",
+          "target": "_blank"
+        }
+      ]
+    },
+    {
+      "test": "long_portfolio_settings_no_horizontal_overflow",
+      "passed": true,
+      "details": {
+        "appClasses": [
+          "cs-portfolio-app",
+          "cs-portfolio-theme-purple-gold",
+          "cs-portfolio-layout-professional"
+        ],
+        "background": "radial-gradient(circle at 18% 0%, rgba(139, 92, 246, 0.2), rgba(0, 0, 0, 0) 30%), radial-gradient(circle at 82% 8%, rgba(245, 197, 92, 0.16), rgba(0, 0, 0, 0) 26%), linear-gradient(135deg, rgb(16, 8, 30), rgb(26, 15, 45) 52%, rgb(8, 6, 16))",
+        "brand": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+        "navHidden": false,
+        "navDisplay": "none",
+        "toggleHidden": false,
+        "toggleDisplay": "flex",
+        "labels": [
+          "SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS",
+          "Projects",
+          "Timeline",
+          "Services",
+          "Contact"
+        ],
+        "navLinkDisplay": [
+          "flex",
+          "flex",
+          "flex",
+          "flex",
+          "flex"
+        ],
+        "heroHidden": false,
+        "profileHidden": false,
+        "heroRect": {
+          "x": 9,
+          "y": 65,
+          "w": 342,
+          "h": 1221
+        },
+        "profileRect": {
+          "x": 9,
+          "y": 596,
+          "w": 342,
+          "h": 631
+        },
+        "heroCopyRect": {
+          "x": 9,
+          "y": 119,
+          "w": 342,
+          "h": 453
+        },
+        "heroColumns": "342px",
+        "sectionHidden": [
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "sectionDisplay": [
+          "block",
+          "block",
+          "block",
+          "block",
+          "grid"
+        ],
+        "texts": {
+          "skills": [
+            "Technical focus",
+            "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT",
+            "UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU"
+          ],
+          "projects": [
+            "Selected systems",
+            "Project portfolio",
+            "Tools and workflows designed around repeatable IT support problems, deployment clarity and user-safe execution."
+          ],
+          "timeline": [
+            "Progress path",
+            "Build timeline",
+            "A short view of how the CyberSabil website, tools and portfolio system are improving version by version."
+          ],
+          "services": [
+            "Support areas",
+            "Services",
+            "Clear, practical help for Windows support operations, small dashboards, automation scripts and technical documentation."
+          ],
+          "contact": "Contact",
+          "footer": "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"
+        },
+        "projectLinks": [
+          {
+            "text": "Open website →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank"
+          },
+          {
+            "text": "Open live site →",
+            "href": "https://cybersabil.github.io/",
+            "target": "_blank"
+          },
+          {
+            "text": "Open repository →",
+            "href": "https://github.com/cybersabil/tm",
+            "target": "_blank"
+          },
+          {
+            "text": "Open repository →",
+            "href": "https://github.com/cybersabil/tmr",
+            "target": "_blank"
+          }
+        ],
+        "containerWidth": 342,
+        "sectionPadding": "44px",
+        "scrollWidth": 360,
+        "clientWidth": 360
+      }
+    },
+    {
+      "test": "long_portfolio_settings_no_errors",
+      "passed": true,
+      "details": {}
+    }
+  ]
+}
