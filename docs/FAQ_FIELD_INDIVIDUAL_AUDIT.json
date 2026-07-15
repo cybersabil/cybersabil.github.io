@@ -1133,7 +1133,7 @@
       "passed": true,
       "details": {
         "count": 200,
-        "elapsed": 0.806115936000424
+        "elapsed": 0.755068349999874
       }
     },
     {
@@ -1145,7 +1145,7 @@
       "test": "large_list_reasonable_boot_time",
       "passed": true,
       "details": {
-        "elapsed": 0.806115936000424
+        "elapsed": 0.755068349999874
       }
     }
   ]

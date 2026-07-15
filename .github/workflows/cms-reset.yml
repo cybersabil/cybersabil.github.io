@@ -1,0 +1,99 @@
+name: Pages CMS Individual Reset
+
+on:
+  workflow_dispatch:
+    inputs:
+      payload:
+        description: Pages CMS payload as JSON
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: cms-reset-${{ github.repository }}-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  reset_build:
+    runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.reset.outputs.changed }}
+      target_file: ${{ steps.reset.outputs.target_file }}
+    steps:
+      - name: Check out selected CMS branch
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
+      - name: Reject stale or wrong-repository reset requests
+        env:
+          PAGES_CMS_PAYLOAD: ${{ inputs.payload }}
+        run: node tools/verify-cms-reset-request.js
+
+      - name: Apply one allowlisted reset
+        id: reset
+        env:
+          PAGES_CMS_PAYLOAD: ${{ inputs.payload }}
+        run: node tools/cms-reset.js --github-output "$GITHUB_OUTPUT"
+
+      - name: Reset audit round 1 — schema and action map
+        run: node tools/test-cms-reset-schema.js
+
+      - name: Reset audit round 2 — exhaustive behavior
+        run: node tools/test-cms-reset-behavior.js
+
+      - name: Reset audit round 3 — collision and security
+        run: node tools/test-cms-reset-collisions.js
+
+      - name: Generate synchronized static output
+        run: node tools/generate-site.js
+
+      - name: Test CMS control isolation
+        run: node tools/test-config-isolation.js
+
+      - name: Validate every Pages CMS field and collision guard
+        run: node tools/test-cms-field-coverage.js
+
+      - name: Validate generated site
+        run: node tools/validate-site.js
+
+      - name: Commit only the reset data file
+        if: steps.reset.outputs.changed == 'true'
+        env:
+          TARGET_FILE: ${{ steps.reset.outputs.target_file }}
+          RESET_MESSAGE: ${{ steps.reset.outputs.reset_message }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- "$TARGET_FILE"
+          git commit -m "CMS reset: ${RESET_MESSAGE}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload generated Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: .
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: reset_build
+    steps:
+      - name: Deploy reset result to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

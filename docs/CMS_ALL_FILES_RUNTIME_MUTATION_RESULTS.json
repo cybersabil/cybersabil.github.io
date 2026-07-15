@@ -4,7 +4,7 @@
     "mode": "website",
     "status": "cs-boot-ready",
     "errors": [],
-    "sentinelFields": 12,
+    "sentinelFields": 10,
     "observed": [],
     "notObserved": [
       "modeSwitchWebsiteLabel",
@@ -16,9 +16,7 @@
       "copyButtonAriaLabel",
       "dataLoadWarningTitle",
       "dataLoadWarningMessage",
-      "bootStatusMessage",
-      "version",
-      "schemaVersion"
+      "bootStatusMessage"
     ],
     "bodyClass": "theme-dark accent-cyan bg-gradient card-glass cs-mode-switch-visible cs-mode-switch-top-right-visible"
   },
@@ -52,26 +50,6 @@
     "notObserved": [
       "panelMaxWidth"
     ],
-    "bodyClass": "theme-dark accent-cyan bg-gradient card-glass cs-mode-gateway-open"
-  },
-  {
-    "file": "data/gateway-appearance.json",
-    "mode": "gateway",
-    "status": "cs-boot-ready",
-    "errors": [],
-    "sentinelFields": 0,
-    "observed": [],
-    "notObserved": [],
-    "bodyClass": "theme-dark accent-cyan bg-gradient card-glass cs-mode-gateway-open"
-  },
-  {
-    "file": "data/navigation-style.json",
-    "mode": "gateway",
-    "status": "cs-boot-ready",
-    "errors": [],
-    "sentinelFields": 0,
-    "observed": [],
-    "notObserved": [],
     "bodyClass": "theme-dark accent-cyan bg-gradient card-glass cs-mode-gateway-open"
   },
   {
@@ -408,6 +386,26 @@
       "twitterImage"
     ],
     "bodyClass": "theme-dark accent-cyan bg-gradient card-glass cs-mode-switch-visible cs-mode-switch-top-right-visible"
+  },
+  {
+    "file": "data/gateway-appearance.json",
+    "mode": "gateway",
+    "status": "cs-boot-ready",
+    "errors": [],
+    "sentinelFields": 0,
+    "observed": [],
+    "notObserved": [],
+    "bodyClass": "theme-dark accent-cyan bg-gradient card-glass cs-mode-gateway-open"
+  },
+  {
+    "file": "data/navigation-style.json",
+    "mode": "gateway",
+    "status": "cs-boot-ready",
+    "errors": [],
+    "sentinelFields": 0,
+    "observed": [],
+    "notObserved": [],
+    "bodyClass": "theme-dark accent-cyan bg-gradient card-glass cs-mode-gateway-open"
   },
   {
     "file": "data/visual-baseline.json",

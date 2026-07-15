@@ -52,7 +52,10 @@ function parseCmsFileEntries(source) {
     if (!file || !/^data\/[^\s]+\.json$/.test(file)) continue;
 
     const fields = [];
-    for (let k = 1; k < block.length; k++) {
+    const fieldsStart = block.findIndex(line => new RegExp(`^\\s{${entryIndent + 2}}fields:\\s*$`).test(line));
+    const actionsStart = block.findIndex(line => new RegExp(`^\\s{${entryIndent + 2}}actions:\\s*$`).test(line));
+    const fieldsEnd = actionsStart > fieldsStart ? actionsStart : block.length;
+    for (let k = Math.max(1, fieldsStart + 1); k < fieldsEnd; k++) {
       const fieldMatch = block[k].match(new RegExp(`^\\s{${entryIndent + 2}}- name:\\s*(.+?)\\s*$`));
       if (!fieldMatch) continue;
       const name = unquote(fieldMatch[1]);
@@ -121,7 +124,8 @@ for (const entry of cmsEntries) {
     }
     const token = new RegExp(`(^|[^A-Za-z0-9_$])${name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}([^A-Za-z0-9_$]|$)`);
     const refs = { js: token.test(js), generator: token.test(generator), html: token.test(html), css: token.test(css) };
-    if (!Object.values(refs).some(Boolean)) errors.push(`${file}: CMS field ${name} has no runtime/build consumer token`);
+    const isCmsResetMetadata = name === '_cmsResetId';
+    if (!isCmsResetMetadata && !Object.values(refs).some(Boolean)) errors.push(`${file}: CMS field ${name} has no runtime/build consumer token`);
     rows.push({ file, name, type, current, options, label, description, hidden, readonly, min, max, refs });
   }
 }

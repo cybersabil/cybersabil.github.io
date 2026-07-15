@@ -37,6 +37,8 @@ def mutate(entry):
  p=entry['path']; d=load(p); src=d[0] if isinstance(d,list) and d else d
  sent=[]
  for f in entry.get('fields',[]):
+  if f.get('hidden') or f.get('readonly') or f.get('name') == '_cmsResetId':
+   continue
   n=f['name']; cur=src.get(n); tag=re.sub(r'[^A-Za-z0-9]','_',Path(p).stem+'_'+n)
   v=alt(f,cur,tag); src[n]=v
   if f.get('type') in ('string','text','image') and isinstance(v,str) and ('CMSAUDIT_' in v or 'example.com/' in v): sent.append((n,v))

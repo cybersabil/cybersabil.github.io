@@ -1,0 +1,142 @@
+{
+  "round": 1,
+  "name": "schema-and-action-map",
+  "files": 22,
+  "actions": 32,
+  "mapSha256": "5b4081770eece4a29338b49ebc999c57382682a5a56d50cdb9f0cff7085351c6",
+  "errors": [],
+  "results": [
+    {
+      "file": "data/site-settings.json",
+      "kind": "object",
+      "fields": 31,
+      "items": 0
+    },
+    {
+      "file": "data/gateway.json",
+      "kind": "object",
+      "fields": 34,
+      "items": 0
+    },
+    {
+      "file": "data/site.json",
+      "kind": "object",
+      "fields": 14,
+      "items": 0
+    },
+    {
+      "file": "data/sections.json",
+      "kind": "object",
+      "fields": 19,
+      "items": 0
+    },
+    {
+      "file": "data/design.json",
+      "kind": "object",
+      "fields": 6,
+      "items": 0
+    },
+    {
+      "file": "data/tools.json",
+      "kind": "list",
+      "fields": 10,
+      "items": 4
+    },
+    {
+      "file": "data/downloads.json",
+      "kind": "list",
+      "fields": 7,
+      "items": 3
+    },
+    {
+      "file": "data/projects.json",
+      "kind": "list",
+      "fields": 8,
+      "items": 3
+    },
+    {
+      "file": "data/skills.json",
+      "kind": "list",
+      "fields": 2,
+      "items": 6
+    },
+    {
+      "file": "data/docs.json",
+      "kind": "list",
+      "fields": 5,
+      "items": 4
+    },
+    {
+      "file": "data/faq.json",
+      "kind": "list",
+      "fields": 2,
+      "items": 4
+    },
+    {
+      "file": "data/portfolio-settings.json",
+      "kind": "object",
+      "fields": 32,
+      "items": 0
+    },
+    {
+      "file": "data/profile.json",
+      "kind": "object",
+      "fields": 16,
+      "items": 0
+    },
+    {
+      "file": "data/portfolio-skills.json",
+      "kind": "list",
+      "fields": 4,
+      "items": 6
+    },
+    {
+      "file": "data/portfolio-projects.json",
+      "kind": "list",
+      "fields": 9,
+      "items": 5
+    },
+    {
+      "file": "data/portfolio-timeline.json",
+      "kind": "list",
+      "fields": 4,
+      "items": 8
+    },
+    {
+      "file": "data/services.json",
+      "kind": "list",
+      "fields": 3,
+      "items": 4
+    },
+    {
+      "file": "data/contact.json",
+      "kind": "object",
+      "fields": 12,
+      "items": 0
+    },
+    {
+      "file": "data/seo.json",
+      "kind": "object",
+      "fields": 13,
+      "items": 0
+    },
+    {
+      "file": "data/gateway-appearance.json",
+      "kind": "object",
+      "fields": 112,
+      "items": 0
+    },
+    {
+      "file": "data/navigation-style.json",
+      "kind": "object",
+      "fields": 72,
+      "items": 0
+    },
+    {
+      "file": "data/visual-baseline.json",
+      "kind": "object",
+      "fields": 1,
+      "items": 0
+    }
+  ]
+}

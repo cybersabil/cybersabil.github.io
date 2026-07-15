@@ -11,12 +11,12 @@
     "choiceDisplay": "grid",
     "choiceGridColumns": "297.5px 297.5px",
     "websiteRect": {
-      "x": 372.0404052734375,
-      "y": 348.2857971191406
+      "x": 372.029052734375,
+      "y": 348.24566650390625
     },
     "portfolioRect": {
-      "x": 681.604736328125,
-      "y": 348.5241394042969
+      "x": 681.5810546875,
+      "y": 348.43634033203125
     },
     "websiteOrder": "0",
     "portfolioOrder": "0",
@@ -29,7 +29,7 @@
     "dataStatusTitle": "Content fallback active",
     "events": [
       {
-        "t": 212,
+        "t": 232,
         "type": "html-class",
         "detail": {},
         "htmlClass": "cs-boot-applying",
@@ -38,7 +38,7 @@
         "portfolioOrder": "2"
       },
       {
-        "t": 218.29999999981374,
+        "t": 238.69999999995343,
         "type": "domcontentloaded",
         "detail": {},
         "htmlClass": "cs-boot-applying",
@@ -47,7 +47,7 @@
         "portfolioOrder": "2"
       },
       {
-        "t": 367,
+        "t": 448.89999999990687,
         "type": "html-class",
         "detail": {},
         "htmlClass": "cs-boot-ready",
@@ -56,7 +56,7 @@
         "portfolioOrder": "0"
       },
       {
-        "t": 564.6999999992549,
+        "t": 639.3000000000466,
         "type": "animationstart",
         "detail": {
           "name": "csGatewayBackdropReveal",
@@ -68,7 +68,7 @@
         "portfolioOrder": "0"
       },
       {
-        "t": 565,
+        "t": 639.5,
         "type": "animationstart",
         "detail": {
           "name": "csGatewayPanelReveal",
@@ -80,7 +80,7 @@
         "portfolioOrder": "0"
       },
       {
-        "t": 565,
+        "t": 639.5999999998603,
         "type": "animationstart",
         "detail": {
           "name": "csGatewayTextRise",
@@ -92,7 +92,7 @@
         "portfolioOrder": "0"
       },
       {
-        "t": 565,
+        "t": 639.5999999998603,
         "type": "animationstart",
         "detail": {
           "name": "csGatewayTextRise",
@@ -104,7 +104,7 @@
         "portfolioOrder": "0"
       },
       {
-        "t": 692.8999999994412,
+        "t": 769.1999999999534,
         "type": "animationstart",
         "detail": {
           "name": "csGatewayChoiceReveal",
@@ -116,7 +116,7 @@
         "portfolioOrder": "0"
       },
       {
-        "t": 693.5999999996275,
+        "t": 769.5,
         "type": "animationstart",
         "detail": {
           "name": "csGatewayChoiceReveal",
@@ -155,12 +155,12 @@
     "choiceDisplay": "grid",
     "choiceGridColumns": "297.5px 297.5px",
     "websiteRect": {
-      "x": 372.0290222167969,
-      "y": 348.24560546875
+      "x": 372.04034423828125,
+      "y": 348.2855529785156
     },
     "portfolioRect": {
-      "x": 681.5809936523438,
-      "y": 348.4361877441406
+      "x": 681.6045532226562,
+      "y": 348.5235900878906
     },
     "websiteOrder": "1",
     "portfolioOrder": "2",
@@ -173,7 +173,7 @@
     "dataStatusTitle": "Content fallback active",
     "events": [
       {
-        "t": 226.70000000018626,
+        "t": 211.10000000009313,
         "type": "html-class",
         "detail": {},
         "htmlClass": "cs-boot-applying",
@@ -182,7 +182,7 @@
         "portfolioOrder": "2"
       },
       {
-        "t": 232.3999999994412,
+        "t": 216.4000000001397,
         "type": "domcontentloaded",
         "detail": {},
         "htmlClass": "cs-boot-applying",
@@ -191,7 +191,7 @@
         "portfolioOrder": "2"
       },
       {
-        "t": 351.8999999994412,
+        "t": 339.30000000004657,
         "type": "html-class",
         "detail": {},
         "htmlClass": "cs-boot-ready",
@@ -200,7 +200,7 @@
         "portfolioOrder": "2"
       },
       {
-        "t": 528,
+        "t": 500.10000000009313,
         "type": "animationstart",
         "detail": {
           "name": "csGatewayBackdropReveal",
@@ -212,7 +212,7 @@
         "portfolioOrder": "2"
       },
       {
-        "t": 528.2999999998137,
+        "t": 500.4000000001397,
         "type": "animationstart",
         "detail": {
           "name": "csGatewayPanelReveal",
@@ -224,7 +224,7 @@
         "portfolioOrder": "2"
       },
       {
-        "t": 528.2999999998137,
+        "t": 500.4000000001397,
         "type": "animationstart",
         "detail": {
           "name": "csGatewayTextRise",
@@ -236,7 +236,7 @@
         "portfolioOrder": "2"
       },
       {
-        "t": 528.2999999998137,
+        "t": 500.4000000001397,
         "type": "animationstart",
         "detail": {
           "name": "csGatewayTextRise",
@@ -248,7 +248,7 @@
         "portfolioOrder": "2"
       },
       {
-        "t": 655.0999999996275,
+        "t": 620.2000000001863,
         "type": "animationstart",
         "detail": {
           "name": "csGatewayChoiceReveal",
@@ -260,7 +260,7 @@
         "portfolioOrder": "2"
       },
       {
-        "t": 655.5999999996275,
+        "t": 620.7000000001863,
         "type": "animationstart",
         "detail": {
           "name": "csGatewayChoiceReveal",
@@ -299,12 +299,12 @@
     "choiceDisplay": "grid",
     "choiceGridColumns": "297px",
     "websiteRect": {
-      "x": 39.053741455078125,
-      "y": 501.12640380859375
+      "x": 39.039642333984375,
+      "y": 501.07684326171875
     },
     "portfolioRect": {
-      "x": 39.13478088378906,
-      "y": 362.53729248046875
+      "x": 39.104949951171875,
+      "y": 362.4317626953125
     },
     "websiteOrder": "2",
     "portfolioOrder": "1",
@@ -317,7 +317,7 @@
     "dataStatusTitle": "Content fallback active",
     "events": [
       {
-        "t": 154.69999999925494,
+        "t": 179.30000000004657,
         "type": "html-class",
         "detail": {},
         "htmlClass": "cs-boot-applying",
@@ -326,7 +326,7 @@
         "portfolioOrder": "2"
       },
       {
-        "t": 160.19999999925494,
+        "t": 181.19999999995343,
         "type": "domcontentloaded",
         "detail": {},
         "htmlClass": "cs-boot-applying",
@@ -335,7 +335,7 @@
         "portfolioOrder": "2"
       },
       {
-        "t": 253.5,
+        "t": 261.5999999998603,
         "type": "html-class",
         "detail": {},
         "htmlClass": "cs-boot-ready",
@@ -344,7 +344,7 @@
         "portfolioOrder": "1"
       },
       {
-        "t": 401.8999999994412,
+        "t": 362.19999999995343,
         "type": "animationstart",
         "detail": {
           "name": "csGatewayBackdropReveal",
@@ -356,7 +356,7 @@
         "portfolioOrder": "1"
       },
       {
-        "t": 402.19999999925494,
+        "t": 362.30000000004657,
         "type": "animationstart",
         "detail": {
           "name": "csGatewayPanelReveal",
@@ -368,7 +368,7 @@
         "portfolioOrder": "1"
       },
       {
-        "t": 402.19999999925494,
+        "t": 362.39999999990687,
         "type": "animationstart",
         "detail": {
           "name": "csGatewayTextRise",
@@ -380,7 +380,7 @@
         "portfolioOrder": "1"
       },
       {
-        "t": 455.79999999981374,
+        "t": 398.5,
         "type": "animationstart",
         "detail": {
           "name": "csGatewayTextRise",
@@ -392,7 +392,7 @@
         "portfolioOrder": "1"
       },
       {
-        "t": 506.59999999962747,
+        "t": 542.6999999999534,
         "type": "animationstart",
         "detail": {
           "name": "csGatewayChoiceReveal",
@@ -404,7 +404,7 @@
         "portfolioOrder": "1"
       },
       {
-        "t": 560.5,
+        "t": 543.0999999998603,
         "type": "animationstart",
         "detail": {
           "name": "csGatewayChoiceReveal",
@@ -461,7 +461,7 @@
     "dataStatusTitle": "Content fallback active",
     "events": [
       {
-        "t": 149.19999999925494,
+        "t": 167,
         "type": "html-class",
         "detail": {},
         "htmlClass": "cs-boot-applying",
@@ -470,7 +470,7 @@
         "portfolioOrder": "2"
       },
       {
-        "t": 155.3999999994412,
+        "t": 168.9000000001397,
         "type": "domcontentloaded",
         "detail": {},
         "htmlClass": "cs-boot-applying",
@@ -479,7 +479,7 @@
         "portfolioOrder": "2"
       },
       {
-        "t": 275.09999999962747,
+        "t": 268,
         "type": "html-class",
         "detail": {},
         "htmlClass": "cs-boot-ready",
@@ -488,7 +488,7 @@
         "portfolioOrder": "0"
       },
       {
-        "t": 447,
+        "t": 346.9000000001397,
         "type": "animationstart",
         "detail": {
           "name": "csGatewayAdvancedFadeBlur",
@@ -500,7 +500,7 @@
         "portfolioOrder": "0"
       },
       {
-        "t": 447.29999999981374,
+        "t": 347,
         "type": "animationstart",
         "detail": {
           "name": "csGatewayAdvancedSlideUp",
@@ -512,7 +512,7 @@
         "portfolioOrder": "0"
       },
       {
-        "t": 447.29999999981374,
+        "t": 347.10000000009313,
         "type": "animationstart",
         "detail": {
           "name": "csGatewayTextRise",
@@ -524,7 +524,7 @@
         "portfolioOrder": "0"
       },
       {
-        "t": 447.29999999981374,
+        "t": 434.5,
         "type": "animationstart",
         "detail": {
           "name": "csGatewayTextRise",
@@ -536,7 +536,7 @@
         "portfolioOrder": "0"
       },
       {
-        "t": 574.0999999996275,
+        "t": 547.5,
         "type": "animationstart",
         "detail": {
           "name": "csGatewayAdvancedFade",
@@ -548,7 +548,7 @@
         "portfolioOrder": "0"
       },
       {
-        "t": 574.7999999998137,
+        "t": 547.9000000001397,
         "type": "animationstart",
         "detail": {
           "name": "csGatewayAdvancedFade",
@@ -587,12 +587,12 @@
     "choiceDisplay": "grid",
     "choiceGridColumns": "297.5px 297.5px",
     "websiteRect": {
-      "x": 372.0403747558594,
-      "y": 348.2856750488281
+      "x": 372.029052734375,
+      "y": 348.24566650390625
     },
     "portfolioRect": {
-      "x": 681.6046142578125,
-      "y": 348.52386474609375
+      "x": 681.5810546875,
+      "y": 348.4363708496094
     },
     "websiteOrder": "1",
     "portfolioOrder": "2",
@@ -605,7 +605,7 @@
     "dataStatusTitle": "Content fallback active",
     "events": [
       {
-        "t": 186.8999999994412,
+        "t": 139.39999999990687,
         "type": "html-class",
         "detail": {},
         "htmlClass": "cs-boot-applying",
@@ -614,7 +614,7 @@
         "portfolioOrder": "2"
       },
       {
-        "t": 190.09999999962747,
+        "t": 144.80000000004657,
         "type": "domcontentloaded",
         "detail": {},
         "htmlClass": "cs-boot-applying",
@@ -623,7 +623,7 @@
         "portfolioOrder": "2"
       },
       {
-        "t": 306.59999999962747,
+        "t": 267.39999999990687,
         "type": "html-class",
         "detail": {},
         "htmlClass": "cs-boot-ready",
@@ -632,7 +632,7 @@
         "portfolioOrder": "2"
       },
       {
-        "t": 493.69999999925494,
+        "t": 338.19999999995343,
         "type": "animationstart",
         "detail": {
           "name": "csGatewayBackdropReveal",
@@ -644,7 +644,7 @@
         "portfolioOrder": "2"
       },
       {
-        "t": 493.8999999994412,
+        "t": 338.39999999990687,
         "type": "animationstart",
         "detail": {
           "name": "csGatewayPanelReveal",
@@ -656,7 +656,7 @@
         "portfolioOrder": "2"
       },
       {
-        "t": 494,
+        "t": 338.39999999990687,
         "type": "animationstart",
         "detail": {
           "name": "csGatewayTextRise",
@@ -668,7 +668,7 @@
         "portfolioOrder": "2"
       },
       {
-        "t": 494,
+        "t": 534.5,
         "type": "animationstart",
         "detail": {
           "name": "csGatewayTextRise",
@@ -680,7 +680,7 @@
         "portfolioOrder": "2"
       },
       {
-        "t": 623,
+        "t": 534.8999999999069,
         "type": "animationstart",
         "detail": {
           "name": "csGatewayChoiceReveal",
@@ -692,7 +692,7 @@
         "portfolioOrder": "2"
       },
       {
-        "t": 623.5999999996275,
+        "t": 534.8999999999069,
         "type": "animationstart",
         "detail": {
           "name": "csGatewayChoiceReveal",
@@ -749,7 +749,7 @@
     "dataStatusTitle": "Content fallback active",
     "events": [
       {
-        "t": 163.79999999981374,
+        "t": 235.5999999998603,
         "type": "html-class",
         "detail": {},
         "htmlClass": "cs-boot-applying",
@@ -758,7 +758,7 @@
         "portfolioOrder": "2"
       },
       {
-        "t": 169.59999999962747,
+        "t": 237.89999999990687,
         "type": "domcontentloaded",
         "detail": {},
         "htmlClass": "cs-boot-applying",
@@ -767,7 +767,7 @@
         "portfolioOrder": "2"
       },
       {
-        "t": 307.8999999994412,
+        "t": 392.5,
         "type": "html-class",
         "detail": {},
         "htmlClass": "cs-boot-ready",
@@ -803,12 +803,12 @@
     "choiceDisplay": "grid",
     "choiceGridColumns": "297.5px 297.5px",
     "websiteRect": {
-      "x": 372.029052734375,
-      "y": 348.24566650390625
+      "x": 372.0404052734375,
+      "y": 348.2857971191406
     },
     "portfolioRect": {
-      "x": 681.5810546875,
-      "y": 348.43634033203125
+      "x": 681.604736328125,
+      "y": 348.5241394042969
     },
     "websiteOrder": "1",
     "portfolioOrder": "2",
@@ -821,7 +821,7 @@
     "dataStatusTitle": "Content fallback active",
     "events": [
       {
-        "t": 149.40000000037253,
+        "t": 200.60000000009313,
         "type": "html-class",
         "detail": {},
         "htmlClass": "cs-boot-applying",
@@ -830,7 +830,7 @@
         "portfolioOrder": "2"
       },
       {
-        "t": 156.20000000018626,
+        "t": 202.9000000001397,
         "type": "domcontentloaded",
         "detail": {},
         "htmlClass": "cs-boot-applying",
@@ -839,7 +839,7 @@
         "portfolioOrder": "2"
       },
       {
-        "t": 405,
+        "t": 479,
         "type": "html-class",
         "detail": {},
         "htmlClass": "cs-boot-ready",
@@ -848,7 +848,7 @@
         "portfolioOrder": "2"
       },
       {
-        "t": 497.79999999981374,
+        "t": 664.3000000000466,
         "type": "animationstart",
         "detail": {
           "name": "csGatewayBackdropReveal",
@@ -860,7 +860,7 @@
         "portfolioOrder": "2"
       },
       {
-        "t": 498,
+        "t": 664.6000000000931,
         "type": "animationstart",
         "detail": {
           "name": "csGatewayPanelReveal",
@@ -872,7 +872,7 @@
         "portfolioOrder": "2"
       },
       {
-        "t": 498,
+        "t": 664.6000000000931,
         "type": "animationstart",
         "detail": {
           "name": "csGatewayTextRise",
@@ -884,7 +884,7 @@
         "portfolioOrder": "2"
       },
       {
-        "t": 727.1000000005588,
+        "t": 664.6000000000931,
         "type": "animationstart",
         "detail": {
           "name": "csGatewayTextRise",
@@ -896,7 +896,7 @@
         "portfolioOrder": "2"
       },
       {
-        "t": 727.6000000005588,
+        "t": 779.8000000000466,
         "type": "animationstart",
         "detail": {
           "name": "csGatewayChoiceReveal",
@@ -908,7 +908,7 @@
         "portfolioOrder": "2"
       },
       {
-        "t": 727.6000000005588,
+        "t": 780.1999999999534,
         "type": "animationstart",
         "detail": {
           "name": "csGatewayChoiceReveal",

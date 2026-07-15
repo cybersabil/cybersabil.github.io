@@ -1,0 +1,16 @@
+{
+  "brandName": "CyberSabil",
+  "logoText": "CS",
+  "badge": "Windows IT Support Toolkit",
+  "heroTitleBefore": "Practical IT tools for",
+  "heroTitleHighlight": "real Windows problems.",
+  "heroDescription": "CyberSabil is a practical IT support portfolio and tools hub for Windows automation, troubleshooting, monitoring, cleanup, and system administration utilities.",
+  "primaryButtonText": "View Tools",
+  "primaryButtonLink": "#tools",
+  "secondaryButtonText": "Download",
+  "secondaryButtonLink": "#downloads",
+  "githubProfileLink": "https://github.com/cybersabil",
+  "aboutTitle": "About CyberSabil",
+  "aboutDescription": "CyberSabil builds practical Windows and IT support utilities focused on real-world troubleshooting, automation, monitoring, cleanup, and support workflows.",
+  "footerText": "Windows automation, IT support utilities, monitoring tools, troubleshooting workflows, and practical GitHub projects."
+}

@@ -28,6 +28,15 @@ jobs:
         with:
           node-version: 24
 
+      - name: Reset audit round 1 — schema and action map
+        run: node tools/test-cms-reset-schema.js
+
+      - name: Reset audit round 2 — exhaustive behavior
+        run: node tools/test-cms-reset-behavior.js
+
+      - name: Reset audit round 3 — collision and security
+        run: node tools/test-cms-reset-collisions.js
+
       - name: Generate synchronized static output
         run: node tools/generate-site.js
 
