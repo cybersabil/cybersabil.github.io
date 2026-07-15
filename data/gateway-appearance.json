@@ -5,7 +5,7 @@
   "appearanceControlMode": "inherit",
   "animationControlMode": "inherit",
   "interactionControlMode": "inherit",
-  "cardOrder": "portfolio-first",
+  "cardOrder": "website-first",
   "desktopCardLayout": "row",
   "tabletCardLayout": "row",
   "mobileCardLayout": "column",

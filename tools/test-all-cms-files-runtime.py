@@ -5,6 +5,14 @@ from playwright.sync_api import sync_playwright
 ROOT = Path(__file__).resolve().parents[1]; BASE='https://cybersabil.test/'
 HTML=(ROOT/'index.html').read_text().replace('<head>',f'<head><base href="{BASE}">',1)
 CFG=yaml.safe_load((ROOT/'.pages.yml').read_text())
+
+def cms_file_entries(items):
+ for entry in items:
+  if entry.get('type') == 'group':
+   yield from cms_file_entries(entry.get('items', []))
+  elif entry.get('type') == 'file' and str(entry.get('path','')).startswith('data/'):
+   yield entry
+
 PORT={'data/portfolio-settings.json','data/profile.json','data/portfolio-skills.json','data/portfolio-projects.json','data/portfolio-timeline.json','data/services.json','data/contact.json'}
 GATE={'data/gateway.json','data/visual-baseline.json','data/gateway-appearance.json','data/navigation-style.json'}
 def mode(path): return 'portfolio' if path in PORT else 'gateway' if path in GATE else 'website'
@@ -12,7 +20,9 @@ def load(path): return json.loads((ROOT/path).read_text())
 def alt(f,cur,tag):
  t=f.get('type'); n=f['name']
  if t=='select':
-  vals=((f.get('options') or {}).get('values') or []); return next((v for v in vals if v!=cur),cur)
+  raw=((f.get('options') or {}).get('values') or [])
+  vals=[v.get('name') if isinstance(v,dict) else v for v in raw]
+  return next((v for v in vals if v!=cur),cur)
  if t=='number':
   try:return cur+1
   except:return 1
@@ -57,7 +67,7 @@ def run(browser,entry):
  ctx.close(); return out
 with sync_playwright() as p:
  b=p.chromium.launch(headless=True,executable_path='/usr/bin/chromium',args=['--no-sandbox']); results=[]
- for e in CFG['content']:
+ for e in cms_file_entries(CFG['content']):
   r=run(b,e); results.append(r); print(e['path'],r['status'],len(r['observed']),len(r['notObserved']))
  b.close()
 (ROOT/'docs'/'CMS_ALL_FILES_RUNTIME_MUTATION_RESULTS.json').write_text(json.dumps(results,indent=2))

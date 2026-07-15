@@ -1,0 +1,941 @@
+{
+  "baseline": {
+    "htmlClass": "cs-boot-ready",
+    "bodyClass": "theme-dark accent-cyan bg-gradient card-glass cs-mode-gateway-open",
+    "activeMode": "portfolio",
+    "bodyVisibility": "visible",
+    "bodyOpacity": "1",
+    "bootHidden": true,
+    "overlayHidden": false,
+    "overlayClass": "cs-gateway-overlay cs-gateway-style-premium cs-gateway-style-selector",
+    "choiceDisplay": "grid",
+    "choiceGridColumns": "297.5px 297.5px",
+    "websiteRect": {
+      "x": 372.0404052734375,
+      "y": 348.2857971191406
+    },
+    "portfolioRect": {
+      "x": 681.604736328125,
+      "y": 348.5241394042969
+    },
+    "websiteOrder": "0",
+    "portfolioOrder": "0",
+    "panelAnimation": "csGatewayPanelReveal",
+    "websiteAnimation": "csGatewayChoiceReveal",
+    "switchClass": "cs-mode-switch cs-mode-switch-top-right",
+    "websiteHeaderAdvanced": false,
+    "portfolioHeaderAdvanced": false,
+    "dataStatusHidden": true,
+    "dataStatusTitle": "Content fallback active",
+    "events": [
+      {
+        "t": 212,
+        "type": "html-class",
+        "detail": {},
+        "htmlClass": "cs-boot-applying",
+        "bodyVisibility": "hidden",
+        "websiteOrder": "1",
+        "portfolioOrder": "2"
+      },
+      {
+        "t": 218.29999999981374,
+        "type": "domcontentloaded",
+        "detail": {},
+        "htmlClass": "cs-boot-applying",
+        "bodyVisibility": "hidden",
+        "websiteOrder": "1",
+        "portfolioOrder": "2"
+      },
+      {
+        "t": 367,
+        "type": "html-class",
+        "detail": {},
+        "htmlClass": "cs-boot-ready",
+        "bodyVisibility": "visible",
+        "websiteOrder": "0",
+        "portfolioOrder": "0"
+      },
+      {
+        "t": 564.6999999992549,
+        "type": "animationstart",
+        "detail": {
+          "name": "csGatewayBackdropReveal",
+          "target": "cs-gateway-backdrop"
+        },
+        "htmlClass": "cs-boot-ready",
+        "bodyVisibility": "visible",
+        "websiteOrder": "0",
+        "portfolioOrder": "0"
+      },
+      {
+        "t": 565,
+        "type": "animationstart",
+        "detail": {
+          "name": "csGatewayPanelReveal",
+          "target": "cs-gateway-panel"
+        },
+        "htmlClass": "cs-boot-ready",
+        "bodyVisibility": "visible",
+        "websiteOrder": "0",
+        "portfolioOrder": "0"
+      },
+      {
+        "t": 565,
+        "type": "animationstart",
+        "detail": {
+          "name": "csGatewayTextRise",
+          "target": "cs-gateway-title"
+        },
+        "htmlClass": "cs-boot-ready",
+        "bodyVisibility": "visible",
+        "websiteOrder": "0",
+        "portfolioOrder": "0"
+      },
+      {
+        "t": 565,
+        "type": "animationstart",
+        "detail": {
+          "name": "csGatewayTextRise",
+          "target": "cs-gateway-subtitle"
+        },
+        "htmlClass": "cs-boot-ready",
+        "bodyVisibility": "visible",
+        "websiteOrder": "0",
+        "portfolioOrder": "0"
+      },
+      {
+        "t": 692.8999999994412,
+        "type": "animationstart",
+        "detail": {
+          "name": "csGatewayChoiceReveal",
+          "target": "cs-gateway-choice cs-gateway-choice-website"
+        },
+        "htmlClass": "cs-boot-ready",
+        "bodyVisibility": "visible",
+        "websiteOrder": "0",
+        "portfolioOrder": "0"
+      },
+      {
+        "t": 693.5999999996275,
+        "type": "animationstart",
+        "detail": {
+          "name": "csGatewayChoiceReveal",
+          "target": "cs-gateway-choice cs-gateway-choice-portfolio"
+        },
+        "htmlClass": "cs-boot-ready",
+        "bodyVisibility": "visible",
+        "websiteOrder": "0",
+        "portfolioOrder": "0"
+      }
+    ],
+    "initial": {
+      "htmlClass": "cs-boot-applying",
+      "bodyVisibility": "hidden",
+      "bodyOpacity": "0",
+      "bootHidden": false
+    },
+    "consoleErrors": [],
+    "pageErrors": [],
+    "viewport": {
+      "width": 1366,
+      "height": 768
+    },
+    "reducedMotion": "no-preference",
+    "screenshot": "docs/test-screenshots-v2.10.1/baseline.png"
+  },
+  "package_default": {
+    "htmlClass": "cs-boot-ready",
+    "bodyClass": "theme-dark accent-cyan bg-gradient card-glass cs-mode-gateway-open",
+    "activeMode": "portfolio",
+    "bodyVisibility": "visible",
+    "bodyOpacity": "1",
+    "bootHidden": true,
+    "overlayHidden": false,
+    "overlayClass": "cs-gateway-overlay cs-gateway-style-premium cs-gateway-style-selector cs-gateway-advanced cs-gateway-layout-custom",
+    "choiceDisplay": "grid",
+    "choiceGridColumns": "297.5px 297.5px",
+    "websiteRect": {
+      "x": 372.0290222167969,
+      "y": 348.24560546875
+    },
+    "portfolioRect": {
+      "x": 681.5809936523438,
+      "y": 348.4361877441406
+    },
+    "websiteOrder": "1",
+    "portfolioOrder": "2",
+    "panelAnimation": "csGatewayPanelReveal",
+    "websiteAnimation": "csGatewayChoiceReveal",
+    "switchClass": "cs-mode-switch cs-mode-switch-top-right cs-mode-switch-position-custom",
+    "websiteHeaderAdvanced": false,
+    "portfolioHeaderAdvanced": false,
+    "dataStatusHidden": true,
+    "dataStatusTitle": "Content fallback active",
+    "events": [
+      {
+        "t": 226.70000000018626,
+        "type": "html-class",
+        "detail": {},
+        "htmlClass": "cs-boot-applying",
+        "bodyVisibility": "hidden",
+        "websiteOrder": "1",
+        "portfolioOrder": "2"
+      },
+      {
+        "t": 232.3999999994412,
+        "type": "domcontentloaded",
+        "detail": {},
+        "htmlClass": "cs-boot-applying",
+        "bodyVisibility": "hidden",
+        "websiteOrder": "1",
+        "portfolioOrder": "2"
+      },
+      {
+        "t": 351.8999999994412,
+        "type": "html-class",
+        "detail": {},
+        "htmlClass": "cs-boot-ready",
+        "bodyVisibility": "visible",
+        "websiteOrder": "1",
+        "portfolioOrder": "2"
+      },
+      {
+        "t": 528,
+        "type": "animationstart",
+        "detail": {
+          "name": "csGatewayBackdropReveal",
+          "target": "cs-gateway-backdrop"
+        },
+        "htmlClass": "cs-boot-ready",
+        "bodyVisibility": "visible",
+        "websiteOrder": "1",
+        "portfolioOrder": "2"
+      },
+      {
+        "t": 528.2999999998137,
+        "type": "animationstart",
+        "detail": {
+          "name": "csGatewayPanelReveal",
+          "target": "cs-gateway-panel"
+        },
+        "htmlClass": "cs-boot-ready",
+        "bodyVisibility": "visible",
+        "websiteOrder": "1",
+        "portfolioOrder": "2"
+      },
+      {
+        "t": 528.2999999998137,
+        "type": "animationstart",
+        "detail": {
+          "name": "csGatewayTextRise",
+          "target": "cs-gateway-title"
+        },
+        "htmlClass": "cs-boot-ready",
+        "bodyVisibility": "visible",
+        "websiteOrder": "1",
+        "portfolioOrder": "2"
+      },
+      {
+        "t": 528.2999999998137,
+        "type": "animationstart",
+        "detail": {
+          "name": "csGatewayTextRise",
+          "target": "cs-gateway-subtitle"
+        },
+        "htmlClass": "cs-boot-ready",
+        "bodyVisibility": "visible",
+        "websiteOrder": "1",
+        "portfolioOrder": "2"
+      },
+      {
+        "t": 655.0999999996275,
+        "type": "animationstart",
+        "detail": {
+          "name": "csGatewayChoiceReveal",
+          "target": "cs-gateway-choice cs-gateway-choice-website"
+        },
+        "htmlClass": "cs-boot-ready",
+        "bodyVisibility": "visible",
+        "websiteOrder": "1",
+        "portfolioOrder": "2"
+      },
+      {
+        "t": 655.5999999996275,
+        "type": "animationstart",
+        "detail": {
+          "name": "csGatewayChoiceReveal",
+          "target": "cs-gateway-choice cs-gateway-choice-portfolio"
+        },
+        "htmlClass": "cs-boot-ready",
+        "bodyVisibility": "visible",
+        "websiteOrder": "1",
+        "portfolioOrder": "2"
+      }
+    ],
+    "initial": {
+      "htmlClass": "cs-boot-applying",
+      "bodyVisibility": "hidden",
+      "bodyOpacity": "0",
+      "bootHidden": false
+    },
+    "consoleErrors": [],
+    "pageErrors": [],
+    "viewport": {
+      "width": 1366,
+      "height": 768
+    },
+    "reducedMotion": "no-preference",
+    "screenshot": "docs/test-screenshots-v2.10.1/package_default.png"
+  },
+  "layout_only_mobile": {
+    "htmlClass": "cs-boot-ready",
+    "bodyClass": "theme-dark accent-cyan bg-gradient card-glass cs-mode-gateway-open",
+    "activeMode": "portfolio",
+    "bodyVisibility": "visible",
+    "bodyOpacity": "1",
+    "bootHidden": true,
+    "overlayHidden": false,
+    "overlayClass": "cs-gateway-overlay cs-gateway-style-premium cs-gateway-style-selector cs-gateway-advanced cs-gateway-layout-custom",
+    "choiceDisplay": "grid",
+    "choiceGridColumns": "297px",
+    "websiteRect": {
+      "x": 39.053741455078125,
+      "y": 501.12640380859375
+    },
+    "portfolioRect": {
+      "x": 39.13478088378906,
+      "y": 362.53729248046875
+    },
+    "websiteOrder": "2",
+    "portfolioOrder": "1",
+    "panelAnimation": "csGatewayPanelReveal",
+    "websiteAnimation": "csGatewayChoiceReveal",
+    "switchClass": "cs-mode-switch cs-mode-switch-top-right cs-mode-switch-position-custom",
+    "websiteHeaderAdvanced": false,
+    "portfolioHeaderAdvanced": false,
+    "dataStatusHidden": true,
+    "dataStatusTitle": "Content fallback active",
+    "events": [
+      {
+        "t": 154.69999999925494,
+        "type": "html-class",
+        "detail": {},
+        "htmlClass": "cs-boot-applying",
+        "bodyVisibility": "hidden",
+        "websiteOrder": "1",
+        "portfolioOrder": "2"
+      },
+      {
+        "t": 160.19999999925494,
+        "type": "domcontentloaded",
+        "detail": {},
+        "htmlClass": "cs-boot-applying",
+        "bodyVisibility": "hidden",
+        "websiteOrder": "1",
+        "portfolioOrder": "2"
+      },
+      {
+        "t": 253.5,
+        "type": "html-class",
+        "detail": {},
+        "htmlClass": "cs-boot-ready",
+        "bodyVisibility": "visible",
+        "websiteOrder": "2",
+        "portfolioOrder": "1"
+      },
+      {
+        "t": 401.8999999994412,
+        "type": "animationstart",
+        "detail": {
+          "name": "csGatewayBackdropReveal",
+          "target": "cs-gateway-backdrop"
+        },
+        "htmlClass": "cs-boot-ready",
+        "bodyVisibility": "visible",
+        "websiteOrder": "2",
+        "portfolioOrder": "1"
+      },
+      {
+        "t": 402.19999999925494,
+        "type": "animationstart",
+        "detail": {
+          "name": "csGatewayPanelReveal",
+          "target": "cs-gateway-panel"
+        },
+        "htmlClass": "cs-boot-ready",
+        "bodyVisibility": "visible",
+        "websiteOrder": "2",
+        "portfolioOrder": "1"
+      },
+      {
+        "t": 402.19999999925494,
+        "type": "animationstart",
+        "detail": {
+          "name": "csGatewayTextRise",
+          "target": "cs-gateway-title"
+        },
+        "htmlClass": "cs-boot-ready",
+        "bodyVisibility": "visible",
+        "websiteOrder": "2",
+        "portfolioOrder": "1"
+      },
+      {
+        "t": 455.79999999981374,
+        "type": "animationstart",
+        "detail": {
+          "name": "csGatewayTextRise",
+          "target": "cs-gateway-subtitle"
+        },
+        "htmlClass": "cs-boot-ready",
+        "bodyVisibility": "visible",
+        "websiteOrder": "2",
+        "portfolioOrder": "1"
+      },
+      {
+        "t": 506.59999999962747,
+        "type": "animationstart",
+        "detail": {
+          "name": "csGatewayChoiceReveal",
+          "target": "cs-gateway-choice cs-gateway-choice-website"
+        },
+        "htmlClass": "cs-boot-ready",
+        "bodyVisibility": "visible",
+        "websiteOrder": "2",
+        "portfolioOrder": "1"
+      },
+      {
+        "t": 560.5,
+        "type": "animationstart",
+        "detail": {
+          "name": "csGatewayChoiceReveal",
+          "target": "cs-gateway-choice cs-gateway-choice-portfolio"
+        },
+        "htmlClass": "cs-boot-ready",
+        "bodyVisibility": "visible",
+        "websiteOrder": "2",
+        "portfolioOrder": "1"
+      }
+    ],
+    "initial": {
+      "htmlClass": "cs-boot-applying",
+      "bodyVisibility": "hidden",
+      "bodyOpacity": "0",
+      "bootHidden": false
+    },
+    "consoleErrors": [],
+    "pageErrors": [],
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "reducedMotion": "no-preference",
+    "screenshot": "docs/test-screenshots-v2.10.1/layout_only_mobile.png"
+  },
+  "animation_only": {
+    "htmlClass": "cs-boot-ready",
+    "bodyClass": "theme-dark accent-cyan bg-gradient card-glass cs-mode-gateway-open",
+    "activeMode": "portfolio",
+    "bodyVisibility": "visible",
+    "bodyOpacity": "1",
+    "bootHidden": true,
+    "overlayHidden": false,
+    "overlayClass": "cs-gateway-overlay cs-gateway-style-premium cs-gateway-style-selector cs-gateway-advanced cs-gateway-animation-custom",
+    "choiceDisplay": "grid",
+    "choiceGridColumns": "297.5px 297.5px",
+    "websiteRect": {
+      "x": 374.677490234375,
+      "y": 359.6507873535156
+    },
+    "portfolioRect": {
+      "x": 684.177490234375,
+      "y": 359.6507873535156
+    },
+    "websiteOrder": "0",
+    "portfolioOrder": "0",
+    "panelAnimation": "csGatewayAdvancedSlideUp",
+    "websiteAnimation": "csGatewayAdvancedFade",
+    "switchClass": "cs-mode-switch cs-mode-switch-top-right cs-mode-switch-position-custom",
+    "websiteHeaderAdvanced": false,
+    "portfolioHeaderAdvanced": false,
+    "dataStatusHidden": true,
+    "dataStatusTitle": "Content fallback active",
+    "events": [
+      {
+        "t": 149.19999999925494,
+        "type": "html-class",
+        "detail": {},
+        "htmlClass": "cs-boot-applying",
+        "bodyVisibility": "hidden",
+        "websiteOrder": "1",
+        "portfolioOrder": "2"
+      },
+      {
+        "t": 155.3999999994412,
+        "type": "domcontentloaded",
+        "detail": {},
+        "htmlClass": "cs-boot-applying",
+        "bodyVisibility": "hidden",
+        "websiteOrder": "1",
+        "portfolioOrder": "2"
+      },
+      {
+        "t": 275.09999999962747,
+        "type": "html-class",
+        "detail": {},
+        "htmlClass": "cs-boot-ready",
+        "bodyVisibility": "visible",
+        "websiteOrder": "0",
+        "portfolioOrder": "0"
+      },
+      {
+        "t": 447,
+        "type": "animationstart",
+        "detail": {
+          "name": "csGatewayAdvancedFadeBlur",
+          "target": "cs-gateway-backdrop"
+        },
+        "htmlClass": "cs-boot-ready",
+        "bodyVisibility": "visible",
+        "websiteOrder": "0",
+        "portfolioOrder": "0"
+      },
+      {
+        "t": 447.29999999981374,
+        "type": "animationstart",
+        "detail": {
+          "name": "csGatewayAdvancedSlideUp",
+          "target": "cs-gateway-panel"
+        },
+        "htmlClass": "cs-boot-ready",
+        "bodyVisibility": "visible",
+        "websiteOrder": "0",
+        "portfolioOrder": "0"
+      },
+      {
+        "t": 447.29999999981374,
+        "type": "animationstart",
+        "detail": {
+          "name": "csGatewayTextRise",
+          "target": "cs-gateway-title"
+        },
+        "htmlClass": "cs-boot-ready",
+        "bodyVisibility": "visible",
+        "websiteOrder": "0",
+        "portfolioOrder": "0"
+      },
+      {
+        "t": 447.29999999981374,
+        "type": "animationstart",
+        "detail": {
+          "name": "csGatewayTextRise",
+          "target": "cs-gateway-subtitle"
+        },
+        "htmlClass": "cs-boot-ready",
+        "bodyVisibility": "visible",
+        "websiteOrder": "0",
+        "portfolioOrder": "0"
+      },
+      {
+        "t": 574.0999999996275,
+        "type": "animationstart",
+        "detail": {
+          "name": "csGatewayAdvancedFade",
+          "target": "cs-gateway-choice cs-gateway-choice-website"
+        },
+        "htmlClass": "cs-boot-ready",
+        "bodyVisibility": "visible",
+        "websiteOrder": "0",
+        "portfolioOrder": "0"
+      },
+      {
+        "t": 574.7999999998137,
+        "type": "animationstart",
+        "detail": {
+          "name": "csGatewayAdvancedFade",
+          "target": "cs-gateway-choice cs-gateway-choice-portfolio"
+        },
+        "htmlClass": "cs-boot-ready",
+        "bodyVisibility": "visible",
+        "websiteOrder": "0",
+        "portfolioOrder": "0"
+      }
+    ],
+    "initial": {
+      "htmlClass": "cs-boot-applying",
+      "bodyVisibility": "hidden",
+      "bodyOpacity": "0",
+      "bootHidden": false
+    },
+    "consoleErrors": [],
+    "pageErrors": [],
+    "viewport": {
+      "width": 1366,
+      "height": 768
+    },
+    "reducedMotion": "no-preference",
+    "screenshot": "docs/test-screenshots-v2.10.1/animation_only.png"
+  },
+  "switch_position_only": {
+    "htmlClass": "cs-boot-ready",
+    "bodyClass": "theme-dark accent-cyan bg-gradient card-glass cs-mode-gateway-open",
+    "activeMode": "portfolio",
+    "bodyVisibility": "visible",
+    "bodyOpacity": "1",
+    "bootHidden": true,
+    "overlayHidden": false,
+    "overlayClass": "cs-gateway-overlay cs-gateway-style-premium cs-gateway-style-selector cs-gateway-advanced cs-gateway-layout-custom",
+    "choiceDisplay": "grid",
+    "choiceGridColumns": "297.5px 297.5px",
+    "websiteRect": {
+      "x": 372.0403747558594,
+      "y": 348.2856750488281
+    },
+    "portfolioRect": {
+      "x": 681.6046142578125,
+      "y": 348.52386474609375
+    },
+    "websiteOrder": "1",
+    "portfolioOrder": "2",
+    "panelAnimation": "csGatewayPanelReveal",
+    "websiteAnimation": "csGatewayChoiceReveal",
+    "switchClass": "cs-mode-switch cs-mode-switch-top-right cs-mode-switch-position-custom",
+    "websiteHeaderAdvanced": false,
+    "portfolioHeaderAdvanced": false,
+    "dataStatusHidden": true,
+    "dataStatusTitle": "Content fallback active",
+    "events": [
+      {
+        "t": 186.8999999994412,
+        "type": "html-class",
+        "detail": {},
+        "htmlClass": "cs-boot-applying",
+        "bodyVisibility": "hidden",
+        "websiteOrder": "1",
+        "portfolioOrder": "2"
+      },
+      {
+        "t": 190.09999999962747,
+        "type": "domcontentloaded",
+        "detail": {},
+        "htmlClass": "cs-boot-applying",
+        "bodyVisibility": "hidden",
+        "websiteOrder": "1",
+        "portfolioOrder": "2"
+      },
+      {
+        "t": 306.59999999962747,
+        "type": "html-class",
+        "detail": {},
+        "htmlClass": "cs-boot-ready",
+        "bodyVisibility": "visible",
+        "websiteOrder": "1",
+        "portfolioOrder": "2"
+      },
+      {
+        "t": 493.69999999925494,
+        "type": "animationstart",
+        "detail": {
+          "name": "csGatewayBackdropReveal",
+          "target": "cs-gateway-backdrop"
+        },
+        "htmlClass": "cs-boot-ready",
+        "bodyVisibility": "visible",
+        "websiteOrder": "1",
+        "portfolioOrder": "2"
+      },
+      {
+        "t": 493.8999999994412,
+        "type": "animationstart",
+        "detail": {
+          "name": "csGatewayPanelReveal",
+          "target": "cs-gateway-panel"
+        },
+        "htmlClass": "cs-boot-ready",
+        "bodyVisibility": "visible",
+        "websiteOrder": "1",
+        "portfolioOrder": "2"
+      },
+      {
+        "t": 494,
+        "type": "animationstart",
+        "detail": {
+          "name": "csGatewayTextRise",
+          "target": "cs-gateway-title"
+        },
+        "htmlClass": "cs-boot-ready",
+        "bodyVisibility": "visible",
+        "websiteOrder": "1",
+        "portfolioOrder": "2"
+      },
+      {
+        "t": 494,
+        "type": "animationstart",
+        "detail": {
+          "name": "csGatewayTextRise",
+          "target": "cs-gateway-subtitle"
+        },
+        "htmlClass": "cs-boot-ready",
+        "bodyVisibility": "visible",
+        "websiteOrder": "1",
+        "portfolioOrder": "2"
+      },
+      {
+        "t": 623,
+        "type": "animationstart",
+        "detail": {
+          "name": "csGatewayChoiceReveal",
+          "target": "cs-gateway-choice cs-gateway-choice-website"
+        },
+        "htmlClass": "cs-boot-ready",
+        "bodyVisibility": "visible",
+        "websiteOrder": "1",
+        "portfolioOrder": "2"
+      },
+      {
+        "t": 623.5999999996275,
+        "type": "animationstart",
+        "detail": {
+          "name": "csGatewayChoiceReveal",
+          "target": "cs-gateway-choice cs-gateway-choice-portfolio"
+        },
+        "htmlClass": "cs-boot-ready",
+        "bodyVisibility": "visible",
+        "websiteOrder": "1",
+        "portfolioOrder": "2"
+      }
+    ],
+    "initial": {
+      "htmlClass": "cs-boot-applying",
+      "bodyVisibility": "hidden",
+      "bodyOpacity": "0",
+      "bootHidden": false
+    },
+    "consoleErrors": [],
+    "pageErrors": [],
+    "viewport": {
+      "width": 1366,
+      "height": 768
+    },
+    "reducedMotion": "no-preference",
+    "screenshot": "docs/test-screenshots-v2.10.1/switch_position_only.png"
+  },
+  "reduced_motion_animation": {
+    "htmlClass": "cs-boot-ready",
+    "bodyClass": "theme-dark accent-cyan bg-gradient card-glass cs-mode-gateway-open",
+    "activeMode": "portfolio",
+    "bodyVisibility": "visible",
+    "bodyOpacity": "1",
+    "bootHidden": true,
+    "overlayHidden": false,
+    "overlayClass": "cs-gateway-overlay cs-gateway-style-premium cs-gateway-style-selector cs-gateway-advanced cs-gateway-animation-custom",
+    "choiceDisplay": "grid",
+    "choiceGridColumns": "297.5px 297.5px",
+    "websiteRect": {
+      "x": 374.677490234375,
+      "y": 359.6507873535156
+    },
+    "portfolioRect": {
+      "x": 684.177490234375,
+      "y": 359.6507873535156
+    },
+    "websiteOrder": "0",
+    "portfolioOrder": "0",
+    "panelAnimation": "none",
+    "websiteAnimation": "none",
+    "switchClass": "cs-mode-switch cs-mode-switch-top-right cs-mode-switch-position-custom",
+    "websiteHeaderAdvanced": false,
+    "portfolioHeaderAdvanced": false,
+    "dataStatusHidden": true,
+    "dataStatusTitle": "Content fallback active",
+    "events": [
+      {
+        "t": 163.79999999981374,
+        "type": "html-class",
+        "detail": {},
+        "htmlClass": "cs-boot-applying",
+        "bodyVisibility": "hidden",
+        "websiteOrder": "1",
+        "portfolioOrder": "2"
+      },
+      {
+        "t": 169.59999999962747,
+        "type": "domcontentloaded",
+        "detail": {},
+        "htmlClass": "cs-boot-applying",
+        "bodyVisibility": "hidden",
+        "websiteOrder": "1",
+        "portfolioOrder": "2"
+      },
+      {
+        "t": 307.8999999994412,
+        "type": "html-class",
+        "detail": {},
+        "htmlClass": "cs-boot-ready",
+        "bodyVisibility": "hidden",
+        "websiteOrder": "0",
+        "portfolioOrder": "0"
+      }
+    ],
+    "initial": {
+      "htmlClass": "cs-boot-applying",
+      "bodyVisibility": "hidden",
+      "bodyOpacity": "0",
+      "bootHidden": false
+    },
+    "consoleErrors": [],
+    "pageErrors": [],
+    "viewport": {
+      "width": 1366,
+      "height": 768
+    },
+    "reducedMotion": "reduce",
+    "screenshot": "docs/test-screenshots-v2.10.1/reduced_motion_animation.png"
+  },
+  "json_failure": {
+    "htmlClass": "cs-boot-ready",
+    "bodyClass": "theme-dark accent-cyan bg-gradient card-glass cs-mode-gateway-open",
+    "activeMode": "portfolio",
+    "bodyVisibility": "visible",
+    "bodyOpacity": "1",
+    "bootHidden": true,
+    "overlayHidden": false,
+    "overlayClass": "cs-gateway-overlay cs-gateway-style-premium cs-gateway-style-selector cs-gateway-advanced cs-gateway-layout-custom",
+    "choiceDisplay": "grid",
+    "choiceGridColumns": "297.5px 297.5px",
+    "websiteRect": {
+      "x": 372.029052734375,
+      "y": 348.24566650390625
+    },
+    "portfolioRect": {
+      "x": 681.5810546875,
+      "y": 348.43634033203125
+    },
+    "websiteOrder": "1",
+    "portfolioOrder": "2",
+    "panelAnimation": "csGatewayPanelReveal",
+    "websiteAnimation": "csGatewayChoiceReveal",
+    "switchClass": "cs-mode-switch cs-mode-switch-top-right cs-mode-switch-position-custom",
+    "websiteHeaderAdvanced": false,
+    "portfolioHeaderAdvanced": false,
+    "dataStatusHidden": false,
+    "dataStatusTitle": "Content fallback active",
+    "events": [
+      {
+        "t": 149.40000000037253,
+        "type": "html-class",
+        "detail": {},
+        "htmlClass": "cs-boot-applying",
+        "bodyVisibility": "hidden",
+        "websiteOrder": "1",
+        "portfolioOrder": "2"
+      },
+      {
+        "t": 156.20000000018626,
+        "type": "domcontentloaded",
+        "detail": {},
+        "htmlClass": "cs-boot-applying",
+        "bodyVisibility": "hidden",
+        "websiteOrder": "1",
+        "portfolioOrder": "2"
+      },
+      {
+        "t": 405,
+        "type": "html-class",
+        "detail": {},
+        "htmlClass": "cs-boot-ready",
+        "bodyVisibility": "visible",
+        "websiteOrder": "1",
+        "portfolioOrder": "2"
+      },
+      {
+        "t": 497.79999999981374,
+        "type": "animationstart",
+        "detail": {
+          "name": "csGatewayBackdropReveal",
+          "target": "cs-gateway-backdrop"
+        },
+        "htmlClass": "cs-boot-ready",
+        "bodyVisibility": "visible",
+        "websiteOrder": "1",
+        "portfolioOrder": "2"
+      },
+      {
+        "t": 498,
+        "type": "animationstart",
+        "detail": {
+          "name": "csGatewayPanelReveal",
+          "target": "cs-gateway-panel"
+        },
+        "htmlClass": "cs-boot-ready",
+        "bodyVisibility": "visible",
+        "websiteOrder": "1",
+        "portfolioOrder": "2"
+      },
+      {
+        "t": 498,
+        "type": "animationstart",
+        "detail": {
+          "name": "csGatewayTextRise",
+          "target": "cs-gateway-title"
+        },
+        "htmlClass": "cs-boot-ready",
+        "bodyVisibility": "visible",
+        "websiteOrder": "1",
+        "portfolioOrder": "2"
+      },
+      {
+        "t": 727.1000000005588,
+        "type": "animationstart",
+        "detail": {
+          "name": "csGatewayTextRise",
+          "target": "cs-gateway-subtitle"
+        },
+        "htmlClass": "cs-boot-ready",
+        "bodyVisibility": "visible",
+        "websiteOrder": "1",
+        "portfolioOrder": "2"
+      },
+      {
+        "t": 727.6000000005588,
+        "type": "animationstart",
+        "detail": {
+          "name": "csGatewayChoiceReveal",
+          "target": "cs-gateway-choice cs-gateway-choice-website"
+        },
+        "htmlClass": "cs-boot-ready",
+        "bodyVisibility": "visible",
+        "websiteOrder": "1",
+        "portfolioOrder": "2"
+      },
+      {
+        "t": 727.6000000005588,
+        "type": "animationstart",
+        "detail": {
+          "name": "csGatewayChoiceReveal",
+          "target": "cs-gateway-choice cs-gateway-choice-portfolio"
+        },
+        "htmlClass": "cs-boot-ready",
+        "bodyVisibility": "visible",
+        "websiteOrder": "1",
+        "portfolioOrder": "2"
+      }
+    ],
+    "initial": {
+      "htmlClass": "cs-boot-applying",
+      "bodyVisibility": "hidden",
+      "bodyOpacity": "0",
+      "bootHidden": false
+    },
+    "consoleErrors": [
+      "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+      "Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
+    ],
+    "pageErrors": [],
+    "viewport": {
+      "width": 1366,
+      "height": 768
+    },
+    "reducedMotion": "no-preference",
+    "screenshot": "docs/test-screenshots-v2.10.1/json_failure.png"
+  }
+}

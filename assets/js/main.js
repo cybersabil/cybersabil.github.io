@@ -443,6 +443,41 @@ function safeUrl(href) {
     return value;
 }
 
+/* CMS record and link normalization helpers
+   Purpose: Gives every CMS list item the same trim, malformed-entry and URL contract. */
+function safeRecord(value) {
+    return value && typeof value === "object" && !Array.isArray(value) ? value : {};
+}
+
+function cmsText(value, fallback = "") {
+    const normalized = String(value ?? "").trim();
+    return normalized || fallback;
+}
+
+function cmsOptionalText(value) {
+    return String(value ?? "").trim();
+}
+
+function cmsLink(rawHref) {
+    const raw = String(rawHref ?? "").trim();
+    const href = safeUrl(raw);
+    const usable = Boolean(raw && raw !== "#" && href !== "#");
+    return { raw, href, usable, external: usable && /^https?:\/\//i.test(href) };
+}
+
+function anchorHtml(rawHref, label, className = "", fallbackLabel = "Open") {
+    const link = cmsLink(rawHref);
+    if (!link.usable) return "";
+    const text = cmsText(label, fallbackLabel);
+    const target = link.external ? ' target="_blank" rel="noopener noreferrer"' : "";
+    const classAttr = className ? ` class="${escapeHtml(className)}"` : "";
+    return `<a${classAttr} href="${escapeHtml(link.href)}"${target}>${escapeHtml(text)}</a>`;
+}
+
+function isComingSoonCommand(value) {
+    return cmsOptionalText(value).replace(/\s+/g, " ").toLowerCase() === "coming soon";
+}
+
 /* Yes/no helper
    Purpose: Allows Pages CMS fields to use yes/no, true/false, on/off or enabled/disabled values safely. */
 const yes = (value, fallback = true) => {
@@ -599,12 +634,63 @@ function setLink(id, href, text) {
     const node = $(id);
     if (!node) return;
     const nextHref = safeUrl(href);
+    node.removeAttribute("target");
+    node.removeAttribute("rel");
     node.href = nextHref;
     if (/^https?:\/\//i.test(nextHref)) {
         node.setAttribute("target", "_blank");
         node.setAttribute("rel", "noopener noreferrer");
     }
     if (text !== undefined) node.textContent = text || href || "";
+}
+
+/* Portfolio contact normalization
+   Purpose: Gives every Contact CMS field a deterministic trim, fallback, visibility and URL-safety contract. */
+function normalizePortfolioContact(input) {
+    const source = input && typeof input === "object" && !Array.isArray(input) ? input : {};
+    const requiredText = (key, fallback) => String(source[key] ?? "").trim() || fallback;
+    const optionalText = (key, fallback = "") => {
+        if (source[key] === undefined || source[key] === null) return fallback;
+        return String(source[key]).trim();
+    };
+    return {
+        heading: requiredText("heading", "Let’s build reliable IT support tools"),
+        description: optionalText("description"),
+        emailLabel: optionalText("emailLabel", "Email:"),
+        email: optionalText("email"),
+        githubLabel: optionalText("githubLabel", "GitHub:"),
+        githubText: optionalText("githubText"),
+        githubLink: optionalText("githubLink"),
+        websiteLabel: optionalText("websiteLabel", "Website:"),
+        websiteText: optionalText("websiteText"),
+        websiteLink: optionalText("websiteLink"),
+        ctaText: optionalText("ctaText"),
+        ctaLink: optionalText("ctaLink")
+    };
+}
+
+function isValidPublicEmail(value) {
+    const email = String(value || "").trim();
+    if (!email || /add your email/i.test(email) || /[\r\n]/.test(email)) return false;
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function applyOptionalContactLink(rowId, linkId, href, text, requireText = false) {
+    const row = $(rowId);
+    const link = $(linkId);
+    if (!link) return false;
+    const rawHref = String(href || "").trim();
+    const safeHref = safeUrl(rawHref);
+    const label = String(text || "").trim();
+    const usable = Boolean(rawHref && rawHref !== "#" && safeHref !== "#" && (!requireText || label));
+    if (row) row.classList.toggle("cs-mode-hidden", !usable);
+    link.classList.toggle("cs-mode-hidden", !usable);
+    if (!usable) {
+        setLink(linkId, "#", "");
+        return false;
+    }
+    setLink(linkId, safeHref, label || rawHref);
+    return true;
 }
 
 /* Visibility helper
@@ -632,6 +718,7 @@ function renderDataFallbackStatus(settings = {}) {
     const banner = $("csDataStatus");
     if (!banner) return;
     if (!csDataFailures.length || !yes(settings.showDataLoadWarning)) {
+        if (banner.dataset.csPersistentWarning === "true") return;
         banner.hidden = true;
         return;
     }
@@ -650,14 +737,56 @@ function renderDataFallbackStatus(settings = {}) {
     }
 }
 
+/* SEO renderer helpers
+   Purpose: Keeps runtime metadata safe, trimmed and consistent with build-time HTML.
+   Canonical, Open Graph and Twitter image/URL fields accept only absolute HTTP(S) URLs. */
+function safeAbsoluteHttpUrl(value, fallback) {
+    const raw = String(value ?? "").trim();
+    if (!raw) return fallback;
+    try {
+        const parsed = new URL(raw);
+        return ["http:", "https:"].includes(parsed.protocol) ? parsed.href : fallback;
+    } catch (error) {
+        return fallback;
+    }
+}
+
+function normalizeSeo(input, site = {}) {
+    const source = input && typeof input === "object" && !Array.isArray(input) ? input : {};
+    const text = (key, fallback = "") => String(source[key] ?? "").trim() || fallback;
+    const brand = String(site?.brandName || "CyberSabil").trim() || "CyberSabil";
+    const pageTitle = text("pageTitle", `${brand} IT Tools`);
+    const description = text("metaDescription", String(site?.heroDescription || "CyberSabil IT tools and portfolio.").trim());
+    const canonicalUrl = safeAbsoluteHttpUrl(source.canonicalUrl, "https://cybersabil.github.io/");
+    const ogUrl = safeAbsoluteHttpUrl(source.ogUrl, canonicalUrl);
+    const ogImage = safeAbsoluteHttpUrl(source.ogImage, "https://cybersabil.github.io/media/social-preview.png");
+    const twitterImage = safeAbsoluteHttpUrl(source.twitterImage, ogImage);
+    const ogTypeRaw = String(source.ogType ?? "").trim().toLowerCase();
+    const ogType = /^[a-z][a-z0-9._:-]{0,49}$/.test(ogTypeRaw) ? ogTypeRaw : "website";
+    const twitterCard = safeChoice(source.twitterCard, ["summary_large_image", "summary"], "summary_large_image");
+
+    return {
+        pageTitle,
+        metaDescription: description,
+        canonicalUrl,
+        ogType,
+        ogUrl,
+        ogTitle: text("ogTitle", pageTitle),
+        ogDescription: text("ogDescription", description),
+        ogImage,
+        twitterCard,
+        twitterTitle: text("twitterTitle", text("ogTitle", pageTitle)),
+        twitterDescription: text("twitterDescription", text("ogDescription", description)),
+        twitterImage,
+        themeColor: safeHexColor(source.themeColor, "#120821")
+    };
+}
+
 /* SEO renderer
-   Purpose: Allows page title, meta description and social preview text to be controlled from data/seo.json. */
+   Purpose: Applies current page title, description and social metadata without retaining stale CMS values. */
 function applySeo(seo, site) {
-    const pageTitle = seo.pageTitle || `${site.brandName || "CyberSabil"} IT Tools`;
-    const description = seo.metaDescription || site.heroDescription || "CyberSabil IT tools and portfolio.";
-    const canonicalUrl = safeUrl(seo.canonicalUrl || seo.ogUrl || "https://cybersabil.github.io/");
-    const previewImage = safeUrl(seo.ogImage || seo.twitterImage || "https://cybersabil.github.io/media/social-preview.svg");
-    document.title = pageTitle;
+    const normalized = normalizeSeo(seo, site);
+    document.title = normalized.pageTitle;
 
     const upsertMeta = (selector, attr, value) => {
         let node = document.head.querySelector(selector);
@@ -669,7 +798,7 @@ function applySeo(seo, site) {
             if (propertyMatch) node.setAttribute("property", propertyMatch[1]);
             document.head.appendChild(node);
         }
-        node.setAttribute(attr, value || "");
+        node.setAttribute(attr, value);
     };
 
     const upsertLink = (selector, relValue, hrefValue) => {
@@ -679,21 +808,21 @@ function applySeo(seo, site) {
             node.setAttribute("rel", relValue);
             document.head.appendChild(node);
         }
-        node.setAttribute("href", hrefValue || "https://cybersabil.github.io/");
+        node.setAttribute("href", hrefValue);
     };
 
-    upsertLink('link[rel="canonical"]', "canonical", canonicalUrl);
-    upsertMeta('meta[name="description"]', "content", description);
-    upsertMeta('meta[property="og:type"]', "content", seo.ogType || "website");
-    upsertMeta('meta[property="og:url"]', "content", seo.ogUrl || canonicalUrl);
-    upsertMeta('meta[property="og:title"]', "content", seo.ogTitle || pageTitle);
-    upsertMeta('meta[property="og:description"]', "content", seo.ogDescription || description);
-    upsertMeta('meta[property="og:image"]', "content", previewImage);
-    upsertMeta('meta[name="twitter:card"]', "content", seo.twitterCard || "summary_large_image");
-    upsertMeta('meta[name="twitter:title"]', "content", seo.twitterTitle || seo.ogTitle || pageTitle);
-    upsertMeta('meta[name="twitter:description"]', "content", seo.twitterDescription || seo.ogDescription || description);
-    upsertMeta('meta[name="twitter:image"]', "content", seo.twitterImage || previewImage);
-    if (seo.themeColor) upsertMeta('meta[name="theme-color"]', "content", seo.themeColor);
+    upsertLink('link[rel="canonical"]', "canonical", normalized.canonicalUrl);
+    upsertMeta('meta[name="description"]', "content", normalized.metaDescription);
+    upsertMeta('meta[property="og:type"]', "content", normalized.ogType);
+    upsertMeta('meta[property="og:url"]', "content", normalized.ogUrl);
+    upsertMeta('meta[property="og:title"]', "content", normalized.ogTitle);
+    upsertMeta('meta[property="og:description"]', "content", normalized.ogDescription);
+    upsertMeta('meta[property="og:image"]', "content", normalized.ogImage);
+    upsertMeta('meta[name="twitter:card"]', "content", normalized.twitterCard);
+    upsertMeta('meta[name="twitter:title"]', "content", normalized.twitterTitle);
+    upsertMeta('meta[name="twitter:description"]', "content", normalized.twitterDescription);
+    upsertMeta('meta[name="twitter:image"]', "content", normalized.twitterImage);
+    upsertMeta('meta[name="theme-color"]', "content", normalized.themeColor);
 }
 
 
@@ -721,6 +850,7 @@ async function copyTextToClipboard(text, button, settings = {}) {
     const copiedText = settings.copyButtonSuccessTitle || "Copied";
     const copyText = settings.copyButtonDefaultTitle || "Copy";
     const failedText = settings.copyButtonErrorTitle || "Copy failed";
+    const defaultAriaText = button._csDefaultAria || settings.copyButtonAriaLabel || "Copy command";
 
     try {
         if (navigator.clipboard && window.isSecureContext) {
@@ -740,16 +870,19 @@ async function copyTextToClipboard(text, button, settings = {}) {
         button.classList.add("copied");
         button.setAttribute("title", copiedText);
         button.setAttribute("aria-label", copiedText);
+        button.dataset.tooltip = copiedText;
 
-        setTimeout(() => {
+        window.setTimeout(() => {
             button.classList.remove("copied");
             button.setAttribute("title", copyText);
-            button.setAttribute("aria-label", copyText);
+            button.setAttribute("aria-label", defaultAriaText);
+            button.dataset.tooltip = copyText;
         }, 1400);
     } catch (error) {
         console.warn("Copy failed", error);
         button.setAttribute("title", failedText);
         button.setAttribute("aria-label", failedText);
+        button.dataset.tooltip = failedText;
     }
 }
 
@@ -773,6 +906,8 @@ function addCopyButtons(settings = {}) {
         button.className = "copy-btn";
         button.setAttribute("aria-label", ariaText);
         button.setAttribute("title", copyText);
+        button._csDefaultAria = ariaText;
+        button.dataset.tooltip = copyText;
         button.innerHTML = copyIconSvg();
 
         button.addEventListener("click", () => {
@@ -810,58 +945,84 @@ function applyDesign(design) {
 
 /* Existing website site-data renderer
    Purpose: Renders brand, hero, buttons, GitHub link, about text and footer from data/site.json. */
-function renderSite(site) {
-    setText("brandName", site.brandName || "CyberSabil");
-    setText("logoText", site.logoText || "CS");
-    setText("footerBrand", `${site.brandName || "CyberSabil"} IT Tools`);
-    setText("badge", site.badge || "");
-    setText("heroTitleBefore", site.heroTitleBefore || "");
-    setText("heroTitleHighlight", site.heroTitleHighlight || "");
-    setText("heroDescription", site.heroDescription || "");
-    setLink("primaryButton", site.primaryButtonLink || "#tools", site.primaryButtonText || "View Tools");
-    setLink("secondaryButton", site.secondaryButtonLink || "#downloads", site.secondaryButtonText || "Download");
-    setLink("githubNav", site.githubProfileLink || "https://github.com/cybersabil", site.githubNavText || "GitHub");
-    setText("aboutTitle", site.aboutTitle || "About");
-    setText("aboutDescription", site.aboutDescription || "");
-    setText("footerText", site.footerText || "");
+function renderSite(input) {
+    const site = safeRecord(input);
+    const brand = cmsText(site.brandName, "CyberSabil");
+    setText("brandName", brand);
+    setText("logoText", cmsText(site.logoText, "CS"));
+    setText("footerBrand", `${brand} IT Tools`);
+    setText("badge", cmsOptionalText(site.badge));
+    setText("heroTitleBefore", cmsOptionalText(site.heroTitleBefore));
+    setText("heroTitleHighlight", cmsOptionalText(site.heroTitleHighlight));
+    setText("heroDescription", cmsOptionalText(site.heroDescription));
+    setLink("primaryButton", cmsText(site.primaryButtonLink, "#tools"), cmsText(site.primaryButtonText, "View Tools"));
+    setLink("secondaryButton", cmsText(site.secondaryButtonLink, "#downloads"), cmsText(site.secondaryButtonText, "Download"));
+    setLink("githubNav", cmsText(site.githubProfileLink, "https://github.com/cybersabil"), cmsText(site.githubNavText, "GitHub"));
+    setText("aboutTitle", cmsText(site.aboutTitle, "About"));
+    setText("aboutDescription", cmsOptionalText(site.aboutDescription));
+    setText("footerText", cmsOptionalText(site.footerText));
 }
 
 /* Website section renderer
    Purpose: Gives CMS control over navigation labels, section headings, subtitles, warning text and quick command labels. */
-function renderSections(sections) {
-    setText("navToolsLabel", sections.navToolsLabel || "Tools");
-    setText("navDownloadsLabel", sections.navDownloadsLabel || "Downloads");
-    setText("navProjectsLabel", sections.navProjectsLabel || "Projects");
-    setText("navDocsLabel", sections.navDocsLabel || "Docs");
+function renderSections(input) {
+    const sections = safeRecord(input);
+    setText("navToolsLabel", cmsText(sections.navToolsLabel, "Tools"));
+    setText("navDownloadsLabel", cmsText(sections.navDownloadsLabel, "Downloads"));
+    setText("navProjectsLabel", cmsText(sections.navProjectsLabel, "Projects"));
+    setText("navDocsLabel", cmsText(sections.navDocsLabel, "Docs"));
 
-    setText("toolsSectionTitle", sections.toolsTitle || "Featured IT tools");
-    setText("toolsSectionSubtitle", sections.toolsSubtitle || "Problem-solving utilities built for real Windows support workflows.");
-    setText("downloadsSectionTitle", sections.downloadsTitle || "Downloads");
-    setText("downloadsSectionSubtitle", sections.downloadsSubtitle || "Official CyberSabil downloads, live scripts and release links.");
-    setText("downloadsWarning", sections.downloadsWarning || "Safety note: Download tools only from official CyberSabil GitHub links. Do not run unknown scripts or EXE files from untrusted sources.");
-    setText("projectsSectionTitle", sections.projectsTitle || "Projects portfolio");
-    setText("projectsSectionSubtitle", sections.projectsSubtitle || "A portfolio of practical IT tools, scripts and GitHub-based deployments.");
-    setText("skillsSectionTitle", sections.skillsTitle || "Skills and focus areas");
-    setText("skillsSectionSubtitle", sections.skillsSubtitle || "Core areas behind CyberSabil tools and support workflows.");
-    setText("quickCommandsTitle", sections.quickCommandsTitle || "Quick commands");
-    setText("quickCommandsSubtitle", sections.quickCommandsSubtitle || "Copy commonly used support commands directly from the page.");
-    setText("docsSectionTitle", sections.docsTitle || "Documentation and guides");
-    setText("docsSectionSubtitle", sections.docsSubtitle || "Simple how-to guides for users and support engineers.");
-    setText("faqSectionTitle", sections.faqTitle || "FAQ");
-    setText("faqSectionSubtitle", sections.faqSubtitle || "Common questions about CyberSabil tools and scripts.");
+    setText("toolsSectionTitle", cmsText(sections.toolsTitle, "Featured IT tools"));
+    setText("toolsSectionSubtitle", cmsText(sections.toolsSubtitle, "Problem-solving utilities built for real Windows support workflows."));
+    setText("downloadsSectionTitle", cmsText(sections.downloadsTitle, "Downloads"));
+    setText("downloadsSectionSubtitle", cmsText(sections.downloadsSubtitle, "Official CyberSabil downloads, live scripts and release links."));
+    setText("downloadsWarning", cmsText(sections.downloadsWarning, "Safety note: Download tools only from official CyberSabil GitHub links. Do not run unknown scripts or EXE files from untrusted sources."));
+    setText("projectsSectionTitle", cmsText(sections.projectsTitle, "Projects portfolio"));
+    setText("projectsSectionSubtitle", cmsText(sections.projectsSubtitle, "A portfolio of practical IT tools, scripts and GitHub-based deployments."));
+    setText("skillsSectionTitle", cmsText(sections.skillsTitle, "Skills and focus areas"));
+    setText("skillsSectionSubtitle", cmsText(sections.skillsSubtitle, "Core areas behind CyberSabil tools and support workflows."));
+    setText("quickCommandsTitle", cmsText(sections.quickCommandsTitle, "Quick commands"));
+    setText("quickCommandsSubtitle", cmsText(sections.quickCommandsSubtitle, "Copy commonly used support commands directly from the page."));
+    setText("docsSectionTitle", cmsText(sections.docsTitle, "Documentation and guides"));
+    setText("docsSectionSubtitle", cmsText(sections.docsSubtitle, "Simple how-to guides for users and support engineers."));
+    setText("faqSectionTitle", cmsText(sections.faqTitle, "FAQ"));
+    setText("faqSectionSubtitle", cmsText(sections.faqSubtitle, "Common questions about CyberSabil tools and scripts."));
 }
 
 /* Existing website section visibility renderer
    Purpose: Adds CMS show/hide control for all major website sections without deleting their HTML. */
-function applySiteSettings(settings) {
-    setVisible("tools", yes(settings.showToolsSection));
-    setVisible("downloads", yes(settings.showDownloadsSection));
-    setVisible("projects", yes(settings.showProjectsSection));
-    setVisible("skills", yes(settings.showSkillsSection));
-    setVisible("docs", yes(settings.showDocsSection));
-    setVisible("faq", yes(settings.showFaqSection));
-    setVisible("about", yes(settings.showAboutSection));
-    setVisible("quickCommandsCard", yes(settings.showQuickCommands));
+function applySiteSettings(input) {
+    const settings = safeRecord(input);
+    const visibility = {
+        tools: yes(settings.showToolsSection),
+        downloads: yes(settings.showDownloadsSection),
+        projects: yes(settings.showProjectsSection),
+        skills: yes(settings.showSkillsSection),
+        docs: yes(settings.showDocsSection),
+        faq: yes(settings.showFaqSection),
+        about: yes(settings.showAboutSection),
+        quickCommands: yes(settings.showQuickCommands)
+    };
+    setVisible("tools", visibility.tools);
+    setVisible("downloads", visibility.downloads);
+    setVisible("projects", visibility.projects);
+    setVisible("skills", visibility.skills);
+    setVisible("docs", visibility.docs);
+    setVisible("faq", visibility.faq);
+    setVisible("about", visibility.about);
+    setVisible("quickCommandsCard", visibility.quickCommands);
+
+    [["navToolsLabel", visibility.tools], ["navDownloadsLabel", visibility.downloads], ["navProjectsLabel", visibility.projects], ["navDocsLabel", visibility.docs]]
+        .forEach(([id, visible]) => $(id)?.classList.toggle("hide", !visible));
+
+    const syncSectionCta = (id, sectionId, visible) => {
+        const node = $(id);
+        if (!node) return;
+        const href = String(node.getAttribute("href") || "").trim();
+        node.classList.toggle("hide", href === `#${sectionId}` && !visible);
+    };
+    syncSectionCta("primaryButton", "tools", visibility.tools);
+    syncSectionCta("secondaryButton", "downloads", visibility.downloads);
 }
 
 /* Tool card renderer
@@ -870,17 +1031,42 @@ function renderTools(items, settings = {}) {
     const toolCards = $("toolCards");
     const terminalCommands = $("terminalCommands");
     const commandList = $("commandList");
-    const readyMessage = settings.terminalReadyMessage || "CyberSabil tools ready.";
+    const readyMessage = cmsText(settings.terminalReadyMessage, "CyberSabil tools ready.");
+    const normalized = (Array.isArray(items) ? items : []).map((entry) => {
+        const tool = safeRecord(entry);
+        return {
+            icon: cmsOptionalText(tool.icon),
+            status: cmsOptionalText(tool.status),
+            title: cmsText(tool.title, "Untitled tool"),
+            description: cmsOptionalText(tool.description),
+            problem: cmsOptionalText(tool.problem),
+            solution: cmsOptionalText(tool.solution),
+            technology: cmsOptionalText(tool.technology),
+            command: cmsOptionalText(tool.command),
+            buttonText: cmsText(tool.buttonText, "Open"),
+            buttonLink: cmsOptionalText(tool.buttonLink)
+        };
+    });
 
     if (toolCards) {
-        if (!items.length) {
+        if (!normalized.length) {
             renderEmptyState(toolCards, "No tools found", "Add tools in data/tools.json from Pages CMS.");
         } else {
-            toolCards.innerHTML = items.map((tool) => `<div class="card"><div class="icon">${escapeHtml(tool.icon)}</div><span class="status">${escapeHtml(tool.status)}</span><h3>${escapeHtml(tool.title)}</h3><p>${escapeHtml(tool.description)}</p><br><p><strong>Problem:</strong> ${escapeHtml(tool.problem)}</p><p><strong>Solution:</strong> ${escapeHtml(tool.solution)}</p><p class="small"><strong>Tech:</strong> ${escapeHtml(tool.technology)}</p>${tool.command && tool.command !== "Coming soon" ? `<div class="code">${escapeHtml(tool.command)}</div>` : ""}${tool.buttonLink ? `<br><a class="btn secondary" href="${escapeHtml(safeUrl(tool.buttonLink))}" target="_blank" rel="noopener noreferrer">${escapeHtml(tool.buttonText || "Open")}</a>` : ""}</div>`).join("");
+            toolCards.innerHTML = normalized.map((tool) => {
+                const icon = tool.icon ? `<div class="icon">${escapeHtml(tool.icon)}</div>` : "";
+                const status = tool.status ? `<span class="status">${escapeHtml(tool.status)}</span>` : "";
+                const description = tool.description ? `<p>${escapeHtml(tool.description)}</p>` : "";
+                const problem = tool.problem ? `<p><strong>Problem:</strong> ${escapeHtml(tool.problem)}</p>` : "";
+                const solution = tool.solution ? `<p><strong>Solution:</strong> ${escapeHtml(tool.solution)}</p>` : "";
+                const tech = tool.technology ? `<p class="small"><strong>Tech:</strong> ${escapeHtml(tool.technology)}</p>` : "";
+                const command = tool.command && !isComingSoonCommand(tool.command) ? `<div class="code">${escapeHtml(tool.command)}</div>` : "";
+                const button = anchorHtml(tool.buttonLink, tool.buttonText, "btn secondary", "Open");
+                return `<article class="card cs-tool-card">${icon}${status}<h3>${escapeHtml(tool.title)}</h3>${description}${problem}${solution}${tech}${command}${button ? `<div class="actions cs-card-actions">${button}</div>` : ""}</article>`;
+            }).join("");
         }
     }
 
-    const commandItems = items.filter((tool) => tool.command && tool.command !== "Coming soon");
+    const commandItems = normalized.filter((tool) => tool.command && !isComingSoonCommand(tool.command));
     if (terminalCommands) {
         terminalCommands.innerHTML = commandItems.map((tool) => `<div><span class="prompt">PS&gt;</span> <span class="cmd">${escapeHtml(tool.command)}</span></div><div>${escapeHtml(tool.title)}</div><br>`).join("") + `<div style="color:var(--accent2)">${escapeHtml(readyMessage)}</div>`;
     }
@@ -888,7 +1074,7 @@ function renderTools(items, settings = {}) {
         if (!commandItems.length) {
             renderEmptyState(commandList, "No commands available", "Add a command field in data/tools.json to show quick commands.");
         } else {
-            commandList.innerHTML = commandItems.map((tool) => `<p class="small"><strong>${escapeHtml(tool.title)}</strong></p><div class="code">${escapeHtml(tool.command)}</div>`).join("");
+            commandList.innerHTML = commandItems.map((tool) => `<div class="cs-command-item"><p class="small"><strong>${escapeHtml(tool.title)}</strong></p><div class="code">${escapeHtml(tool.command)}</div></div>`).join("");
         }
     }
 }
@@ -898,16 +1084,32 @@ function renderTools(items, settings = {}) {
 function renderDownloads(items) {
     const grid = $("downloadsGrid");
     if (!grid) return;
-    if (!items.length) {
+    const normalized = (Array.isArray(items) ? items : []).map((entry) => {
+        const download = safeRecord(entry);
+        return {
+            title: cmsText(download.title, "Untitled download"),
+            version: cmsOptionalText(download.version),
+            type: cmsOptionalText(download.type),
+            description: cmsOptionalText(download.description),
+            downloadLink: cmsOptionalText(download.downloadLink),
+            releaseLink: cmsOptionalText(download.releaseLink),
+            checksum: cmsOptionalText(download.checksum)
+        };
+    });
+    if (!normalized.length) {
         renderEmptyState(grid, "No downloads found", "Add downloads in data/downloads.json from Pages CMS.");
         return;
     }
-    grid.innerHTML = items.map((download) => {
+    grid.innerHTML = normalized.map((download) => {
         const actions = [
-            download.downloadLink ? `<a class="btn primary" href="${escapeHtml(safeUrl(download.downloadLink))}" target="_blank" rel="noopener noreferrer">Download</a>` : "",
-            download.releaseLink ? `<a class="btn secondary" href="${escapeHtml(safeUrl(download.releaseLink))}" target="_blank" rel="noopener noreferrer">Release</a>` : ""
+            anchorHtml(download.downloadLink, "Download", "btn primary", "Download"),
+            anchorHtml(download.releaseLink, "Release", "btn secondary", "Release")
         ].filter(Boolean).join("");
-        return `<div class="download"><span class="status">${escapeHtml(download.type)}</span><h3>${escapeHtml(download.title)}</h3><p>${escapeHtml(download.description)}</p><p class="small"><strong>Version:</strong> ${escapeHtml(download.version)}</p><p class="small"><strong>Checksum:</strong> ${escapeHtml(download.checksum)}</p>${actions ? `<div class="actions cs-mode-download-actions">${actions}</div>` : ""}</div>`;
+        const type = download.type ? `<span class="status">${escapeHtml(download.type)}</span>` : "";
+        const description = download.description ? `<p>${escapeHtml(download.description)}</p>` : "";
+        const version = download.version ? `<p class="small"><strong>Version:</strong> ${escapeHtml(download.version)}</p>` : "";
+        const checksum = download.checksum ? `<p class="small cs-download-checksum"><strong>Checksum:</strong> ${escapeHtml(download.checksum)}</p>` : "";
+        return `<article class="download cs-download-card">${type}<h3>${escapeHtml(download.title)}</h3>${description}${version}${checksum}${actions ? `<div class="actions cs-mode-download-actions cs-card-actions">${actions}</div>` : ""}</article>`;
     }).join("");
 }
 
@@ -916,11 +1118,35 @@ function renderDownloads(items) {
 function renderProjects(items) {
     const grid = $("projectCards");
     if (!grid) return;
-    if (!items.length) {
+    const normalized = (Array.isArray(items) ? items : []).map((entry) => {
+        const project = safeRecord(entry);
+        return {
+            icon: cmsOptionalText(project.icon),
+            title: cmsText(project.title, "Untitled project"),
+            status: cmsOptionalText(project.status),
+            description: cmsOptionalText(project.description),
+            problemSolved: cmsOptionalText(project.problemSolved),
+            techUsed: cmsOptionalText(project.techUsed),
+            repoLink: cmsOptionalText(project.repoLink),
+            liveLink: cmsOptionalText(project.liveLink)
+        };
+    });
+    if (!normalized.length) {
         renderEmptyState(grid, "No projects found", "Add projects in data/projects.json from Pages CMS.");
         return;
     }
-    grid.innerHTML = items.map((project) => `<div class="card"><div class="icon">${escapeHtml(project.icon)}</div><span class="status">${escapeHtml(project.status)}</span><h3>${escapeHtml(project.title)}</h3><p>${escapeHtml(project.description)}</p><br><p><strong>Problem solved:</strong> ${escapeHtml(project.problemSolved)}</p><p class="small"><strong>Tech:</strong> ${escapeHtml(project.techUsed)}</p><br><div class="actions"><a class="btn secondary" href="${escapeHtml(safeUrl(project.repoLink))}" target="_blank" rel="noopener noreferrer">GitHub</a><a class="btn secondary" href="${escapeHtml(safeUrl(project.liveLink))}" target="_blank" rel="noopener noreferrer">Open</a></div></div>`).join("");
+    grid.innerHTML = normalized.map((project) => {
+        const icon = project.icon ? `<div class="icon">${escapeHtml(project.icon)}</div>` : "";
+        const status = project.status ? `<span class="status">${escapeHtml(project.status)}</span>` : "";
+        const description = project.description ? `<p>${escapeHtml(project.description)}</p>` : "";
+        const problem = project.problemSolved ? `<p><strong>Problem solved:</strong> ${escapeHtml(project.problemSolved)}</p>` : "";
+        const tech = project.techUsed ? `<p class="small"><strong>Tech:</strong> ${escapeHtml(project.techUsed)}</p>` : "";
+        const actions = [
+            anchorHtml(project.repoLink, "GitHub", "btn secondary", "GitHub"),
+            anchorHtml(project.liveLink, "Open", "btn secondary", "Open")
+        ].filter(Boolean).join("");
+        return `<article class="card cs-website-project-card">${icon}${status}<h3>${escapeHtml(project.title)}</h3>${description}${problem}${tech}${actions ? `<div class="actions cs-card-actions">${actions}</div>` : ""}</article>`;
+    }).join("");
 }
 
 /* Existing skills renderer
@@ -928,11 +1154,15 @@ function renderProjects(items) {
 function renderSkills(items) {
     const grid = $("skillsGrid");
     if (!grid) return;
-    if (!items.length) {
+    const normalized = (Array.isArray(items) ? items : []).map((entry) => {
+        const skill = safeRecord(entry);
+        return { title: cmsText(skill.title, "Untitled skill"), description: cmsOptionalText(skill.description) };
+    });
+    if (!normalized.length) {
         renderEmptyState(grid, "No skills found", "Add skills in data/skills.json from Pages CMS.");
         return;
     }
-    grid.innerHTML = items.map((skill) => `<div class="card"><h3>${escapeHtml(skill.title)}</h3><p>${escapeHtml(skill.description)}</p></div>`).join("");
+    grid.innerHTML = normalized.map((skill) => `<article class="card cs-website-skill-card"><h3>${escapeHtml(skill.title)}</h3>${skill.description ? `<p>${escapeHtml(skill.description)}</p>` : ""}</article>`).join("");
 }
 
 /* Documentation renderer
@@ -944,7 +1174,21 @@ function renderDocs(items) {
         renderEmptyState(list, "No docs found", "Add documentation in data/docs.json from Pages CMS.");
         return;
     }
-    list.innerHTML = items.map((doc) => `<div class="tool"><div><span class="status">${escapeHtml(doc.category)}</span><h3>${escapeHtml(doc.title)}</h3><p>${escapeHtml(doc.description)}</p>${doc.command ? `<div class="code">${escapeHtml(doc.command)}</div>` : ""}</div><a class="btn secondary" href="${escapeHtml(safeUrl(doc.link))}" target="_blank" rel="noopener noreferrer">Open</a></div>`).join("");
+
+    list.innerHTML = items.map((entry) => {
+        const doc = entry && typeof entry === "object" && !Array.isArray(entry) ? entry : {};
+        const title = String(doc.title ?? "").trim() || "Untitled guide";
+        const category = String(doc.category ?? "").trim();
+        const description = String(doc.description ?? "").trim();
+        const command = String(doc.command ?? "").trim();
+        const rawLink = String(doc.link ?? "").trim();
+        const safeLink = safeUrl(rawLink);
+        const hasUsableLink = Boolean(rawLink) && rawLink !== "#" && safeLink !== "#";
+        const isExternalLink = /^https?:\/\//i.test(safeLink);
+        const linkAttributes = isExternalLink ? ' target="_blank" rel="noopener noreferrer"' : "";
+
+        return `<div class="tool cs-doc-item"><div class="cs-doc-content">${category ? `<span class="status">${escapeHtml(category)}</span>` : ""}<h3>${escapeHtml(title)}</h3>${description ? `<p>${escapeHtml(description)}</p>` : ""}${command ? `<div class="code">${escapeHtml(command)}</div>` : ""}</div>${hasUsableLink ? `<a class="btn secondary cs-doc-open" href="${escapeHtml(safeLink)}"${linkAttributes}>Open</a>` : ""}</div>`;
+    }).join("");
 }
 
 /* FAQ renderer
@@ -952,11 +1196,17 @@ function renderDocs(items) {
 function renderFAQ(items) {
     const grid = $("faqGrid");
     if (!grid) return;
-    if (!items.length) {
+    const entries = Array.isArray(items) ? items : [];
+    if (!entries.length) {
         renderEmptyState(grid, "No FAQ found", "Add FAQ entries in data/faq.json from Pages CMS.");
         return;
     }
-    grid.innerHTML = items.map((faq) => `<div class="faq-item"><h3>${escapeHtml(faq.question)}</h3><p>${escapeHtml(faq.answer)}</p></div>`).join("");
+    grid.innerHTML = entries.map((entry) => {
+        const faq = entry && typeof entry === "object" && !Array.isArray(entry) ? entry : {};
+        const question = String(faq.question ?? "").trim() || "Untitled question";
+        const answer = String(faq.answer ?? "").trim();
+        return `<div class="faq-item"><h3>${escapeHtml(question)}</h3>${answer ? `<p>${escapeHtml(answer)}</p>` : ""}</div>`;
+    }).join("");
 }
 
 
@@ -1132,6 +1382,7 @@ const CyberSabilGateway = (() => {
         if (banner) {
             setText("csDataStatusTitle", "Mode fallback active");
             setText("csDataStatusMessage", "Website mode was enabled automatically because both Website and Portfolio were disabled in CMS settings.");
+            banner.dataset.csPersistentWarning = "true";
             banner.hidden = false;
         }
     }
@@ -1549,13 +1800,15 @@ function applyNavigationStyle() {
             switcher.dataset.csDesktopPosition = switcher.dataset.csRequestedDesktopPosition;
             switcher.dataset.csMobilePosition = safeChoice(navigationStyle.modeSwitchMobilePosition, ["top-left", "top-center", "top-right", "bottom-left", "bottom-center", "bottom-right"], "bottom-center");
             switcher.dataset.csOrientation = safeChoice(navigationStyle.modeSwitchOrientation, ["horizontal", "vertical"], "horizontal");
-            switcher.dataset.csSize = safeChoice(navigationStyle.modeSwitchSize, ["compact", "standard", "large"], "standard");
             root.style.setProperty("--cs-mode-switch-x-offset", `${clampNumber(navigationStyle.modeSwitchHorizontalOffset, 4, 80, 18)}px`);
             root.style.setProperty("--cs-mode-switch-y-offset", `${clampNumber(navigationStyle.modeSwitchVerticalOffset, 4, 100, 18)}px`);
             root.style.setProperty("--cs-mode-switch-mobile-offset", `${clampNumber(navigationStyle.modeSwitchMobileOffset, 4, 60, 12)}px`);
         }
         if (useCustomModeSwitchAppearance()) {
             switcher.classList.add("cs-mode-switch-appearance-custom");
+            // Size belongs to appearance, not position. Keeping it here lets users resize the switch
+            // without activating or changing any desktop/mobile position setting.
+            switcher.dataset.csSize = safeChoice(navigationStyle.modeSwitchSize, ["compact", "standard", "large"], "standard");
             root.style.setProperty("--cs-mode-switch-background", hexToRgba(navigationStyle.modeSwitchBackgroundColor, navigationStyle.modeSwitchBackgroundOpacity, "#0a0e1d"));
             root.style.setProperty("--cs-mode-switch-blur", `${clampNumber(navigationStyle.modeSwitchBackdropBlur, 0, 40, 16)}px`);
             root.style.setProperty("--cs-mode-switch-border", `${clampNumber(navigationStyle.modeSwitchBorderWidth, 0, 6, 1)}px solid ${hexToRgba(navigationStyle.modeSwitchBorderColor, navigationStyle.modeSwitchBorderOpacity, "#ffffff")}`);
@@ -1746,86 +1999,192 @@ function applyNavigationStyle() {
         return ["gateway", "website", "portfolio"].includes(siteSettings.defaultMode) ? siteSettings.defaultMode : "gateway";
     }
 
+    /* Portfolio CMS text normalizer
+       Purpose: Trims accidental spaces and keeps required Portfolio labels/headings readable when a CMS field is blank. */
+    function portfolioText(value, fallback = "") {
+        const normalized = String(value ?? "").trim();
+        return normalized || fallback;
+    }
+
     /* Portfolio settings renderer
-       Purpose: Applies CMS-controlled portfolio labels, theme, navigation, section visibility and footer text. */
+       Purpose: Applies CMS-controlled portfolio labels, theme, navigation, section visibility and footer text with deterministic reset. */
     function applyPortfolioSettings() {
         const app = $("csPortfolioApp");
+        const themePreset = safeChoice(portfolioSettings.themePreset, ["purple-gold", "midnight"], "purple-gold");
+        const layoutPreset = safeChoice(portfolioSettings.layoutPreset, ["professional", "compact", "spacious"], "professional");
+        const navigationVisible = yes(portfolioSettings.showNavigation);
+        const profileVisible = yes(portfolioSettings.showProfileCard);
+        const sectionVisibility = {
+            skills: yes(portfolioSettings.showSkillsSection),
+            projects: yes(portfolioSettings.showProjectsSection),
+            timeline: yes(portfolioSettings.showTimelineSection),
+            services: yes(portfolioSettings.showServicesSection),
+            contact: yes(portfolioSettings.showContactSection)
+        };
+
         if (app) {
-            app.classList.toggle("cs-portfolio-theme-midnight", (portfolioSettings.themePreset || "purple-gold") === "midnight");
-            app.classList.toggle("cs-portfolio-layout-compact", (portfolioSettings.layoutPreset || "professional") === "compact");
-            app.classList.toggle("cs-portfolio-layout-professional", (portfolioSettings.layoutPreset || "professional") === "professional");
+            app.classList.toggle("cs-portfolio-theme-purple-gold", themePreset === "purple-gold");
+            app.classList.toggle("cs-portfolio-theme-midnight", themePreset === "midnight");
+            app.classList.toggle("cs-portfolio-layout-compact", layoutPreset === "compact");
+            app.classList.toggle("cs-portfolio-layout-professional", layoutPreset === "professional");
+            app.classList.toggle("cs-portfolio-layout-spacious", layoutPreset === "spacious");
+            app.classList.toggle("cs-portfolio-profile-hidden", !profileVisible);
         }
 
-        setText("csPortfolioBrandText", portfolioSettings.brandText || "CyberSabil Portfolio");
-        setText("csPortfolioNavSkills", portfolioSettings.navSkillsLabel || "Skills");
-        setText("csPortfolioNavProjects", portfolioSettings.navProjectsLabel || "Projects");
-        setText("csPortfolioNavTimeline", portfolioSettings.navTimelineLabel || "Timeline");
-        setText("csPortfolioNavServices", portfolioSettings.navServicesLabel || "Services");
-        setText("csPortfolioNavContact", portfolioSettings.navContactLabel || "Contact");
+        setText("csPortfolioBrandText", portfolioText(portfolioSettings.brandText, "CyberSabil Portfolio"));
+        setText("csPortfolioNavSkills", portfolioText(portfolioSettings.navSkillsLabel, "Skills"));
+        setText("csPortfolioNavProjects", portfolioText(portfolioSettings.navProjectsLabel, "Projects"));
+        setText("csPortfolioNavTimeline", portfolioText(portfolioSettings.navTimelineLabel, "Timeline"));
+        setText("csPortfolioNavServices", portfolioText(portfolioSettings.navServicesLabel, "Services"));
+        setText("csPortfolioNavContact", portfolioText(portfolioSettings.navContactLabel, "Contact"));
 
-        setText("csPortfolioSkillsEyebrow", portfolioSettings.skillsEyebrow || "Core strengths");
-        setText("csPortfolioSkillsTitle", portfolioSettings.skillsTitle || "Skills");
-        setText("csPortfolioSkillsSubtitle", portfolioSettings.skillsSubtitle || "Focused capabilities for Windows support automation and practical deployment workflows.");
-        setText("csPortfolioProjectsEyebrow", portfolioSettings.projectsEyebrow || "Selected work");
-        setText("csPortfolioProjectsTitle", portfolioSettings.projectsTitle || "Projects");
-        setText("csPortfolioProjectsSubtitle", portfolioSettings.projectsSubtitle || "Production-ready and planned tools built around real Windows support problems.");
-        setText("csPortfolioTimelineEyebrow", portfolioSettings.timelineEyebrow || "Progress path");
-        setText("csPortfolioTimelineTitle", portfolioSettings.timelineTitle || "Timeline");
-        setText("csPortfolioTimelineSubtitle", portfolioSettings.timelineSubtitle || "A short view of how CyberSabil systems are growing over time.");
-        setText("csPortfolioServicesEyebrow", portfolioSettings.servicesEyebrow || "How I can help");
-        setText("csPortfolioServicesTitle", portfolioSettings.servicesTitle || "Services");
-        setText("csPortfolioServicesSubtitle", portfolioSettings.servicesSubtitle || "Clear support areas for automation, troubleshooting, documentation and web deployment.");
-        setText("csPortfolioContactEyebrow", portfolioSettings.contactEyebrow || "Contact");
-        setText("csPortfolioFooterText", portfolioSettings.footerText || "CyberSabil Portfolio • Windows automation and IT support utilities");
+        setText("csPortfolioSkillsEyebrow", portfolioText(portfolioSettings.skillsEyebrow, "Core strengths"));
+        setText("csPortfolioSkillsTitle", portfolioText(portfolioSettings.skillsTitle, "Skills"));
+        setText("csPortfolioSkillsSubtitle", portfolioText(portfolioSettings.skillsSubtitle, "Focused capabilities for Windows support automation and practical deployment workflows."));
+        setText("csPortfolioProjectsEyebrow", portfolioText(portfolioSettings.projectsEyebrow, "Selected work"));
+        setText("csPortfolioProjectsTitle", portfolioText(portfolioSettings.projectsTitle, "Projects"));
+        setText("csPortfolioProjectsSubtitle", portfolioText(portfolioSettings.projectsSubtitle, "Production-ready and planned tools built around real Windows support problems."));
+        setText("csPortfolioTimelineEyebrow", portfolioText(portfolioSettings.timelineEyebrow, "Progress path"));
+        setText("csPortfolioTimelineTitle", portfolioText(portfolioSettings.timelineTitle, "Timeline"));
+        setText("csPortfolioTimelineSubtitle", portfolioText(portfolioSettings.timelineSubtitle, "A short view of how CyberSabil systems are growing over time."));
+        setText("csPortfolioServicesEyebrow", portfolioText(portfolioSettings.servicesEyebrow, "How I can help"));
+        setText("csPortfolioServicesTitle", portfolioText(portfolioSettings.servicesTitle, "Services"));
+        setText("csPortfolioServicesSubtitle", portfolioText(portfolioSettings.servicesSubtitle, "Clear support areas for automation, troubleshooting, documentation and web deployment."));
+        setText("csPortfolioContactEyebrow", portfolioText(portfolioSettings.contactEyebrow, "Contact"));
+        setText("csPortfolioFooterText", portfolioText(portfolioSettings.footerText, "CyberSabil Portfolio • Windows automation and IT support utilities"));
 
-        $("csPortfolioNav")?.classList.toggle("cs-mode-hidden", !yes(portfolioSettings.showNavigation));
+        $("csPortfolioNav")?.classList.toggle("cs-mode-hidden", !navigationVisible);
+        $("portfolioNavToggle")?.classList.toggle("cs-mode-hidden", !navigationVisible);
         $("csPortfolioHero")?.classList.toggle("cs-mode-hidden", !yes(portfolioSettings.showHero));
-        $("csPortfolioProfileCard")?.classList.toggle("cs-mode-hidden", !yes(portfolioSettings.showProfileCard));
-        $("csPortfolioSkills")?.classList.toggle("cs-mode-hidden", !yes(portfolioSettings.showSkillsSection));
-        $("csPortfolioProjects")?.classList.toggle("cs-mode-hidden", !yes(portfolioSettings.showProjectsSection));
-        $("csPortfolioTimeline")?.classList.toggle("cs-mode-hidden", !yes(portfolioSettings.showTimelineSection));
-        $("csPortfolioServices")?.classList.toggle("cs-mode-hidden", !yes(portfolioSettings.showServicesSection));
-        $("csPortfolioContact")?.classList.toggle("cs-mode-hidden", !yes(portfolioSettings.showContactSection));
+        $("csPortfolioProfileCard")?.classList.toggle("cs-mode-hidden", !profileVisible);
+        $("csPortfolioSkills")?.classList.toggle("cs-mode-hidden", !sectionVisibility.skills);
+        $("csPortfolioProjects")?.classList.toggle("cs-mode-hidden", !sectionVisibility.projects);
+        $("csPortfolioTimeline")?.classList.toggle("cs-mode-hidden", !sectionVisibility.timeline);
+        $("csPortfolioServices")?.classList.toggle("cs-mode-hidden", !sectionVisibility.services);
+        $("csPortfolioContact")?.classList.toggle("cs-mode-hidden", !sectionVisibility.contact);
+
+        /* Navigation/section isolation
+           Purpose: Prevents visible Portfolio menu links from pointing to sections that the same CMS file has hidden. */
+        $("csPortfolioNavSkills")?.classList.toggle("cs-mode-hidden", !navigationVisible || !sectionVisibility.skills);
+        $("csPortfolioNavProjects")?.classList.toggle("cs-mode-hidden", !navigationVisible || !sectionVisibility.projects);
+        $("csPortfolioNavTimeline")?.classList.toggle("cs-mode-hidden", !navigationVisible || !sectionVisibility.timeline);
+        $("csPortfolioNavServices")?.classList.toggle("cs-mode-hidden", !navigationVisible || !sectionVisibility.services);
+        $("csPortfolioNavContact")?.classList.toggle("cs-mode-hidden", !navigationVisible || !sectionVisibility.contact);
     }
 
     /* Portfolio card renderers
        Purpose: Build skill, project and service cards from their CMS JSON files. */
+    /* Portfolio skill renderer
+       Purpose: Trims CMS text, survives malformed list entries and prevents empty/duplicated UI when optional fields are blank. */
     function renderPortfolioSkills(items) {
         const grid = $("csPortfolioSkillsGrid");
         if (!grid) return;
-        if (!items.length) {
+        if (!Array.isArray(items) || !items.length) {
             renderEmptyState(grid, "No portfolio skills found", "Add portfolio skills in data/portfolio-skills.json from Pages CMS.");
             return;
         }
-        grid.innerHTML = items.map((item) => `
-            <article class="cs-portfolio-card">
-                <span class="cs-portfolio-card-label">${escapeHtml(item.category || item.level || "Skill")}</span>
+        const normalizedItems = items.map((item) => {
+            const source = item && typeof item === "object" && !Array.isArray(item) ? item : {};
+            const text = (key, fallback = "") => {
+                const normalized = String(source[key] ?? "").trim();
+                return normalized || fallback;
+            };
+            return {
+                title: text("title", "Untitled skill"),
+                category: text("category"),
+                level: text("level"),
+                description: text("description")
+            };
+        });
+        grid.innerHTML = normalizedItems.map((item) => `
+            <article class="cs-portfolio-card cs-portfolio-skill-card">
+                <span class="cs-portfolio-card-label">${escapeHtml(item.category || "Skill")}</span>
                 <h3>${escapeHtml(item.title)}</h3>
-                <p>${escapeHtml(item.description)}</p>
+                ${item.description ? `<p>${escapeHtml(item.description)}</p>` : ""}
                 ${item.level ? `<p class="cs-portfolio-project-tech"><strong>Level:</strong> ${escapeHtml(item.level)}</p>` : ""}
             </article>
         `).join("");
     }
 
+    /* Portfolio project renderer
+       Purpose: Normalizes every CMS list entry, isolates optional fields, blocks unsafe/no-op URLs and keeps images/links responsive and accessible. */
     function renderPortfolioProjects(items) {
         const grid = $("csPortfolioProjectsGrid");
         if (!grid) return;
-        if (!items.length) {
+        if (!Array.isArray(items) || !items.length) {
             renderEmptyState(grid, "No portfolio projects found", "Add portfolio projects in data/portfolio-projects.json from Pages CMS.");
             return;
         }
-        grid.innerHTML = items.map((item) => `
-            <article class="cs-portfolio-project-card">
-                ${item.image ? `<img class="cs-portfolio-project-image" src="${escapeHtml(safeUrl(item.image))}" alt="${escapeHtml(item.imageAlt || item.title || "Project preview")}" loading="lazy">` : ""}
-                <span class="cs-portfolio-project-status">${escapeHtml(item.status || "Project")}</span>
-                <h3>${escapeHtml(item.title)}</h3>
-                <p>${escapeHtml(item.description)}</p>
-                <p class="cs-portfolio-project-tech"><strong>${escapeHtml(item.category || "Tech")}</strong> · ${escapeHtml(item.tech)}</p>
-                ${item.link && yes(portfolioSettings.showProjectLinks) ? `<a class="cs-portfolio-project-link" href="${escapeHtml(safeUrl(item.link))}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.buttonText || portfolioSettings.projectLinkLabel || "View project →")}</a>` : ""}
-            </article>
-        `).join("");
+        const normalizedItems = items.map((item) => {
+            const source = item && typeof item === "object" && !Array.isArray(item) ? item : {};
+            const text = (key, fallback = "") => {
+                const normalized = String(source[key] ?? "").trim();
+                return normalized || fallback;
+            };
+            const rawLink = text("link");
+            const safeLink = rawLink ? safeUrl(rawLink) : "#";
+            const usableLink = rawLink && safeLink !== "#" ? safeLink : "";
+            const rawImage = text("image");
+            const safeImage = rawImage ? safeUrl(rawImage) : "#";
+            const usableImage = rawImage && safeImage !== "#" ? safeImage : "";
+            const title = text("title", "Untitled project");
+            return {
+                title,
+                category: text("category"),
+                status: text("status", "Project"),
+                description: text("description"),
+                tech: text("tech"),
+                image: usableImage,
+                imageAlt: text("imageAlt", title || "Project preview"),
+                link: usableLink,
+                buttonText: text("buttonText", portfolioText(portfolioSettings.projectLinkLabel, "View project →"))
+            };
+        });
+        grid.innerHTML = normalizedItems.map((item) => {
+            const externalLink = /^https?:\/\//i.test(item.link);
+            const linkAttributes = externalLink ? ' target="_blank" rel="noopener noreferrer"' : "";
+            const techLine = item.category && item.tech
+                ? `<p class="cs-portfolio-project-tech"><strong>${escapeHtml(item.category)}</strong> · ${escapeHtml(item.tech)}</p>`
+                : item.category
+                    ? `<p class="cs-portfolio-project-tech"><strong>${escapeHtml(item.category)}</strong></p>`
+                    : item.tech
+                        ? `<p class="cs-portfolio-project-tech">${escapeHtml(item.tech)}</p>`
+                        : "";
+            return `
+                <article class="cs-portfolio-project-card">
+                    ${item.image ? `<img class="cs-portfolio-project-image" src="${escapeHtml(item.image)}" alt="${escapeHtml(item.imageAlt)}" loading="lazy">` : ""}
+                    <span class="cs-portfolio-project-status">${escapeHtml(item.status)}</span>
+                    <h3>${escapeHtml(item.title)}</h3>
+                    ${item.description ? `<p>${escapeHtml(item.description)}</p>` : ""}
+                    ${techLine}
+                    ${item.link && yes(portfolioSettings.showProjectLinks) ? `<a class="cs-portfolio-project-link" href="${escapeHtml(item.link)}"${linkAttributes}>${escapeHtml(item.buttonText)}</a>` : ""}
+                </article>
+            `;
+        }).join("");
+        grid.querySelectorAll(".cs-portfolio-project-image").forEach((image) => {
+            const hideBrokenImage = () => {
+                image.hidden = true;
+                image.classList.add("cs-portfolio-project-image-error");
+            };
+            image.addEventListener("error", hideBrokenImage, { once: true });
+            if (image.complete && image.naturalWidth === 0) hideBrokenImage();
+        });
     }
 
+    /* Portfolio service normalization
+       Purpose: Trims CMS values, protects Portfolio boot from malformed list entries and prevents blank service UI. */
+    function normalizePortfolioServiceItem(input) {
+        const source = input && typeof input === "object" && !Array.isArray(input) ? input : {};
+        const text = (key) => String(source[key] ?? "").trim();
+        return {
+            icon: text("icon") || "Service",
+            title: text("title") || "Untitled service",
+            description: text("description")
+        };
+    }
+
+    /* Portfolio services renderer
+       Purpose: Builds CMS-controlled service cards while keeping optional descriptions truly optional. */
     function renderPortfolioServices(items) {
         const grid = $("csPortfolioServicesGrid");
         if (!grid) return;
@@ -1833,17 +2192,33 @@ function applyNavigationStyle() {
             renderEmptyState(grid, "No portfolio services found", "Add services in data/services.json from Pages CMS.");
             return;
         }
-        grid.innerHTML = items.map((item) => `
-            <article class="cs-portfolio-card">
-                <span class="cs-portfolio-card-label">${escapeHtml(item.icon || "Service")}</span>
+        grid.innerHTML = items.map((rawItem) => {
+            const item = normalizePortfolioServiceItem(rawItem);
+            return `
+            <article class="cs-portfolio-card cs-portfolio-service-card">
+                <span class="cs-portfolio-card-label">${escapeHtml(item.icon)}</span>
                 <h3>${escapeHtml(item.title)}</h3>
-                <p>${escapeHtml(item.description)}</p>
+                ${item.description ? `<p>${escapeHtml(item.description)}</p>` : ""}
             </article>
-        `).join("");
+        `;
+        }).join("");
+    }
+
+    /* Portfolio timeline normalization
+       Purpose: Trims CMS values, protects the Portfolio boot from malformed list entries and prevents blank timeline UI. */
+    function normalizePortfolioTimelineItem(input) {
+        const source = input && typeof input === "object" && !Array.isArray(input) ? input : {};
+        const text = (key) => String(source[key] ?? "").trim();
+        return {
+            period: text("period") || "Timeline",
+            title: text("title") || "Untitled timeline entry",
+            status: text("status"),
+            description: text("description")
+        };
     }
 
     /* Portfolio timeline renderer
-       Purpose: Builds the new CMS-controlled timeline section from data/portfolio-timeline.json without adding a framework. */
+       Purpose: Builds the CMS-controlled timeline section while keeping optional status and description rows truly optional. */
     function renderPortfolioTimeline(items) {
         const list = $("csPortfolioTimelineList");
         if (!list) return;
@@ -1851,17 +2226,142 @@ function applyNavigationStyle() {
             renderEmptyState(list, "No timeline entries found", "Add timeline entries in data/portfolio-timeline.json from Pages CMS.");
             return;
         }
-        list.innerHTML = items.map((item) => `
+        list.innerHTML = items.map((rawItem) => {
+            const item = normalizePortfolioTimelineItem(rawItem);
+            return `
             <article class="cs-portfolio-timeline-item">
                 <div class="cs-portfolio-timeline-marker" aria-hidden="true"></div>
                 <div class="cs-portfolio-timeline-card">
-                    <span class="cs-portfolio-card-label">${escapeHtml(item.period || item.status || "Timeline")}</span>
+                    <span class="cs-portfolio-card-label">${escapeHtml(item.period)}</span>
                     <h3>${escapeHtml(item.title)}</h3>
                     ${item.status ? `<p class="cs-portfolio-project-tech"><strong>Status:</strong> ${escapeHtml(item.status)}</p>` : ""}
-                    <p>${escapeHtml(item.description)}</p>
+                    ${item.description ? `<p>${escapeHtml(item.description)}</p>` : ""}
                 </div>
             </article>
-        `).join("");
+        `;
+        }).join("");
+    }
+
+    /* Portfolio profile normalization
+       Purpose: Trims CMS text, survives malformed JSON roots and keeps optional profile UI from rendering empty pills, cards or buttons. */
+    function normalizePortfolioProfile(input) {
+        const source = input && typeof input === "object" && !Array.isArray(input) ? input : {};
+        const text = (key, fallback = "") => {
+            const normalized = String(source[key] ?? "").trim();
+            return normalized || fallback;
+        };
+        const name = text("name", "CyberSabil");
+        const derivedInitials = name
+            .split(/\s+/)
+            .filter(Boolean)
+            .slice(0, 2)
+            .map(part => part.charAt(0))
+            .join("")
+            .toUpperCase();
+        return {
+            name,
+            initials: text("initials", derivedInitials || "CS"),
+            role: text("role", "IT Support Automation and Tools Builder"),
+            tagline: text("tagline"),
+            availability: text("availability"),
+            location: text("location"),
+            experience: text("experience"),
+            bio: text("bio"),
+            primaryCtaText: text("primaryCtaText"),
+            primaryCtaLink: text("primaryCtaLink"),
+            secondaryCtaText: text("secondaryCtaText"),
+            secondaryCtaLink: text("secondaryCtaLink"),
+            statOneValue: text("statOneValue"),
+            statOneLabel: text("statOneLabel"),
+            statTwoValue: text("statTwoValue"),
+            statTwoLabel: text("statTwoLabel")
+        };
+    }
+
+    function applyOptionalPortfolioText(id, value) {
+        const node = $(id);
+        if (!node) return false;
+        const text = String(value ?? "").trim();
+        node.textContent = text;
+        node.classList.toggle("cs-mode-hidden", !text);
+        return Boolean(text);
+    }
+
+    function applyOptionalPortfolioLink(id, href, text) {
+        const node = $(id);
+        if (!node) return false;
+        const rawHref = String(href ?? "").trim();
+        const label = String(text ?? "").trim();
+        const nextHref = safeUrl(rawHref);
+        const usable = Boolean(rawHref && label && rawHref !== "#" && nextHref !== "#");
+        node.classList.toggle("cs-mode-hidden", !usable);
+        node.removeAttribute("target");
+        node.removeAttribute("rel");
+        node.setAttribute("href", usable ? nextHref : "#");
+        node.textContent = label;
+        if (usable && /^https?:\/\//i.test(nextHref)) {
+            node.setAttribute("target", "_blank");
+            node.setAttribute("rel", "noopener noreferrer");
+        }
+        return usable;
+    }
+
+    function applyPortfolioProfile(input) {
+        const profile = normalizePortfolioProfile(input);
+        setText("csPortfolioInitials", profile.initials);
+        setText("csPortfolioAvatar", profile.initials);
+        setText("csPortfolioName", profile.name);
+        setText("csPortfolioCardName", profile.name);
+        setText("csPortfolioRole", profile.role);
+
+        applyOptionalPortfolioText("csPortfolioTagline", profile.tagline);
+        applyOptionalPortfolioText("csPortfolioAvailability", profile.availability);
+        const locationVisible = applyOptionalPortfolioText("csPortfolioLocation", profile.location);
+        const experienceVisible = applyOptionalPortfolioText("csPortfolioExperience", profile.experience);
+        applyOptionalPortfolioText("csPortfolioBio", profile.bio);
+
+        const meta = document.querySelector(".cs-portfolio-meta");
+        meta?.classList.toggle("cs-mode-hidden", !locationVisible && !experienceVisible);
+
+        setText("csPortfolioStatOneValue", profile.statOneValue);
+        setText("csPortfolioStatOneLabel", profile.statOneLabel);
+        setText("csPortfolioStatTwoValue", profile.statTwoValue);
+        setText("csPortfolioStatTwoLabel", profile.statTwoLabel);
+        const statOneVisible = Boolean(profile.statOneValue || profile.statOneLabel);
+        const statTwoVisible = Boolean(profile.statTwoValue || profile.statTwoLabel);
+        document.querySelector(".cs-portfolio-stats > div:nth-child(1)")?.classList.toggle("cs-mode-hidden", !statOneVisible);
+        document.querySelector(".cs-portfolio-stats > div:nth-child(2)")?.classList.toggle("cs-mode-hidden", !statTwoVisible);
+        document.querySelector(".cs-portfolio-stats")?.classList.toggle("cs-mode-hidden", !statOneVisible && !statTwoVisible);
+
+        const primaryVisible = applyOptionalPortfolioLink("csPortfolioPrimaryCta", profile.primaryCtaLink, profile.primaryCtaText);
+        const secondaryVisible = applyOptionalPortfolioLink("csPortfolioSecondaryCta", profile.secondaryCtaLink, profile.secondaryCtaText);
+        document.querySelector(".cs-portfolio-actions")?.classList.toggle("cs-mode-hidden", !primaryVisible && !secondaryVisible);
+    }
+
+    /* Portfolio contact renderer
+       Purpose: Applies every Contact CMS field through one reusable, testable and reset-safe ownership path. */
+    function applyPortfolioContact(input) {
+        const contactSettings = normalizePortfolioContact(input);
+        setText("csPortfolioContactHeading", contactSettings.heading);
+        setText("csPortfolioContactDescription", contactSettings.description);
+        $("csPortfolioContactDescription")?.classList.toggle("cs-mode-hidden", !contactSettings.description);
+
+        setText("csPortfolioEmailLabel", contactSettings.emailLabel);
+        $("csPortfolioEmailLabel")?.classList.toggle("cs-mode-hidden", !contactSettings.emailLabel);
+        setText("csPortfolioGithubLabel", contactSettings.githubLabel);
+        $("csPortfolioGithubLabel")?.classList.toggle("cs-mode-hidden", !contactSettings.githubLabel);
+        setText("csPortfolioWebsiteLabel", contactSettings.websiteLabel);
+        $("csPortfolioWebsiteLabel")?.classList.toggle("cs-mode-hidden", !contactSettings.websiteLabel);
+
+        const hasPublicEmail = isValidPublicEmail(contactSettings.email);
+        const emailRow = $("csPortfolioEmailRow");
+        if (emailRow) emailRow.hidden = !hasPublicEmail;
+        if (hasPublicEmail) setLink("csPortfolioEmail", `mailto:${contactSettings.email}`, contactSettings.email);
+        else setLink("csPortfolioEmail", "#", "");
+
+        applyOptionalContactLink("csPortfolioGithubRow", "csPortfolioGithub", contactSettings.githubLink, contactSettings.githubText);
+        applyOptionalContactLink("csPortfolioWebsiteRow", "csPortfolioWebsite", contactSettings.websiteLink, contactSettings.websiteText);
+        applyOptionalContactLink(null, "csPortfolioContactCta", contactSettings.ctaLink, contactSettings.ctaText, true);
     }
 
     /* Portfolio renderer
@@ -1876,41 +2376,14 @@ function applyNavigationStyle() {
             loadJson("data/contact.json", CS_FALLBACK.contact)
         ]);
 
-        setText("csPortfolioInitials", profile.initials || "CS");
-        setText("csPortfolioAvatar", profile.initials || "CS");
-        setText("csPortfolioName", profile.name || "CyberSabil");
-        setText("csPortfolioCardName", profile.name || "CyberSabil");
-        setText("csPortfolioRole", profile.role || "Windows IT Support Automation Specialist");
-        setText("csPortfolioTagline", profile.tagline || "");
-        setText("csPortfolioAvailability", profile.availability || "Available for IT support automation");
-        setText("csPortfolioLocation", profile.location || "");
-        setText("csPortfolioExperience", profile.experience || "");
-        setText("csPortfolioBio", profile.bio || "");
-        setText("csPortfolioStatOneValue", profile.statOneValue || "24/7");
-        setText("csPortfolioStatOneLabel", profile.statOneLabel || "Support mindset");
-        setText("csPortfolioStatTwoValue", profile.statTwoValue || "100%");
-        setText("csPortfolioStatTwoLabel", profile.statTwoLabel || "Practical tools");
-        setLink("csPortfolioPrimaryCta", profile.primaryCtaLink || "#csPortfolioProjects", profile.primaryCtaText || "View projects");
-        setLink("csPortfolioSecondaryCta", profile.secondaryCtaLink || "#csPortfolioContact", profile.secondaryCtaText || "Contact");
+        applyPortfolioProfile(profile);
 
         renderPortfolioSkills(Array.isArray(skills) ? skills : []);
         renderPortfolioProjects(Array.isArray(projects) ? projects : []);
         renderPortfolioTimeline(Array.isArray(timeline) ? timeline : []);
         renderPortfolioServices(Array.isArray(services) ? services : []);
 
-        setText("csPortfolioContactHeading", contact.heading || "Let’s build reliable IT support tools");
-        setText("csPortfolioContactDescription", contact.description || "");
-        setText("csPortfolioEmailLabel", contact.emailLabel || "Email:");
-        setText("csPortfolioGithubLabel", contact.githubLabel || "GitHub:");
-        setText("csPortfolioWebsiteLabel", contact.websiteLabel || "Website:");
-        const email = String(contact.email || "").trim();
-        const hasPublicEmail = Boolean(email) && !/add your email/i.test(email);
-        const emailRow = $("csPortfolioEmailRow");
-        if (emailRow) emailRow.hidden = !hasPublicEmail;
-        if (hasPublicEmail) setLink("csPortfolioEmail", `mailto:${email}`, email);
-        setLink("csPortfolioGithub", contact.githubLink || "https://github.com/cybersabil", contact.githubText || "github.com/cybersabil");
-        setLink("csPortfolioWebsite", contact.websiteLink || "https://cybersabil.github.io/", contact.websiteText || "cybersabil.github.io");
-        setLink("csPortfolioContactCta", contact.ctaLink || "https://github.com/cybersabil", contact.ctaText || "Open GitHub");
+        applyPortfolioContact(contact);
     }
 
     /* Reload snapshot preparation
@@ -1996,7 +2469,7 @@ function boot(settingsData, gatewayData, visualBaselineData, gatewayAppearanceDa
         else setMode(initialMode, { fromUser: false });
     }
 
-    return { boot, activateInitialMode, renderPortfolio, getGatewayBackgroundMode: resolveGatewayBackgroundMode };
+    return { boot, activateInitialMode, renderPortfolio, applyPortfolioContact, getGatewayBackgroundMode: resolveGatewayBackgroundMode };
 })();
 
 

@@ -1,0 +1,20 @@
+{
+  "portrait768": {
+    "x": 281,
+    "y": 965,
+    "w": 206,
+    "h": 47,
+    "cx": 384,
+    "mobile": "bottom-center",
+    "desktop": "top-right"
+  },
+  "landscape1024": {
+    "x": 798.234375,
+    "y": 18,
+    "w": 207.765625,
+    "h": 52,
+    "cx": 902.1171875,
+    "mobile": "bottom-center",
+    "desktop": "top-right"
+  }
+}

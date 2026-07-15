@@ -1,0 +1,1026 @@
+{
+  "group": "Portfolio Services List",
+  "cms_fields": [
+    "icon",
+    "title",
+    "description"
+  ],
+  "targeted_checks": 44,
+  "passed": 44,
+  "failed": 0,
+  "results": [
+    {
+      "test": "baseline_renders_all_services",
+      "passed": true,
+      "details": {
+        "count": 4,
+        "errors": []
+      }
+    },
+    {
+      "test": "baseline_boot_no_errors",
+      "passed": true,
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "test": "icon_applies_and_trims",
+      "passed": true,
+      "details": {
+        "actual": "AUDIT icon",
+        "card": {
+          "icon": "AUDIT icon",
+          "title": "Windows automation workflows",
+          "description": "Build repeatable PowerShell workflows for installation, cleanup, startup tasks, support checks and safe execution.",
+          "pCount": 1,
+          "rect": {
+            "x": 103,
+            "y": 4965.984375,
+            "w": 376,
+            "h": 223.171875,
+            "right": 479,
+            "bottom": 5189.15625
+          },
+          "html": "\n                <span class=\"cs-portfolio-card-label\">AUDIT icon</span>\n                <h3>Windows automation workflows</h3>\n                <p>Build repeatable PowerShell workflows for installation, cleanup, startup tasks, support checks and safe execution.</p>\n            "
+        },
+        "errors": []
+      }
+    },
+    {
+      "test": "title_applies_and_trims",
+      "passed": true,
+      "details": {
+        "actual": "AUDIT title",
+        "card": {
+          "icon": "Automation",
+          "title": "AUDIT title",
+          "description": "Build repeatable PowerShell workflows for installation, cleanup, startup tasks, support checks and safe execution.",
+          "pCount": 1,
+          "rect": {
+            "x": 103,
+            "y": 4965.984375,
+            "w": 376,
+            "h": 223.171875,
+            "right": 479,
+            "bottom": 5189.15625
+          },
+          "html": "\n                <span class=\"cs-portfolio-card-label\">Automation</span>\n                <h3>AUDIT title</h3>\n                <p>Build repeatable PowerShell workflows for installation, cleanup, startup tasks, support checks and safe execution.</p>\n            "
+        },
+        "errors": []
+      }
+    },
+    {
+      "test": "description_applies_and_trims",
+      "passed": true,
+      "details": {
+        "actual": "AUDIT description",
+        "card": {
+          "icon": "Automation",
+          "title": "Windows automation workflows",
+          "description": "AUDIT description",
+          "pCount": 1,
+          "rect": {
+            "x": 103,
+            "y": 4965.984375,
+            "w": 376,
+            "h": 223.171875,
+            "right": 479,
+            "bottom": 5189.15625
+          },
+          "html": "\n                <span class=\"cs-portfolio-card-label\">Automation</span>\n                <h3>Windows automation workflows</h3>\n                <p>AUDIT description</p>\n            "
+        },
+        "errors": []
+      }
+    },
+    {
+      "test": "blank_icon_uses_service_fallback",
+      "passed": true,
+      "details": {
+        "icon": "Service",
+        "title": "Windows automation workflows",
+        "description": "Build repeatable PowerShell workflows for installation, cleanup, startup tasks, support checks and safe execution.",
+        "pCount": 1,
+        "rect": {
+          "x": 103,
+          "y": 4965.984375,
+          "w": 376,
+          "h": 223.171875,
+          "right": 479,
+          "bottom": 5189.15625
+        },
+        "html": "\n                <span class=\"cs-portfolio-card-label\">Service</span>\n                <h3>Windows automation workflows</h3>\n                <p>Build repeatable PowerShell workflows for installation, cleanup, startup tasks, support checks and safe execution.</p>\n            "
+      }
+    },
+    {
+      "test": "blank_title_uses_safe_fallback",
+      "passed": true,
+      "details": {
+        "icon": "Automation",
+        "title": "Untitled service",
+        "description": "Build repeatable PowerShell workflows for installation, cleanup, startup tasks, support checks and safe execution.",
+        "pCount": 1,
+        "rect": {
+          "x": 103,
+          "y": 4965.984375,
+          "w": 376,
+          "h": 223.171875,
+          "right": 479,
+          "bottom": 5189.15625
+        },
+        "html": "\n                <span class=\"cs-portfolio-card-label\">Automation</span>\n                <h3>Untitled service</h3>\n                <p>Build repeatable PowerShell workflows for installation, cleanup, startup tasks, support checks and safe execution.</p>\n            "
+      }
+    },
+    {
+      "test": "blank_description_hides_paragraph",
+      "passed": true,
+      "details": {
+        "icon": "Automation",
+        "title": "Windows automation workflows",
+        "description": null,
+        "pCount": 0,
+        "rect": {
+          "x": 103,
+          "y": 4965.984375,
+          "w": 376,
+          "h": 223.171875,
+          "right": 479,
+          "bottom": 5189.15625
+        },
+        "html": "\n                <span class=\"cs-portfolio-card-label\">Automation</span>\n                <h3>Windows automation workflows</h3>\n                \n            "
+      }
+    },
+    {
+      "test": "missing_fields_render_safe_service",
+      "passed": true,
+      "details": {
+        "snap": {
+          "bootReady": true,
+          "bootFailed": false,
+          "sectionHidden": false,
+          "gridText": "\n            \n                Service\n                Untitled service\n                \n            \n        ",
+          "gridRect": {
+            "x": 103,
+            "y": 4965.984375,
+            "w": 1160,
+            "h": 120,
+            "right": 1263,
+            "bottom": 5085.984375
+          },
+          "cards": [
+            {
+              "icon": "Service",
+              "title": "Untitled service",
+              "description": null,
+              "pCount": 0,
+              "rect": {
+                "x": 103,
+                "y": 4965.984375,
+                "w": 376,
+                "h": 120,
+                "right": 479,
+                "bottom": 5085.984375
+              },
+              "html": "\n                <span class=\"cs-portfolio-card-label\">Service</span>\n                <h3>Untitled service</h3>\n                \n            "
+            }
+          ],
+          "scrollWidth": 1366,
+          "clientWidth": 1366,
+          "scripts": 0,
+          "images": 0,
+          "skillCount": 6,
+          "projectCount": 5,
+          "timelineCount": 8
+        },
+        "errors": []
+      }
+    },
+    {
+      "test": "malformed_item_null_does_not_crash",
+      "passed": true,
+      "details": {
+        "snap": {
+          "bootReady": true,
+          "bootFailed": false,
+          "sectionHidden": false,
+          "gridText": "\n            \n                Service\n                Untitled service\n                \n            \n        ",
+          "gridRect": {
+            "x": 103,
+            "y": 4965.984375,
+            "w": 1160,
+            "h": 120,
+            "right": 1263,
+            "bottom": 5085.984375
+          },
+          "cards": [
+            {
+              "icon": "Service",
+              "title": "Untitled service",
+              "description": null,
+              "pCount": 0,
+              "rect": {
+                "x": 103,
+                "y": 4965.984375,
+                "w": 376,
+                "h": 120,
+                "right": 479,
+                "bottom": 5085.984375
+              },
+              "html": "\n                <span class=\"cs-portfolio-card-label\">Service</span>\n                <h3>Untitled service</h3>\n                \n            "
+            }
+          ],
+          "scrollWidth": 1366,
+          "clientWidth": 1366,
+          "scripts": 0,
+          "images": 0,
+          "skillCount": 6,
+          "projectCount": 5,
+          "timelineCount": 8
+        },
+        "errors": []
+      }
+    },
+    {
+      "test": "malformed_item_array_does_not_crash",
+      "passed": true,
+      "details": {
+        "snap": {
+          "bootReady": true,
+          "bootFailed": false,
+          "sectionHidden": false,
+          "gridText": "\n            \n                Service\n                Untitled service\n                \n            \n        ",
+          "gridRect": {
+            "x": 103,
+            "y": 4965.984375,
+            "w": 1160,
+            "h": 120,
+            "right": 1263,
+            "bottom": 5085.984375
+          },
+          "cards": [
+            {
+              "icon": "Service",
+              "title": "Untitled service",
+              "description": null,
+              "pCount": 0,
+              "rect": {
+                "x": 103,
+                "y": 4965.984375,
+                "w": 376,
+                "h": 120,
+                "right": 479,
+                "bottom": 5085.984375
+              },
+              "html": "\n                <span class=\"cs-portfolio-card-label\">Service</span>\n                <h3>Untitled service</h3>\n                \n            "
+            }
+          ],
+          "scrollWidth": 1366,
+          "clientWidth": 1366,
+          "scripts": 0,
+          "images": 0,
+          "skillCount": 6,
+          "projectCount": 5,
+          "timelineCount": 8
+        },
+        "errors": []
+      }
+    },
+    {
+      "test": "malformed_item_string_does_not_crash",
+      "passed": true,
+      "details": {
+        "snap": {
+          "bootReady": true,
+          "bootFailed": false,
+          "sectionHidden": false,
+          "gridText": "\n            \n                Service\n                Untitled service\n                \n            \n        ",
+          "gridRect": {
+            "x": 103,
+            "y": 4965.984375,
+            "w": 1160,
+            "h": 120,
+            "right": 1263,
+            "bottom": 5085.984375
+          },
+          "cards": [
+            {
+              "icon": "Service",
+              "title": "Untitled service",
+              "description": null,
+              "pCount": 0,
+              "rect": {
+                "x": 103,
+                "y": 4965.984375,
+                "w": 376,
+                "h": 120,
+                "right": 479,
+                "bottom": 5085.984375
+              },
+              "html": "\n                <span class=\"cs-portfolio-card-label\">Service</span>\n                <h3>Untitled service</h3>\n                \n            "
+            }
+          ],
+          "scrollWidth": 1366,
+          "clientWidth": 1366,
+          "scripts": 0,
+          "images": 0,
+          "skillCount": 6,
+          "projectCount": 5,
+          "timelineCount": 8
+        },
+        "errors": []
+      }
+    },
+    {
+      "test": "malformed_item_number_does_not_crash",
+      "passed": true,
+      "details": {
+        "snap": {
+          "bootReady": true,
+          "bootFailed": false,
+          "sectionHidden": false,
+          "gridText": "\n            \n                Service\n                Untitled service\n                \n            \n        ",
+          "gridRect": {
+            "x": 103,
+            "y": 4965.984375,
+            "w": 1160,
+            "h": 120,
+            "right": 1263,
+            "bottom": 5085.984375
+          },
+          "cards": [
+            {
+              "icon": "Service",
+              "title": "Untitled service",
+              "description": null,
+              "pCount": 0,
+              "rect": {
+                "x": 103,
+                "y": 4965.984375,
+                "w": 376,
+                "h": 120,
+                "right": 479,
+                "bottom": 5085.984375
+              },
+              "html": "\n                <span class=\"cs-portfolio-card-label\">Service</span>\n                <h3>Untitled service</h3>\n                \n            "
+            }
+          ],
+          "scrollWidth": 1366,
+          "clientWidth": 1366,
+          "scripts": 0,
+          "images": 0,
+          "skillCount": 6,
+          "projectCount": 5,
+          "timelineCount": 8
+        },
+        "errors": []
+      }
+    },
+    {
+      "test": "malformed_item_boolean_does_not_crash",
+      "passed": true,
+      "details": {
+        "snap": {
+          "bootReady": true,
+          "bootFailed": false,
+          "sectionHidden": false,
+          "gridText": "\n            \n                Service\n                Untitled service\n                \n            \n        ",
+          "gridRect": {
+            "x": 103,
+            "y": 4965.984375,
+            "w": 1160,
+            "h": 120,
+            "right": 1263,
+            "bottom": 5085.984375
+          },
+          "cards": [
+            {
+              "icon": "Service",
+              "title": "Untitled service",
+              "description": null,
+              "pCount": 0,
+              "rect": {
+                "x": 103,
+                "y": 4965.984375,
+                "w": 376,
+                "h": 120,
+                "right": 479,
+                "bottom": 5085.984375
+              },
+              "html": "\n                <span class=\"cs-portfolio-card-label\">Service</span>\n                <h3>Untitled service</h3>\n                \n            "
+            }
+          ],
+          "scrollWidth": 1366,
+          "clientWidth": 1366,
+          "scripts": 0,
+          "images": 0,
+          "skillCount": 6,
+          "projectCount": 5,
+          "timelineCount": 8
+        },
+        "errors": []
+      }
+    },
+    {
+      "test": "primitive_values_stringify_safely",
+      "passed": true,
+      "details": {
+        "icon": "123",
+        "title": "false",
+        "description": "true",
+        "pCount": 1,
+        "rect": {
+          "x": 103,
+          "y": 4965.984375,
+          "w": 376,
+          "h": 170.390625,
+          "right": 479,
+          "bottom": 5136.375
+        },
+        "html": "\n                <span class=\"cs-portfolio-card-label\">123</span>\n                <h3>false</h3>\n                <p>true</p>\n            "
+      }
+    },
+    {
+      "test": "all_service_fields_escape_html",
+      "passed": true,
+      "details": {
+        "snap": {
+          "bootReady": true,
+          "bootFailed": false,
+          "sectionHidden": false,
+          "gridText": "\n            \n                <img src=x onerror=\"window.__pwn=1\"><script>window.__pwn=1</script>\n                <img src=x onerror=\"window.__pwn=1\"><script>window.__pwn=1</script>\n                <img src=x onerror=\"window.__pwn=1\"><script>window.__pwn=1</script>\n            \n        ",
+          "gridRect": {
+            "x": 103,
+            "y": 4965.984375,
+            "w": 1160,
+            "h": 282.78125,
+            "right": 1263,
+            "bottom": 5248.765625
+          },
+          "cards": [
+            {
+              "icon": "<img src=x onerror=\"window.__pwn=1\"><script>window.__pwn=1</script>",
+              "title": "<img src=x onerror=\"window.__pwn=1\"><script>window.__pwn=1</script>",
+              "description": "<img src=x onerror=\"window.__pwn=1\"><script>window.__pwn=1</script>",
+              "pCount": 1,
+              "rect": {
+                "x": 103,
+                "y": 4965.984375,
+                "w": 376,
+                "h": 282.78125,
+                "right": 479,
+                "bottom": 5248.765625
+              },
+              "html": "\n                <span class=\"cs-portfolio-card-label\">&lt;img src=x onerror=\"window.__pwn=1\"&gt;&lt;script&gt;window.__pwn=1&lt;/script&gt;</span>\n                <h3>&lt;img src=x onerror=\"window.__pwn=1\"&gt;&lt;script&gt;window.__pwn=1&lt;/script&gt;</h3>\n                <p>&lt;img src=x onerror=\"window.__pwn=1\"&gt;&lt;script&gt;window.__pwn=1&lt;/script&gt;</p>\n            "
+            }
+          ],
+          "scrollWidth": 1366,
+          "clientWidth": 1366,
+          "scripts": 0,
+          "images": 0,
+          "skillCount": 6,
+          "projectCount": 5,
+          "timelineCount": 8
+        },
+        "errors": []
+      }
+    },
+    {
+      "test": "add_service_renders_new_card",
+      "passed": true,
+      "details": {
+        "icon": "Added",
+        "title": "Added Service",
+        "description": "Added Description",
+        "pCount": 1,
+        "rect": {
+          "x": 495,
+          "y": 5205.15625,
+          "w": 376,
+          "h": 223.171875,
+          "right": 871,
+          "bottom": 5428.328125
+        },
+        "html": "\n                <span class=\"cs-portfolio-card-label\">Added</span>\n                <h3>Added Service</h3>\n                <p>Added Description</p>\n            "
+      }
+    },
+    {
+      "test": "delete_service_removes_card",
+      "passed": true,
+      "details": {
+        "icon": "Utility",
+        "title": "IT support utility design",
+        "description": "Turn repeated support problems into small tools, command hubs and dashboards that are easier for users to run.",
+        "pCount": 1,
+        "rect": {
+          "x": 103,
+          "y": 4965.984375,
+          "w": 376,
+          "h": 223.171875,
+          "right": 479,
+          "bottom": 5189.15625
+        },
+        "html": "\n                <span class=\"cs-portfolio-card-label\">Utility</span>\n                <h3>IT support utility design</h3>\n                <p>Turn repeated support problems into small tools, command hubs and dashboards that are easier for users to run.</p>\n            "
+      }
+    },
+    {
+      "test": "reorder_services_preserves_exact_order",
+      "passed": true,
+      "details": {
+        "titles": [
+          "Technical documentation",
+          "GitHub Pages deployment",
+          "IT support utility design",
+          "Windows automation workflows"
+        ]
+      }
+    },
+    {
+      "test": "duplicate_services_render_independently",
+      "passed": true,
+      "details": [
+        {
+          "icon": "Automation",
+          "title": "Windows automation workflows",
+          "description": "Build repeatable PowerShell workflows for installation, cleanup, startup tasks, support checks and safe execution.",
+          "pCount": 1,
+          "rect": {
+            "x": 103,
+            "y": 4965.984375,
+            "w": 376,
+            "h": 223.171875,
+            "right": 479,
+            "bottom": 5189.15625
+          },
+          "html": "\n                <span class=\"cs-portfolio-card-label\">Automation</span>\n                <h3>Windows automation workflows</h3>\n                <p>Build repeatable PowerShell workflows for installation, cleanup, startup tasks, support checks and safe execution.</p>\n            "
+        },
+        {
+          "icon": "Automation",
+          "title": "Windows automation workflows",
+          "description": "Build repeatable PowerShell workflows for installation, cleanup, startup tasks, support checks and safe execution.",
+          "pCount": 1,
+          "rect": {
+            "x": 495,
+            "y": 4965.984375,
+            "w": 376,
+            "h": 223.171875,
+            "right": 871,
+            "bottom": 5189.15625
+          },
+          "html": "\n                <span class=\"cs-portfolio-card-label\">Automation</span>\n                <h3>Windows automation workflows</h3>\n                <p>Build repeatable PowerShell workflows for installation, cleanup, startup tasks, support checks and safe execution.</p>\n            "
+        }
+      ]
+    },
+    {
+      "test": "empty_array_shows_empty_state",
+      "passed": true,
+      "details": {
+        "snap": {
+          "bootReady": true,
+          "bootFailed": false,
+          "sectionHidden": false,
+          "gridText": "\n        \n            No portfolio services found\n            Add services in data/services.json from Pages CMS.\n        \n    ",
+          "gridRect": {
+            "x": 103,
+            "y": 4965.984375,
+            "w": 1160,
+            "h": 130,
+            "right": 1263,
+            "bottom": 5095.984375
+          },
+          "cards": [],
+          "scrollWidth": 1366,
+          "clientWidth": 1366,
+          "scripts": 0,
+          "images": 0,
+          "skillCount": 6,
+          "projectCount": 5,
+          "timelineCount": 8
+        },
+        "errors": []
+      }
+    },
+    {
+      "test": "non_array_root_null_shows_safe_empty_state",
+      "passed": true,
+      "details": {
+        "snap": {
+          "bootReady": true,
+          "bootFailed": false,
+          "sectionHidden": false,
+          "gridText": "\n        \n            No portfolio services found\n            Add services in data/services.json from Pages CMS.\n        \n    ",
+          "gridRect": {
+            "x": 103,
+            "y": 4965.984375,
+            "w": 1160,
+            "h": 130,
+            "right": 1263,
+            "bottom": 5095.984375
+          },
+          "cards": [],
+          "scrollWidth": 1366,
+          "clientWidth": 1366,
+          "scripts": 0,
+          "images": 0,
+          "skillCount": 6,
+          "projectCount": 5,
+          "timelineCount": 8
+        },
+        "errors": []
+      }
+    },
+    {
+      "test": "non_array_root_object_shows_safe_empty_state",
+      "passed": true,
+      "details": {
+        "snap": {
+          "bootReady": true,
+          "bootFailed": false,
+          "sectionHidden": false,
+          "gridText": "\n        \n            No portfolio services found\n            Add services in data/services.json from Pages CMS.\n        \n    ",
+          "gridRect": {
+            "x": 103,
+            "y": 4965.984375,
+            "w": 1160,
+            "h": 130,
+            "right": 1263,
+            "bottom": 5095.984375
+          },
+          "cards": [],
+          "scrollWidth": 1366,
+          "clientWidth": 1366,
+          "scripts": 0,
+          "images": 0,
+          "skillCount": 6,
+          "projectCount": 5,
+          "timelineCount": 8
+        },
+        "errors": []
+      }
+    },
+    {
+      "test": "non_array_root_string_shows_safe_empty_state",
+      "passed": true,
+      "details": {
+        "snap": {
+          "bootReady": true,
+          "bootFailed": false,
+          "sectionHidden": false,
+          "gridText": "\n        \n            No portfolio services found\n            Add services in data/services.json from Pages CMS.\n        \n    ",
+          "gridRect": {
+            "x": 103,
+            "y": 4965.984375,
+            "w": 1160,
+            "h": 130,
+            "right": 1263,
+            "bottom": 5095.984375
+          },
+          "cards": [],
+          "scrollWidth": 1366,
+          "clientWidth": 1366,
+          "scripts": 0,
+          "images": 0,
+          "skillCount": 6,
+          "projectCount": 5,
+          "timelineCount": 8
+        },
+        "errors": []
+      }
+    },
+    {
+      "test": "non_array_root_number_shows_safe_empty_state",
+      "passed": true,
+      "details": {
+        "snap": {
+          "bootReady": true,
+          "bootFailed": false,
+          "sectionHidden": false,
+          "gridText": "\n        \n            No portfolio services found\n            Add services in data/services.json from Pages CMS.\n        \n    ",
+          "gridRect": {
+            "x": 103,
+            "y": 4965.984375,
+            "w": 1160,
+            "h": 130,
+            "right": 1263,
+            "bottom": 5095.984375
+          },
+          "cards": [],
+          "scrollWidth": 1366,
+          "clientWidth": 1366,
+          "scripts": 0,
+          "images": 0,
+          "skillCount": 6,
+          "projectCount": 5,
+          "timelineCount": 8
+        },
+        "errors": []
+      }
+    },
+    {
+      "test": "non_array_root_boolean_shows_safe_empty_state",
+      "passed": true,
+      "details": {
+        "snap": {
+          "bootReady": true,
+          "bootFailed": false,
+          "sectionHidden": false,
+          "gridText": "\n        \n            No portfolio services found\n            Add services in data/services.json from Pages CMS.\n        \n    ",
+          "gridRect": {
+            "x": 103,
+            "y": 4965.984375,
+            "w": 1160,
+            "h": 130,
+            "right": 1263,
+            "bottom": 5095.984375
+          },
+          "cards": [],
+          "scrollWidth": 1366,
+          "clientWidth": 1366,
+          "scripts": 0,
+          "images": 0,
+          "skillCount": 6,
+          "projectCount": 5,
+          "timelineCount": 8
+        },
+        "errors": []
+      }
+    },
+    {
+      "test": "portfolio_settings_can_hide_services_section",
+      "passed": true,
+      "details": {
+        "bootReady": true,
+        "bootFailed": false,
+        "sectionHidden": true,
+        "gridText": "\n            \n                Automation\n                Windows automation workflows\n                Build repeatable PowerShell workflows for installation, cleanup, startup tasks, support checks and safe execution.\n            \n        \n            \n                Utility\n                IT support utility design\n                Turn repeated support problems into small tools, command hubs and dashboards that are easier for users to run.\n            \n        \n            \n                Deploy\n                GitHub Pages deployment\n                Publish tools, release links, documentation and CMS-driven static websites with a clean GitHub Pages workflow.\n            \n        \n            \n                Docs\n                Technical documentation\n                Create install guides, safety notes, changelogs, CMS guides and troubleshooting documentation for every version.\n            \n        ",
+        "gridRect": {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        "cards": [
+          {
+            "icon": "Automation",
+            "title": "Windows automation workflows",
+            "description": "Build repeatable PowerShell workflows for installation, cleanup, startup tasks, support checks and safe execution.",
+            "pCount": 1,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "right": 0,
+              "bottom": 0
+            },
+            "html": "\n                <span class=\"cs-portfolio-card-label\">Automation</span>\n                <h3>Windows automation workflows</h3>\n                <p>Build repeatable PowerShell workflows for installation, cleanup, startup tasks, support checks and safe execution.</p>\n            "
+          },
+          {
+            "icon": "Utility",
+            "title": "IT support utility design",
+            "description": "Turn repeated support problems into small tools, command hubs and dashboards that are easier for users to run.",
+            "pCount": 1,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "right": 0,
+              "bottom": 0
+            },
+            "html": "\n                <span class=\"cs-portfolio-card-label\">Utility</span>\n                <h3>IT support utility design</h3>\n                <p>Turn repeated support problems into small tools, command hubs and dashboards that are easier for users to run.</p>\n            "
+          },
+          {
+            "icon": "Deploy",
+            "title": "GitHub Pages deployment",
+            "description": "Publish tools, release links, documentation and CMS-driven static websites with a clean GitHub Pages workflow.",
+            "pCount": 1,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "right": 0,
+              "bottom": 0
+            },
+            "html": "\n                <span class=\"cs-portfolio-card-label\">Deploy</span>\n                <h3>GitHub Pages deployment</h3>\n                <p>Publish tools, release links, documentation and CMS-driven static websites with a clean GitHub Pages workflow.</p>\n            "
+          },
+          {
+            "icon": "Docs",
+            "title": "Technical documentation",
+            "description": "Create install guides, safety notes, changelogs, CMS guides and troubleshooting documentation for every version.",
+            "pCount": 1,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0,
+              "right": 0,
+              "bottom": 0
+            },
+            "html": "\n                <span class=\"cs-portfolio-card-label\">Docs</span>\n                <h3>Technical documentation</h3>\n                <p>Create install guides, safety notes, changelogs, CMS guides and troubleshooting documentation for every version.</p>\n            "
+          }
+        ],
+        "scrollWidth": 1366,
+        "clientWidth": 1366,
+        "scripts": 0,
+        "images": 0,
+        "skillCount": 6,
+        "projectCount": 5,
+        "timelineCount": 8
+      }
+    },
+    {
+      "test": "service_changes_do_not_change_other_portfolio_lists",
+      "passed": true,
+      "details": {
+        "actual": [
+          6,
+          5,
+          8
+        ],
+        "baseline": [
+          6,
+          5,
+          8
+        ]
+      }
+    },
+    {
+      "test": "responsive_columns_1366",
+      "passed": true,
+      "details": {
+        "cols": 3,
+        "expected": 3,
+        "ys": [
+          4966.0,
+          4966.0,
+          4966.0,
+          5205.2
+        ],
+        "errors": []
+      }
+    },
+    {
+      "test": "no_horizontal_overflow_1366",
+      "passed": true,
+      "details": {
+        "scrollWidth": 1366,
+        "clientWidth": 1366,
+        "errors": []
+      }
+    },
+    {
+      "test": "responsive_columns_1024",
+      "passed": true,
+      "details": {
+        "cols": 3,
+        "expected": 3,
+        "ys": [
+          5306.3,
+          5306.3,
+          5306.3,
+          5595.9
+        ],
+        "errors": []
+      }
+    },
+    {
+      "test": "no_horizontal_overflow_1024",
+      "passed": true,
+      "details": {
+        "scrollWidth": 1024,
+        "clientWidth": 1024,
+        "errors": []
+      }
+    },
+    {
+      "test": "responsive_columns_768",
+      "passed": true,
+      "details": {
+        "cols": 1,
+        "expected": 1,
+        "ys": [
+          6627.3,
+          6840.1,
+          7052.8,
+          7265.6
+        ],
+        "errors": []
+      }
+    },
+    {
+      "test": "no_horizontal_overflow_768",
+      "passed": true,
+      "details": {
+        "scrollWidth": 768,
+        "clientWidth": 768,
+        "errors": []
+      }
+    },
+    {
+      "test": "responsive_columns_430",
+      "passed": true,
+      "details": {
+        "cols": 1,
+        "expected": 1,
+        "ys": [
+          7692.8,
+          7932.0,
+          8171.1,
+          8410.3
+        ],
+        "errors": []
+      }
+    },
+    {
+      "test": "no_horizontal_overflow_430",
+      "passed": true,
+      "details": {
+        "scrollWidth": 430,
+        "clientWidth": 430,
+        "errors": []
+      }
+    },
+    {
+      "test": "responsive_columns_360",
+      "passed": true,
+      "details": {
+        "cols": 1,
+        "expected": 1,
+        "ys": [
+          8179.8,
+          8443.0,
+          8708.6,
+          8974.1
+        ],
+        "errors": []
+      }
+    },
+    {
+      "test": "no_horizontal_overflow_360",
+      "passed": true,
+      "details": {
+        "scrollWidth": 360,
+        "clientWidth": 360,
+        "errors": []
+      }
+    },
+    {
+      "test": "long_content_no_horizontal_overflow_360",
+      "passed": true,
+      "details": {
+        "scrollWidth": 360,
+        "clientWidth": 360,
+        "errors": []
+      }
+    },
+    {
+      "test": "long_content_no_horizontal_overflow_430",
+      "passed": true,
+      "details": {
+        "scrollWidth": 430,
+        "clientWidth": 430,
+        "errors": []
+      }
+    },
+    {
+      "test": "long_content_no_horizontal_overflow_768",
+      "passed": true,
+      "details": {
+        "scrollWidth": 768,
+        "clientWidth": 768,
+        "errors": []
+      }
+    },
+    {
+      "test": "long_content_no_horizontal_overflow_1366",
+      "passed": true,
+      "details": {
+        "scrollWidth": 1366,
+        "clientWidth": 1366,
+        "errors": []
+      }
+    },
+    {
+      "test": "desktop_grid_cards_equal_height",
+      "passed": true,
+      "details": {
+        "heights": [
+          276.0,
+          276.0,
+          276.0
+        ]
+      }
+    },
+    {
+      "test": "large_200_item_list_renders_without_error",
+      "passed": true,
+      "details": {
+        "count": 200,
+        "errors": []
+      }
+    }
+  ]
+}

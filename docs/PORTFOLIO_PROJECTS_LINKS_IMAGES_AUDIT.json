@@ -1,0 +1,890 @@
+{
+  "batch": "links_images",
+  "checks": 22,
+  "passed": 22,
+  "failed": 0,
+  "results": [
+    {
+      "test": "link_https",
+      "passed": true,
+      "details": {
+        "c": {
+          "status": "Live",
+          "title": "CyberSabil Tools Website",
+          "description": "A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.",
+          "tech": "GitHub Pages · HTML, CSS, JavaScript, JSON, Pages CMS",
+          "linkText": "Open",
+          "href": "https://example.com/p",
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "linkRect": {
+            "x": 128,
+            "y": 2077.34375,
+            "w": 40.890625,
+            "h": 32,
+            "b": 2109.34375
+          },
+          "imgSrc": null,
+          "imgAlt": null,
+          "imgHidden": true,
+          "imgCount": 0,
+          "pCount": 2,
+          "rect": {
+            "x": 103,
+            "y": 1849.125,
+            "w": 571,
+            "h": 285.21875,
+            "b": 2134.34375
+          },
+          "html": "\n                    \n                    <span class=\"cs-portfolio-project-status\">Live</span>\n                    <h3>CyberSabil Tools Website</h3>\n                    <p>A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.</p>\n                    <p class=\"cs-portfolio-project-tech\"><strong>GitHub Pages</strong> · HTML, CSS, JavaScript, JSON, Pages CMS</p>\n                    <a class=\"cs-portfolio-project-link\" href=\"https://example.com/p\" target=\"_blank\" rel=\"noopener noreferrer\">Open</a>\n                "
+        },
+        "e": []
+      }
+    },
+    {
+      "test": "link_http",
+      "passed": true,
+      "details": {
+        "c": {
+          "status": "Live",
+          "title": "CyberSabil Tools Website",
+          "description": "A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.",
+          "tech": "GitHub Pages · HTML, CSS, JavaScript, JSON, Pages CMS",
+          "linkText": "Open",
+          "href": "http://example.com/p",
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "linkRect": {
+            "x": 128,
+            "y": 2077.34375,
+            "w": 40.890625,
+            "h": 32,
+            "b": 2109.34375
+          },
+          "imgSrc": null,
+          "imgAlt": null,
+          "imgHidden": true,
+          "imgCount": 0,
+          "pCount": 2,
+          "rect": {
+            "x": 103,
+            "y": 1849.125,
+            "w": 571,
+            "h": 285.21875,
+            "b": 2134.34375
+          },
+          "html": "\n                    \n                    <span class=\"cs-portfolio-project-status\">Live</span>\n                    <h3>CyberSabil Tools Website</h3>\n                    <p>A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.</p>\n                    <p class=\"cs-portfolio-project-tech\"><strong>GitHub Pages</strong> · HTML, CSS, JavaScript, JSON, Pages CMS</p>\n                    <a class=\"cs-portfolio-project-link\" href=\"http://example.com/p\" target=\"_blank\" rel=\"noopener noreferrer\">Open</a>\n                "
+        },
+        "e": []
+      }
+    },
+    {
+      "test": "link_hash",
+      "passed": true,
+      "details": {
+        "c": {
+          "status": "Live",
+          "title": "CyberSabil Tools Website",
+          "description": "A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.",
+          "tech": "GitHub Pages · HTML, CSS, JavaScript, JSON, Pages CMS",
+          "linkText": "Open",
+          "href": "#contact",
+          "target": null,
+          "rel": null,
+          "linkRect": {
+            "x": 128,
+            "y": 2077.34375,
+            "w": 40.890625,
+            "h": 32,
+            "b": 2109.34375
+          },
+          "imgSrc": null,
+          "imgAlt": null,
+          "imgHidden": true,
+          "imgCount": 0,
+          "pCount": 2,
+          "rect": {
+            "x": 103,
+            "y": 1849.125,
+            "w": 571,
+            "h": 285.21875,
+            "b": 2134.34375
+          },
+          "html": "\n                    \n                    <span class=\"cs-portfolio-project-status\">Live</span>\n                    <h3>CyberSabil Tools Website</h3>\n                    <p>A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.</p>\n                    <p class=\"cs-portfolio-project-tech\"><strong>GitHub Pages</strong> · HTML, CSS, JavaScript, JSON, Pages CMS</p>\n                    <a class=\"cs-portfolio-project-link\" href=\"#contact\">Open</a>\n                "
+        },
+        "e": []
+      }
+    },
+    {
+      "test": "link_relative",
+      "passed": true,
+      "details": {
+        "c": {
+          "status": "Live",
+          "title": "CyberSabil Tools Website",
+          "description": "A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.",
+          "tech": "GitHub Pages · HTML, CSS, JavaScript, JSON, Pages CMS",
+          "linkText": "Open",
+          "href": "projects/demo.html",
+          "target": null,
+          "rel": null,
+          "linkRect": {
+            "x": 128,
+            "y": 2077.34375,
+            "w": 40.890625,
+            "h": 32,
+            "b": 2109.34375
+          },
+          "imgSrc": null,
+          "imgAlt": null,
+          "imgHidden": true,
+          "imgCount": 0,
+          "pCount": 2,
+          "rect": {
+            "x": 103,
+            "y": 1849.125,
+            "w": 571,
+            "h": 285.21875,
+            "b": 2134.34375
+          },
+          "html": "\n                    \n                    <span class=\"cs-portfolio-project-status\">Live</span>\n                    <h3>CyberSabil Tools Website</h3>\n                    <p>A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.</p>\n                    <p class=\"cs-portfolio-project-tech\"><strong>GitHub Pages</strong> · HTML, CSS, JavaScript, JSON, Pages CMS</p>\n                    <a class=\"cs-portfolio-project-link\" href=\"projects/demo.html\">Open</a>\n                "
+        },
+        "e": []
+      }
+    },
+    {
+      "test": "link_mail",
+      "passed": true,
+      "details": {
+        "c": {
+          "status": "Live",
+          "title": "CyberSabil Tools Website",
+          "description": "A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.",
+          "tech": "GitHub Pages · HTML, CSS, JavaScript, JSON, Pages CMS",
+          "linkText": "Open",
+          "href": "mailto:a@b.com",
+          "target": null,
+          "rel": null,
+          "linkRect": {
+            "x": 128,
+            "y": 2077.34375,
+            "w": 40.890625,
+            "h": 32,
+            "b": 2109.34375
+          },
+          "imgSrc": null,
+          "imgAlt": null,
+          "imgHidden": true,
+          "imgCount": 0,
+          "pCount": 2,
+          "rect": {
+            "x": 103,
+            "y": 1849.125,
+            "w": 571,
+            "h": 285.21875,
+            "b": 2134.34375
+          },
+          "html": "\n                    \n                    <span class=\"cs-portfolio-project-status\">Live</span>\n                    <h3>CyberSabil Tools Website</h3>\n                    <p>A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.</p>\n                    <p class=\"cs-portfolio-project-tech\"><strong>GitHub Pages</strong> · HTML, CSS, JavaScript, JSON, Pages CMS</p>\n                    <a class=\"cs-portfolio-project-link\" href=\"mailto:a@b.com\">Open</a>\n                "
+        },
+        "e": []
+      }
+    },
+    {
+      "test": "link_tel",
+      "passed": true,
+      "details": {
+        "c": {
+          "status": "Live",
+          "title": "CyberSabil Tools Website",
+          "description": "A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.",
+          "tech": "GitHub Pages · HTML, CSS, JavaScript, JSON, Pages CMS",
+          "linkText": "Open",
+          "href": "tel:+91123",
+          "target": null,
+          "rel": null,
+          "linkRect": {
+            "x": 128,
+            "y": 2077.34375,
+            "w": 40.890625,
+            "h": 32,
+            "b": 2109.34375
+          },
+          "imgSrc": null,
+          "imgAlt": null,
+          "imgHidden": true,
+          "imgCount": 0,
+          "pCount": 2,
+          "rect": {
+            "x": 103,
+            "y": 1849.125,
+            "w": 571,
+            "h": 285.21875,
+            "b": 2134.34375
+          },
+          "html": "\n                    \n                    <span class=\"cs-portfolio-project-status\">Live</span>\n                    <h3>CyberSabil Tools Website</h3>\n                    <p>A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.</p>\n                    <p class=\"cs-portfolio-project-tech\"><strong>GitHub Pages</strong> · HTML, CSS, JavaScript, JSON, Pages CMS</p>\n                    <a class=\"cs-portfolio-project-link\" href=\"tel:+91123\">Open</a>\n                "
+        },
+        "e": []
+      }
+    },
+    {
+      "test": "link_blank",
+      "passed": true,
+      "details": {
+        "c": {
+          "status": "Live",
+          "title": "CyberSabil Tools Website",
+          "description": "A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.",
+          "tech": "GitHub Pages · HTML, CSS, JavaScript, JSON, Pages CMS",
+          "linkText": null,
+          "href": null,
+          "target": null,
+          "rel": null,
+          "linkRect": null,
+          "imgSrc": null,
+          "imgAlt": null,
+          "imgHidden": true,
+          "imgCount": 0,
+          "pCount": 2,
+          "rect": {
+            "x": 103,
+            "y": 1849.125,
+            "w": 571,
+            "h": 285.21875,
+            "b": 2134.34375
+          },
+          "html": "\n                    \n                    <span class=\"cs-portfolio-project-status\">Live</span>\n                    <h3>CyberSabil Tools Website</h3>\n                    <p>A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.</p>\n                    <p class=\"cs-portfolio-project-tech\"><strong>GitHub Pages</strong> · HTML, CSS, JavaScript, JSON, Pages CMS</p>\n                    \n                "
+        },
+        "e": []
+      }
+    },
+    {
+      "test": "link_hashonly",
+      "passed": true,
+      "details": {
+        "c": {
+          "status": "Live",
+          "title": "CyberSabil Tools Website",
+          "description": "A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.",
+          "tech": "GitHub Pages · HTML, CSS, JavaScript, JSON, Pages CMS",
+          "linkText": null,
+          "href": null,
+          "target": null,
+          "rel": null,
+          "linkRect": null,
+          "imgSrc": null,
+          "imgAlt": null,
+          "imgHidden": true,
+          "imgCount": 0,
+          "pCount": 2,
+          "rect": {
+            "x": 103,
+            "y": 1849.125,
+            "w": 571,
+            "h": 285.21875,
+            "b": 2134.34375
+          },
+          "html": "\n                    \n                    <span class=\"cs-portfolio-project-status\">Live</span>\n                    <h3>CyberSabil Tools Website</h3>\n                    <p>A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.</p>\n                    <p class=\"cs-portfolio-project-tech\"><strong>GitHub Pages</strong> · HTML, CSS, JavaScript, JSON, Pages CMS</p>\n                    \n                "
+        },
+        "e": []
+      }
+    },
+    {
+      "test": "link_js",
+      "passed": true,
+      "details": {
+        "c": {
+          "status": "Live",
+          "title": "CyberSabil Tools Website",
+          "description": "A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.",
+          "tech": "GitHub Pages · HTML, CSS, JavaScript, JSON, Pages CMS",
+          "linkText": null,
+          "href": null,
+          "target": null,
+          "rel": null,
+          "linkRect": null,
+          "imgSrc": null,
+          "imgAlt": null,
+          "imgHidden": true,
+          "imgCount": 0,
+          "pCount": 2,
+          "rect": {
+            "x": 103,
+            "y": 1849.125,
+            "w": 571,
+            "h": 285.21875,
+            "b": 2134.34375
+          },
+          "html": "\n                    \n                    <span class=\"cs-portfolio-project-status\">Live</span>\n                    <h3>CyberSabil Tools Website</h3>\n                    <p>A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.</p>\n                    <p class=\"cs-portfolio-project-tech\"><strong>GitHub Pages</strong> · HTML, CSS, JavaScript, JSON, Pages CMS</p>\n                    \n                "
+        },
+        "e": []
+      }
+    },
+    {
+      "test": "link_data",
+      "passed": true,
+      "details": {
+        "c": {
+          "status": "Live",
+          "title": "CyberSabil Tools Website",
+          "description": "A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.",
+          "tech": "GitHub Pages · HTML, CSS, JavaScript, JSON, Pages CMS",
+          "linkText": null,
+          "href": null,
+          "target": null,
+          "rel": null,
+          "linkRect": null,
+          "imgSrc": null,
+          "imgAlt": null,
+          "imgHidden": true,
+          "imgCount": 0,
+          "pCount": 2,
+          "rect": {
+            "x": 103,
+            "y": 1849.125,
+            "w": 571,
+            "h": 285.21875,
+            "b": 2134.34375
+          },
+          "html": "\n                    \n                    <span class=\"cs-portfolio-project-status\">Live</span>\n                    <h3>CyberSabil Tools Website</h3>\n                    <p>A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.</p>\n                    <p class=\"cs-portfolio-project-tech\"><strong>GitHub Pages</strong> · HTML, CSS, JavaScript, JSON, Pages CMS</p>\n                    \n                "
+        },
+        "e": []
+      }
+    },
+    {
+      "test": "link_vb",
+      "passed": true,
+      "details": {
+        "c": {
+          "status": "Live",
+          "title": "CyberSabil Tools Website",
+          "description": "A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.",
+          "tech": "GitHub Pages · HTML, CSS, JavaScript, JSON, Pages CMS",
+          "linkText": null,
+          "href": null,
+          "target": null,
+          "rel": null,
+          "linkRect": null,
+          "imgSrc": null,
+          "imgAlt": null,
+          "imgHidden": true,
+          "imgCount": 0,
+          "pCount": 2,
+          "rect": {
+            "x": 103,
+            "y": 1849.125,
+            "w": 571,
+            "h": 285.21875,
+            "b": 2134.34375
+          },
+          "html": "\n                    \n                    <span class=\"cs-portfolio-project-status\">Live</span>\n                    <h3>CyberSabil Tools Website</h3>\n                    <p>A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.</p>\n                    <p class=\"cs-portfolio-project-tech\"><strong>GitHub Pages</strong> · HTML, CSS, JavaScript, JSON, Pages CMS</p>\n                    \n                "
+        },
+        "e": []
+      }
+    },
+    {
+      "test": "button_global_fallback",
+      "passed": true,
+      "details": {
+        "status": "Live",
+        "title": "CyberSabil Tools Website",
+        "description": "A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.",
+        "tech": "GitHub Pages · HTML, CSS, JavaScript, JSON, Pages CMS",
+        "linkText": "Global label",
+        "href": "#contact",
+        "target": null,
+        "rel": null,
+        "linkRect": {
+          "x": 128,
+          "y": 2077.34375,
+          "w": 90.6875,
+          "h": 32,
+          "b": 2109.34375
+        },
+        "imgSrc": null,
+        "imgAlt": null,
+        "imgHidden": true,
+        "imgCount": 0,
+        "pCount": 2,
+        "rect": {
+          "x": 103,
+          "y": 1849.125,
+          "w": 571,
+          "h": 285.21875,
+          "b": 2134.34375
+        },
+        "html": "\n                    \n                    <span class=\"cs-portfolio-project-status\">Live</span>\n                    <h3>CyberSabil Tools Website</h3>\n                    <p>A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.</p>\n                    <p class=\"cs-portfolio-project-tech\"><strong>GitHub Pages</strong> · HTML, CSS, JavaScript, JSON, Pages CMS</p>\n                    <a class=\"cs-portfolio-project-link\" href=\"#contact\">Global label</a>\n                "
+      }
+    },
+    {
+      "test": "links_global_hide",
+      "passed": true,
+      "details": {
+        "ready": true,
+        "failed": false,
+        "sectionHidden": false,
+        "empty": "\n                \n                    \n                    Live\n                    CyberSabil Tools Website\n                    A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.\n                    GitHub Pages · HTML, CSS, JavaScript, JSON, Pages CMS\n                    \n                \n            \n                \n                    \n                    Active\n                    Glass Gateway Dual Mode\n                    A same-homepage mode system that lets visitors open the existing tools website or switch into a professional portfolio layout.\n                    Website architecture · Vanilla JavaScript, CSS, CMS settings, GitHub Pages\n                    \n                \n            \n                \n                    \n                    Active\n                    TrafficMonitor Auto Setup\n                    A GitHub-hosted PowerShell launcher for installing and configuring TrafficMonitor with a repeatable setup flow.\n                    Windows automation · PowerShell, GitHub Pages, Windows Scheduled Tasks\n                    \n                \n            \n                \n                    \n                    Active\n                    TrafficMonitor Deep Clean\n                    A controlled removal workflow for TrafficMonitor files, startup entries, scheduled tasks and user-profile leftovers.\n                    Cleanup workflow · PowerShell, Windows Registry, File System\n                    \n                \n            \n                \n                    \n                    Planned\n                    CyberSabil IT Tools EXE\n                    A future standalone dashboard for common Windows diagnostics, admin shortcuts, support utilities and safe command access.\n                    Desktop utility · C#, Windows Desktop, GitHub Releases\n                    \n                \n            ",
+        "cols": "571px 571px",
+        "sw": 1366,
+        "cw": 1366,
+        "skillCount": 6,
+        "skillTitle": "PowerShell automation",
+        "scripts": 0,
+        "images": 0,
+        "cards": [
+          {
+            "status": "Live",
+            "title": "CyberSabil Tools Website",
+            "description": "A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.",
+            "tech": "GitHub Pages · HTML, CSS, JavaScript, JSON, Pages CMS",
+            "linkText": null,
+            "href": null,
+            "target": null,
+            "rel": null,
+            "linkRect": null,
+            "imgSrc": null,
+            "imgAlt": null,
+            "imgHidden": true,
+            "imgCount": 0,
+            "pCount": 2,
+            "rect": {
+              "x": 103,
+              "y": 1849.125,
+              "w": 571,
+              "h": 253.21875,
+              "b": 2102.34375
+            },
+            "html": "\n                    \n                    <span class=\"cs-portfolio-project-status\">Live</span>\n                    <h3>CyberSabil Tools Website</h3>\n                    <p>A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.</p>\n                    <p class=\"cs-portfolio-project-tech\"><strong>GitHub Pages</strong> · HTML, CSS, JavaScript, JSON, Pages CMS</p>\n                    \n                "
+          },
+          {
+            "status": "Active",
+            "title": "Glass Gateway Dual Mode",
+            "description": "A same-homepage mode system that lets visitors open the existing tools website or switch into a professional portfolio layout.",
+            "tech": "Website architecture · Vanilla JavaScript, CSS, CMS settings, GitHub Pages",
+            "linkText": null,
+            "href": null,
+            "target": null,
+            "rel": null,
+            "linkRect": null,
+            "imgSrc": null,
+            "imgAlt": null,
+            "imgHidden": true,
+            "imgCount": 0,
+            "pCount": 2,
+            "rect": {
+              "x": 692,
+              "y": 1849.125,
+              "w": 571,
+              "h": 253.21875,
+              "b": 2102.34375
+            },
+            "html": "\n                    \n                    <span class=\"cs-portfolio-project-status\">Active</span>\n                    <h3>Glass Gateway Dual Mode</h3>\n                    <p>A same-homepage mode system that lets visitors open the existing tools website or switch into a professional portfolio layout.</p>\n                    <p class=\"cs-portfolio-project-tech\"><strong>Website architecture</strong> · Vanilla JavaScript, CSS, CMS settings, GitHub Pages</p>\n                    \n                "
+          },
+          {
+            "status": "Active",
+            "title": "TrafficMonitor Auto Setup",
+            "description": "A GitHub-hosted PowerShell launcher for installing and configuring TrafficMonitor with a repeatable setup flow.",
+            "tech": "Windows automation · PowerShell, GitHub Pages, Windows Scheduled Tasks",
+            "linkText": null,
+            "href": null,
+            "target": null,
+            "rel": null,
+            "linkRect": null,
+            "imgSrc": null,
+            "imgAlt": null,
+            "imgHidden": true,
+            "imgCount": 0,
+            "pCount": 2,
+            "rect": {
+              "x": 103,
+              "y": 2120.34375,
+              "w": 571,
+              "h": 253.21875,
+              "b": 2373.5625
+            },
+            "html": "\n                    \n                    <span class=\"cs-portfolio-project-status\">Active</span>\n                    <h3>TrafficMonitor Auto Setup</h3>\n                    <p>A GitHub-hosted PowerShell launcher for installing and configuring TrafficMonitor with a repeatable setup flow.</p>\n                    <p class=\"cs-portfolio-project-tech\"><strong>Windows automation</strong> · PowerShell, GitHub Pages, Windows Scheduled Tasks</p>\n                    \n                "
+          },
+          {
+            "status": "Active",
+            "title": "TrafficMonitor Deep Clean",
+            "description": "A controlled removal workflow for TrafficMonitor files, startup entries, scheduled tasks and user-profile leftovers.",
+            "tech": "Cleanup workflow · PowerShell, Windows Registry, File System",
+            "linkText": null,
+            "href": null,
+            "target": null,
+            "rel": null,
+            "linkRect": null,
+            "imgSrc": null,
+            "imgAlt": null,
+            "imgHidden": true,
+            "imgCount": 0,
+            "pCount": 2,
+            "rect": {
+              "x": 692,
+              "y": 2120.34375,
+              "w": 571,
+              "h": 253.21875,
+              "b": 2373.5625
+            },
+            "html": "\n                    \n                    <span class=\"cs-portfolio-project-status\">Active</span>\n                    <h3>TrafficMonitor Deep Clean</h3>\n                    <p>A controlled removal workflow for TrafficMonitor files, startup entries, scheduled tasks and user-profile leftovers.</p>\n                    <p class=\"cs-portfolio-project-tech\"><strong>Cleanup workflow</strong> · PowerShell, Windows Registry, File System</p>\n                    \n                "
+          },
+          {
+            "status": "Planned",
+            "title": "CyberSabil IT Tools EXE",
+            "description": "A future standalone dashboard for common Windows diagnostics, admin shortcuts, support utilities and safe command access.",
+            "tech": "Desktop utility · C#, Windows Desktop, GitHub Releases",
+            "linkText": null,
+            "href": null,
+            "target": null,
+            "rel": null,
+            "linkRect": null,
+            "imgSrc": null,
+            "imgAlt": null,
+            "imgHidden": true,
+            "imgCount": 0,
+            "pCount": 2,
+            "rect": {
+              "x": 103,
+              "y": 2391.5625,
+              "w": 571,
+              "h": 253.21875,
+              "b": 2644.78125
+            },
+            "html": "\n                    \n                    <span class=\"cs-portfolio-project-status\">Planned</span>\n                    <h3>CyberSabil IT Tools EXE</h3>\n                    <p>A future standalone dashboard for common Windows diagnostics, admin shortcuts, support utilities and safe command access.</p>\n                    <p class=\"cs-portfolio-project-tech\"><strong>Desktop utility</strong> · C#, Windows Desktop, GitHub Releases</p>\n                    \n                "
+          }
+        ]
+      }
+    },
+    {
+      "test": "image_relative",
+      "passed": true,
+      "details": {
+        "c": {
+          "status": "Live",
+          "title": "CyberSabil Tools Website",
+          "description": "A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.",
+          "tech": "GitHub Pages · HTML, CSS, JavaScript, JSON, Pages CMS",
+          "linkText": "Open website →",
+          "href": "https://cybersabil.github.io/",
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "linkRect": {
+            "x": 128,
+            "y": 2386.40625,
+            "w": 124.46875,
+            "h": 32,
+            "b": 2418.40625
+          },
+          "imgSrc": "media/social-preview.png",
+          "imgAlt": "Alt",
+          "imgHidden": false,
+          "imgCount": 1,
+          "pCount": 2,
+          "rect": {
+            "x": 103,
+            "y": 1849.125,
+            "w": 571,
+            "h": 594.28125,
+            "b": 2443.40625
+          },
+          "html": "\n                    <img class=\"cs-portfolio-project-image\" src=\"media/social-preview.png\" alt=\"Alt\" loading=\"lazy\">\n                    <span class=\"cs-portfolio-project-status\">Live</span>\n                    <h3>CyberSabil Tools Website</h3>\n                    <p>A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.</p>\n                    <p class=\"cs-portfolio-project-tech\"><strong>GitHub Pages</strong> · HTML, CSS, JavaScript, JSON, Pages CMS</p>\n                    <a class=\"cs-portfolio-project-link\" href=\"https://cybersabil.github.io/\" target=\"_blank\" rel=\"noopener noreferrer\">Open website →</a>\n                "
+        },
+        "e": []
+      }
+    },
+    {
+      "test": "image_external",
+      "passed": true,
+      "details": {
+        "c": {
+          "status": "Live",
+          "title": "CyberSabil Tools Website",
+          "description": "A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.",
+          "tech": "GitHub Pages · HTML, CSS, JavaScript, JSON, Pages CMS",
+          "linkText": "Open website →",
+          "href": "https://cybersabil.github.io/",
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "linkRect": {
+            "x": 128,
+            "y": 2386.40625,
+            "w": 124.46875,
+            "h": 32,
+            "b": 2418.40625
+          },
+          "imgSrc": "https://example.com/x.png",
+          "imgAlt": "Alt",
+          "imgHidden": false,
+          "imgCount": 1,
+          "pCount": 2,
+          "rect": {
+            "x": 103,
+            "y": 1849.125,
+            "w": 571,
+            "h": 594.28125,
+            "b": 2443.40625
+          },
+          "html": "\n                    <img class=\"cs-portfolio-project-image\" src=\"https://example.com/x.png\" alt=\"Alt\" loading=\"lazy\">\n                    <span class=\"cs-portfolio-project-status\">Live</span>\n                    <h3>CyberSabil Tools Website</h3>\n                    <p>A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.</p>\n                    <p class=\"cs-portfolio-project-tech\"><strong>GitHub Pages</strong> · HTML, CSS, JavaScript, JSON, Pages CMS</p>\n                    <a class=\"cs-portfolio-project-link\" href=\"https://cybersabil.github.io/\" target=\"_blank\" rel=\"noopener noreferrer\">Open website →</a>\n                "
+        },
+        "e": []
+      }
+    },
+    {
+      "test": "image_blank",
+      "passed": true,
+      "details": {
+        "c": {
+          "status": "Live",
+          "title": "CyberSabil Tools Website",
+          "description": "A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.",
+          "tech": "GitHub Pages · HTML, CSS, JavaScript, JSON, Pages CMS",
+          "linkText": "Open website →",
+          "href": "https://cybersabil.github.io/",
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "linkRect": {
+            "x": 128,
+            "y": 2077.34375,
+            "w": 124.46875,
+            "h": 32,
+            "b": 2109.34375
+          },
+          "imgSrc": null,
+          "imgAlt": null,
+          "imgHidden": true,
+          "imgCount": 0,
+          "pCount": 2,
+          "rect": {
+            "x": 103,
+            "y": 1849.125,
+            "w": 571,
+            "h": 285.21875,
+            "b": 2134.34375
+          },
+          "html": "\n                    \n                    <span class=\"cs-portfolio-project-status\">Live</span>\n                    <h3>CyberSabil Tools Website</h3>\n                    <p>A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.</p>\n                    <p class=\"cs-portfolio-project-tech\"><strong>GitHub Pages</strong> · HTML, CSS, JavaScript, JSON, Pages CMS</p>\n                    <a class=\"cs-portfolio-project-link\" href=\"https://cybersabil.github.io/\" target=\"_blank\" rel=\"noopener noreferrer\">Open website →</a>\n                "
+        },
+        "e": []
+      }
+    },
+    {
+      "test": "image_hash",
+      "passed": true,
+      "details": {
+        "c": {
+          "status": "Live",
+          "title": "CyberSabil Tools Website",
+          "description": "A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.",
+          "tech": "GitHub Pages · HTML, CSS, JavaScript, JSON, Pages CMS",
+          "linkText": "Open website →",
+          "href": "https://cybersabil.github.io/",
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "linkRect": {
+            "x": 128,
+            "y": 2077.34375,
+            "w": 124.46875,
+            "h": 32,
+            "b": 2109.34375
+          },
+          "imgSrc": null,
+          "imgAlt": null,
+          "imgHidden": true,
+          "imgCount": 0,
+          "pCount": 2,
+          "rect": {
+            "x": 103,
+            "y": 1849.125,
+            "w": 571,
+            "h": 285.21875,
+            "b": 2134.34375
+          },
+          "html": "\n                    \n                    <span class=\"cs-portfolio-project-status\">Live</span>\n                    <h3>CyberSabil Tools Website</h3>\n                    <p>A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.</p>\n                    <p class=\"cs-portfolio-project-tech\"><strong>GitHub Pages</strong> · HTML, CSS, JavaScript, JSON, Pages CMS</p>\n                    <a class=\"cs-portfolio-project-link\" href=\"https://cybersabil.github.io/\" target=\"_blank\" rel=\"noopener noreferrer\">Open website →</a>\n                "
+        },
+        "e": []
+      }
+    },
+    {
+      "test": "image_js",
+      "passed": true,
+      "details": {
+        "c": {
+          "status": "Live",
+          "title": "CyberSabil Tools Website",
+          "description": "A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.",
+          "tech": "GitHub Pages · HTML, CSS, JavaScript, JSON, Pages CMS",
+          "linkText": "Open website →",
+          "href": "https://cybersabil.github.io/",
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "linkRect": {
+            "x": 128,
+            "y": 2077.34375,
+            "w": 124.46875,
+            "h": 32,
+            "b": 2109.34375
+          },
+          "imgSrc": null,
+          "imgAlt": null,
+          "imgHidden": true,
+          "imgCount": 0,
+          "pCount": 2,
+          "rect": {
+            "x": 103,
+            "y": 1849.125,
+            "w": 571,
+            "h": 285.21875,
+            "b": 2134.34375
+          },
+          "html": "\n                    \n                    <span class=\"cs-portfolio-project-status\">Live</span>\n                    <h3>CyberSabil Tools Website</h3>\n                    <p>A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.</p>\n                    <p class=\"cs-portfolio-project-tech\"><strong>GitHub Pages</strong> · HTML, CSS, JavaScript, JSON, Pages CMS</p>\n                    <a class=\"cs-portfolio-project-link\" href=\"https://cybersabil.github.io/\" target=\"_blank\" rel=\"noopener noreferrer\">Open website →</a>\n                "
+        },
+        "e": []
+      }
+    },
+    {
+      "test": "image_data",
+      "passed": true,
+      "details": {
+        "c": {
+          "status": "Live",
+          "title": "CyberSabil Tools Website",
+          "description": "A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.",
+          "tech": "GitHub Pages · HTML, CSS, JavaScript, JSON, Pages CMS",
+          "linkText": "Open website →",
+          "href": "https://cybersabil.github.io/",
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "linkRect": {
+            "x": 128,
+            "y": 2077.34375,
+            "w": 124.46875,
+            "h": 32,
+            "b": 2109.34375
+          },
+          "imgSrc": null,
+          "imgAlt": null,
+          "imgHidden": true,
+          "imgCount": 0,
+          "pCount": 2,
+          "rect": {
+            "x": 103,
+            "y": 1849.125,
+            "w": 571,
+            "h": 285.21875,
+            "b": 2134.34375
+          },
+          "html": "\n                    \n                    <span class=\"cs-portfolio-project-status\">Live</span>\n                    <h3>CyberSabil Tools Website</h3>\n                    <p>A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.</p>\n                    <p class=\"cs-portfolio-project-tech\"><strong>GitHub Pages</strong> · HTML, CSS, JavaScript, JSON, Pages CMS</p>\n                    <a class=\"cs-portfolio-project-link\" href=\"https://cybersabil.github.io/\" target=\"_blank\" rel=\"noopener noreferrer\">Open website →</a>\n                "
+        },
+        "e": []
+      }
+    },
+    {
+      "test": "image_vb",
+      "passed": true,
+      "details": {
+        "c": {
+          "status": "Live",
+          "title": "CyberSabil Tools Website",
+          "description": "A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.",
+          "tech": "GitHub Pages · HTML, CSS, JavaScript, JSON, Pages CMS",
+          "linkText": "Open website →",
+          "href": "https://cybersabil.github.io/",
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "linkRect": {
+            "x": 128,
+            "y": 2077.34375,
+            "w": 124.46875,
+            "h": 32,
+            "b": 2109.34375
+          },
+          "imgSrc": null,
+          "imgAlt": null,
+          "imgHidden": true,
+          "imgCount": 0,
+          "pCount": 2,
+          "rect": {
+            "x": 103,
+            "y": 1849.125,
+            "w": 571,
+            "h": 285.21875,
+            "b": 2134.34375
+          },
+          "html": "\n                    \n                    <span class=\"cs-portfolio-project-status\">Live</span>\n                    <h3>CyberSabil Tools Website</h3>\n                    <p>A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.</p>\n                    <p class=\"cs-portfolio-project-tech\"><strong>GitHub Pages</strong> · HTML, CSS, JavaScript, JSON, Pages CMS</p>\n                    <a class=\"cs-portfolio-project-link\" href=\"https://cybersabil.github.io/\" target=\"_blank\" rel=\"noopener noreferrer\">Open website →</a>\n                "
+        },
+        "e": []
+      }
+    },
+    {
+      "test": "image_alt_title_fallback",
+      "passed": true,
+      "details": {
+        "status": "Live",
+        "title": "Project title",
+        "description": "A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.",
+        "tech": "GitHub Pages · HTML, CSS, JavaScript, JSON, Pages CMS",
+        "linkText": "Open website →",
+        "href": "https://cybersabil.github.io/",
+        "target": "_blank",
+        "rel": "noopener noreferrer",
+        "linkRect": {
+          "x": 128,
+          "y": 2386.40625,
+          "w": 124.46875,
+          "h": 32,
+          "b": 2418.40625
+        },
+        "imgSrc": "media/social-preview.png",
+        "imgAlt": "Project title",
+        "imgHidden": false,
+        "imgCount": 1,
+        "pCount": 2,
+        "rect": {
+          "x": 103,
+          "y": 1849.125,
+          "w": 571,
+          "h": 594.28125,
+          "b": 2443.40625
+        },
+        "html": "\n                    <img class=\"cs-portfolio-project-image\" src=\"media/social-preview.png\" alt=\"Project title\" loading=\"lazy\">\n                    <span class=\"cs-portfolio-project-status\">Live</span>\n                    <h3>Project title</h3>\n                    <p>A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.</p>\n                    <p class=\"cs-portfolio-project-tech\"><strong>GitHub Pages</strong> · HTML, CSS, JavaScript, JSON, Pages CMS</p>\n                    <a class=\"cs-portfolio-project-link\" href=\"https://cybersabil.github.io/\" target=\"_blank\" rel=\"noopener noreferrer\">Open website →</a>\n                "
+      }
+    },
+    {
+      "test": "broken_image_hidden",
+      "passed": true,
+      "details": {
+        "c": {
+          "status": "Live",
+          "title": "CyberSabil Tools Website",
+          "description": "A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.",
+          "tech": "GitHub Pages · HTML, CSS, JavaScript, JSON, Pages CMS",
+          "linkText": "Open website →",
+          "href": "https://cybersabil.github.io/",
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "linkRect": {
+            "x": 128,
+            "y": 2077.34375,
+            "w": 124.46875,
+            "h": 32,
+            "b": 2109.34375
+          },
+          "imgSrc": "media/missing.png",
+          "imgAlt": "CyberSabil Tools Website",
+          "imgHidden": true,
+          "imgCount": 1,
+          "pCount": 2,
+          "rect": {
+            "x": 103,
+            "y": 1849.125,
+            "w": 571,
+            "h": 285.21875,
+            "b": 2134.34375
+          },
+          "html": "\n                    <img class=\"cs-portfolio-project-image cs-portfolio-project-image-error\" src=\"media/missing.png\" alt=\"CyberSabil Tools Website\" loading=\"lazy\" hidden=\"\">\n                    <span class=\"cs-portfolio-project-status\">Live</span>\n                    <h3>CyberSabil Tools Website</h3>\n                    <p>A CMS-controlled IT tools hub for scripts, downloads, command blocks, guides, project cards and FAQ content.</p>\n                    <p class=\"cs-portfolio-project-tech\"><strong>GitHub Pages</strong> · HTML, CSS, JavaScript, JSON, Pages CMS</p>\n                    <a class=\"cs-portfolio-project-link\" href=\"https://cybersabil.github.io/\" target=\"_blank\" rel=\"noopener noreferrer\">Open website →</a>\n                "
+        },
+        "e": [
+          "console:Failed to load resource: the server responded with a status of 404 (Not Found)"
+        ]
+      }
+    }
+  ]
+}

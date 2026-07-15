@@ -5,8 +5,8 @@ from playwright.sync_api import sync_playwright
 ROOT = Path(__file__).resolve().parents[1]; BASE='https://cybersabil.test/'
 HTML=(ROOT/'index.html').read_text().replace('<head>',f'<head><base href="{BASE}">',1)
 JS=(ROOT/'assets/js/main.js').read_text()
-needle='return { boot, activateInitialMode, renderPortfolio };'
-replacement='''return { boot, activateInitialMode, renderPortfolio,
+needle='return { boot, activateInitialMode, renderPortfolio, applyPortfolioContact, getGatewayBackgroundMode: resolveGatewayBackgroundMode };'
+replacement='''return { boot, activateInitialMode, renderPortfolio, applyPortfolioContact, getGatewayBackgroundMode: resolveGatewayBackgroundMode,
         __auditApplyGateway(nextVisual, nextAppearance) { visualBaseline = nextVisual; gatewayAppearance = nextAppearance; applyGatewayAppearance(); },
         __auditApplyNavigation(nextVisual, nextNavigation) { visualBaseline = nextVisual; navigationStyle = nextNavigation; applyNavigationStyle(); }
     };'''

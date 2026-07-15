@@ -1,2057 +1,3167 @@
 media: media
-
-# Pages CMS entries use guarded select fields for fixed options so non-technical edits cannot create invalid mode, theme or visibility values.
 content:
-  # Existing Website: Site Settings
-  # Purpose: Controls the original tools website brand, hero copy, main buttons, GitHub link, about text and footer.
-- name: site
-  label: Site Settings
-  type: file
-  path: data/site.json
-  format: json
-  fields:
-  - name: brandName
-    label: Brand Name
-    type: string
-  - name: logoText
-    label: Logo Text
-    type: string
-  - name: badge
-    label: Badge Text
-    type: string
-  - name: heroTitleBefore
-    label: Hero Title First Line
-    type: string
-  - name: heroTitleHighlight
-    label: Hero Highlight Text
-    type: string
-  - name: heroDescription
-    label: Hero Description
-    type: text
-  - name: primaryButtonText
-    label: Primary Button Text
-    type: string
-  - name: primaryButtonLink
-    label: Primary Button Link
-    type: string
-  - name: secondaryButtonText
-    label: Secondary Button Text
-    type: string
-  - name: secondaryButtonLink
-    label: Secondary Button Link
-    type: string
-  - name: githubProfileLink
-    label: GitHub Profile Link
-    type: string
-  - name: aboutTitle
-    label: About Section Title
-    type: string
-  - name: aboutDescription
-    label: About Description
-    type: text
-  - name: footerText
-    label: Footer Text
-    type: text
-
-  # Existing Website: Design Settings
-  # Purpose: Keeps the original website theme controls available from Pages CMS.
-- name: design
-  label: Design Settings
-  type: file
-  path: data/design.json
-  format: json
-  fields:
-  - name: themeMode
-    label: Theme Mode (dark, light, blue, green, purple)
-    type: select
-    options:
-      values:
-      - "dark"
-      - "light"
-      - "blue"
-      - "green"
-      - "purple"
-  - name: accentColor
-    label: Accent Color (cyan, green, blue, orange, purple)
-    type: select
-    options:
-      values:
-      - "cyan"
-      - "green"
-      - "blue"
-      - "orange"
-      - "purple"
-  - name: backgroundStyle
-    label: Background Style (gradient, plain, grid)
-    type: select
-    options:
-      values:
-      - "gradient"
-      - "plain"
-      - "grid"
-  - name: cardStyle
-    label: Card Style (glass, solid, border)
-    type: select
-    options:
-      values:
-      - "glass"
-      - "solid"
-      - "border"
-  - name: heroLayout
-    label: Hero Layout (split, center)
-    type: select
-    options:
-      values:
-      - "split"
-      - "center"
-  - name: showTerminalPreview
-    label: Show Terminal Preview? (yes/no)
-    type: select
-    options:
-      values:
-      - "yes"
-      - "no"
-- name: site_settings
-  label: Full Mode and Website Controls
-  type: file
-  path: data/site-settings.json
-  format: json
-  fields:
-  - name: version
-    label: Version
-    type: string
-  - name: schemaVersion
-    label: Runtime Schema Version (developer-managed)
-    type: string
-  - name: bootStatusMessage
-    label: Loading Status Message
-    type: string
-  - name: gatewayEnabled
-    label: Show Gateway Overlay? (yes/no)
-    type: select
-    options:
-      values:
-      - "yes"
-      - "no"
-  - name: defaultMode
-    label: Default Mode (gateway, website, portfolio)
-    type: select
-    options:
-      values:
-      - "gateway"
-      - "website"
-      - "portfolio"
-  - name: websiteEnabled
-    label: Enable Website Mode? (yes/no)
-    type: select
-    options:
-      values:
-      - "yes"
-      - "no"
-  - name: portfolioEnabled
-    label: Enable Portfolio Mode? (yes/no)
-    type: select
-    options:
-      values:
-      - "yes"
-      - "no"
-  - name: showModeSwitch
-    label: Show Mode Switch? (yes/no)
-    type: select
-    options:
-      values:
-      - "yes"
-      - "no"
-  - name: modeSwitchWebsiteLabel
-    label: Mode Switch Website Label
-    type: string
-  - name: modeSwitchPortfolioLabel
-    label: Mode Switch Portfolio Label
-    type: string
-  - name: modeSwitchPosition
-    label: Basic Mode Switch Position (used when advanced position controls inherit)
-    type: select
-    options:
-      values:
-      - "top-right"
-      - "bottom-right"
-  - name: rememberVisitorChoice
-    label: Remember Visitor Choice? (yes/no)
-    type: select
-    options:
-      values:
-      - "yes"
-      - "no"
-  - name: enableUrlModeOverride
-    label: Enable URL Mode Override? (yes/no)
-    type: select
-    options:
-      values:
-      - "yes"
-      - "no"
-  - name: allowGatewayCloseWithEscape
-    label: Allow Escape Key to Close Gateway? (yes/no)
-    type: select
-    options:
-      values:
-      - "yes"
-      - "no"
-  - name: escapeFallbackMode
-    label: Escape Key Fallback Mode (website, portfolio)
-    type: select
-    options:
-      values:
-      - "website"
-      - "portfolio"
-  - name: showToolsSection
-    label: Show Tools Section? (yes/no)
-    type: select
-    options:
-      values:
-      - "yes"
-      - "no"
-  - name: showDownloadsSection
-    label: Show Downloads Section? (yes/no)
-    type: select
-    options:
-      values:
-      - "yes"
-      - "no"
-  - name: showProjectsSection
-    label: Show Projects Section? (yes/no)
-    type: select
-    options:
-      values:
-      - "yes"
-      - "no"
-  - name: showSkillsSection
-    label: Show Website Skills Section? (yes/no)
-    type: select
-    options:
-      values:
-      - "yes"
-      - "no"
-  - name: showDocsSection
-    label: Show Docs Section? (yes/no)
-    type: select
-    options:
-      values:
-      - "yes"
-      - "no"
-  - name: showFaqSection
-    label: Show FAQ Section? (yes/no)
-    type: select
-    options:
-      values:
-      - "yes"
-      - "no"
-  - name: showAboutSection
-    label: Show About Section? (yes/no)
-    type: select
-    options:
-      values:
-      - "yes"
-      - "no"
-  - name: showQuickCommands
-    label: Show Quick Commands Card? (yes/no)
-    type: select
-    options:
-      values:
-      - "yes"
-      - "no"
-  - name: terminalReadyMessage
-    label: Terminal Ready Message
-    type: string
-  - name: copyButtonDefaultTitle
-    label: Copy Button Default Title
-    type: string
-  - name: copyButtonSuccessTitle
-    label: Copy Button Success Title
-    type: string
-  - name: copyButtonErrorTitle
-    label: Copy Button Error Title
-    type: string
-  - name: copyButtonAriaLabel
-    label: Copy Button Accessibility Label
-    type: string
-  - name: showDataLoadWarning
-    label: Show Data Load Warning? (yes/no)
-    type: select
-    options:
-      values:
-      - "yes"
-      - "no"
-  - name: dataLoadWarningTitle
-    label: Data Load Warning Title
-    type: string
-  - name: dataLoadWarningMessage
-    label: Data Load Warning Message
-    type: text
-
-  # Existing Website: Section Text Controls
-  # Purpose: Allows section headings, subtitles, nav labels and the download safety warning to be changed without code edits.
-- name: sections
-  label: Website Section Text
-  type: file
-  path: data/sections.json
-  format: json
-  fields:
-  - name: navToolsLabel
-    label: Navigation Tools Label
-    type: string
-  - name: navDownloadsLabel
-    label: Navigation Downloads Label
-    type: string
-  - name: navProjectsLabel
-    label: Navigation Projects Label
-    type: string
-  - name: navDocsLabel
-    label: Navigation Docs Label
-    type: string
-  - name: toolsTitle
-    label: Tools Section Title
-    type: string
-  - name: toolsSubtitle
-    label: Tools Section Subtitle
-    type: text
-  - name: downloadsTitle
-    label: Downloads Section Title
-    type: string
-  - name: downloadsSubtitle
-    label: Downloads Section Subtitle
-    type: text
-  - name: downloadsWarning
-    label: Downloads Safety Warning
-    type: text
-  - name: projectsTitle
-    label: Projects Section Title
-    type: string
-  - name: projectsSubtitle
-    label: Projects Section Subtitle
-    type: text
-  - name: skillsTitle
-    label: Website Skills Section Title
-    type: string
-  - name: skillsSubtitle
-    label: Website Skills Section Subtitle
-    type: text
-  - name: quickCommandsTitle
-    label: Quick Commands Title
-    type: string
-  - name: quickCommandsSubtitle
-    label: Quick Commands Subtitle
-    type: text
-  - name: docsTitle
-    label: Docs Section Title
-    type: string
-  - name: docsSubtitle
-    label: Docs Section Subtitle
-    type: text
-  - name: faqTitle
-    label: FAQ Section Title
-    type: string
-  - name: faqSubtitle
-    label: FAQ Section Subtitle
-    type: text
-
-  # SEO Settings
-  # Purpose: Controls browser title, meta description, social preview text and theme color.
-- name: seo
-  label: SEO and Social Preview
-  type: file
-  path: data/seo.json
-  format: json
-  fields:
-  - name: pageTitle
-    label: Browser Page Title
-    type: string
-  - name: metaDescription
-    label: Meta Description
-    type: text
-  - name: ogTitle
-    label: Open Graph Title
-    type: string
-  - name: ogDescription
-    label: Open Graph Description
-    type: text
-  - name: ogImage
-    label: Open Graph Image URL
-    type: string
-  - name: canonicalUrl
-    label: Canonical URL
-    type: string
-  - name: ogType
-    label: Open Graph Type
-    type: string
-  - name: ogUrl
-    label: Open Graph URL
-    type: string
-  - name: twitterCard
-    label: Twitter/X Card Type
-    type: select
-    options:
-      values:
-      - "summary_large_image"
-      - "summary"
-  - name: twitterTitle
-    label: Twitter/X Title
-    type: string
-  - name: twitterDescription
-    label: Twitter/X Description
-    type: text
-  - name: twitterImage
-    label: Twitter/X Image URL
-    type: string
-  - name: themeColor
-    label: Browser Theme Color
-    type: string
-
-  # Gateway Overlay Controls
-  # Purpose: Controls minimal gateway labels, optional elements, card copy, style preset and background settings from CMS.
-- name: gateway
-  label: Gateway Overlay
-  type: file
-  path: data/gateway.json
-  format: json
-  fields:
-  - name: logoText
-    label: Gateway Logo Text
-    type: string
-  - name: eyebrow
-    label: Gateway Eyebrow Text
-    type: string
-  - name: showLogoRow
-    label: Show Gateway Logo Row? (yes/no)
-    type: select
-    options:
-      values:
-      - "yes"
-      - "no"
-  - name: title
-    label: Gateway Title
-    type: string
-  - name: subtitle
-    label: Gateway Subtitle
-    type: text
-  - name: showSubtitle
-    label: Show Gateway Subtitle? (yes/no)
-    type: select
-    options:
-      values:
-      - "yes"
-      - "no"
-  - name: choiceLabel
-    label: Choice Column Label
-    type: string
-  - name: showChoiceLabel
-    label: Show Choice Column Label? (yes/no)
-    type: select
-    options:
-      values:
-      - "yes"
-      - "no"
-  - name: chipOne
-    label: Highlight Chip One
-    type: string
-  - name: chipTwo
-    label: Highlight Chip Two
-    type: string
-  - name: chipThree
-    label: Highlight Chip Three
-    type: string
-  - name: showChips
-    label: Show Highlight Chips? (yes/no)
-    type: select
-    options:
-      values:
-      - "yes"
-      - "no"
-  - name: footerNote
-    label: Gateway Footer Note
-    type: text
-  - name: showFooterNote
-    label: Show Gateway Footer Note? (yes/no)
-    type: select
-    options:
-      values:
-      - "yes"
-      - "no"
-  - name: showCardIcons
-    label: Show Card Icons? (yes/no)
-    type: select
-    options:
-      values:
-      - "yes"
-      - "no"
-  - name: showCardKickers
-    label: Show Card Kicker Labels? (yes/no)
-    type: select
-    options:
-      values:
-      - "yes"
-      - "no"
-  - name: showCardDescriptions
-    label: Show Card Descriptions? (yes/no)
-    type: select
-    options:
-      values:
-      - "yes"
-      - "no"
-  - name: showCardButtons
-    label: Show Card Button Labels? (yes/no)
-    type: select
-    options:
-      values:
-      - "yes"
-      - "no"
-  - name: backgroundMode
-    label: Gateway Background Mode (website, portfolio)
-    type: select
-    options:
-      values:
-      - "website"
-      - "portfolio"
-  - name: websiteIcon
-    label: Website Card Icon
-    type: string
-  - name: websiteKicker
-    label: Website Card Kicker
-    type: string
-  - name: websiteTitle
-    label: Website Card Title
-    type: string
-  - name: websiteDescription
-    label: Website Card Description
-    type: text
-  - name: websiteButtonText
-    label: Website Card Button Text
-    type: string
-  - name: portfolioIcon
-    label: Portfolio Card Icon
-    type: string
-  - name: portfolioKicker
-    label: Portfolio Card Kicker
-    type: string
-  - name: portfolioTitle
-    label: Portfolio Card Title
-    type: string
-  - name: portfolioDescription
-    label: Portfolio Card Description
-    type: text
-  - name: portfolioButtonText
-    label: Portfolio Card Button Text
-    type: string
-  - name: stylePreset
-    label: Gateway Style Preset (minimal-selector, premium-glass, solid, minimal)
-    type: select
-    options:
-      values:
-      - "minimal-selector"
-      - "premium-glass"
-      - "solid"
-      - "minimal"
-  - name: animationStyle
-    label: Gateway Animation Style (soft-scale, none)
-    type: select
-    options:
-      values:
-      - "soft-scale"
-      - "none"
-  - name: backgroundBlur
-    label: Background Blur Number
-    type: number
-  - name: backgroundDarkness
-    label: Background Darkness Number
-    type: number
-  - name: panelMaxWidth
-    label: Legacy/Baseline Gateway Panel Max Width
-    type: string
-
-  # Global visual baseline and non-destructive reset
-  # Purpose: Keeps the whole site on the exact v2.8.3 visual baseline by default. Select section-controlled only when advanced section presets should be allowed to apply.
-- name: visual_baseline
-  label: Global v2.8.3 Visual Baseline and Reset
-  type: file
-  path: data/visual-baseline.json
-  format: json
-  fields:
-  - name: globalVisualPreset
-    label: Global Visual Baseline
-    type: select
-    options:
-      values:
-      - "v2.8.3-exact"
-      - "section-controlled"
-
-  # Advanced Gateway Visual Controls
-  # Purpose: Provides deep but bounded Gateway layout, position, border, background, card and animation controls without exposing raw CSS.
-- name: gateway_appearance
-  label: Advanced Gateway Appearance
-  type: file
-  path: data/gateway-appearance.json
-  format: json
-  fields:
-  - name: advancedControlsEnabled
-    label: Enable Advanced Gateway Visual Controls?
-    type: select
-    options:
-      values:
-      - "yes"
-      - "no"
-  - name: visualPreset
-    label: Gateway Visual Baseline
-    type: select
-    options:
-      values:
-      - "v2.8.3-exact"
-      - "custom-advanced"
-  - name: layoutControlMode
-    label: Gateway Layout and Order Controls
-    type: select
-    options:
-      values:
-      - "inherit"
-      - "custom"
-  - name: appearanceControlMode
-    label: Gateway Appearance Controls
-    type: select
-    options:
-      values:
-      - "inherit"
-      - "custom"
-  - name: animationControlMode
-    label: Gateway Animation Controls
-    type: select
-    options:
-      values:
-      - "inherit"
-      - "custom"
-  - name: interactionControlMode
-    label: Gateway Hover and Click Controls
-    type: select
-    options:
-      values:
-      - "inherit"
-      - "custom"
-  - name: cardOrder
-    label: Card Order
-    type: select
-    options:
-      values:
-      - "website-first"
-      - "portfolio-first"
-  - name: desktopCardLayout
-    label: Desktop Card Layout
-    type: select
-    options:
-      values:
-      - "row"
-      - "column"
-  - name: tabletCardLayout
-    label: Tablet Card Layout
-    type: select
-    options:
-      values:
-      - "row"
-      - "column"
-  - name: mobileCardLayout
-    label: Mobile Card Layout
-    type: select
-    options:
-      values:
-      - "row"
-      - "column"
-  - name: desktopPanelPosition
-    label: Desktop Panel Position
-    type: select
-    options:
-      values:
-      - "center"
-      - "top-left"
-      - "top-center"
-      - "top-right"
-      - "center-left"
-      - "center-right"
-      - "bottom-left"
-      - "bottom-center"
-      - "bottom-right"
-  - name: tabletPanelPosition
-    label: Tablet Panel Position
-    type: select
-    options:
-      values:
-      - "center"
-      - "top-left"
-      - "top-center"
-      - "top-right"
-      - "center-left"
-      - "center-right"
-      - "bottom-left"
-      - "bottom-center"
-      - "bottom-right"
-  - name: mobilePanelPosition
-    label: Mobile Panel Position
-    type: select
-    options:
-      values:
-      - "center"
-      - "top-left"
-      - "top-center"
-      - "top-right"
-      - "center-left"
-      - "center-right"
-      - "bottom-left"
-      - "bottom-center"
-      - "bottom-right"
-  - name: panelContentLayout
-    label: Panel Content Layout
-    type: select
-    options:
-      values:
-      - "stacked"
-      - "brand-left"
-      - "brand-right"
-  - name: panelMaxWidth
-    label: Panel Maximum Width (px)
-    type: number
-  - name: panelMaxHeightVh
-    label: Panel Maximum Height (viewport %)
-    type: number
-  - name: panelPadding
-    label: Panel Padding (px)
-    type: number
-  - name: panelGap
-    label: Panel Internal Gap (px)
-    type: number
-  - name: panelBorderRadius
-    label: Panel Corner Radius (px)
-    type: number
-  - name: panelBackgroundType
-    label: Panel Background Type
-    type: select
-    options:
-      values:
-      - "glass"
-      - "gradient"
-      - "solid"
-      - "transparent"
-  - name: panelBackgroundColor
-    label: Panel Solid/Glass Color (#RRGGBB)
-    type: string
-  - name: panelBackgroundOpacity
-    label: Panel Solid/Glass Opacity (0–1)
-    type: number
-  - name: panelGradientStartColor
-    label: Panel Gradient Start Color (#RRGGBB)
-    type: string
-  - name: panelGradientStartOpacity
-    label: Panel Gradient Start Opacity (0–1)
-    type: number
-  - name: panelGradientEndColor
-    label: Panel Gradient End Color (#RRGGBB)
-    type: string
-  - name: panelGradientEndOpacity
-    label: Panel Gradient End Opacity (0–1)
-    type: number
-  - name: panelGradientDirection
-    label: Panel Gradient Direction
-    type: select
-    options:
-      values:
-      - "top-to-bottom"
-      - "left-to-right"
-      - "diagonal-up"
-      - "diagonal-down"
-  - name: panelBackdropBlur
-    label: Panel Backdrop Blur (px)
-    type: number
-  - name: panelBackdropSaturation
-    label: Panel Backdrop Saturation (%)
-    type: number
-  - name: panelBorderEnabled
-    label: Show Panel Border?
-    type: select
-    options:
-      values:
-      - "yes"
-      - "no"
-  - name: panelBorderWidth
-    label: Panel Border Width (px)
-    type: number
-  - name: panelBorderStyle
-    label: Panel Border Style
-    type: select
-    options:
-      values:
-      - "solid"
-      - "dashed"
-      - "dotted"
-  - name: panelBorderColor
-    label: Panel Border Color (#RRGGBB)
-    type: string
-  - name: panelBorderOpacity
-    label: Panel Border Opacity (0–1)
-    type: number
-  - name: panelShadowPreset
-    label: Panel Shadow Preset
-    type: select
-    options:
-      values:
-      - "none"
-      - "soft"
-      - "medium"
-      - "strong"
-  - name: panelGlowEnabled
-    label: Enable Panel Glow?
-    type: select
-    options:
-      values:
-      - "yes"
-      - "no"
-  - name: panelGlowColor
-    label: Panel Glow Color (#RRGGBB)
-    type: string
-  - name: panelGlowOpacity
-    label: Panel Glow Opacity (0–1)
-    type: number
-  - name: panelInsetHighlightEnabled
-    label: Enable Panel Inner Highlight?
-    type: select
-    options:
-      values:
-      - "yes"
-      - "no"
-  - name: panelInsetHighlightOpacity
-    label: Panel Inner Highlight Opacity (0–1)
-    type: number
-  - name: overlayColor
-    label: Overlay Color (#RRGGBB)
-    type: string
-  - name: overlayDarkness
-    label: Overlay Darkness/Opacity (0–0.9)
-    type: number
-  - name: overlayBackdropBlur
-    label: Overlay Backdrop Blur (px)
-    type: number
-  - name: websiteBackgroundBlur
-    label: Website Background Blur (px)
-    type: number
-  - name: websiteBackgroundBrightness
-    label: Website Background Brightness (%)
-    type: number
-  - name: websiteBackgroundSaturation
-    label: Website Background Saturation (%)
-    type: number
-  - name: showAmbientLights
-    label: Show Ambient Background Lights?
-    type: select
-    options:
-      values:
-      - "yes"
-      - "no"
-  - name: ambientOneColor
-    label: Ambient Light One Color (#RRGGBB)
-    type: string
-  - name: ambientTwoColor
-    label: Ambient Light Two Color (#RRGGBB)
-    type: string
-  - name: ambientOpacity
-    label: Ambient Light Opacity (0–1)
-    type: number
-  - name: ambientBlur
-    label: Ambient Light Blur (px)
-    type: number
-  - name: titleAlignment
-    label: Gateway Text Alignment
-    type: select
-    options:
-      values:
-      - "left"
-      - "center"
-      - "right"
-  - name: titleColor
-    label: Gateway Title Color (#RRGGBB)
-    type: string
-  - name: titleSize
-    label: Gateway Title Maximum Size (px)
-    type: number
-  - name: titleWeight
-    label: Gateway Title Weight (400–950)
-    type: number
-  - name: subtitleColor
-    label: Gateway Subtitle Color (#RRGGBB)
-    type: string
-  - name: subtitleOpacity
-    label: Gateway Subtitle Opacity (0–1)
-    type: number
-  - name: subtitleSize
-    label: Gateway Subtitle Size (px)
-    type: number
-  - name: choiceGap
-    label: Gap Between Mode Cards (px)
-    type: number
-  - name: cardMinHeight
-    label: Mode Card Minimum Height (px)
-    type: number
-  - name: cardPadding
-    label: Mode Card Padding (px)
-    type: number
-  - name: cardBorderRadius
-    label: Mode Card Corner Radius (px)
-    type: number
-  - name: cardBorderWidth
-    label: Mode Card Border Width (px)
-    type: number
-  - name: cardTextAlignment
-    label: Mode Card Text Alignment
-    type: select
-    options:
-      values:
-      - "left"
-      - "center"
-      - "right"
-  - name: cardContentAlignment
-    label: Mode Card Vertical Content Alignment
-    type: select
-    options:
-      values:
-      - "start"
-      - "center"
-      - "end"
-  - name: cardShadowPreset
-    label: Mode Card Shadow Preset
-    type: select
-    options:
-      values:
-      - "none"
-      - "soft"
-      - "medium"
-      - "strong"
-  - name: cardInsetHighlightEnabled
-    label: Enable Card Inner Highlight?
-    type: select
-    options:
-      values:
-      - "yes"
-      - "no"
-  - name: cardInsetHighlightOpacity
-    label: Card Inner Highlight Opacity (0–1)
-    type: number
-  - name: cardTitleColor
-    label: Mode Card Title Color (#RRGGBB)
-    type: string
-  - name: cardDescriptionColor
-    label: Mode Card Description Color (#RRGGBB)
-    type: string
-  - name: cardDescriptionOpacity
-    label: Mode Card Description Opacity (0–1)
-    type: number
-  - name: websiteCardBackgroundType
-    label: Website Card Background Type
-    type: select
-    options:
-      values:
-      - "gradient"
-      - "solid"
-      - "transparent"
-  - name: websiteCardBackgroundColor
-    label: Website Card Solid Color (#RRGGBB)
-    type: string
-  - name: websiteCardBackgroundOpacity
-    label: Website Card Solid Opacity (0–1)
-    type: number
-  - name: websiteCardGradientStartColor
-    label: Website Card Gradient Start (#RRGGBB)
-    type: string
-  - name: websiteCardGradientStartOpacity
-    label: Website Card Gradient Start Opacity (0–1)
-    type: number
-  - name: websiteCardGradientEndColor
-    label: Website Card Gradient End (#RRGGBB)
-    type: string
-  - name: websiteCardGradientEndOpacity
-    label: Website Card Gradient End Opacity (0–1)
-    type: number
-  - name: websiteCardBorderColor
-    label: Website Card Border Color (#RRGGBB)
-    type: string
-  - name: websiteCardBorderOpacity
-    label: Website Card Border Opacity (0–1)
-    type: number
-  - name: websiteCardAccentColor
-    label: Website Card Accent Color (#RRGGBB)
-    type: string
-  - name: websiteButtonStyle
-    label: Website Card Button Style
-    type: select
-    options:
-      values:
-      - "pill"
-      - "solid"
-      - "outline"
-      - "soft"
-      - "text"
-  - name: websiteButtonStartColor
-    label: Website Button Gradient Start (#RRGGBB)
-    type: string
-  - name: websiteButtonEndColor
-    label: Website Button Gradient End (#RRGGBB)
-    type: string
-  - name: websiteButtonTextColor
-    label: Website Button Text Color (#RRGGBB)
-    type: string
-  - name: portfolioCardBackgroundType
-    label: Portfolio Card Background Type
-    type: select
-    options:
-      values:
-      - "gradient"
-      - "solid"
-      - "transparent"
-  - name: portfolioCardBackgroundColor
-    label: Portfolio Card Solid Color (#RRGGBB)
-    type: string
-  - name: portfolioCardBackgroundOpacity
-    label: Portfolio Card Solid Opacity (0–1)
-    type: number
-  - name: portfolioCardGradientStartColor
-    label: Portfolio Card Gradient Start (#RRGGBB)
-    type: string
-  - name: portfolioCardGradientStartOpacity
-    label: Portfolio Card Gradient Start Opacity (0–1)
-    type: number
-  - name: portfolioCardGradientEndColor
-    label: Portfolio Card Gradient End (#RRGGBB)
-    type: string
-  - name: portfolioCardGradientEndOpacity
-    label: Portfolio Card Gradient End Opacity (0–1)
-    type: number
-  - name: portfolioCardBorderColor
-    label: Portfolio Card Border Color (#RRGGBB)
-    type: string
-  - name: portfolioCardBorderOpacity
-    label: Portfolio Card Border Opacity (0–1)
-    type: number
-  - name: portfolioCardAccentColor
-    label: Portfolio Card Accent Color (#RRGGBB)
-    type: string
-  - name: portfolioButtonStyle
-    label: Portfolio Card Button Style
-    type: select
-    options:
-      values:
-      - "pill"
-      - "solid"
-      - "outline"
-      - "soft"
-      - "text"
-  - name: portfolioButtonStartColor
-    label: Portfolio Button Gradient Start (#RRGGBB)
-    type: string
-  - name: portfolioButtonEndColor
-    label: Portfolio Button Gradient End (#RRGGBB)
-    type: string
-  - name: portfolioButtonTextColor
-    label: Portfolio Button Text Color (#RRGGBB)
-    type: string
-  - name: buttonBorderRadius
-    label: Card Button Corner Radius (px)
-    type: number
-  - name: panelAnimation
-    label: Main Panel Entry Animation
-    type: select
-    options:
-      values:
-      - "none"
-      - "fade"
-      - "soft-scale"
-      - "slide-up"
-      - "slide-down"
-      - "slide-left"
-      - "slide-right"
-      - "zoom"
-      - "blur-in"
-  - name: overlayAnimation
-    label: Overlay Entry Animation
-    type: select
-    options:
-      values:
-      - "none"
-      - "fade"
-      - "fade-blur"
-  - name: websiteCardAnimation
-    label: Website Card Entry Animation
-    type: select
-    options:
-      values:
-      - "none"
-      - "fade"
-      - "soft-scale"
-      - "slide-up"
-      - "slide-down"
-      - "slide-left"
-      - "slide-right"
-      - "zoom"
-  - name: portfolioCardAnimation
-    label: Portfolio Card Entry Animation
-    type: select
-    options:
-      values:
-      - "none"
-      - "fade"
-      - "soft-scale"
-      - "slide-up"
-      - "slide-down"
-      - "slide-left"
-      - "slide-right"
-      - "zoom"
-  - name: animationDurationMs
-    label: Animation Duration (milliseconds)
-    type: number
-  - name: panelAnimationDelayMs
-    label: Panel Animation Delay (milliseconds)
-    type: number
-  - name: websiteCardDelayMs
-    label: Website Card Delay (milliseconds)
-    type: number
-  - name: portfolioCardDelayMs
-    label: Portfolio Card Delay (milliseconds)
-    type: number
-  - name: animationEasing
-    label: Animation Easing
-    type: select
-    options:
-      values:
-      - "linear"
-      - "ease"
-      - "ease-in"
-      - "ease-out"
-      - "ease-in-out"
-      - "smooth"
-      - "spring-soft"
-  - name: cardHoverPreset
-    label: Card Hover Animation
-    type: select
-    options:
-      values:
-      - "none"
-      - "lift"
-      - "scale"
-      - "glow"
-      - "border-glow"
-      - "tilt-soft"
-      - "lift-glow"
-  - name: cardHoverStrength
-    label: Card Hover Movement Strength (px)
-    type: number
-  - name: cardHoverDurationMs
-    label: Card Hover Duration (milliseconds)
-    type: number
-  - name: cardClickPreset
-    label: Card Click Animation
-    type: select
-    options:
-      values:
-      - "none"
-      - "press"
-      - "pulse"
-
-  # Advanced Header, Navigation and Mode Switch Controls
-  # Purpose: Gives Website and Portfolio independent safe header layouts plus desktop/mobile mode-switch styling and placement.
-- name: navigation_style
-  label: Advanced Headers and Mode Switch
-  type: file
-  path: data/navigation-style.json
-  format: json
-  fields:
-  - name: advancedControlsEnabled
-    label: Enable Advanced Header and Mode Switch Controls?
-    type: select
-    options:
-      values:
-      - "yes"
-      - "no"
-  - name: visualPreset
-    label: Header and Mode Switch Visual Baseline
-    type: select
-    options:
-      values:
-      - "v2.8.3-exact"
-      - "custom-advanced"
-  - name: websiteHeaderControlMode
-    label: Website Header Controls
-    type: select
-    options:
-      values:
-      - "inherit"
-      - "custom"
-  - name: portfolioHeaderControlMode
-    label: Portfolio Header Controls
-    type: select
-    options:
-      values:
-      - "inherit"
-      - "custom"
-  - name: modeSwitchPositionControlMode
-    label: Mode Switch Position and Layout Controls
-    type: select
-    options:
-      values:
-      - "inherit"
-      - "custom"
-  - name: modeSwitchAppearanceControlMode
-    label: Mode Switch Appearance Controls
-    type: select
-    options:
-      values:
-      - "inherit"
-      - "custom"
-  - name: modeSwitchAnimationControlMode
-    label: Mode Switch Animation and Hover Controls
-    type: select
-    options:
-      values:
-      - "inherit"
-      - "custom"
-  - name: websiteHeaderPosition
-    label: Website Header Position
-    type: select
-    options:
-      values:
-      - "static"
-      - "sticky"
-  - name: websiteDesktopLayout
-    label: Website Desktop Header Layout
-    type: select
-    options:
-      values:
-      - "brand-left-menu-right"
-      - "menu-left-brand-right"
-      - "stacked-centered"
-  - name: websiteMenuAlignment
-    label: Website Desktop Menu Alignment
-    type: select
-    options:
-      values:
-      - "left"
-      - "center"
-      - "right"
-  - name: websiteHeaderMinHeight
-    label: Website Header Minimum Height (px)
-    type: number
-  - name: websiteContainerMaxWidth
-    label: Website Header Container Width (px)
-    type: number
-  - name: websiteHeaderBackgroundType
-    label: Website Header Background Type
-    type: select
-    options:
-      values:
-      - "glass"
-      - "solid"
-      - "transparent"
-  - name: websiteHeaderBackgroundColor
-    label: Website Header Background Color (#RRGGBB)
-    type: string
-  - name: websiteHeaderBackgroundOpacity
-    label: Website Header Background Opacity (0–1)
-    type: number
-  - name: websiteHeaderBackdropBlur
-    label: Website Header Blur (px)
-    type: number
-  - name: websiteHeaderBorderEnabled
-    label: Show Website Header Bottom Border?
-    type: select
-    options:
-      values:
-      - "yes"
-      - "no"
-  - name: websiteHeaderBorderColor
-    label: Website Header Border Color (#RRGGBB)
-    type: string
-  - name: websiteHeaderBorderOpacity
-    label: Website Header Border Opacity (0–1)
-    type: number
-  - name: websiteHeaderShadowPreset
-    label: Website Header Shadow Preset
-    type: select
-    options:
-      values:
-      - "none"
-      - "soft"
-      - "medium"
-      - "strong"
-  - name: websiteMenuGap
-    label: Website Menu Link Gap (px)
-    type: number
-  - name: websiteMenuFontSize
-    label: Website Menu Font Size (px)
-    type: number
-  - name: websiteMenuLinkStyle
-    label: Website Menu Link Style
-    type: select
-    options:
-      values:
-      - "plain"
-      - "pill"
-      - "underline"
-  - name: websiteMenuTextColor
-    label: Website Menu Text Color (#RRGGBB)
-    type: string
-  - name: websiteMenuHoverColor
-    label: Website Menu Hover Color (#RRGGBB)
-    type: string
-  - name: websiteMobileToggleSide
-    label: Website Mobile Menu Button Side
-    type: select
-    options:
-      values:
-      - "left"
-      - "right"
-  - name: websiteMobileMenuAlignment
-    label: Website Mobile Menu Text Alignment
-    type: select
-    options:
-      values:
-      - "left"
-      - "center"
-      - "right"
-  - name: portfolioHeaderPosition
-    label: Portfolio Header Position
-    type: select
-    options:
-      values:
-      - "static"
-      - "sticky"
-  - name: portfolioDesktopLayout
-    label: Portfolio Desktop Header Layout
-    type: select
-    options:
-      values:
-      - "brand-left-menu-right"
-      - "menu-left-brand-right"
-      - "stacked-centered"
-  - name: portfolioMenuAlignment
-    label: Portfolio Desktop Menu Alignment
-    type: select
-    options:
-      values:
-      - "left"
-      - "center"
-      - "right"
-  - name: portfolioHeaderMinHeight
-    label: Portfolio Header Minimum Height (px)
-    type: number
-  - name: portfolioContainerMaxWidth
-    label: Portfolio Header Container Width (px)
-    type: number
-  - name: portfolioHeaderBackgroundType
-    label: Portfolio Header Background Type
-    type: select
-    options:
-      values:
-      - "glass"
-      - "solid"
-      - "transparent"
-  - name: portfolioHeaderBackgroundColor
-    label: Portfolio Header Background Color (#RRGGBB)
-    type: string
-  - name: portfolioHeaderBackgroundOpacity
-    label: Portfolio Header Background Opacity (0–1)
-    type: number
-  - name: portfolioHeaderBackdropBlur
-    label: Portfolio Header Blur (px)
-    type: number
-  - name: portfolioHeaderBorderEnabled
-    label: Show Portfolio Header Bottom Border?
-    type: select
-    options:
-      values:
-      - "yes"
-      - "no"
-  - name: portfolioHeaderBorderColor
-    label: Portfolio Header Border Color (#RRGGBB)
-    type: string
-  - name: portfolioHeaderBorderOpacity
-    label: Portfolio Header Border Opacity (0–1)
-    type: number
-  - name: portfolioHeaderShadowPreset
-    label: Portfolio Header Shadow Preset
-    type: select
-    options:
-      values:
-      - "none"
-      - "soft"
-      - "medium"
-      - "strong"
-  - name: portfolioMenuGap
-    label: Portfolio Menu Link Gap (px)
-    type: number
-  - name: portfolioMenuFontSize
-    label: Portfolio Menu Font Size (px)
-    type: number
-  - name: portfolioMenuLinkStyle
-    label: Portfolio Menu Link Style
-    type: select
-    options:
-      values:
-      - "plain"
-      - "pill"
-      - "underline"
-  - name: portfolioMenuTextColor
-    label: Portfolio Menu Text Color (#RRGGBB)
-    type: string
-  - name: portfolioMenuTextOpacity
-    label: Portfolio Menu Text Opacity (0–1)
-    type: number
-  - name: portfolioMenuHoverColor
-    label: Portfolio Menu Hover Color (#RRGGBB)
-    type: string
-  - name: portfolioMobileToggleSide
-    label: Portfolio Mobile Menu Button Side
-    type: select
-    options:
-      values:
-      - "left"
-      - "right"
-  - name: portfolioMobileMenuAlignment
-    label: Portfolio Mobile Menu Text Alignment
-    type: select
-    options:
-      values:
-      - "left"
-      - "center"
-      - "right"
-  - name: modeSwitchDesktopPosition
-    label: Desktop Mode Switch Position
-    type: select
-    options:
-      values:
-      - "top-left"
-      - "top-center"
-      - "top-right"
-      - "center-left"
-      - "center-right"
-      - "bottom-left"
-      - "bottom-center"
-      - "bottom-right"
-  - name: modeSwitchMobilePosition
-    label: Mobile Mode Switch Position
-    type: select
-    options:
-      values:
-      - "top-left"
-      - "top-center"
-      - "top-right"
-      - "bottom-left"
-      - "bottom-center"
-      - "bottom-right"
-  - name: modeSwitchHorizontalOffset
-    label: Desktop Mode Switch Horizontal Offset (px)
-    type: number
-  - name: modeSwitchVerticalOffset
-    label: Desktop Mode Switch Vertical Offset (px)
-    type: number
-  - name: modeSwitchMobileOffset
-    label: Mobile Mode Switch Edge Offset (px)
-    type: number
-  - name: modeSwitchOrientation
-    label: Mode Switch Orientation
-    type: select
-    options:
-      values:
-      - "horizontal"
-      - "vertical"
-  - name: modeSwitchSize
-    label: Mode Switch Size
-    type: select
-    options:
-      values:
-      - "compact"
-      - "standard"
-      - "large"
-  - name: modeSwitchBackgroundColor
-    label: Mode Switch Background Color (#RRGGBB)
-    type: string
-  - name: modeSwitchBackgroundOpacity
-    label: Mode Switch Background Opacity (0–1)
-    type: number
-  - name: modeSwitchBackdropBlur
-    label: Mode Switch Blur (px)
-    type: number
-  - name: modeSwitchBorderColor
-    label: Mode Switch Border Color (#RRGGBB)
-    type: string
-  - name: modeSwitchBorderOpacity
-    label: Mode Switch Border Opacity (0–1)
-    type: number
-  - name: modeSwitchBorderWidth
-    label: Mode Switch Border Width (px)
-    type: number
-  - name: modeSwitchBorderRadius
-    label: Mode Switch Corner Radius (px)
-    type: number
-  - name: modeSwitchShadowPreset
-    label: Mode Switch Shadow Preset
-    type: select
-    options:
-      values:
-      - "none"
-      - "soft"
-      - "medium"
-      - "strong"
-  - name: modeSwitchWebsiteStartColor
-    label: Website Active Pill Start Color (#RRGGBB)
-    type: string
-  - name: modeSwitchWebsiteEndColor
-    label: Website Active Pill End Color (#RRGGBB)
-    type: string
-  - name: modeSwitchWebsiteTextColor
-    label: Website Active Text Color (#RRGGBB)
-    type: string
-  - name: modeSwitchPortfolioStartColor
-    label: Portfolio Active Pill Start Color (#RRGGBB)
-    type: string
-  - name: modeSwitchPortfolioEndColor
-    label: Portfolio Active Pill End Color (#RRGGBB)
-    type: string
-  - name: modeSwitchPortfolioTextColor
-    label: Portfolio Active Text Color (#RRGGBB)
-    type: string
-  - name: modeSwitchInactiveTextColor
-    label: Inactive Mode Text Color (#RRGGBB)
-    type: string
-  - name: modeSwitchInactiveTextOpacity
-    label: Inactive Mode Text Opacity (0–1)
-    type: number
-  - name: modeSwitchAnimation
-    label: Mode Switch Animation
-    type: select
-    options:
-      values:
-      - "none"
-      - "fade"
-      - "pulse"
-      - "soft-scale"
-  - name: modeSwitchHoverPreset
-    label: Mode Switch Hover Effect
-    type: select
-    options:
-      values:
-      - "none"
-      - "lift"
-      - "glow"
-
-  # Tools Data
-  # Purpose: Controls original tools cards and command blocks.
-- name: tools
-  label: Tools
-  type: file
-  path: data/tools.json
-  format: json
-  list: true
-  fields:
-  - name: icon
-    label: Icon
-    type: string
-  - name: title
-    label: Tool Title
-    type: string
-  - name: status
-    label: Status
-    type: string
-  - name: problem
-    label: Problem Solved
-    type: text
-  - name: solution
-    label: Solution
-    type: text
-  - name: description
-    label: Short Description
-    type: text
-  - name: technology
-    label: Technology Used
-    type: string
-  - name: command
-    label: PowerShell Command
-    type: string
-  - name: buttonText
-    label: Button Text
-    type: string
-  - name: buttonLink
-    label: Button Link
-    type: string
-
-  # Downloads Data
-  # Purpose: Controls original download cards.
-- name: downloads
-  label: Downloads
-  type: file
-  path: data/downloads.json
-  format: json
-  list: true
-  fields:
-  - name: title
-    label: Download Title
-    type: string
-  - name: version
-    label: Version
-    type: string
-  - name: type
-    label: Type
-    type: string
-  - name: description
-    label: Description
-    type: text
-  - name: downloadLink
-    label: Download Link
-    type: string
-  - name: releaseLink
-    label: Release Link
-    type: string
-  - name: checksum
-    label: SHA256 / Checksum
-    type: string
-
-  # Website Projects Data
-  # Purpose: Controls original tools website project cards.
-- name: projects
-  label: Projects
-  type: file
-  path: data/projects.json
-  format: json
-  list: true
-  fields:
-  - name: icon
-    label: Icon
-    type: string
-  - name: title
-    label: Project Title
-    type: string
-  - name: status
-    label: Status
-    type: string
-  - name: description
-    label: Description
-    type: text
-  - name: problemSolved
-    label: Problem Solved
-    type: text
-  - name: techUsed
-    label: Technology Used
-    type: string
-  - name: repoLink
-    label: GitHub Repo Link
-    type: string
-  - name: liveLink
-    label: Live / Download Link
-    type: string
-
-  # Website Skills Data
-  # Purpose: Controls original tools website skills cards.
-- name: skills
-  label: Skills
-  type: file
-  path: data/skills.json
-  format: json
-  list: true
-  fields:
-  - name: title
-    label: Skill Title
-    type: string
-  - name: description
-    label: Description
-    type: text
-
-  # Documentation Data
-  # Purpose: Controls documentation and guide rows.
-- name: docs
-  label: Documentation
-  type: file
-  path: data/docs.json
-  format: json
-  list: true
-  fields:
-  - name: title
-    label: Guide Title
-    type: string
-  - name: category
-    label: Category
-    type: string
-  - name: description
-    label: Description
-    type: text
-  - name: command
-    label: Command
-    type: string
-  - name: link
-    label: Link
-    type: string
-
-  # FAQ Data
-  # Purpose: Controls FAQ question and answer cards.
-- name: faq
-  label: FAQ
-  type: file
-  path: data/faq.json
-  format: json
-  list: true
-  fields:
-  - name: question
-    label: Question
-    type: string
-  - name: answer
-    label: Answer
-    type: text
-
-  # Portfolio Settings
-  # Purpose: Controls portfolio theme, navigation, section labels, section visibility and footer.
-- name: portfolio_settings
-  label: Portfolio Settings
-  type: file
-  path: data/portfolio-settings.json
-  format: json
-  fields:
-  - name: themePreset
-    label: Portfolio Theme Preset (purple-gold, midnight)
-    type: select
-    options:
-      values:
-      - "purple-gold"
-      - "midnight"
-  - name: layoutPreset
-    label: Portfolio Layout Preset (professional, spacious, compact)
-    type: select
-    options:
-      values:
-      - "professional"
-      - "compact"
-      - "spacious"
-  - name: brandText
-    label: Portfolio Brand Text
-    type: string
-  - name: showNavigation
-    label: Show Portfolio Navigation? (yes/no)
-    type: select
-    options:
-      values:
-      - "yes"
-      - "no"
-  - name: navSkillsLabel
-    label: Skills Nav Label
-    type: string
-  - name: navProjectsLabel
-    label: Projects Nav Label
-    type: string
-  - name: navTimelineLabel
-    label: Timeline Nav Label
-    type: string
-  - name: navServicesLabel
-    label: Services Nav Label
-    type: string
-  - name: navContactLabel
-    label: Contact Nav Label
-    type: string
-  - name: showHero
-    label: Show Hero Section? (yes/no)
-    type: select
-    options:
-      values:
-      - "yes"
-      - "no"
-  - name: showProfileCard
-    label: Show Profile Card? (yes/no)
-    type: select
-    options:
-      values:
-      - "yes"
-      - "no"
-  - name: showSkillsSection
-    label: Show Portfolio Skills Section? (yes/no)
-    type: select
-    options:
-      values:
-      - "yes"
-      - "no"
-  - name: showProjectsSection
-    label: Show Portfolio Projects Section? (yes/no)
-    type: select
-    options:
-      values:
-      - "yes"
-      - "no"
-  - name: showTimelineSection
-    label: Show Portfolio Timeline Section? (yes/no)
-    type: select
-    options:
-      values:
-      - "yes"
-      - "no"
-  - name: showServicesSection
-    label: Show Services Section? (yes/no)
-    type: select
-    options:
-      values:
-      - "yes"
-      - "no"
-  - name: showContactSection
-    label: Show Contact Section? (yes/no)
-    type: select
-    options:
-      values:
-      - "yes"
-      - "no"
-  - name: skillsEyebrow
-    label: Skills Eyebrow
-    type: string
-  - name: skillsTitle
-    label: Skills Title
-    type: string
-  - name: skillsSubtitle
-    label: Skills Subtitle
-    type: text
-  - name: projectsEyebrow
-    label: Projects Eyebrow
-    type: string
-  - name: projectsTitle
-    label: Projects Title
-    type: string
-  - name: projectsSubtitle
-    label: Projects Subtitle
-    type: text
-  - name: timelineEyebrow
-    label: Timeline Eyebrow
-    type: string
-  - name: timelineTitle
-    label: Timeline Title
-    type: string
-  - name: timelineSubtitle
-    label: Timeline Subtitle
-    type: text
-  - name: servicesEyebrow
-    label: Services Eyebrow
-    type: string
-  - name: servicesTitle
-    label: Services Title
-    type: string
-  - name: servicesSubtitle
-    label: Services Subtitle
-    type: text
-  - name: contactEyebrow
-    label: Contact Eyebrow
-    type: string
-  - name: showProjectLinks
-    label: Show Project Links? (yes/no)
-    type: select
-    options:
-      values:
-      - "yes"
-      - "no"
-  - name: projectLinkLabel
-    label: Default Project Link Label (used when a project button text is empty)
-    type: string
-  - name: footerText
-    label: Portfolio Footer Text
-    type: text
-
-  # Portfolio Profile
-  # Purpose: Controls portfolio hero profile, CTA buttons, profile card and stats.
-- name: profile
-  label: Portfolio Profile
-  type: file
-  path: data/profile.json
-  format: json
-  fields:
-  - name: name
-    label: Name
-    type: string
-  - name: initials
-    label: Initials
-    type: string
-  - name: role
-    label: Role
-    type: string
-  - name: tagline
-    label: Tagline
-    type: text
-  - name: availability
-    label: Availability
-    type: string
-  - name: location
-    label: Location
-    type: string
-  - name: experience
-    label: Experience / Stack
-    type: string
-  - name: bio
-    label: Bio
-    type: text
-  - name: statOneValue
-    label: Profile Stat One Value
-    type: string
-  - name: statOneLabel
-    label: Profile Stat One Label
-    type: string
-  - name: statTwoValue
-    label: Profile Stat Two Value
-    type: string
-  - name: statTwoLabel
-    label: Profile Stat Two Label
-    type: string
-  - name: primaryCtaText
-    label: Primary CTA Text
-    type: string
-  - name: primaryCtaLink
-    label: Primary CTA Link
-    type: string
-  - name: secondaryCtaText
-    label: Secondary CTA Text
-    type: string
-  - name: secondaryCtaLink
-    label: Secondary CTA Link
-    type: string
-
-  # Portfolio Skills
-  # Purpose: Controls skill cards shown only in portfolio mode.
-- name: portfolio_skills
-  label: Portfolio Skills
-  type: file
-  path: data/portfolio-skills.json
-  format: json
-  list: true
-  fields:
-  - name: title
-    label: Skill Title
-    type: string
-  - name: category
-    label: Category
-    type: string
-  - name: level
-    label: Level
-    type: string
-  - name: description
-    label: Description
-    type: text
-
-  # Portfolio Projects
-  # Purpose: Controls project cards shown only in portfolio mode.
-- name: portfolio_projects
-  label: Portfolio Projects
-  type: file
-  path: data/portfolio-projects.json
-  format: json
-  list: true
-  fields:
-  - name: title
-    label: Project Title
-    type: string
-  - name: category
-    label: Category
-    type: string
-  - name: status
-    label: Status
-    type: string
-  - name: description
-    label: Description
-    type: text
-  - name: tech
-    label: Technology
-    type: string
-  - name: image
-    label: Optional Project Image Path or URL
-    type: image
-  - name: imageAlt
-    label: Optional Project Image Alt Text
-    type: string
-  - name: link
-    label: Project Link
-    type: string
-  - name: buttonText
-    label: Project Button Text
-    type: string
-
-  # Portfolio Timeline
-  # Purpose: Controls timeline cards shown only in portfolio mode.
-- name: portfolio_timeline
-  label: Portfolio Timeline
-  type: file
-  path: data/portfolio-timeline.json
-  format: json
-  list: true
-  fields:
-  - name: period
-    label: Period / Version
-    type: string
-  - name: title
-    label: Timeline Title
-    type: string
-  - name: status
-    label: Status
-    type: string
-  - name: description
-    label: Description
-    type: text
-
-  # Portfolio Services
-  # Purpose: Controls service cards shown only in portfolio mode.
-- name: services
-  label: Portfolio Services
-  type: file
-  path: data/services.json
-  format: json
-  list: true
-  fields:
-  - name: icon
-    label: Service Icon / Label
-    type: string
-  - name: title
-    label: Service Title
-    type: string
-  - name: description
-    label: Description
-    type: text
-
-  # Portfolio Contact
-  # Purpose: Controls contact text, labels, links and final contact CTA.
-- name: contact
-  label: Portfolio Contact
-  type: file
-  path: data/contact.json
-  format: json
-  fields:
-  - name: heading
-    label: Heading
-    type: string
-  - name: description
-    label: Description
-    type: text
-  - name: emailLabel
-    label: Email Label
-    type: string
-  - name: email
-    label: Email
-    type: string
-  - name: githubLabel
-    label: GitHub Label
-    type: string
-  - name: githubText
-    label: GitHub Text
-    type: string
-  - name: githubLink
-    label: GitHub Link
-    type: string
-  - name: websiteLabel
-    label: Website Label
-    type: string
-  - name: websiteText
-    label: Website Text
-    type: string
-  - name: websiteLink
-    label: Website Link
-    type: string
-  - name: ctaText
-    label: CTA Text
-    type: string
-  - name: ctaLink
-    label: CTA Link
-    type: string
+- name: start_here
+  label: 00. START HERE — Common & Safe Controls
+  type: group
+  items:
+  - name: site_settings
+    label: ✅ Modes, Sections & Basic Switch
+    type: file
+    path: data/site-settings.json
+    format: json
+    fields:
+    - name: gatewayEnabled
+      label: ✅ Gateway selection screen dikhani hai?
+      type: select
+      options:
+        values:
+        - name: 'yes'
+          label: Yes — show / enable
+        - name: 'no'
+          label: No — hide / disable
+      description: Yes rakhen to Website/Portfolio choose karne wala Gateway khulega.
+    - name: defaultMode
+      label: ⚠ Site ka initial mode
+      type: select
+      options:
+        values:
+        - name: gateway
+          label: Gateway selection screen
+        - name: website
+          label: Website
+        - name: portfolio
+          label: Portfolio
+      description: Gateway background ke liye is field ka use na karein. Gateway dikhana ho to Gateway selection screen choose
+        karein.
+    - name: websiteEnabled
+      label: ✅ Website mode enable rahe?
+      type: select
+      options:
+        values:
+        - name: 'yes'
+          label: Yes — show / enable
+        - name: 'no'
+          label: No — hide / disable
+      description: No karne par Website option unavailable ho jayega.
+    - name: portfolioEnabled
+      label: ✅ Portfolio mode enable rahe?
+      type: select
+      options:
+        values:
+        - name: 'yes'
+          label: Yes — show / enable
+        - name: 'no'
+          label: No — hide / disable
+      description: No karne par Portfolio option unavailable ho jayega.
+    - name: showModeSwitch
+      label: ✅ Website/Portfolio switch button dikhana hai?
+      type: select
+      options:
+        values:
+        - name: 'yes'
+          label: Yes — show / enable
+        - name: 'no'
+          label: No — hide / disable
+      description: Site ke andar floating mode-switch button show/hide karta hai.
+    - name: modeSwitchWebsiteLabel
+      label: ✅ Switch par Website ka label
+      type: string
+      description: Floating switch me Website side par dikhne wala text.
+    - name: modeSwitchPortfolioLabel
+      label: ✅ Switch par Portfolio ka label
+      type: string
+      description: Floating switch me Portfolio side par dikhne wala text.
+    - name: modeSwitchPosition
+      label: ⚠ Basic switch position (fallback)
+      type: select
+      options:
+        values:
+        - name: top-right
+          label: Top right
+        - name: bottom-right
+          label: Bottom right
+      description: Sirf tab use hota hai jab Advanced Switch Position Controls = Inherit ho.
+    - name: rememberVisitorChoice
+      label: ✅ Visitor ka last mode yaad rakhna hai?
+      type: select
+      options:
+        values:
+        - name: 'yes'
+          label: Yes — show / enable
+        - name: 'no'
+          label: No — hide / disable
+      description: Yes par user ke switch/card click ke baad browser localStorage me last mode save hoga. Existing tab me
+        default-mode test ke liye Incognito ya storage clear karein.
+    - name: showToolsSection
+      label: ✅ Website me Tools section dikhana hai?
+      type: select
+      options:
+        values:
+        - name: 'yes'
+          label: Yes — show / enable
+        - name: 'no'
+          label: No — hide / disable
+      description: Yes par Website mode me Tools section visible hoga; No par hidden rahega.
+    - name: showDownloadsSection
+      label: ✅ Website me Downloads section dikhana hai?
+      type: select
+      options:
+        values:
+        - name: 'yes'
+          label: Yes — show / enable
+        - name: 'no'
+          label: No — hide / disable
+      description: Yes par Website mode me Downloads section visible hoga; No par hidden rahega.
+    - name: showProjectsSection
+      label: ✅ Website me Projects section dikhana hai?
+      type: select
+      options:
+        values:
+        - name: 'yes'
+          label: Yes — show / enable
+        - name: 'no'
+          label: No — hide / disable
+      description: Yes par Website mode me Projects section visible hoga; No par hidden rahega.
+    - name: showSkillsSection
+      label: ✅ Website me Skills section dikhana hai?
+      type: select
+      options:
+        values:
+        - name: 'yes'
+          label: Yes — show / enable
+        - name: 'no'
+          label: No — hide / disable
+      description: Yes par Website mode me Skills section visible hoga; No par hidden rahega.
+    - name: showDocsSection
+      label: ✅ Website me Docs section dikhana hai?
+      type: select
+      options:
+        values:
+        - name: 'yes'
+          label: Yes — show / enable
+        - name: 'no'
+          label: No — hide / disable
+      description: Yes par Website mode me Docs section visible hoga; No par hidden rahega.
+    - name: showFaqSection
+      label: ✅ Website me Faq section dikhana hai?
+      type: select
+      options:
+        values:
+        - name: 'yes'
+          label: Yes — show / enable
+        - name: 'no'
+          label: No — hide / disable
+      description: Yes par Website mode me Faq section visible hoga; No par hidden rahega.
+    - name: showAboutSection
+      label: ✅ Website me About section dikhana hai?
+      type: select
+      options:
+        values:
+        - name: 'yes'
+          label: Yes — show / enable
+        - name: 'no'
+          label: No — hide / disable
+      description: Yes par Website mode me About section visible hoga; No par hidden rahega.
+    - name: showQuickCommands
+      label: ✅ Show Quick Commands Card? (yes/no)
+      type: select
+      options:
+        values:
+        - name: 'yes'
+          label: Yes — show / enable
+        - name: 'no'
+          label: No — hide / disable
+      description: Yes se feature visible/enabled hoga; No se hide/disable hoga.
+    - name: enableUrlModeOverride
+      label: ⚠ URL se mode choose karne dena hai?
+      type: select
+      options:
+        values:
+        - name: 'yes'
+          label: Yes — show / enable
+        - name: 'no'
+          label: No — hide / disable
+      description: Yes par page reload/open ke waqt ?mode=website, ?mode=portfolio aur ?mode=gateway read hoga. Current page
+        par option change karte hi mode automatically switch nahi hota.
+    - name: allowGatewayCloseWithEscape
+      label: ⚠ Escape key se Gateway close ho?
+      type: select
+      options:
+        values:
+        - name: 'yes'
+          label: Yes — show / enable
+        - name: 'no'
+          label: No — hide / disable
+      description: Gateway visible hone par keyboard Escape action ko enable/disable karta hai. Mobile touch par iska visible
+        effect nahi hai.
+    - name: escapeFallbackMode
+      label: ⚠ Escape ke baad kaunsa mode khule?
+      type: select
+      options:
+        values:
+        - name: website
+          label: Website
+        - name: portfolio
+          label: Portfolio
+      description: Sirf Allow Escape = Yes aur Gateway visible hone par Escape press karne ke baad selected mode khulta hai.
+    - name: terminalReadyMessage
+      label: ⚠ Terminal preview ka final ready message
+      type: string
+      description: Tools cards render hone ke baad terminal preview ki last line me dikhai deta hai. Terminal Preview hidden
+        ho to visible effect nahi hoga.
+    - name: copyButtonDefaultTitle
+      label: ⚠ Copy button default tooltip
+      type: string
+      description: Command blocks ke copy button par hover/accessible title. Dynamic content render ke baad apply hota hai.
+    - name: copyButtonSuccessTitle
+      label: ⚠ Copy successful message
+      type: string
+      description: Copy button click successful hone ke baad temporary tooltip/accessible message.
+    - name: copyButtonErrorTitle
+      label: ⚠ Copy failed message
+      type: string
+      description: Clipboard copy fail hone par temporary tooltip/accessible message.
+    - name: copyButtonAriaLabel
+      label: ⚠ Copy button screen-reader label
+      type: string
+      description: Command copy buttons ka accessibility label. Visible text nahi hai.
+    - name: showDataLoadWarning
+      label: ⚠ JSON failure warning dikhani hai?
+      type: select
+      options:
+        values:
+        - name: 'yes'
+          label: Yes — show / enable
+        - name: 'no'
+          label: No — hide / disable
+      description: Normal successful load me kuch nahi dikhata. Sirf CMS JSON load/parse failure detect hone par warning control
+        karta hai.
+    - name: dataLoadWarningTitle
+      label: ⚠ JSON failure warning title
+      type: string
+      description: Sirf actual data-loading failure ke waqt use hota hai; normal page par visible nahi hoga.
+    - name: dataLoadWarningMessage
+      label: ⚠ JSON failure warning message
+      type: text
+      description: Sirf actual data-loading failure ke waqt use hota hai; normal page par visible nahi hoga.
+    - name: bootStatusMessage
+      label: ⚠ Initial loading status message
+      type: string
+      description: Build-generated critical snapshot me include hota hai aur perceptible slow boot par dikh sakta hai. Save
+        ke baad GitHub Action generator run hona zaroori hai.
+    - name: version
+      label: 🔒 Release Version
+      type: string
+      description: System-managed release value. Isko manually edit na karein.
+      readonly: true
+    - name: schemaVersion
+      label: 🔒 Runtime Schema Version
+      type: string
+      description: Developer-managed schema value. Isko manually edit na karein.
+      readonly: true
+  - name: gateway
+    label: ✅ Gateway Text, Cards & Background
+    type: file
+    path: data/gateway.json
+    format: json
+    fields:
+    - name: backgroundMode
+      label: ✅ Gateway ke peeche kya dikhana hai?
+      type: select
+      options:
+        values:
+        - name: website
+          label: Website
+        - name: portfolio
+          label: Portfolio
+      description: Portfolio choose karne par Gateway ke background me Portfolio; Website choose karne par Website. Isse card
+        order change nahi hota.
+    - name: title
+      label: ✅ Gateway ka main title
+      type: string
+      description: Gateway panel ka sabse bada heading text.
+    - name: subtitle
+      label: ✅ Gateway subtitle
+      type: text
+      description: Main title ke neeche dikhne wala explanation text.
+    - name: showSubtitle
+      label: ✅ Show Gateway Subtitle? (yes/no)
+      type: select
+      options:
+        values:
+        - name: 'yes'
+          label: Yes — show / enable
+        - name: 'no'
+          label: No — hide / disable
+      description: Yes se feature visible/enabled hoga; No se hide/disable hoga.
+    - name: logoText
+      label: Gateway Logo Text
+      type: string
+      description: Live site me “Gateway Logo Text” ke liye dikhne/used hone wala content.
+    - name: eyebrow
+      label: Gateway Eyebrow Text
+      type: string
+      description: Live site me “Gateway Eyebrow Text” ke liye dikhne/used hone wala content.
+    - name: showLogoRow
+      label: ✅ Show Gateway Logo Row? (yes/no)
+      type: select
+      options:
+        values:
+        - name: 'yes'
+          label: Yes — show / enable
+        - name: 'no'
+          label: No — hide / disable
+      description: Yes se feature visible/enabled hoga; No se hide/disable hoga.
+    - name: choiceLabel
+      label: Choice Column Label
+      type: string
+      description: Live site me “Choice Column Label” ke liye dikhne/used hone wala content.
+    - name: showChoiceLabel
+      label: ✅ Show Choice Column Label? (yes/no)
+      type: select
+      options:
+        values:
+        - name: 'yes'
+          label: Yes — show / enable
+        - name: 'no'
+          label: No — hide / disable
+      description: Yes se feature visible/enabled hoga; No se hide/disable hoga.
+    - name: chipOne
+      label: Highlight Chip One
+      type: string
+      description: Live site me “Highlight Chip One” ke liye dikhne/used hone wala content.
+    - name: chipTwo
+      label: Highlight Chip Two
+      type: string
+      description: Live site me “Highlight Chip Two” ke liye dikhne/used hone wala content.
+    - name: chipThree
+      label: Highlight Chip Three
+      type: string
+      description: Live site me “Highlight Chip Three” ke liye dikhne/used hone wala content.
+    - name: showChips
+      label: ✅ Show Highlight Chips? (yes/no)
+      type: select
+      options:
+        values:
+        - name: 'yes'
+          label: Yes — show / enable
+        - name: 'no'
+          label: No — hide / disable
+      description: Yes se feature visible/enabled hoga; No se hide/disable hoga.
+    - name: websiteIcon
+      label: Website Card Icon
+      type: string
+      description: Live site me “Website Card Icon” ke liye dikhne/used hone wala content.
+    - name: websiteKicker
+      label: Website Card Kicker
+      type: string
+      description: Live site me “Website Card Kicker” ke liye dikhne/used hone wala content.
+    - name: websiteTitle
+      label: ✅ Website card ka title
+      type: string
+      description: Website mode wale card ka main title.
+    - name: websiteDescription
+      label: ✅ Website card ka description
+      type: text
+      description: Website card ke andar short explanation.
+    - name: websiteButtonText
+      label: ✅ Website card button text
+      type: string
+      description: Website card ke action/button par dikhne wala text.
+    - name: portfolioIcon
+      label: Portfolio Card Icon
+      type: string
+      description: Live site me “Portfolio Card Icon” ke liye dikhne/used hone wala content.
+    - name: portfolioKicker
+      label: Portfolio Card Kicker
+      type: string
+      description: Live site me “Portfolio Card Kicker” ke liye dikhne/used hone wala content.
+    - name: portfolioTitle
+      label: ✅ Portfolio card ka title
+      type: string
+      description: Portfolio mode wale card ka main title.
+    - name: portfolioDescription
+      label: ✅ Portfolio card ka description
+      type: text
+      description: Portfolio card ke andar short explanation.
+    - name: portfolioButtonText
+      label: ✅ Portfolio card button text
+      type: string
+      description: Portfolio card ke action/button par dikhne wala text.
+    - name: showCardIcons
+      label: ✅ Show Card Icons? (yes/no)
+      type: select
+      options:
+        values:
+        - name: 'yes'
+          label: Yes — show / enable
+        - name: 'no'
+          label: No — hide / disable
+      description: Yes se feature visible/enabled hoga; No se hide/disable hoga.
+    - name: showCardKickers
+      label: ✅ Show Card Kicker Labels? (yes/no)
+      type: select
+      options:
+        values:
+        - name: 'yes'
+          label: Yes — show / enable
+        - name: 'no'
+          label: No — hide / disable
+      description: Yes se feature visible/enabled hoga; No se hide/disable hoga.
+    - name: showCardDescriptions
+      label: ✅ Show Card Descriptions? (yes/no)
+      type: select
+      options:
+        values:
+        - name: 'yes'
+          label: Yes — show / enable
+        - name: 'no'
+          label: No — hide / disable
+      description: Yes se feature visible/enabled hoga; No se hide/disable hoga.
+    - name: showCardButtons
+      label: ✅ Show Card Button Labels? (yes/no)
+      type: select
+      options:
+        values:
+        - name: 'yes'
+          label: Yes — show / enable
+        - name: 'no'
+          label: No — hide / disable
+      description: Yes se feature visible/enabled hoga; No se hide/disable hoga.
+    - name: footerNote
+      label: Gateway Footer Note
+      type: text
+      description: Live site me “Gateway Footer Note” ke liye dikhne/used hone wala content.
+    - name: showFooterNote
+      label: ✅ Show Gateway Footer Note? (yes/no)
+      type: select
+      options:
+        values:
+        - name: 'yes'
+          label: Yes — show / enable
+        - name: 'no'
+          label: No — hide / disable
+      description: Yes se feature visible/enabled hoga; No se hide/disable hoga.
+    - name: stylePreset
+      label: ⚠ Gateway baseline style
+      type: select
+      options:
+        values:
+        - name: minimal-selector
+          label: Minimal selector
+        - name: premium-glass
+          label: Premium glass
+        - name: solid
+          label: Solid
+        - name: minimal
+          label: Minimal
+      description: Normally as-is rakhein. Advanced Appearance = Custom hone par detailed design settings isko override kar
+        sakti hain.
+    - name: animationStyle
+      label: ⚠ Gateway baseline animation
+      type: select
+      options:
+        values:
+        - name: soft-scale
+          label: Soft scale
+        - name: none
+          label: None
+      description: Normally as-is rakhein. Advanced Animation = Custom hone par detailed animation settings use hongi.
+    - name: backgroundBlur
+      label: ⚠ Baseline background blur
+      type: number
+      description: 'Gateway ke peeche background blur. Advanced Appearance custom ho to us group ki value priority legi. Allowed
+        range: 0–18. Out-of-range value runtime me clamp hoti hai.'
+      options:
+        min: 0
+        max: 18
+    - name: backgroundDarkness
+      label: ⚠ Baseline background darkness
+      type: number
+      description: 'Gateway overlay ki baseline darkness. Advanced Appearance custom ho to us group ki value priority legi.
+        Allowed range: 0–0.9. Out-of-range value runtime me clamp hoti hai.'
+      options:
+        min: 0
+        max: 0.9
+    - name: panelMaxWidth
+      label: ⚠ Basic Gateway panel width
+      type: string
+      description: Sirf Advanced Gateway Appearance = Inherit hone par basic width apply hoti hai. Valid value jaise 680px,
+        42rem ya 80vw likhein; invalid value 680px par fallback hoti hai.
+  - name: gateway_appearance
+    label: ✅ Gateway Order/Layout + ⚠ Advanced Design
+    type: file
+    path: data/gateway-appearance.json
+    format: json
+    fields:
+    - name: advancedControlsEnabled
+      label: ⚠ Gateway advanced groups enable?
+      type: select
+      options:
+        values:
+        - name: 'yes'
+          label: Yes — show / enable
+        - name: 'no'
+          label: No — hide / disable
+      description: Yes zaroori hai. No karne par Layout, Appearance, Animation aur Interaction ke sab custom groups intentionally
+        ignore honge.
+    - name: visualPreset
+      label: 🔒 Legacy Gateway preset
+      type: select
+      options:
+        values:
+        - name: v2.8.3-exact
+          label: Original approved design (v2.8.3 exact)
+        - name: custom-advanced
+          label: Use grouped custom controls
+      description: Backward compatibility field. Current grouped controls ke saath iska direct effect nahi hai.
+      hidden: true
+      readonly: true
+    - name: layoutControlMode
+      label: ✅ Gateway layout & card-order control
+      type: select
+      options:
+        values:
+        - name: inherit
+          label: Inherit — accepted/default design use karein
+        - name: custom
+          label: Custom — is group ki settings use karein
+      description: Card order, row/column aur panel position edit karni ho to Custom. Isse colors/animation change nahi honge.
+    - name: appearanceControlMode
+      label: ⚠ Gateway colors, blur & card design
+      type: select
+      options:
+        values:
+        - name: inherit
+          label: Inherit — accepted/default design use karein
+        - name: custom
+          label: Custom — is group ki settings use karein
+      description: Sirf visual design manually change karna ho to Custom; otherwise Inherit rakhein.
+    - name: animationControlMode
+      label: ⚠ Gateway entry animations
+      type: select
+      options:
+        values:
+        - name: inherit
+          label: Inherit — accepted/default design use karein
+        - name: custom
+          label: Custom — is group ki settings use karein
+      description: Sirf animations/timing manually change karni ho to Custom; otherwise Inherit rakhein.
+    - name: interactionControlMode
+      label: ⚠ Gateway hover & click effects
+      type: select
+      options:
+        values:
+        - name: inherit
+          label: Inherit — accepted/default design use karein
+        - name: custom
+          label: Custom — is group ki settings use karein
+      description: Sirf hover/click effects manually change karne ho to Custom; otherwise Inherit rakhein.
+    - name: cardOrder
+      label: ✅ Gateway me kaunsa card pehle?
+      type: select
+      options:
+        values:
+        - name: website-first
+          label: Website card first
+        - name: portfolio-first
+          label: Portfolio card first
+      description: Sirf card order badalta hai. Layout Controls = Custom hona chahiye.
+    - name: desktopCardLayout
+      label: ✅ Desktop par cards ka layout
+      type: select
+      options:
+        values:
+        - name: row
+          label: Side-by-side (row)
+        - name: column
+          label: One below another (column)
+      description: Desktop par side-by-side ya one-below-another. Layout Controls = Custom hona chahiye.
+    - name: tabletCardLayout
+      label: ✅ Tablet par cards ka layout
+      type: select
+      options:
+        values:
+        - name: row
+          label: Side-by-side (row)
+        - name: column
+          label: One below another (column)
+      description: Tablet portrait/landscape breakpoint par row ya column. Layout Controls = Custom hona chahiye.
+    - name: mobileCardLayout
+      label: ✅ Mobile par cards ka layout
+      type: select
+      options:
+        values:
+        - name: row
+          label: Side-by-side (row)
+        - name: column
+          label: One below another (column)
+      description: Mobile par row ya column. Usually column easiest hota hai.
+    - name: desktopPanelPosition
+      label: ✅ Desktop Gateway panel position
+      type: select
+      options:
+        values:
+        - name: center
+          label: Center
+        - name: top-left
+          label: Top left
+        - name: top-center
+          label: Top center
+        - name: top-right
+          label: Top right
+        - name: center-left
+          label: Middle left
+        - name: center-right
+          label: Middle right
+        - name: bottom-left
+          label: Bottom left
+        - name: bottom-center
+          label: Bottom center
+        - name: bottom-right
+          label: Bottom right
+      description: Desktop screen par Gateway panel kahan rahega. Layout Controls = Custom hona chahiye.
+    - name: tabletPanelPosition
+      label: ✅ Tablet Gateway panel position
+      type: select
+      options:
+        values:
+        - name: center
+          label: Center
+        - name: top-left
+          label: Top left
+        - name: top-center
+          label: Top center
+        - name: top-right
+          label: Top right
+        - name: center-left
+          label: Middle left
+        - name: center-right
+          label: Middle right
+        - name: bottom-left
+          label: Bottom left
+        - name: bottom-center
+          label: Bottom center
+        - name: bottom-right
+          label: Bottom right
+      description: Tablet screen par Gateway panel kahan rahega.
+    - name: mobilePanelPosition
+      label: ✅ Mobile Gateway panel position
+      type: select
+      options:
+        values:
+        - name: center
+          label: Center
+        - name: top-left
+          label: Top left
+        - name: top-center
+          label: Top center
+        - name: top-right
+          label: Top right
+        - name: center-left
+          label: Middle left
+        - name: center-right
+          label: Middle right
+        - name: bottom-left
+          label: Bottom left
+        - name: bottom-center
+          label: Bottom center
+        - name: bottom-right
+          label: Bottom right
+      description: Mobile screen par Gateway panel kahan rahega.
+    - name: panelContentLayout
+      label: Panel Content Layout
+      type: select
+      options:
+        values:
+        - name: stacked
+          label: Stacked layout
+        - name: brand-left
+          label: Brand left
+        - name: brand-right
+          label: Brand right
+      description: Sirf Layout & Order Controls = Custom hone par apply hota hai.
+    - name: panelMaxWidth
+      label: Panel Maximum Width (px)
+      type: number
+      description: 'Sirf Appearance Controls = Custom hone par apply hota hai. Sirf order change karna ho to is field ko edit
+        na karein. Allowed range: 320–1400. Out-of-range value runtime me clamp hoti hai.'
+      options:
+        min: 320
+        max: 1400
+    - name: panelMaxHeightVh
+      label: Panel Maximum Height (viewport %)
+      type: number
+      description: 'Sirf Appearance Controls = Custom hone par apply hota hai. Sirf order change karna ho to is field ko edit
+        na karein. Allowed range: 50–98. Out-of-range value runtime me clamp hoti hai.'
+      options:
+        min: 50
+        max: 98
+    - name: panelPadding
+      label: Panel Padding (px)
+      type: number
+      description: 'Sirf Appearance Controls = Custom hone par apply hota hai. Sirf order change karna ho to is field ko edit
+        na karein. Allowed range: 8–72. Out-of-range value runtime me clamp hoti hai.'
+      options:
+        min: 8
+        max: 72
+    - name: panelGap
+      label: Panel Internal Gap (px)
+      type: number
+      description: 'Sirf Appearance Controls = Custom hone par apply hota hai. Sirf order change karna ho to is field ko edit
+        na karein. Allowed range: 0–64. Out-of-range value runtime me clamp hoti hai.'
+      options:
+        min: 0
+        max: 64
+    - name: panelBorderRadius
+      label: Panel Corner Radius (px)
+      type: number
+      description: 'Sirf Appearance Controls = Custom hone par apply hota hai. Sirf order change karna ho to is field ko edit
+        na karein. Allowed range: 0–64. Out-of-range value runtime me clamp hoti hai.'
+      options:
+        min: 0
+        max: 64
+    - name: panelBackgroundType
+      label: Panel Background Type
+      type: select
+      options:
+        values:
+        - name: glass
+          label: Glass
+        - name: gradient
+          label: Gradient
+        - name: solid
+          label: Solid
+        - name: transparent
+          label: Transparent
+      description: Sirf Appearance Controls = Custom hone par apply hota hai. Sirf order change karna ho to is field ko edit
+        na karein.
+    - name: panelBackgroundColor
+      label: Panel Solid/Glass Color (#RRGGBB)
+      type: string
+      description: Panel Background Type = Solid ya Glass par use hota hai; Gradient par gradient colors use hote hain. Appearance
+        Controls = Custom hona zaroori hai.
+    - name: panelBackgroundOpacity
+      label: Panel Solid/Glass Opacity (0–1)
+      type: number
+      description: Panel Background Type = Solid ya Glass par use hota hai; Gradient par gradient opacity fields use hote
+        hain. Appearance Controls = Custom hona zaroori hai.
+      options:
+        min: 0
+        max: 1
+    - name: panelGradientStartColor
+      label: Panel Gradient Start Color (#RRGGBB)
+      type: string
+      description: Sirf Panel Background Type = Gradient par use hota hai. Appearance Controls = Custom hona zaroori hai.
+    - name: panelGradientStartOpacity
+      label: Panel Gradient Start Opacity (0–1)
+      type: number
+      description: Sirf Panel Background Type = Gradient par use hota hai. Appearance Controls = Custom hona zaroori hai.
+      options:
+        min: 0
+        max: 1
+    - name: panelGradientEndColor
+      label: Panel Gradient End Color (#RRGGBB)
+      type: string
+      description: Sirf Panel Background Type = Gradient par use hota hai. Appearance Controls = Custom hona zaroori hai.
+    - name: panelGradientEndOpacity
+      label: Panel Gradient End Opacity (0–1)
+      type: number
+      description: Sirf Panel Background Type = Gradient par use hota hai. Appearance Controls = Custom hona zaroori hai.
+      options:
+        min: 0
+        max: 1
+    - name: panelGradientDirection
+      label: Panel Gradient Direction
+      type: select
+      options:
+        values:
+        - name: top-to-bottom
+          label: Top to bottom
+        - name: left-to-right
+          label: Left to right
+        - name: diagonal-up
+          label: Diagonal up
+        - name: diagonal-down
+          label: Diagonal down
+      description: Sirf Panel Background Type = Gradient par use hota hai. Appearance Controls = Custom hona zaroori hai.
+    - name: panelBackdropBlur
+      label: Panel Backdrop Blur (px)
+      type: number
+      description: 'Sirf Appearance Controls = Custom hone par apply hota hai. Sirf order change karna ho to is field ko edit
+        na karein. Allowed range: 0–48. Out-of-range value runtime me clamp hoti hai.'
+      options:
+        min: 0
+        max: 48
+    - name: panelBackdropSaturation
+      label: Panel Backdrop Saturation (%)
+      type: number
+      description: 'Sirf Appearance Controls = Custom hone par apply hota hai. Sirf order change karna ho to is field ko edit
+        na karein. Allowed range: 50–220. Out-of-range value runtime me clamp hoti hai.'
+      options:
+        min: 50
+        max: 220
+    - name: panelBorderEnabled
+      label: Show Panel Border?
+      type: select
+      options:
+        values:
+        - name: 'yes'
+          label: Yes — show / enable
+        - name: 'no'
+          label: No — hide / disable
+      description: Sirf Appearance Controls = Custom hone par apply hota hai. Sirf order change karna ho to is field ko edit
+        na karein.
+    - name: panelBorderWidth
+      label: Panel Border Width (px)
+      type: number
+      description: Sirf Panel Border Enabled = Yes par visible effect hoga. Appearance Controls = Custom hona zaroori hai.
+      options:
+        min: 0
+        max: 8
+    - name: panelBorderStyle
+      label: Panel Border Style
+      type: select
+      options:
+        values:
+        - name: solid
+          label: Solid
+        - name: dashed
+          label: Dashed
+        - name: dotted
+          label: Dotted
+      description: Sirf Panel Border Enabled = Yes par visible effect hoga. Appearance Controls = Custom hona zaroori hai.
+    - name: panelBorderColor
+      label: Panel Border Color (#RRGGBB)
+      type: string
+      description: Sirf Panel Border Enabled = Yes par visible effect hoga. Appearance Controls = Custom hona zaroori hai.
+    - name: panelBorderOpacity
+      label: Panel Border Opacity (0–1)
+      type: number
+      description: Sirf Panel Border Enabled = Yes par visible effect hoga. Appearance Controls = Custom hona zaroori hai.
+      options:
+        min: 0
+        max: 1
+    - name: panelShadowPreset
+      label: Panel Shadow Preset
+      type: select
+      options:
+        values:
+        - name: none
+          label: None
+        - name: soft
+          label: Soft
+        - name: medium
+          label: Medium
+        - name: strong
+          label: Strong
+      description: Sirf Appearance Controls = Custom hone par apply hota hai. Sirf order change karna ho to is field ko edit
+        na karein.
+    - name: panelGlowEnabled
+      label: Enable Panel Glow?
+      type: select
+      options:
+        values:
+        - name: 'yes'
+          label: Yes — show / enable
+        - name: 'no'
+          label: No — hide / disable
+      description: Sirf Appearance Controls = Custom hone par apply hota hai. Sirf order change karna ho to is field ko edit
+        na karein.
+    - name: panelGlowColor
+      label: Panel Glow Color (#RRGGBB)
+      type: string
+      description: Sirf Panel Glow Enabled = Yes par visible effect hoga. Appearance Controls = Custom hona zaroori hai.
+    - name: panelGlowOpacity
+      label: Panel Glow Opacity (0–1)
+      type: number
+      description: Sirf Panel Glow Enabled = Yes par visible effect hoga. Appearance Controls = Custom hona zaroori hai.
+      options:
+        min: 0
+        max: 1
+    - name: panelInsetHighlightEnabled
+      label: Enable Panel Inner Highlight?
+      type: select
+      options:
+        values:
+        - name: 'yes'
+          label: Yes — show / enable
+        - name: 'no'
+          label: No — hide / disable
+      description: Sirf Appearance Controls = Custom hone par apply hota hai. Sirf order change karna ho to is field ko edit
+        na karein.
+    - name: panelInsetHighlightOpacity
+      label: Panel Inner Highlight Opacity (0–1)
+      type: number
+      description: Sirf Panel Inset Highlight Enabled = Yes par visible effect hoga. Appearance Controls = Custom hona zaroori
+        hai.
+      options:
+        min: 0
+        max: 1
+    - name: overlayColor
+      label: Overlay Color (#RRGGBB)
+      type: string
+      description: Sirf Appearance Controls = Custom hone par apply hota hai. Sirf order change karna ho to is field ko edit
+        na karein.
+    - name: overlayDarkness
+      label: Overlay Darkness/Opacity (0–0.9)
+      type: number
+      description: 'Sirf Appearance Controls = Custom hone par apply hota hai. Sirf order change karna ho to is field ko edit
+        na karein. Allowed range: 0–1. Out-of-range value runtime me clamp hoti hai.'
+      options:
+        min: 0
+        max: 1
+    - name: overlayBackdropBlur
+      label: Overlay Backdrop Blur (px)
+      type: number
+      description: 'Sirf Appearance Controls = Custom hone par apply hota hai. Sirf order change karna ho to is field ko edit
+        na karein. Allowed range: 0–24. Out-of-range value runtime me clamp hoti hai.'
+      options:
+        min: 0
+        max: 24
+    - name: websiteBackgroundBlur
+      label: Gateway active background blur (px)
+      type: number
+      description: Gateway ke peeche jo mode selected hai—Website ya Portfolio—dono par apply hota hai. Sirf Appearance Controls
+        = Custom.
+      options:
+        min: 0
+        max: 24
+    - name: websiteBackgroundBrightness
+      label: Gateway active background brightness (%)
+      type: number
+      description: Gateway ke peeche active Website/Portfolio background ki brightness. Sirf Appearance Controls = Custom.
+      options:
+        min: 20
+        max: 120
+    - name: websiteBackgroundSaturation
+      label: Gateway active background saturation (%)
+      type: number
+      description: Gateway ke peeche active Website/Portfolio background ki saturation. Sirf Appearance Controls = Custom.
+      options:
+        min: 0
+        max: 200
+    - name: showAmbientLights
+      label: ✅ Show Ambient Background Lights?
+      type: select
+      options:
+        values:
+        - name: 'yes'
+          label: Yes — show / enable
+        - name: 'no'
+          label: No — hide / disable
+      description: Sirf Appearance Controls = Custom hone par apply hota hai. Sirf order change karna ho to is field ko edit
+        na karein.
+    - name: ambientOneColor
+      label: Ambient Light One Color (#RRGGBB)
+      type: string
+      description: Sirf Show Ambient Lights = Yes par visible effect hoga. Appearance Controls = Custom hona zaroori hai.
+    - name: ambientTwoColor
+      label: Ambient Light Two Color (#RRGGBB)
+      type: string
+      description: Sirf Show Ambient Lights = Yes par visible effect hoga. Appearance Controls = Custom hona zaroori hai.
+    - name: ambientOpacity
+      label: Ambient Light Opacity (0–1)
+      type: number
+      description: Sirf Show Ambient Lights = Yes par visible effect hoga. Appearance Controls = Custom hona zaroori hai.
+      options:
+        min: 0
+        max: 1
+    - name: ambientBlur
+      label: Ambient Light Blur (px)
+      type: number
+      description: Sirf Show Ambient Lights = Yes par visible effect hoga. Appearance Controls = Custom hona zaroori hai.
+      options:
+        min: 0
+        max: 80
+    - name: titleAlignment
+      label: Gateway Text Alignment
+      type: select
+      options:
+        values:
+        - name: left
+          label: Left
+        - name: center
+          label: Center
+        - name: right
+          label: Right
+      description: Sirf Appearance Controls = Custom hone par apply hota hai. Sirf order change karna ho to is field ko edit
+        na karein.
+    - name: titleColor
+      label: Gateway Title Color (#RRGGBB)
+      type: string
+      description: Sirf Appearance Controls = Custom hone par apply hota hai. Sirf order change karna ho to is field ko edit
+        na karein.
+    - name: titleSize
+      label: Gateway Title Maximum Size (px)
+      type: number
+      description: 'Sirf Appearance Controls = Custom hone par apply hota hai. Sirf order change karna ho to is field ko edit
+        na karein. Allowed range: 20–72. Out-of-range value runtime me clamp hoti hai.'
+      options:
+        min: 20
+        max: 72
+    - name: titleWeight
+      label: Gateway Title Weight (400–950)
+      type: number
+      description: 'Sirf Appearance Controls = Custom hone par apply hota hai. Sirf order change karna ho to is field ko edit
+        na karein. Allowed range: 400–950. Out-of-range value runtime me clamp hoti hai.'
+      options:
+        min: 400
+        max: 950
+    - name: subtitleColor
+      label: Gateway Subtitle Color (#RRGGBB)
+      type: string
+      description: Sirf Appearance Controls = Custom hone par apply hota hai. Sirf order change karna ho to is field ko edit
+        na karein.
+    - name: subtitleOpacity
+      label: Gateway Subtitle Opacity (0–1)
+      type: number
+      description: 'Sirf Appearance Controls = Custom hone par apply hota hai. Sirf order change karna ho to is field ko edit
+        na karein. Allowed range: 0–1. Out-of-range value runtime me clamp hoti hai.'
+      options:
+        min: 0
+        max: 1
+    - name: subtitleSize
+      label: Gateway Subtitle Size (px)
+      type: number
+      description: 'Sirf Appearance Controls = Custom hone par apply hota hai. Sirf order change karna ho to is field ko edit
+        na karein. Allowed range: 11–30. Out-of-range value runtime me clamp hoti hai.'
+      options:
+        min: 11
+        max: 30
+    - name: choiceGap
+      label: Gap Between Mode Cards (px)
+      type: number
+      description: 'Sirf Appearance Controls = Custom hone par apply hota hai. Sirf order change karna ho to is field ko edit
+        na karein. Allowed range: 0–48. Out-of-range value runtime me clamp hoti hai.'
+      options:
+        min: 0
+        max: 48
+    - name: cardMinHeight
+      label: Mode Card Minimum Height (px)
+      type: number
+      description: 'Sirf Appearance Controls = Custom hone par apply hota hai. Sirf order change karna ho to is field ko edit
+        na karein. Allowed range: 0–520. Out-of-range value runtime me clamp hoti hai.'
+      options:
+        min: 0
+        max: 520
+    - name: cardPadding
+      label: Mode Card Padding (px)
+      type: number
+      description: 'Sirf Appearance Controls = Custom hone par apply hota hai. Sirf order change karna ho to is field ko edit
+        na karein. Allowed range: 8–60. Out-of-range value runtime me clamp hoti hai.'
+      options:
+        min: 8
+        max: 60
+    - name: cardBorderRadius
+      label: Mode Card Corner Radius (px)
+      type: number
+      description: 'Sirf Appearance Controls = Custom hone par apply hota hai. Sirf order change karna ho to is field ko edit
+        na karein. Allowed range: 0–48. Out-of-range value runtime me clamp hoti hai.'
+      options:
+        min: 0
+        max: 48
+    - name: cardBorderWidth
+      label: Mode Card Border Width (px)
+      type: number
+      description: 'Sirf Appearance Controls = Custom hone par apply hota hai. Sirf order change karna ho to is field ko edit
+        na karein. Allowed range: 0–8. Out-of-range value runtime me clamp hoti hai.'
+      options:
+        min: 0
+        max: 8
+    - name: cardTextAlignment
+      label: Mode Card Text Alignment
+      type: select
+      options:
+        values:
+        - name: left
+          label: Left
+        - name: center
+          label: Center
+        - name: right
+          label: Right
+      description: Sirf Appearance Controls = Custom hone par apply hota hai. Sirf order change karna ho to is field ko edit
+        na karein.
+    - name: cardContentAlignment
+      label: Mode Card Vertical Content Alignment
+      type: select
+      options:
+        values:
+        - name: start
+          label: Start
+        - name: center
+          label: Center
+        - name: end
+          label: End
+      description: Sirf Appearance Controls = Custom hone par apply hota hai. Sirf order change karna ho to is field ko edit
+        na karein.
+    - name: cardShadowPreset
+      label: Mode Card Shadow Preset
+      type: select
+      options:
+        values:
+        - name: none
+          label: None
+        - name: soft
+          label: Soft
+        - name: medium
+          label: Medium
+        - name: strong
+          label: Strong
+      description: Sirf Appearance Controls = Custom hone par apply hota hai. Sirf order change karna ho to is field ko edit
+        na karein.
+    - name: cardInsetHighlightEnabled
+      label: Enable Card Inner Highlight?
+      type: select
+      options:
+        values:
+        - name: 'yes'
+          label: Yes — show / enable
+        - name: 'no'
+          label: No — hide / disable
+      description: Sirf Appearance Controls = Custom hone par apply hota hai. Sirf order change karna ho to is field ko edit
+        na karein.
+    - name: cardInsetHighlightOpacity
+      label: Card Inner Highlight Opacity (0–1)
+      type: number
+      description: 'Sirf Appearance Controls = Custom hone par apply hota hai. Sirf order change karna ho to is field ko edit
+        na karein. Allowed range: 0–1. Out-of-range value runtime me clamp hoti hai.'
+      options:
+        min: 0
+        max: 1
+    - name: cardTitleColor
+      label: Mode Card Title Color (#RRGGBB)
+      type: string
+      description: Sirf Appearance Controls = Custom hone par apply hota hai. Sirf order change karna ho to is field ko edit
+        na karein.
+    - name: cardDescriptionColor
+      label: Mode Card Description Color (#RRGGBB)
+      type: string
+      description: Sirf Appearance Controls = Custom hone par apply hota hai. Sirf order change karna ho to is field ko edit
+        na karein.
+    - name: cardDescriptionOpacity
+      label: Mode Card Description Opacity (0–1)
+      type: number
+      description: 'Sirf Appearance Controls = Custom hone par apply hota hai. Sirf order change karna ho to is field ko edit
+        na karein. Allowed range: 0–1. Out-of-range value runtime me clamp hoti hai.'
+      options:
+        min: 0
+        max: 1
+    - name: websiteCardBackgroundType
+      label: Website Card Background Type
+      type: select
+      options:
+        values:
+        - name: gradient
+          label: Gradient
+        - name: solid
+          label: Solid
+        - name: transparent
+          label: Transparent
+      description: Sirf Appearance Controls = Custom hone par apply hota hai. Sirf order change karna ho to is field ko edit
+        na karein.
+    - name: websiteCardBackgroundColor
+      label: Website Card Solid Color (#RRGGBB)
+      type: string
+      description: Sirf Website Card Background Type = Solid par use hota hai. Appearance Controls = Custom hona zaroori hai.
+    - name: websiteCardBackgroundOpacity
+      label: Website Card Solid Opacity (0–1)
+      type: number
+      description: Sirf Website Card Background Type = Solid par use hota hai. Appearance Controls = Custom hona zaroori hai.
+      options:
+        min: 0
+        max: 1
+    - name: websiteCardGradientStartColor
+      label: Website Card Gradient Start (#RRGGBB)
+      type: string
+      description: Sirf Website Card Background Type = Gradient par use hota hai. Appearance Controls = Custom hona zaroori
+        hai.
+    - name: websiteCardGradientStartOpacity
+      label: Website Card Gradient Start Opacity (0–1)
+      type: number
+      description: Sirf Website Card Background Type = Gradient par use hota hai. Appearance Controls = Custom hona zaroori
+        hai.
+      options:
+        min: 0
+        max: 1
+    - name: websiteCardGradientEndColor
+      label: Website Card Gradient End (#RRGGBB)
+      type: string
+      description: Sirf Website Card Background Type = Gradient par use hota hai. Appearance Controls = Custom hona zaroori
+        hai.
+    - name: websiteCardGradientEndOpacity
+      label: Website Card Gradient End Opacity (0–1)
+      type: number
+      description: Sirf Website Card Background Type = Gradient par use hota hai. Appearance Controls = Custom hona zaroori
+        hai.
+      options:
+        min: 0
+        max: 1
+    - name: websiteCardBorderColor
+      label: Website Card Border Color (#RRGGBB)
+      type: string
+      description: Sirf Appearance Controls = Custom hone par apply hota hai. Sirf order change karna ho to is field ko edit
+        na karein.
+    - name: websiteCardBorderOpacity
+      label: Website Card Border Opacity (0–1)
+      type: number
+      description: 'Sirf Appearance Controls = Custom hone par apply hota hai. Sirf order change karna ho to is field ko edit
+        na karein. Allowed range: 0–1. Out-of-range value runtime me clamp hoti hai.'
+      options:
+        min: 0
+        max: 1
+    - name: websiteCardAccentColor
+      label: Website Card Accent Color (#RRGGBB)
+      type: string
+      description: Sirf Appearance Controls = Custom hone par apply hota hai. Sirf order change karna ho to is field ko edit
+        na karein.
+    - name: websiteButtonStyle
+      label: Website Card Button Style
+      type: select
+      options:
+        values:
+        - name: pill
+          label: Pill
+        - name: solid
+          label: Solid
+        - name: outline
+          label: Outline
+        - name: soft
+          label: Soft
+        - name: text
+          label: Text only
+      description: Sirf Appearance Controls = Custom hone par apply hota hai. Sirf order change karna ho to is field ko edit
+        na karein.
+    - name: websiteButtonStartColor
+      label: Website Button Gradient Start (#RRGGBB)
+      type: string
+      description: Sirf Appearance Controls = Custom hone par apply hota hai. Sirf order change karna ho to is field ko edit
+        na karein.
+    - name: websiteButtonEndColor
+      label: Website Button Gradient End (#RRGGBB)
+      type: string
+      description: Sirf Appearance Controls = Custom hone par apply hota hai. Sirf order change karna ho to is field ko edit
+        na karein.
+    - name: websiteButtonTextColor
+      label: Website Button Text Color (#RRGGBB)
+      type: string
+      description: Sirf Appearance Controls = Custom hone par apply hota hai. Sirf order change karna ho to is field ko edit
+        na karein.
+    - name: portfolioCardBackgroundType
+      label: Portfolio Card Background Type
+      type: select
+      options:
+        values:
+        - name: gradient
+          label: Gradient
+        - name: solid
+          label: Solid
+        - name: transparent
+          label: Transparent
+      description: Sirf Appearance Controls = Custom hone par apply hota hai. Sirf order change karna ho to is field ko edit
+        na karein.
+    - name: portfolioCardBackgroundColor
+      label: Portfolio Card Solid Color (#RRGGBB)
+      type: string
+      description: Sirf Portfolio Card Background Type = Solid par use hota hai. Appearance Controls = Custom hona zaroori
+        hai.
+    - name: portfolioCardBackgroundOpacity
+      label: Portfolio Card Solid Opacity (0–1)
+      type: number
+      description: Sirf Portfolio Card Background Type = Solid par use hota hai. Appearance Controls = Custom hona zaroori
+        hai.
+      options:
+        min: 0
+        max: 1
+    - name: portfolioCardGradientStartColor
+      label: Portfolio Card Gradient Start (#RRGGBB)
+      type: string
+      description: Sirf Portfolio Card Background Type = Gradient par use hota hai. Appearance Controls = Custom hona zaroori
+        hai.
+    - name: portfolioCardGradientStartOpacity
+      label: Portfolio Card Gradient Start Opacity (0–1)
+      type: number
+      description: Sirf Portfolio Card Background Type = Gradient par use hota hai. Appearance Controls = Custom hona zaroori
+        hai.
+      options:
+        min: 0
+        max: 1
+    - name: portfolioCardGradientEndColor
+      label: Portfolio Card Gradient End (#RRGGBB)
+      type: string
+      description: Sirf Portfolio Card Background Type = Gradient par use hota hai. Appearance Controls = Custom hona zaroori
+        hai.
+    - name: portfolioCardGradientEndOpacity
+      label: Portfolio Card Gradient End Opacity (0–1)
+      type: number
+      description: Sirf Portfolio Card Background Type = Gradient par use hota hai. Appearance Controls = Custom hona zaroori
+        hai.
+      options:
+        min: 0
+        max: 1
+    - name: portfolioCardBorderColor
+      label: Portfolio Card Border Color (#RRGGBB)
+      type: string
+      description: Sirf Appearance Controls = Custom hone par apply hota hai. Sirf order change karna ho to is field ko edit
+        na karein.
+    - name: portfolioCardBorderOpacity
+      label: Portfolio Card Border Opacity (0–1)
+      type: number
+      description: 'Sirf Appearance Controls = Custom hone par apply hota hai. Sirf order change karna ho to is field ko edit
+        na karein. Allowed range: 0–1. Out-of-range value runtime me clamp hoti hai.'
+      options:
+        min: 0
+        max: 1
+    - name: portfolioCardAccentColor
+      label: Portfolio Card Accent Color (#RRGGBB)
+      type: string
+      description: Sirf Appearance Controls = Custom hone par apply hota hai. Sirf order change karna ho to is field ko edit
+        na karein.
+    - name: portfolioButtonStyle
+      label: Portfolio Card Button Style
+      type: select
+      options:
+        values:
+        - name: pill
+          label: Pill
+        - name: solid
+          label: Solid
+        - name: outline
+          label: Outline
+        - name: soft
+          label: Soft
+        - name: text
+          label: Text only
+      description: Sirf Appearance Controls = Custom hone par apply hota hai. Sirf order change karna ho to is field ko edit
+        na karein.
+    - name: portfolioButtonStartColor
+      label: Portfolio Button Gradient Start (#RRGGBB)
+      type: string
+      description: Sirf Appearance Controls = Custom hone par apply hota hai. Sirf order change karna ho to is field ko edit
+        na karein.
+    - name: portfolioButtonEndColor
+      label: Portfolio Button Gradient End (#RRGGBB)
+      type: string
+      description: Sirf Appearance Controls = Custom hone par apply hota hai. Sirf order change karna ho to is field ko edit
+        na karein.
+    - name: portfolioButtonTextColor
+      label: Portfolio Button Text Color (#RRGGBB)
+      type: string
+      description: Sirf Appearance Controls = Custom hone par apply hota hai. Sirf order change karna ho to is field ko edit
+        na karein.
+    - name: buttonBorderRadius
+      label: Card Button Corner Radius (px)
+      type: number
+      description: 'Sirf Appearance Controls = Custom hone par apply hota hai. Sirf order change karna ho to is field ko edit
+        na karein. Allowed range: 0–999. Out-of-range value runtime me clamp hoti hai.'
+      options:
+        min: 0
+        max: 999
+    - name: panelAnimation
+      label: Main Panel Entry Animation
+      type: select
+      options:
+        values:
+        - name: none
+          label: None
+        - name: fade
+          label: Fade
+        - name: soft-scale
+          label: Soft scale
+        - name: slide-up
+          label: Slide up
+        - name: slide-down
+          label: Slide down
+        - name: slide-left
+          label: Slide left
+        - name: slide-right
+          label: Slide right
+        - name: zoom
+          label: Zoom
+        - name: blur-in
+          label: Blur in
+      description: Sirf Animation Controls = Custom hone par apply hota hai. Layout/order se independent hai.
+    - name: overlayAnimation
+      label: Overlay Entry Animation
+      type: select
+      options:
+        values:
+        - name: none
+          label: None
+        - name: fade
+          label: Fade
+        - name: fade-blur
+          label: Fade + blur
+      description: Sirf Animation Controls = Custom hone par apply hota hai. Layout/order se independent hai.
+    - name: websiteCardAnimation
+      label: Website Card Entry Animation
+      type: select
+      options:
+        values:
+        - name: none
+          label: None
+        - name: fade
+          label: Fade
+        - name: soft-scale
+          label: Soft scale
+        - name: slide-up
+          label: Slide up
+        - name: slide-down
+          label: Slide down
+        - name: slide-left
+          label: Slide left
+        - name: slide-right
+          label: Slide right
+        - name: zoom
+          label: Zoom
+      description: Sirf Animation Controls = Custom hone par apply hota hai. Layout/order se independent hai.
+    - name: portfolioCardAnimation
+      label: Portfolio Card Entry Animation
+      type: select
+      options:
+        values:
+        - name: none
+          label: None
+        - name: fade
+          label: Fade
+        - name: soft-scale
+          label: Soft scale
+        - name: slide-up
+          label: Slide up
+        - name: slide-down
+          label: Slide down
+        - name: slide-left
+          label: Slide left
+        - name: slide-right
+          label: Slide right
+        - name: zoom
+          label: Zoom
+      description: Sirf Animation Controls = Custom hone par apply hota hai. Layout/order se independent hai.
+    - name: animationDurationMs
+      label: Animation Duration (milliseconds)
+      type: number
+      description: 'Sirf Animation Controls = Custom hone par apply hota hai. Layout/order se independent hai. Allowed range:
+        0–2000. Out-of-range value runtime me clamp hoti hai.'
+      options:
+        min: 0
+        max: 2000
+    - name: panelAnimationDelayMs
+      label: Panel Animation Delay (milliseconds)
+      type: number
+      description: 'Sirf Animation Controls = Custom hone par apply hota hai. Layout/order se independent hai. Allowed range:
+        0–1500. Out-of-range value runtime me clamp hoti hai.'
+      options:
+        min: 0
+        max: 1500
+    - name: websiteCardDelayMs
+      label: Website Card Delay (milliseconds)
+      type: number
+      description: 'Sirf Animation Controls = Custom hone par apply hota hai. Layout/order se independent hai. Allowed range:
+        0–2000. Out-of-range value runtime me clamp hoti hai.'
+      options:
+        min: 0
+        max: 2000
+    - name: portfolioCardDelayMs
+      label: Portfolio Card Delay (milliseconds)
+      type: number
+      description: 'Sirf Animation Controls = Custom hone par apply hota hai. Layout/order se independent hai. Allowed range:
+        0–2000. Out-of-range value runtime me clamp hoti hai.'
+      options:
+        min: 0
+        max: 2000
+    - name: animationEasing
+      label: Animation Easing
+      type: select
+      options:
+        values:
+        - name: linear
+          label: Linear
+        - name: ease
+          label: Ease
+        - name: ease-in
+          label: Ease in
+        - name: ease-out
+          label: Ease out
+        - name: ease-in-out
+          label: Ease in-out
+        - name: smooth
+          label: Smooth
+        - name: spring-soft
+          label: Soft spring
+      description: Sirf Animation Controls = Custom hone par apply hota hai. Layout/order se independent hai.
+    - name: cardHoverPreset
+      label: Card Hover Animation
+      type: select
+      options:
+        values:
+        - name: none
+          label: None
+        - name: lift
+          label: Lift
+        - name: scale
+          label: Scale
+        - name: glow
+          label: Glow
+        - name: border-glow
+          label: Border glow
+        - name: tilt-soft
+          label: Soft tilt
+        - name: lift-glow
+          label: Lift + glow
+      description: Sirf Hover & Click Controls = Custom hone par apply hota hai.
+    - name: cardHoverStrength
+      label: Card Hover Movement Strength (px)
+      type: number
+      description: 'Sirf Hover & Click Controls = Custom hone par apply hota hai. Allowed range: 0–12. Out-of-range value
+        runtime me clamp hoti hai.'
+      options:
+        min: 0
+        max: 12
+    - name: cardHoverDurationMs
+      label: Card Hover Duration (milliseconds)
+      type: number
+      description: 'Sirf Hover & Click Controls = Custom hone par apply hota hai. Allowed range: 0–1000. Out-of-range value
+        runtime me clamp hoti hai.'
+      options:
+        min: 0
+        max: 1000
+    - name: cardClickPreset
+      label: Card Click Animation
+      type: select
+      options:
+        values:
+        - name: none
+          label: None
+        - name: press
+          label: Press
+        - name: pulse
+          label: Pulse
+      description: Sirf Hover & Click Controls = Custom hone par apply hota hai.
+  - name: navigation_style
+    label: ✅ Switch Position + ⚠ Header Design
+    type: file
+    path: data/navigation-style.json
+    format: json
+    fields:
+    - name: advancedControlsEnabled
+      label: ⚠ Advanced Header & Switch controls enable?
+      type: select
+      options:
+        values:
+        - name: 'yes'
+          label: Yes — show / enable
+        - name: 'no'
+          label: No — hide / disable
+      description: Custom header ya switch controls use karne ke liye Yes. Neeche har group independently Inherit/Custom hota
+        hai.
+    - name: visualPreset
+      label: 🔒 Legacy Header/Switch preset
+      type: select
+      options:
+        values:
+        - name: v2.8.3-exact
+          label: Original approved design (v2.8.3 exact)
+        - name: custom-advanced
+          label: Use grouped custom controls
+      description: Backward compatibility field. Current grouped controls ke saath iska direct effect nahi hai.
+      hidden: true
+      readonly: true
+    - name: modeSwitchPositionControlMode
+      label: ✅ Switch position & layout controls
+      type: select
+      options:
+        values:
+        - name: inherit
+          label: Inherit — accepted/default design use karein
+        - name: custom
+          label: Custom — is group ki settings use karein
+      description: Desktop/mobile switch position change karni ho to Custom. Header design isse change nahi hoga.
+    - name: modeSwitchDesktopPosition
+      label: ✅ Desktop switch button position
+      type: select
+      options:
+        values:
+        - name: top-left
+          label: Top left
+        - name: top-center
+          label: Top center
+        - name: top-right
+          label: Top right
+        - name: center-left
+          label: Middle left
+        - name: center-right
+          label: Middle right
+        - name: bottom-left
+          label: Bottom left
+        - name: bottom-center
+          label: Bottom center
+        - name: bottom-right
+          label: Bottom right
+      description: Desktop/large screens par floating switch kahan dikhna chahiye.
+    - name: modeSwitchMobilePosition
+      label: ✅ Mobile switch button position
+      type: select
+      options:
+        values:
+        - name: top-left
+          label: Top left
+        - name: top-center
+          label: Top center
+        - name: top-right
+          label: Top right
+        - name: bottom-left
+          label: Bottom left
+        - name: bottom-center
+          label: Bottom center
+        - name: bottom-right
+          label: Bottom right
+      description: Mobile aur 900px tak ke portrait/tablet screens par switch kahan dikhna chahiye.
+    - name: modeSwitchHorizontalOffset
+      label: ⚠ Desktop horizontal edge gap
+      type: number
+      description: 'Desktop switch ka left/right edge se gap in pixels. Allowed range: 4–80. Out-of-range value runtime me
+        clamp hoti hai.'
+      options:
+        min: 4
+        max: 80
+    - name: modeSwitchVerticalOffset
+      label: ⚠ Desktop vertical edge gap
+      type: number
+      description: 'Desktop switch ka top/bottom edge se gap in pixels. Allowed range: 4–100. Out-of-range value runtime me
+        clamp hoti hai.'
+      options:
+        min: 4
+        max: 100
+    - name: modeSwitchMobileOffset
+      label: ⚠ Mobile edge gap
+      type: number
+      description: 'Mobile switch ka screen edge/safe area se gap in pixels. Allowed range: 4–60. Out-of-range value runtime
+        me clamp hoti hai.'
+      options:
+        min: 4
+        max: 60
+    - name: modeSwitchOrientation
+      label: Mode Switch Orientation
+      type: select
+      options:
+        values:
+        - name: horizontal
+          label: Horizontal
+        - name: vertical
+          label: Vertical
+      description: Sirf Switch Position & Layout Controls = Custom hone par apply hota hai.
+    - name: modeSwitchAppearanceControlMode
+      label: ⚠ Switch size, colors & appearance controls
+      type: select
+      options:
+        values:
+        - name: inherit
+          label: Inherit — accepted/default design use karein
+        - name: custom
+          label: Custom — is group ki settings use karein
+      description: Switch size, colors, blur, border aur shadow change karna ho to Custom. Position settings isse change nahi
+        hongi.
+    - name: modeSwitchSize
+      label: ✅ Switch button size
+      type: select
+      options:
+        values:
+        - name: compact
+          label: Compact
+        - name: standard
+          label: Standard
+        - name: large
+          label: Large
+      description: Sirf Switch Size, Colors & Appearance Controls = Custom hone par apply hota hai. Position group ko Custom
+        karna zaroori nahi.
+    - name: modeSwitchBackgroundColor
+      label: Mode Switch Background Color (#RRGGBB)
+      type: string
+      description: Sirf Switch Appearance Controls = Custom hone par apply hota hai.
+    - name: modeSwitchBackgroundOpacity
+      label: Mode Switch Background Opacity (0–1)
+      type: number
+      description: 'Sirf Switch Appearance Controls = Custom hone par apply hota hai. Allowed range: 0–1. Out-of-range value
+        runtime me clamp hoti hai.'
+      options:
+        min: 0
+        max: 1
+    - name: modeSwitchBackdropBlur
+      label: Mode Switch Blur (px)
+      type: number
+      description: 'Sirf Switch Appearance Controls = Custom hone par apply hota hai. Allowed range: 0–40. Out-of-range value
+        runtime me clamp hoti hai.'
+      options:
+        min: 0
+        max: 40
+    - name: modeSwitchBorderColor
+      label: Mode Switch Border Color (#RRGGBB)
+      type: string
+      description: Sirf Switch Appearance Controls = Custom hone par apply hota hai.
+    - name: modeSwitchBorderOpacity
+      label: Mode Switch Border Opacity (0–1)
+      type: number
+      description: 'Sirf Switch Appearance Controls = Custom hone par apply hota hai. Allowed range: 0–1. Out-of-range value
+        runtime me clamp hoti hai.'
+      options:
+        min: 0
+        max: 1
+    - name: modeSwitchBorderWidth
+      label: Mode Switch Border Width (px)
+      type: number
+      description: 'Sirf Switch Appearance Controls = Custom hone par apply hota hai. Allowed range: 0–6. Out-of-range value
+        runtime me clamp hoti hai.'
+      options:
+        min: 0
+        max: 6
+    - name: modeSwitchBorderRadius
+      label: Mode Switch Corner Radius (px)
+      type: number
+      description: 'Sirf Switch Appearance Controls = Custom hone par apply hota hai. Allowed range: 0–999. Out-of-range value
+        runtime me clamp hoti hai.'
+      options:
+        min: 0
+        max: 999
+    - name: modeSwitchShadowPreset
+      label: Mode Switch Shadow Preset
+      type: select
+      options:
+        values:
+        - name: none
+          label: None
+        - name: soft
+          label: Soft
+        - name: medium
+          label: Medium
+        - name: strong
+          label: Strong
+      description: Sirf Switch Appearance Controls = Custom hone par apply hota hai.
+    - name: modeSwitchWebsiteStartColor
+      label: Website Active Pill Start Color (#RRGGBB)
+      type: string
+      description: Sirf Switch Appearance Controls = Custom hone par apply hota hai.
+    - name: modeSwitchWebsiteEndColor
+      label: Website Active Pill End Color (#RRGGBB)
+      type: string
+      description: Sirf Switch Appearance Controls = Custom hone par apply hota hai.
+    - name: modeSwitchWebsiteTextColor
+      label: Website Active Text Color (#RRGGBB)
+      type: string
+      description: Sirf Switch Appearance Controls = Custom hone par apply hota hai.
+    - name: modeSwitchPortfolioStartColor
+      label: Portfolio Active Pill Start Color (#RRGGBB)
+      type: string
+      description: Sirf Switch Appearance Controls = Custom hone par apply hota hai.
+    - name: modeSwitchPortfolioEndColor
+      label: Portfolio Active Pill End Color (#RRGGBB)
+      type: string
+      description: Sirf Switch Appearance Controls = Custom hone par apply hota hai.
+    - name: modeSwitchPortfolioTextColor
+      label: Portfolio Active Text Color (#RRGGBB)
+      type: string
+      description: Sirf Switch Appearance Controls = Custom hone par apply hota hai.
+    - name: modeSwitchInactiveTextColor
+      label: Inactive Mode Text Color (#RRGGBB)
+      type: string
+      description: Sirf Switch Appearance Controls = Custom hone par apply hota hai.
+    - name: modeSwitchInactiveTextOpacity
+      label: Inactive Mode Text Opacity (0–1)
+      type: number
+      description: 'Sirf Switch Appearance Controls = Custom hone par apply hota hai. Allowed range: 0–1. Out-of-range value
+        runtime me clamp hoti hai.'
+      options:
+        min: 0
+        max: 1
+    - name: modeSwitchAnimationControlMode
+      label: ⚠ Switch animation & hover controls
+      type: select
+      options:
+        values:
+        - name: inherit
+          label: Inherit — accepted/default design use karein
+        - name: custom
+          label: Custom — is group ki settings use karein
+      description: Switch animation/hover change karna ho to Custom; otherwise Inherit.
+    - name: modeSwitchAnimation
+      label: Mode Switch Animation
+      type: select
+      options:
+        values:
+        - name: none
+          label: None
+        - name: fade
+          label: Fade
+        - name: pulse
+          label: Pulse
+        - name: soft-scale
+          label: Soft scale
+      description: Sirf Switch Animation & Hover Controls = Custom hone par apply hota hai.
+    - name: modeSwitchHoverPreset
+      label: Mode Switch Hover Effect
+      type: select
+      options:
+        values:
+        - name: none
+          label: None
+        - name: lift
+          label: Lift
+        - name: glow
+          label: Glow
+      description: Sirf Switch Animation & Hover Controls = Custom hone par apply hota hai.
+    - name: websiteHeaderControlMode
+      label: ⚠ Website header design controls
+      type: select
+      options:
+        values:
+        - name: inherit
+          label: Inherit — accepted/default design use karein
+        - name: custom
+          label: Custom — is group ki settings use karein
+      description: Website header manually customize karna ho to Custom; otherwise Inherit.
+    - name: websiteHeaderPosition
+      label: Website Header Position
+      type: select
+      options:
+        values:
+        - name: static
+          label: Static
+        - name: sticky
+          label: Sticky
+      description: Sirf Website Header Controls = Custom hone par apply hota hai.
+    - name: websiteDesktopLayout
+      label: Website Desktop Header Layout
+      type: select
+      options:
+        values:
+        - name: brand-left-menu-right
+          label: Brand left, menu right
+        - name: menu-left-brand-right
+          label: Menu left, brand right
+        - name: stacked-centered
+          label: Stacked and centered
+      description: Sirf desktop/large screen par visible effect hoga. Website Header Controls = Custom hona zaroori hai.
+    - name: websiteMenuAlignment
+      label: Website Desktop Menu Alignment
+      type: select
+      options:
+        values:
+        - name: left
+          label: Left
+        - name: center
+          label: Center
+        - name: right
+          label: Right
+      description: Sirf desktop menu layout par visible effect hoga. Website Header Controls = Custom hona zaroori hai.
+    - name: websiteHeaderMinHeight
+      label: Website Header Minimum Height (px)
+      type: number
+      description: 'Sirf Website Header Controls = Custom hone par apply hota hai. Allowed range: 48–140. Out-of-range value
+        runtime me clamp hoti hai.'
+      options:
+        min: 48
+        max: 140
+    - name: websiteContainerMaxWidth
+      label: Website Header Container Width (px)
+      type: number
+      description: 'Sirf Website Header Controls = Custom hone par apply hota hai. Allowed range: 720–1800. Out-of-range value
+        runtime me clamp hoti hai.'
+      options:
+        min: 720
+        max: 1800
+    - name: websiteHeaderBackgroundType
+      label: Website Header Background Type
+      type: select
+      options:
+        values:
+        - name: glass
+          label: Glass
+        - name: solid
+          label: Solid
+        - name: transparent
+          label: Transparent
+      description: Sirf Website Header Controls = Custom hone par apply hota hai.
+    - name: websiteHeaderBackgroundColor
+      label: Website Header Background Color (#RRGGBB)
+      type: string
+      description: Background Type = Solid ya Glass par use hota hai. Website Header Controls = Custom hona zaroori hai.
+    - name: websiteHeaderBackgroundOpacity
+      label: Website Header Background Opacity (0–1)
+      type: number
+      description: Background Type = Solid ya Glass par use hota hai. Website Header Controls = Custom hona zaroori hai.
+      options:
+        min: 0
+        max: 1
+    - name: websiteHeaderBackdropBlur
+      label: Website Header Blur (px)
+      type: number
+      description: Sirf Background Type = Glass par blur visible hoga. Website Header Controls = Custom hona zaroori hai.
+      options:
+        min: 0
+        max: 40
+    - name: websiteHeaderBorderEnabled
+      label: Show Website Header Bottom Border?
+      type: select
+      options:
+        values:
+        - name: 'yes'
+          label: Yes — show / enable
+        - name: 'no'
+          label: No — hide / disable
+      description: Sirf Website Header Controls = Custom hone par apply hota hai.
+    - name: websiteHeaderBorderColor
+      label: Website Header Border Color (#RRGGBB)
+      type: string
+      description: Sirf Header Border Enabled = Yes par visible effect hoga. Website Header Controls = Custom hona zaroori
+        hai.
+    - name: websiteHeaderBorderOpacity
+      label: Website Header Border Opacity (0–1)
+      type: number
+      description: Sirf Header Border Enabled = Yes par visible effect hoga. Website Header Controls = Custom hona zaroori
+        hai.
+      options:
+        min: 0
+        max: 1
+    - name: websiteHeaderShadowPreset
+      label: Website Header Shadow Preset
+      type: select
+      options:
+        values:
+        - name: none
+          label: None
+        - name: soft
+          label: Soft
+        - name: medium
+          label: Medium
+        - name: strong
+          label: Strong
+      description: Sirf Website Header Controls = Custom hone par apply hota hai.
+    - name: websiteMenuGap
+      label: Website Menu Link Gap (px)
+      type: number
+      description: 'Sirf Website Header Controls = Custom hone par apply hota hai. Allowed range: 0–48. Out-of-range value
+        runtime me clamp hoti hai.'
+      options:
+        min: 0
+        max: 48
+    - name: websiteMenuFontSize
+      label: Website Menu Font Size (px)
+      type: number
+      description: 'Sirf Website Header Controls = Custom hone par apply hota hai. Allowed range: 11–24. Out-of-range value
+        runtime me clamp hoti hai.'
+      options:
+        min: 11
+        max: 24
+    - name: websiteMenuLinkStyle
+      label: Website Menu Link Style
+      type: select
+      options:
+        values:
+        - name: plain
+          label: Plain
+        - name: pill
+          label: Pill
+        - name: underline
+          label: Underline
+      description: Sirf Website Header Controls = Custom hone par apply hota hai.
+    - name: websiteMenuTextColor
+      label: Website Menu Text Color (#RRGGBB)
+      type: string
+      description: Sirf Website Header Controls = Custom hone par apply hota hai.
+    - name: websiteMenuHoverColor
+      label: Website Menu Hover Color (#RRGGBB)
+      type: string
+      description: Sirf Website Header Controls = Custom hone par apply hota hai.
+    - name: websiteMobileToggleSide
+      label: Website Mobile Menu Button Side
+      type: select
+      options:
+        values:
+        - name: left
+          label: Left
+        - name: right
+          label: Right
+      description: Sirf mobile/tablet menu button par visible effect hoga. Website Header Controls = Custom hona zaroori hai.
+    - name: websiteMobileMenuAlignment
+      label: Website Mobile Menu Text Alignment
+      type: select
+      options:
+        values:
+        - name: left
+          label: Left
+        - name: center
+          label: Center
+        - name: right
+          label: Right
+      description: Sirf desktop menu layout par visible effect hoga. Website Header Controls = Custom hona zaroori hai.
+    - name: portfolioHeaderControlMode
+      label: ⚠ Portfolio header design controls
+      type: select
+      options:
+        values:
+        - name: inherit
+          label: Inherit — accepted/default design use karein
+        - name: custom
+          label: Custom — is group ki settings use karein
+      description: Portfolio header manually customize karna ho to Custom; otherwise Inherit.
+    - name: portfolioHeaderPosition
+      label: Portfolio Header Position
+      type: select
+      options:
+        values:
+        - name: static
+          label: Static
+        - name: sticky
+          label: Sticky
+      description: Sirf Portfolio Header Controls = Custom hone par apply hota hai.
+    - name: portfolioDesktopLayout
+      label: Portfolio Desktop Header Layout
+      type: select
+      options:
+        values:
+        - name: brand-left-menu-right
+          label: Brand left, menu right
+        - name: menu-left-brand-right
+          label: Menu left, brand right
+        - name: stacked-centered
+          label: Stacked and centered
+      description: Sirf desktop/large screen par visible effect hoga. Portfolio Header Controls = Custom hona zaroori hai.
+    - name: portfolioMenuAlignment
+      label: Portfolio Desktop Menu Alignment
+      type: select
+      options:
+        values:
+        - name: left
+          label: Left
+        - name: center
+          label: Center
+        - name: right
+          label: Right
+      description: Sirf desktop menu layout par visible effect hoga. Portfolio Header Controls = Custom hona zaroori hai.
+    - name: portfolioHeaderMinHeight
+      label: Portfolio Header Minimum Height (px)
+      type: number
+      description: 'Sirf Portfolio Header Controls = Custom hone par apply hota hai. Allowed range: 48–140. Out-of-range value
+        runtime me clamp hoti hai.'
+      options:
+        min: 48
+        max: 140
+    - name: portfolioContainerMaxWidth
+      label: Portfolio Header Container Width (px)
+      type: number
+      description: 'Sirf Portfolio Header Controls = Custom hone par apply hota hai. Allowed range: 720–1800. Out-of-range
+        value runtime me clamp hoti hai.'
+      options:
+        min: 720
+        max: 1800
+    - name: portfolioHeaderBackgroundType
+      label: Portfolio Header Background Type
+      type: select
+      options:
+        values:
+        - name: glass
+          label: Glass
+        - name: solid
+          label: Solid
+        - name: transparent
+          label: Transparent
+      description: Sirf Portfolio Header Controls = Custom hone par apply hota hai.
+    - name: portfolioHeaderBackgroundColor
+      label: Portfolio Header Background Color (#RRGGBB)
+      type: string
+      description: Background Type = Solid ya Glass par use hota hai. Portfolio Header Controls = Custom hona zaroori hai.
+    - name: portfolioHeaderBackgroundOpacity
+      label: Portfolio Header Background Opacity (0–1)
+      type: number
+      description: Background Type = Solid ya Glass par use hota hai. Portfolio Header Controls = Custom hona zaroori hai.
+      options:
+        min: 0
+        max: 1
+    - name: portfolioHeaderBackdropBlur
+      label: Portfolio Header Blur (px)
+      type: number
+      description: Sirf Background Type = Glass par blur visible hoga. Portfolio Header Controls = Custom hona zaroori hai.
+      options:
+        min: 0
+        max: 40
+    - name: portfolioHeaderBorderEnabled
+      label: Show Portfolio Header Bottom Border?
+      type: select
+      options:
+        values:
+        - name: 'yes'
+          label: Yes — show / enable
+        - name: 'no'
+          label: No — hide / disable
+      description: Sirf Portfolio Header Controls = Custom hone par apply hota hai.
+    - name: portfolioHeaderBorderColor
+      label: Portfolio Header Border Color (#RRGGBB)
+      type: string
+      description: Sirf Header Border Enabled = Yes par visible effect hoga. Portfolio Header Controls = Custom hona zaroori
+        hai.
+    - name: portfolioHeaderBorderOpacity
+      label: Portfolio Header Border Opacity (0–1)
+      type: number
+      description: Sirf Header Border Enabled = Yes par visible effect hoga. Portfolio Header Controls = Custom hona zaroori
+        hai.
+      options:
+        min: 0
+        max: 1
+    - name: portfolioHeaderShadowPreset
+      label: Portfolio Header Shadow Preset
+      type: select
+      options:
+        values:
+        - name: none
+          label: None
+        - name: soft
+          label: Soft
+        - name: medium
+          label: Medium
+        - name: strong
+          label: Strong
+      description: Sirf Portfolio Header Controls = Custom hone par apply hota hai.
+    - name: portfolioMenuGap
+      label: Portfolio Menu Link Gap (px)
+      type: number
+      description: 'Sirf Portfolio Header Controls = Custom hone par apply hota hai. Allowed range: 0–48. Out-of-range value
+        runtime me clamp hoti hai.'
+      options:
+        min: 0
+        max: 48
+    - name: portfolioMenuFontSize
+      label: Portfolio Menu Font Size (px)
+      type: number
+      description: 'Sirf Portfolio Header Controls = Custom hone par apply hota hai. Allowed range: 11–24. Out-of-range value
+        runtime me clamp hoti hai.'
+      options:
+        min: 11
+        max: 24
+    - name: portfolioMenuLinkStyle
+      label: Portfolio Menu Link Style
+      type: select
+      options:
+        values:
+        - name: plain
+          label: Plain
+        - name: pill
+          label: Pill
+        - name: underline
+          label: Underline
+      description: Sirf Portfolio Header Controls = Custom hone par apply hota hai.
+    - name: portfolioMenuTextColor
+      label: Portfolio Menu Text Color (#RRGGBB)
+      type: string
+      description: Sirf Portfolio Header Controls = Custom hone par apply hota hai.
+    - name: portfolioMenuTextOpacity
+      label: Portfolio Menu Text Opacity (0–1)
+      type: number
+      description: 'Sirf Portfolio Header Controls = Custom hone par apply hota hai. Allowed range: 0–1. Out-of-range value
+        runtime me clamp hoti hai.'
+      options:
+        min: 0
+        max: 1
+    - name: portfolioMenuHoverColor
+      label: Portfolio Menu Hover Color (#RRGGBB)
+      type: string
+      description: Sirf Portfolio Header Controls = Custom hone par apply hota hai.
+    - name: portfolioMobileToggleSide
+      label: Portfolio Mobile Menu Button Side
+      type: select
+      options:
+        values:
+        - name: left
+          label: Left
+        - name: right
+          label: Right
+      description: Sirf mobile/tablet menu button par visible effect hoga. Portfolio Header Controls = Custom hona zaroori
+        hai.
+    - name: portfolioMobileMenuAlignment
+      label: Portfolio Mobile Menu Text Alignment
+      type: select
+      options:
+        values:
+        - name: left
+          label: Left
+        - name: center
+          label: Center
+        - name: right
+          label: Right
+      description: Sirf desktop menu layout par visible effect hoga. Portfolio Header Controls = Custom hona zaroori hai.
+- name: website_content
+  label: 01. WEBSITE — Content & Design
+  type: group
+  items:
+  - name: site
+    label: ✅ Website Brand, Hero, About & Footer
+    type: file
+    path: data/site.json
+    format: json
+    fields:
+    - name: brandName
+      label: Brand Name
+      type: string
+      description: Live site me “Brand Name” ke liye dikhne/used hone wala content.
+    - name: logoText
+      label: Logo Text
+      type: string
+      description: Live site me “Logo Text” ke liye dikhne/used hone wala content.
+    - name: badge
+      label: Badge Text
+      type: string
+      description: Live site me “Badge Text” ke liye dikhne/used hone wala content.
+    - name: heroTitleBefore
+      label: Hero Title First Line
+      type: string
+      description: Live site me “Hero Title First Line” ke liye dikhne/used hone wala content.
+    - name: heroTitleHighlight
+      label: Hero Highlight Text
+      type: string
+      description: Live site me “Hero Highlight Text” ke liye dikhne/used hone wala content.
+    - name: heroDescription
+      label: Hero Description
+      type: text
+      description: Live site me “Hero Description” ke liye dikhne/used hone wala content.
+    - name: primaryButtonText
+      label: Primary Button Text
+      type: string
+      description: Live site me “Primary Button Text” ke liye dikhne/used hone wala content.
+    - name: primaryButtonLink
+      label: Primary Button Link
+      type: string
+      description: '#section ya relative path = same tab; https:// = new tab; mailto:/tel: allowed; unsafe javascript:/data:/vbscript:
+        blocked. Text ya link blank ho to button hide hoga.'
+    - name: secondaryButtonText
+      label: Secondary Button Text
+      type: string
+      description: Live site me “Secondary Button Text” ke liye dikhne/used hone wala content.
+    - name: secondaryButtonLink
+      label: Secondary Button Link
+      type: string
+      description: '#section ya relative path = same tab; https:// = new tab; mailto:/tel: allowed; unsafe javascript:/data:/vbscript:
+        blocked. Text ya link blank ho to button hide hoga.'
+    - name: githubProfileLink
+      label: GitHub Profile Link
+      type: string
+      description: Valid full link use karein, usually https:// se start hona chahiye.
+    - name: aboutTitle
+      label: About Section Title
+      type: string
+      description: Live site me “About Section Title” ke liye dikhne/used hone wala content.
+    - name: aboutDescription
+      label: About Description
+      type: text
+      description: Live site me “About Description” ke liye dikhne/used hone wala content.
+    - name: footerText
+      label: Footer Text
+      type: text
+      description: Live site me “Footer Text” ke liye dikhne/used hone wala content.
+  - name: sections
+    label: ✅ Website Navigation & Section Headings
+    type: file
+    path: data/sections.json
+    format: json
+    fields:
+    - name: navToolsLabel
+      label: Navigation Tools Label
+      type: string
+      description: Live site me “Navigation Tools Label” ke liye dikhne/used hone wala content.
+    - name: navDownloadsLabel
+      label: Navigation Downloads Label
+      type: string
+      description: Live site me “Navigation Downloads Label” ke liye dikhne/used hone wala content.
+    - name: navProjectsLabel
+      label: Navigation Projects Label
+      type: string
+      description: Live site me “Navigation Projects Label” ke liye dikhne/used hone wala content.
+    - name: navDocsLabel
+      label: Navigation Docs Label
+      type: string
+      description: Live site me “Navigation Docs Label” ke liye dikhne/used hone wala content.
+    - name: toolsTitle
+      label: Tools Section Title
+      type: string
+      description: Live site me “Tools Section Title” ke liye dikhne/used hone wala content.
+    - name: toolsSubtitle
+      label: Tools Section Subtitle
+      type: text
+      description: Live site me “Tools Section Subtitle” ke liye dikhne/used hone wala content.
+    - name: downloadsTitle
+      label: Downloads Section Title
+      type: string
+      description: Live site me “Downloads Section Title” ke liye dikhne/used hone wala content.
+    - name: downloadsSubtitle
+      label: Downloads Section Subtitle
+      type: text
+      description: Live site me “Downloads Section Subtitle” ke liye dikhne/used hone wala content.
+    - name: downloadsWarning
+      label: Downloads Safety Warning
+      type: text
+      description: Live site me “Downloads Safety Warning” ke liye dikhne/used hone wala content.
+    - name: projectsTitle
+      label: Projects Section Title
+      type: string
+      description: Live site me “Projects Section Title” ke liye dikhne/used hone wala content.
+    - name: projectsSubtitle
+      label: Projects Section Subtitle
+      type: text
+      description: Live site me “Projects Section Subtitle” ke liye dikhne/used hone wala content.
+    - name: skillsTitle
+      label: Website Skills Section Title
+      type: string
+      description: Live site me “Website Skills Section Title” ke liye dikhne/used hone wala content.
+    - name: skillsSubtitle
+      label: Website Skills Section Subtitle
+      type: text
+      description: Live site me “Website Skills Section Subtitle” ke liye dikhne/used hone wala content.
+    - name: quickCommandsTitle
+      label: Quick Commands Title
+      type: string
+      description: Live site me “Quick Commands Title” ke liye dikhne/used hone wala content.
+    - name: quickCommandsSubtitle
+      label: Quick Commands Subtitle
+      type: text
+      description: Live site me “Quick Commands Subtitle” ke liye dikhne/used hone wala content.
+    - name: docsTitle
+      label: Docs Section Title
+      type: string
+      description: Live site me “Docs Section Title” ke liye dikhne/used hone wala content.
+    - name: docsSubtitle
+      label: Docs Section Subtitle
+      type: text
+      description: Live site me “Docs Section Subtitle” ke liye dikhne/used hone wala content.
+    - name: faqTitle
+      label: FAQ Section Title
+      type: string
+      description: Live site me “FAQ Section Title” ke liye dikhne/used hone wala content.
+    - name: faqSubtitle
+      label: FAQ Section Subtitle
+      type: text
+      description: Live site me “FAQ Section Subtitle” ke liye dikhne/used hone wala content.
+  - name: design
+    label: ✅ Website Theme & Basic Design
+    type: file
+    path: data/design.json
+    format: json
+    fields:
+    - name: themeMode
+      label: ✅ Website theme
+      type: select
+      options:
+        values:
+        - name: dark
+          label: Dark
+        - name: light
+          label: Light
+        - name: blue
+          label: Blue
+        - name: green
+          label: Green
+        - name: purple
+          label: Purple
+      description: Dark, Light, Blue, Green ya Purple theme choose karein. Accent color isse independently apply hota hai.
+    - name: accentColor
+      label: ✅ Website accent color
+      type: select
+      options:
+        values:
+        - name: cyan
+          label: Cyan
+        - name: green
+          label: Green
+        - name: blue
+          label: Blue
+        - name: orange
+          label: Orange
+        - name: purple
+          label: Purple
+      description: Buttons, highlights aur important accents ka color. Theme se independent hai; dropdown se color choose
+        karein.
+    - name: backgroundStyle
+      label: ✅ Website background style
+      type: select
+      options:
+        values:
+        - name: gradient
+          label: Gradient
+        - name: plain
+          label: Plain
+        - name: grid
+          label: Grid
+      description: Gradient = decorative gradients; Plain = solid background; Grid = grid pattern. Isse content ya Portfolio
+        theme change nahi hota.
+    - name: cardStyle
+      label: ✅ Website card style
+      type: select
+      options:
+        values:
+        - name: glass
+          label: Glass
+        - name: solid
+          label: Solid
+        - name: border
+          label: Border only
+      description: Glass, Solid ya Border-only card appearance. Sirf Website content cards par apply hota hai.
+    - name: heroLayout
+      label: ✅ Website hero layout
+      type: select
+      options:
+        values:
+        - name: split
+          label: Split layout
+        - name: center
+          label: Center
+      description: Split = text aur terminal side-by-side; Center = centered single-column hero.
+    - name: showTerminalPreview
+      label: ✅ Terminal preview dikhani hai?
+      type: select
+      options:
+        values:
+        - name: 'yes'
+          label: Yes — show / enable
+        - name: 'no'
+          label: No — hide / disable
+      description: Yes par hero terminal visible; No par runtime aur generated raw HTML dono me hidden.
+  - name: website_collections
+    label: Website Lists — Tools, Downloads, Projects & Help
+    type: group
+    items:
+    - name: tools
+      label: ✅ Website Tools
+      type: file
+      path: data/tools.json
+      format: json
+      list: true
+      fields:
+      - name: icon
+        label: ✅ Tool icon (optional)
+        type: string
+        description: Emoji ya short icon text. Blank hone par icon box hide rahega.
+      - name: title
+        label: ✅ Tool title
+        type: string
+        description: Main heading. Blank hone par “Untitled tool” fallback dikhega.
+      - name: status
+        label: ✅ Status badge (optional)
+        type: string
+        description: Ready, Beta, Planned jaise short text. Blank hone par badge hide.
+      - name: problem
+        label: ✅ Problem solved (optional)
+        type: text
+        description: Tool kis problem ko solve karta hai. Blank hone par line hide.
+      - name: solution
+        label: ✅ Solution (optional)
+        type: text
+        description: Tool ka solution/approach. Blank hone par line hide.
+      - name: description
+        label: ✅ Short description (optional)
+        type: text
+        description: Card summary. Blank hone par empty paragraph render nahi hoga.
+      - name: technology
+        label: ✅ Technology used (optional)
+        type: string
+        description: PowerShell, C#, JavaScript jaise text. Blank hone par Tech line hide.
+      - name: command
+        label: ✅ Command (optional)
+        type: string
+        description: Command dene par code block aur copy button dikhte hain. “Coming soon” kisi bhi capitalization me command
+          block hide karega.
+      - name: buttonText
+        label: ✅ Button text
+        type: string
+        description: Button label. Valid link ke saath blank ho to “Open” fallback.
+      - name: buttonLink
+        label: ✅ Button link (optional)
+        type: string
+        description: 'https/http = new tab; #section/relative = same tab; mailto/tel allowed; javascript/data/vbscript ya
+          blank par button hide.'
+    - name: downloads
+      label: ✅ Website Downloads
+      type: file
+      path: data/downloads.json
+      format: json
+      list: true
+      fields:
+      - name: title
+        label: ✅ Download title
+        type: string
+        description: Main heading. Blank hone par “Untitled download” fallback.
+      - name: version
+        label: ✅ Version (optional)
+        type: string
+        description: Blank hone par Version line hide.
+      - name: type
+        label: ✅ Type badge (optional)
+        type: string
+        description: ZIP, EXE, Script jaise text. Blank hone par badge hide.
+      - name: description
+        label: ✅ Description (optional)
+        type: text
+        description: Blank hone par empty paragraph render nahi hoga.
+      - name: downloadLink
+        label: ✅ Download link (optional)
+        type: string
+        description: https/http = new tab; relative/# = same tab; unsafe ya blank par Download button hide.
+      - name: releaseLink
+        label: ✅ Release link (optional)
+        type: string
+        description: https/http = new tab; relative/# = same tab; unsafe ya blank par Release button hide.
+      - name: checksum
+        label: ✅ SHA-256 / checksum (optional)
+        type: string
+        description: Long checksum mobile par safely wrap hoga. Blank hone par line hide.
+    - name: projects
+      label: ✅ Website Projects
+      type: file
+      path: data/projects.json
+      format: json
+      list: true
+      fields:
+      - name: icon
+        label: ✅ Project icon (optional)
+        type: string
+        description: Blank hone par icon box hide.
+      - name: title
+        label: ✅ Project title
+        type: string
+        description: Blank hone par “Untitled project” fallback.
+      - name: status
+        label: ✅ Status badge (optional)
+        type: string
+        description: Blank hone par badge hide.
+      - name: description
+        label: ✅ Description (optional)
+        type: text
+        description: Blank hone par paragraph hide.
+      - name: problemSolved
+        label: ✅ Problem solved (optional)
+        type: text
+        description: Blank hone par line hide.
+      - name: techUsed
+        label: ✅ Technology used (optional)
+        type: string
+        description: Blank hone par Tech line hide.
+      - name: repoLink
+        label: ✅ GitHub repository link (optional)
+        type: string
+        description: https/http = new tab; relative/# = same tab; unsafe ya blank par GitHub button hide.
+      - name: liveLink
+        label: ✅ Live / download link (optional)
+        type: string
+        description: https/http = new tab; relative/# = same tab; unsafe ya blank par Open button hide.
+    - name: skills
+      label: ✅ Website Skills
+      type: file
+      path: data/skills.json
+      format: json
+      list: true
+      fields:
+      - name: title
+        label: ✅ Skill title
+        type: string
+        description: Blank hone par “Untitled skill” fallback.
+      - name: description
+        label: ✅ Description (optional)
+        type: text
+        description: Blank hone par empty paragraph render nahi hoga.
+    - name: docs
+      label: ✅ Website Documentation
+      type: file
+      path: data/docs.json
+      format: json
+      list: true
+      fields:
+      - name: title
+        label: ✅ Guide ka title
+        type: string
+        description: Guide ka main heading. Blank chhodne par live site “Untitled guide” dikhayegi.
+      - name: category
+        label: ✅ Category badge (optional)
+        type: string
+        description: Setup, Security ya Windows jaise short category naam. Blank chhodne par badge hide rahega.
+      - name: description
+        label: ✅ Guide description (optional)
+        type: text
+        description: Guide ka short explanation. Blank chhodne par empty paragraph render nahi hoga.
+      - name: command
+        label: ✅ Command (optional)
+        type: string
+        description: Command dene par code block aur copy button dikhega. Blank/space-only value par dono hide rahenge.
+      - name: link
+        label: ✅ Open button link (optional)
+        type: string
+        description: https:// link new tab me khulega;
+    - name: faq
+      label: ✅ Website FAQ
+      type: file
+      path: data/faq.json
+      format: json
+      list: true
+      fields:
+      - name: question
+        label: ✅ FAQ question
+        type: string
+        description: Visitor ko dikhne wala question. Blank ya sirf spaces hone par “Untitled question” safe fallback dikhega.
+          HTML code text ke roop me show hoga, execute nahi hoga.
+      - name: answer
+        label: ✅ FAQ answer
+        type: text
+        description: Question ka answer. Blank ya sirf spaces hone par empty paragraph render nahi hoga. HTML code text ke
+          roop me show hoga, execute nahi hoga.
+- name: portfolio_content
+  label: 02. PORTFOLIO — Content & Sections
+  type: group
+  items:
+  - name: portfolio_settings
+    label: ✅ Portfolio Sections & Navigation
+    type: file
+    path: data/portfolio-settings.json
+    format: json
+    fields:
+    - name: themePreset
+      label: Portfolio Theme Preset (purple-gold, midnight)
+      type: select
+      options:
+        values:
+        - name: purple-gold
+          label: Purple + gold
+        - name: midnight
+          label: Midnight
+      description: Purple + Gold ya Midnight Portfolio color theme choose karein. Website theme se independent hai.
+    - name: layoutPreset
+      label: ✅ Portfolio spacing/layout preset
+      type: select
+      options:
+        values:
+        - name: professional
+          label: Professional
+        - name: compact
+          label: Compact
+        - name: spacious
+          label: Spacious
+      description: Professional = standard spacing; Compact = reduced spacing; Spacious = wider container aur larger spacing.
+    - name: brandText
+      label: Portfolio Brand Text
+      type: string
+      description: Portfolio header me dikhne wala brand text. Extra spaces automatically trim honge; blank hone par safe
+        default “CyberSabil Portfolio” use hoga.
+    - name: showNavigation
+      label: ✅ Portfolio menu links dikhane hain?
+      type: select
+      options:
+        values:
+        - name: 'yes'
+          label: Yes — show / enable
+        - name: 'no'
+          label: No — hide / disable
+      description: No par desktop links aur mobile Menu button dono hide honge. Header brand visible rahega.
+    - name: navSkillsLabel
+      label: Skills Nav Label
+      type: string
+      description: Skills section ke menu link ka text. Extra spaces trim honge; blank par “Skills” fallback.
+    - name: navProjectsLabel
+      label: Projects Nav Label
+      type: string
+      description: Projects section ke menu link ka text. Extra spaces trim honge; blank par “Projects” fallback.
+    - name: navTimelineLabel
+      label: Timeline Nav Label
+      type: string
+      description: Timeline section ke menu link ka text. Extra spaces trim honge; blank par “Timeline” fallback.
+    - name: navServicesLabel
+      label: Services Nav Label
+      type: string
+      description: Services section ke menu link ka text. Extra spaces trim honge; blank par “Services” fallback.
+    - name: navContactLabel
+      label: Contact Nav Label
+      type: string
+      description: Contact section ke menu link ka text. Extra spaces trim honge; blank par “Contact” fallback.
+    - name: showHero
+      label: ✅ Show Hero Section? (yes/no)
+      type: select
+      options:
+        values:
+        - name: 'yes'
+          label: Yes — show / enable
+        - name: 'no'
+          label: No — hide / disable
+      description: Yes se feature visible/enabled hoga; No se hide/disable hoga.
+    - name: showProfileCard
+      label: ✅ Show Profile Card? (yes/no)
+      type: select
+      options:
+        values:
+        - name: 'yes'
+          label: Yes — show / enable
+        - name: 'no'
+          label: No — hide / disable
+      description: Yes se feature visible/enabled hoga; No se hide/disable hoga.
+    - name: showSkillsSection
+      label: ✅ Show Portfolio Skills Section? (yes/no)
+      type: select
+      options:
+        values:
+        - name: 'yes'
+          label: Yes — show / enable
+        - name: 'no'
+          label: No — hide / disable
+      description: Yes se feature visible/enabled hoga; No se hide/disable hoga.
+    - name: showProjectsSection
+      label: ✅ Show Portfolio Projects Section? (yes/no)
+      type: select
+      options:
+        values:
+        - name: 'yes'
+          label: Yes — show / enable
+        - name: 'no'
+          label: No — hide / disable
+      description: Yes se feature visible/enabled hoga; No se hide/disable hoga.
+    - name: showTimelineSection
+      label: ✅ Show Portfolio Timeline Section? (yes/no)
+      type: select
+      options:
+        values:
+        - name: 'yes'
+          label: Yes — show / enable
+        - name: 'no'
+          label: No — hide / disable
+      description: Yes se feature visible/enabled hoga; No se hide/disable hoga.
+    - name: showServicesSection
+      label: ✅ Show Services Section? (yes/no)
+      type: select
+      options:
+        values:
+        - name: 'yes'
+          label: Yes — show / enable
+        - name: 'no'
+          label: No — hide / disable
+      description: Yes se feature visible/enabled hoga; No se hide/disable hoga.
+    - name: showContactSection
+      label: ✅ Show Contact Section? (yes/no)
+      type: select
+      options:
+        values:
+        - name: 'yes'
+          label: Yes — show / enable
+        - name: 'no'
+          label: No — hide / disable
+      description: Yes se feature visible/enabled hoga; No se hide/disable hoga.
+    - name: skillsEyebrow
+      label: Skills Eyebrow
+      type: string
+      description: Skills section ke title ke upar small label. Extra spaces trim; blank par safe default.
+    - name: skillsTitle
+      label: Skills Title
+      type: string
+      description: Skills section heading. Extra spaces trim; blank par “Skills” fallback.
+    - name: skillsSubtitle
+      label: Skills Subtitle
+      type: text
+      description: Skills heading ke neeche description. Extra spaces trim; blank par safe default.
+    - name: projectsEyebrow
+      label: Projects Eyebrow
+      type: string
+      description: Projects section ke title ke upar small label. Extra spaces trim; blank par safe default.
+    - name: projectsTitle
+      label: Projects Title
+      type: string
+      description: Projects section heading. Extra spaces trim; blank par “Projects” fallback.
+    - name: projectsSubtitle
+      label: Projects Subtitle
+      type: text
+      description: Projects heading ke neeche description. Extra spaces trim; blank par safe default.
+    - name: timelineEyebrow
+      label: Timeline Eyebrow
+      type: string
+      description: Timeline section ke title ke upar small label. Extra spaces trim; blank par safe default.
+    - name: timelineTitle
+      label: Timeline Title
+      type: string
+      description: Timeline section heading. Extra spaces trim; blank par “Timeline” fallback.
+    - name: timelineSubtitle
+      label: Timeline Subtitle
+      type: text
+      description: Timeline heading ke neeche description. Extra spaces trim; blank par safe default.
+    - name: servicesEyebrow
+      label: Services Eyebrow
+      type: string
+      description: Services section ke title ke upar small label. Extra spaces trim; blank par safe default.
+    - name: servicesTitle
+      label: Services Title
+      type: string
+      description: Services section heading. Extra spaces trim; blank par “Services” fallback.
+    - name: servicesSubtitle
+      label: Services Subtitle
+      type: text
+      description: Services heading ke neeche description. Extra spaces trim; blank par safe default.
+    - name: contactEyebrow
+      label: Contact Eyebrow
+      type: string
+      description: Contact section ka small label. Extra spaces trim; blank par “Contact” fallback.
+    - name: showProjectLinks
+      label: ✅ Portfolio project links dikhane hain?
+      type: select
+      options:
+        values:
+        - name: 'yes'
+          label: Yes — show / enable
+        - name: 'no'
+          label: No — hide / disable
+      description: No par sab project-link buttons hide honge. Yes par sirf un projects ke buttons dikhte hain jinke Link
+        field me URL hai.
+    - name: projectLinkLabel
+      label: ⚠ Default project-link button text
+      type: string
+      description: Sirf us project par fallback text banta hai jiska individual Button Text blank/space-only ho. Extra spaces
+        trim honge; individual project Button Text is value ko override karta hai.
+    - name: footerText
+      label: Portfolio Footer Text
+      type: text
+      description: Portfolio footer ka text. Extra spaces trim honge; blank hone par safe default footer use hoga.
+  - name: profile
+    label: ✅ Portfolio Profile & Hero
+    type: file
+    path: data/profile.json
+    format: json
+    fields:
+    - name: name
+      label: Name
+      type: string
+      description: Portfolio hero aur profile card me dikhne wala naam. Extra spaces trim honge; blank hone par safe default
+        name use hoga.
+    - name: initials
+      label: Initials
+      type: string
+      description: Header logo aur profile avatar ke initials. Extra spaces trim honge; blank hone par Name se initials banenge.
+        Bahut lamba text box ke andar safely clip hoga.
+    - name: role
+      label: Role
+      type: string
+      description: Hero me Name ke neeche role/title. Extra spaces trim honge; blank hone par safe default role use hoga.
+    - name: tagline
+      label: Tagline
+      type: text
+      description: Hero ka short introduction. Blank/space-only hone par poori tagline line hide hogi.
+    - name: availability
+      label: Availability
+      type: string
+      description: Hero ke upar availability/status line. Blank/space-only hone par line hide hogi.
+    - name: location
+      label: Location
+      type: string
+      description: Profile card ka location chip. Blank hone par chip hide hoga; Location aur Experience dono blank hon to
+        poora meta row hide hoga.
+    - name: experience
+      label: Experience / Stack
+      type: string
+      description: Profile card ka experience/stack chip. Blank hone par chip hide hoga; long text safely wrap hoga.
+    - name: bio
+      label: Bio
+      type: text
+      description: Profile card ka bio paragraph. Blank/space-only hone par paragraph hide hoga.
+    - name: statOneValue
+      label: Profile Stat One Value
+      type: string
+      description: Pehle highlight card ka bada value. Value aur Label dono blank hon to pehla highlight card hide hoga.
+    - name: statOneLabel
+      label: Profile Stat One Label
+      type: string
+      description: Pehle highlight card ka label. Value aur Label dono blank hon to pehla card hide hoga.
+    - name: statTwoValue
+      label: Profile Stat Two Value
+      type: string
+      description: Doosre highlight card ka bada value. Value aur Label dono blank hon to doosra highlight card hide hoga.
+    - name: statTwoLabel
+      label: Profile Stat Two Label
+      type: string
+      description: Doosre highlight card ka label. Dono highlight cards blank hon to poora stats area hide hoga.
+    - name: primaryCtaText
+      label: Primary CTA Text
+      type: string
+      description: Primary button ka text. Text ya link blank/unsafe hone par button hide hoga.
+    - name: primaryCtaLink
+      label: Primary CTA Link
+      type: string
+      description: '#section ya relative path = same tab; https:// = new tab; mailto:/tel: allowed; unsafe javascript:/data:/vbscript:
+        blocked. Text ya link blank ho to button hide hoga.'
+    - name: secondaryCtaText
+      label: Secondary CTA Text
+      type: string
+      description: Secondary button ka text. Text ya link blank/unsafe hone par button hide hoga.
+    - name: secondaryCtaLink
+      label: Secondary CTA Link
+      type: string
+      description: '#section ya relative path = same tab; https:// = new tab; mailto:/tel: allowed; unsafe javascript:/data:/vbscript:
+        blocked. Text ya link blank ho to button hide hoga.'
+  - name: portfolio_skills
+    label: ✅ Portfolio Skills
+    type: file
+    path: data/portfolio-skills.json
+    format: json
+    list: true
+    fields:
+    - name: title
+      label: ✅ Skill Title
+      type: string
+      description: Card ki main heading. Blank hone par “Untitled skill” fallback dikhega. HTML execute nahi hoga.
+    - name: category
+      label: ✅ Skill Category
+      type: string
+      description: Card ke upar badge. Blank hone par safe “Skill” badge dikhega. Level is field ka fallback nahi banega,
+        isliye duplicate text nahi hoga.
+    - name: level
+      label: ✅ Skill Level
+      type: string
+      description: Optional Level line, jaise Advanced ya Strong. Blank hone par poori Level line hide hogi.
+    - name: description
+      label: ✅ Skill Description
+      type: text
+      description: Optional explanation. Blank ya spaces-only hone par empty paragraph render nahi hoga. Long text mobile
+        par safely wrap hoga.
+  - name: portfolio_projects
+    label: ✅ Portfolio Projects
+    type: file
+    path: data/portfolio-projects.json
+    format: json
+    list: true
+    fields:
+    - name: title
+      label: ✅ Project Title
+      type: string
+      description: Project card ka required heading. Blank ya spaces-only hone par “Untitled project” fallback dikhega. HTML
+        text execute nahi hoga.
+    - name: category
+      label: ✅ Category
+      type: string
+      description: Optional category label. Blank hone par category part hide hoga; Technology field independently kaam karega.
+    - name: status
+      label: ✅ Timeline Status
+      type: string
+      description: Optional status, jaise Completed, Current ya Planned. Extra spaces trim honge; blank hone par Status line
+        render nahi hogi.
+    - name: description
+      label: ✅ Timeline Description
+      type: text
+      description: Optional timeline summary. Extra spaces trim honge; blank ya spaces-only hone par empty paragraph render
+        nahi hoga. Long text mobile par safely wrap hoga.
+    - name: tech
+      label: ✅ Technology
+      type: string
+      description: Optional technology stack. Category blank hone par bhi Technology independently dikhegi; dono blank hon
+        to poori line hide hogi.
+    - name: image
+      label: ✅ Optional Project Image
+      type: image
+      description: Media library image ya safe relative/HTTPS path use karein. Blank/unsafe/broken image card ko break nahi
+        karegi aur image area hide hoga. Alt text bhi update karein.
+    - name: imageAlt
+      label: ✅ Project Image Accessibility Text
+      type: string
+      description: Image ka meaningful alt text. Image filled ho aur alt blank ho to Project Title fallback use hoga. Image
+        blank ho to iska visual effect nahi hoga.
+    - name: link
+      label: ✅ Project Link
+      type: string
+      description: https/http external link new tab me,
+    - name: buttonText
+      label: ✅ Project Button Text
+      type: string
+      description: Link button ka label. Blank hone par Portfolio Settings ka Default Project Link Label use hoga. Link blank/unsafe
+        ho to button render nahi hoga.
+  - name: portfolio_timeline
+    label: ✅ Portfolio Timeline
+    type: file
+    path: data/portfolio-timeline.json
+    format: json
+    list: true
+    fields:
+    - name: period
+      label: ✅ Period / Version
+      type: string
+      description: Timeline marker/card ka period ya version label. Extra spaces trim honge; blank hone par “Timeline” fallback
+        dikhega.
+    - name: title
+      label: ✅ Timeline Entry Title
+      type: string
+      description: Timeline entry ka main title. Extra spaces trim honge; blank hone par “Untitled timeline entry” fallback
+        dikhega.
+    - name: status
+      label: ✅ Timeline Status
+      type: string
+      description: Optional status, jaise Completed, Current ya Planned. Extra spaces trim honge; blank hone par Status line
+        render nahi hogi.
+    - name: description
+      label: ✅ Timeline Description
+      type: text
+      description: Optional timeline summary. Extra spaces trim honge; blank ya spaces-only hone par empty paragraph render
+        nahi hoga. Long text mobile par safely wrap hoga.
+  - name: services
+    label: ✅ Portfolio Services
+    type: file
+    path: data/services.json
+    format: json
+    list: true
+    fields:
+    - name: icon
+      label: ✅ Service Icon / Short Label
+      type: string
+      description: Service card ke top badge me short label dikhaya jayega. Extra spaces trim honge; blank hone par “Service”
+        fallback use hoga.
+    - name: title
+      label: ✅ Service Title
+      type: string
+      description: Service ka main heading. Extra spaces trim honge; blank hone par “Untitled service” fallback use hoga.
+    - name: description
+      label: ✅ Service Description
+      type: text
+      description: Optional service summary. Extra spaces trim honge; blank ya spaces-only hone par empty paragraph render
+        nahi hoga. Long text mobile par safely wrap hoga.
+  - name: contact
+    label: ✅ Portfolio Contact
+    type: file
+    path: data/contact.json
+    format: json
+    fields:
+    - name: heading
+      label: ✅ Contact Heading
+      type: string
+      description: Contact section ka main heading. Extra spaces trim honge; blank hone par safe default heading use hogi.
+    - name: description
+      label: ✅ Contact Description
+      type: text
+      description: Optional contact summary. Extra spaces trim honge; blank ya spaces-only hone par paragraph hide hoga. Long
+        text mobile par safely wrap hoga.
+    - name: emailLabel
+      label: ✅ Email ke pehle label
+      type: string
+      description: Email ke pehle dikhne wala label, jaise “Email:”. Blank karne par sirf label hide hoga; valid email link
+        visible rahega.
+    - name: email
+      label: ✅ Public Email Address
+      type: string
+      description: Valid public email likhein, jaise name@example.com. Blank, placeholder ya invalid email par complete email
+        row hide hogi.
+    - name: githubLabel
+      label: ✅ GitHub ke pehle label
+      type: string
+      description: GitHub link ke pehle dikhne wala label. Blank karne par label hide hoga; valid link visible rahega.
+    - name: githubText
+      label: ✅ GitHub link par dikhne wala text
+      type: string
+      description: Link ka visible text. Blank hone par valid GitHub link khud visible text ke roop me use hoga.
+    - name: githubLink
+      label: ✅ GitHub Link
+      type: string
+      description: https/http external link new tab me;
+    - name: websiteLabel
+      label: ✅ Website ke pehle label
+      type: string
+      description: Website link ke pehle dikhne wala label. Blank karne par label hide hoga; valid link visible rahega.
+    - name: websiteText
+      label: ✅ Website link par dikhne wala text
+      type: string
+      description: Link ka visible text. Blank hone par valid Website link khud visible text ke roop me use hoga.
+    - name: websiteLink
+      label: ✅ Website Link
+      type: string
+      description: https/http external link new tab me;
+    - name: ctaText
+      label: ✅ Contact Button Text
+      type: string
+      description: Contact action button par dikhne wala text. Text ya valid link blank hone par button hide hoga.
+    - name: ctaLink
+      label: ✅ Contact Button Link
+      type: string
+      description: https/http external link new tab me; internal/relative/mailto/tel supported. Blank,
+- name: seo_sharing
+  label: 03. SEO & SOCIAL SHARING
+  type: group
+  items:
+  - name: seo
+    label: ✅ SEO & Social Sharing
+    type: file
+    path: data/seo.json
+    format: json
+    fields:
+    - name: pageTitle
+      label: ✅ Browser tab me kya title dikhana hai?
+      type: string
+      description: Browser tab aur SEO title. Extra spaces automatically remove hongi; blank hone par brand-based safe title
+        use hoga.
+    - name: metaDescription
+      label: ✅ Search result description
+      type: text
+      description: Search engines ke liye page summary. Blank hone par Website hero description fallback hogi; HTML execute
+        nahi hoga.
+    - name: ogTitle
+      label: ✅ WhatsApp/LinkedIn/Facebook preview title
+      type: string
+      description: Social sharing preview ka title. Blank hone par Browser Page Title use hoga.
+    - name: ogDescription
+      label: ✅ Social preview description
+      type: text
+      description: WhatsApp/LinkedIn/Facebook preview summary. Blank hone par Search result description use hogi.
+    - name: ogImage
+      label: ✅ Social preview image URL
+      type: string
+      description: Absolute http/https image URL use karein; recommended size 1200×630. Blank/relative/unsafe URL par default
+        social-preview.png use hogi.
+    - name: canonicalUrl
+      label: ⚠ Canonical page URL
+      type: string
+      description: Website ka official absolute http/https URL. Relative, mailto, javascript ya invalid value reject hokar
+        safe default use karegi.
+    - name: ogType
+      label: ⚠ Open Graph content type
+      type: string
+      description: Normally website rakhein. Blank/invalid token par website fallback hoga.
+    - name: ogUrl
+      label: ⚠ Social preview page URL
+      type: string
+      description: Absolute http/https URL. Blank/invalid value par Canonical URL use hogi.
+    - name: twitterCard
+      label: Twitter/X Card Type
+      type: select
+      options:
+        values:
+        - name: summary_large_image
+          label: Large image card
+        - name: summary
+          label: Small summary card
+      description: Large image card social preview ke liye recommended hai; Small summary card compact preview use karta hai.
+        Is setting ka Portfolio theme se koi relation nahi hai.
+    - name: twitterTitle
+      label: ✅ Twitter/X preview title
+      type: string
+      description: Blank hone par Social preview title, phir Browser Page Title use hoga.
+    - name: twitterDescription
+      label: ✅ Twitter/X preview description
+      type: text
+      description: Blank hone par Social preview description, phir Search result description use hogi.
+    - name: twitterImage
+      label: ✅ Twitter/X image URL
+      type: string
+      description: Absolute http/https image URL. Blank/invalid value par Social preview image use hogi.
+    - name: themeColor
+      label: ✅ Mobile browser theme color
+      type: string
+      description: 6-digit hex use karein, jaise
+- name: system_controls
+  label: 99. ADVANCED SYSTEM — Normally Do Not Change
+  type: group
+  items:
+  - name: visual_baseline
+    label: ⚠ System Visual Baseline
+    type: file
+    path: data/visual-baseline.json
+    format: json
+    fields:
+    - name: globalVisualPreset
+      label: ⚠ Custom CMS design controls active rahen?
+      type: select
+      options:
+        values:
+        - name: v2.8.3-exact
+          label: Original approved design (v2.8.3 exact)
+        - name: section-controlled
+          label: Use section-level controls
+      description: Section-controlled select karne par Gateway/Header/Switch ke group controls kaam karte hain. Original approved
+        design select karne par sab advanced custom groups intentionally ignore honge.

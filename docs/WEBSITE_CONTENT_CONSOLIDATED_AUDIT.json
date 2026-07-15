@@ -1,0 +1,196 @@
+{
+  "pass": true,
+  "count": 38,
+  "tests": [
+    {
+      "test": "tools_count_and_malformed_safe",
+      "passed": true,
+      "details": []
+    },
+    {
+      "test": "tools_trim_and_optional_render",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "tools_blank_title_fallback",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "tools_coming_soon_case_insensitive",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "tools_internal_link_same_tab",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "tools_unsafe_link_hidden",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "tools_copy_labels_cms_owned",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "tools_no_errors",
+      "passed": true,
+      "details": []
+    },
+    {
+      "test": "downloads_title_fallback",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "downloads_relative_same_tab",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "downloads_external_new_tab",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "downloads_unsafe_hidden",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "downloads_blank_optional_hidden",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "downloads_mobile_no_overflow",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "downloads_no_errors",
+      "passed": true,
+      "details": []
+    },
+    {
+      "test": "projects_malformed_safe",
+      "passed": true,
+      "details": []
+    },
+    {
+      "test": "projects_title_fallback",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "projects_external_internal_targets",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "projects_unsafe_blank_hidden",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "projects_mobile_no_overflow",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "projects_no_errors",
+      "passed": true,
+      "details": []
+    },
+    {
+      "test": "skills_malformed_safe",
+      "passed": true,
+      "details": []
+    },
+    {
+      "test": "skills_title_fallback",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "skills_blank_description_hidden",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "skills_no_errors",
+      "passed": true,
+      "details": []
+    },
+    {
+      "test": "site_brand_trim_and_footer_derived",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "hidden_sections_hide_nav_links",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "hidden_tools_hides_matching_cta",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "custom_external_cta_remains",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "internal_github_target_cleared",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "site_settings_no_errors",
+      "passed": true,
+      "details": []
+    },
+    {
+      "test": "both_modes_disabled_safe_recovery",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "fallback_warning_persists",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "mode_fallback_no_errors",
+      "passed": true,
+      "details": []
+    },
+    {
+      "test": "design_cyan_overrides_theme_accent",
+      "passed": true,
+      "details": "#35d7ff"
+    },
+    {
+      "test": "design_plain_has_no_image",
+      "passed": true,
+      "details": "none"
+    },
+    {
+      "test": "design_terminal_hidden",
+      "passed": true,
+      "details": null
+    },
+    {
+      "test": "design_no_errors",
+      "passed": true,
+      "details": []
+    }
+  ]
+}

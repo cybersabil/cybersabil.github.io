@@ -1,0 +1,119 @@
+{
+  "pass": true,
+  "tests": [
+    {
+      "test": "mode-switch size belongs to appearance only",
+      "pass": true,
+      "details": {
+        "compact": {
+          "size": "compact",
+          "position": false,
+          "appearance": true,
+          "w": 168,
+          "h": 40
+        },
+        "standard": {
+          "size": "standard",
+          "position": false,
+          "appearance": true,
+          "w": 186,
+          "h": 47
+        },
+        "large": {
+          "size": "large",
+          "position": false,
+          "appearance": true,
+          "w": 244,
+          "h": 59
+        }
+      }
+    },
+    {
+      "test": "position-only does not apply size",
+      "pass": true,
+      "details": [
+        {
+          "dataset": "",
+          "w": 186
+        },
+        {
+          "dataset": "",
+          "w": 186
+        }
+      ]
+    },
+    {
+      "test": "all portfolio layout presets implemented",
+      "pass": true,
+      "details": {
+        "professional": {
+          "cls": "cs-portfolio-app cs-portfolio-theme-purple-gold cs-portfolio-layout-professional",
+          "containerWidth": "min(1160px, 100% - 36px)",
+          "heroTop": "92px",
+          "heroBottom": "58px",
+          "headMax": "820px"
+        },
+        "compact": {
+          "cls": "cs-portfolio-app cs-portfolio-theme-purple-gold cs-portfolio-layout-compact",
+          "containerWidth": "min(1160px, 100% - 36px)",
+          "heroTop": "72px",
+          "heroBottom": "42px",
+          "headMax": "760px"
+        },
+        "spacious": {
+          "cls": "cs-portfolio-app cs-portfolio-theme-purple-gold cs-portfolio-layout-spacious",
+          "containerWidth": "min(1320px, 100% - 48px)",
+          "heroTop": "128px",
+          "heroBottom": "92px",
+          "headMax": "920px"
+        }
+      }
+    },
+    {
+      "test": "legacy visualPreset retained only for backward compatibility",
+      "pass": true
+    },
+    {
+      "test": "Gateway legacy/custom precedence and conditional appearance",
+      "pass": true,
+      "details": {
+        "legacyWidth": "900px",
+        "advanced": {
+          "width": "720px",
+          "background": "rgba(18, 52, 86, 0.5)",
+          "shadow": "0 28px 90px rgba(0, 0, 0, .44), 0 0 48px rgba(255, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.14)"
+        }
+      }
+    },
+    {
+      "test": "mode-switch appearance color is isolated from position",
+      "pass": true,
+      "details": {
+        "position": false,
+        "appearance": true,
+        "background": "rgba(18, 52, 86, 0.5)"
+      }
+    },
+    {
+      "test": "SEO Open Graph fields update runtime metadata",
+      "pass": true,
+      "details": {
+        "type": "article",
+        "url": "https://example.com/audit"
+      }
+    },
+    {
+      "test": "project link visibility and fallback dependency",
+      "pass": true,
+      "details": {
+        "individual": "Open website →",
+        "fallback": "GLOBAL FALLBACK"
+      }
+    },
+    {
+      "test": "project imageAlt conditional behavior",
+      "pass": true
+    }
+  ],
+  "pageErrors": []
+}

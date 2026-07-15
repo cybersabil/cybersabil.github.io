@@ -423,6 +423,28 @@ body.theme-light .status {
     align-items: center
 }
 
+/* Documentation content safety
+   Purpose: Keeps CMS-entered guide titles, categories, descriptions and actions inside the viewport. */
+.cs-doc-item,
+.cs-doc-content,
+.cs-doc-item h3,
+.cs-doc-item p,
+.cs-doc-item .status,
+.cs-doc-item .btn {
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.cs-doc-item .status {
+    white-space: normal;
+}
+
+.cs-doc-item .cs-doc-open {
+    justify-self: end;
+}
+
 .code {
     margin-top: 12px;
     padding: 13px 14px;
@@ -473,6 +495,10 @@ footer {
     .grid-2,
     .tool {
         grid-template-columns: 1fr
+    }
+
+    .cs-doc-item .cs-doc-open {
+        justify-self: start;
     }
 
     .nav {
@@ -724,7 +750,7 @@ svg {
 }
 
 .copy-btn::after {
-    content: "Copy";
+    content: attr(data-tooltip);
     position: absolute;
     top: -28px;
     right: 0;
@@ -747,7 +773,6 @@ svg {
 }
 
 .copy-btn.copied::after {
-    content: "Copied";
     opacity: 1;
     transform: translateY(0);
 }
@@ -1404,6 +1429,17 @@ svg {
     font-size: 21px;
 }
 
+/* Portfolio service text safety
+   Purpose: Prevents long CMS labels, titles and descriptions from widening the viewport. */
+.cs-portfolio-service-card,
+.cs-portfolio-service-card .cs-portfolio-card-label,
+.cs-portfolio-service-card h3,
+.cs-portfolio-service-card p {
+    min-width: 0;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
 .cs-portfolio-card-label,
 .cs-portfolio-project-status {
     display: inline-flex;
@@ -1791,7 +1827,21 @@ svg {
 }
 
 .cs-portfolio-project-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
     min-height: 230px;
+}
+
+.cs-portfolio-project-link {
+    align-self: flex-start;
+    margin-top: auto;
+    padding-top: 14px;
+}
+
+.cs-portfolio-project-image[hidden],
+.cs-portfolio-project-image-error {
+    display: none !important;
 }
 
 @media (max-width: 960px) {
@@ -1847,10 +1897,51 @@ svg {
     }
 }
 
-/* Portfolio professional layout hook
-   Purpose: Gives the CMS `professional` layout preset a stable CSS selector for future spacing or typography updates. */
+/* Portfolio layout presets
+   Purpose: Keeps all three CMS options visibly distinct without changing content or theme ownership. */
 .cs-portfolio-layout-professional .cs-portfolio-section-head {
     max-width: 820px;
+}
+
+.cs-portfolio-layout-spacious .cs-portfolio-container {
+    width: min(1320px, calc(100% - 48px));
+}
+
+.cs-portfolio-layout-spacious .cs-portfolio-hero {
+    gap: clamp(36px, 5vw, 64px);
+    padding-top: 128px;
+    padding-bottom: 92px;
+}
+
+.cs-portfolio-layout-spacious .cs-portfolio-section {
+    padding-top: 84px;
+    padding-bottom: 84px;
+}
+
+.cs-portfolio-layout-spacious .cs-portfolio-section-head {
+    max-width: 920px;
+    margin-bottom: 36px;
+}
+
+.cs-portfolio-layout-spacious .cs-portfolio-grid,
+.cs-portfolio-layout-spacious .cs-portfolio-projects {
+    gap: 28px;
+}
+
+@media (max-width: 960px) {
+    .cs-portfolio-layout-spacious .cs-portfolio-container {
+        width: min(1160px, calc(100% - 32px));
+    }
+
+    .cs-portfolio-layout-spacious .cs-portfolio-hero {
+        padding-top: 92px;
+        padding-bottom: 64px;
+    }
+
+    .cs-portfolio-layout-spacious .cs-portfolio-section {
+        padding-top: 64px;
+        padding-bottom: 64px;
+    }
 }
 
 
@@ -3900,23 +3991,23 @@ body.cs-gateway-appearance-active .cs-mode-background-blur {
     color: var(--cs-mode-switch-portfolio-text);
 }
 
-.cs-mode-switch-position-custom[data-cs-size="compact"] {
+.cs-mode-switch-appearance-custom[data-cs-size="compact"] {
     padding: 5px;
     gap: 4px;
 }
 
-.cs-mode-switch-position-custom[data-cs-size="compact"] .cs-mode-switch-button {
+.cs-mode-switch-appearance-custom[data-cs-size="compact"] .cs-mode-switch-button {
     min-width: 76px;
     padding: 7px 10px;
     font-size: 12px;
 }
 
-.cs-mode-switch-position-custom[data-cs-size="large"] {
+.cs-mode-switch-appearance-custom[data-cs-size="large"] {
     padding: 9px;
     gap: 8px;
 }
 
-.cs-mode-switch-position-custom[data-cs-size="large"] .cs-mode-switch-button {
+.cs-mode-switch-appearance-custom[data-cs-size="large"] .cs-mode-switch-button {
     min-width: 108px;
     padding: 11px 18px;
     font-size: 15px;
@@ -4194,4 +4285,139 @@ body.cs-gateway-appearance-active .cs-mode-background-blur {
 /* Group-isolated Gateway layout fallback */
 .cs-gateway-layout-custom .cs-gateway-choice-column {
     display: grid;
+}
+
+/* Portfolio settings ownership fixes
+   Purpose: Makes the two CMS themes distinct and allows the hero copy to use the full row when the profile card is hidden. */
+.cs-portfolio-app.cs-portfolio-theme-midnight {
+    background: radial-gradient(circle at 20% 0%, rgba(53, 215, 255, .2), transparent 35%), linear-gradient(135deg, #06111f, #0d1b2f 54%, #050812);
+}
+
+.cs-portfolio-profile-hidden .cs-portfolio-hero {
+    grid-template-columns: minmax(0, 1fr);
+}
+
+.cs-portfolio-profile-hidden .cs-portfolio-hero-copy {
+    max-width: 920px;
+}
+
+/* Portfolio profile content safety
+   Purpose: Keeps long CMS initials, CTA labels and profile text inside fixed responsive surfaces without altering normal short content. */
+.cs-portfolio-logo,
+.cs-portfolio-avatar {
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-inline: 4px;
+}
+
+.cs-portfolio-actions,
+.cs-portfolio-meta,
+.cs-portfolio-stats,
+.cs-portfolio-profile-card,
+.cs-portfolio-hero-copy {
+    min-width: 0;
+}
+
+.cs-portfolio-button,
+.cs-portfolio-profile-card h2,
+.cs-portfolio-profile-card p,
+.cs-portfolio-meta span,
+.cs-portfolio-stats strong,
+.cs-portfolio-stats span,
+.cs-portfolio-title,
+.cs-portfolio-lead,
+.cs-portfolio-eyebrow {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+/* Portfolio skill content hardening
+   Purpose: Prevents long CMS-entered skill text from widening cards or the page on mobile/tablet layouts. */
+.cs-portfolio-skill-card,
+.cs-portfolio-skill-card h3,
+.cs-portfolio-skill-card p,
+.cs-portfolio-skill-card .cs-portfolio-card-label {
+    min-width: 0;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.cs-portfolio-skill-card .cs-portfolio-card-label {
+    max-width: 100%;
+    white-space: normal;
+}
+
+/* Portfolio Contact CMS safety
+   Purpose: Prevents long CMS-entered headings, labels, links and CTA text from widening the viewport. */
+.cs-portfolio-contact > div,
+.cs-portfolio-contact h2,
+.cs-portfolio-contact p,
+.cs-portfolio-contact-card,
+.cs-portfolio-contact-card strong,
+.cs-portfolio-contact-card a {
+    min-width: 0;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+
+/* ==============================
+   Consolidated CMS field-safety fixes v2.10.2
+   Purpose: Keeps Website theme accents, background presets and CMS list content deterministic without changing approved defaults.
+   ============================== */
+
+body.accent-cyan {
+    --accent: #35d7ff;
+    --accent2: #2ee6a6;
+}
+
+body.bg-plain {
+    background-color: var(--bg);
+    background-image: none;
+}
+
+body.theme-light.bg-grid {
+    background-color: var(--bg);
+    background-image: linear-gradient(rgba(8, 17, 31, .08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(8, 17, 31, .08) 1px, transparent 1px);
+}
+
+.cs-tool-card,
+.cs-download-card,
+.cs-website-project-card,
+.cs-website-skill-card,
+.cs-command-item {
+    min-width: 0;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.cs-tool-card,
+.cs-download-card,
+.cs-website-project-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.cs-card-actions {
+    margin-top: auto;
+    padding-top: 18px;
+}
+
+.cs-download-checksum,
+.cs-tool-card .code,
+.cs-command-item .code {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.cs-tool-card .icon,
+.cs-tool-card .status,
+.cs-download-card .status,
+.cs-website-project-card .icon,
+.cs-website-project-card .status {
+    max-width: 100%;
 }
