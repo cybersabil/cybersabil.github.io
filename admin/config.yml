@@ -1,11 +1,11 @@
-# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms@0.171.0/schema/sveltia-cms.json
+﻿# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms@0.171.0/schema/sveltia-cms.json
 # IMPORTANT: Replace the placeholder backend.base_url with your Cloudflare Worker URL.
 
 backend:
   name: github
   repo: cybersabil/cybersabil.github.io
   branch: main
-  base_url: https://REPLACE-WITH-YOUR-WORKER.workers.dev
+  base_url: https://sveltia-cms-auth.multi4u121.workers.dev
 site_url: https://cybersabil.github.io/
 display_url: https://cybersabil.github.io/
 logout_redirect_url: https://cybersabil.github.io/admin/
@@ -1588,3 +1588,4 @@ singletons:
     dropdown_threshold: 5
     hint: Option box click effect choose karta hai. Existing/default option safest hai; change ke baad computer
       aur mobile preview check karein.
+
