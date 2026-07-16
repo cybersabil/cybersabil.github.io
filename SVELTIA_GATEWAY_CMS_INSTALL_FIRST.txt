@@ -1,0 +1,38 @@
+CYBERSABIL GATEWAY-ONLY SVELTIA CMS
+===================================
+
+New admin URL after upload and OAuth setup:
+https://cybersabil.github.io/admin/
+
+IMPORTANT
+---------
+- Existing Pages CMS stays unchanged.
+- Existing live website files are not replaced by the add-on ZIP.
+- New CMS currently edits only Gateway-related settings.
+- GitHub Client Secret must NEVER be placed in this repository.
+
+INSTALL ORDER
+-------------
+1. Upload/merge all files from the ADD-ON ZIP into the repository root.
+2. Wait for GitHub Pages deployment to finish.
+3. Open /admin/ once. It should show "OAuth setup pending". This confirms the files are installed.
+4. Deploy the official Sveltia CMS Authenticator to Cloudflare Workers.
+5. Create a GitHub OAuth App:
+   - Homepage: https://cybersabil.github.io/admin/
+   - Callback: YOUR_WORKER_URL/callback
+6. Add Worker variables/secrets:
+   - GITHUB_CLIENT_ID
+   - GITHUB_CLIENT_SECRET (encrypted secret)
+   - ALLOWED_DOMAINS = cybersabil.github.io
+7. Put the Worker URL into admin/config.yml by running:
+   powershell -ExecutionPolicy Bypass -File .\Configure_Sveltia_OAuth.ps1 -WorkerUrl "https://YOUR-WORKER.workers.dev"
+8. Commit and push admin/config.yml.
+9. Open https://cybersabil.github.io/admin/ and click GitHub login.
+
+FULL PRACTICAL GUIDE
+--------------------
+docs/SVELTIA_GATEWAY_CMS_SETUP_HINGLISH.md
+
+RESET CENTER
+------------
+https://cybersabil.github.io/admin/reset-center.html

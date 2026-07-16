@@ -1,0 +1,1590 @@
+# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms@0.171.0/schema/sveltia-cms.json
+# IMPORTANT: Replace the placeholder backend.base_url with your Cloudflare Worker URL.
+
+backend:
+  name: github
+  repo: cybersabil/cybersabil.github.io
+  branch: main
+  base_url: https://REPLACE-WITH-YOUR-WORKER.workers.dev
+site_url: https://cybersabil.github.io/
+display_url: https://cybersabil.github.io/
+logout_redirect_url: https://cybersabil.github.io/admin/
+app_title: CyberSabil Gateway Control
+logo:
+  src: /admin/cybersabil-admin-logo.svg
+  show_in_header: true
+media_folder: media
+public_folder: /media
+singletons:
+- name: site_settings
+  label: Gateway Basic Controls
+  icon: toggle_on
+  file: data/site-settings.json
+  format: json
+  fields:
+  - name: gatewayEnabled
+    label: 🟢 First choice screen — Gateway enabled/disabled
+    widget: select
+    options:
+    - label: Enabled
+      value: 'yes'
+    - label: Disabled
+      value: 'no'
+    dropdown_threshold: 5
+    hint: 'Kaam: Enabled par visitor ko pehle Website ya Portfolio choose karne wali screen dikhegi. Disabled par
+      choice screen skip hogi. Recommended: dono modes use karne hain to Enabled.'
+  - name: defaultMode
+    label: 🟢 Site khulte hi pehla page — Default mode
+    widget: select
+    options:
+    - label: First choice screen (Gateway)
+      value: gateway
+    - label: Website
+      value: website
+    - label: Portfolio
+      value: portfolio
+    dropdown_threshold: 5
+    hint: 'Kaam: Site open hote hi Gateway, Website ya Portfolio me se kya khulega. Note: visitor ki remembered
+      choice ON ho to uski last choice priority le sakti hai. Recommended: Gateway.'
+  - name: websiteEnabled
+    label: 🟢 Main website access — Enabled/disabled
+    widget: select
+    options:
+    - label: Enabled
+      value: 'yes'
+    - label: Disabled
+      value: 'no'
+    dropdown_threshold: 5
+    hint: Enabled = Website option usable rahega. Disabled = Website option band ho jayega. Website ka data delete
+      nahi hoga.
+  - name: portfolioEnabled
+    label: 🟢 Portfolio access — Enabled/disabled
+    widget: select
+    options:
+    - label: Enabled
+      value: 'yes'
+    - label: Disabled
+      value: 'no'
+    dropdown_threshold: 5
+    hint: Enabled = Portfolio option usable rahega. Disabled = Portfolio option band ho jayega. Portfolio ka data
+      delete nahi hoga.
+  - name: showModeSwitch
+    label: 🟢 Website/Portfolio switch — Enabled/disabled
+    widget: select
+    options:
+    - label: Enabled
+      value: 'yes'
+    - label: Disabled
+      value: 'no'
+    dropdown_threshold: 5
+    hint: Enabled = live site par Website ↔ Portfolio switch button dikhega. Disabled = button hide hoga; dono pages
+      ka content delete nahi hoga.
+  - name: modeSwitchWebsiteLabel
+    label: Switch par Website text — Website label
+    widget: hidden
+  - name: modeSwitchPortfolioLabel
+    label: Switch par Portfolio text — Portfolio label
+    widget: hidden
+  - name: modeSwitchPosition
+    label: Switch screen par kahan ho — Position
+    widget: hidden
+  - name: rememberVisitorChoice
+    label: 🟢 Last opened page yaad rahe? — Remember choice
+    widget: select
+    options:
+    - label: 'Yes'
+      value: 'yes'
+    - label: 'No'
+      value: 'no'
+    dropdown_threshold: 5
+    hint: Yes = browser visitor ki last Website/Portfolio choice yaad rakhega. No = har fresh visit par “pehla page”
+      setting follow hogi. Testing ke liye Incognito sabse easy hai.
+  - name: showToolsSection
+    label: Website Tools section — Enabled/disabled
+    widget: hidden
+  - name: showDownloadsSection
+    label: Website Downloads section — Enabled/disabled
+    widget: hidden
+  - name: showProjectsSection
+    label: Website Projects section — Enabled/disabled
+    widget: hidden
+  - name: showSkillsSection
+    label: Website Skills section — Enabled/disabled
+    widget: hidden
+  - name: showDocsSection
+    label: Website Docs section — Enabled/disabled
+    widget: hidden
+  - name: showFaqSection
+    label: Website FAQ section — Enabled/disabled
+    widget: hidden
+  - name: showAboutSection
+    label: Website About section — Enabled/disabled
+    widget: hidden
+  - name: showQuickCommands
+    label: Website Quick Commands — Enabled/disabled
+    widget: hidden
+  - name: enableUrlModeOverride
+    label: 🟢 URL se direct page kholna — Mode override
+    widget: select
+    options:
+    - label: Enabled
+      value: 'yes'
+    - label: Disabled
+      value: 'no'
+    dropdown_threshold: 5
+    hint: Enabled = link ke end me ?mode=website, ?mode=portfolio ya ?mode=gateway laga kar specific page khola
+      ja sakta hai. Normal editing me existing value rehne dein.
+  - name: allowGatewayCloseWithEscape
+    label: 🟢 Esc se Gateway band karna — Enabled/disabled
+    widget: select
+    options:
+    - label: Enabled
+      value: 'yes'
+    - label: Disabled
+      value: 'no'
+    dropdown_threshold: 5
+    hint: Enabled = computer keyboard par Esc dabane se choice screen band hogi. Mobile par iska use nahi hota.
+  - name: escapeFallbackMode
+    label: 🟢 Esc ke baad ka page — Fallback mode
+    widget: select
+    options:
+    - label: Website
+      value: website
+    - label: Portfolio
+      value: portfolio
+    dropdown_threshold: 5
+    hint: Esc dabane ke baad Website ya Portfolio me se kaunsa page khulega. Ye sirf tab chalega jab Esc close setting
+      Enabled ho.
+  - name: terminalReadyMessage
+    label: Terminal preview ki last line — Ready message
+    widget: hidden
+  - name: copyButtonDefaultTitle
+    label: Copy se pehle tooltip — Default title
+    widget: hidden
+  - name: copyButtonSuccessTitle
+    label: Copy ke baad tooltip — Success title
+    widget: hidden
+  - name: copyButtonErrorTitle
+    label: Copy fail tooltip — Error title
+    widget: hidden
+  - name: copyButtonAriaLabel
+    label: Screen reader ka copy naam — ARIA label
+    widget: hidden
+  - name: showDataLoadWarning
+    label: Data load warning — Enabled/disabled
+    widget: hidden
+  - name: dataLoadWarningTitle
+    label: Data warning heading — Warning title
+    widget: hidden
+  - name: dataLoadWarningMessage
+    label: Data warning ka poora message — Warning text
+    widget: hidden
+  - name: bootStatusMessage
+    label: Site load hote waqt message — Boot status
+    widget: hidden
+  - name: version
+    label: Current site release number — Version
+    widget: hidden
+  - name: schemaVersion
+    label: CMS data format number — Schema version
+    widget: hidden
+- name: gateway
+  label: Gateway Text, Cards & Basic Look
+  icon: dashboard_customize
+  file: data/gateway.json
+  format: json
+  fields:
+  - name: backgroundMode
+    label: 🟣 Gateway ke peeche ka page — Background mode
+    widget: select
+    options:
+    - label: Website
+      value: website
+    - label: Portfolio
+      value: portfolio
+    dropdown_threshold: 5
+    hint: Choice screen ke transparent background ke peeche Website ya Portfolio page dikhai dega. Isse card order
+      ya opening page change nahi hota.
+  - name: title
+    label: 🔵 Gateway main heading — Title
+    widget: string
+    required: false
+    hint: 'Kaam: choice screen (Gateway) panel ka sabse bada heading text.'
+  - name: subtitle
+    label: 🔵 Gateway heading ke neeche text — Subtitle
+    widget: text
+    required: false
+    hint: 'Kaam: main title ke neeche dikhne wala explanation text.'
+  - name: showSubtitle
+    label: 🔵 Gateway subtitle — Enabled/disabled
+    widget: select
+    options:
+    - label: Enabled
+      value: 'yes'
+    - label: Disabled
+      value: 'no'
+    dropdown_threshold: 5
+    hint: Enabled = Explanation text active ya visible hoga. Disabled = band ya hidden hoga. Saved content/value
+      delete nahi hoti.
+  - name: logoText
+    label: 🔵 Gateway top logo text — Logo text
+    widget: string
+    required: false
+    hint: 'Kaam: live site par dikhne wala chhota text/label. Button ya menu ke liye short action words use karein.'
+  - name: eyebrow
+    label: 🔵 Gateway heading ke upar text — Eyebrow
+    widget: string
+    required: false
+    hint: 'Kaam: main heading ke paas/neeche dikhne wala short supporting text. Ek line mein rakhna best hai.'
+  - name: showLogoRow
+    label: 🔵 Gateway logo row — Enabled/disabled
+    widget: select
+    options:
+    - label: Enabled
+      value: 'yes'
+    - label: Disabled
+      value: 'no'
+    dropdown_threshold: 5
+    hint: Enabled = top par logo + short brand line dikhegi. Disabled = poori row hide hogi; text delete nahi hoga.
+  - name: choiceLabel
+    label: 🔵 Option boxes ke upar instruction — Choice label
+    widget: string
+    required: false
+    hint: 'Kaam: live site par dikhne wala chhota text/label. Button ya menu ke liye short action words use karein.'
+  - name: showChoiceLabel
+    label: 🔵 Gateway choice instruction — Enabled/disabled
+    widget: select
+    options:
+    - label: Enabled
+      value: 'yes'
+    - label: Disabled
+      value: 'no'
+    dropdown_threshold: 5
+    hint: Enabled = dono option boxes ke upar instruction line dikhegi. Disabled = line hide hogi.
+  - name: chipOne
+    label: 🔵 Gateway highlight tag 1 — Chip 1
+    widget: string
+    required: false
+    hint: 'Kaam: choice screen (Gateway) ke top highlight chip par dikhne wala short text. 1–3 words best rahenge.'
+  - name: chipTwo
+    label: 🔵 Gateway highlight tag 2 — Chip 2
+    widget: string
+    required: false
+    hint: 'Kaam: choice screen (Gateway) ke top highlight chip par dikhne wala short text. 1–3 words best rahenge.'
+  - name: chipThree
+    label: 🔵 Gateway highlight tag 3 — Chip 3
+    widget: string
+    required: false
+    hint: 'Kaam: choice screen (Gateway) ke top highlight chip par dikhne wala short text. 1–3 words best rahenge.'
+  - name: showChips
+    label: 🔵 Gateway highlight tags — Enabled/disabled
+    widget: select
+    options:
+    - label: Enabled
+      value: 'yes'
+    - label: Disabled
+      value: 'no'
+    dropdown_threshold: 5
+    hint: Enabled = teen chhote highlight tags dikhenge. Disabled = tags hide honge. Blank tag ko short rakhein.
+  - name: websiteIcon
+    label: 🟡 Website option box icon — Icon
+    widget: string
+    required: false
+    hint: 'Kaam: emoji ya short icon text. Blank chhodne par icon hide ho sakta hai; existing format follow karein.'
+  - name: websiteKicker
+    label: 🟡 Website box ki chhoti top line — Kicker
+    widget: string
+    required: false
+    hint: 'Kaam: live site me “Website Card Kicker” ke liye dikhne/used hone wala content.'
+  - name: websiteTitle
+    label: 🟡 Website option box heading — Title
+    widget: string
+    required: false
+    hint: 'Kaam: website mode wale box/card ka main title.'
+  - name: websiteDescription
+    label: 🟡 Website option box details — Description
+    widget: text
+    required: false
+    hint: 'Kaam: website box/card ke andar short explanation.'
+  - name: websiteButtonText
+    label: 🟡 Website option button text — Button label
+    widget: string
+    required: false
+    hint: 'Kaam: website box/card ke action/button par dikhne wala text.'
+  - name: portfolioIcon
+    label: 🟡 Portfolio option box icon — Icon
+    widget: string
+    required: false
+    hint: 'Kaam: emoji ya short icon text. Blank chhodne par icon hide ho sakta hai; existing format follow karein.'
+  - name: portfolioKicker
+    label: 🟡 Portfolio box ki chhoti top line — Kicker
+    widget: string
+    required: false
+    hint: 'Kaam: live site me “Portfolio Card Kicker” ke liye dikhne/used hone wala content.'
+  - name: portfolioTitle
+    label: 🟡 Portfolio option box heading — Title
+    widget: string
+    required: false
+    hint: 'Kaam: portfolio mode wale box/card ka main title.'
+  - name: portfolioDescription
+    label: 🟡 Portfolio option box details — Description
+    widget: text
+    required: false
+    hint: 'Kaam: portfolio box/card ke andar short explanation.'
+  - name: portfolioButtonText
+    label: 🟡 Portfolio option button text — Button label
+    widget: string
+    required: false
+    hint: 'Kaam: portfolio box/card ke action/button par dikhne wala text.'
+  - name: showCardIcons
+    label: 🟡 Dono option box icons — Enabled/disabled
+    widget: select
+    options:
+    - label: Enabled
+      value: 'yes'
+    - label: Disabled
+      value: 'no'
+    dropdown_threshold: 5
+    hint: Enabled = Website aur Portfolio option boxes me icon/emoji dikhega. Disabled = icons hide honge.
+  - name: showCardKickers
+    label: 🟡 Dono boxes ki top lines — Enabled/disabled
+    widget: select
+    options:
+    - label: Enabled
+      value: 'yes'
+    - label: Disabled
+      value: 'no'
+    dropdown_threshold: 5
+    hint: Enabled = dono boxes me title ke upar chhoti top line dikhegi. Disabled = ye lines hide hongi.
+  - name: showCardDescriptions
+    label: 🟡 Dono option box details — Enabled/disabled
+    widget: select
+    options:
+    - label: Enabled
+      value: 'yes'
+    - label: Disabled
+      value: 'no'
+    dropdown_threshold: 5
+    hint: Enabled = dono option boxes ka explanation dikhega. Disabled = explanation hide hogi.
+  - name: showCardButtons
+    label: 🟡 Dono option box buttons — Enabled/disabled
+    widget: select
+    options:
+    - label: Enabled
+      value: 'yes'
+    - label: Disabled
+      value: 'no'
+    dropdown_threshold: 5
+    hint: Enabled = “Open Website / View Portfolio” buttons dikhenge. Disabled = poora box phir bhi clickable reh
+      sakta hai; publish se pehle test karein.
+  - name: footerNote
+    label: 🔵 Gateway ke neeche note — Footer note
+    widget: text
+    required: false
+    hint: 'Kaam: live site me “choice screen (Gateway) Footer Note” ke liye dikhne/used hone wala content.'
+  - name: showFooterNote
+    label: 🔵 Gateway footer note — Enabled/disabled
+    widget: select
+    options:
+    - label: Enabled
+      value: 'yes'
+    - label: Disabled
+      value: 'no'
+    dropdown_threshold: 5
+    hint: Enabled = Neeche wala note active ya visible hoga. Disabled = band ya hidden hoga. Saved content/value
+      delete nahi hoti.
+  - name: stylePreset
+    label: 🟠 Gateway ready-made design — Style preset
+    widget: select
+    options:
+    - label: Minimal Selector
+      value: minimal-selector
+    - label: Premium Glass
+      value: premium-glass
+    - label: Solid
+      value: solid
+    - label: Minimal
+      value: minimal
+    dropdown_threshold: 5
+    hint: 'Ready-made basic design choose karta hai. Recommended: current approved option. Detailed custom design
+      sirf Advanced Design group se badlein.'
+  - name: animationStyle
+    label: ✨ Gateway khulne ka effect — Animation style
+    widget: select
+    options:
+    - label: Soft Zoom
+      value: soft-scale
+    - label: None (Disabled)
+      value: none
+    dropdown_threshold: 5
+    hint: Choice screen khulte waqt basic effect. “Koi effect nahi” fastest hai; current soft effect safe hai.
+  - name: backgroundBlur
+    label: 🟣 Gateway background blur — Blur (px)
+    widget: number
+    min: 0
+    max: 18
+    value_type: int
+    step: 1
+    after_input: px
+    hint: '0 = peeche ka page clear. Number badhega to page zyada dhundhla hoga. Safe range: 0–18 px. Chhota change
+      karke preview dekhein.'
+  - name: backgroundDarkness
+    label: 🟣 Gateway background darkness — Darkness
+    widget: number
+    min: 0
+    max: 0.9
+    value_type: float
+    step: 0.1
+    hint: 0 = dark layer nahi; 0.9 = bahut dark. Current 0.5 balanced hai. Chhota change karein.
+  - name: panelMaxWidth
+    label: 🟠 Gateway main box width — Max width
+    widget: string
+    required: false
+    hint: 'Choice screen ke main box ki maximum width. Example: 680px. Bahut badi value mobile layout ko affect
+      kar sakti hai.'
+- name: gateway_appearance
+  label: Gateway Advanced Design
+  icon: palette
+  file: data/gateway-appearance.json
+  format: json
+  fields:
+  - name: advancedControlsEnabled
+    label: 🟢 Gateway advanced design — Enabled/disabled
+    widget: select
+    options:
+    - label: Enabled
+      value: 'yes'
+    - label: Disabled
+      value: 'no'
+    dropdown_threshold: 5
+    hint: Enabled karne par Gateway ke advanced custom controls kaam karenge. Disabled par approved default design
+      use hoga; saved values delete nahi hongi.
+  - name: visualPreset
+    label: Approved Gateway design — Visual preset
+    widget: hidden
+  - name: layoutControlMode
+    label: 🟢 Gateway size & layout editing — Default/custom
+    widget: select
+    options:
+    - label: Default (Recommended)
+      value: inherit
+    - label: Custom (Use fields below)
+      value: custom
+    dropdown_threshold: 5
+    hint: Default = approved design. Custom = neeche ki related fields apply hongi. Sirf specific design change
+      ke liye Custom choose karein.
+  - name: appearanceControlMode
+    label: 🟢 Gateway color & look editing — Default/custom
+    widget: select
+    options:
+    - label: Default (Recommended)
+      value: inherit
+    - label: Custom (Use fields below)
+      value: custom
+    dropdown_threshold: 5
+    hint: Default = approved design. Custom = neeche ki related fields apply hongi. Sirf specific design change
+      ke liye Custom choose karein.
+  - name: animationControlMode
+    label: 🟢 Gateway opening effects editing — Default/custom
+    widget: select
+    options:
+    - label: Default (Recommended)
+      value: inherit
+    - label: Custom (Use fields below)
+      value: custom
+    dropdown_threshold: 5
+    hint: Default = approved design. Custom = neeche ki related fields apply hongi. Sirf specific design change
+      ke liye Custom choose karein.
+  - name: interactionControlMode
+    label: 🟢 Gateway hover/click editing — Default/custom
+    widget: select
+    options:
+    - label: Default (Recommended)
+      value: inherit
+    - label: Custom (Use fields below)
+      value: custom
+    dropdown_threshold: 5
+    hint: Default = approved design. Custom = neeche ki related fields apply hongi. Sirf specific design change
+      ke liye Custom choose karein.
+  - name: cardOrder
+    label: 🟡 Website/Portfolio boxes ka order — Card order
+    widget: select
+    options:
+    - label: Website First
+      value: website-first
+    - label: Portfolio First
+      value: portfolio-first
+    dropdown_threshold: 5
+    hint: Website/Portfolio boxes ka order choose karta hai. Existing/default option safest hai; change ke baad
+      computer aur mobile preview check karein.
+  - name: desktopCardLayout
+    label: 🟠 Computer par option boxes — Desktop layout
+    widget: select
+    options:
+    - label: Side by Side (Row)
+      value: row
+    - label: Stacked (Column)
+      value: column
+    dropdown_threshold: 5
+    hint: Computer par option boxes choose karta hai. Existing/default option safest hai; change ke baad computer
+      aur mobile preview check karein.
+  - name: tabletCardLayout
+    label: 🟠 Tablet par option boxes — Tablet layout
+    widget: select
+    options:
+    - label: Side by Side (Row)
+      value: row
+    - label: Stacked (Column)
+      value: column
+    dropdown_threshold: 5
+    hint: Tablet par option boxes choose karta hai. Existing/default option safest hai; change ke baad computer
+      aur mobile preview check karein.
+  - name: mobileCardLayout
+    label: 🟠 Mobile par option boxes — Mobile layout
+    widget: select
+    options:
+    - label: Side by Side (Row)
+      value: row
+    - label: Stacked (Column)
+      value: column
+    dropdown_threshold: 5
+    hint: Mobile par option boxes choose karta hai. Existing/default option safest hai; change ke baad computer
+      aur mobile preview check karein.
+  - name: desktopPanelPosition
+    label: 🟠 Computer par Gateway box position — Desktop position
+    widget: select
+    options:
+    - label: Center
+      value: center
+    - label: Top Left
+      value: top-left
+    - label: Top Center
+      value: top-center
+    - label: Top Right
+      value: top-right
+    - label: Center Left
+      value: center-left
+    - label: Center Right
+      value: center-right
+    - label: Bottom Left
+      value: bottom-left
+    - label: Bottom Center
+      value: bottom-center
+    - label: Bottom Right
+      value: bottom-right
+    dropdown_threshold: 5
+    hint: Computer par Gateway box position choose karta hai. Existing/default option safest hai; change ke baad
+      computer aur mobile preview check karein.
+  - name: tabletPanelPosition
+    label: 🟠 Tablet par Gateway box position — Tablet position
+    widget: select
+    options:
+    - label: Center
+      value: center
+    - label: Top Left
+      value: top-left
+    - label: Top Center
+      value: top-center
+    - label: Top Right
+      value: top-right
+    - label: Center Left
+      value: center-left
+    - label: Center Right
+      value: center-right
+    - label: Bottom Left
+      value: bottom-left
+    - label: Bottom Center
+      value: bottom-center
+    - label: Bottom Right
+      value: bottom-right
+    dropdown_threshold: 5
+    hint: Tablet par Gateway box position choose karta hai. Existing/default option safest hai; change ke baad computer
+      aur mobile preview check karein.
+  - name: mobilePanelPosition
+    label: 🟠 Mobile par Gateway box position — Mobile position
+    widget: select
+    options:
+    - label: Center
+      value: center
+    - label: Top Left
+      value: top-left
+    - label: Top Center
+      value: top-center
+    - label: Top Right
+      value: top-right
+    - label: Center Left
+      value: center-left
+    - label: Center Right
+      value: center-right
+    - label: Bottom Left
+      value: bottom-left
+    - label: Bottom Center
+      value: bottom-center
+    - label: Bottom Right
+      value: bottom-right
+    dropdown_threshold: 5
+    hint: Mobile par Gateway box position choose karta hai. Existing/default option safest hai; change ke baad computer
+      aur mobile preview check karein.
+  - name: panelContentLayout
+    label: 🟠 Gateway main box content arrangement — Content layout
+    widget: select
+    options:
+    - label: Stacked
+      value: stacked
+    - label: Brand Left
+      value: brand-left
+    - label: Brand Right
+      value: brand-right
+    dropdown_threshold: 5
+    hint: Gateway main box content arrangement choose karta hai. Existing/default option safest hai; change ke baad
+      computer aur mobile preview check karein.
+  - name: panelMaxWidth
+    label: 🟠 Gateway main box maximum width — Max width (px)
+    widget: number
+    min: 320
+    max: 1400
+    value_type: int
+    step: 1
+    after_input: px
+    hint: Gateway main box maximum width ki numeric value hai. Chhota change karein aur computer + mobile preview
+      check karein.
+  - name: panelMaxHeightVh
+    label: 🟠 Gateway main box maximum height — Max height (vh)
+    widget: number
+    min: 50
+    max: 98
+    value_type: int
+    step: 1
+    hint: Gateway main box maximum height ki numeric value hai. Chhota change karein aur computer + mobile preview
+      check karein.
+  - name: panelPadding
+    label: 🟠 Gateway main box andar ki spacing — Padding (px)
+    widget: number
+    min: 8
+    max: 72
+    value_type: int
+    step: 1
+    after_input: px
+    hint: Gateway main box andar ki spacing ki numeric value hai. Chhota change karein aur computer + mobile preview
+      check karein.
+  - name: panelGap
+    label: 🟠 Gateway main box items ka gap — Gap (px)
+    widget: number
+    min: 0
+    max: 64
+    value_type: int
+    step: 1
+    after_input: px
+    hint: Gateway main box items ka gap ki numeric value hai. Chhota change karein aur computer + mobile preview
+      check karein.
+  - name: panelBorderRadius
+    label: 🟠 Gateway main box corner roundness — Border radius (px)
+    widget: number
+    min: 0
+    max: 64
+    value_type: int
+    step: 1
+    after_input: px
+    hint: Gateway main box corner roundness ki numeric value hai. Chhota change karein aur computer + mobile preview
+      check karein.
+  - name: panelBackgroundType
+    label: 🟣 Gateway main box background type — Background type
+    widget: select
+    options:
+    - label: Glass (Blur)
+      value: glass
+    - label: Gradient
+      value: gradient
+    - label: Solid
+      value: solid
+    - label: Transparent
+      value: transparent
+    dropdown_threshold: 5
+    hint: Gateway main box background type choose karta hai. Existing/default option safest hai; change ke baad
+      computer aur mobile preview check karein.
+  - name: panelBackgroundColor
+    label: 🟣 Gateway main box background color — Background color
+    widget: color
+    hint: 'Gateway main box background color set karta hai. Hex color code use karein, jaise #0EA5E9; current value
+      copy karke edit karna safest hai.'
+  - name: panelBackgroundOpacity
+    label: 🟣 Gateway main box transparency — Background opacity
+    widget: number
+    min: 0
+    max: 1
+    value_type: float
+    step: 0.01
+    hint: Gateway main box transparency ki numeric value hai. Chhota change karein aur computer + mobile preview
+      check karein.
+  - name: panelGradientStartColor
+    label: 🟠 Gateway box gradient first color — Start color
+    widget: color
+    hint: 'Gateway box gradient first color set karta hai. Hex color code use karein, jaise #0EA5E9; current value
+      copy karke edit karna safest hai.'
+  - name: panelGradientStartOpacity
+    label: 🟠 Gateway box gradient first transparency — Start opacity
+    widget: number
+    min: 0
+    max: 1
+    value_type: float
+    step: 0.01
+    hint: Gateway box gradient first transparency ki numeric value hai. Chhota change karein aur computer + mobile
+      preview check karein.
+  - name: panelGradientEndColor
+    label: 🟠 Gateway box gradient second color — End color
+    widget: color
+    hint: 'Gateway box gradient second color set karta hai. Hex color code use karein, jaise #0EA5E9; current value
+      copy karke edit karna safest hai.'
+  - name: panelGradientEndOpacity
+    label: 🟠 Gateway box gradient second transparency — End opacity
+    widget: number
+    min: 0
+    max: 1
+    value_type: float
+    step: 0.01
+    hint: Gateway box gradient second transparency ki numeric value hai. Chhota change karein aur computer + mobile
+      preview check karein.
+  - name: panelGradientDirection
+    label: 🟠 Gateway box gradient direction — Direction
+    widget: select
+    options:
+    - label: Top to Bottom
+      value: top-to-bottom
+    - label: Left to Right
+      value: left-to-right
+    - label: Diagonal Up
+      value: diagonal-up
+    - label: Diagonal Down
+      value: diagonal-down
+    dropdown_threshold: 5
+    hint: Gateway box gradient direction choose karta hai. Existing/default option safest hai; change ke baad computer
+      aur mobile preview check karein.
+  - name: panelBackdropBlur
+    label: 🟠 Gateway main box ke peeche blur — Backdrop blur (px)
+    widget: number
+    min: 0
+    max: 48
+    value_type: int
+    step: 1
+    after_input: px
+    hint: Gateway main box ke peeche blur ki numeric value hai. Chhota change karein aur computer + mobile preview
+      check karein.
+  - name: panelBackdropSaturation
+    label: 🟣 Gateway box ke peeche color strength — Saturation
+    widget: number
+    min: 50
+    max: 220
+    value_type: int
+    step: 1
+    hint: Gateway box ke peeche color strength ki numeric value hai. Chhota change karein aur computer + mobile
+      preview check karein.
+  - name: panelBorderEnabled
+    label: 🟠 Gateway main box border — Enabled/disabled
+    widget: select
+    options:
+    - label: Enabled
+      value: 'yes'
+    - label: Disabled
+      value: 'no'
+    dropdown_threshold: 5
+    hint: Gateway main box border choose karta hai. Existing/default option safest hai; change ke baad computer
+      aur mobile preview check karein.
+  - name: panelBorderWidth
+    label: 🟠 Gateway main box border thickness — Border width (px)
+    widget: number
+    min: 0
+    max: 8
+    value_type: int
+    step: 1
+    after_input: px
+    hint: Gateway main box border thickness ki numeric value hai. Chhota change karein aur computer + mobile preview
+      check karein.
+  - name: panelBorderStyle
+    label: 🟠 Gateway main box border line — Border style
+    widget: select
+    options:
+    - label: Solid
+      value: solid
+    - label: Dashed
+      value: dashed
+    - label: Dotted
+      value: dotted
+    dropdown_threshold: 5
+    hint: Gateway main box border line choose karta hai. Existing/default option safest hai; change ke baad computer
+      aur mobile preview check karein.
+  - name: panelBorderColor
+    label: 🟠 Gateway main box border color — Border color
+    widget: color
+    hint: 'Gateway main box border color set karta hai. Hex color code use karein, jaise #0EA5E9; current value
+      copy karke edit karna safest hai.'
+  - name: panelBorderOpacity
+    label: 🟠 Gateway main box border transparency — Border opacity
+    widget: number
+    min: 0
+    max: 1
+    value_type: float
+    step: 0.01
+    hint: Gateway main box border transparency ki numeric value hai. Chhota change karein aur computer + mobile
+      preview check karein.
+  - name: panelShadowPreset
+    label: 🟠 Gateway main box shadow design — Shadow preset
+    widget: select
+    options:
+    - label: None (Disabled)
+      value: none
+    - label: Soft
+      value: soft
+    - label: Medium
+      value: medium
+    - label: Strong
+      value: strong
+    dropdown_threshold: 5
+    hint: Gateway main box shadow design choose karta hai. Existing/default option safest hai; change ke baad computer
+      aur mobile preview check karein.
+  - name: panelGlowEnabled
+    label: 🟠 Gateway main box outer glow — Enabled/disabled
+    widget: select
+    options:
+    - label: Enabled
+      value: 'yes'
+    - label: Disabled
+      value: 'no'
+    dropdown_threshold: 5
+    hint: Gateway main box outer glow choose karta hai. Existing/default option safest hai; change ke baad computer
+      aur mobile preview check karein.
+  - name: panelGlowColor
+    label: 🟠 Gateway main box outer glow color — Glow color
+    widget: color
+    hint: 'Gateway main box outer glow color set karta hai. Hex color code use karein, jaise #0EA5E9; current value
+      copy karke edit karna safest hai.'
+  - name: panelGlowOpacity
+    label: 🟠 Gateway main box glow transparency — Glow opacity
+    widget: number
+    min: 0
+    max: 1
+    value_type: float
+    step: 0.01
+    hint: Gateway main box glow transparency ki numeric value hai. Chhota change karein aur computer + mobile preview
+      check karein.
+  - name: panelInsetHighlightEnabled
+    label: 🟠 Gateway box andar highlight — Enabled/disabled
+    widget: select
+    options:
+    - label: Enabled
+      value: 'yes'
+    - label: Disabled
+      value: 'no'
+    dropdown_threshold: 5
+    hint: Gateway box andar highlight choose karta hai. Existing/default option safest hai; change ke baad computer
+      aur mobile preview check karein.
+  - name: panelInsetHighlightOpacity
+    label: 🟠 Gateway inner highlight transparency — Highlight opacity
+    widget: number
+    min: 0
+    max: 1
+    value_type: float
+    step: 0.01
+    hint: Gateway inner highlight transparency ki numeric value hai. Chhota change karein aur computer + mobile
+      preview check karein.
+  - name: overlayColor
+    label: 🟣 Gateway ke peeche dark layer color — Overlay color
+    widget: color
+    hint: 'Gateway ke peeche dark layer color set karta hai. Hex color code use karein, jaise #0EA5E9; current value
+      copy karke edit karna safest hai.'
+  - name: overlayDarkness
+    label: 🟣 Gateway ke peeche page darkness — Overlay darkness
+    widget: number
+    min: 0
+    max: 1
+    value_type: float
+    step: 0.1
+    hint: Gateway ke peeche page darkness ki numeric value hai. Chhota change karein aur computer + mobile preview
+      check karein.
+  - name: overlayBackdropBlur
+    label: 🟣 Gateway ke peeche page blur — Overlay blur (px)
+    widget: number
+    min: 0
+    max: 24
+    value_type: int
+    step: 1
+    after_input: px
+    hint: Gateway ke peeche page blur ki numeric value hai. Chhota change karein aur computer + mobile preview check
+      karein.
+  - name: websiteBackgroundBlur
+    label: 🟣 Gateway ke peeche website page blur — Background blur (px)
+    widget: number
+    min: 0
+    max: 24
+    value_type: int
+    step: 1
+    after_input: px
+    hint: Gateway ke peeche website page blur ki numeric value hai. Chhota change karein aur computer + mobile preview
+      check karein.
+  - name: websiteBackgroundBrightness
+    label: 🟣 Gateway ke peeche website brightness — Brightness
+    widget: number
+    min: 20
+    max: 120
+    value_type: int
+    step: 1
+    hint: Gateway ke peeche website brightness ki numeric value hai. Chhota change karein aur computer + mobile
+      preview check karein.
+  - name: websiteBackgroundSaturation
+    label: 🟣 Gateway ke peeche website color strength — Saturation
+    widget: number
+    min: 0
+    max: 200
+    value_type: int
+    step: 1
+    hint: Gateway ke peeche website color strength ki numeric value hai. Chhota change karein aur computer + mobile
+      preview check karein.
+  - name: showAmbientLights
+    label: 🟣 Gateway background decorative lights — Enabled/disabled
+    widget: select
+    options:
+    - label: Enabled
+      value: 'yes'
+    - label: Disabled
+      value: 'no'
+    dropdown_threshold: 5
+    hint: Gateway background decorative lights choose karta hai. Existing/default option safest hai; change ke baad
+      computer aur mobile preview check karein.
+  - name: ambientOneColor
+    label: 🟣 Gateway background light 1 color — Ambient color 1
+    widget: color
+    hint: 'Gateway background light 1 color set karta hai. Hex color code use karein, jaise #0EA5E9; current value
+      copy karke edit karna safest hai.'
+  - name: ambientTwoColor
+    label: 🟣 Gateway background light 2 color — Ambient color 2
+    widget: color
+    hint: 'Gateway background light 2 color set karta hai. Hex color code use karein, jaise #0EA5E9; current value
+      copy karke edit karna safest hai.'
+  - name: ambientOpacity
+    label: 🟣 Gateway background lights transparency — Ambient opacity
+    widget: number
+    min: 0
+    max: 1
+    value_type: float
+    step: 0.01
+    hint: Gateway background lights transparency ki numeric value hai. Chhota change karein aur computer + mobile
+      preview check karein.
+  - name: ambientBlur
+    label: 🟣 Gateway background lights softness — Ambient blur (px)
+    widget: number
+    min: 0
+    max: 80
+    value_type: int
+    step: 1
+    after_input: px
+    hint: Gateway background lights softness ki numeric value hai. Chhota change karein aur computer + mobile preview
+      check karein.
+  - name: titleAlignment
+    label: 🟠 Gateway main heading alignment — Alignment
+    widget: select
+    options:
+    - label: Left
+      value: left
+    - label: Center
+      value: center
+    - label: Right
+      value: right
+    dropdown_threshold: 5
+    hint: Gateway main heading alignment choose karta hai. Existing/default option safest hai; change ke baad computer
+      aur mobile preview check karein.
+  - name: titleColor
+    label: 🔵 Gateway main heading color — Title color
+    widget: color
+    hint: 'Gateway main heading color set karta hai. Hex color code use karein, jaise #0EA5E9; current value copy
+      karke edit karna safest hai.'
+  - name: titleSize
+    label: 🔵 Gateway main heading text size — Font size (px)
+    widget: number
+    min: 20
+    max: 72
+    value_type: int
+    step: 1
+    hint: Gateway main heading text size ki numeric value hai. Chhota change karein aur computer + mobile preview
+      check karein.
+  - name: titleWeight
+    label: 🔵 Gateway main heading boldness — Font weight
+    widget: number
+    min: 400
+    max: 950
+    value_type: int
+    step: 1
+    hint: Gateway main heading boldness ki numeric value hai. Chhota change karein aur computer + mobile preview
+      check karein.
+  - name: subtitleColor
+    label: 🔵 Gateway subtitle text color — Subtitle color
+    widget: color
+    hint: 'Gateway subtitle text color set karta hai. Hex color code use karein, jaise #0EA5E9; current value copy
+      karke edit karna safest hai.'
+  - name: subtitleOpacity
+    label: 🔵 Gateway subtitle transparency — Subtitle opacity
+    widget: number
+    min: 0
+    max: 1
+    value_type: float
+    step: 0.01
+    hint: Gateway subtitle transparency ki numeric value hai. Chhota change karein aur computer + mobile preview
+      check karein.
+  - name: subtitleSize
+    label: 🔵 Gateway subtitle text size — Font size (px)
+    widget: number
+    min: 11
+    max: 30
+    value_type: int
+    step: 1
+    hint: Gateway subtitle text size ki numeric value hai. Chhota change karein aur computer + mobile preview check
+      karein.
+  - name: choiceGap
+    label: 🟡 Gateway heading aur boxes ka gap — Choice gap (px)
+    widget: number
+    min: 0
+    max: 48
+    value_type: int
+    step: 1
+    after_input: px
+    hint: Gateway heading aur boxes ka gap ki numeric value hai. Chhota change karein aur computer + mobile preview
+      check karein.
+  - name: cardMinHeight
+    label: 🟡 Dono option boxes minimum height — Min height (px)
+    widget: number
+    min: 0
+    max: 520
+    value_type: int
+    step: 1
+    after_input: px
+    hint: Dono option boxes minimum height ki numeric value hai. Chhota change karein aur computer + mobile preview
+      check karein.
+  - name: cardPadding
+    label: 🟡 Dono option boxes andar spacing — Padding (px)
+    widget: number
+    min: 8
+    max: 60
+    value_type: int
+    step: 1
+    after_input: px
+    hint: Dono option boxes andar spacing ki numeric value hai. Chhota change karein aur computer + mobile preview
+      check karein.
+  - name: cardBorderRadius
+    label: 🟡 Dono option boxes corner roundness — Border radius (px)
+    widget: number
+    min: 0
+    max: 48
+    value_type: int
+    step: 1
+    after_input: px
+    hint: Dono option boxes corner roundness ki numeric value hai. Chhota change karein aur computer + mobile preview
+      check karein.
+  - name: cardBorderWidth
+    label: 🟡 Dono option boxes border thickness — Border width (px)
+    widget: number
+    min: 0
+    max: 8
+    value_type: int
+    step: 1
+    after_input: px
+    hint: Dono option boxes border thickness ki numeric value hai. Chhota change karein aur computer + mobile preview
+      check karein.
+  - name: cardTextAlignment
+    label: 🟡 Dono option boxes text alignment — Text alignment
+    widget: select
+    options:
+    - label: Left
+      value: left
+    - label: Center
+      value: center
+    - label: Right
+      value: right
+    dropdown_threshold: 5
+    hint: Dono option boxes text alignment choose karta hai. Existing/default option safest hai; change ke baad
+      computer aur mobile preview check karein.
+  - name: cardContentAlignment
+    label: 🟡 Dono option boxes content position — Content alignment
+    widget: select
+    options:
+    - label: Start
+      value: start
+    - label: Center
+      value: center
+    - label: End
+      value: end
+    dropdown_threshold: 5
+    hint: Dono option boxes content position choose karta hai. Existing/default option safest hai; change ke baad
+      computer aur mobile preview check karein.
+  - name: cardShadowPreset
+    label: 🟡 Dono option boxes shadow design — Shadow preset
+    widget: select
+    options:
+    - label: None (Disabled)
+      value: none
+    - label: Soft
+      value: soft
+    - label: Medium
+      value: medium
+    - label: Strong
+      value: strong
+    dropdown_threshold: 5
+    hint: Dono option boxes shadow design choose karta hai. Existing/default option safest hai; change ke baad computer
+      aur mobile preview check karein.
+  - name: cardInsetHighlightEnabled
+    label: 🟡 Dono option boxes inner highlight — Enabled/disabled
+    widget: select
+    options:
+    - label: Enabled
+      value: 'yes'
+    - label: Disabled
+      value: 'no'
+    dropdown_threshold: 5
+    hint: Dono option boxes inner highlight choose karta hai. Existing/default option safest hai; change ke baad
+      computer aur mobile preview check karein.
+  - name: cardInsetHighlightOpacity
+    label: 🟡 Option box inner highlight transparency — Highlight opacity
+    widget: number
+    min: 0
+    max: 1
+    value_type: float
+    step: 0.01
+    hint: Option box inner highlight transparency ki numeric value hai. Chhota change karein aur computer + mobile
+      preview check karein.
+  - name: cardTitleColor
+    label: 🟡 Dono option boxes heading color — Title color
+    widget: color
+    hint: 'Dono option boxes heading color set karta hai. Hex color code use karein, jaise #0EA5E9; current value
+      copy karke edit karna safest hai.'
+  - name: cardDescriptionColor
+    label: 🟡 Dono option boxes details color — Description color
+    widget: color
+    hint: 'Dono option boxes details color set karta hai. Hex color code use karein, jaise #0EA5E9; current value
+      copy karke edit karna safest hai.'
+  - name: cardDescriptionOpacity
+    label: 🟡 Option box details transparency — Description opacity
+    widget: number
+    min: 0
+    max: 1
+    value_type: float
+    step: 0.01
+    hint: Option box details transparency ki numeric value hai. Chhota change karein aur computer + mobile preview
+      check karein.
+  - name: websiteCardBackgroundType
+    label: 🟣 Website option box background type — Background type
+    widget: select
+    options:
+    - label: Gradient
+      value: gradient
+    - label: Solid
+      value: solid
+    - label: Transparent
+      value: transparent
+    dropdown_threshold: 5
+    hint: Website option box background type choose karta hai. Existing/default option safest hai; change ke baad
+      computer aur mobile preview check karein.
+  - name: websiteCardBackgroundColor
+    label: 🟣 Website option box background color — Background color
+    widget: color
+    hint: 'Website option box background color set karta hai. Hex color code use karein, jaise #0EA5E9; current
+      value copy karke edit karna safest hai.'
+  - name: websiteCardBackgroundOpacity
+    label: 🟣 Website option box transparency — Background opacity
+    widget: number
+    min: 0
+    max: 1
+    value_type: float
+    step: 0.01
+    hint: Website option box transparency ki numeric value hai. Chhota change karein aur computer + mobile preview
+      check karein.
+  - name: websiteCardGradientStartColor
+    label: 🟡 Website box gradient first color — Start color
+    widget: color
+    hint: 'Website box gradient first color set karta hai. Hex color code use karein, jaise #0EA5E9; current value
+      copy karke edit karna safest hai.'
+  - name: websiteCardGradientStartOpacity
+    label: 🟡 Website box gradient first transparency — Start opacity
+    widget: number
+    min: 0
+    max: 1
+    value_type: float
+    step: 0.01
+    hint: Website box gradient first transparency ki numeric value hai. Chhota change karein aur computer + mobile
+      preview check karein.
+  - name: websiteCardGradientEndColor
+    label: 🟡 Website box gradient second color — End color
+    widget: color
+    hint: 'Website box gradient second color set karta hai. Hex color code use karein, jaise #0EA5E9; current value
+      copy karke edit karna safest hai.'
+  - name: websiteCardGradientEndOpacity
+    label: 🟡 Website box gradient second transparency — End opacity
+    widget: number
+    min: 0
+    max: 1
+    value_type: float
+    step: 0.01
+    hint: Website box gradient second transparency ki numeric value hai. Chhota change karein aur computer + mobile
+      preview check karein.
+  - name: websiteCardBorderColor
+    label: 🟡 Website option box border color — Border color
+    widget: color
+    hint: 'Website option box border color set karta hai. Hex color code use karein, jaise #0EA5E9; current value
+      copy karke edit karna safest hai.'
+  - name: websiteCardBorderOpacity
+    label: 🟡 Website option box border transparency — Border opacity
+    widget: number
+    min: 0
+    max: 1
+    value_type: float
+    step: 0.01
+    hint: Website option box border transparency ki numeric value hai. Chhota change karein aur computer + mobile
+      preview check karein.
+  - name: websiteCardAccentColor
+    label: 🟡 Website option box highlight color — Accent color
+    widget: color
+    hint: 'Website option box highlight color set karta hai. Hex color code use karein, jaise #0EA5E9; current value
+      copy karke edit karna safest hai.'
+  - name: websiteButtonStyle
+    label: 🟡 Website option button design — Button style
+    widget: select
+    options:
+    - label: Pill
+      value: pill
+    - label: Solid
+      value: solid
+    - label: Outline
+      value: outline
+    - label: Soft
+      value: soft
+    - label: Text Only
+      value: text
+    dropdown_threshold: 5
+    hint: Website option button design choose karta hai. Existing/default option safest hai; change ke baad computer
+      aur mobile preview check karein.
+  - name: websiteButtonStartColor
+    label: 🟡 Website option button first color — Start color
+    widget: color
+    hint: 'Website option button first color set karta hai. Hex color code use karein, jaise #0EA5E9; current value
+      copy karke edit karna safest hai.'
+  - name: websiteButtonEndColor
+    label: 🟡 Website option button second color — End color
+    widget: color
+    hint: 'Website option button second color set karta hai. Hex color code use karein, jaise #0EA5E9; current value
+      copy karke edit karna safest hai.'
+  - name: websiteButtonTextColor
+    label: 🟡 Website option button text color — Text color
+    widget: color
+    hint: 'Website option button text color set karta hai. Hex color code use karein, jaise #0EA5E9; current value
+      copy karke edit karna safest hai.'
+  - name: portfolioCardBackgroundType
+    label: 🟣 Portfolio option box background type — Background type
+    widget: select
+    options:
+    - label: Gradient
+      value: gradient
+    - label: Solid
+      value: solid
+    - label: Transparent
+      value: transparent
+    dropdown_threshold: 5
+    hint: Portfolio option box background type choose karta hai. Existing/default option safest hai; change ke baad
+      computer aur mobile preview check karein.
+  - name: portfolioCardBackgroundColor
+    label: 🟣 Portfolio option box background color — Background color
+    widget: color
+    hint: 'Portfolio option box background color set karta hai. Hex color code use karein, jaise #0EA5E9; current
+      value copy karke edit karna safest hai.'
+  - name: portfolioCardBackgroundOpacity
+    label: 🟣 Portfolio option box transparency — Background opacity
+    widget: number
+    min: 0
+    max: 1
+    value_type: float
+    step: 0.01
+    hint: Portfolio option box transparency ki numeric value hai. Chhota change karein aur computer + mobile preview
+      check karein.
+  - name: portfolioCardGradientStartColor
+    label: 🟡 Portfolio box gradient first color — Start color
+    widget: color
+    hint: 'Portfolio box gradient first color set karta hai. Hex color code use karein, jaise #0EA5E9; current value
+      copy karke edit karna safest hai.'
+  - name: portfolioCardGradientStartOpacity
+    label: 🟡 Portfolio box gradient first transparency — Start opacity
+    widget: number
+    min: 0
+    max: 1
+    value_type: float
+    step: 0.01
+    hint: Portfolio box gradient first transparency ki numeric value hai. Chhota change karein aur computer + mobile
+      preview check karein.
+  - name: portfolioCardGradientEndColor
+    label: 🟡 Portfolio box gradient second color — End color
+    widget: color
+    hint: 'Portfolio box gradient second color set karta hai. Hex color code use karein, jaise #0EA5E9; current
+      value copy karke edit karna safest hai.'
+  - name: portfolioCardGradientEndOpacity
+    label: 🟡 Portfolio box gradient second transparency — End opacity
+    widget: number
+    min: 0
+    max: 1
+    value_type: float
+    step: 0.01
+    hint: Portfolio box gradient second transparency ki numeric value hai. Chhota change karein aur computer + mobile
+      preview check karein.
+  - name: portfolioCardBorderColor
+    label: 🟡 Portfolio option box border color — Border color
+    widget: color
+    hint: 'Portfolio option box border color set karta hai. Hex color code use karein, jaise #0EA5E9; current value
+      copy karke edit karna safest hai.'
+  - name: portfolioCardBorderOpacity
+    label: 🟡 Portfolio option box border transparency — Border opacity
+    widget: number
+    min: 0
+    max: 1
+    value_type: float
+    step: 0.01
+    hint: Portfolio option box border transparency ki numeric value hai. Chhota change karein aur computer + mobile
+      preview check karein.
+  - name: portfolioCardAccentColor
+    label: 🟡 Portfolio option box highlight color — Accent color
+    widget: color
+    hint: 'Portfolio option box highlight color set karta hai. Hex color code use karein, jaise #0EA5E9; current
+      value copy karke edit karna safest hai.'
+  - name: portfolioButtonStyle
+    label: 🟡 Portfolio option button design — Button style
+    widget: select
+    options:
+    - label: Pill
+      value: pill
+    - label: Solid
+      value: solid
+    - label: Outline
+      value: outline
+    - label: Soft
+      value: soft
+    - label: Text Only
+      value: text
+    dropdown_threshold: 5
+    hint: Portfolio option button design choose karta hai. Existing/default option safest hai; change ke baad computer
+      aur mobile preview check karein.
+  - name: portfolioButtonStartColor
+    label: 🟡 Portfolio option button first color — Start color
+    widget: color
+    hint: 'Portfolio option button first color set karta hai. Hex color code use karein, jaise #0EA5E9; current
+      value copy karke edit karna safest hai.'
+  - name: portfolioButtonEndColor
+    label: 🟡 Portfolio option button second color — End color
+    widget: color
+    hint: 'Portfolio option button second color set karta hai. Hex color code use karein, jaise #0EA5E9; current
+      value copy karke edit karna safest hai.'
+  - name: portfolioButtonTextColor
+    label: 🟡 Portfolio option button text color — Text color
+    widget: color
+    hint: 'Portfolio option button text color set karta hai. Hex color code use karein, jaise #0EA5E9; current value
+      copy karke edit karna safest hai.'
+  - name: buttonBorderRadius
+    label: 🟡 Dono option buttons corner roundness — Border radius (px)
+    widget: number
+    min: 0
+    max: 999
+    value_type: int
+    step: 1
+    after_input: px
+    hint: Dono option buttons corner roundness ki numeric value hai. Chhota change karein aur computer + mobile
+      preview check karein.
+  - name: panelAnimation
+    label: ✨ Gateway main box opening effect — Animation
+    widget: select
+    options:
+    - label: None (Disabled)
+      value: none
+    - label: Fade
+      value: fade
+    - label: Soft Zoom
+      value: soft-scale
+    - label: Slide Up
+      value: slide-up
+    - label: Slide Down
+      value: slide-down
+    - label: Slide Left
+      value: slide-left
+    - label: Left to Right
+      value: slide-right
+    - label: Zoom
+      value: zoom
+    - label: Blur In
+      value: blur-in
+    dropdown_threshold: 5
+    hint: Gateway main box opening effect choose karta hai. Existing/default option safest hai; change ke baad computer
+      aur mobile preview check karein.
+  - name: overlayAnimation
+    label: ✨ Gateway background opening effect — Animation
+    widget: select
+    options:
+    - label: None (Disabled)
+      value: none
+    - label: Fade
+      value: fade
+    - label: Fade + Blur
+      value: fade-blur
+    dropdown_threshold: 5
+    hint: Gateway background opening effect choose karta hai. Existing/default option safest hai; change ke baad
+      computer aur mobile preview check karein.
+  - name: websiteCardAnimation
+    label: ✨ Website option box opening effect — Animation
+    widget: select
+    options:
+    - label: None (Disabled)
+      value: none
+    - label: Fade
+      value: fade
+    - label: Soft Zoom
+      value: soft-scale
+    - label: Slide Up
+      value: slide-up
+    - label: Slide Down
+      value: slide-down
+    - label: Slide Left
+      value: slide-left
+    - label: Left to Right
+      value: slide-right
+    - label: Zoom
+      value: zoom
+    dropdown_threshold: 5
+    hint: Website option box opening effect choose karta hai. Existing/default option safest hai; change ke baad
+      computer aur mobile preview check karein.
+  - name: portfolioCardAnimation
+    label: ✨ Portfolio option box opening effect — Animation
+    widget: select
+    options:
+    - label: None (Disabled)
+      value: none
+    - label: Fade
+      value: fade
+    - label: Soft Zoom
+      value: soft-scale
+    - label: Slide Up
+      value: slide-up
+    - label: Slide Down
+      value: slide-down
+    - label: Slide Left
+      value: slide-left
+    - label: Left to Right
+      value: slide-right
+    - label: Zoom
+      value: zoom
+    dropdown_threshold: 5
+    hint: Portfolio option box opening effect choose karta hai. Existing/default option safest hai; change ke baad
+      computer aur mobile preview check karein.
+  - name: animationDurationMs
+    label: ✨ Gateway opening effect duration — Duration (ms)
+    widget: number
+    min: 0
+    max: 2000
+    value_type: int
+    step: 1
+    after_input: ms
+    hint: Gateway opening effect duration ki numeric value hai. Chhota change karein aur computer + mobile preview
+      check karein.
+  - name: panelAnimationDelayMs
+    label: ✨ Gateway main box effect delay — Delay (ms)
+    widget: number
+    min: 0
+    max: 1500
+    value_type: int
+    step: 1
+    after_input: ms
+    hint: Gateway main box effect delay ki numeric value hai. Chhota change karein aur computer + mobile preview
+      check karein.
+  - name: websiteCardDelayMs
+    label: ✨ Website option box effect delay — Delay (ms)
+    widget: number
+    min: 0
+    max: 2000
+    value_type: int
+    step: 1
+    after_input: ms
+    hint: Website option box effect delay ki numeric value hai. Chhota change karein aur computer + mobile preview
+      check karein.
+  - name: portfolioCardDelayMs
+    label: ✨ Portfolio option box effect delay — Delay (ms)
+    widget: number
+    min: 0
+    max: 2000
+    value_type: int
+    step: 1
+    after_input: ms
+    hint: Portfolio option box effect delay ki numeric value hai. Chhota change karein aur computer + mobile preview
+      check karein.
+  - name: animationEasing
+    label: ✨ Gateway effect movement style — Easing
+    widget: select
+    options:
+    - label: Linear
+      value: linear
+    - label: Ease
+      value: ease
+    - label: Slow Start
+      value: ease-in
+    - label: Slow End
+      value: ease-out
+    - label: Slow Start & End
+      value: ease-in-out
+    - label: Smooth
+      value: smooth
+    - label: Soft Spring
+      value: spring-soft
+    dropdown_threshold: 5
+    hint: Gateway effect movement style choose karta hai. Existing/default option safest hai; change ke baad computer
+      aur mobile preview check karein.
+  - name: cardHoverPreset
+    label: ✨ Option box par mouse effect — Hover preset
+    widget: select
+    options:
+    - label: None (Disabled)
+      value: none
+    - label: Lift
+      value: lift
+    - label: Zoom
+      value: scale
+    - label: Glow
+      value: glow
+    - label: Border Glow
+      value: border-glow
+    - label: Soft Tilt
+      value: tilt-soft
+    - label: Lift + Glow
+      value: lift-glow
+    dropdown_threshold: 5
+    hint: Option box par mouse effect choose karta hai. Existing/default option safest hai; change ke baad computer
+      aur mobile preview check karein.
+  - name: cardHoverStrength
+    label: ✨ Option box mouse effect strength — Hover strength
+    widget: number
+    min: 0
+    max: 12
+    value_type: int
+    step: 1
+    after_input: px
+    hint: Option box mouse effect strength ki numeric value hai. Chhota change karein aur computer + mobile preview
+      check karein.
+  - name: cardHoverDurationMs
+    label: ✨ Option box mouse effect duration — Duration (ms)
+    widget: number
+    min: 0
+    max: 1000
+    value_type: int
+    step: 1
+    after_input: ms
+    hint: Option box mouse effect duration ki numeric value hai. Chhota change karein aur computer + mobile preview
+      check karein.
+  - name: cardClickPreset
+    label: ✨ Option box click effect — Click preset
+    widget: select
+    options:
+    - label: None (Disabled)
+      value: none
+    - label: Press
+      value: press
+    - label: Pulse
+      value: pulse
+    dropdown_threshold: 5
+    hint: Option box click effect choose karta hai. Existing/default option safest hai; change ke baad computer
+      aur mobile preview check karein.
