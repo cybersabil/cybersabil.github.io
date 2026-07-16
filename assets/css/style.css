@@ -827,7 +827,7 @@ svg {
    Purpose: Keeps the existing tools website visible, blurred and slightly dark while the visitor chooses a mode. */
 .cs-mode-background-blur {
     filter: blur(var(--cs-gateway-blur)) brightness(calc(1 - var(--cs-gateway-darkness) * .38));
-    transform: scale(1.012);
+    transform: nones;
     pointer-events: none;
     user-select: none;
 }
