@@ -30,7 +30,7 @@
   "showFooterNote": "no",
   "stylePreset": "minimal-selector",
   "animationStyle": "soft-scale",
-  "backgroundBlur": 7,
+  "backgroundBlur": 3,
   "backgroundDarkness": 0,
   "panelMaxWidth": "680px"
 }
