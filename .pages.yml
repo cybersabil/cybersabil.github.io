@@ -551,6 +551,7 @@ content:
       options:
         min: 0
         max: 0.9
+        step: 0.1
     - name: panelMaxWidth
       label: Gateway main box width — Max width
       type: string
