@@ -9,5 +9,5 @@ window.CYBERSABIL_ADMIN1_CONFIG = Object.freeze({
     "navigation"
   ]),
   repository: "cybersabil/cybersabil.github.io",
-  branch: "feature/chatgpt-custom-dashboard-v2"
+  branch: "main"
 });
