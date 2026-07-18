@@ -452,3 +452,262 @@ button:focus-visible, input:focus-visible, a:focus-visible, summary:focus-visibl
     animation-iteration-count: 1 !important;
   }
 }
+
+
+/* Website Phase 2 — audited list/card manager */
+.compact-button {
+  padding: 8px 10px;
+  border-radius: 10px;
+  font-size: 0.78rem;
+}
+
+.list-manager {
+  overflow: visible;
+}
+
+.list-manager-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.list-manager-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.list-manager-title > div {
+  display: grid;
+  gap: 4px;
+}
+
+.list-manager-title span {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.list-manager-actions,
+.list-item-actions,
+.list-item-summary-actions {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+
+.list-safety-banner,
+.list-lock-banner,
+.list-validation-error,
+.list-manager-error {
+  margin: 14px 16px 0;
+  padding: 12px 13px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface-soft);
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.list-safety-banner {
+  color: var(--success);
+}
+
+.list-lock-banner,
+.list-validation-error {
+  color: var(--warning);
+}
+
+.list-validation-error ul {
+  margin: 8px 0 0 18px;
+  padding: 0;
+}
+
+.list-items {
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+}
+
+.list-item-card {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  background: var(--surface-strong);
+}
+
+.list-item-card.is-dirty {
+  box-shadow: inset 4px 0 var(--warning);
+}
+
+.list-item-card > summary {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+  padding: 14px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.list-item-card > summary::-webkit-details-marker {
+  display: none;
+}
+
+.list-item-index {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 11px;
+  background: var(--surface-soft);
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.list-item-heading {
+  min-width: 0;
+}
+
+.list-item-heading strong,
+.list-item-heading code {
+  display: block;
+}
+
+.list-item-heading strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.list-item-heading code {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 0.68rem;
+  overflow-wrap: anywhere;
+}
+
+.list-item-body {
+  border-top: 1px solid var(--border);
+}
+
+.list-item-toolbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: center;
+  padding: 13px 14px;
+  background: var(--surface-soft);
+}
+
+.list-item-toolbar > div:first-child {
+  display: grid;
+  gap: 4px;
+}
+
+.list-item-toolbar code {
+  color: var(--muted);
+  font-size: 0.7rem;
+  overflow-wrap: anywhere;
+}
+
+.list-fields-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  padding: 14px;
+}
+
+.list-field-control,
+.list-readonly-value {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+
+.list-field-control > span,
+.list-readonly-value > span {
+  color: var(--text);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.list-field-control > small {
+  color: var(--accent);
+  font: 0.68rem/1.4 ui-monospace, SFMono-Regular, Consolas, monospace;
+}
+
+.list-field-control input,
+.list-field-control textarea,
+.list-field-control select {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface-soft);
+  color: var(--text);
+  padding: 10px 11px;
+}
+
+.list-field-control textarea {
+  min-height: 92px;
+  resize: vertical;
+}
+
+.list-readonly-value {
+  padding: 10px 11px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface-soft);
+}
+
+.list-readonly-value pre {
+  margin: 0;
+  color: var(--muted);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font: 0.76rem/1.5 ui-monospace, SFMono-Regular, Consolas, monospace;
+}
+
+@media (max-width: 860px) {
+  .list-manager-header,
+  .list-item-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .list-fields-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .list-item-card > summary {
+    grid-template-columns: 34px minmax(0, 1fr);
+  }
+
+  .list-item-summary-actions {
+    grid-column: 2;
+  }
+
+  .list-item-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .list-item-actions .danger-button {
+    grid-column: 1 / -1;
+  }
+
+  .list-manager-actions {
+    width: 100%;
+  }
+
+  .list-manager-actions .primary-button {
+    width: 100%;
+  }
+}
