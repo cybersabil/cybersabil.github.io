@@ -1,6 +1,6 @@
 {
-  "gatewayEnabled": "no",
-  "defaultMode": "gateway",
+  "gatewayEnabled": "yes",
+  "defaultMode": "portfolio",
   "websiteEnabled": "yes",
   "portfolioEnabled": "yes",
   "showModeSwitch": "yes",
