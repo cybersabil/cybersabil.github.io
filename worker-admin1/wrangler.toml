@@ -1,4 +1,4 @@
-﻿name = "cybersabil-admin1-api"
+name = "cybersabil-admin1-api"
 main = "src/index.js"
 compatibility_date = "2026-07-18"
 workers_dev = true
@@ -11,4 +11,3 @@ GITHUB_OWNER = "cybersabil"
 GITHUB_REPO = "cybersabil.github.io"
 GITHUB_BRANCH = "feature/chatgpt-custom-dashboard-v2"
 ALLOWED_GITHUB_LOGIN = "cybersabil"
-
