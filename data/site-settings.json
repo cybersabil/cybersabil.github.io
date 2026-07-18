@@ -6,7 +6,7 @@
   "showModeSwitch": "yes",
   "modeSwitchWebsiteLabel": "Website",
   "modeSwitchPortfolioLabel": "Portfolio",
-  "modeSwitchPosition": "bottom-right",
+  "modeSwitchPosition": "top-right",
   "rememberVisitorChoice": "no",
   "showToolsSection": "yes",
   "showDownloadsSection": "yes",
