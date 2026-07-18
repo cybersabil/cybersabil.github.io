@@ -1,0 +1,60 @@
+{
+  "editableCategories": [
+    "site-gateway",
+    "website",
+    "portfolio",
+    "seo",
+    "navigation"
+  ],
+  "objectPaths": [
+    "data/site-settings.json",
+    "data/gateway.json",
+    "data/site.json",
+    "data/sections.json",
+    "data/design.json",
+    "data/portfolio-settings.json",
+    "data/profile.json",
+    "data/contact.json",
+    "data/seo.json",
+    "data/gateway-appearance.json",
+    "data/navigation-style.json"
+  ],
+  "listPaths": [
+    "data/tools.json",
+    "data/downloads.json",
+    "data/projects.json",
+    "data/skills.json",
+    "data/docs.json",
+    "data/faq.json",
+    "data/portfolio-skills.json",
+    "data/portfolio-projects.json",
+    "data/portfolio-timeline.json",
+    "data/services.json"
+  ],
+  "editablePaths": [
+    "data/site-settings.json",
+    "data/gateway.json",
+    "data/site.json",
+    "data/sections.json",
+    "data/design.json",
+    "data/portfolio-settings.json",
+    "data/profile.json",
+    "data/contact.json",
+    "data/seo.json",
+    "data/gateway-appearance.json",
+    "data/navigation-style.json",
+    "data/tools.json",
+    "data/downloads.json",
+    "data/projects.json",
+    "data/skills.json",
+    "data/docs.json",
+    "data/faq.json",
+    "data/portfolio-skills.json",
+    "data/portfolio-projects.json",
+    "data/portfolio-timeline.json",
+    "data/services.json"
+  ],
+  "mappedFields": 427,
+  "editableControls": 413,
+  "systemProtected": 1
+}
