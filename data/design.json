@@ -4,5 +4,5 @@
   "backgroundStyle": "gradient",
   "cardStyle": "glass",
   "heroLayout": "split",
-  "showTerminalPreview": "no"
+  "showTerminalPreview": "yes"
 }
