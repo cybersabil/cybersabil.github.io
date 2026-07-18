@@ -1,0 +1,500 @@
+[
+  {
+    "id": "site-gateway",
+    "label": "Site & Gateway",
+    "emoji": "🌐",
+    "description": "Site opening, Gateway content, cards, panel, background and motion.",
+    "order": 1,
+    "fieldCount": 178,
+    "visibleCount": 177,
+    "hiddenCount": 1,
+    "basicCount": 72,
+    "expertCount": 103,
+    "internalCount": 3,
+    "subcategories": [
+      {
+        "id": "opening-availability",
+        "label": "Opening & Availability",
+        "fieldCount": 5,
+        "basicCount": 5,
+        "expertCount": 0,
+        "internalCount": 0
+      },
+      {
+        "id": "mode-switch",
+        "label": "Mode Switch",
+        "fieldCount": 4,
+        "basicCount": 4,
+        "expertCount": 0,
+        "internalCount": 0
+      },
+      {
+        "id": "section-visibility",
+        "label": "Section Visibility",
+        "fieldCount": 8,
+        "basicCount": 8,
+        "expertCount": 0,
+        "internalCount": 0
+      },
+      {
+        "id": "behaviour-url-rules",
+        "label": "Behaviour & URL Rules",
+        "fieldCount": 3,
+        "basicCount": 3,
+        "expertCount": 0,
+        "internalCount": 0
+      },
+      {
+        "id": "messages-feedback",
+        "label": "Messages & Feedback",
+        "fieldCount": 9,
+        "basicCount": 9,
+        "expertCount": 0,
+        "internalCount": 0
+      },
+      {
+        "id": "version-schema",
+        "label": "Version & Schema",
+        "fieldCount": 2,
+        "basicCount": 0,
+        "expertCount": 0,
+        "internalCount": 2
+      },
+      {
+        "id": "basic-look",
+        "label": "Basic Look",
+        "fieldCount": 6,
+        "basicCount": 6,
+        "expertCount": 0,
+        "internalCount": 0
+      },
+      {
+        "id": "identity-text",
+        "label": "Identity & Text",
+        "fieldCount": 8,
+        "basicCount": 8,
+        "expertCount": 0,
+        "internalCount": 0
+      },
+      {
+        "id": "trust-chips",
+        "label": "Trust Chips",
+        "fieldCount": 4,
+        "basicCount": 4,
+        "expertCount": 0,
+        "internalCount": 0
+      },
+      {
+        "id": "website-card",
+        "label": "Website Card",
+        "fieldCount": 5,
+        "basicCount": 5,
+        "expertCount": 0,
+        "internalCount": 0
+      },
+      {
+        "id": "portfolio-card",
+        "label": "Portfolio Card",
+        "fieldCount": 5,
+        "basicCount": 5,
+        "expertCount": 0,
+        "internalCount": 0
+      },
+      {
+        "id": "shared-card-options",
+        "label": "Shared Card Options",
+        "fieldCount": 4,
+        "basicCount": 4,
+        "expertCount": 0,
+        "internalCount": 0
+      },
+      {
+        "id": "footer",
+        "label": "Footer",
+        "fieldCount": 2,
+        "basicCount": 2,
+        "expertCount": 0,
+        "internalCount": 0
+      },
+      {
+        "id": "activation-control-modes",
+        "label": "Activation & Control Modes",
+        "fieldCount": 7,
+        "basicCount": 2,
+        "expertCount": 4,
+        "internalCount": 1
+      },
+      {
+        "id": "responsive-layout",
+        "label": "Responsive Layout",
+        "fieldCount": 7,
+        "basicCount": 6,
+        "expertCount": 1,
+        "internalCount": 0
+      },
+      {
+        "id": "panel-size-spacing",
+        "label": "Panel Size & Spacing",
+        "fieldCount": 5,
+        "basicCount": 0,
+        "expertCount": 5,
+        "internalCount": 0
+      },
+      {
+        "id": "panel-surface",
+        "label": "Panel Surface",
+        "fieldCount": 10,
+        "basicCount": 0,
+        "expertCount": 10,
+        "internalCount": 0
+      },
+      {
+        "id": "panel-border-shadow-glow",
+        "label": "Panel Border, Shadow & Glow",
+        "fieldCount": 11,
+        "basicCount": 0,
+        "expertCount": 11,
+        "internalCount": 0
+      },
+      {
+        "id": "background-ambient-lights",
+        "label": "Background & Ambient Lights",
+        "fieldCount": 12,
+        "basicCount": 0,
+        "expertCount": 12,
+        "internalCount": 0
+      },
+      {
+        "id": "typography",
+        "label": "Typography",
+        "fieldCount": 7,
+        "basicCount": 1,
+        "expertCount": 6,
+        "internalCount": 0
+      },
+      {
+        "id": "shared-cards-buttons",
+        "label": "Shared Cards & Buttons",
+        "fieldCount": 18,
+        "basicCount": 0,
+        "expertCount": 18,
+        "internalCount": 0
+      },
+      {
+        "id": "website-card-design",
+        "label": "Website Card Design",
+        "fieldCount": 16,
+        "basicCount": 0,
+        "expertCount": 16,
+        "internalCount": 0
+      },
+      {
+        "id": "portfolio-card-design",
+        "label": "Portfolio Card Design",
+        "fieldCount": 16,
+        "basicCount": 0,
+        "expertCount": 16,
+        "internalCount": 0
+      },
+      {
+        "id": "animation-interaction",
+        "label": "Animation & Interaction",
+        "fieldCount": 4,
+        "basicCount": 0,
+        "expertCount": 4,
+        "internalCount": 0
+      }
+    ]
+  },
+  {
+    "id": "website",
+    "label": "Website",
+    "emoji": "🖥️",
+    "description": "Website brand, hero, headings, design and all content cards.",
+    "order": 2,
+    "fieldCount": 79,
+    "visibleCount": 73,
+    "hiddenCount": 6,
+    "basicCount": 66,
+    "expertCount": 6,
+    "internalCount": 7,
+    "subcategories": [
+      {
+        "id": "brand-hero",
+        "label": "Brand & Hero",
+        "fieldCount": 14,
+        "basicCount": 14,
+        "expertCount": 0,
+        "internalCount": 0
+      },
+      {
+        "id": "menu-section-text",
+        "label": "Menu & Section Text",
+        "fieldCount": 19,
+        "basicCount": 19,
+        "expertCount": 0,
+        "internalCount": 0
+      },
+      {
+        "id": "basic-website-design",
+        "label": "Basic Website Design",
+        "fieldCount": 6,
+        "basicCount": 0,
+        "expertCount": 6,
+        "internalCount": 0
+      },
+      {
+        "id": "tools-cards",
+        "label": "Tools Cards",
+        "fieldCount": 11,
+        "basicCount": 10,
+        "expertCount": 0,
+        "internalCount": 1
+      },
+      {
+        "id": "download-cards",
+        "label": "Download Cards",
+        "fieldCount": 8,
+        "basicCount": 6,
+        "expertCount": 0,
+        "internalCount": 2
+      },
+      {
+        "id": "project-cards",
+        "label": "Project Cards",
+        "fieldCount": 9,
+        "basicCount": 8,
+        "expertCount": 0,
+        "internalCount": 1
+      },
+      {
+        "id": "website-skills",
+        "label": "Website Skills",
+        "fieldCount": 3,
+        "basicCount": 2,
+        "expertCount": 0,
+        "internalCount": 1
+      },
+      {
+        "id": "documentation-cards",
+        "label": "Documentation Cards",
+        "fieldCount": 6,
+        "basicCount": 5,
+        "expertCount": 0,
+        "internalCount": 1
+      },
+      {
+        "id": "faq-cards",
+        "label": "FAQ Cards",
+        "fieldCount": 3,
+        "basicCount": 2,
+        "expertCount": 0,
+        "internalCount": 1
+      }
+    ]
+  },
+  {
+    "id": "portfolio",
+    "label": "Portfolio",
+    "emoji": "💼",
+    "description": "Portfolio profile, skills, projects, timeline, services and contact.",
+    "order": 3,
+    "fieldCount": 84,
+    "visibleCount": 80,
+    "hiddenCount": 4,
+    "basicCount": 80,
+    "expertCount": 0,
+    "internalCount": 4,
+    "subcategories": [
+      {
+        "id": "portfolio-settings-menu",
+        "label": "Portfolio Settings & Menu",
+        "fieldCount": 32,
+        "basicCount": 32,
+        "expertCount": 0,
+        "internalCount": 0
+      },
+      {
+        "id": "profile-hero",
+        "label": "Profile & Hero",
+        "fieldCount": 16,
+        "basicCount": 16,
+        "expertCount": 0,
+        "internalCount": 0
+      },
+      {
+        "id": "portfolio-skills",
+        "label": "Portfolio Skills",
+        "fieldCount": 5,
+        "basicCount": 4,
+        "expertCount": 0,
+        "internalCount": 1
+      },
+      {
+        "id": "portfolio-projects",
+        "label": "Portfolio Projects",
+        "fieldCount": 10,
+        "basicCount": 9,
+        "expertCount": 0,
+        "internalCount": 1
+      },
+      {
+        "id": "timeline",
+        "label": "Timeline",
+        "fieldCount": 5,
+        "basicCount": 4,
+        "expertCount": 0,
+        "internalCount": 1
+      },
+      {
+        "id": "services",
+        "label": "Services",
+        "fieldCount": 4,
+        "basicCount": 3,
+        "expertCount": 0,
+        "internalCount": 1
+      },
+      {
+        "id": "contact",
+        "label": "Contact",
+        "fieldCount": 12,
+        "basicCount": 12,
+        "expertCount": 0,
+        "internalCount": 0
+      }
+    ]
+  },
+  {
+    "id": "seo",
+    "label": "SEO & Sharing",
+    "emoji": "🔎",
+    "description": "Search metadata, indexing and social-sharing previews.",
+    "order": 4,
+    "fieldCount": 13,
+    "visibleCount": 13,
+    "hiddenCount": 0,
+    "basicCount": 13,
+    "expertCount": 0,
+    "internalCount": 0,
+    "subcategories": [
+      {
+        "id": "search-social-metadata",
+        "label": "Search & Social Metadata",
+        "fieldCount": 13,
+        "basicCount": 13,
+        "expertCount": 0,
+        "internalCount": 0
+      }
+    ]
+  },
+  {
+    "id": "navigation",
+    "label": "Navigation Design",
+    "emoji": "🧭",
+    "description": "Mode switch and Website/Portfolio navigation appearance.",
+    "order": 5,
+    "fieldCount": 73,
+    "visibleCount": 72,
+    "hiddenCount": 1,
+    "basicCount": 5,
+    "expertCount": 67,
+    "internalCount": 1,
+    "subcategories": [
+      {
+        "id": "activation-control-modes",
+        "label": "Activation & Control Modes",
+        "fieldCount": 7,
+        "basicCount": 1,
+        "expertCount": 5,
+        "internalCount": 1
+      },
+      {
+        "id": "mode-switch-position",
+        "label": "Mode Switch Position",
+        "fieldCount": 6,
+        "basicCount": 2,
+        "expertCount": 4,
+        "internalCount": 0
+      },
+      {
+        "id": "mode-switch-surface",
+        "label": "Mode Switch Surface",
+        "fieldCount": 9,
+        "basicCount": 0,
+        "expertCount": 9,
+        "internalCount": 0
+      },
+      {
+        "id": "mode-switch-active-colors",
+        "label": "Mode Switch Active Colors",
+        "fieldCount": 8,
+        "basicCount": 0,
+        "expertCount": 8,
+        "internalCount": 0
+      },
+      {
+        "id": "mode-switch-motion",
+        "label": "Mode Switch Motion",
+        "fieldCount": 2,
+        "basicCount": 0,
+        "expertCount": 2,
+        "internalCount": 0
+      },
+      {
+        "id": "website-desktop-navigation",
+        "label": "Website Desktop Navigation",
+        "fieldCount": 18,
+        "basicCount": 1,
+        "expertCount": 17,
+        "internalCount": 0
+      },
+      {
+        "id": "website-mobile-navigation",
+        "label": "Website Mobile Navigation",
+        "fieldCount": 2,
+        "basicCount": 0,
+        "expertCount": 2,
+        "internalCount": 0
+      },
+      {
+        "id": "portfolio-desktop-navigation",
+        "label": "Portfolio Desktop Navigation",
+        "fieldCount": 19,
+        "basicCount": 1,
+        "expertCount": 18,
+        "internalCount": 0
+      },
+      {
+        "id": "portfolio-mobile-navigation",
+        "label": "Portfolio Mobile Navigation",
+        "fieldCount": 2,
+        "basicCount": 0,
+        "expertCount": 2,
+        "internalCount": 0
+      }
+    ]
+  },
+  {
+    "id": "system",
+    "label": "System",
+    "emoji": "⚙️",
+    "description": "Protected baseline and internal configuration.",
+    "order": 6,
+    "fieldCount": 1,
+    "visibleCount": 1,
+    "hiddenCount": 0,
+    "basicCount": 0,
+    "expertCount": 1,
+    "internalCount": 0,
+    "subcategories": [
+      {
+        "id": "protected-visual-baseline",
+        "label": "Protected Visual Baseline",
+        "fieldCount": 1,
+        "basicCount": 0,
+        "expertCount": 1,
+        "internalCount": 0
+      }
+    ]
+  }
+]

@@ -1,0 +1,14 @@
+﻿name = "cybersabil-admin1-api"
+main = "src/index.js"
+compatibility_date = "2026-07-18"
+workers_dev = true
+
+[vars]
+ALLOWED_ORIGIN = "https://cybersabil.github.io"
+PRODUCTION_ADMIN_URL = "https://cybersabil.github.io/admin1/"
+LOCAL_ADMIN_ORIGINS = "http://127.0.0.1:8080,http://127.0.0.1:8081,http://127.0.0.1:8082,http://localhost:8080,http://localhost:8081,http://localhost:8082"
+GITHUB_OWNER = "cybersabil"
+GITHUB_REPO = "cybersabil.github.io"
+GITHUB_BRANCH = "feature/chatgpt-custom-dashboard-v2"
+ALLOWED_GITHUB_LOGIN = "cybersabil"
+

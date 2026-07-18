@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+<title>CyberSabil Control Center</title>
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#55d8ff"/><stop offset="1" stop-color="#a88cff"/></linearGradient></defs>
+<rect width="128" height="128" rx="34" fill="#07101f"/>
+<rect x="10" y="10" width="108" height="108" rx="28" fill="url(#g)"/>
+<path d="M84 45c-6-7-13-10-22-10-18 0-31 13-31 30s13 29 31 29c9 0 17-3 23-10L74 73c-3 4-7 6-12 6-8 0-14-6-14-14 0-9 6-15 14-15 5 0 9 2 12 6l10-11Z" fill="#07101f"/>
+</svg>
