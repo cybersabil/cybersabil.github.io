@@ -3,10 +3,11 @@ window.CYBERSABIL_ADMIN1_CONFIG = Object.freeze({
   productionUrl: "https://cybersabil.github.io/admin1/",
   editableCategories: Object.freeze([
     "site-gateway",
-    "website"
+    "website",
+    "portfolio",
+    "seo",
+    "navigation"
   ]),
   repository: "cybersabil/cybersabil.github.io",
   branch: "feature/chatgpt-custom-dashboard-v2"
 });
-
-

@@ -16,10 +16,15 @@
   const objectPaths = new Set([
     "data/site-settings.json",
     "data/gateway.json",
-    "data/gateway-appearance.json",
     "data/site.json",
     "data/sections.json",
     "data/design.json",
+    "data/portfolio-settings.json",
+    "data/profile.json",
+    "data/contact.json",
+    "data/seo.json",
+    "data/gateway-appearance.json",
+    "data/navigation-style.json"
   ]);
 
   const listPaths = new Set([
@@ -29,6 +34,10 @@
     "data/skills.json",
     "data/docs.json",
     "data/faq.json",
+    "data/portfolio-skills.json",
+    "data/portfolio-projects.json",
+    "data/portfolio-timeline.json",
+    "data/services.json"
   ]);
 
   const editablePaths = new Set([
@@ -438,6 +447,7 @@
       "text",
       "number",
       "select",
+      "image",
     ].includes(field.type);
 
   const isListPathEditable = (path, category) =>
@@ -494,26 +504,18 @@
         `<select ${common}>` +
         `${selectOptions(field)}</select>`;
     } else if (field.type === "number") {
+      const minimum =
+        field.min ?? field.options?.min;
+      const maximum =
+        field.max ?? field.options?.max;
+      const stepValue =
+        field.step ?? field.options?.step;
+
       control =
         `<input type="number" ${common} ` +
-        `${
-          field.min !== null &&
-          field.min !== undefined
-            ? `min="${field.min}"`
-            : ""
-        } ` +
-        `${
-          field.max !== null &&
-          field.max !== undefined
-            ? `max="${field.max}"`
-            : ""
-        } ` +
-        `${
-          field.step !== null &&
-          field.step !== undefined
-            ? `step="${field.step}"`
-            : 'step="any"'
-        } ` +
+        `${minimum !== null && minimum !== undefined ? `min="${minimum}"` : ""} ` +
+        `${maximum !== null && maximum !== undefined ? `max="${maximum}"` : ""} ` +
+        `${stepValue !== null && stepValue !== undefined ? `step="${stepValue}"` : 'step="any"'} ` +
         `value="${escapeHtml(value)}">`;
     } else if (field.type === "text") {
       control =
@@ -575,6 +577,24 @@
 
   const renderMetrics = () => {
     const manifest = state.schema.manifest;
+    const auditedCategories = state.schema.categories.filter((category) =>
+      editableCategories.has(category.id),
+    );
+    const auditedMapped = auditedCategories.reduce(
+      (total, category) => total + category.fieldCount,
+      0,
+    );
+    const editableControls = state.schema.fields.filter(
+      (field) =>
+        editableCategories.has(field.category) &&
+        !field.hidden &&
+        !field.readonly,
+    ).length;
+    const protectedMapped = auditedMapped - editableControls;
+    const lockedCategories = state.schema.categories
+      .filter((category) => !editableCategories.has(category.id))
+      .map((category) => category.label)
+      .join(", ");
 
     e.metrics.innerHTML = [
       metric(
@@ -583,14 +603,14 @@
         `${manifest.editors} JSON editors`,
       ),
       metric(
-        "Audited editable",
-        257,
-        "Gateway 178 + Website 79",
+        "Audited mapped",
+        auditedMapped,
+        `${editableControls} editable · ${protectedMapped} protected`,
       ),
       metric(
-        "Read-only pending",
-        manifest.fields - 257,
-        "Portfolio, SEO, Navigation, System",
+        "Read-only protected",
+        manifest.fields - auditedMapped,
+        lockedCategories || "None",
       ),
       metric(
         "Collision protection",
@@ -819,6 +839,11 @@
         </div>`;
     }
 
+    const preview =
+      field.type === "image" && value
+        ? `<img class="list-image-preview" src="${escapeHtml(value)}" alt="Image preview" loading="lazy">`
+        : "";
+
     return `
       <label class="list-field-control">
         <span>${escapeHtml(field.label)}</span>
@@ -829,6 +854,7 @@
           scope: "list",
           itemId: item._cmsResetId,
         })}
+        ${preview}
       </label>`;
   };
 
@@ -1499,7 +1525,7 @@
     if (
       hasDirtyDraft() &&
       !window.confirm(
-        "Saare unsaved Gateway/Website drafts discard karne hain?",
+        "Saare unsaved Admin1 drafts discard karne hain?",
       )
     ) {
       return;

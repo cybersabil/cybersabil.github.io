@@ -1,185 +1,14 @@
-const FILE_POLICIES = Object.freeze({
-  "data/site-settings.json": {
-    kind: "object",
-  },
-  "data/gateway.json": {
-    kind: "object",
-  },
-  "data/gateway-appearance.json": {
-    kind: "object",
-  },
-  "data/site.json": {
-    kind: "object",
-    fields: {
-      brandName: "string",
-      logoText: "string",
-      badge: "string",
-      heroTitleBefore: "string",
-      heroTitleHighlight: "string",
-      heroDescription: "string",
-      primaryButtonText: "string",
-      primaryButtonLink: "string",
-      secondaryButtonText: "string",
-      secondaryButtonLink: "string",
-      githubProfileLink: "string",
-      aboutTitle: "string",
-      aboutDescription: "string",
-      footerText: "string",
-    },
-  },
-  "data/sections.json": {
-    kind: "object",
-    fields: {
-      navToolsLabel: "string",
-      navDownloadsLabel: "string",
-      navProjectsLabel: "string",
-      navDocsLabel: "string",
-      toolsTitle: "string",
-      toolsSubtitle: "string",
-      downloadsTitle: "string",
-      downloadsSubtitle: "string",
-      downloadsWarning: "string",
-      projectsTitle: "string",
-      projectsSubtitle: "string",
-      skillsTitle: "string",
-      skillsSubtitle: "string",
-      quickCommandsTitle: "string",
-      quickCommandsSubtitle: "string",
-      docsTitle: "string",
-      docsSubtitle: "string",
-      faqTitle: "string",
-      faqSubtitle: "string",
-    },
-  },
-  "data/design.json": {
-    kind: "object",
-    fields: {
-      themeMode: {
-        type: "string",
-        values: [
-          "dark",
-          "light",
-          "blue",
-          "green",
-          "purple",
-        ],
-      },
-      accentColor: {
-        type: "string",
-        values: [
-          "cyan",
-          "green",
-          "blue",
-          "orange",
-          "purple",
-        ],
-      },
-      backgroundStyle: {
-        type: "string",
-        values: [
-          "gradient",
-          "plain",
-          "grid",
-        ],
-      },
-      cardStyle: {
-        type: "string",
-        values: [
-          "glass",
-          "solid",
-          "border",
-        ],
-      },
-      heroLayout: {
-        type: "string",
-        values: [
-          "split",
-          "center",
-        ],
-      },
-      showTerminalPreview: {
-        type: "string",
-        values: [
-          "yes",
-          "no",
-        ],
-      },
-    },
-  },
-  "data/tools.json": {
-    kind: "list",
-    fields: {
-      icon: "string",
-      title: "string",
-      status: "string",
-      problem: "string",
-      solution: "string",
-      description: "string",
-      technology: "string",
-      command: "string",
-      buttonText: "string",
-      buttonLink: "string",
-    },
-  },
-  "data/downloads.json": {
-    kind: "list",
-    fields: {
-      title: "string",
-      version: "string",
-      type: "string",
-      description: "string",
-      downloadLink: "string",
-      releaseLink: "string",
-      checksum: "string",
-    },
-  },
-  "data/projects.json": {
-    kind: "list",
-    fields: {
-      icon: "string",
-      title: "string",
-      status: "string",
-      description: "string",
-      problemSolved: "string",
-      techUsed: "string",
-      repoLink: "string",
-      liveLink: "string",
-    },
-  },
-  "data/skills.json": {
-    kind: "list",
-    fields: {
-      title: "string",
-      description: "string",
-    },
-  },
-  "data/docs.json": {
-    kind: "list",
-    fields: {
-      title: "string",
-      category: "string",
-      description: "string",
-      command: "string",
-      link: "string",
-    },
-  },
-  "data/faq.json": {
-    kind: "list",
-    fields: {
-      question: "string",
-      answer: "string",
-    },
-  },
-});
+import {
+  FILE_POLICIES,
+  EDITABLE_PATHS as EDITABLE_PATH_LIST,
+  MAX_FILES_PER_COMMIT,
+} from "./file-policies.js";
 
-const EDITABLE_PATHS = new Set(
-  Object.keys(FILE_POLICIES),
-);
+const EDITABLE_PATHS = new Set(EDITABLE_PATH_LIST);
 
 const UUID_PATTERN =
   /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 
-const MAX_FILES_PER_COMMIT = 12;
 const MAX_FILE_TEXT_LENGTH = 250000;
 const MAX_TOTAL_TEXT_LENGTH = 1000000;
 
@@ -561,6 +390,18 @@ function validateFieldValue(
       `${path}: ${location} has an invalid select value.`,
     );
   }
+
+  if (normalizedRule.type === "number") {
+    if (!Number.isFinite(value)) {
+      throw new Error(`${path}: ${location} must be a finite number.`);
+    }
+    if (normalizedRule.min !== undefined && value < normalizedRule.min) {
+      throw new Error(`${path}: ${location} is below minimum ${normalizedRule.min}.`);
+    }
+    if (normalizedRule.max !== undefined && value > normalizedRule.max) {
+      throw new Error(`${path}: ${location} is above maximum ${normalizedRule.max}.`);
+    }
+  }
 }
 
 function validateObjectContent(
@@ -909,6 +750,15 @@ async function atomicCommit(
     })),
   };
 }
+
+export const __test = Object.freeze({
+  validateFieldValue,
+  validateObjectContent,
+  validateListContent,
+  validateContent,
+  normalizeFiles,
+  atomicCommit,
+});
 
 export default {
   async fetch(request, env) {

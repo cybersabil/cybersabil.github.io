@@ -711,3 +711,13 @@ button:focus-visible, input:focus-visible, a:focus-visible, summary:focus-visibl
     width: 100%;
   }
 }
+
+.list-image-preview {
+  display: block;
+  width: min(100%, 320px);
+  max-height: 180px;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface-soft);
+}
