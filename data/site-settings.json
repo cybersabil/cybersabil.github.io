@@ -3,7 +3,7 @@
   "defaultMode": "gateway",
   "websiteEnabled": "yes",
   "portfolioEnabled": "yes",
-  "showModeSwitch": "yes",
+  "showModeSwitch": "no",
   "modeSwitchWebsiteLabel": "Website",
   "modeSwitchPortfolioLabel": "Portfolio",
   "modeSwitchPosition": "top-right",
