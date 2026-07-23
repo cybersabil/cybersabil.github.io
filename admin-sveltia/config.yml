@@ -1,4 +1,4 @@
-﻿# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms@0.171.0/schema/sveltia-cms.json
+# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms@0.171.0/schema/sveltia-cms.json
 # IMPORTANT: Replace the placeholder backend.base_url with your Cloudflare Worker URL.
 
 backend:
@@ -8,10 +8,10 @@ backend:
   base_url: https://sveltia-cms-auth.multi4u121.workers.dev
 site_url: https://cybersabil.github.io/
 display_url: https://cybersabil.github.io/
-logout_redirect_url: https://cybersabil.github.io/admin/
+logout_redirect_url: https://cybersabil.github.io/admin-sveltia/
 app_title: CyberSabil Gateway Control
 logo:
-  src: /admin/cybersabil-admin-logo.svg
+  src: /admin-sveltia/cybersabil-admin-logo.svg
   show_in_header: true
 media_folder: media
 public_folder: /media
@@ -1588,4 +1588,5 @@ singletons:
     dropdown_threshold: 5
     hint: Option box click effect choose karta hai. Existing/default option safest hai; change ke baad computer
       aur mobile preview check karein.
+
 
