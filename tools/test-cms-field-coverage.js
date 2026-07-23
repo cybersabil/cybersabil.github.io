@@ -225,8 +225,6 @@ const report = {
   warnings,
   rows
 };
-fs.mkdirSync(path.join(ROOT, 'docs'), { recursive: true });
-fs.writeFileSync(path.join(ROOT, 'docs/CMS_FIELD_COVERAGE_REPORT_v2.10.1.json'), JSON.stringify(report, null, 2));
 if (warnings.length) {
   console.log('CMS field coverage warnings:'); warnings.forEach(x => console.log(`- ${x}`));
 }

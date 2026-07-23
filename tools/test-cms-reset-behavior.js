@@ -105,7 +105,6 @@ try {
 }
 
 const report = { round: 2, name: 'exhaustive-reset-behavior', scenarios, errors };
-fs.writeFileSync(path.join(ROOT, 'docs/CMS_RESET_AUDIT_ROUND_2_BEHAVIOR.json'), `${JSON.stringify(report, null, 2)}\n`);
 if (errors.length) {
   console.error('CMS reset behavior audit failed:');
   errors.slice(0, 100).forEach(error => console.error(`- ${error}`));

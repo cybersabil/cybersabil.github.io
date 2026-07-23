@@ -100,7 +100,6 @@ const report = {
   errors,
   results,
 };
-fs.writeFileSync(path.join(ROOT, 'docs/CMS_RESET_AUDIT_ROUND_1_SCHEMA.json'), `${JSON.stringify(report, null, 2)}\n`);
 if (errors.length) {
   console.error('CMS reset schema audit failed:');
   errors.forEach(error => console.error(`- ${error}`));

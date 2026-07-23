@@ -137,7 +137,6 @@ try {
 }
 
 const report = { round: 3, name: 'collision-security-isolation', scenarios, errors };
-fs.writeFileSync(path.join(ROOT, 'docs/CMS_RESET_AUDIT_ROUND_3_COLLISIONS.json'), `${JSON.stringify(report, null, 2)}\n`);
 if (errors.length) {
   console.error('CMS reset collision audit failed:');
   errors.forEach(error => console.error(`- ${error}`));

@@ -19,7 +19,7 @@ const required = [
   'data/site-settings.json', 'data/design.json', 'data/visual-baseline.json',
   'data/gateway.json', 'data/gateway-appearance.json', 'data/navigation-style.json',
   'data/runtime-manifest.json', 'tools/generate-site.js', 'tools/test-config-isolation.js',
-  'tools/test-runtime-browser.py', 'tools/test-cms-field-coverage.js', '.github/workflows/build-pages.yml'
+  'tools/test-cms-field-coverage.js', '.github/workflows/build-pages.yml'
 ];
 required.forEach(file => { if (!exists(file)) errors.push(`Missing required file: ${file}`); });
 
