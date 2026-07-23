@@ -27,7 +27,7 @@
   "showCardDescriptions": "yes",
   "showCardButtons": "yes",
   "footerNote": "Same homepage. No extra pages.",
-  "showFooterNote": "no",
+  "showFooterNote": "yes",
   "stylePreset": "minimal-selector",
   "animationStyle": "soft-scale",
   "backgroundBlur": 5,
