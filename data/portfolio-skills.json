@@ -44,8 +44,8 @@
   {
     "title": "Wireshark",
     "category": "Networking ",
-    "level": "",
-    "description": "",
+    "level": "Basic",
+    "description": "Basic knowledge of wireshark and network troubleshooting network",
     "_cmsResetId": "5ba69865-0764-43ff-a935-74d99ce39d72"
   },
   {
