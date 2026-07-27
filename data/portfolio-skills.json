@@ -40,5 +40,19 @@
     "level": "Strong",
     "description": "Structure JSON and Pages CMS entries so site content, sections and mode settings can be updated without touching code.",
     "_cmsResetId": "e2341318-1a22-53e0-b8cf-d76a48650d8e"
+  },
+  {
+    "title": "Wireshark",
+    "category": "Networking ",
+    "level": "",
+    "description": "",
+    "_cmsResetId": "5ba69865-0764-43ff-a935-74d99ce39d72"
+  },
+  {
+    "title": "",
+    "category": "",
+    "level": "",
+    "description": "",
+    "_cmsResetId": "27d5cc9c-ebdd-440b-a07f-1575721ce8e7"
   }
 ]
