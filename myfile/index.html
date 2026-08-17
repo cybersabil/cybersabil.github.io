@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src https://cybersabil-myfile-gateway.multi4u121.workers.dev; frame-src https://cybersabil-myfile-gateway.multi4u121.workers.dev; object-src 'none'; base-uri 'none'; form-action 'none';">
+  <title>CyberSabil My Files</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">CyberSabil My Files</div>
+    <div id="crumbs" class="crumbs" aria-label="Breadcrumb"></div>
+    <div id="tools" class="tools hidden">
+      <input id="search" type="search" placeholder="Search" autocomplete="off">
+      <button id="backBtn" type="button">Back</button>
+      <button id="refreshBtn" type="button">Refresh</button>
+      <button id="viewBtn" type="button">List</button>
+      <button id="logoutBtn" type="button">Logout</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="authCard" class="auth-card">
+      <h1>Secure Files</h1>
+      <p id="authText">Checking secure portal…</p>
+
+      <div id="setupBox" class="hidden">
+        <label for="setupCode">One-time setup code</label>
+        <input id="setupCode" type="password" autocomplete="off">
+        <button id="setupBtn" class="primary" type="button">Create Passkey</button>
+      </div>
+
+      <button id="loginBtn" class="primary hidden" type="button">Unlock with Passkey</button>
+      <p id="authMsg" class="status"></p>
+    </section>
+
+    <section id="filesArea" class="hidden">
+      <div id="summary" class="summary"></div>
+      <div id="grid" class="grid"></div>
+      <div id="empty" class="empty hidden">No matching files.</div>
+    </section>
+  </main>
+
+  <div id="previewModal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <div class="modal-head">
+        <div id="previewTitle" class="preview-title">Preview</div>
+        <button id="closePreview" type="button">Close</button>
+      </div>
+      <iframe id="previewFrame" title="File preview"></iframe>
+    </div>
+  </div>
+
+  <iframe id="downloadFrame" class="download-frame" title="download"></iframe>
+
+  <script src="./simplewebauthn-browser.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
