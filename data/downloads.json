@@ -28,5 +28,15 @@
     "releaseLink": "https://github.com/cybersabil/tmr",
     "checksum": "Not required for live script",
     "_cmsResetId": "8b0dd4bc-bd03-5efd-9d2e-1fc84cd84a8f"
+  },
+  {
+    "title": "tems link chek tab",
+    "version": "",
+    "type": "",
+    "description": "",
+    "downloadLink": "https://teams.microsoft.com/meet/41521273480824?p=4CWUxlTzOJgxS3C3ee",
+    "releaseLink": "https://teams.microsoft.com/meet/41521273480824?p=4CWUxlTzOJgxS3C3ee",
+    "checksum": "",
+    "_cmsResetId": "c1851904-392e-48cb-a59c-f60eb15d365c"
   }
 ]
